@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "325119319653",
+    "project_id": "quikboom-crm-925d5",
+    "storage_bucket": "quikboom-crm-925d5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325119319653:android:0138ac708b9404bd0b708c",
+        "android_client_info": {
+          "package_name": "com.example.quickboom_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFOwiIWRXzTjcjeSagLdSNqUE09bAhX88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325119319653:android:26063b60307f02f30b708c",
+        "android_client_info": {
+          "package_name": "com.quickboom.qbsuite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFOwiIWRXzTjcjeSagLdSNqUE09bAhX88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
