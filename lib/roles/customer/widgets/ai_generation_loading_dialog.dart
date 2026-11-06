@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -219,7 +220,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(
-                      Icons.auto_awesome,
+                      LegacyRemixIcons.auto_awesome,
                       color: Color(0xFFFBBF24), // Gold sparkle
                       size: 14,
                     ),
@@ -266,7 +267,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                               top: 2,
                               left: 60,
                               child: Icon(
-                                Icons.auto_awesome,
+                                LegacyRemixIcons.auto_awesome,
                                 size: 16,
                                 color: meta.glowColor,
                               ),
@@ -338,7 +339,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                             shape: BoxShape.circle,
                           ),
                           child: const Icon(
-                            Icons.bolt_rounded,
+                            LegacyRemixIcons.bolt_rounded,
                             size: 13,
                             color: Colors.white,
                           ),

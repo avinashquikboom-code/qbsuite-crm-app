@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -175,10 +176,10 @@ class _DataCaptureResultsScreenState
                 ),
                 child: Icon(
                   allDuplicates
-                      ? Icons.copy_rounded
+                      ? LegacyRemixIcons.copy_rounded
                       : isPartial
-                      ? Icons.info_outline_rounded
-                      : Icons.check_circle_rounded,
+                      ? LegacyRemixIcons.info_outline_rounded
+                      : LegacyRemixIcons.check_circle_rounded,
                   color: allDuplicates
                       ? AppColors.warning
                       : isPartial
@@ -340,7 +341,7 @@ class _DataCaptureResultsScreenState
                       Row(
                         children: [
                           const Icon(
-                            Icons.search_rounded,
+                            LegacyRemixIcons.search_rounded,
                             size: 16,
                             color: AppColors.primary,
                           ),
@@ -513,7 +514,7 @@ class _DataCaptureResultsScreenState
                           color: Colors.white,
                         ),
                       )
-                    : const Icon(Icons.person_add_alt_1_rounded, size: 20),
+                    : const Icon(LegacyRemixIcons.person_add_alt_1_rounded, size: 20),
                 label: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(

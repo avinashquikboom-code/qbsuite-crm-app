@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
@@ -541,7 +542,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                         ),
                         TextButton.icon(
                           onPressed: _refreshAllData,
-                          icon: const Icon(Icons.refresh),
+                          icon: const Icon(LegacyRemixIcons.refresh),
                           label: const Text('Retry dashboard'),
                         ),
                       ],

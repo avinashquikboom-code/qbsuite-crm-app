@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -353,7 +354,7 @@ class _MarketingVideoIntroductionScreenState
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Icon(
-                    Icons.error_outline,
+                    LegacyRemixIcons.error_outline,
                     color: Colors.white54,
                     size: 48,
                   ),
@@ -384,7 +385,7 @@ class _MarketingVideoIntroductionScreenState
                     border: Border.all(color: Colors.white30, width: 1.5),
                   ),
                   child: const Icon(
-                    Icons.play_arrow_rounded,
+                    LegacyRemixIcons.play_arrow_rounded,
                     color: Colors.white,
                     size: 36,
                   ),

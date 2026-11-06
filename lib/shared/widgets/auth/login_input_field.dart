@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 
@@ -49,8 +50,8 @@ class LoginInputField extends StatelessWidget {
             ? IconButton(
                 icon: Icon(
                   isPasswordVisible
-                      ? Icons.visibility_off_outlined
-                      : Icons.visibility_outlined,
+                      ? LegacyRemixIcons.visibility_off_outlined
+                      : LegacyRemixIcons.visibility_outlined,
                   color: const Color(0xFF23C45E),
                   size: 20,
                 ),

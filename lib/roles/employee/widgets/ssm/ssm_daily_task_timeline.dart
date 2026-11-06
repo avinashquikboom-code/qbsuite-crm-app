@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -40,7 +41,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
               color: AppColors.primary,
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.check, size: 14, color: Colors.white),
+            child: const Icon(LegacyRemixIcons.check, size: 14, color: Colors.white),
           );
         } else if (isCurrent) {
           indicator = Container(

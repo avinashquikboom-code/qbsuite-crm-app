@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -70,7 +71,7 @@ class LeadHeader extends StatelessWidget implements PreferredSizeWidget {
         if (canEdit && onEdit != null)
           IconButton(
             icon: const Icon(
-              Icons.edit_outlined,
+              LegacyRemixIcons.edit_outlined,
               size: 20,
               color: AppColors.textPrimary,
             ),

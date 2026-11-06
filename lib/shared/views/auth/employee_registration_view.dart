@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -1129,7 +1130,7 @@ class _EmployeeRegistrationViewState
                     color: isSelected ? AppColors.primary : Colors.transparent,
                   ),
                   child: isSelected
-                      ? const Icon(Icons.check, size: 12, color: Colors.white)
+                      ? const Icon(LegacyRemixIcons.check, size: 12, color: Colors.white)
                       : null,
                 ),
               ],

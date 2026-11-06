@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -10,19 +11,19 @@ class BusinessCategoryItem {
 }
 
 const List<BusinessCategoryItem> kDefaultBusinessCategories = [
-  BusinessCategoryItem('Gym', Icons.fitness_center_rounded),
-  BusinessCategoryItem('Restaurant', Icons.restaurant_rounded),
-  BusinessCategoryItem('Hotel', Icons.hotel_rounded),
-  BusinessCategoryItem('Salon', Icons.content_cut_rounded),
-  BusinessCategoryItem('Hospital', Icons.local_hospital_rounded),
-  BusinessCategoryItem('Clinic', Icons.medical_services_rounded),
-  BusinessCategoryItem('Real Estate', Icons.home_work_rounded),
-  BusinessCategoryItem('School', Icons.school_rounded),
-  BusinessCategoryItem('College', Icons.account_balance_rounded),
-  BusinessCategoryItem('Retail Store', Icons.storefront_rounded),
-  BusinessCategoryItem('Travel Agency', Icons.flight_takeoff_rounded),
-  BusinessCategoryItem('Automobile Dealer', Icons.directions_car_rounded),
-  BusinessCategoryItem('Custom Business', Icons.tune_rounded),
+  BusinessCategoryItem('Gym', LegacyRemixIcons.fitness_center_rounded),
+  BusinessCategoryItem('Restaurant', LegacyRemixIcons.restaurant_rounded),
+  BusinessCategoryItem('Hotel', LegacyRemixIcons.hotel_rounded),
+  BusinessCategoryItem('Salon', LegacyRemixIcons.content_cut_rounded),
+  BusinessCategoryItem('Hospital', LegacyRemixIcons.local_hospital_rounded),
+  BusinessCategoryItem('Clinic', LegacyRemixIcons.medical_services_rounded),
+  BusinessCategoryItem('Real Estate', LegacyRemixIcons.home_work_rounded),
+  BusinessCategoryItem('School', LegacyRemixIcons.school_rounded),
+  BusinessCategoryItem('College', LegacyRemixIcons.account_balance_rounded),
+  BusinessCategoryItem('Retail Store', LegacyRemixIcons.storefront_rounded),
+  BusinessCategoryItem('Travel Agency', LegacyRemixIcons.flight_takeoff_rounded),
+  BusinessCategoryItem('Automobile Dealer', LegacyRemixIcons.directions_car_rounded),
+  BusinessCategoryItem('Custom Business', LegacyRemixIcons.tune_rounded),
 ];
 
 class BusinessTypeSelector extends StatefulWidget {
@@ -82,7 +83,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Icon(
-                Icons.business_center_rounded,
+                LegacyRemixIcons.business_center_rounded,
                 color: AppColors.primary,
                 size: 20,
               ),
@@ -115,7 +116,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
               ),
             ),
             const Icon(
-              Icons.search_rounded,
+              LegacyRemixIcons.search_rounded,
               color: AppColors.textSecondary,
               size: 20,
             ),
@@ -223,7 +224,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
                   color: AppColors.textPlaceholder,
                 ),
                 prefixIcon: const Icon(
-                  Icons.search_rounded,
+                  LegacyRemixIcons.search_rounded,
                   color: AppColors.textSecondary,
                 ),
                 filled: true,
@@ -280,11 +281,11 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
                     ),
                     trailing: isSelected
                         ? const Icon(
-                            Icons.check_circle_rounded,
+                            LegacyRemixIcons.check_circle_rounded,
                             color: AppColors.primary,
                           )
                         : const Icon(
-                            Icons.chevron_right_rounded,
+                            LegacyRemixIcons.chevron_right_rounded,
                             color: AppColors.border,
                           ),
                     onTap: () => Navigator.pop(context, item.label),

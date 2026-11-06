@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -43,13 +44,13 @@ class LocationSelector extends StatelessWidget {
               color: AppColors.textPlaceholder,
             ),
             prefixIcon: const Icon(
-              Icons.location_on_rounded,
+              LegacyRemixIcons.location_on_rounded,
               color: AppColors.primary,
               size: 20,
             ),
             suffixIcon: IconButton(
               icon: const Icon(
-                Icons.my_location_rounded,
+                LegacyRemixIcons.my_location_rounded,
                 color: AppColors.primary,
                 size: 20,
               ),

@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -44,7 +45,7 @@ class _CustomerSettingsViewState extends ConsumerState<CustomerSettingsView> {
           IconButton(
             tooltip: 'Sign out',
             onPressed: () => ref.read(loginStateProvider.notifier).logout(),
-            icon: const Icon(Icons.logout),
+            icon: const Icon(LegacyRemixIcons.logout),
           ),
         ],
       ),
@@ -75,7 +76,7 @@ class _CustomerSettingsViewState extends ConsumerState<CustomerSettingsView> {
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.lock_outline),
+                      leading: const Icon(LegacyRemixIcons.lock_outline),
                       title: const Text('Change password'),
                       subtitle: const Text(
                         'Update your customer login password',

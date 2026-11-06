@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -911,7 +912,7 @@ afterFilterCount: ${loadedLeads?.length ?? 0}
                                               if (_isSelectionMode) ...[
                                                 Icon(
                                                   isSelected
-                                                      ? Icons.check_box
+                                                      ? LegacyRemixIcons.check_box
                                                       : Icons
                                                             .check_box_outline_blank,
                                                   color: isSelected

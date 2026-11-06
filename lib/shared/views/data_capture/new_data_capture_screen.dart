@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -192,7 +193,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                 child: Row(
                   children: [
                     const Icon(
-                      Icons.info_outline_rounded,
+                      LegacyRemixIcons.info_outline_rounded,
                       color: AppColors.primaryDark,
                       size: 22,
                     ),
@@ -236,7 +237,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                       color: AppColors.textPlaceholder,
                     ),
                     prefixIcon: const Icon(
-                      Icons.edit_note_rounded,
+                      LegacyRemixIcons.edit_note_rounded,
                       color: AppColors.primary,
                     ),
                     filled: true,
@@ -396,7 +397,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                 height: 52,
                 child: ElevatedButton.icon(
                   onPressed: _isExtracting ? null : _startCapture,
-                  icon: const Icon(Icons.travel_explore_rounded, size: 22),
+                  icon: const Icon(LegacyRemixIcons.travel_explore_rounded, size: 22),
                   label: Text(
                     _isExtracting ? 'Extracting...' : 'Start Capture',
                     style: AppTypography.inter(

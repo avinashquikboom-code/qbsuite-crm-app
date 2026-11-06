@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -205,7 +206,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                         suffixIcon: _searchQuery.isNotEmpty
                             ? IconButton(
                                 icon: const Icon(
-                                  Icons.close,
+                                  LegacyRemixIcons.close,
                                   size: 16,
                                   color: Color(0xFF64748B),
                                 ),
@@ -644,7 +645,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                     ),
                     const SizedBox(width: 2),
                     const Icon(
-                      Icons.chevron_right,
+                      LegacyRemixIcons.chevron_right,
                       size: 16,
                       color: AppColors.primary,
                     ),

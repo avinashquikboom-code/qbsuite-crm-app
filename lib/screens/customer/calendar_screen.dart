@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
@@ -114,7 +115,7 @@ class _CustomerCalendarScreenState extends State<CustomerCalendarScreen> {
                   ),
                 ),
                 ElevatedButton.icon(
-                  icon: const Icon(Icons.calendar_month),
+                  icon: const Icon(LegacyRemixIcons.calendar_month),
                   label: const Text('Change Date'),
                   onPressed: () async {
                     final picked = await showDatePicker(
@@ -151,8 +152,8 @@ class _CustomerCalendarScreenState extends State<CustomerCalendarScreen> {
                         key: ValueKey('cust_sched_${activity.id}'),
                         leading: Icon(
                           isDone
-                              ? Icons.check_circle
-                              : Icons.radio_button_unchecked,
+                              ? LegacyRemixIcons.check_circle
+                              : LegacyRemixIcons.radio_button_unchecked,
                           color: isDone ? Colors.green : Colors.grey,
                         ),
                         title: Text(activity.activity),
@@ -160,7 +161,7 @@ class _CustomerCalendarScreenState extends State<CustomerCalendarScreen> {
                         trailing: !isDone
                             ? IconButton(
                                 icon: const Icon(
-                                  Icons.check,
+                                  LegacyRemixIcons.check,
                                   color: Colors.green,
                                 ),
                                 onPressed: () {

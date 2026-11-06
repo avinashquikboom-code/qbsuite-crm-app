@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -276,7 +277,7 @@ class _CustomerSocialConnectModalState
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.close, size: 20),
+                  icon: const Icon(LegacyRemixIcons.close, size: 20),
                   onPressed: () {
                     _pollTimer?.cancel();
                     Navigator.pop(context);
@@ -341,7 +342,7 @@ class _CustomerSocialConnectModalState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Icon(
-                      Icons.error_outline,
+                      LegacyRemixIcons.error_outline,
                       size: 18,
                       color: Color(0xFFDC2626),
                     ),
@@ -463,7 +464,7 @@ class _CustomerSocialConnectModalState
               Row(
                 children: [
                   const Icon(
-                    Icons.security_rounded,
+                    LegacyRemixIcons.security_rounded,
                     size: 16,
                     color: Color(0xFF1D4ED8),
                   ),
@@ -513,7 +514,7 @@ class _CustomerSocialConnectModalState
                     ),
                   )
                 : const Icon(
-                    Icons.open_in_browser_rounded,
+                    LegacyRemixIcons.open_in_browser_rounded,
                     color: Colors.white,
                     size: 20,
                   ),

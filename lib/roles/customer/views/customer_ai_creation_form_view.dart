@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -935,7 +936,7 @@ class _CustomerAiCreationFormViewState
       child: Row(
         children: [
           Icon(
-            hasEnough ? Icons.auto_awesome : Remix.alert_line,
+            hasEnough ? LegacyRemixIcons.auto_awesome : Remix.alert_line,
             size: 18,
             color: hasEnough
                 ? const Color(0xFF4F46E5)
@@ -1102,7 +1103,7 @@ class _CustomerAiCreationFormViewState
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
-                        Icons.auto_awesome,
+                        LegacyRemixIcons.auto_awesome,
                         size: 18,
                         color: Colors.white,
                       ),
@@ -1130,7 +1131,7 @@ class _CustomerAiCreationFormViewState
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
-                        Icons.auto_awesome,
+                        LegacyRemixIcons.auto_awesome,
                         size: 18,
                         color: Colors.white,
                       ),

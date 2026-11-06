@@ -1,10 +1,11 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
 
 /// Apply using MaterialApp(theme: AppTheme.light).
 /// Register Inter 400/500/600/700 in the application's pubspec.yaml.
-/// UI icons must come from remixicon; do not use Icons.* glyphs.
+/// UI icons must come from remixicon; do not use LegacyRemixIcons.* glyphs.
 abstract final class AppTheme {
   static const buttonRadius = 8.0;
   static const controlPadding = EdgeInsets.symmetric(

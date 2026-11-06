@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -58,7 +59,7 @@ class StatCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Icon(
-                  Icons.trending_up_rounded,
+                  LegacyRemixIcons.trending_up_rounded,
                   size: 14,
                   color: AppColors.success,
                 ),
@@ -138,7 +139,7 @@ class AttendanceCard extends StatelessWidget {
             right: -20,
             top: -20,
             child: Icon(
-              Icons.fingerprint_rounded,
+              LegacyRemixIcons.fingerprint_rounded,
               size: 150,
               color: Colors.white.withValues(alpha: 0.05),
             ),
@@ -157,7 +158,7 @@ class AttendanceCard extends StatelessWidget {
                       ),
                     ),
                     child: const Icon(
-                      Icons.fingerprint_rounded,
+                      LegacyRemixIcons.fingerprint_rounded,
                       color: Colors.white,
                       size: 32,
                     ),
@@ -254,14 +255,14 @@ class AttendanceCard extends StatelessWidget {
       children: [
         _ActionButton(
           label: 'Clock In',
-          icon: Icons.login_rounded,
+          icon: LegacyRemixIcons.login_rounded,
           onPressed: () {},
           isPrimary: false,
           isMobile: isMobile,
         ),
         _ActionButton(
           label: 'Clock Out',
-          icon: Icons.logout_rounded,
+          icon: LegacyRemixIcons.logout_rounded,
           onPressed: () {},
           isPrimary: true,
           isMobile: isMobile,

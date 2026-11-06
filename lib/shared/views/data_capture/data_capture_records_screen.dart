@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:url_launcher/url_launcher.dart';
@@ -424,7 +425,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
       ),
       child: const Center(
         child: Icon(
-          Icons.business_rounded,
+          LegacyRemixIcons.business_rounded,
           size: 22,
           color: AppColors.primaryDark,
         ),
@@ -527,7 +528,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                         const Padding(
                           padding: EdgeInsets.only(top: 2),
                           child: Icon(
-                            Icons.location_on_outlined,
+                            LegacyRemixIcons.location_on_outlined,
                             size: 15,
                             color: Color(0xFF64748B),
                           ),
@@ -552,7 +553,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                     child: Row(
                       children: [
                         const Icon(
-                          Icons.phone_outlined,
+                          LegacyRemixIcons.phone_outlined,
                           size: 15,
                           color: AppColors.primary,
                         ),
@@ -582,7 +583,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 const Icon(
-                                  Icons.copy_rounded,
+                                  LegacyRemixIcons.copy_rounded,
                                   size: 12,
                                   color: Color(0xFF64748B),
                                 ),
@@ -606,7 +607,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                   Row(
                     children: [
                       const Icon(
-                        Icons.calendar_today_outlined,
+                        LegacyRemixIcons.calendar_today_outlined,
                         size: 13,
                         color: Color(0xFF94A3B8),
                       ),
@@ -655,7 +656,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
           elevation: 0,
           scrolledUnderElevation: 0,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Color(0xFF111827)),
+            icon: const Icon(LegacyRemixIcons.arrow_back, color: Color(0xFF111827)),
             tooltip: 'Back',
             onPressed: _importing
                 ? null
@@ -713,7 +714,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                         color: AppColors.primary,
                       ),
                     )
-                  : const Icon(Icons.refresh_rounded, color: Color(0xFF64748B)),
+                  : const Icon(LegacyRemixIcons.refresh_rounded, color: Color(0xFF64748B)),
             ),
             const SizedBox(width: 6),
           ],
@@ -726,7 +727,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
             ? FloatingActionButton(
                 onPressed: () => _open(null, edit: true),
                 backgroundColor: AppColors.primary,
-                child: const Icon(Icons.add, color: Colors.white),
+                child: const Icon(LegacyRemixIcons.add, color: Colors.white),
               )
             : null,
         bottomNavigationBar: _selected.isNotEmpty
@@ -791,7 +792,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                     ),
                                   )
                                 : const Icon(
-                                    Icons.file_download_outlined,
+                                    LegacyRemixIcons.file_download_outlined,
                                     size: 20,
                                   ),
                             label: Text(
@@ -848,14 +849,14 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                           color: const Color(0xFF94A3B8),
                         ),
                         prefixIcon: const Icon(
-                          Icons.search_rounded,
+                          LegacyRemixIcons.search_rounded,
                           size: 20,
                           color: Color(0xFF94A3B8),
                         ),
                         suffixIcon: _search.text.isNotEmpty
                             ? IconButton(
                                 icon: const Icon(
-                                  Icons.close_rounded,
+                                  LegacyRemixIcons.close_rounded,
                                   size: 18,
                                   color: Color(0xFF94A3B8),
                                 ),
@@ -1010,7 +1011,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                 shape: BoxShape.circle,
                               ),
                               child: const Icon(
-                                Icons.error_outline_rounded,
+                                LegacyRemixIcons.error_outline_rounded,
                                 size: 26,
                                 color: Color(0xFFDC2626),
                               ),
@@ -1036,7 +1037,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             const SizedBox(height: 16),
                             FilledButton.icon(
                               onPressed: () => _load(),
-                              icon: const Icon(Icons.refresh_rounded, size: 16),
+                              icon: const Icon(LegacyRemixIcons.refresh_rounded, size: 16),
                               label: const Text('Retry'),
                               style: FilledButton.styleFrom(
                                 backgroundColor: AppColors.primary,
@@ -1074,7 +1075,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: const Icon(
-                                        Icons.inventory_2_outlined,
+                                        LegacyRemixIcons.inventory_2_outlined,
                                         size: 28,
                                         color: Color(0xFF94A3B8),
                                       ),
@@ -1107,7 +1108,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                           _load();
                                         },
                                         icon: const Icon(
-                                          Icons.clear_all_rounded,
+                                          LegacyRemixIcons.clear_all_rounded,
                                           size: 16,
                                         ),
                                         label: const Text('Clear Search'),
@@ -1143,7 +1144,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
 }
 
 Widget _photo(String? url, {double size = 120}) => url == null
-    ? SizedBox(width: size, height: size, child: const Icon(Icons.business))
+    ? SizedBox(width: size, height: size, child: const Icon(LegacyRemixIcons.business))
     : Image.network(
         url,
         width: size,
@@ -1152,7 +1153,7 @@ Widget _photo(String? url, {double size = 120}) => url == null
         errorBuilder: (_, _, _) => SizedBox(
           width: size,
           height: size,
-          child: const Icon(Icons.broken_image_outlined),
+          child: const Icon(LegacyRemixIcons.broken_image_outlined),
         ),
       );
 
@@ -1492,7 +1493,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
           IconButton(
             tooltip: 'Copy $label',
             onPressed: () => _copyValue(label, value),
-            icon: const Icon(Icons.copy_outlined, size: 18),
+            icon: const Icon(LegacyRemixIcons.copy_outlined, size: 18),
           ),
       ],
     ),
@@ -1579,7 +1580,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
         ),
       _detailCard(
         'Business overview',
-        Icons.business_outlined,
+        LegacyRemixIcons.business_outlined,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1640,7 +1641,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   child: _stat(
                     'Rating',
                     _value('rating'),
-                    Icons.star_outline_rounded,
+                    LegacyRemixIcons.star_outline_rounded,
                   ),
                 ),
                 SizedBox(
@@ -1648,7 +1649,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   child: _stat(
                     'Reviews',
                     _value('reviewCount'),
-                    Icons.reviews_outlined,
+                    LegacyRemixIcons.reviews_outlined,
                   ),
                 ),
                 SizedBox(
@@ -1656,7 +1657,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   child: _stat(
                     'Business status',
                     _value('businessStatus'),
-                    Icons.storefront_outlined,
+                    LegacyRemixIcons.storefront_outlined,
                   ),
                 ),
               ],
@@ -1666,7 +1667,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       ),
       _detailCard(
         'Address',
-        Icons.location_on_outlined,
+        LegacyRemixIcons.location_on_outlined,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1674,7 +1675,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
             if (maps.isNotEmpty)
               TextButton.icon(
                 onPressed: () => _openLink(maps),
-                icon: const Icon(Icons.map_outlined),
+                icon: const Icon(LegacyRemixIcons.map_outlined),
                 label: const Text('Open in Maps'),
               ),
           ],
@@ -1683,14 +1684,14 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       if (phone.isNotEmpty)
         _detailCard(
           'Phone',
-          Icons.phone_outlined,
+          LegacyRemixIcons.phone_outlined,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _detailValue('Phone number', phone, copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(phone, phone: true),
-                icon: const Icon(Icons.call_outlined),
+                icon: const Icon(LegacyRemixIcons.call_outlined),
                 label: const Text('Call business'),
               ),
             ],
@@ -1699,14 +1700,14 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       if (website.isNotEmpty)
         _detailCard(
           'Website',
-          Icons.language_outlined,
+          LegacyRemixIcons.language_outlined,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _detailValue('Website URL', website, copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(website),
-                icon: const Icon(Icons.open_in_new),
+                icon: const Icon(LegacyRemixIcons.open_in_new),
                 label: const Text('Visit Website'),
               ),
             ],
@@ -1715,14 +1716,14 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       if (_value('email').isNotEmpty)
         _detailCard(
           'Email',
-          Icons.mail_outline,
+          LegacyRemixIcons.mail_outline,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _detailValue('Email address', _value('email'), copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(_value('email'), email: true),
-                icon: const Icon(Icons.mail_outlined),
+                icon: const Icon(LegacyRemixIcons.mail_outlined),
                 label: const Text('Send Email'),
               ),
             ],
@@ -1737,7 +1738,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
         ),
       _detailCard(
         'Google Places information',
-        Icons.travel_explore_outlined,
+        LegacyRemixIcons.travel_explore_outlined,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1770,7 +1771,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
               _detailValue('Google Maps URL', maps, copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(maps),
-                icon: const Icon(Icons.open_in_new),
+                icon: const Icon(LegacyRemixIcons.open_in_new),
                 label: const Text('Open Google Maps'),
               ),
             ],
@@ -1796,7 +1797,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            leading: const Icon(Icons.info_outline, color: AppColors.primary),
+            leading: const Icon(LegacyRemixIcons.info_outline, color: AppColors.primary),
             childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
             children: [
               ...record.fields.entries
@@ -1902,8 +1903,8 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                             )
                           : Icon(
                               _isImported
-                                  ? Icons.check_circle_outline
-                                  : Icons.person_add_alt_1,
+                                  ? LegacyRemixIcons.check_circle_outline
+                                  : LegacyRemixIcons.person_add_alt_1,
                             ),
                       label: Text(
                         _importing
@@ -1916,19 +1917,19 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   if (phone.isNotEmpty)
                     OutlinedButton.icon(
                       onPressed: () => _openLink(phone, phone: true),
-                      icon: const Icon(Icons.call_outlined, size: 18),
+                      icon: const Icon(LegacyRemixIcons.call_outlined, size: 18),
                       label: const Text('Call'),
                     ),
                   if (website.isNotEmpty)
                     OutlinedButton.icon(
                       onPressed: () => _openLink(website),
-                      icon: const Icon(Icons.language, size: 18),
+                      icon: const Icon(LegacyRemixIcons.language, size: 18),
                       label: const Text('Website'),
                     ),
                   if (maps.isNotEmpty)
                     OutlinedButton.icon(
                       onPressed: () => _openLink(maps),
-                      icon: const Icon(Icons.map_outlined, size: 18),
+                      icon: const Icon(LegacyRemixIcons.map_outlined, size: 18),
                       label: const Text('Maps'),
                     ),
                   Builder(
@@ -1955,7 +1956,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                           AppSnackBar.showError(context, 'Unable to share this record.');
                         }
                       },
-                      icon: const Icon(Icons.share_outlined, size: 18),
+                      icon: const Icon(LegacyRemixIcons.share_outlined, size: 18),
                       label: const Text('Share'),
                     ),
                   ),

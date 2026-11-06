@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -53,7 +54,7 @@ class DailyTaskCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Icon(
-                        Icons.check,
+                        LegacyRemixIcons.check,
                         size: 12,
                         color: Color(0xFF16A34A),
                       ),

@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -136,7 +137,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                   ),
                 ),
               ),
-              icon: const Icon(Icons.list_alt, color: AppColors.primary),
+              icon: const Icon(LegacyRemixIcons.list_alt, color: AppColors.primary),
               label: const Text('View captured businesses'),
             ),
           ],
@@ -168,7 +169,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                     controller: _search,
                     decoration: InputDecoration(
                       hintText: 'Search query or location',
-                      prefixIcon: const Icon(Icons.search),
+                      prefixIcon: const Icon(LegacyRemixIcons.search),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(14),
                       ),
@@ -187,7 +188,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                     children: [
                       OutlinedButton.icon(
                         onPressed: _chooseDates,
-                        icon: const Icon(Icons.date_range),
+                        icon: const Icon(LegacyRemixIcons.date_range),
                         label: Text(
                           _dates == null
                               ? 'Filter dates'
@@ -226,7 +227,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                         child: Column(
                           children: [
                             const SizedBox(height: 12),
-                            Icon(Icons.error_outline_rounded, size: 44, color: Colors.red.shade400),
+                            Icon(LegacyRemixIcons.error_outline_rounded, size: 44, color: Colors.red.shade400),
                             const SizedBox(height: 12),
                             Text(
                               _error!,
@@ -242,7 +243,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
-                              icon: const Icon(Icons.refresh, size: 18),
+                              icon: const Icon(LegacyRemixIcons.refresh, size: 18),
                               label: const Text('Retry'),
                             ),
                           ],
@@ -255,7 +256,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              Icons.history_toggle_off_rounded,
+                              LegacyRemixIcons.history_toggle_off_rounded,
                               size: 52,
                               color: Colors.grey.shade400,
                             ),

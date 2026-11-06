@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -403,7 +404,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                       ),
                     ),
                     const Icon(
-                      Icons.arrow_forward_ios_rounded,
+                      LegacyRemixIcons.arrow_forward_ios_rounded,
                       size: 14,
                       color: Color(0xFFCBD5E1),
                     ),

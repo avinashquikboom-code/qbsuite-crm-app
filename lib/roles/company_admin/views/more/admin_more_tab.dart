@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import "package:quickboom_app/core/models/permission_model.dart";
 import "package:quickboom_app/core/services/permission_manager.dart";
 import 'package:flutter/material.dart';
@@ -448,7 +449,7 @@ class AdminMoreTab extends ConsumerWidget {
                 ),
               ),
               const Icon(
-                Icons.arrow_forward_ios_rounded,
+                LegacyRemixIcons.arrow_forward_ios_rounded,
                 size: 14,
                 color: Color(0xFFCBD5E1),
               ),

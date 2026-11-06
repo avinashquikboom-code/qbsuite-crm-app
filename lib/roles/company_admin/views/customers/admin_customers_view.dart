@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/core/models/user_role.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
@@ -128,9 +129,9 @@ class _AdminCustomersViewState extends ConsumerState<AdminCustomersView>
           IconButton(
             tooltip: 'Delete selected (${_selected.length})',
             onPressed: _deleting ? null : () => _delete(_selected.toList()),
-            icon: const Icon(Icons.delete_outline),
+            icon: const Icon(LegacyRemixIcons.delete_outline),
           ),
-        IconButton(onPressed: _load, icon: const Icon(Icons.refresh)),
+        IconButton(onPressed: _load, icon: const Icon(LegacyRemixIcons.refresh)),
       ],
     ),
     body: RefreshIndicator(
@@ -211,14 +212,14 @@ class _AdminCustomersViewState extends ConsumerState<AdminCustomersView>
                             ? null
                             : () => _delete([customer['id'] as int]),
                         icon: const Icon(
-                          Icons.delete_outline,
+                          LegacyRemixIcons.delete_outline,
                           color: Colors.red,
                         ),
                       ),
                     if (ref
                         .watch(permissionManagerProvider)
                         .canCreate(AppModule.payments))
-                      const Icon(Icons.chevron_right),
+                      const Icon(LegacyRemixIcons.chevron_right),
                   ],
                 ),
                 onTap:

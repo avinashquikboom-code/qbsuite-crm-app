@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -194,7 +195,7 @@ class _CustomerSocialPublishDialogState
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.close, size: 20),
+                  icon: const Icon(LegacyRemixIcons.close, size: 20),
                   onPressed: () => Navigator.pop(context),
                 ),
               ],

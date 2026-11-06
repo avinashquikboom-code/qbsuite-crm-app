@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'data_capture_history_screen.dart';
 import '../../services/data_capture_records_service.dart';
 import 'data_capture_records_screen.dart';
@@ -65,7 +66,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
         actions: [
           IconButton(
             tooltip: 'Saved records',
-            icon: const Icon(Icons.list_alt),
+            icon: const Icon(LegacyRemixIcons.list_alt),
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
@@ -75,7 +76,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
           ),
           IconButton(
             icon: const Icon(
-              Icons.refresh_rounded,
+              LegacyRemixIcons.refresh_rounded,
               color: AppColors.textSecondary,
             ),
             onPressed: _loadData,
@@ -144,7 +145,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                           ),
                         ),
                         const Icon(
-                          Icons.travel_explore_rounded,
+                          LegacyRemixIcons.travel_explore_rounded,
                           color: AppColors.primaryLight,
                           size: 26,
                         ),
@@ -184,7 +185,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                             _loadData();
                           }
                         },
-                        icon: const Icon(Icons.search_rounded, size: 20),
+                        icon: const Icon(LegacyRemixIcons.search_rounded, size: 20),
                         label: Text(
                           'Start New Capture',
                           style: AppTypography.inter(
@@ -215,7 +216,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                     builder: (_) => const DataCaptureRecordsScreen(),
                   ),
                 ),
-                icon: const Icon(Icons.list_alt),
+                icon: const Icon(LegacyRemixIcons.list_alt),
                 label: const Text('View saved Data Capture records'),
               ),
               const SizedBox(height: 12),
@@ -229,7 +230,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                     vertical: 8,
                   ),
                   leading: const Icon(
-                    Icons.history_rounded,
+                    LegacyRemixIcons.history_rounded,
                     color: AppColors.primary,
                   ),
                   title: Text(
@@ -240,7 +241,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                     'View your previous business searches and captures',
                   ),
                   trailing: const Icon(
-                    Icons.chevron_right,
+                    LegacyRemixIcons.chevron_right,
                     color: AppColors.primary,
                   ),
                   onTap: () => Navigator.push(
@@ -316,7 +317,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                 key: const ValueKey('metric_tile_total_captured'),
                 title: 'Total Captured',
                 value: '${_usage.totalLeadsCaptured}',
-                icon: Icons.groups_rounded,
+                icon: LegacyRemixIcons.groups_rounded,
                 color: AppColors.primary,
                 horizontalPadding: horizontalPadding,
                 verticalPadding: verticalPadding,
@@ -330,7 +331,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                 key: const ValueKey('metric_tile_extractions'),
                 title: 'Extractions',
                 value: '${_usage.totalExtractions}',
-                icon: Icons.history_edu_rounded,
+                icon: LegacyRemixIcons.history_edu_rounded,
                 color: AppColors.secondary,
                 horizontalPadding: horizontalPadding,
                 verticalPadding: verticalPadding,
@@ -344,7 +345,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                 key: const ValueKey('metric_tile_searches'),
                 title: 'Searches',
                 value: '${_usage.searches}',
-                icon: Icons.search_rounded,
+                icon: LegacyRemixIcons.search_rounded,
                 color: AppColors.primary,
                 horizontalPadding: horizontalPadding,
                 verticalPadding: verticalPadding,

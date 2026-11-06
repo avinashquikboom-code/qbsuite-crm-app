@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -654,7 +655,7 @@ class _CustomerInfluencersListViewState
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
-                      isFav ? Icons.favorite : Icons.favorite_border,
+                      isFav ? LegacyRemixIcons.favorite : LegacyRemixIcons.favorite_border,
                       color: isFav ? const Color(0xFFEF4444) : Colors.white,
                       size: 15,
                     ),
@@ -688,7 +689,7 @@ class _CustomerInfluencersListViewState
                     if (creator.isVerified) ...[
                       const SizedBox(width: 3),
                       const Icon(
-                        Icons.verified,
+                        LegacyRemixIcons.verified,
                         color: Color(0xFF3B82F6),
                         size: 14,
                       ),

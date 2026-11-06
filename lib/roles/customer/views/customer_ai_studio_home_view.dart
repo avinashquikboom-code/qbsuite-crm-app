@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -338,7 +339,7 @@ class _CustomerAiStudioHomeViewState
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(
-                      Icons.auto_awesome,
+                      LegacyRemixIcons.auto_awesome,
                       size: 13,
                       color: Color(0xFFA5B4FC),
                     ),
@@ -399,7 +400,7 @@ class _CustomerAiStudioHomeViewState
                   onPressed: () =>
                       _openCreationForm('POST', 'AI Social Post', 1),
                   icon: const Icon(
-                    Icons.auto_awesome,
+                    LegacyRemixIcons.auto_awesome,
                     size: 15,
                     color: Colors.white,
                   ),
@@ -775,7 +776,7 @@ class _CustomerAiStudioHomeViewState
               ),
               const SizedBox(width: 2),
               const Icon(
-                Icons.chevron_right,
+                LegacyRemixIcons.chevron_right,
                 size: 16,
                 color: AppColors.primary,
               ),
@@ -803,7 +804,7 @@ class _CustomerAiStudioHomeViewState
             child: Column(
               children: [
                 const Icon(
-                  Icons.auto_awesome,
+                  LegacyRemixIcons.auto_awesome,
                   size: 32,
                   color: Color(0xFFCBD5E1),
                 ),
@@ -1182,7 +1183,7 @@ class _CustomerAiStudioHomeViewState
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(
-                          Icons.check_circle,
+                          LegacyRemixIcons.check_circle,
                           size: 13,
                           color: Color(0xFF10B981),
                         ),
@@ -1208,7 +1209,7 @@ class _CustomerAiStudioHomeViewState
                               color: Color(0xFFE2E8F0),
                             ),
                             child: const Icon(
-                              Icons.close,
+                              LegacyRemixIcons.close,
                               size: 10,
                               color: Color(0xFF64748B),
                             ),
@@ -1275,7 +1276,7 @@ class _CustomerAiStudioHomeViewState
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(
-                  Icons.auto_awesome,
+                  LegacyRemixIcons.auto_awesome,
                   size: 36,
                   color: Color(0xFFCBD5E1),
                 ),
