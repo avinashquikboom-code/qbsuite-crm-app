@@ -5,12 +5,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../core/models/user_role.dart';
 import '../core/theme/app_theme.dart';
 import '../core/providers/auth_provider.dart';
+import '../core/constants/app_config.dart';
 import '../core/services/notification_service.dart';
 import '../core/utils/app_toast.dart';
 import '../shared/services/onboarding_service.dart';
 import '../shared/views/splash_view.dart';
 import '../shared/views/onboarding_view.dart';
 import '../shared/views/auth/login_view.dart';
+import '../shared/views/demo/demo_workspace_views.dart';
 import '../roles/employee/views/dashboard_view.dart';
 import '../roles/company_admin/views/company_admin_main_view.dart';
 import '../roles/customer/views/customer_dashboard_view.dart';
@@ -23,6 +25,17 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    if (AppConfig.uiOnlyMode) {
+      return MaterialApp(
+        title: AppConfig.appName,
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.light,
+        home: const DemoHomeView(),
+      );
+    }
+
     AppToast.navigatorKey = NotificationService.instance.navigatorKey;
 
     // Listen for authentication transitions to register/unregister FCM token safely

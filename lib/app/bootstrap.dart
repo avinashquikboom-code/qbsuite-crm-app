@@ -13,6 +13,7 @@ import '../core/network/app_url.dart';
 import '../firebase_options.dart';
 import 'app.dart';
 import '../core/config/environment.dart';
+import '../core/constants/app_config.dart';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) =>
@@ -48,46 +49,56 @@ Future<void> bootstrap() async {
     imagePickerImplementation.useAndroidPhotoPicker = true;
   }
 
-  // Safely initialize Firebase with timeout and fallback
-  try {
-    if (Firebase.apps.isEmpty) {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      ).timeout(
-        const Duration(seconds: 3),
-        onTimeout: () {
-          debugPrint('🚨🔥 [FCM] Firebase.initializeApp timed out after 3s');
-          return Firebase.apps.isNotEmpty ? Firebase.app() : null as dynamic;
-        },
-      );
-    }
-    debugPrint('🔥 [FCM] Firebase Initialized');
-  } catch (e, st) {
-    debugPrint('🚨🔥 [FCM] Firebase Initialization FAILED: $e');
-    debugPrintStack(stackTrace: st);
-  }
-
-  // Register background handler once Firebase is ready
-  if (Firebase.apps.isNotEmpty &&
-      !NotificationService.isBackgroundHandlerRegistered) {
+  if (!AppConfig.uiOnlyMode) {
+    // Safely initialize Firebase with timeout and fallback.
     try {
-      FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-      NotificationService.isBackgroundHandlerRegistered = true;
-      debugPrint('[FCM] Background handler registered');
-    } catch (e) {
-      debugPrint('[FCM] Background handler registration warning: $e');
+      if (Firebase.apps.isEmpty) {
+        await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        ).timeout(
+          const Duration(seconds: 3),
+          onTimeout: () {
+            debugPrint('🚨🔥 [FCM] Firebase.initializeApp timed out after 3s');
+            return Firebase.apps.isNotEmpty ? Firebase.app() : null as dynamic;
+          },
+        );
+      }
+      debugPrint('🔥 [FCM] Firebase Initialized');
+    } catch (e, st) {
+      debugPrint('🚨🔥 [FCM] Firebase Initialization FAILED: $e');
+      debugPrintStack(stackTrace: st);
     }
-  }
 
-  // Launch notification service non-blockingly so main() never hangs
-  try {
-    unawaited(
-      NotificationService.instance.initialize().catchError((e) {
-        debugPrint('[STARTUP_ERROR] NotificationService.initialize error: $e');
-      }),
+    // Register the background handler once Firebase is ready.
+    if (Firebase.apps.isNotEmpty &&
+        !NotificationService.isBackgroundHandlerRegistered) {
+      try {
+        FirebaseMessaging.onBackgroundMessage(
+          firebaseMessagingBackgroundHandler,
+        );
+        NotificationService.isBackgroundHandlerRegistered = true;
+        debugPrint('[FCM] Background handler registered');
+      } catch (e) {
+        debugPrint('[FCM] Background handler registration warning: $e');
+      }
+    }
+
+    // Launch notification service non-blockingly so main() never hangs.
+    try {
+      unawaited(
+        NotificationService.instance.initialize().catchError((e) {
+          debugPrint(
+            '[STARTUP_ERROR] NotificationService.initialize error: $e',
+          );
+        }),
+      );
+    } catch (e) {
+      debugPrint('[STARTUP_ERROR] NotificationService launch error: $e');
+    }
+  } else {
+    debugPrint(
+      '[STARTUP] UI-only mode: Firebase, notifications and API integrations disabled',
     );
-  } catch (e) {
-    debugPrint('[STARTUP_ERROR] NotificationService launch error: $e');
   }
   debugPrint('[STARTUP] Flutter binding initialized');
 
