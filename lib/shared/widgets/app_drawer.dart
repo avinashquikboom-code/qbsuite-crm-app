@@ -191,13 +191,48 @@ class AppDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final currentSelection = ref.watch(sidebarSelectionProvider);
     final rbacPerms = ref.watch(permissionManagerProvider);
+    final authState = ref.watch(loginStateProvider);
+    final attendanceState = ref.watch(employeeAttendanceProvider);
+    final profile = ref.watch(employeeProfileProvider).asData?.value;
+    final empInfo = attendanceState.status.employee;
+
+    // Resolve if the current user is a Visitor employee
+    final desigName =
+        (profile?.designation ??
+                empInfo?.designation ??
+                authState.designation ??
+                '')
+            .trim()
+            .toUpperCase();
+    final roleName = (rbacPerms.role ?? authState.userRole ?? '')
+        .trim()
+        .toUpperCase();
+    final empCode =
+        (profile?.employeeCode ??
+                empInfo?.employeeCode ??
+                authState.employeeCode ??
+                '')
+            .trim()
+            .toUpperCase();
+    final deptName =
+        (profile?.department ?? empInfo?.department ?? '').trim().toUpperCase();
+
+    final isVisitor =
+        desigName.contains('VISITOR') ||
+        desigName == 'VISIT' ||
+        desigName.contains('FIELD VISIT') ||
+        roleName.contains('VISITOR') ||
+        roleName == 'VISIT' ||
+        deptName.contains('VISIT') ||
+        empCode.contains('EMP-012');
 
     // Use the same effective module permissions as named-route guards.
-    // Role/department labels must not hide an explicitly authorized module.
-    final hasLeadsAccess = rbacPerms.isCrmEligible && rbacPerms.canViewLeads;
+    // For Visitor employees, CRM modules (Data Capture, Leads, Customers) and Packages are removed.
+    final hasLeadsAccess =
+        !isVisitor && rbacPerms.isCrmEligible && rbacPerms.canViewLeads;
     final hasCustomersAccess =
-        rbacPerms.isCrmEligible && rbacPerms.canViewCustomers;
-    final hasPackagesAccess = rbacPerms.canViewPackages;
+        !isVisitor && rbacPerms.isCrmEligible && rbacPerms.canViewCustomers;
+    final hasPackagesAccess = !isVisitor && rbacPerms.canViewPackages;
     final hasAttendanceAccess = rbacPerms.canViewAttendance;
     final hasLeaveAccess = rbacPerms.canViewLeave;
     final hasExpensesAccess = rbacPerms.canViewExpenses;
@@ -206,13 +241,13 @@ class AppDrawer extends ConsumerWidget {
     final hasTasksAccess = rbacPerms.canViewTasks;
     final hasSalaryAccess = rbacPerms.canViewSalary;
     final hasCommissionAccess = rbacPerms.canViewCommission;
-    final hasVisitsAccess = rbacPerms.canViewVisits;
+    final hasVisitsAccess = isVisitor || rbacPerms.canViewVisits;
     final hasSettingsAccess = rbacPerms.canView(AppModule.settings);
     final hasDataCaptureAccess =
-        rbacPerms.isCrmEligible && rbacPerms.canViewDataCapture;
+        !isVisitor && rbacPerms.isCrmEligible && rbacPerms.canViewDataCapture;
     final hasDashboardAccess = rbacPerms.canViewDashboard;
     final hasCrmAccess =
-        (hasDataCaptureAccess || hasLeadsAccess || hasCustomersAccess);
+        !isVisitor && (hasDataCaptureAccess || hasLeadsAccess || hasCustomersAccess);
     final hasAnyHrm =
         hasAttendanceAccess ||
         hasLeaveAccess ||
@@ -224,7 +259,7 @@ class AppDrawer extends ConsumerWidget {
         hasVisitsAccess ||
         hasCommissionAccess;
     // Only count modules that actually have a rendered menu entry.
-    final hasWorkflowItems = hasPackagesAccess;
+    final hasWorkflowItems = !isVisitor && hasPackagesAccess;
 
     final screenWidth = MediaQuery.of(context).size.width;
     final drawerWidth = (screenWidth * 0.84).clamp(270.0, 350.0);
