@@ -62,28 +62,15 @@ class _SplashViewState extends ConsumerState<SplashView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(28),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.1),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(28),
-                      child: Image.asset(
-                        'assets/images/app_logo.png',
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  )
+              SizedBox(
+                width: 260,
+                height: 148,
+                child: Image.asset(
+                  'assets/images/app_logo_brand.png',
+                  fit: BoxFit.contain,
+                  semanticLabel: 'QB Suite logo',
+                ),
+              )
                   .animate()
                   .scale(duration: 800.ms, curve: Curves.easeOutBack)
                   .shimmer(delay: 1000.ms, duration: 1500.ms),

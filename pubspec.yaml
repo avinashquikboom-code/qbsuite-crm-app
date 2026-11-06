@@ -100,6 +100,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/app_logo_brand.png
     - assets/images/logo.png
     - assets/images/app_logo.png
 

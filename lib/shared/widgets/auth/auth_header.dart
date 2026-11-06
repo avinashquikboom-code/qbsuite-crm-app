@@ -18,10 +18,12 @@ class AuthHeader extends StatelessWidget {
       children: [
         // App Logo
         SizedBox(
-          width: 100,
+          width: 220,
+          height: 126,
           child: Image.asset(
-            'assets/images/logo.png',
+            'assets/images/app_logo_brand.png',
             fit: BoxFit.contain,
+            semanticLabel: 'QB Suite logo',
             errorBuilder: (context, error, stackTrace) => Center(
               child: Container(
                 width: 48,
