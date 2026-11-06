@@ -230,14 +230,19 @@ void main() {
 
       expect(find.text('Recent Payslips'), findsOneWidget);
       expect(find.text('Unable to load payslips'), findsOneWidget);
-      final payslipErrorRow = find.ancestor(
-        of: find.text('Unable to load payslips'),
-        matching: find.byType(Row),
-      ).first;
-      expect(find.descendant(
-        of: payslipErrorRow,
-        matching: find.widgetWithText(TextButton, 'Retry'),
-      ), findsOneWidget);
+      final payslipErrorRow = find
+          .ancestor(
+            of: find.text('Unable to load payslips'),
+            matching: find.byType(Row),
+          )
+          .first;
+      expect(
+        find.descendant(
+          of: payslipErrorRow,
+          matching: find.widgetWithText(TextButton, 'Retry'),
+        ),
+        findsOneWidget,
+      );
       expect(find.text('July 2026'), findsNothing);
     });
   });
