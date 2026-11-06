@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quickboom_app/core/theme/app_theme.dart';
@@ -6,7 +7,7 @@ import 'package:quickboom_app/shared/widgets/common_app_bar.dart';
 
 void main() {
   group('Platform-Independent AppBar Back Icon Tests', () {
-    testWidgets('BackButton adapts to Android platform', (tester) async {
+    testWidgets('BackButton uses Remix on Android', (tester) async {
       await tester.pumpWidget(
         MaterialApp(
           theme: AppTheme.lightTheme.copyWith(platform: TargetPlatform.android),
@@ -16,12 +17,12 @@ void main() {
 
       expect(find.byType(BackButton), findsOneWidget);
       expect(find.byType(BackButtonIcon), findsOneWidget);
-      expect(find.byIcon(Icons.arrow_back), findsOneWidget);
+      expect(find.byIcon(RemixIcons.mapping[AppIcon.back]!), findsOneWidget);
       expect(find.byIcon(Icons.arrow_back_ios), findsNothing);
       expect(find.byIcon(Icons.arrow_back_ios_new), findsNothing);
     });
 
-    testWidgets('BackButton adapts to iOS platform', (tester) async {
+    testWidgets('BackButton uses Remix on iOS', (tester) async {
       await tester.pumpWidget(
         MaterialApp(
           theme: AppTheme.lightTheme.copyWith(platform: TargetPlatform.iOS),
@@ -32,8 +33,11 @@ void main() {
       expect(find.byType(BackButton), findsOneWidget);
       expect(find.byType(BackButtonIcon), findsOneWidget);
       final iconWidgets = tester.widgetList<Icon>(find.byType(Icon));
-      expect(iconWidgets.any((i) => i.icon?.codePoint == 0xf570), isTrue);
-      expect(find.byIcon(Icons.arrow_back), findsNothing);
+      expect(
+        iconWidgets.any((i) => i.icon == RemixIcons.mapping[AppIcon.back]),
+        isTrue,
+      );
+      expect(find.byIcon(RemixIcons.mapping[AppIcon.back]!), findsOneWidget);
     });
 
     testWidgets(
@@ -77,7 +81,7 @@ void main() {
         // Detail screen should have BackButton
         expect(find.text('Detail Screen'), findsOneWidget);
         expect(find.byType(BackButton), findsOneWidget);
-        expect(find.byIcon(Icons.arrow_back), findsOneWidget);
+        expect(find.byIcon(RemixIcons.mapping[AppIcon.back]!), findsOneWidget);
 
         // Tap back button
         await tester.tap(find.byType(BackButton));

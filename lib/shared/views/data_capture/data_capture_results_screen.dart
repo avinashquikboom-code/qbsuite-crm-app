@@ -176,10 +176,10 @@ class _DataCaptureResultsScreenState
                 ),
                 child: Icon(
                   allDuplicates
-                      ? LegacyRemixIcons.copy_rounded
+                      ? LegacyRemixIcons.copyRounded
                       : isPartial
-                      ? LegacyRemixIcons.info_outline_rounded
-                      : LegacyRemixIcons.check_circle_rounded,
+                      ? LegacyRemixIcons.infoOutlineRounded
+                      : LegacyRemixIcons.checkCircleRounded,
                   color: allDuplicates
                       ? AppColors.warning
                       : isPartial
@@ -341,7 +341,7 @@ class _DataCaptureResultsScreenState
                       Row(
                         children: [
                           const Icon(
-                            LegacyRemixIcons.search_rounded,
+                            LegacyRemixIcons.searchRounded,
                             size: 16,
                             color: AppColors.primary,
                           ),
@@ -514,7 +514,10 @@ class _DataCaptureResultsScreenState
                           color: Colors.white,
                         ),
                       )
-                    : const Icon(LegacyRemixIcons.person_add_alt_1_rounded, size: 20),
+                    : const Icon(
+                        LegacyRemixIcons.personAddAlt1Rounded,
+                        size: 20,
+                      ),
                 label: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(

@@ -148,7 +148,9 @@ class CustomerHomeView extends ConsumerWidget {
       ),
       body: RefreshIndicator(
         onRefresh: () async {
-          await ref.read(loginStateProvider.notifier).refreshCustomerPermissions();
+          await ref
+              .read(loginStateProvider.notifier)
+              .refreshCustomerPermissions();
           ref.invalidate(currentCustomerIdProvider);
           ref.invalidate(customerHomeBannersProvider);
           ref.invalidate(customerMarketplaceToolsProvider);
@@ -190,7 +192,6 @@ class CustomerHomeView extends ConsumerWidget {
               ),
 
               const SizedBox(height: 16),
-
 
               // 4. Customer Calendar Section (with Date Strip, Activity Filters, and Filtered Activity Cards)
               if (perms.customerCan('CUSTOMER_CALENDAR', 'VIEW'))

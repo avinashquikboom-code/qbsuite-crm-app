@@ -220,7 +220,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(
-                      LegacyRemixIcons.auto_awesome,
+                      LegacyRemixIcons.autoAwesome,
                       color: Color(0xFFFBBF24), // Gold sparkle
                       size: 14,
                     ),
@@ -267,7 +267,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                               top: 2,
                               left: 60,
                               child: Icon(
-                                LegacyRemixIcons.auto_awesome,
+                                LegacyRemixIcons.autoAwesome,
                                 size: 16,
                                 color: meta.glowColor,
                               ),
@@ -339,7 +339,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                             shape: BoxShape.circle,
                           ),
                           child: const Icon(
-                            LegacyRemixIcons.bolt_rounded,
+                            LegacyRemixIcons.boltRounded,
                             size: 13,
                             color: Colors.white,
                           ),

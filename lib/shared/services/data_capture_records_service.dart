@@ -35,9 +35,11 @@ class DataCaptureRecordsService {
     }
     final result = Map<String, dynamic>.from(response.data as Map);
     if (result['success'] == false) {
-      throw StateError(result['message'] is List
-          ? (result['message'] as List).join('\n')
-          : result['message']?.toString() ?? 'Data Capture request failed');
+      throw StateError(
+        result['message'] is List
+            ? (result['message'] as List).join('\n')
+            : result['message']?.toString() ?? 'Data Capture request failed',
+      );
     }
     if (kDebugMode) {
       debugPrint(
@@ -89,8 +91,10 @@ class DataCaptureRecordsService {
       'placeIds': selectedIds.map((id) => id.toString()).toList(),
     };
     if (kDebugMode) {
-      debugPrint('[DATA_CAPTURE_IMPORT_REQUEST] '
-          'endpoint=${AppUrl.dataCapture}/import-to-leads payload=$payload');
+      debugPrint(
+        '[DATA_CAPTURE_IMPORT_REQUEST] '
+        'endpoint=${AppUrl.dataCapture}/import-to-leads payload=$payload',
+      );
     }
     var result = await _request(
       'POST',
@@ -100,29 +104,40 @@ class DataCaptureRecordsService {
     while (result['data'] is Map) {
       result = Map<String, dynamic>.from(result['data'] as Map);
       if (result['success'] == false) {
-        throw StateError(result['message'] is List
-            ? (result['message'] as List).join('\n')
-            : result['message']?.toString() ?? 'Import failed');
+        throw StateError(
+          result['message'] is List
+              ? (result['message'] as List).join('\n')
+              : result['message']?.toString() ?? 'Import failed',
+        );
       }
     }
     if (kDebugMode) {
-      debugPrint('[DATA_CAPTURE_IMPORT_CONTRACT] '
-          'importedType=${result['imported'].runtimeType} '
-          'importedCountType=${result['importedCount'].runtimeType} '
-          'alreadyImportedType=${result['alreadyImported'].runtimeType} '
-          'recordsType=${result['records'].runtimeType}');
+      debugPrint(
+        '[DATA_CAPTURE_IMPORT_CONTRACT] '
+        'importedType=${result['imported'].runtimeType} '
+        'importedCountType=${result['importedCount'].runtimeType} '
+        'alreadyImportedType=${result['alreadyImported'].runtimeType} '
+        'recordsType=${result['records'].runtimeType}',
+      );
     }
     // Older deployed responses omit per-record outcomes. Verify persisted links
     // with read-only requests rather than retrying the POST or assuming success.
-    if (!result.containsKey('imported') || !result.containsKey('importedCount')) {
+    if (!result.containsKey('imported') ||
+        !result.containsKey('importedCount')) {
       final imported = <Map<String, dynamic>>[];
       final failed = <Map<String, dynamic>>[];
       for (final id in selectedIds) {
         final capture = await detail(id);
-        final leadId = int.tryParse(capture.fields['importedLeadId'].toString());
+        final leadId = int.tryParse(
+          capture.fields['importedLeadId'].toString(),
+        );
         if (leadId == null || leadId < 1) {
-          failed.add({'captureId': id, 'reason':
-              result['message']?.toString() ?? 'No persisted Lead link was returned for this record.'});
+          failed.add({
+            'captureId': id,
+            'reason':
+                result['message']?.toString() ??
+                'No persisted Lead link was returned for this record.',
+          });
           continue;
         }
         final lead = await LeadService(_client).getLeadById(leadId.toString());
@@ -132,10 +147,14 @@ class DataCaptureRecordsService {
         imported.add({'captureId': id, 'leadId': leadId});
       }
       result = {
-        'imported': imported, 'importedCount': imported.length,
-        'alreadyImported': <Map<String, dynamic>>[], 'alreadyImportedCount': 0,
-        'skipped': <Map<String, dynamic>>[], 'skippedCount': 0,
-        'failed': failed, 'failedCount': failed.length,
+        'imported': imported,
+        'importedCount': imported.length,
+        'alreadyImported': <Map<String, dynamic>>[],
+        'alreadyImportedCount': 0,
+        'skipped': <Map<String, dynamic>>[],
+        'skippedCount': 0,
+        'failed': failed,
+        'failedCount': failed.length,
       };
     }
     final returnedIds = <int>{};

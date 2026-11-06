@@ -69,9 +69,7 @@ class MyAttendanceStatus {
             )
           : null,
       overtime: root['overtime'] != null
-          ? OvertimeInfo.fromJson(
-              Map<String, dynamic>.from(root['overtime']),
-            )
+          ? OvertimeInfo.fromJson(Map<String, dynamic>.from(root['overtime']))
           : null,
       isRemoteWorkActive:
           root['isRemoteWorkActive'] == true ||
@@ -563,10 +561,7 @@ class OvertimeInfo {
   final bool isEligible;
   final OvertimeRequestItem? activeRequest;
 
-  OvertimeInfo({
-    required this.isEligible,
-    this.activeRequest,
-  });
+  OvertimeInfo({required this.isEligible, this.activeRequest});
 
   factory OvertimeInfo.fromJson(Map<String, dynamic> json) {
     return OvertimeInfo(
@@ -582,7 +577,8 @@ class OvertimeInfo {
 
 class OvertimeRequestItem {
   final int id;
-  final String status; // PENDING, APPROVED, REJECTED, IN_PROGRESS, COMPLETED, CANCELLED
+  final String
+  status; // PENDING, APPROVED, REJECTED, IN_PROGRESS, COMPLETED, CANCELLED
   final String otType; // PRE_SHIFT, POST_SHIFT
   final String otDate;
   final String plannedStartTime;
@@ -627,8 +623,8 @@ class OvertimeRequestItem {
       plannedEndTime: (json['plannedEndTime'] ?? '').toString(),
       plannedDurationMinutes:
           (json['plannedDurationMinutes'] as num?)?.toInt() ?? 0,
-      approvedDurationMinutes:
-          (json['approvedDurationMinutes'] as num?)?.toInt(),
+      approvedDurationMinutes: (json['approvedDurationMinutes'] as num?)
+          ?.toInt(),
       actualStartTime: json['actualStartTime']?.toString(),
       actualEndTime: json['actualEndTime']?.toString(),
       actualDurationMinutes: (json['actualDurationMinutes'] as num?)?.toInt(),
@@ -646,4 +642,3 @@ class OvertimeRequestItem {
   bool get isCompleted => status == 'COMPLETED';
   bool get isRejected => status == 'REJECTED';
 }
-

@@ -71,7 +71,7 @@ class LeadHeader extends StatelessWidget implements PreferredSizeWidget {
         if (canEdit && onEdit != null)
           IconButton(
             icon: const Icon(
-              LegacyRemixIcons.edit_outlined,
+              LegacyRemixIcons.editOutlined,
               size: 20,
               color: AppColors.textPrimary,
             ),

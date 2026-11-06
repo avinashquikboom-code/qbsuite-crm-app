@@ -59,7 +59,7 @@ class StatCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Icon(
-                  LegacyRemixIcons.trending_up_rounded,
+                  LegacyRemixIcons.trendingUpRounded,
                   size: 14,
                   color: AppColors.success,
                 ),
@@ -139,7 +139,7 @@ class AttendanceCard extends StatelessWidget {
             right: -20,
             top: -20,
             child: Icon(
-              LegacyRemixIcons.fingerprint_rounded,
+              LegacyRemixIcons.fingerprintRounded,
               size: 150,
               color: Colors.white.withValues(alpha: 0.05),
             ),
@@ -158,7 +158,7 @@ class AttendanceCard extends StatelessWidget {
                       ),
                     ),
                     child: const Icon(
-                      LegacyRemixIcons.fingerprint_rounded,
+                      LegacyRemixIcons.fingerprintRounded,
                       color: Colors.white,
                       size: 32,
                     ),
@@ -255,14 +255,14 @@ class AttendanceCard extends StatelessWidget {
       children: [
         _ActionButton(
           label: 'Clock In',
-          icon: LegacyRemixIcons.login_rounded,
+          icon: LegacyRemixIcons.loginRounded,
           onPressed: () {},
           isPrimary: false,
           isMobile: isMobile,
         ),
         _ActionButton(
           label: 'Clock Out',
-          icon: LegacyRemixIcons.logout_rounded,
+          icon: LegacyRemixIcons.logoutRounded,
           onPressed: () {},
           isPrimary: true,
           isMobile: isMobile,

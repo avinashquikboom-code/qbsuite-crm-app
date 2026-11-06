@@ -645,7 +645,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                     ),
                     const SizedBox(width: 2),
                     const Icon(
-                      LegacyRemixIcons.chevron_right,
+                      LegacyRemixIcons.chevronRight,
                       size: 16,
                       color: AppColors.primary,
                     ),

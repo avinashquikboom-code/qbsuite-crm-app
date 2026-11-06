@@ -64,7 +64,10 @@ class _LeadsViewState extends ConsumerState<LeadsView>
 
   void _onFilterSelected(String status, int? stageId) {
     if (_selectedStatus == status) return;
-    setState(() { _selectedStatus = status; _selectedStageId = stageId; });
+    setState(() {
+      _selectedStatus = status;
+      _selectedStageId = stageId;
+    });
     ref
         .read(leadsProvider.notifier)
         .fetchLeads(
@@ -343,7 +346,8 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                 ),
               ),
               data: (leads) {
-                final displayLeads = _selectedStatus.isEmpty ||
+                final displayLeads =
+                    _selectedStatus.isEmpty ||
                         _selectedStatus.toUpperCase() == 'ALL'
                     ? leads
                     : leads.where((lead) {
@@ -354,8 +358,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                         // If a specific stage ID was selected by tapping a chip,
                         // match strictly against the authoritative stage ID.
                         if (_selectedStageId != null) {
-                          final effectiveStageId =
-                              lead.stageId ?? resolved?.id;
+                          final effectiveStageId = lead.stageId ?? resolved?.id;
                           if (effectiveStageId != null) {
                             return effectiveStageId == _selectedStageId;
                           }

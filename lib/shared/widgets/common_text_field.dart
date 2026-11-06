@@ -59,7 +59,10 @@ class CommonTextField extends StatelessWidget {
           maxLines: maxLines,
           readOnly: readOnly,
           onTap: onTap,
-          style: AppTypography.inter(fontSize: 14, color: AppColors.textPrimary),
+          style: AppTypography.inter(
+            fontSize: 14,
+            color: AppColors.textPrimary,
+          ),
           decoration: InputDecoration(
             hintText: hintText,
             hintStyle: AppTypography.inter(

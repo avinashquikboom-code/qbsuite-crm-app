@@ -371,7 +371,9 @@ class _LeadWhatsAppComposerSheetState
                     ),
                     error: (_, _) => Text(
                       'Default stage template will be automatically applied.',
-                      style: AppTypography.inter(color: AppColors.textSecondary),
+                      style: AppTypography.inter(
+                        color: AppColors.textSecondary,
+                      ),
                     ),
                   ),
                 ] else ...[

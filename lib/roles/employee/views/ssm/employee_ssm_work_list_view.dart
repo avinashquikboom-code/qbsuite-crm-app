@@ -517,7 +517,6 @@ class _EmployeeSSMWorkListViewState
     );
   }
 
-
   /// Builds Content: Skeleton (Loading) -> Error -> Empty -> Activity List
   Widget _buildActivitiesContent(
     BuildContext context,

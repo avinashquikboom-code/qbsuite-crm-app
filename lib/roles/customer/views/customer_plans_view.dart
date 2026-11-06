@@ -61,7 +61,10 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
           automaticallyImplyLeading: Navigator.canPop(context),
           leading: Navigator.canPop(context)
               ? IconButton(
-                  icon: const Icon(Remix.arrow_left_line, color: AppColors.textPrimary),
+                  icon: const Icon(
+                    Remix.arrow_left_line,
+                    color: AppColors.textPrimary,
+                  ),
                   onPressed: () => Navigator.of(context).pop(),
                 )
               : null,
@@ -78,7 +81,8 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               icon: const Icon(Remix.menu_line, color: AppColors.textPrimary),
               tooltip: 'Open Menu',
               onPressed:
-                  widget.onOpenDrawer ?? () => Scaffold.of(context).openDrawer(),
+                  widget.onOpenDrawer ??
+                  () => Scaffold.of(context).openDrawer(),
             ),
             const SizedBox(width: 4),
           ],
@@ -342,7 +346,9 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                                   plan: plan,
                                   cycle: selectedCycle,
                                   onOrderSuccess: (order) {
-                                    widget.onNavigateToTab?.call(3); // Orders tab
+                                    widget.onNavigateToTab?.call(
+                                      3,
+                                    ); // Orders tab
                                   },
                                 );
                               },

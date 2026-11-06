@@ -741,21 +741,21 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                   ),
                 ),
                 if (activity.time.trim().isNotEmpty) ...[
-                const SizedBox(width: 8),
-                const Icon(
-                  Remix.time_line,
-                  size: 13,
-                  color: AppColors.textSecondary,
-                ),
-                const SizedBox(width: 4),
-                Text(
-                  activity.time.trim(),
-                  style: AppTypography.inter(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
+                  const SizedBox(width: 8),
+                  const Icon(
+                    Remix.time_line,
+                    size: 13,
                     color: AppColors.textSecondary,
                   ),
-                ),
+                  const SizedBox(width: 4),
+                  Text(
+                    activity.time.trim(),
+                    style: AppTypography.inter(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
                 ],
               ],
             ),
@@ -856,11 +856,6 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
   }
 
   Widget _buildLoadingPlaceholder() {
-    return Column(
-      children: const [
-        SkeletonCard(),
-        SkeletonCard(),
-      ],
-    );
+    return Column(children: const [SkeletonCard(), SkeletonCard()]);
   }
 }

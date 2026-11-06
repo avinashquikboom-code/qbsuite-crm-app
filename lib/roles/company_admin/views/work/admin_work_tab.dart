@@ -404,7 +404,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                       ),
                     ),
                     const Icon(
-                      LegacyRemixIcons.arrow_forward_ios_rounded,
+                      LegacyRemixIcons.arrowForwardIosRounded,
                       size: 14,
                       color: Color(0xFFCBD5E1),
                     ),

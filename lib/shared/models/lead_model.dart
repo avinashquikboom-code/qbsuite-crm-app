@@ -186,9 +186,15 @@ class LeadModel {
                 : null),
       ),
       visits: parsedVisits,
-      visitStatus: json['visitStatus']?.toString() ?? (parsedVisits.isNotEmpty ? parsedVisits.first.status : null),
-      visitScheduledAt: json['visitScheduledAt']?.toString() ?? (parsedVisits.isNotEmpty ? parsedVisits.first.date : null),
-      assignedVisitorId: (json['assignedVisitorId'] as num?)?.toInt() ?? (parsedVisits.isNotEmpty ? parsedVisits.first.employeeId : null),
+      visitStatus:
+          json['visitStatus']?.toString() ??
+          (parsedVisits.isNotEmpty ? parsedVisits.first.status : null),
+      visitScheduledAt:
+          json['visitScheduledAt']?.toString() ??
+          (parsedVisits.isNotEmpty ? parsedVisits.first.date : null),
+      assignedVisitorId:
+          (json['assignedVisitorId'] as num?)?.toInt() ??
+          (parsedVisits.isNotEmpty ? parsedVisits.first.employeeId : null),
     );
   }
 

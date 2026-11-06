@@ -17,10 +17,6 @@ import 'package:quickboom_app/core/utils/app_toast.dart';
 import 'package:quickboom_app/shared/widgets/common_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
-
-
-
 class NotificationsView extends ConsumerStatefulWidget {
   const NotificationsView({super.key});
 
@@ -546,21 +542,17 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
     }
 
     if (route == '/plans' || route == '/customer/plans') {
-      
       return;
     }
     if (route == '/orders' || route == '/customer/orders') {
-      
       return;
     }
     if (route == '/leads' || route == '/employee/leads') {
-      
       return;
     }
     if (route == '/customer/work-requests' ||
         route == '/work-requests' ||
         route == '/customer/work') {
-      
       return;
     }
 

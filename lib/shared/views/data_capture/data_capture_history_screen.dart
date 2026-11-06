@@ -78,7 +78,8 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
     await _load();
   }
 
-  String _date(DateTime value) => MaterialLocalizations.of(context).formatMediumDate(value);
+  String _date(DateTime value) =>
+      MaterialLocalizations.of(context).formatMediumDate(value);
 
   Widget _session(CaptureHistorySession session) {
     final color = session.status == 'FAILED'
@@ -137,7 +138,10 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                   ),
                 ),
               ),
-              icon: const Icon(LegacyRemixIcons.list_alt, color: AppColors.primary),
+              icon: const Icon(
+                LegacyRemixIcons.listAlt,
+                color: AppColors.primary,
+              ),
               label: const Text('View captured businesses'),
             ),
           ],
@@ -188,7 +192,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                     children: [
                       OutlinedButton.icon(
                         onPressed: _chooseDates,
-                        icon: const Icon(LegacyRemixIcons.date_range),
+                        icon: const Icon(LegacyRemixIcons.dateRange),
                         label: Text(
                           _dates == null
                               ? 'Filter dates'
@@ -227,12 +231,19 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                         child: Column(
                           children: [
                             const SizedBox(height: 12),
-                            Icon(LegacyRemixIcons.error_outline_rounded, size: 44, color: Colors.red.shade400),
+                            Icon(
+                              LegacyRemixIcons.errorOutlineRounded,
+                              size: 44,
+                              color: Colors.red.shade400,
+                            ),
                             const SizedBox(height: 12),
                             Text(
                               _error!,
                               textAlign: TextAlign.center,
-                              style: const TextStyle(fontSize: 14, color: AppColors.textPrimary),
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: AppColors.textPrimary,
+                              ),
                             ),
                             const SizedBox(height: 16),
                             FilledButton.icon(
@@ -243,7 +254,10 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
-                              icon: const Icon(LegacyRemixIcons.refresh, size: 18),
+                              icon: const Icon(
+                                LegacyRemixIcons.refresh,
+                                size: 18,
+                              ),
                               label: const Text('Retry'),
                             ),
                           ],
@@ -251,12 +265,15 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                       )
                     else if (data == null || data.sessions.isEmpty)
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 24),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 48,
+                          horizontal: 24,
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(
-                              LegacyRemixIcons.history_toggle_off_rounded,
+                              LegacyRemixIcons.historyToggleOffRounded,
                               size: 52,
                               color: Colors.grey.shade400,
                             ),
@@ -270,7 +287,8 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                               ),
                               textAlign: TextAlign.center,
                             ),
-                            if (_search.text.trim().isNotEmpty || _dates != null) ...[
+                            if (_search.text.trim().isNotEmpty ||
+                                _dates != null) ...[
                               const SizedBox(height: 6),
                               Text(
                                 'Try adjusting your search query or date range filters.',

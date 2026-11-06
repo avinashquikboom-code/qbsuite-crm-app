@@ -339,7 +339,7 @@ class _CustomerAiStudioHomeViewState
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(
-                      LegacyRemixIcons.auto_awesome,
+                      LegacyRemixIcons.autoAwesome,
                       size: 13,
                       color: Color(0xFFA5B4FC),
                     ),
@@ -400,7 +400,7 @@ class _CustomerAiStudioHomeViewState
                   onPressed: () =>
                       _openCreationForm('POST', 'AI Social Post', 1),
                   icon: const Icon(
-                    LegacyRemixIcons.auto_awesome,
+                    LegacyRemixIcons.autoAwesome,
                     size: 15,
                     color: Colors.white,
                   ),
@@ -776,7 +776,7 @@ class _CustomerAiStudioHomeViewState
               ),
               const SizedBox(width: 2),
               const Icon(
-                LegacyRemixIcons.chevron_right,
+                LegacyRemixIcons.chevronRight,
                 size: 16,
                 color: AppColors.primary,
               ),
@@ -804,7 +804,7 @@ class _CustomerAiStudioHomeViewState
             child: Column(
               children: [
                 const Icon(
-                  LegacyRemixIcons.auto_awesome,
+                  LegacyRemixIcons.autoAwesome,
                   size: 32,
                   color: Color(0xFFCBD5E1),
                 ),
@@ -1183,7 +1183,7 @@ class _CustomerAiStudioHomeViewState
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Icon(
-                          LegacyRemixIcons.check_circle,
+                          LegacyRemixIcons.checkCircle,
                           size: 13,
                           color: Color(0xFF10B981),
                         ),
@@ -1276,7 +1276,7 @@ class _CustomerAiStudioHomeViewState
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(
-                  LegacyRemixIcons.auto_awesome,
+                  LegacyRemixIcons.autoAwesome,
                   size: 36,
                   color: Color(0xFFCBD5E1),
                 ),

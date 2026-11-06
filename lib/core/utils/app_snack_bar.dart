@@ -74,18 +74,12 @@ class AppSnackBar {
       duration: duration,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       content: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(
-            iconData,
-            color: iconColor,
-            size: 22,
-          ),
+          Icon(iconData, color: iconColor, size: 22),
           const SizedBox(width: 12),
           Expanded(
             child: Text(
@@ -112,51 +106,46 @@ class AppSnackBar {
     BuildContext? context,
     String message, {
     Duration duration = const Duration(seconds: 3),
-  }) =>
-      show(
-        context,
-        message: message,
-        type: SnackBarType.success,
-        duration: duration,
-      );
+  }) => show(
+    context,
+    message: message,
+    type: SnackBarType.success,
+    duration: duration,
+  );
 
   /// Display an error message with error background, white warning icon, and readable white text.
   static void showError(
     BuildContext? context,
     String message, {
     Duration duration = const Duration(seconds: 4),
-  }) =>
-      show(
-        context,
-        message: message,
-        type: SnackBarType.error,
-        duration: duration,
-      );
+  }) => show(
+    context,
+    message: message,
+    type: SnackBarType.error,
+    duration: duration,
+  );
 
   /// Display a warning message with amber background, white icon, and readable white text.
   static void showWarning(
     BuildContext? context,
     String message, {
     Duration duration = const Duration(seconds: 3),
-  }) =>
-      show(
-        context,
-        message: message,
-        type: SnackBarType.warning,
-        duration: duration,
-      );
+  }) => show(
+    context,
+    message: message,
+    type: SnackBarType.warning,
+    duration: duration,
+  );
 
   /// Display an info message with dark slate background, accent icon, and readable white text.
   static void showInfo(
     BuildContext? context,
     String message, {
     Duration duration = const Duration(seconds: 3),
-  }) =>
-      show(
-        context,
-        message: message,
-        type: SnackBarType.info,
-        duration: duration,
-      );
+  }) => show(
+    context,
+    message: message,
+    type: SnackBarType.info,
+    duration: duration,
+  );
 }
-

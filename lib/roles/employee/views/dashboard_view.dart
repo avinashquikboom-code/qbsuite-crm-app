@@ -24,6 +24,7 @@ import 'visitor/visitor_history_view.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_profile_viewmodel.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_attendance_viewmodel.dart';
 import 'package:quickboom_app/core/services/notification_service.dart';
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Data class for a bottom-nav tab item
 // ─────────────────────────────────────────────────────────────────────────────
@@ -268,9 +269,19 @@ class _DashboardViewState extends ConsumerState<DashboardView>
 
     // ── Resolve Visitor identification from existing provider ───────────────
     final profile = ref.watch(employeeProfileProvider).asData?.value;
-    final desigName = (profile?.designation ?? empInfo?.designation ?? authState.userRole ?? '').trim().toUpperCase();
-    final roleName = (rbacPerms.role ?? authState.userRole ?? '').trim().toUpperCase();
-    final deptName = (profile?.department ?? empInfo?.department ?? '').trim().toUpperCase();
+    final desigName =
+        (profile?.designation ??
+                empInfo?.designation ??
+                authState.userRole ??
+                '')
+            .trim()
+            .toUpperCase();
+    final roleName = (rbacPerms.role ?? authState.userRole ?? '')
+        .trim()
+        .toUpperCase();
+    final deptName = (profile?.department ?? empInfo?.department ?? '')
+        .trim()
+        .toUpperCase();
     final isVisitor =
         desigName.contains('VISITOR') ||
         desigName == 'VISIT' ||
@@ -431,7 +442,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
         page: ProfileView(onNavigateToTab: (idx) => _navigateToTab(idx)),
       ),
     ];
-    
+
     _currentTabs = tabs;
 
     // Ensure _currentIndex stays in bounds when tabs shrink due to permission changes.
@@ -525,9 +536,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
               child: Icon(
                 isSelected ? activeIcon : icon,
                 size: 20,
-                color: isSelected
-                    ? AppColors.primary
-                    : AppColors.textSecondary,
+                color: isSelected ? AppColors.primary : AppColors.textSecondary,
               ),
             ),
             const SizedBox(height: 2),

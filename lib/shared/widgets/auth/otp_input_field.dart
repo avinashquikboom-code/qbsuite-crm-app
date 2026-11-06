@@ -121,7 +121,10 @@ class OtpInputFieldState extends State<OtpInputField> {
         const minGap = 6.0;
         const maxBoxWidth = 48.0;
         final availableForBoxes = totalWidth - ((widget.length - 1) * minGap);
-        final computedBoxWidth = (availableForBoxes / widget.length).clamp(38.0, maxBoxWidth);
+        final computedBoxWidth = (availableForBoxes / widget.length).clamp(
+          38.0,
+          maxBoxWidth,
+        );
         final boxHeight = computedBoxWidth * 1.25;
 
         return Row(
@@ -160,9 +163,7 @@ class OtpInputFieldState extends State<OtpInputField> {
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
                   maxLength: 1,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   style: AppTypography.inter(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
@@ -180,7 +181,9 @@ class OtpInputFieldState extends State<OtpInputField> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(
-                        color: widget.hasError ? AppColors.error : AppColors.primary,
+                        color: widget.hasError
+                            ? AppColors.error
+                            : AppColors.primary,
                         width: 2.0,
                       ),
                     ),

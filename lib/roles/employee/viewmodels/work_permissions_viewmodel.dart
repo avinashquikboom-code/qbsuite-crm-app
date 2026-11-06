@@ -16,7 +16,8 @@ class WorkPermissionsState {
     this.errorMessage,
   });
 
-  bool hasWorkPermission(String moduleKey) => permissions.hasPermission(moduleKey);
+  bool hasWorkPermission(String moduleKey) =>
+      permissions.hasPermission(moduleKey);
 
   WorkPermissionsState copyWith({
     EmployeeWorkPermissions? permissions,
@@ -133,10 +134,7 @@ class WorkPermissionsNotifier extends Notifier<WorkPermissionsState> {
       final perms = await _apiService.getMyWorkPermissions();
 
       await _cacheWorkPermissions(perms);
-      state = state.copyWith(
-        permissions: perms,
-        isLoading: false,
-      );
+      state = state.copyWith(permissions: perms, isLoading: false);
     } catch (e) {
       debugPrint('[WORK_PERMISSIONS_NOTIFIER] loadPermissions error: $e');
       state = state.copyWith(
@@ -153,8 +151,6 @@ class WorkPermissionsNotifier extends Notifier<WorkPermissionsState> {
   bool hasWorkPermission(String moduleKey) {
     return state.hasWorkPermission(moduleKey);
   }
-
-
 }
 
 final workPermissionsProvider =

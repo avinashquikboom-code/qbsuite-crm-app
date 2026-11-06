@@ -342,7 +342,7 @@ class _CustomerSocialConnectModalState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Icon(
-                      LegacyRemixIcons.error_outline,
+                      LegacyRemixIcons.errorOutline,
                       size: 18,
                       color: Color(0xFFDC2626),
                     ),
@@ -464,7 +464,7 @@ class _CustomerSocialConnectModalState
               Row(
                 children: [
                   const Icon(
-                    LegacyRemixIcons.security_rounded,
+                    LegacyRemixIcons.securityRounded,
                     size: 16,
                     color: Color(0xFF1D4ED8),
                   ),
@@ -514,7 +514,7 @@ class _CustomerSocialConnectModalState
                     ),
                   )
                 : const Icon(
-                    LegacyRemixIcons.open_in_browser_rounded,
+                    LegacyRemixIcons.openInBrowserRounded,
                     color: Colors.white,
                     size: 20,
                   ),

@@ -60,7 +60,10 @@ class LeadService {
           'page': currentPage,
           'limit': limit,
           if (stageId != null) 'stageId': stageId,
-          if (stageId == null && status != null && status.isNotEmpty && status != 'ALL')
+          if (stageId == null &&
+              status != null &&
+              status.isNotEmpty &&
+              status != 'ALL')
             'status': status,
           if (search != null && search.trim().isNotEmpty)
             'search': search.trim(),

@@ -365,9 +365,8 @@ class _CustomerMarketplaceToolsViewState
                   ),
                 );
               },
-              loading: () => const SliverFillRemaining(
-                child: SkeletonList(count: 4),
-              ),
+              loading: () =>
+                  const SliverFillRemaining(child: SkeletonList(count: 4)),
               error: (err, _) => SliverFillRemaining(
                 hasScrollBody: false,
                 child: Center(

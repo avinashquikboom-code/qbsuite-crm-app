@@ -10,8 +10,6 @@ import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/shared/models/data_capture_model.dart';
 import 'package:quickboom_app/shared/services/data_capture_service.dart';
 
-
-
 import 'package:quickboom_app/shared/models/lead_model.dart';
 import 'package:quickboom_app/shared/viewmodels/leads_viewmodel.dart';
 import 'package:quickboom_app/shared/viewmodels/lead_stages_viewmodel.dart';
@@ -327,7 +325,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   const Icon(
-                                    LegacyRemixIcons.star_rounded,
+                                    LegacyRemixIcons.starRounded,
                                     color: Colors.amber,
                                     size: 14,
                                   ),
@@ -370,7 +368,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                   const Padding(
                     padding: EdgeInsets.only(top: 1),
                     child: Icon(
-                      LegacyRemixIcons.location_on_outlined,
+                      LegacyRemixIcons.locationOnOutlined,
                       size: 14,
                       color: AppColors.textSecondary,
                     ),
@@ -399,7 +397,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
               child: Row(
                 children: [
                   const Icon(
-                    LegacyRemixIcons.phone_outlined,
+                    LegacyRemixIcons.phoneOutlined,
                     size: 14,
                     color: AppColors.primary,
                   ),
@@ -539,7 +537,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                   children: [
                     if (hasPhone)
                       _ActionIconBtn(
-                        icon: LegacyRemixIcons.call_rounded,
+                        icon: LegacyRemixIcons.callRounded,
                         color: AppColors.primary,
                         bgColor: AppColors.primaryLight,
                         tooltip: 'Call',
@@ -548,7 +546,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                     if (hasWebsite) ...[
                       const SizedBox(width: 4),
                       _ActionIconBtn(
-                        icon: LegacyRemixIcons.language_rounded,
+                        icon: LegacyRemixIcons.languageRounded,
                         color: AppColors.secondary,
                         bgColor: AppColors.secondary.withValues(alpha: 0.1),
                         tooltip: 'Website',
@@ -558,7 +556,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                     if (hasMap) ...[
                       const SizedBox(width: 4),
                       _ActionIconBtn(
-                        icon: LegacyRemixIcons.map_rounded,
+                        icon: LegacyRemixIcons.mapRounded,
                         color: Colors.blueAccent,
                         bgColor: Colors.blueAccent.withValues(alpha: 0.1),
                         tooltip: 'Maps',
@@ -584,10 +582,10 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                               ? 'Adding...'
                               : 'Add Lead',
                           icon: _isAdded
-                              ? LegacyRemixIcons.check_circle_rounded
+                              ? LegacyRemixIcons.checkCircleRounded
                               : _isAdding
-                              ? LegacyRemixIcons.hourglass_top_rounded
-                              : LegacyRemixIcons.person_add_alt_1_rounded,
+                              ? LegacyRemixIcons.hourglassTopRounded
+                              : LegacyRemixIcons.personAddAlt1Rounded,
                           color: _isAdded
                               ? AppColors.success
                               : _isAdding
@@ -601,8 +599,8 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                         _CompactTextBtn(
                           label: isSelected ? 'Selected' : 'Select',
                           icon: isSelected
-                              ? LegacyRemixIcons.check_box_rounded
-                              : LegacyRemixIcons.check_box_outline_blank_rounded,
+                              ? LegacyRemixIcons.checkBoxRounded
+                              : LegacyRemixIcons.checkBoxOutlineBlankRounded,
                           color: isSelected
                               ? AppColors.primary
                               : AppColors.textSecondary,

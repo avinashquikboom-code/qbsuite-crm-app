@@ -101,7 +101,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
-                      LegacyRemixIcons.close_rounded,
+                      LegacyRemixIcons.closeRounded,
                       color: Colors.white,
                       size: 22,
                     ),
@@ -488,7 +488,10 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
           automaticallyImplyLeading: Navigator.canPop(context),
           leading: Navigator.canPop(context)
               ? IconButton(
-                  icon: const Icon(Remix.arrow_left_line, color: AppColors.textPrimary),
+                  icon: const Icon(
+                    Remix.arrow_left_line,
+                    color: AppColors.textPrimary,
+                  ),
                   onPressed: () => Navigator.of(context).pop(),
                 )
               : null,
@@ -682,7 +685,12 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               // Notification Icon in circular button
-                              if (ref.watch(permissionManagerProvider).customerCan('CUSTOMER_NOTIFICATIONS', 'VIEW')) ...[
+                              if (ref
+                                  .watch(permissionManagerProvider)
+                                  .customerCan(
+                                    'CUSTOMER_NOTIFICATIONS',
+                                    'VIEW',
+                                  )) ...[
                                 Container(
                                   width: isNarrow ? 34 : 36,
                                   height: isNarrow ? 34 : 36,

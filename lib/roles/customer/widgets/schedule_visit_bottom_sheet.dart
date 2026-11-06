@@ -153,26 +153,44 @@ class _ScheduleVisitBottomSheetState
       var page = 1;
       var totalPages = 1;
       do {
-        final res = await ref.read(apiClientProvider).get('/employees', queryParameters: {'status': 'ACTIVE', 'page': page, 'limit': 100});
+        final res = await ref
+            .read(apiClientProvider)
+            .get(
+              '/employees',
+              queryParameters: {'status': 'ACTIVE', 'page': page, 'limit': 100},
+            );
         final raw = res.data;
         final data = raw is Map && raw['data'] is Map ? raw['data'] : raw;
-        final items = data is List ? data : data is Map ? (data['items'] ?? data['data'] ?? data['employees']) : null;
-        if (items is! List) throw const FormatException('Invalid visitor employee response');
-        all.addAll(items.map((e) => Map<String,dynamic>.from(e as Map)));
-        final pagination = data is Map ? data['pagination'] ?? data['meta'] : null;
-        totalPages = pagination is Map ? (pagination['totalPages'] as num?)?.toInt() ?? 1 : 1;
+        final items = data is List
+            ? data
+            : data is Map
+            ? (data['items'] ?? data['data'] ?? data['employees'])
+            : null;
+        if (items is! List)
+          throw const FormatException('Invalid visitor employee response');
+        all.addAll(items.map((e) => Map<String, dynamic>.from(e as Map)));
+        final pagination = data is Map
+            ? data['pagination'] ?? data['meta']
+            : null;
+        totalPages = pagination is Map
+            ? (pagination['totalPages'] as num?)?.toInt() ?? 1
+            : 1;
         page++;
       } while (page <= totalPages);
       if (!mounted) return;
       setState(() {
         _visitorEmployees = all.where(_isVisitorEmployee).toList();
         _isLoadingEmployees = false;
-        if (!_visitorEmployees.any((e) => e['id'] == _selectedEmployeeId)) _selectedEmployeeId = null;
+        if (!_visitorEmployees.any((e) => e['id'] == _selectedEmployeeId))
+          _selectedEmployeeId = null;
       });
     } catch (error) {
       if (!mounted) return;
       setState(() => _isLoadingEmployees = false);
-      AppToast.error(context, 'Unable to load Visitor employees. Please reopen the scheduling form to retry.');
+      AppToast.error(
+        context,
+        'Unable to load Visitor employees. Please reopen the scheduling form to retry.',
+      );
     }
   }
 

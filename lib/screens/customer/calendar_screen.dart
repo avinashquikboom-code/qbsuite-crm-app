@@ -115,7 +115,7 @@ class _CustomerCalendarScreenState extends State<CustomerCalendarScreen> {
                   ),
                 ),
                 ElevatedButton.icon(
-                  icon: const Icon(LegacyRemixIcons.calendar_month),
+                  icon: const Icon(LegacyRemixIcons.calendarMonth),
                   label: const Text('Change Date'),
                   onPressed: () async {
                     final picked = await showDatePicker(
@@ -152,8 +152,8 @@ class _CustomerCalendarScreenState extends State<CustomerCalendarScreen> {
                         key: ValueKey('cust_sched_${activity.id}'),
                         leading: Icon(
                           isDone
-                              ? LegacyRemixIcons.check_circle
-                              : LegacyRemixIcons.radio_button_unchecked,
+                              ? LegacyRemixIcons.checkCircle
+                              : LegacyRemixIcons.radioButtonUnchecked,
                           color: isDone ? Colors.green : Colors.grey,
                         ),
                         title: Text(activity.activity),

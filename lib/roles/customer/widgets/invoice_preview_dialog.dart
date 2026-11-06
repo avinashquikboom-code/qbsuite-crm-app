@@ -525,7 +525,9 @@ class InvoicePreviewDialog extends ConsumerWidget {
                                 );
                               } else {
                                 final invId =
-                                    invoice?.id ?? order?.invoiceId ?? docNumber;
+                                    invoice?.id ??
+                                    order?.invoiceId ??
+                                    docNumber;
                                 await docService.downloadInvoice(
                                   invoiceId: invId,
                                   invoiceNumber: docNumber,

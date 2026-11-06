@@ -24,8 +24,6 @@ import 'package:quickboom_app/roles/employee/views/dashboard_view.dart';
 import 'package:quickboom_app/roles/company_admin/views/company_admin_main_view.dart';
 import 'package:quickboom_app/roles/customer/views/customer_dashboard_view.dart';
 
-
-
 import 'package:quickboom_app/roles/employee/viewmodels/employee_attendance_viewmodel.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_profile_viewmodel.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/work_permissions_viewmodel.dart';
@@ -34,7 +32,9 @@ import 'employee_registration_view.dart';
 import 'customer_registration_view.dart';
 
 enum MobileUserRole { employee, customer, admin }
+
 enum LoginMethod { email, mobile, employeeId }
+
 enum LoginStage { input, otp, verifying }
 
 class LoginView extends ConsumerStatefulWidget {
@@ -62,7 +62,8 @@ class _LoginViewState extends ConsumerState<LoginView> {
 
   // Loading & network state
   bool _isLoading = false;
-  int _verifyingStep = 0; // 0: Validating OTP, 1: Authenticating, 2: Loading data
+  int _verifyingStep =
+      0; // 0: Validating OTP, 1: Authenticating, 2: Loading data
 
   // OTP state
   String _enteredOtp = '';
@@ -180,7 +181,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
 
   void _putIdentifier(Map<String, dynamic> body, String rawVal) {
     if (_isMobileLogin) {
-      body['mobile'] = _normalizedMobile() ?? (rawVal.startsWith('+') ? rawVal : '+91$rawVal');
+      body['mobile'] =
+          _normalizedMobile() ??
+          (rawVal.startsWith('+') ? rawVal : '+91$rawVal');
       return;
     }
     if (_acceptsEmployeeCode() && !_isValidEmail(rawVal)) {
@@ -192,7 +195,8 @@ class _LoginViewState extends ConsumerState<LoginView> {
 
   String? _validateIdentifier() {
     final rawVal = _identifierController.text.trim();
-    if (_loginMethod == LoginMethod.email || _loginMethod == LoginMethod.employeeId) {
+    if (_loginMethod == LoginMethod.email ||
+        _loginMethod == LoginMethod.employeeId) {
       if (rawVal.isEmpty) {
         return _acceptsEmployeeCode()
             ? 'Please enter your email or Employee ID'
@@ -232,13 +236,17 @@ class _LoginViewState extends ConsumerState<LoginView> {
 
     final rawVal = _identifierController.text.trim();
     final mobile = _isMobileLogin ? _normalizedMobile() : null;
-    if (mobile != null && mobile == _requestedMobile &&
+    if (mobile != null &&
+        mobile == _requestedMobile &&
         _mobileOtpNextRequestAt != null) {
       final remaining = _mobileOtpNextRequestAt!
-          .difference(DateTime.now()).inMilliseconds;
+          .difference(DateTime.now())
+          .inMilliseconds;
       if (remaining > 0) {
-        AppToast.warning(context,
-            'Please wait ${(remaining / 1000).ceil()} seconds before requesting a new OTP.');
+        AppToast.warning(
+          context,
+          'Please wait ${(remaining / 1000).ceil()} seconds before requesting a new OTP.',
+        );
         return;
       }
     }
@@ -258,7 +266,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
           payload = payload['data'];
         }
 
-        final returnedDest = payload is Map ? payload['destination']?.toString() : null;
+        final returnedDest = payload is Map
+            ? payload['destination']?.toString()
+            : null;
         final masked = (returnedDest != null && returnedDest.isNotEmpty)
             ? returnedDest
             : _maskDestinationLocally(rawVal, _loginMethod);
@@ -272,7 +282,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
           if (_isMobileLogin) {
             _mobileOtpSent = true;
             _requestedMobile = mobile;
-            _mobileOtpNextRequestAt = DateTime.now().add(const Duration(seconds: 60));
+            _mobileOtpNextRequestAt = DateTime.now().add(
+              const Duration(seconds: 60),
+            );
           } else {
             _stage = LoginStage.otp;
           }
@@ -294,11 +306,15 @@ class _LoginViewState extends ConsumerState<LoginView> {
       if (mobile != null) {
         final data = e.response?.data;
         final message = data is Map ? data['message']?.toString() ?? '' : '';
-        final cooldown = RegExp(r'Please wait (\d+) seconds').firstMatch(message);
+        final cooldown = RegExp(
+          r'Please wait (\d+) seconds',
+        ).firstMatch(message);
         final seconds = int.tryParse(cooldown?.group(1) ?? '');
         if (seconds != null && seconds > 0) {
           _requestedMobile = mobile;
-          _mobileOtpNextRequestAt = DateTime.now().add(Duration(seconds: seconds));
+          _mobileOtpNextRequestAt = DateTime.now().add(
+            Duration(seconds: seconds),
+          );
           _startResendTimer(seconds: seconds);
         }
       }
@@ -349,10 +365,15 @@ class _LoginViewState extends ConsumerState<LoginView> {
           setState(() => _verifyingStep = 2); // Loading your data...
         }
 
-        final userObj = payload is Map && payload['user'] is Map ? payload['user'] as Map : null;
+        final userObj = payload is Map && payload['user'] is Map
+            ? payload['user'] as Map
+            : null;
         final identifierToUse = userObj?['email']?.toString() ?? rawVal;
 
-        await _processAuthSuccess(payload as Map<String, dynamic>, identifier: identifierToUse);
+        await _processAuthSuccess(
+          payload as Map<String, dynamic>,
+          identifier: identifierToUse,
+        );
       } else {
         if (!mounted) return;
         setState(() {
@@ -388,7 +409,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
           _stage = LoginStage.otp;
         }
       });
-      AppToast.error(context, 'An unexpected error occurred during OTP verification');
+      AppToast.error(
+        context,
+        'An unexpected error occurred during OTP verification',
+      );
     }
   }
 
@@ -440,11 +464,17 @@ class _LoginViewState extends ConsumerState<LoginView> {
           payload = payload['data'];
         }
 
-        await _processAuthSuccess(payload as Map<String, dynamic>, identifier: loginIdentifier);
+        await _processAuthSuccess(
+          payload as Map<String, dynamic>,
+          identifier: loginIdentifier,
+        );
       } else {
         if (mounted) {
           setState(() => _isLoading = false);
-          AppToast.error(context, 'Login failed with status: ${resp.statusCode}');
+          AppToast.error(
+            context,
+            'Login failed with status: ${resp.statusCode}',
+          );
         }
       }
     } on DioException catch (e) {
@@ -463,7 +493,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
   // ==========================================
   // SHARED AUTH RESOLUTION & DATA HYDRATION
   // ==========================================
-  Future<void> _processAuthSuccess(Map<String, dynamic> payload, {required String identifier}) async {
+  Future<void> _processAuthSuccess(
+    Map<String, dynamic> payload, {
+    required String identifier,
+  }) async {
     final tokens = payload['tokens'] as Map<String, dynamic>?;
     final user = payload['user'] as Map<String, dynamic>?;
 
@@ -558,7 +591,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   : desigObj?.toString()))
         : null;
 
-    debugPrint('[AUTH] Resolved user: id=${user?['id']}, role=$rawRole, empId=$employeeIdVal, desig=$designationNameVal (id: $designationIdVal)');
+    debugPrint(
+      '[AUTH] Resolved user: id=${user?['id']}, role=$rawRole, empId=$employeeIdVal, desig=$designationNameVal (id: $designationIdVal)',
+    );
 
     // Clear previous session completely before storing new user context
     await SecureStorageService.clearAll();
@@ -631,11 +666,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
     }
 
     final apiClient = ref.read(apiClientProvider);
-    apiClient.setAuth(
-      accessToken,
-      customerIdVal,
-      refreshToken: refreshToken,
-    );
+    apiClient.setAuth(accessToken, customerIdVal, refreshToken: refreshToken);
 
     // Proactively fetch canonical effective permissions
     if (isEmp) {
@@ -708,23 +739,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
     await ref.read(loginStateProvider.notifier).checkLoginStatus();
 
     // Invalidate customer & employee providers
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     ref.invalidate(employeeProfileProvider);
     ref.invalidate(employeeAttendanceProvider);
     ref.invalidate(workPermissionsProvider);
@@ -735,7 +750,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
       case UserRole.customer:
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => const CustomerDashboardView()),
+          MaterialPageRoute(
+            builder: (context) => const CustomerDashboardView(),
+          ),
           (route) => false,
         );
         break;
@@ -861,7 +878,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 16 + media.viewInsets.bottom,
               ),
               child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: constraints.maxHeight - (compact ? 24 : 36)),
+                constraints: BoxConstraints(
+                  minHeight: constraints.maxHeight - (compact ? 24 : 36),
+                ),
                 child: Center(
                   child: ConstrainedBox(
                     constraints: BoxConstraints(maxWidth: maxWidth),
@@ -933,10 +952,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(24),
-            border: Border.all(
-              color: const Color(0xFFE8EEF4),
-              width: 1,
-            ),
+            border: Border.all(color: const Color(0xFFE8EEF4), width: 1),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.04),
@@ -1146,12 +1162,16 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     onPressed: _isLoading
                         ? null
                         : (_usesPassword
-                            ? _handlePasswordLogin
-                            : (_isMobileLogin
-                                ? (_mobileOtpSent
-                                    ? (_enteredOtp.length == 6 ? () => _handleVerifyOtp(_enteredOtp) : null)
-                                    : _handleSendOtp)
-                                : _handleSendOtp)),
+                              ? _handlePasswordLogin
+                              : (_isMobileLogin
+                                    ? (_mobileOtpSent
+                                          ? (_enteredOtp.length == 6
+                                                ? () => _handleVerifyOtp(
+                                                    _enteredOtp,
+                                                  )
+                                                : null)
+                                          : _handleSendOtp)
+                                    : _handleSendOtp)),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.transparent,
                       disabledBackgroundColor: const Color(0xFFCBD5E1),
@@ -1180,8 +1200,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
                                 _usesPassword
                                     ? 'Sign In'
                                     : (_isMobileLogin
-                                        ? (_mobileOtpSent ? 'Verify OTP & Sign In' : 'Send OTP')
-                                        : 'Send OTP'),
+                                          ? (_mobileOtpSent
+                                                ? 'Verify OTP & Sign In'
+                                                : 'Send OTP')
+                                          : 'Send OTP'),
                                 style: AppTypography.inter(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
@@ -1225,7 +1247,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   ),
                 ] else ...[
                   GestureDetector(
-                    onTap: _isLoading ? null : () => _handleSendOtp(isResend: true),
+                    onTap: _isLoading
+                        ? null
+                        : () => _handleSendOtp(isResend: true),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -1254,10 +1278,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               Row(
                 children: [
                   const Expanded(
-                    child: Divider(
-                      color: Color(0xFFE2E8F0),
-                      height: 1,
-                    ),
+                    child: Divider(color: Color(0xFFE2E8F0), height: 1),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -1271,15 +1292,13 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     ),
                   ),
                   const Expanded(
-                    child: Divider(
-                      color: Color(0xFFE2E8F0),
-                      height: 1,
-                    ),
+                    child: Divider(color: Color(0xFFE2E8F0), height: 1),
                   ),
                 ],
               ),
               if (!_isPasswordMode &&
-                  (!_isMobileLogin || _currentRole == MobileUserRole.customer)) ...[
+                  (!_isMobileLogin ||
+                      _currentRole == MobileUserRole.customer)) ...[
                 const SizedBox(height: 14),
                 _buildSecondaryAction(
                   icon: Remix.lock_2_line,
@@ -1317,7 +1336,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   icon: _currentRole == MobileUserRole.customer
                       ? Remix.briefcase_line
                       : Remix.user_3_line,
-                  label: _currentRole == MobileUserRole.customer ? 'Employee' : 'Customer',
+                  label: _currentRole == MobileUserRole.customer
+                      ? 'Employee'
+                      : 'Customer',
                   onTap: () {
                     setState(() {
                       _currentRole = _currentRole == MobileUserRole.customer
@@ -1333,7 +1354,6 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 ),
               ],
               const SizedBox(height: 16),
-
 
               // Security Card at bottom of login form
               const SecureLoginCard(),
@@ -1466,54 +1486,61 @@ class _LoginViewState extends ConsumerState<LoginView> {
     final isSelected = _loginMethod == method;
 
     return Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: _isLoading ? null : () {
-            setState(() {
-              if (_loginMethod != method) {
-                _loginMethod = method;
-                _identifierError = null;
-                _otpError = null;
-                if (method == LoginMethod.mobile && _identifierController.text.contains('@')) {
-                  _identifierController.clear();
-                }
-              }
-            });
-          },
-          borderRadius: BorderRadius.circular(12),
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 180),
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-            decoration: BoxDecoration(
-              color: isSelected ? const Color(0xFF22C55E) : const Color(0xFFF1F5F9),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  size: 16,
-                  color: isSelected ? Colors.white : const Color(0xFF64748B),
-                ),
-                const SizedBox(width: 6),
-                Flexible(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      label,
-                      style: AppTypography.inter(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: isSelected ? Colors.white : const Color(0xFF475569),
-                      ),
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: _isLoading
+            ? null
+            : () {
+                setState(() {
+                  if (_loginMethod != method) {
+                    _loginMethod = method;
+                    _identifierError = null;
+                    _otpError = null;
+                    if (method == LoginMethod.mobile &&
+                        _identifierController.text.contains('@')) {
+                      _identifierController.clear();
+                    }
+                  }
+                });
+              },
+        borderRadius: BorderRadius.circular(12),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 180),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+          decoration: BoxDecoration(
+            color: isSelected
+                ? const Color(0xFF22C55E)
+                : const Color(0xFFF1F5F9),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                size: 16,
+                color: isSelected ? Colors.white : const Color(0xFF64748B),
+              ),
+              const SizedBox(width: 6),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    label,
+                    style: AppTypography.inter(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: isSelected
+                          ? Colors.white
+                          : const Color(0xFF475569),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
+      ),
     );
   }
 
@@ -1541,8 +1568,8 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 _currentRole == MobileUserRole.customer
                     ? 'e.g. customer@example.com'
                     : (_acceptsEmployeeCode()
-                        ? 'e.g. employee@company.com or EMP-004'
-                        : 'e.g. employee@company.com'),
+                          ? 'e.g. employee@company.com or EMP-004'
+                          : 'e.g. employee@company.com'),
                 style: AppTypography.inter(
                   fontSize: 11.5,
                   color: const Color(0xFF94A3B8),
@@ -1620,8 +1647,12 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     : 'e.g. 9876543210',
                 style: AppTypography.inter(
                   fontSize: 11.5,
-                  color: _mobileOtpSent ? const Color(0xFF16A34A) : const Color(0xFF94A3B8),
-                  fontWeight: _mobileOtpSent ? FontWeight.w500 : FontWeight.w400,
+                  color: _mobileOtpSent
+                      ? const Color(0xFF16A34A)
+                      : const Color(0xFF94A3B8),
+                  fontWeight: _mobileOtpSent
+                      ? FontWeight.w500
+                      : FontWeight.w400,
                 ),
               ),
             ),
@@ -1661,7 +1692,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
   Widget _buildOtpStage() {
     final changeText = _loginMethod == LoginMethod.mobile
         ? 'Change Mobile Number'
-        : (_acceptsEmployeeCode() ? 'Change Email or Employee ID' : 'Change Email');
+        : (_acceptsEmployeeCode()
+              ? 'Change Email or Employee ID'
+              : 'Change Email');
 
     return Column(
       key: const ValueKey('stage_otp'),
@@ -1676,7 +1709,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
               onTap: _changeIdentifier,
               borderRadius: BorderRadius.circular(10),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -1775,10 +1811,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: const Color(0xFFE2E8F0),
-              width: 1.2,
-            ),
+            border: Border.all(color: const Color(0xFFE2E8F0), width: 1.2),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.03),
@@ -1855,7 +1888,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   ),
                 ),
                 const SizedBox(height: 8),
-                Text('Sending OTP...', style: AppTypography.inter(fontSize: 13)),
+                Text(
+                  'Sending OTP...',
+                  style: AppTypography.inter(fontSize: 13),
+                ),
                 const SizedBox(height: 8),
               ],
               if (_resendCountdown > 0) ...[
@@ -1880,7 +1916,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 ),
               ] else ...[
                 GestureDetector(
-                  onTap: _isLoading ? null : () => _handleSendOtp(isResend: true),
+                  onTap: _isLoading
+                      ? null
+                      : () => _handleSendOtp(isResend: true),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -1954,10 +1992,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: const Color(0xFFE2E8F0),
-              width: 1.2,
-            ),
+            border: Border.all(color: const Color(0xFFE2E8F0), width: 1.2),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.04),
@@ -1999,10 +2034,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               const SizedBox(height: 28),
 
               // Step Indicators
-              _buildVerifyingStepItem(
-                stepIndex: 0,
-                label: 'Validating OTP',
-              ),
+              _buildVerifyingStepItem(stepIndex: 0, label: 'Validating OTP'),
               const SizedBox(height: 12),
               _buildVerifyingStepItem(
                 stepIndex: 1,
@@ -2047,10 +2079,14 @@ class _LoginViewState extends ConsumerState<LoginView> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
-        color: isDone || isCurrent ? const Color(0xFFF0FDF4) : const Color(0xFFF8FAFC),
+        color: isDone || isCurrent
+            ? const Color(0xFFF0FDF4)
+            : const Color(0xFFF8FAFC),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: isDone || isCurrent ? const Color(0xFFDCFCE7) : const Color(0xFFE2E8F0),
+          color: isDone || isCurrent
+              ? const Color(0xFFDCFCE7)
+              : const Color(0xFFE2E8F0),
         ),
       ),
       child: Row(
@@ -2062,8 +2098,12 @@ class _LoginViewState extends ConsumerState<LoginView> {
               label,
               style: AppTypography.inter(
                 fontSize: 13,
-                fontWeight: isDone || isCurrent ? FontWeight.w600 : FontWeight.w400,
-                color: isDone || isCurrent ? const Color(0xFF166534) : const Color(0xFF64748B),
+                fontWeight: isDone || isCurrent
+                    ? FontWeight.w600
+                    : FontWeight.w400,
+                color: isDone || isCurrent
+                    ? const Color(0xFF166534)
+                    : const Color(0xFF64748B),
               ),
             ),
           ),

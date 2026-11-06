@@ -178,8 +178,8 @@ class _ReelsStyleVideoFeedViewState extends State<ReelsStyleVideoFeedView> {
                           ),
                           child: Icon(
                             _isMuted
-                                ? LegacyRemixIcons.volume_off_rounded
-                                : LegacyRemixIcons.volume_up_rounded,
+                                ? LegacyRemixIcons.volumeOffRounded
+                                : LegacyRemixIcons.volumeUpRounded,
                             color: Colors.white,
                             size: 18,
                           ),
@@ -425,7 +425,9 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
-                    _isPlaying ? LegacyRemixIcons.play_arrow_rounded : LegacyRemixIcons.pause_rounded,
+                    _isPlaying
+                        ? LegacyRemixIcons.playArrowRounded
+                        : LegacyRemixIcons.pauseRounded,
                     color: Colors.white,
                     size: 48,
                   ),
@@ -536,7 +538,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   const Icon(
-                                    LegacyRemixIcons.access_time_rounded,
+                                    LegacyRemixIcons.accessTimeRounded,
                                     size: 11,
                                     color: Colors.white70,
                                   ),
@@ -601,7 +603,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                         child: ElevatedButton.icon(
                           onPressed: () => _handleCtaAction(item.ctaUrl),
                           icon: const Icon(
-                            LegacyRemixIcons.arrow_forward_rounded,
+                            LegacyRemixIcons.arrowForwardRounded,
                             size: 16,
                             color: Colors.black,
                           ),
@@ -688,7 +690,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
         mainAxisSize: MainAxisSize.min,
         children: [
           const Icon(
-            LegacyRemixIcons.videocam_off_rounded,
+            LegacyRemixIcons.videocamOffRounded,
             color: Colors.white54,
             size: 48,
           ),

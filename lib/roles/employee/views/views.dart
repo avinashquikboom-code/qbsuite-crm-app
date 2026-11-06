@@ -2,7 +2,6 @@
 export 'dashboard_view.dart';
 export 'home_view.dart';
 
-
 export 'profile_view.dart';
 export 'edit_profile_view.dart';
 export 'requests_view.dart';

@@ -52,8 +52,8 @@ class CaptureUsageCard extends StatelessWidget {
                       ),
                       child: Icon(
                         isExhausted
-                            ? LegacyRemixIcons.warning_amber_rounded
-                            : LegacyRemixIcons.pie_chart_rounded,
+                            ? LegacyRemixIcons.warningAmberRounded
+                            : LegacyRemixIcons.pieChartRounded,
                         color: isExhausted
                             ? AppColors.error
                             : AppColors.primary,
@@ -168,7 +168,7 @@ class CaptureUsageCard extends StatelessWidget {
               child: Row(
                 children: [
                   const Icon(
-                    LegacyRemixIcons.info_outline_rounded,
+                    LegacyRemixIcons.infoOutlineRounded,
                     color: AppColors.error,
                     size: 16,
                   ),

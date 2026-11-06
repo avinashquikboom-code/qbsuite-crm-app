@@ -59,7 +59,7 @@ class AdminStatCard extends StatelessWidget {
                     child: Icon(icon, size: 16, color: iconColor),
                   ),
                   const Icon(
-                    LegacyRemixIcons.arrow_forward_ios_rounded,
+                    LegacyRemixIcons.arrowForwardIosRounded,
                     size: 11,
                     color: Color(0xFFCBD5E1),
                   ),

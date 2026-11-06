@@ -88,7 +88,9 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
       final onlineEnabled = planPm != null ? planPm.online : config.online;
       final offlineEnabled = planPm != null ? planPm.offline : config.offline;
 
-      debugPrint('[PAYMENT] Selected Plan: ${widget.plan.name} (${widget.plan.code})');
+      debugPrint(
+        '[PAYMENT] Selected Plan: ${widget.plan.name} (${widget.plan.code})',
+      );
       debugPrint('[PAYMENT] Online Payment Enabled: $onlineEnabled');
       debugPrint('[PAYMENT] Offline Payment Enabled: $offlineEnabled');
       debugPrint('[PAYMENT] Payment Methods API Response: $rawConfig');
@@ -101,7 +103,9 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
 
           // Automatically select the valid method based on availability
           if (_onlinePaymentEnabled && _offlinePaymentEnabled) {
-            if (_selectedMethod != 'ONLINE' && _selectedMethod != 'OFFLINE' && _selectedMethod != 'CASH') {
+            if (_selectedMethod != 'ONLINE' &&
+                _selectedMethod != 'OFFLINE' &&
+                _selectedMethod != 'CASH') {
               _selectedMethod = 'ONLINE';
             }
           } else if (_onlinePaymentEnabled && !_offlinePaymentEnabled) {
@@ -197,7 +201,9 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
         // OFFLINE PAYMENT (BANK TRANSFER / CASH / UPI) FLOW
         final refNum = _offlineRefController.text.trim();
         final notesInput = _offlineNotesController.text.trim();
-        final cycleDesc = _paymentOption == 'ADVANCE' ? '50% Advance' : 'Full Payment';
+        final cycleDesc = _paymentOption == 'ADVANCE'
+            ? '50% Advance'
+            : 'Full Payment';
         final finalNotes = notesInput.isNotEmpty
             ? '$notesInput ($cycleDesc)'
             : 'Offline payment request via Mobile App ($cycleDesc)';
@@ -324,7 +330,9 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
     }
     setState(() => _applyingCoupon = true);
     try {
-      final quote = await ref.read(customerSubscriptionServiceProvider).applyCoupon(
+      final quote = await ref
+          .read(customerSubscriptionServiceProvider)
+          .applyCoupon(
             plan: widget.plan,
             billingCycle: _cycle,
             couponCode: code,
@@ -356,16 +364,19 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
       selectedActivation.day,
     );
 
-    final basePrice = (_couponQuote?['originalAmount'] as num?)?.toDouble() ??
+    final basePrice =
+        (_couponQuote?['originalAmount'] as num?)?.toDouble() ??
         widget.plan.priceFor(_cycle);
     final discountAmount =
         (_couponQuote?['discountAmount'] as num?)?.toDouble() ?? 0;
-    final gstTax = (_couponQuote?['taxAmount'] as num?)?.toDouble() ??
-        (basePrice * 0.18);
-    final fullPlanTotal = (_couponQuote?['finalAmount'] as num?)?.toDouble() ??
+    final gstTax =
+        (_couponQuote?['taxAmount'] as num?)?.toDouble() ?? (basePrice * 0.18);
+    final fullPlanTotal =
+        (_couponQuote?['finalAmount'] as num?)?.toDouble() ??
         (basePrice + gstTax);
     final isAdvance = _paymentOption == 'ADVANCE';
-    final finalAmount = (_couponQuote?['chargedTotal'] as num?)?.toDouble() ??
+    final finalAmount =
+        (_couponQuote?['chargedTotal'] as num?)?.toDouble() ??
         (isAdvance ? (fullPlanTotal * 0.5) : fullPlanTotal);
     final remainingBalance = isAdvance ? (fullPlanTotal * 0.5) : 0.0;
 
@@ -1016,24 +1027,28 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                           behavior: HitTestBehavior.opaque,
                           onTap: _isProcessing
                               ? null
-                              : () => setState(() => _selectedMethod = 'ONLINE'),
+                              : () =>
+                                    setState(() => _selectedMethod = 'ONLINE'),
                           child: Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 14,
                               vertical: 12,
                             ),
                             decoration: BoxDecoration(
-                              color: _selectedMethod == 'ONLINE' ||
+                              color:
+                                  _selectedMethod == 'ONLINE' ||
                                       _selectedMethod == 'RAZORPAY'
                                   ? AppColors.subtleGreenBg
                                   : Colors.white,
                               borderRadius: BorderRadius.circular(14),
                               border: Border.all(
-                                color: _selectedMethod == 'ONLINE' ||
+                                color:
+                                    _selectedMethod == 'ONLINE' ||
                                         _selectedMethod == 'RAZORPAY'
                                     ? AppColors.primary
                                     : AppColors.borderLight,
-                                width: (_selectedMethod == 'ONLINE' ||
+                                width:
+                                    (_selectedMethod == 'ONLINE' ||
                                         _selectedMethod == 'RAZORPAY')
                                     ? 1.5
                                     : 1,
@@ -1046,7 +1061,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                           _selectedMethod == 'RAZORPAY')
                                       ? Remix.checkbox_circle_fill
                                       : Remix.checkbox_blank_circle_line,
-                                  color: (_selectedMethod == 'ONLINE' ||
+                                  color:
+                                      (_selectedMethod == 'ONLINE' ||
                                           _selectedMethod == 'RAZORPAY')
                                       ? AppColors.primary
                                       : AppColors.textSecondary,
@@ -1055,7 +1071,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                 const SizedBox(width: 12),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Online Payment',
@@ -1089,24 +1106,28 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                           behavior: HitTestBehavior.opaque,
                           onTap: _isProcessing
                               ? null
-                              : () => setState(() => _selectedMethod = 'OFFLINE'),
+                              : () =>
+                                    setState(() => _selectedMethod = 'OFFLINE'),
                           child: Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 14,
                               vertical: 12,
                             ),
                             decoration: BoxDecoration(
-                              color: (_selectedMethod == 'OFFLINE' ||
+                              color:
+                                  (_selectedMethod == 'OFFLINE' ||
                                       _selectedMethod == 'CASH')
                                   ? AppColors.subtleGreenBg
                                   : Colors.white,
                               borderRadius: BorderRadius.circular(14),
                               border: Border.all(
-                                color: (_selectedMethod == 'OFFLINE' ||
+                                color:
+                                    (_selectedMethod == 'OFFLINE' ||
                                         _selectedMethod == 'CASH')
                                     ? AppColors.primary
                                     : AppColors.borderLight,
-                                width: (_selectedMethod == 'OFFLINE' ||
+                                width:
+                                    (_selectedMethod == 'OFFLINE' ||
                                         _selectedMethod == 'CASH')
                                     ? 1.5
                                     : 1,
@@ -1119,7 +1140,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                           _selectedMethod == 'CASH')
                                       ? Remix.checkbox_circle_fill
                                       : Remix.checkbox_blank_circle_line,
-                                  color: (_selectedMethod == 'OFFLINE' ||
+                                  color:
+                                      (_selectedMethod == 'OFFLINE' ||
                                           _selectedMethod == 'CASH')
                                       ? AppColors.primary
                                       : AppColors.textSecondary,
@@ -1128,7 +1150,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                 const SizedBox(width: 12),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Offline Payment',
@@ -1156,7 +1179,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                   ),
 
                 // Offline payment details card (bank account, upi, instructions, utr/ref, notes)
-                if ((_selectedMethod == 'CASH' || _selectedMethod == 'OFFLINE') &&
+                if ((_selectedMethod == 'CASH' ||
+                        _selectedMethod == 'OFFLINE') &&
                     _offlinePaymentEnabled) ...[
                   _buildOfflineDetailsCard(finalAmount),
                   const SizedBox(height: 12),
@@ -1165,7 +1189,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                     enabled: !_isProcessing,
                     style: AppTypography.inter(fontSize: 13),
                     decoration: InputDecoration(
-                      labelText: 'Transaction Reference / UTR Number (Optional)',
+                      labelText:
+                          'Transaction Reference / UTR Number (Optional)',
                       labelStyle: AppTypography.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
@@ -1210,7 +1235,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
-                      hintText: 'e.g. Paid via Google Pay / Handed cash to office',
+                      hintText:
+                          'e.g. Paid via Google Pay / Handed cash to office',
                       hintStyle: AppTypography.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary.withValues(alpha: 0.5),
@@ -1248,7 +1274,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                   width: double.infinity,
                   height: 52,
                   child: ElevatedButton(
-                    onPressed: (_isProcessing ||
+                    onPressed:
+                        (_isProcessing ||
                             (!_onlinePaymentEnabled && !_offlinePaymentEnabled))
                         ? null
                         : _handlePayment,
@@ -1276,13 +1303,15 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
-                                (!_onlinePaymentEnabled && !_offlinePaymentEnabled)
+                                (!_onlinePaymentEnabled &&
+                                        !_offlinePaymentEnabled)
                                     ? Remix.forbid_2_line
                                     : (((_selectedMethod == 'CASH' ||
-                                                _selectedMethod == 'OFFLINE') &&
-                                            _offlinePaymentEnabled)
-                                        ? Remix.bank_card_line
-                                        : Remix.secure_payment_fill),
+                                                  _selectedMethod ==
+                                                      'OFFLINE') &&
+                                              _offlinePaymentEnabled)
+                                          ? Remix.bank_card_line
+                                          : Remix.secure_payment_fill),
                                 size: 18,
                               ),
                               const SizedBox(width: 8),
@@ -1294,10 +1323,11 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                             !_offlinePaymentEnabled)
                                         ? 'Payment Method Unavailable'
                                         : (((_selectedMethod == 'CASH' ||
-                                                    _selectedMethod == 'OFFLINE') &&
-                                                _offlinePaymentEnabled)
-                                            ? 'Submit Offline Request (₹${_formatPrice(finalAmount)})'
-                                            : 'Proceed to Payment (₹${_formatPrice(finalAmount)})'),
+                                                      _selectedMethod ==
+                                                          'OFFLINE') &&
+                                                  _offlinePaymentEnabled)
+                                              ? 'Submit Offline Request (₹${_formatPrice(finalAmount)})'
+                                              : 'Proceed to Payment (₹${_formatPrice(finalAmount)})'),
                                     style: AppTypography.inter(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
@@ -1325,7 +1355,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
     final upi = _bankDetails?['upiId']?.toString();
     final instructions = _bankDetails?['instructions']?.toString();
 
-    final hasBankInfo = (bankName != null && bankName.isNotEmpty) ||
+    final hasBankInfo =
+        (bankName != null && bankName.isNotEmpty) ||
         (accNo != null && accNo.isNotEmpty) ||
         (ifsc != null && ifsc.isNotEmpty) ||
         (holder != null && holder.isNotEmpty) ||
@@ -1425,10 +1456,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                   behavior: HitTestBehavior.opaque,
                   onTap: () {
                     Clipboard.setData(ClipboardData(text: value));
-                    AppToast.success(
-                      context,
-                      '$label copied to clipboard',
-                    );
+                    AppToast.success(context, '$label copied to clipboard');
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(2.0),

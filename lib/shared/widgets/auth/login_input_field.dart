@@ -50,8 +50,8 @@ class LoginInputField extends StatelessWidget {
             ? IconButton(
                 icon: Icon(
                   isPasswordVisible
-                      ? LegacyRemixIcons.visibility_off_outlined
-                      : LegacyRemixIcons.visibility_outlined,
+                      ? LegacyRemixIcons.visibilityOffOutlined
+                      : LegacyRemixIcons.visibilityOutlined,
                   color: const Color(0xFF5EC269),
                   size: 20,
                 ),

@@ -95,37 +95,38 @@ class PermissionState {
       }
     }
 
-    return permissions.any(
-      (p) {
-        final pMod = p.module.toUpperCase();
-        final pAct = p.action.toUpperCase();
-        final tMod = targetMod.toUpperCase();
-        final tAct = targetAct.toUpperCase();
+    return permissions.any((p) {
+      final pMod = p.module.toUpperCase();
+      final pAct = p.action.toUpperCase();
+      final tMod = targetMod.toUpperCase();
+      final tAct = targetAct.toUpperCase();
 
-        final customerModule =
-            tMod.startsWith('CUSTOMER_') || pMod.startsWith('CUSTOMER_');
-        final modMatches = customerModule
-            ? pMod == tMod
-            : pMod == tMod ||
+      final customerModule =
+          tMod.startsWith('CUSTOMER_') || pMod.startsWith('CUSTOMER_');
+      final modMatches = customerModule
+          ? pMod == tMod
+          : pMod == tMod ||
                 pMod == tMod.replaceAll('_', '') ||
-                (pMod.endsWith('S') && pMod.substring(0, pMod.length - 1) == tMod) ||
-                (tMod.endsWith('S') && tMod.substring(0, tMod.length - 1) == pMod);
+                (pMod.endsWith('S') &&
+                    pMod.substring(0, pMod.length - 1) == tMod) ||
+                (tMod.endsWith('S') &&
+                    tMod.substring(0, tMod.length - 1) == pMod);
 
-        final actMatches = pAct == tAct ||
-            pAct == '*' ||
-            pAct == 'ALL' ||
-            pAct == 'MANAGE' ||
-            (tAct == 'VIEW' && (pAct == 'READ' || pAct == 'VIEW')) ||
-            (tAct == 'CREATE' &&
-                (pAct == 'CREATE' ||
-                    pAct == 'SCHEDULE' ||
-                    pAct == 'ADD' ||
-                    (tMod == 'ATTENDANCE' &&
-                        (pAct == 'PUNCH_IN' || pAct == 'PUNCH_OUT'))));
+      final actMatches =
+          pAct == tAct ||
+          pAct == '*' ||
+          pAct == 'ALL' ||
+          pAct == 'MANAGE' ||
+          (tAct == 'VIEW' && (pAct == 'READ' || pAct == 'VIEW')) ||
+          (tAct == 'CREATE' &&
+              (pAct == 'CREATE' ||
+                  pAct == 'SCHEDULE' ||
+                  pAct == 'ADD' ||
+                  (tMod == 'ATTENDANCE' &&
+                      (pAct == 'PUNCH_IN' || pAct == 'PUNCH_OUT'))));
 
-        return modMatches && actMatches;
-      },
-    );
+      return modMatches && actMatches;
+    });
   }
 
   /// Convenience CRUD & Action checks

@@ -122,7 +122,11 @@ class _CustomerInfluencerPackagesViewState
             ),
             if (widget.creator.isVerified) ...[
               const SizedBox(width: 5),
-              const Icon(LegacyRemixIcons.verified, color: Color(0xFF3B82F6), size: 16),
+              const Icon(
+                LegacyRemixIcons.verified,
+                color: Color(0xFF3B82F6),
+                size: 16,
+              ),
             ],
           ],
         ),
@@ -304,7 +308,10 @@ class _CustomerInfluencerPackagesViewState
                 top: BorderSide(color: Color(0xFFF1F5F9), width: 1),
               ),
             ),
-            child: ref.watch(permissionManagerProvider).customerCan('CUSTOMER_INFLUENCER_BOOKINGS', 'VIEW')
+            child:
+                ref
+                    .watch(permissionManagerProvider)
+                    .customerCan('CUSTOMER_INFLUENCER_BOOKINGS', 'VIEW')
                 ? SizedBox(
                     width: double.infinity,
                     height: 46,
@@ -506,7 +513,9 @@ class _CustomerInfluencerPackagesViewState
             ),
 
             // Book Now Action
-            if (ref.watch(permissionManagerProvider).customerCan('CUSTOMER_INFLUENCER_BOOKINGS', 'VIEW'))
+            if (ref
+                .watch(permissionManagerProvider)
+                .customerCan('CUSTOMER_INFLUENCER_BOOKINGS', 'VIEW'))
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primaryDark,

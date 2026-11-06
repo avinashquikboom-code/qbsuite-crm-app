@@ -7,8 +7,6 @@ import 'package:quickboom_app/core/network/app_url.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
 
-
-
 /// Provider for managing selected calendar date on Employee side
 final employeeCalendarSelectedDateProvider =
     NotifierProvider<EmployeeCalendarSelectedDateNotifier, DateTime>(
@@ -115,7 +113,9 @@ Future<List<CustomerCalendarActivity>> _loadEmployeeCalendarActivities(
     debugPrint(
       '[EMPLOYEE_CALENDAR_DEBUG] Response payload did not contain a valid list. Payload type: ${payload.runtimeType}',
     );
-    throw StateError('Employee calendar API returned an invalid activity list.');
+    throw StateError(
+      'Employee calendar API returned an invalid activity list.',
+    );
   }
 
   final activities = <CustomerCalendarActivity>[];
@@ -135,7 +135,9 @@ Future<List<CustomerCalendarActivity>> _loadEmployeeCalendarActivities(
     }
   }
   if (skipped > 0) {
-    throw StateError('Unable to read $skipped employee calendar activities. Please refresh or contact support.');
+    throw StateError(
+      'Unable to read $skipped employee calendar activities. Please refresh or contact support.',
+    );
   }
   final deduplicated = deduplicateCustomerActivities(activities);
   // TEMP regression diagnostics: counts only, no identifiers or tokens.
@@ -232,10 +234,7 @@ final employeeCalendarActivitiesFor7DayWindowProvider =
         apiClient,
         // Range keys only: the API maps `startDate` onto the single-day `date`
         // filter, which would collapse the week to its first day.
-        queryParameters: {
-          'dateFrom': startDateStr,
-          'dateTo': endDateStr,
-        },
+        queryParameters: {'dateFrom': startDateStr, 'dateTo': endDateStr},
       );
     });
 

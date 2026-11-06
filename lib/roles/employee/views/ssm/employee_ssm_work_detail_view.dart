@@ -16,7 +16,6 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
 
   const EmployeeSSMWorkDetailView({super.key, required this.workId});
 
-
   void _showStartWorkDialog(
     BuildContext context,
     WidgetRef ref,
@@ -129,7 +128,6 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                     color: AppColors.textSecondary,
                   ),
                 ),
-
               ],
             ),
           ),
@@ -276,9 +274,8 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                 ),
                 child: Column(
                   children: [
-                    
                     const Divider(height: 20, color: AppColors.borderLight),
-                    
+
                     const Divider(height: 20, color: AppColors.borderLight),
                     _buildDetailRow(
                       'Duration',

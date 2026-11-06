@@ -225,7 +225,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                   url,
                   fit: BoxFit.contain,
                   errorBuilder: (_, _, _) => const Icon(
-                    LegacyRemixIcons.broken_image,
+                    LegacyRemixIcons.brokenImage,
                     color: Colors.white,
                     size: 48,
                   ),
@@ -236,7 +236,11 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
               top: 40,
               right: 20,
               child: IconButton(
-                icon: const Icon(LegacyRemixIcons.close, color: Colors.white, size: 28),
+                icon: const Icon(
+                  LegacyRemixIcons.close,
+                  color: Colors.white,
+                  size: 28,
+                ),
                 onPressed: () => Navigator.pop(ctx),
               ),
             ),
@@ -510,7 +514,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         ),
                       ] else ...[
                         const Icon(
-                          LegacyRemixIcons.check_circle,
+                          LegacyRemixIcons.checkCircle,
                           size: 14,
                           color: Color(0xFF10B981),
                         ),
@@ -1075,7 +1079,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         ),
                         padding: const EdgeInsets.all(16),
                         child: const Icon(
-                          LegacyRemixIcons.play_arrow_rounded,
+                          LegacyRemixIcons.playArrowRounded,
                           color: Colors.white,
                           size: 40,
                         ),
@@ -1095,8 +1099,8 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                     constraints: const BoxConstraints(),
                     icon: Icon(
                       ctrl.value.isPlaying
-                          ? LegacyRemixIcons.pause_rounded
-                          : LegacyRemixIcons.play_arrow_rounded,
+                          ? LegacyRemixIcons.pauseRounded
+                          : LegacyRemixIcons.playArrowRounded,
                       color: Colors.white,
                       size: 24,
                     ),
@@ -1120,8 +1124,8 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                     constraints: const BoxConstraints(),
                     icon: Icon(
                       _videoMuted
-                          ? LegacyRemixIcons.volume_off_rounded
-                          : LegacyRemixIcons.volume_up_rounded,
+                          ? LegacyRemixIcons.volumeOffRounded
+                          : LegacyRemixIcons.volumeUpRounded,
                       color: Colors.white,
                       size: 20,
                     ),

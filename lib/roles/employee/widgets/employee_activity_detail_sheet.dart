@@ -278,7 +278,10 @@ class _EmployeeActivityDetailSheetState
               const SizedBox(height: 10),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
                 decoration: BoxDecoration(
                   color: const Color(0xFFFEF3C7),
                   borderRadius: BorderRadius.circular(8),
@@ -366,8 +369,7 @@ class _EmployeeActivityDetailSheetState
             _buildDetailTile(
               icon: Remix.building_2_line,
               label: 'Customer',
-              value:
-                  activity.businessName.trim().isNotEmpty
+              value: activity.businessName.trim().isNotEmpty
                   ? activity.businessName.trim()
                   : (activity.customerName.trim().isNotEmpty
                         ? activity.customerName.trim()
@@ -381,9 +383,9 @@ class _EmployeeActivityDetailSheetState
               label: 'Scheduled Date & Time',
               value:
                   activity.time.trim().isNotEmpty &&
-                          activity.time.trim().toLowerCase() != 'time not set'
-                      ? '${formatActivityDate(activity.date)} • ${activity.time.trim()}'
-                      : formatActivityDate(activity.date),
+                      activity.time.trim().toLowerCase() != 'time not set'
+                  ? '${formatActivityDate(activity.date)} • ${activity.time.trim()}'
+                  : formatActivityDate(activity.date),
             ),
             const SizedBox(height: 8),
 

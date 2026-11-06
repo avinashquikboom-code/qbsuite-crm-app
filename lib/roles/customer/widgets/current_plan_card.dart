@@ -570,7 +570,8 @@ class CurrentPlanCard extends StatelessWidget {
                   ],
                 ),
 
-                if (sub.couponCode != null && sub.couponCode!.trim().isNotEmpty) ...[
+                if (sub.couponCode != null &&
+                    sub.couponCode!.trim().isNotEmpty) ...[
                   const SizedBox(height: 10),
                   Text(
                     'Coupon ${sub.couponCode}',

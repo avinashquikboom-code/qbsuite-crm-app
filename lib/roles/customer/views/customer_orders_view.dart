@@ -93,7 +93,10 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
           automaticallyImplyLeading: Navigator.canPop(context),
           leading: Navigator.canPop(context)
               ? IconButton(
-                  icon: const Icon(Remix.arrow_left_line, color: AppColors.textPrimary),
+                  icon: const Icon(
+                    Remix.arrow_left_line,
+                    color: AppColors.textPrimary,
+                  ),
                   onPressed: () => Navigator.of(context).pop(),
                 )
               : null,
@@ -110,7 +113,8 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
               icon: const Icon(Remix.menu_line, color: AppColors.textPrimary),
               tooltip: 'Open Menu',
               onPressed:
-                  widget.onOpenDrawer ?? () => Scaffold.of(context).openDrawer(),
+                  widget.onOpenDrawer ??
+                  () => Scaffold.of(context).openDrawer(),
             ),
             const SizedBox(width: 4),
           ],

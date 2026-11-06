@@ -1130,7 +1130,11 @@ class _EmployeeRegistrationViewState
                     color: isSelected ? AppColors.primary : Colors.transparent,
                   ),
                   child: isSelected
-                      ? const Icon(LegacyRemixIcons.check, size: 12, color: Colors.white)
+                      ? const Icon(
+                          LegacyRemixIcons.check,
+                          size: 12,
+                          color: Colors.white,
+                        )
                       : null,
                 ),
               ],

@@ -119,7 +119,9 @@ class EmployeeProfileData {
       status: (json['status'] ?? 'ACTIVE').toString().trim(),
       joiningDate: (json['joiningDate'] ?? '').toString().trim(),
       employmentType: (json['employmentType'] ?? 'Full-Time').toString().trim(),
-      manager: (json['manager'] ?? json['reportingManager'] ?? '').toString().trim(),
+      manager: (json['manager'] ?? json['reportingManager'] ?? '')
+          .toString()
+          .trim(),
       bankDetails: parsedBank,
       salaryStructure: json['salaryStructure'] is Map
           ? Map<String, dynamic>.from(json['salaryStructure'])

@@ -1,9 +1,11 @@
+import '../icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'app_colors.dart';
 
 class AppTheme {
+  static ThemeData get light => lightTheme;
   // Legacy color getters forwarding to AppColors
   static Color get primaryColor => AppColors.primary;
   static Color get darkGreen => AppColors.primaryDark;
@@ -24,6 +26,13 @@ class AppTheme {
 
   static ThemeData get lightTheme {
     return ThemeData(
+      fontFamily: 'Inter',
+      actionIconTheme: ActionIconThemeData(
+        backButtonIconBuilder: (_) => const RemixIcon(AppIcon.back),
+        closeButtonIconBuilder: (_) => const RemixIcon(AppIcon.close),
+        drawerButtonIconBuilder: (_) => const RemixIcon(AppIcon.menu),
+        endDrawerButtonIconBuilder: (_) => const RemixIcon(AppIcon.menu),
+      ),
       useMaterial3: true,
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.background,
@@ -149,6 +158,13 @@ class AppTheme {
 
   static ThemeData get darkTheme {
     return ThemeData(
+      fontFamily: 'Inter',
+      actionIconTheme: ActionIconThemeData(
+        backButtonIconBuilder: (_) => const RemixIcon(AppIcon.back),
+        closeButtonIconBuilder: (_) => const RemixIcon(AppIcon.close),
+        drawerButtonIconBuilder: (_) => const RemixIcon(AppIcon.menu),
+        endDrawerButtonIconBuilder: (_) => const RemixIcon(AppIcon.menu),
+      ),
       useMaterial3: true,
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.backgroundDark,

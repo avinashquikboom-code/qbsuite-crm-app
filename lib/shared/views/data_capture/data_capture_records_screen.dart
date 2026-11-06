@@ -21,7 +21,11 @@ import '../../../core/utils/app_snack_bar.dart';
 class DataCaptureRecordsScreen extends ConsumerStatefulWidget {
   final String? jobId;
   final bool fromHistory;
-  const DataCaptureRecordsScreen({super.key, this.jobId, this.fromHistory = false});
+  const DataCaptureRecordsScreen({
+    super.key,
+    this.jobId,
+    this.fromHistory = false,
+  });
   @override
   ConsumerState<DataCaptureRecordsScreen> createState() => _RecordsState();
 }
@@ -65,50 +69,80 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
       result = await showDialog<Map<String, dynamic>>(
         context: context,
         barrierDismissible: false,
-        builder: (ctx) => StatefulBuilder(builder: (ctx, updateDialog) {
-          return PopScope(
-            canPop: !submitting,
-            child: AlertDialog(
-              title: Text(selected.length == 1
-                  ? 'Import to Leads?' : 'Import ${selected.length} records?'),
-              content: Text(selected.length == 1
-                  ? 'Import "${selected.values.first.isNotEmpty ? selected.values.first : 'this business'}" into Leads?\n\nOnly validated records can be imported.'
-                  : 'Import the ${selected.length} selected businesses into Leads?\n\nOnly validated records can be imported. Other records will remain selected.'),
-              actions: [
-                TextButton(
-                  onPressed: submitting ? null : () => Navigator.pop(ctx),
-                  child: const Text('Cancel'),
+        builder: (ctx) => StatefulBuilder(
+          builder: (ctx, updateDialog) {
+            return PopScope(
+              canPop: !submitting,
+              child: AlertDialog(
+                title: Text(
+                  selected.length == 1
+                      ? 'Import to Leads?'
+                      : 'Import ${selected.length} records?',
                 ),
-                FilledButton(
-                  style: FilledButton.styleFrom(backgroundColor: AppColors.primary),
-                  onPressed: submitting ? null : () async {
-                    if (submitting || !ref.read(permissionManagerProvider).canEdit('DATA_CAPTURE')) return;
-                    updateDialog(() => submitting = true);
-                    setState(() => _importing = true);
-                    try {
-                      for (final id in selected.keys) {
-                        final record = _data?.records.where((r) => r.id == id).firstOrNull;
-                        if (record != null && record.status != 'VALIDATED' &&
-                            record.fields['isImported'] != true) {
-                          await _service.status(id, 'validate');
-                        }
-                      }
-                      final response = await _service.importSelected(selected.keys.toList());
-                      if (ctx.mounted) Navigator.pop(ctx, response);
-                    } catch (error) {
-                      importError = error;
-                      if (ctx.mounted) Navigator.pop(ctx);
-                    }
-                  },
-                  child: submitting
-                      ? const SizedBox(width: 20, height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
-                      : Text(selected.length == 1 ? 'Import Record' : 'Import Records'),
+                content: Text(
+                  selected.length == 1
+                      ? 'Import "${selected.values.first.isNotEmpty ? selected.values.first : 'this business'}" into Leads?\n\nOnly validated records can be imported.'
+                      : 'Import the ${selected.length} selected businesses into Leads?\n\nOnly validated records can be imported. Other records will remain selected.',
                 ),
-              ],
-            ),
-          );
-        }),
+                actions: [
+                  TextButton(
+                    onPressed: submitting ? null : () => Navigator.pop(ctx),
+                    child: const Text('Cancel'),
+                  ),
+                  FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                    ),
+                    onPressed: submitting
+                        ? null
+                        : () async {
+                            if (submitting ||
+                                !ref
+                                    .read(permissionManagerProvider)
+                                    .canEdit('DATA_CAPTURE'))
+                              return;
+                            updateDialog(() => submitting = true);
+                            setState(() => _importing = true);
+                            try {
+                              for (final id in selected.keys) {
+                                final record = _data?.records
+                                    .where((r) => r.id == id)
+                                    .firstOrNull;
+                                if (record != null &&
+                                    record.status != 'VALIDATED' &&
+                                    record.fields['isImported'] != true) {
+                                  await _service.status(id, 'validate');
+                                }
+                              }
+                              final response = await _service.importSelected(
+                                selected.keys.toList(),
+                              );
+                              if (ctx.mounted) Navigator.pop(ctx, response);
+                            } catch (error) {
+                              importError = error;
+                              if (ctx.mounted) Navigator.pop(ctx);
+                            }
+                          },
+                    child: submitting
+                        ? const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : Text(
+                            selected.length == 1
+                                ? 'Import Record'
+                                : 'Import Records',
+                          ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       );
     } finally {
       _confirmingImport = false;
@@ -147,14 +181,14 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
       setState(() => _importing = false);
       if ((imported > 0 || duplicates > 0) &&
           (ref.read(permissionManagerProvider).canViewLeads ||
-                    ref.read(permissionManagerProvider).isCrmEligible)) {
+              ref.read(permissionManagerProvider).isCrmEligible)) {
         final successMsg = imported > 0
             ? '$imported ${imported == 1 ? 'record' : 'records'} imported successfully!${unsuccessful.isEmpty ? '' : ' $failed failed, $skipped skipped. ${unsuccessful.map((r) => r['reason']).join('; ')}'}'
             : 'Selected businesses are already in Leads.';
         AppSnackBar.showSuccess(context, successMsg);
-        await Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => const LeadsView()),
-        );
+        await Navigator.of(
+          context,
+        ).push(MaterialPageRoute(builder: (_) => const LeadsView()));
         if (mounted) await _load(_data?.page ?? 1);
         return;
       }
@@ -220,7 +254,9 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
         ).push(MaterialPageRoute(builder: (_) => const LeadsView()));
       }
     } catch (error) {
-      debugPrint('[DATA_CAPTURE_UI_ERROR] type=${error.runtimeType} mounted=$mounted');
+      debugPrint(
+        '[DATA_CAPTURE_UI_ERROR] type=${error.runtimeType} mounted=$mounted',
+      );
       if (!mounted) return;
       AppSnackBar.showError(
         context,
@@ -232,8 +268,6 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
       if (mounted) setState(() => _importing = false);
     }
   }
-
-
 
   @override
   void initState() {
@@ -425,7 +459,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
       ),
       child: const Center(
         child: Icon(
-          LegacyRemixIcons.business_rounded,
+          LegacyRemixIcons.businessRounded,
           size: 22,
           color: AppColors.primaryDark,
         ),
@@ -528,7 +562,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                         const Padding(
                           padding: EdgeInsets.only(top: 2),
                           child: Icon(
-                            LegacyRemixIcons.location_on_outlined,
+                            LegacyRemixIcons.locationOnOutlined,
                             size: 15,
                             color: Color(0xFF64748B),
                           ),
@@ -553,7 +587,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                     child: Row(
                       children: [
                         const Icon(
-                          LegacyRemixIcons.phone_outlined,
+                          LegacyRemixIcons.phoneOutlined,
                           size: 15,
                           color: AppColors.primary,
                         ),
@@ -583,7 +617,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 const Icon(
-                                  LegacyRemixIcons.copy_rounded,
+                                  LegacyRemixIcons.copyRounded,
                                   size: 12,
                                   color: Color(0xFF64748B),
                                 ),
@@ -607,7 +641,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                   Row(
                     children: [
                       const Icon(
-                        LegacyRemixIcons.calendar_today_outlined,
+                        LegacyRemixIcons.calendarTodayOutlined,
                         size: 13,
                         color: Color(0xFF94A3B8),
                       ),
@@ -634,8 +668,6 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
     );
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     final permissions = ref.watch(permissionManagerProvider);
@@ -656,7 +688,10 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
           elevation: 0,
           scrolledUnderElevation: 0,
           leading: IconButton(
-            icon: const Icon(LegacyRemixIcons.arrow_back, color: Color(0xFF111827)),
+            icon: const Icon(
+              LegacyRemixIcons.arrowBack,
+              color: Color(0xFF111827),
+            ),
             tooltip: 'Back',
             onPressed: _importing
                 ? null
@@ -714,7 +749,10 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                         color: AppColors.primary,
                       ),
                     )
-                  : const Icon(LegacyRemixIcons.refresh_rounded, color: Color(0xFF64748B)),
+                  : const Icon(
+                      LegacyRemixIcons.refreshRounded,
+                      color: Color(0xFF64748B),
+                    ),
             ),
             const SizedBox(width: 6),
           ],
@@ -792,7 +830,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                     ),
                                   )
                                 : const Icon(
-                                    LegacyRemixIcons.file_download_outlined,
+                                    LegacyRemixIcons.fileDownloadOutlined,
                                     size: 20,
                                   ),
                             label: Text(
@@ -849,14 +887,14 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                           color: const Color(0xFF94A3B8),
                         ),
                         prefixIcon: const Icon(
-                          LegacyRemixIcons.search_rounded,
+                          LegacyRemixIcons.searchRounded,
                           size: 20,
                           color: Color(0xFF94A3B8),
                         ),
                         suffixIcon: _search.text.isNotEmpty
                             ? IconButton(
                                 icon: const Icon(
-                                  LegacyRemixIcons.close_rounded,
+                                  LegacyRemixIcons.closeRounded,
                                   size: 18,
                                   color: Color(0xFF94A3B8),
                                 ),
@@ -899,10 +937,15 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                     selectedOnPageCount > 0 && !allOnPageSelected;
 
                 return Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 4,
+                  ),
                   decoration: const BoxDecoration(
                     color: Color(0xFFF8FAFC),
-                    border: Border(bottom: BorderSide(color: Color(0xFFE2E8F0))),
+                    border: Border(
+                      bottom: BorderSide(color: Color(0xFFE2E8F0)),
+                    ),
                   ),
                   child: Row(
                     children: [
@@ -911,20 +954,20 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                         value: records.isEmpty
                             ? false
                             : (allOnPageSelected
-                                ? true
-                                : (someOnPageSelected ? null : false)),
+                                  ? true
+                                  : (someOnPageSelected ? null : false)),
                         activeColor: AppColors.primary,
                         visualDensity: const VisualDensity(
                           horizontal: -4,
                           vertical: -4,
                         ),
-                        materialTapTargetSize:
-                            MaterialTapTargetSize.shrinkWrap,
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4),
                         ),
                         semanticLabel: 'Select all records on this page',
-                        onChanged: _importing ||
+                        onChanged:
+                            _importing ||
                                 _loading ||
                                 _error != null ||
                                 records.isEmpty
@@ -1011,7 +1054,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                 shape: BoxShape.circle,
                               ),
                               child: const Icon(
-                                LegacyRemixIcons.error_outline_rounded,
+                                LegacyRemixIcons.errorOutlineRounded,
                                 size: 26,
                                 color: Color(0xFFDC2626),
                               ),
@@ -1037,7 +1080,10 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             const SizedBox(height: 16),
                             FilledButton.icon(
                               onPressed: () => _load(),
-                              icon: const Icon(LegacyRemixIcons.refresh_rounded, size: 16),
+                              icon: const Icon(
+                                LegacyRemixIcons.refreshRounded,
+                                size: 16,
+                              ),
                               label: const Text('Retry'),
                               style: FilledButton.styleFrom(
                                 backgroundColor: AppColors.primary,
@@ -1075,7 +1121,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: const Icon(
-                                        LegacyRemixIcons.inventory_2_outlined,
+                                        LegacyRemixIcons.inventory2Outlined,
                                         size: 28,
                                         color: Color(0xFF94A3B8),
                                       ),
@@ -1108,7 +1154,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                           _load();
                                         },
                                         icon: const Icon(
-                                          LegacyRemixIcons.clear_all_rounded,
+                                          LegacyRemixIcons.clearAllRounded,
                                           size: 16,
                                         ),
                                         label: const Text('Clear Search'),
@@ -1134,8 +1180,6 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                       ),
                     ),
             ),
-
-
           ],
         ),
       ),
@@ -1144,7 +1188,11 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
 }
 
 Widget _photo(String? url, {double size = 120}) => url == null
-    ? SizedBox(width: size, height: size, child: const Icon(LegacyRemixIcons.business))
+    ? SizedBox(
+        width: size,
+        height: size,
+        child: const Icon(LegacyRemixIcons.business),
+      )
     : Image.network(
         url,
         width: size,
@@ -1153,7 +1201,7 @@ Widget _photo(String? url, {double size = 120}) => url == null
         errorBuilder: (_, _, _) => SizedBox(
           width: size,
           height: size,
-          child: const Icon(LegacyRemixIcons.broken_image_outlined),
+          child: const Icon(LegacyRemixIcons.brokenImageOutlined),
         ),
       );
 
@@ -1340,10 +1388,10 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
               : 'This business is already in Leads.',
         );
         if ((ref.read(permissionManagerProvider).canViewLeads ||
-                    ref.read(permissionManagerProvider).isCrmEligible)) {
-          await Navigator.of(context).push(
-            MaterialPageRoute(builder: (_) => const LeadsView()),
-          );
+            ref.read(permissionManagerProvider).isCrmEligible)) {
+          await Navigator.of(
+            context,
+          ).push(MaterialPageRoute(builder: (_) => const LeadsView()));
         } else {
           AppSnackBar.showInfo(
             context,
@@ -1362,7 +1410,9 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
         );
       }
     } catch (error) {
-      debugPrint('[DATA_CAPTURE_UI_ERROR] type=${error.runtimeType} mounted=$mounted');
+      debugPrint(
+        '[DATA_CAPTURE_UI_ERROR] type=${error.runtimeType} mounted=$mounted',
+      );
       if (!mounted) return;
       AppSnackBar.showError(
         context,
@@ -1411,7 +1461,11 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
     AppSnackBar.showSuccess(context, '$label copied');
   }
 
-  Future<void> _openLink(String value, {bool phone = false, bool email = false}) async {
+  Future<void> _openLink(
+    String value, {
+    bool phone = false,
+    bool email = false,
+  }) async {
     try {
       final target = phone
           ? 'tel:${value.replaceAll(RegExp(r'[^0-9+]'), '')}'
@@ -1493,7 +1547,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
           IconButton(
             tooltip: 'Copy $label',
             onPressed: () => _copyValue(label, value),
-            icon: const Icon(LegacyRemixIcons.copy_outlined, size: 18),
+            icon: const Icon(LegacyRemixIcons.copyOutlined, size: 18),
           ),
       ],
     ),
@@ -1580,7 +1634,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
         ),
       _detailCard(
         'Business overview',
-        LegacyRemixIcons.business_outlined,
+        LegacyRemixIcons.businessOutlined,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1641,7 +1695,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   child: _stat(
                     'Rating',
                     _value('rating'),
-                    LegacyRemixIcons.star_outline_rounded,
+                    LegacyRemixIcons.starOutlineRounded,
                   ),
                 ),
                 SizedBox(
@@ -1649,7 +1703,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   child: _stat(
                     'Reviews',
                     _value('reviewCount'),
-                    LegacyRemixIcons.reviews_outlined,
+                    LegacyRemixIcons.reviewsOutlined,
                   ),
                 ),
                 SizedBox(
@@ -1657,7 +1711,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   child: _stat(
                     'Business status',
                     _value('businessStatus'),
-                    LegacyRemixIcons.storefront_outlined,
+                    LegacyRemixIcons.storefrontOutlined,
                   ),
                 ),
               ],
@@ -1667,7 +1721,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       ),
       _detailCard(
         'Address',
-        LegacyRemixIcons.location_on_outlined,
+        LegacyRemixIcons.locationOnOutlined,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1675,7 +1729,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
             if (maps.isNotEmpty)
               TextButton.icon(
                 onPressed: () => _openLink(maps),
-                icon: const Icon(LegacyRemixIcons.map_outlined),
+                icon: const Icon(LegacyRemixIcons.mapOutlined),
                 label: const Text('Open in Maps'),
               ),
           ],
@@ -1684,14 +1738,14 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       if (phone.isNotEmpty)
         _detailCard(
           'Phone',
-          LegacyRemixIcons.phone_outlined,
+          LegacyRemixIcons.phoneOutlined,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _detailValue('Phone number', phone, copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(phone, phone: true),
-                icon: const Icon(LegacyRemixIcons.call_outlined),
+                icon: const Icon(LegacyRemixIcons.callOutlined),
                 label: const Text('Call business'),
               ),
             ],
@@ -1700,14 +1754,14 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       if (website.isNotEmpty)
         _detailCard(
           'Website',
-          LegacyRemixIcons.language_outlined,
+          LegacyRemixIcons.languageOutlined,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _detailValue('Website URL', website, copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(website),
-                icon: const Icon(LegacyRemixIcons.open_in_new),
+                icon: const Icon(LegacyRemixIcons.openInNew),
                 label: const Text('Visit Website'),
               ),
             ],
@@ -1716,14 +1770,14 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
       if (_value('email').isNotEmpty)
         _detailCard(
           'Email',
-          LegacyRemixIcons.mail_outline,
+          LegacyRemixIcons.mailOutline,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _detailValue('Email address', _value('email'), copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(_value('email'), email: true),
-                icon: const Icon(LegacyRemixIcons.mail_outlined),
+                icon: const Icon(LegacyRemixIcons.mailOutlined),
                 label: const Text('Send Email'),
               ),
             ],
@@ -1738,7 +1792,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
         ),
       _detailCard(
         'Google Places information',
-        LegacyRemixIcons.travel_explore_outlined,
+        LegacyRemixIcons.travelExploreOutlined,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1771,7 +1825,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
               _detailValue('Google Maps URL', maps, copy: true),
               TextButton.icon(
                 onPressed: () => _openLink(maps),
-                icon: const Icon(LegacyRemixIcons.open_in_new),
+                icon: const Icon(LegacyRemixIcons.openInNew),
                 label: const Text('Open Google Maps'),
               ),
             ],
@@ -1797,7 +1851,10 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            leading: const Icon(LegacyRemixIcons.info_outline, color: AppColors.primary),
+            leading: const Icon(
+              LegacyRemixIcons.infoOutline,
+              color: AppColors.primary,
+            ),
             childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
             children: [
               ...record.fields.entries
@@ -1903,8 +1960,8 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                             )
                           : Icon(
                               _isImported
-                                  ? LegacyRemixIcons.check_circle_outline
-                                  : LegacyRemixIcons.person_add_alt_1,
+                                  ? LegacyRemixIcons.checkCircleOutline
+                                  : LegacyRemixIcons.personAddAlt1,
                             ),
                       label: Text(
                         _importing
@@ -1917,7 +1974,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   if (phone.isNotEmpty)
                     OutlinedButton.icon(
                       onPressed: () => _openLink(phone, phone: true),
-                      icon: const Icon(LegacyRemixIcons.call_outlined, size: 18),
+                      icon: const Icon(LegacyRemixIcons.callOutlined, size: 18),
                       label: const Text('Call'),
                     ),
                   if (website.isNotEmpty)
@@ -1929,13 +1986,14 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                   if (maps.isNotEmpty)
                     OutlinedButton.icon(
                       onPressed: () => _openLink(maps),
-                      icon: const Icon(LegacyRemixIcons.map_outlined, size: 18),
+                      icon: const Icon(LegacyRemixIcons.mapOutlined, size: 18),
                       label: const Text('Maps'),
                     ),
                   Builder(
                     builder: (buttonContext) => OutlinedButton.icon(
                       onPressed: () async {
-                        final box = buttonContext.findRenderObject() as RenderBox?;
+                        final box =
+                            buttonContext.findRenderObject() as RenderBox?;
                         try {
                           await SharePlus.instance.share(
                             ShareParams(
@@ -1953,10 +2011,16 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
                           );
                         } catch (_) {
                           if (!mounted) return;
-                          AppSnackBar.showError(context, 'Unable to share this record.');
+                          AppSnackBar.showError(
+                            context,
+                            'Unable to share this record.',
+                          );
                         }
                       },
-                      icon: const Icon(LegacyRemixIcons.share_outlined, size: 18),
+                      icon: const Icon(
+                        LegacyRemixIcons.shareOutlined,
+                        size: 18,
+                      ),
                       label: const Text('Share'),
                     ),
                   ),

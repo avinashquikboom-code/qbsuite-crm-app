@@ -17,7 +17,6 @@ class SSMDailyTaskTimeline extends StatelessWidget {
     this.onCompleteDayTask,
   });
 
-
   @override
   Widget build(BuildContext context) {
     final currentActiveDay = work.getCurrentDayNumber(targetDate);
@@ -41,7 +40,11 @@ class SSMDailyTaskTimeline extends StatelessWidget {
               color: AppColors.primary,
               shape: BoxShape.circle,
             ),
-            child: const Icon(LegacyRemixIcons.check, size: 14, color: Colors.white),
+            child: const Icon(
+              LegacyRemixIcons.check,
+              size: 14,
+              color: Colors.white,
+            ),
           );
         } else if (isCurrent) {
           indicator = Container(
@@ -121,7 +124,6 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            
                             const SizedBox(width: 6),
                             if (isCompleted)
                               Container(

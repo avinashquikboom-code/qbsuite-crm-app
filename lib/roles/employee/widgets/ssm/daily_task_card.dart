@@ -17,7 +17,6 @@ class DailyTaskCard extends StatelessWidget {
     this.onComplete,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +37,6 @@ class DailyTaskCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              
               const SizedBox(width: 6),
               if (task.isCompleted)
                 Container(

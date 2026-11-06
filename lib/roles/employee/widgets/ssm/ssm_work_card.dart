@@ -209,7 +209,6 @@ class SSMWorkCard extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 6),
-                      
                     ],
                   ),
                   const SizedBox(height: 4),

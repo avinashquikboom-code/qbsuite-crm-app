@@ -504,7 +504,10 @@ class EmployeeMyWorkCard extends StatelessWidget {
                         vertical: 5,
                       ),
                       decoration: BoxDecoration(
-                        color: activity.isCarriedForward && !isCompleted && !isInProgress
+                        color:
+                            activity.isCarriedForward &&
+                                !isCompleted &&
+                                !isInProgress
                             ? const Color(0xFFFEF3C7)
                             : _getStatusBgColor(activity.status),
                         borderRadius: BorderRadius.circular(8),
@@ -522,13 +525,18 @@ class EmployeeMyWorkCard extends StatelessWidget {
                               ),
                             ),
                           Text(
-                            activity.isCarriedForward && !isCompleted && !isInProgress
+                            activity.isCarriedForward &&
+                                    !isCompleted &&
+                                    !isInProgress
                                 ? 'PENDING / CARRIED FORWARD'
                                 : activity.status.toUpperCase(),
                             style: AppTypography.inter(
                               fontSize: 11.5,
                               fontWeight: FontWeight.w700,
-                              color: activity.isCarriedForward && !isCompleted && !isInProgress
+                              color:
+                                  activity.isCarriedForward &&
+                                      !isCompleted &&
+                                      !isInProgress
                                   ? const Color(0xFFB45309)
                                   : _getStatusColor(activity.status),
                             ),

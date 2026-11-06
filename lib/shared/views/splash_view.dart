@@ -50,7 +50,9 @@ class _SplashViewState extends ConsumerState<SplashView> {
   @override
   Widget build(BuildContext context) {
     final loginState = ref.watch(loginStateProvider);
-    final effectiveError = widget.error ?? (loginState.hasStartupError ? loginState.startupError : null);
+    final effectiveError =
+        widget.error ??
+        (loginState.hasStartupError ? loginState.startupError : null);
 
     return Scaffold(
       backgroundColor: AppTheme.mainBg,

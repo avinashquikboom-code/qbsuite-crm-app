@@ -293,10 +293,14 @@ const List<Color> kCustomerColorPalette = [
 
 /// Deterministically resolves a stable, distinct Color for any customer
 /// using a stable customer identifier (customerId or customer name).
-Color resolveCustomerColor(dynamic activityOrCustomerId, [String? customerName]) {
+Color resolveCustomerColor(
+  dynamic activityOrCustomerId, [
+  String? customerName,
+]) {
   String rawKey = '';
   if (activityOrCustomerId is CustomerCalendarActivity) {
-    if (activityOrCustomerId.customerId.trim().isNotEmpty && activityOrCustomerId.customerId.trim() != '0') {
+    if (activityOrCustomerId.customerId.trim().isNotEmpty &&
+        activityOrCustomerId.customerId.trim() != '0') {
       rawKey = activityOrCustomerId.customerId.trim();
     } else {
       rawKey = activityOrCustomerId.businessName.trim().isNotEmpty
@@ -639,15 +643,21 @@ class CustomerCalendarActivity {
       }
       return raw;
     }
-    if (originalScheduledDate != null && originalScheduledDate!.trim().isNotEmpty) {
+    if (originalScheduledDate != null &&
+        originalScheduledDate!.trim().isNotEmpty) {
       return originalScheduledDate!.trim();
     }
     final n = notes ?? '';
-    final match = RegExp(r'Originally scheduled:\s*([^\n\r]+)', caseSensitive: false).firstMatch(n);
+    final match = RegExp(
+      r'Originally scheduled:\s*([^\n\r]+)',
+      caseSensitive: false,
+    ).firstMatch(n);
     if (match != null) {
       return match.group(1)?.trim();
     }
-    final tagMatch = RegExp(r'\[ORIGINAL_SCHEDULE:\s*([0-9]{4}-[0-9]{2}-[0-9]{2})\]').firstMatch(n);
+    final tagMatch = RegExp(
+      r'\[ORIGINAL_SCHEDULE:\s*([0-9]{4}-[0-9]{2}-[0-9]{2})\]',
+    ).firstMatch(n);
     if (tagMatch != null) {
       return tagMatch.group(1)?.trim();
     }
@@ -760,7 +770,8 @@ class CustomerCalendarActivity {
       reworkActionLabel: reworkActionLabel ?? this.reworkActionLabel,
       location: location ?? this.location,
       isCarriedForward: isCarriedForward ?? this.isCarriedForward,
-      originalScheduledDate: originalScheduledDate ?? this.originalScheduledDate,
+      originalScheduledDate:
+          originalScheduledDate ?? this.originalScheduledDate,
       carryForwardNote: carryForwardNote ?? this.carryForwardNote,
       wonByName: wonByName ?? this.wonByName,
     );
@@ -778,7 +789,8 @@ class CustomerCalendarActivity {
     final rawTypeStr = rawType?.toString();
     final serviceStr = json['serviceName']?.toString();
     final productStr = json['productName']?.toString();
-    final planStr = json['planName']?.toString() ??
+    final planStr =
+        json['planName']?.toString() ??
         (json['plan'] is Map
             ? json['plan']['name']?.toString()
             : json['plan']?.toString());
@@ -886,23 +898,19 @@ class CustomerCalendarActivity {
     if (json['scheduledDate'] != null &&
         json['scheduledDate'].toString().trim().isNotEmpty) {
       final s = json['scheduledDate'].toString().trim();
-      rawScheduledDateStr =
-          s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
+      rawScheduledDateStr = s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
     } else if (json['scheduledAt'] != null &&
         json['scheduledAt'].toString().trim().isNotEmpty) {
       final s = json['scheduledAt'].toString().trim();
-      rawScheduledDateStr =
-          s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
+      rawScheduledDateStr = s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
     } else if (json['scheduleDate'] != null &&
         json['scheduleDate'].toString().trim().isNotEmpty) {
       final s = json['scheduleDate'].toString().trim();
-      rawScheduledDateStr =
-          s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
+      rawScheduledDateStr = s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
     } else if (json['date'] != null &&
         json['date'].toString().trim().isNotEmpty) {
       final s = json['date'].toString().trim();
-      rawScheduledDateStr =
-          s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
+      rawScheduledDateStr = s.contains('T') ? s.split('T')[0] : s.split(' ')[0];
     } else {
       rawScheduledDateStr = normalizedDateStr;
     }
@@ -920,28 +928,33 @@ class CustomerCalendarActivity {
       rawAssigned = json['assignedToName'].toString().trim();
     } else if (json['assignedEmployees'] is List &&
         (json['assignedEmployees'] as List).isNotEmpty) {
-      final firstEmp =
-          (json['assignedEmployees'] as List).first?.toString().trim();
+      final firstEmp = (json['assignedEmployees'] as List).first
+          ?.toString()
+          .trim();
       if (firstEmp != null && firstEmp.isNotEmpty) {
         rawAssigned = firstEmp;
       }
     } else if (json['employee'] is Map) {
       final empMap = Map<String, dynamic>.from(json['employee'] as Map);
-      final eName = (empMap['name'] ??
-              '${empMap['firstName'] ?? ''} ${empMap['lastName'] ?? ''}')
-          .toString()
-          .trim();
+      final eName =
+          (empMap['name'] ??
+                  '${empMap['firstName'] ?? ''} ${empMap['lastName'] ?? ''}')
+              .toString()
+              .trim();
       if (eName.isNotEmpty) {
         rawAssigned = eName;
       }
     }
 
-    final isSuperAdmin = rawAssigned != null &&
-        RegExp(r'^(super\s*admin|company\s*admin|tenant\s*admin|\badmin\b)$',
-                caseSensitive: false)
-            .hasMatch(rawAssigned);
+    final isSuperAdmin =
+        rawAssigned != null &&
+        RegExp(
+          r'^(super\s*admin|company\s*admin|tenant\s*admin|\badmin\b)$',
+          caseSensitive: false,
+        ).hasMatch(rawAssigned);
 
-    final assignedRole = rawAssigned != null &&
+    final assignedRole =
+        rawAssigned != null &&
             rawAssigned.isNotEmpty &&
             rawAssigned != '—' &&
             rawAssigned.toLowerCase() != 'null' &&
@@ -1089,7 +1102,7 @@ class CustomerCalendarActivity {
           json['productName']?.toString() ??
           (json['plan'] is Map
               ? json['plan']['name']?.toString()
-              :           json['plan']?.toString()) ??
+              : json['plan']?.toString()) ??
           '',
       purchaseId: purchaseIdVal,
       productName: productStr,
@@ -1115,7 +1128,8 @@ class CustomerCalendarActivity {
                   rawStatus.toUpperCase() == 'DONE')),
       reworkActionLabel: json['reworkActionLabel']?.toString(),
       location: (json['location'] ?? json['address'])?.toString(),
-      isCarriedForward: json['isCarriedForward'] == true ||
+      isCarriedForward:
+          json['isCarriedForward'] == true ||
           json['isCarriedForward'] == 1 ||
           json['isCarriedForward'] == 'true' ||
           (json['notes']?.toString() ?? json['description']?.toString() ?? '')
@@ -1164,7 +1178,8 @@ String calendarAssigneeLabel(CustomerCalendarActivity activity) {
     caseSensitive: false,
   ).hasMatch(name);
 
-  final isInvalid = name.isEmpty ||
+  final isInvalid =
+      name.isEmpty ||
       name == '—' ||
       name.toLowerCase() == 'unassigned' ||
       name.toLowerCase() == 'not assigned' ||

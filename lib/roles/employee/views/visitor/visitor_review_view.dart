@@ -73,7 +73,6 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
           .patch('/mobile/visits/$visitId/complete', data: completeData);
 
       // Invalidate leads so Visit Done lead disappears from Visitor Lead pipeline
-      
 
       Map<String, dynamic> updatedVisit = widget.visit;
       if (res.data != null && res.data is Map) {

@@ -104,12 +104,17 @@ class SalarySlipItem {
 
     final net = (json['netSalary'] ?? pi['netSalary'] ?? 0).toDouble();
     final gross = (json['grossSalary'] ?? pi['grossSalary'] ?? net).toDouble();
-    final deduct = (json['totalDeductions'] ?? json['deductions'] ?? pi['totalDeductions'] ?? 0)
-        .toDouble();
+    final deduct =
+        (json['totalDeductions'] ??
+                json['deductions'] ??
+                pi['totalDeductions'] ??
+                0)
+            .toDouble();
     final basic = (pi['basicSalary'] ?? json['basicSalary'] ?? 0).toDouble();
     final hraVal = (pi['hra'] ?? json['hra'] ?? 0).toDouble();
     final allow = (pi['allowances'] ?? json['allowances'] ?? 0).toDouble();
-    final special = (pi['specialAllowance'] ?? json['specialAllowance'] ?? 0).toDouble();
+    final special = (pi['specialAllowance'] ?? json['specialAllowance'] ?? 0)
+        .toDouble();
     final comm = (pi['commission'] ?? json['commission'] ?? 0).toDouble();
     final ovt = (pi['overtime'] ?? json['overtime'] ?? 0).toDouble();
     final bon = (pi['bonus'] ?? json['bonus'] ?? 0).toDouble();
@@ -117,9 +122,11 @@ class SalarySlipItem {
         .toDouble();
     final pfVal = (pi['pf'] ?? json['pf'] ?? 0).toDouble();
     final esiVal = (pi['esi'] ?? json['esi'] ?? 0).toDouble();
-    final ptVal = (pi['professionalTax'] ?? json['professionalTax'] ?? 0).toDouble();
+    final ptVal = (pi['professionalTax'] ?? json['professionalTax'] ?? 0)
+        .toDouble();
     final tdsVal = (pi['tds'] ?? json['tds'] ?? 0).toDouble();
-    final otherDed = (pi['otherDeductions'] ?? json['otherDeductions'] ?? 0).toDouble();
+    final otherDed = (pi['otherDeductions'] ?? json['otherDeductions'] ?? 0)
+        .toDouble();
     final loanDed = (pi['loanDeduction'] ?? json['loanDeduction'] ?? 0)
         .toDouble();
     final unpaidLeaveDed =
@@ -132,108 +139,129 @@ class SalarySlipItem {
     final bDetails = (json['bankDetails'] is Map)
         ? Map<String, dynamic>.from(json['bankDetails'])
         : (emp != null && emp['bankDetails'] is Map)
-            ? Map<String, dynamic>.from(emp['bankDetails'])
-            : null;
+        ? Map<String, dynamic>.from(emp['bankDetails'])
+        : null;
     final slipNum = json['slipNumber']?.toString();
-    final pMode = json['paymentMode']?.toString() ??
+    final pMode =
+        json['paymentMode']?.toString() ??
         json['paymentMethod']?.toString() ??
         pi['paymentMode']?.toString();
-    final pRef = json['paymentReference']?.toString() ??
+    final pRef =
+        json['paymentReference']?.toString() ??
         json['transactionId']?.toString() ??
         slipNum;
 
     final attSummary = (json['attendanceSummary'] is Map)
         ? Map<String, dynamic>.from(json['attendanceSummary'])
         : (pi['calculationSnapshot'] is Map &&
-                pi['calculationSnapshot']['attendanceSummary'] is Map)
-            ? Map<String, dynamic>.from(
-                pi['calculationSnapshot']['attendanceSummary'])
-            : <String, dynamic>{};
+              pi['calculationSnapshot']['attendanceSummary'] is Map)
+        ? Map<String, dynamic>.from(
+            pi['calculationSnapshot']['attendanceSummary'],
+          )
+        : <String, dynamic>{};
 
     final sBreakdown = (json['salaryBreakdown'] is Map)
         ? Map<String, dynamic>.from(json['salaryBreakdown'])
         : null;
 
-    final extraPay = (json['extraWorkingPay'] ??
-            pi['extraWorkingPay'] ??
-            sBreakdown?['extraWorkingPay'] ??
-            0)
-        .toDouble();
-    final mSalary = (json['monthlySalary'] ??
-            pi['monthlySalary'] ??
-            sBreakdown?['monthlySalary'] ??
-            (basic + hraVal + allow + special))
-        .toDouble();
-    final attSal = (json['attendanceSalary'] ??
-            pi['attendanceSalary'] ??
-            sBreakdown?['attendanceSalary'] ??
-            gross)
-        .toDouble();
+    final extraPay =
+        (json['extraWorkingPay'] ??
+                pi['extraWorkingPay'] ??
+                sBreakdown?['extraWorkingPay'] ??
+                0)
+            .toDouble();
+    final mSalary =
+        (json['monthlySalary'] ??
+                pi['monthlySalary'] ??
+                sBreakdown?['monthlySalary'] ??
+                (basic + hraVal + allow + special))
+            .toDouble();
+    final attSal =
+        (json['attendanceSalary'] ??
+                pi['attendanceSalary'] ??
+                sBreakdown?['attendanceSalary'] ??
+                gross)
+            .toDouble();
 
-    final numCalendarDays = (attSummary['calendarDays'] ??
-            json['calendarDays'] ??
-            pi['calendarDays'] ??
-            0)
-        .toDouble();
-    final numExtraWorkingDays = (attSummary['extraWorkingDays'] ??
-            json['extraWorkingDays'] ??
-            pi['extraWorkingDays'] ??
-            0)
-        .toDouble();
+    final numCalendarDays =
+        (attSummary['calendarDays'] ??
+                json['calendarDays'] ??
+                pi['calendarDays'] ??
+                0)
+            .toDouble();
+    final numExtraWorkingDays =
+        (attSummary['extraWorkingDays'] ??
+                json['extraWorkingDays'] ??
+                pi['extraWorkingDays'] ??
+                0)
+            .toDouble();
     final listExtraWorkingDates = (attSummary['extraWorkingDates'] is List)
-        ? List<String>.from((attSummary['extraWorkingDates'] as List).map((e) => e.toString()))
+        ? List<String>.from(
+            (attSummary['extraWorkingDates'] as List).map((e) => e.toString()),
+          )
         : (json['extraWorkingDates'] is List)
-            ? List<String>.from((json['extraWorkingDates'] as List).map((e) => e.toString()))
-            : (pi['extraWorkingDates'] is List)
-                ? List<String>.from((pi['extraWorkingDates'] as List).map((e) => e.toString()))
-                : <String>[];
-    final numPayableDays = (attSummary['payableDays'] ??
-            json['payableDays'] ??
-            pi['payableDays'] ??
-            0)
-        .toDouble();
+        ? List<String>.from(
+            (json['extraWorkingDates'] as List).map((e) => e.toString()),
+          )
+        : (pi['extraWorkingDates'] is List)
+        ? List<String>.from(
+            (pi['extraWorkingDates'] as List).map((e) => e.toString()),
+          )
+        : <String>[];
+    final numPayableDays =
+        (attSummary['payableDays'] ??
+                json['payableDays'] ??
+                pi['payableDays'] ??
+                0)
+            .toDouble();
 
-    final numWorkingDays = (attSummary['workingDays'] ??
-            json['workingDays'] ??
-            pi['workingDays'] ??
-            0)
-        .toDouble();
-    final numPresentDays = (attSummary['presentDays'] ??
-            json['presentDays'] ??
-            pi['presentDays'] ??
-            0)
-        .toDouble();
-    final numAbsentDays = (attSummary['absentDays'] ??
-            json['absentDays'] ??
-            pi['absentDays'] ??
-            0)
-        .toDouble();
-    final numHalfDays = (attSummary['halfDays'] ??
-            json['halfDays'] ??
-            pi['halfDays'] ??
-            0)
-        .toDouble();
-    final numPaidLeaveDays = (attSummary['paidLeaveDays'] ??
-            json['paidLeaveDays'] ??
-            pi['paidLeaveDays'] ??
-            0)
-        .toDouble();
-    final numUnpaidLeaveDays = (attSummary['unpaidLeaveDays'] ??
-            json['unpaidLeaveDays'] ??
-            pi['unpaidLeaveDays'] ??
-            0)
-        .toDouble();
-    final numWeeklyOffDays = (attSummary['weeklyOffDays'] ??
-            json['weeklyOffDays'] ??
-            pi['weeklyOffDays'] ??
-            0)
-        .toDouble();
-    final numHolidayDays = (attSummary['holidayDays'] ??
-            json['holidayDays'] ??
-            pi['holidayDays'] ??
-            0)
-        .toDouble();
-    final strOvertimeHours = attSummary['overtimeLabel']?.toString() ??
+    final numWorkingDays =
+        (attSummary['workingDays'] ??
+                json['workingDays'] ??
+                pi['workingDays'] ??
+                0)
+            .toDouble();
+    final numPresentDays =
+        (attSummary['presentDays'] ??
+                json['presentDays'] ??
+                pi['presentDays'] ??
+                0)
+            .toDouble();
+    final numAbsentDays =
+        (attSummary['absentDays'] ??
+                json['absentDays'] ??
+                pi['absentDays'] ??
+                0)
+            .toDouble();
+    final numHalfDays =
+        (attSummary['halfDays'] ?? json['halfDays'] ?? pi['halfDays'] ?? 0)
+            .toDouble();
+    final numPaidLeaveDays =
+        (attSummary['paidLeaveDays'] ??
+                json['paidLeaveDays'] ??
+                pi['paidLeaveDays'] ??
+                0)
+            .toDouble();
+    final numUnpaidLeaveDays =
+        (attSummary['unpaidLeaveDays'] ??
+                json['unpaidLeaveDays'] ??
+                pi['unpaidLeaveDays'] ??
+                0)
+            .toDouble();
+    final numWeeklyOffDays =
+        (attSummary['weeklyOffDays'] ??
+                json['weeklyOffDays'] ??
+                pi['weeklyOffDays'] ??
+                0)
+            .toDouble();
+    final numHolidayDays =
+        (attSummary['holidayDays'] ??
+                json['holidayDays'] ??
+                pi['holidayDays'] ??
+                0)
+            .toDouble();
+    final strOvertimeHours =
+        attSummary['overtimeLabel']?.toString() ??
         json['overtimeHours']?.toString() ??
         '0h 0m';
 

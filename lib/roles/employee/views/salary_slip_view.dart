@@ -22,7 +22,8 @@ class SalarySlipView extends ConsumerStatefulWidget {
   ConsumerState<SalarySlipView> createState() => _SalarySlipViewState();
 }
 
-class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBindingObserver {
+class _SalarySlipViewState extends ConsumerState<SalarySlipView>
+    with WidgetsBindingObserver {
   bool _isEmployeeInfoExpanded = true;
   bool _isBankDetailsExpanded = true;
   bool _showAllHistory = false;
@@ -113,7 +114,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
 
   // ── PDF Download Handler ───────────────────────────────────────────────────
 
-  Future<void> _handleDownloadPdf(BuildContext context, SalarySlipItem slip) async {
+  Future<void> _handleDownloadPdf(
+    BuildContext context,
+    SalarySlipItem slip,
+  ) async {
     try {
       AppToast.info(context, 'Downloading salary slip for ${slip.month}...');
       final apiClient = ref.read(apiClientProvider);
@@ -128,7 +132,9 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
           documentId: slip.id,
         );
       } catch (e) {
-        debugPrint('[SALARY_DOWNLOAD] /pdf stream failed: $e, trying fallbacks');
+        debugPrint(
+          '[SALARY_DOWNLOAD] /pdf stream failed: $e, trying fallbacks',
+        );
         // 2. Check direct URL if available
         if (slip.downloadUrl != null &&
             slip.downloadUrl!.isNotEmpty &&
@@ -144,7 +150,9 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
         // 3. Fallback to /download endpoint
         if (bytes == null || bytes.isEmpty) {
           try {
-            final res = await apiClient.get('/admin/payroll/slips/${slip.id}/download');
+            final res = await apiClient.get(
+              '/admin/payroll/slips/${slip.id}/download',
+            );
             final url = res.data?['downloadUrl']?.toString();
             if (url != null && url.isNotEmpty && url.startsWith('http')) {
               bytes = await apiClient.downloadFileBytes(
@@ -216,58 +224,58 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
         child: payrollState.isLoading
             ? _buildLoadingSkeleton()
             : (payrollState.errorMessage != null && slips.isEmpty)
-                ? _buildErrorState(payrollState.errorMessage!)
-                : RefreshIndicator(
-                    color: AppColors.primary,
-                    onRefresh: () async {
-                      ref.invalidate(employeeProfileProvider);
-                      await ref
-                          .read(employeePayrollProvider.notifier)
-                          .loadSalarySlips();
-                    },
-                    child: SingleChildScrollView(
-                      physics: const AlwaysScrollableScrollPhysics(
-                        parent: BouncingScrollPhysics(),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 18,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // 1. Latest Salary Slip Summary Card
-                          if (latest != null) ...[
-                            _buildLatestSalaryCard(latest),
-                            const SizedBox(height: 14),
-
-                            // 2. Action Buttons (View Salary Slip / Download PDF)
-                            _buildActionButtons(latest),
-                            const SizedBox(height: 18),
-                          ],
-
-                          // 3. Collapsible Card: Employee Information
-                          _buildEmployeeInfoCard(profile, latest),
-                          const SizedBox(height: 14),
-
-                          // 4. Collapsible Card: Bank & Payment Details
-                          _buildBankPaymentCard(profile, latest),
-                          const SizedBox(height: 24),
-
-                          // 5. Section: Payslip History
-                          _buildHistoryHeader(slips.length),
-                          const SizedBox(height: 12),
-
-                          if (slips.isEmpty)
-                            _buildEmptyState()
-                          else
-                            _buildHistoryList(slips),
-
-                          const SizedBox(height: 24),
-                        ],
-                      ),
-                    ),
+            ? _buildErrorState(payrollState.errorMessage!)
+            : RefreshIndicator(
+                color: AppColors.primary,
+                onRefresh: () async {
+                  ref.invalidate(employeeProfileProvider);
+                  await ref
+                      .read(employeePayrollProvider.notifier)
+                      .loadSalarySlips();
+                },
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(
+                    parent: BouncingScrollPhysics(),
                   ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 18,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // 1. Latest Salary Slip Summary Card
+                      if (latest != null) ...[
+                        _buildLatestSalaryCard(latest),
+                        const SizedBox(height: 14),
+
+                        // 2. Action Buttons (View Salary Slip / Download PDF)
+                        _buildActionButtons(latest),
+                        const SizedBox(height: 18),
+                      ],
+
+                      // 3. Collapsible Card: Employee Information
+                      _buildEmployeeInfoCard(profile, latest),
+                      const SizedBox(height: 14),
+
+                      // 4. Collapsible Card: Bank & Payment Details
+                      _buildBankPaymentCard(profile, latest),
+                      const SizedBox(height: 24),
+
+                      // 5. Section: Payslip History
+                      _buildHistoryHeader(slips.length),
+                      const SizedBox(height: 12),
+
+                      if (slips.isEmpty)
+                        _buildEmptyState()
+                      else
+                        _buildHistoryList(slips),
+
+                      const SizedBox(height: 24),
+                    ],
+                  ),
+                ),
+              ),
       ),
     );
   }
@@ -564,37 +572,40 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
     final empName = (profile?.name != null && profile!.name.trim().isNotEmpty)
         ? profile.name
         : (emp?['name'] ??
-            '${emp?['firstName'] ?? ''} ${emp?['lastName'] ?? ''}'.trim());
-    final employeeId = (profile?.employeeCode != null &&
+              '${emp?['firstName'] ?? ''} ${emp?['lastName'] ?? ''}'.trim());
+    final employeeId =
+        (profile?.employeeCode != null &&
             profile!.employeeCode.trim().isNotEmpty)
         ? profile.employeeCode
         : (emp?['employeeCode'] ?? '—');
-    final designation = (profile?.designation != null &&
-            profile!.designation.trim().isNotEmpty)
+    final designation =
+        (profile?.designation != null && profile!.designation.trim().isNotEmpty)
         ? profile.designation
         : (emp?['designation'] is Map
-            ? emp!['designation']['name']
-            : (emp?['designation'] ?? '—'));
-    final department = (profile?.department != null &&
-            profile!.department.trim().isNotEmpty)
+              ? emp!['designation']['name']
+              : (emp?['designation'] ?? '—'));
+    final department =
+        (profile?.department != null && profile!.department.trim().isNotEmpty)
         ? profile.department
         : (emp?['department'] is Map
-            ? emp!['department']['name']
-            : (emp?['department'] ?? '—'));
+              ? emp!['department']['name']
+              : (emp?['department'] ?? '—'));
     final joiningDate = formatDisplayDate(
       profile?.joiningDate.isNotEmpty == true
           ? profile!.joiningDate
           : emp?['joiningDate']?.toString(),
     );
-    final employmentType = (profile?.employmentType != null &&
+    final employmentType =
+        (profile?.employmentType != null &&
             profile!.employmentType.trim().isNotEmpty)
         ? profile.employmentType
         : (emp?['employmentType'] ?? 'Full-Time');
-    final location = (profile?.branch != null && profile!.branch.trim().isNotEmpty)
+    final location =
+        (profile?.branch != null && profile!.branch.trim().isNotEmpty)
         ? profile.branch
         : (emp?['branch'] ?? 'Head Office');
-    final reportingManager = (profile?.manager != null &&
-            profile!.manager.trim().isNotEmpty)
+    final reportingManager =
+        (profile?.manager != null && profile!.manager.trim().isNotEmpty)
         ? profile.manager
         : (emp?['manager'] ?? 'Direct Reporting');
 
@@ -689,16 +700,38 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                     const SizedBox(height: 12),
                     _buildTwoColumnRow(
                       leftLabel: 'CURRENT BASIC SALARY',
-                      leftValue: formatCurrency(num.tryParse(profile!.salaryStructure!['basicSalary'].toString()) ?? 0),
+                      leftValue: formatCurrency(
+                        num.tryParse(
+                              profile!.salaryStructure!['basicSalary']
+                                  .toString(),
+                            ) ??
+                            0,
+                      ),
                       rightLabel: 'CURRENT GROSS SALARY',
-                      rightValue: formatCurrency(num.tryParse(profile.salaryStructure!['grossSalary'].toString()) ?? 0),
+                      rightValue: formatCurrency(
+                        num.tryParse(
+                              profile.salaryStructure!['grossSalary']
+                                  .toString(),
+                            ) ??
+                            0,
+                      ),
                     ),
                     const SizedBox(height: 12),
                     _buildTwoColumnRow(
                       leftLabel: 'CURRENT HRA',
-                      leftValue: formatCurrency(num.tryParse(profile.salaryStructure!['hra'].toString()) ?? 0),
+                      leftValue: formatCurrency(
+                        num.tryParse(
+                              profile.salaryStructure!['hra'].toString(),
+                            ) ??
+                            0,
+                      ),
                       rightLabel: 'CURRENT ALLOWANCES',
-                      rightValue: formatCurrency(num.tryParse(profile.salaryStructure!['allowances'].toString()) ?? 0),
+                      rightValue: formatCurrency(
+                        num.tryParse(
+                              profile.salaryStructure!['allowances'].toString(),
+                            ) ??
+                            0,
+                      ),
                     ),
                   ],
                 ],
@@ -718,14 +751,19 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
   ) {
     final bDetails = latest?.bankDetails ?? profile?.bankDetails;
 
-    final paymentMode = (latest?.paymentMode != null &&
-            latest!.paymentMode!.trim().isNotEmpty)
+    final paymentMode =
+        (latest?.paymentMode != null && latest!.paymentMode!.trim().isNotEmpty)
         ? latest.paymentMode!
-        : (bDetails?['paymentMethod'] ?? bDetails?['paymentMode'] ?? 'Bank Transfer');
+        : (bDetails?['paymentMethod'] ??
+              bDetails?['paymentMode'] ??
+              'Bank Transfer');
     final bankName = bDetails?['bankName']?.toString() ?? '—';
-    final accountNumber = maskAccountNumber(bDetails?['accountNumber']?.toString());
+    final accountNumber = maskAccountNumber(
+      bDetails?['accountNumber']?.toString(),
+    );
     final ifscCode = bDetails?['ifscCode']?.toString() ?? '—';
-    final paymentReference = (latest?.paymentReference != null &&
+    final paymentReference =
+        (latest?.paymentReference != null &&
             latest!.paymentReference!.trim().isNotEmpty)
         ? latest.paymentReference!
         : (latest?.slipNumber?.isNotEmpty == true ? latest!.slipNumber! : '—');
@@ -1148,7 +1186,9 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
       deductionRows.add(MapEntry('Loan Deduction (EMI)', slip.loanDeduction));
     }
     if (slip.unpaidLeaveDeduction > 0) {
-      deductionRows.add(MapEntry('Loss of Pay (Unpaid Leave)', slip.unpaidLeaveDeduction));
+      deductionRows.add(
+        MapEntry('Loss of Pay (Unpaid Leave)', slip.unpaidLeaveDeduction),
+      );
     }
 
     final maxRowCount = earningsRows.length > deductionRows.length
@@ -1243,7 +1283,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                         // Header (Dark Green)
                         Container(
                           color: const Color(0xFF0F763E),
-                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9.5),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 9.5,
+                          ),
                           child: Row(
                             children: [
                               Expanded(
@@ -1289,7 +1332,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                   // Monthly & Attendance-based Payable Salary Card
                   Container(
                     margin: const EdgeInsets.only(bottom: 12),
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 10,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF8FAFC),
                       borderRadius: BorderRadius.circular(10),
@@ -1312,9 +1358,14 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              formatCurrency(slip.monthlySalary > 0
-                                  ? slip.monthlySalary
-                                  : (slip.basicSalary + slip.hra + slip.allowances + slip.specialAllowance)),
+                              formatCurrency(
+                                slip.monthlySalary > 0
+                                    ? slip.monthlySalary
+                                    : (slip.basicSalary +
+                                          slip.hra +
+                                          slip.allowances +
+                                          slip.specialAllowance),
+                              ),
                               style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w800,
@@ -1337,9 +1388,11 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              formatCurrency(slip.attendanceSalary > 0
-                                  ? slip.attendanceSalary
-                                  : slip.grossSalary),
+                              formatCurrency(
+                                slip.attendanceSalary > 0
+                                    ? slip.attendanceSalary
+                                    : slip.grossSalary,
+                              ),
                               style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w800,
@@ -1368,7 +1421,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                           // Table Header (Dark Green)
                           Container(
                             color: const Color(0xFF0F763E),
-                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 14,
+                              vertical: 10,
+                            ),
                             child: Row(
                               children: [
                                 SizedBox(
@@ -1430,18 +1486,28 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                           for (int i = 0; i < maxRowCount; i++)
                             Container(
                               decoration: BoxDecoration(
-                                color: i % 2 == 1 ? const Color(0xFFF8FAFC) : Colors.white,
+                                color: i % 2 == 1
+                                    ? const Color(0xFFF8FAFC)
+                                    : Colors.white,
                                 border: const Border(
-                                  bottom: BorderSide(color: Color(0xFFE2E8F0), width: 0.8),
+                                  bottom: BorderSide(
+                                    color: Color(0xFFE2E8F0),
+                                    width: 0.8,
+                                  ),
                                 ),
                               ),
-                              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9.5),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 14,
+                                vertical: 9.5,
+                              ),
                               child: Row(
                                 children: [
                                   SizedBox(
                                     width: 155,
                                     child: Text(
-                                      i < earningsRows.length ? earningsRows[i].key : '—',
+                                      i < earningsRows.length
+                                          ? earningsRows[i].key
+                                          : '—',
                                       style: AppTypography.inter(
                                         fontSize: 12.5,
                                         color: i < earningsRows.length
@@ -1454,7 +1520,9 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                     width: 100,
                                     child: Text(
                                       i < earningsRows.length
-                                          ? formatCurrency(earningsRows[i].value)
+                                          ? formatCurrency(
+                                              earningsRows[i].value,
+                                            )
                                           : '—',
                                       textAlign: TextAlign.right,
                                       style: AppTypography.inter(
@@ -1470,7 +1538,9 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   SizedBox(
                                     width: 165,
                                     child: Text(
-                                      i < deductionRows.length ? deductionRows[i].key : '—',
+                                      i < deductionRows.length
+                                          ? deductionRows[i].key
+                                          : '—',
                                       style: AppTypography.inter(
                                         fontSize: 12.5,
                                         color: i < deductionRows.length
@@ -1483,7 +1553,9 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                     width: 100,
                                     child: Text(
                                       i < deductionRows.length
-                                          ? formatCurrency(deductionRows[i].value)
+                                          ? formatCurrency(
+                                              deductionRows[i].value,
+                                            )
                                           : '—',
                                       textAlign: TextAlign.right,
                                       style: AppTypography.inter(
@@ -1502,7 +1574,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                           // Distinguishable Totals Row
                           Container(
                             color: const Color(0xFFF1F5F9),
-                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 11),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 14,
+                              vertical: 11,
+                            ),
                             child: Row(
                               children: [
                                 SizedBox(
@@ -1569,7 +1644,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                     decoration: BoxDecoration(
                       color: const Color(0xFFE8F5E9),
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: const Color(0xFF86EFAC), width: 1.2),
+                      border: Border.all(
+                        color: const Color(0xFF86EFAC),
+                        width: 1.2,
+                      ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1604,8 +1682,13 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                               ),
                             ),
                             ElevatedButton.icon(
-                              onPressed: () => _handleDownloadPdf(context, slip),
-                              icon: const Icon(Remix.download_2_line, size: 16, color: Colors.white),
+                              onPressed: () =>
+                                  _handleDownloadPdf(context, slip),
+                              icon: const Icon(
+                                Remix.download_2_line,
+                                size: 16,
+                                color: Colors.white,
+                              ),
                               label: Text(
                                 'Download PDF',
                                 style: AppTypography.inter(
@@ -1618,7 +1701,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                 backgroundColor: const Color(0xFF0F763E),
                                 foregroundColor: Colors.white,
                                 elevation: 0,
-                                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 14,
+                                  vertical: 10,
+                                ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -1672,7 +1758,10 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
       MapEntry('Holidays', formatDays(slip.holidayDays)),
       MapEntry('Extra Working Days', formatDays(slip.extraWorkingDays)),
       MapEntry('Payable Attendance Days', formatDays(slip.payableDays)),
-      MapEntry('Overtime Hours', slip.overtimeHours.isNotEmpty ? slip.overtimeHours : '0h 0m'),
+      MapEntry(
+        'Overtime Hours',
+        slip.overtimeHours.isNotEmpty ? slip.overtimeHours : '0h 0m',
+      ),
     ];
 
     final widgets = rows.asMap().entries.map((entry) {

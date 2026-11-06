@@ -628,7 +628,9 @@ status=$status
       if (res.data != null && res.data is Map) {
         final map = Map<String, dynamic>.from(res.data as Map);
         if (map['data'] is Map) {
-          final note = LeadNoteModel.fromJson(Map<String, dynamic>.from(map['data'] as Map));
+          final note = LeadNoteModel.fromJson(
+            Map<String, dynamic>.from(map['data'] as Map),
+          );
           await _repo.addNote(normId, content);
           return note;
         }
@@ -655,13 +657,17 @@ status=$status
           if (items is List) {
             final notes = items
                 .whereType<Map>()
-                .map((m) => LeadNoteModel.fromJson(Map<String, dynamic>.from(m)))
+                .map(
+                  (m) => LeadNoteModel.fromJson(Map<String, dynamic>.from(m)),
+                )
                 .toList();
             return notes;
           }
         }
       } catch (e) {
-        debugPrint('[LEAD_SERVICE] getNotes error: $e, falling back to getLeadById');
+        debugPrint(
+          '[LEAD_SERVICE] getNotes error: $e, falling back to getLeadById',
+        );
       }
     }
     final lead = await getLeadById(normId);

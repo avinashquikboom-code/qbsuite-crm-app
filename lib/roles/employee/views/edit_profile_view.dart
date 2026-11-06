@@ -164,7 +164,10 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                     color: AppColors.primary.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Remix.camera_line, color: AppColors.primary),
+                  child: const Icon(
+                    Remix.camera_line,
+                    color: AppColors.primary,
+                  ),
                 ),
                 title: Text(
                   'Take Photo',
@@ -175,7 +178,10 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 ),
                 subtitle: Text(
                   'Use camera to capture a new photo',
-                  style: AppTypography.inter(fontSize: 12, color: AppColors.textMuted),
+                  style: AppTypography.inter(
+                    fontSize: 12,
+                    color: AppColors.textMuted,
+                  ),
                 ),
                 onTap: () {
                   Navigator.pop(sheetContext);
@@ -200,7 +206,10 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 ),
                 subtitle: Text(
                   'Select from photos using Android Photo Picker',
-                  style: AppTypography.inter(fontSize: 12, color: AppColors.textMuted),
+                  style: AppTypography.inter(
+                    fontSize: 12,
+                    color: AppColors.textMuted,
+                  ),
                 ),
                 onTap: () {
                   Navigator.pop(sheetContext);

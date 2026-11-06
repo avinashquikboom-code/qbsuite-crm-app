@@ -971,28 +971,28 @@ class _AdminCustomerCalendarViewState
     final actCustId = activity.customerId.trim();
     final matchingCustomers = actCustId.isNotEmpty
         ? state.customers
-            .where((c) => c.customerId == actCustId || c.id == actCustId)
-            .toList()
+              .where((c) => c.customerId == actCustId || c.id == actCustId)
+              .toList()
         : <AdminCustomer>[];
     final matchingCustomer = matchingCustomers.isNotEmpty
         ? matchingCustomers.first
         : (actCustId.isNotEmpty
-            ? AdminCustomer(
-                id: actCustId,
-                customerId: actCustId,
-                name: activity.customerName,
-                businessName: activity.businessName,
-                mobile: '',
-                email: '',
-                city: '',
-                assignedEmployee: activity.assignedEmployee,
-                assignedTeam: activity.team ?? '',
-                activeWork: resolveTaskCategory(activity).label,
-                status: ClientStatus.active,
-                customerSince: '',
-                nextFollowUp: '',
-              )
-            : null);
+              ? AdminCustomer(
+                  id: actCustId,
+                  customerId: actCustId,
+                  name: activity.customerName,
+                  businessName: activity.businessName,
+                  mobile: '',
+                  email: '',
+                  city: '',
+                  assignedEmployee: activity.assignedEmployee,
+                  assignedTeam: activity.team ?? '',
+                  activeWork: resolveTaskCategory(activity).label,
+                  status: ClientStatus.active,
+                  customerSince: '',
+                  nextFollowUp: '',
+                )
+              : null);
 
     final category = resolveTaskCategory(activity);
     final taskColor = resolveTaskColor(activity);

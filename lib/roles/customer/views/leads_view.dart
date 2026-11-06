@@ -912,7 +912,8 @@ afterFilterCount: ${loadedLeads?.length ?? 0}
                                               if (_isSelectionMode) ...[
                                                 Icon(
                                                   isSelected
-                                                      ? LegacyRemixIcons.check_box
+                                                      ? LegacyRemixIcons
+                                                            .checkBox
                                                       : Icons
                                                             .check_box_outline_blank,
                                                   color: isSelected

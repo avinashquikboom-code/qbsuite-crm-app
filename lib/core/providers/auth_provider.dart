@@ -27,12 +27,7 @@ import '../services/notification_service.dart';
 import '../services/permission_manager.dart';
 import '../services/secure_storage_service.dart';
 
-
-
-
-
 import '../../shared/services/data_capture_service.dart';
-
 
 // Auth service provider
 final authServiceProvider = Provider<AuthService>(
@@ -165,20 +160,21 @@ class LoginStateNotifier extends Notifier<LoginState> {
       // Hook up session expired callback
       ApiClient.onSessionExpired = handleSessionExpired;
 
-      final storageResults = await Future.wait([
-        SecureStorageService.getAccessToken(),
-        SecureStorageService.getRefreshToken(),
-        SecureStorageService.getUserRole(),
-        SecureStorageService.getUserEmail(),
-        SecureStorageService.getUserName(),
-        SecureStorageService.getEmployeeCode(),
-        SecureStorageService.getEmployeeId(),
-        SecureStorageService.getCustomerId(),
-        SecureStorageService.getCustomerName(),
-      ]).timeout(
-        const Duration(seconds: 4),
-        onTimeout: () => List.filled(9, null),
-      );
+      final storageResults =
+          await Future.wait([
+            SecureStorageService.getAccessToken(),
+            SecureStorageService.getRefreshToken(),
+            SecureStorageService.getUserRole(),
+            SecureStorageService.getUserEmail(),
+            SecureStorageService.getUserName(),
+            SecureStorageService.getEmployeeCode(),
+            SecureStorageService.getEmployeeId(),
+            SecureStorageService.getCustomerId(),
+            SecureStorageService.getCustomerName(),
+          ]).timeout(
+            const Duration(seconds: 4),
+            onTimeout: () => List.filled(9, null),
+          );
 
       final accessToken = storageResults[0];
       final refreshToken = storageResults[1];
@@ -321,10 +317,7 @@ class LoginStateNotifier extends Notifier<LoginState> {
               refreshToken: refreshToken,
               customerId: customerId ?? '',
             )
-            .timeout(
-              const Duration(seconds: 4),
-              onTimeout: () => null,
-            );
+            .timeout(const Duration(seconds: 4), onTimeout: () => null);
 
         if (!ref.mounted) return;
 
@@ -548,10 +541,7 @@ class LoginStateNotifier extends Notifier<LoginState> {
   void forceCompleteInitialization() {
     if (state.isInitializing || state.hasStartupError) {
       debugPrint('[STARTUP_WATCHDOG] Completing initialization check');
-      state = state.copyWith(
-        isInitializing: false,
-        clearStartupError: true,
-      );
+      state = state.copyWith(isInitializing: false, clearStartupError: true);
     }
   }
 
@@ -617,8 +607,6 @@ class LoginStateNotifier extends Notifier<LoginState> {
       );
 
       // Invalidate and refresh leadLimitProvider so new employee's quota is immediately loaded
-      
-      
 
       return true;
     } catch (e) {
@@ -668,9 +656,7 @@ class LoginStateNotifier extends Notifier<LoginState> {
 
     // 3. Clear auth tokens & local storage
     try {
-      await ref
-          .read(apiClientProvider)
-          .clearAuth(notifySessionExpired: false);
+      await ref.read(apiClientProvider).clearAuth(notifySessionExpired: false);
     } catch (e) {
       debugPrint('[LOGOUT DEBUG] Storage clear error: $e');
     }
@@ -689,7 +675,6 @@ class LoginStateNotifier extends Notifier<LoginState> {
 
     // 5. Invalidate all employee Riverpod providers & clear cached leads
     try {
-      
       DataCaptureService.clearCache();
       ref.invalidate(leadsProvider);
       ref.invalidate(leadStagesProvider);
@@ -708,11 +693,6 @@ class LoginStateNotifier extends Notifier<LoginState> {
       ref.invalidate(teamCalendarProvider);
       ref.invalidate(employeeCalendarSelectedDateProvider);
       ref.invalidate(employeeCalendarFilterProvider);
-      
-      
-      
-      
-      
     } catch (e) {
       debugPrint('[LOGOUT DEBUG] Invalidate providers error: $e');
     }

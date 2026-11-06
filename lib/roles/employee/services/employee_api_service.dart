@@ -226,7 +226,9 @@ class EmployeeApiService {
   }
 
   /// Fetch employee's overtime requests
-  Future<List<OvertimeRequestItem>> getMyOvertimeRequests({String? status}) async {
+  Future<List<OvertimeRequestItem>> getMyOvertimeRequests({
+    String? status,
+  }) async {
     try {
       final response = await _apiClient.get(
         '/overtime/my-requests',
@@ -241,7 +243,10 @@ class EmployeeApiService {
           ? data['data']
           : [];
       return rawList
-          .map((item) => OvertimeRequestItem.fromJson(Map<String, dynamic>.from(item)))
+          .map(
+            (item) =>
+                OvertimeRequestItem.fromJson(Map<String, dynamic>.from(item)),
+          )
           .toList();
     } catch (e) {
       debugPrint('[EMPLOYEE_API] getMyOvertimeRequests error: $e');
@@ -284,7 +289,9 @@ class EmployeeApiService {
         );
         responseData = res.data;
       } catch (e) {
-        debugPrint('[EMPLOYEE_API] /attendance/history fallback to /employees/hrm/attendance: $e');
+        debugPrint(
+          '[EMPLOYEE_API] /attendance/history fallback to /employees/hrm/attendance: $e',
+        );
         final res = await _apiClient.get(
           '/employees/hrm/attendance',
           queryParameters: {
@@ -302,7 +309,9 @@ class EmployeeApiService {
           ? data
           : (data is Map && data['data'] is List)
           ? data['data']
-          : (data is Map && data['data'] is Map && data['data']['items'] is List)
+          : (data is Map &&
+                data['data'] is Map &&
+                data['data']['items'] is List)
           ? data['data']['items']
           : (data is Map && data['items'] is List)
           ? data['items']
@@ -845,8 +854,8 @@ class EmployeeApiService {
       if (response.statusCode == 200 && response.data != null) {
         final Map<String, dynamic> rawData =
             response.data is Map<String, dynamic>
-                ? response.data
-                : Map<String, dynamic>.from(response.data);
+            ? response.data
+            : Map<String, dynamic>.from(response.data);
         final Map<String, dynamic> data = (rawData['data'] is Map)
             ? Map<String, dynamic>.from(rawData['data'])
             : rawData;
@@ -919,6 +928,7 @@ class EmployeeApiService {
   }
 }
 
-final employeeSalaryDetailsProvider = FutureProvider.autoDispose<Map<String, dynamic>?>((ref) {
-  return ref.watch(employeeApiServiceProvider).getSalaryDetails();
-});
+final employeeSalaryDetailsProvider =
+    FutureProvider.autoDispose<Map<String, dynamic>?>((ref) {
+      return ref.watch(employeeApiServiceProvider).getSalaryDetails();
+    });

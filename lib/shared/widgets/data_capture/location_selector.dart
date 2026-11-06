@@ -44,13 +44,13 @@ class LocationSelector extends StatelessWidget {
               color: AppColors.textPlaceholder,
             ),
             prefixIcon: const Icon(
-              LegacyRemixIcons.location_on_rounded,
+              LegacyRemixIcons.locationOnRounded,
               color: AppColors.primary,
               size: 20,
             ),
             suffixIcon: IconButton(
               icon: const Icon(
-                LegacyRemixIcons.my_location_rounded,
+                LegacyRemixIcons.myLocationRounded,
                 color: AppColors.primary,
                 size: 20,
               ),

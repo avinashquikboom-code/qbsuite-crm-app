@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  static const darkPrimary = primaryDark;
+  static const lightPrimary = primaryLight;
+  static const danger = error;
   // ── QuikBoom Brand Primary ───────────────────────────────────────
   static const Color primary = Color(0xFF5EC269);
   static const Color primaryDark = Color(0xFF43A854);

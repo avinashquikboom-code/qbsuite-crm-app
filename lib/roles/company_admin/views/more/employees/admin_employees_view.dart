@@ -277,7 +277,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                       ),
                     ),
                     const Icon(
-                      LegacyRemixIcons.arrow_forward_ios_rounded,
+                      LegacyRemixIcons.arrowForwardIosRounded,
                       size: 12,
                       color: Color(0xFFCBD5E1),
                     ),
@@ -361,7 +361,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                           ),
                         ),
                         const Icon(
-                          LegacyRemixIcons.arrow_forward_ios_rounded,
+                          LegacyRemixIcons.arrowForwardIosRounded,
                           size: 14,
                           color: Color(0xFFCBD5E1),
                         ),

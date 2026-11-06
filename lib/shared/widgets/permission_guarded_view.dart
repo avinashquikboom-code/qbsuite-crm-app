@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
-import "package:google_fonts/google_fonts.dart";
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import "package:remixicon/remixicon.dart";
 import "package:quickboom_app/core/models/permission_model.dart";
 import "package:quickboom_app/core/services/permission_manager.dart";

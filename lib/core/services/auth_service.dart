@@ -295,7 +295,9 @@ class AuthService {
   }
 
   /// Standard baseline permissions for an authenticated employee
-  static List<UserPermission> defaultEmployeeCapabilities({bool isCrm = false}) {
+  static List<UserPermission> defaultEmployeeCapabilities({
+    bool isCrm = false,
+  }) {
     return <UserPermission>[
       for (final module in [
         'DASHBOARD',

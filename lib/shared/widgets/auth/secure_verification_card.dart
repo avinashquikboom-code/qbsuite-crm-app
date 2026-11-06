@@ -44,11 +44,7 @@ class SecureVerificationCard extends StatelessWidget {
               ],
             ),
           ),
-          const Icon(
-            Remix.lock_2_fill,
-            color: Color(0xFF5EC269),
-            size: 20,
-          ),
+          const Icon(Remix.lock_2_fill, color: Color(0xFF5EC269), size: 20),
         ],
       ),
     );

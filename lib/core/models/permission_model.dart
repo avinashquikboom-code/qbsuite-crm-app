@@ -34,7 +34,8 @@ class AppModule {
   static const String customerProfile = "CUSTOMER_PROFILE";
   static const String customerSsm = "CUSTOMER_SSM";
   static const String customerInfluencers = "CUSTOMER_INFLUENCERS";
-  static const String customerInfluencerBookings = "CUSTOMER_INFLUENCER_BOOKINGS";
+  static const String customerInfluencerBookings =
+      "CUSTOMER_INFLUENCER_BOOKINGS";
   static const String customerNotifications = "CUSTOMER_NOTIFICATIONS";
   static const String customerSupport = "CUSTOMER_SUPPORT";
   static const String customerMarketing = "CUSTOMER_MARKETING";

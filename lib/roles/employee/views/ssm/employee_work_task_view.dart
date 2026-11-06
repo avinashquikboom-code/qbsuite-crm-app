@@ -13,7 +13,6 @@ class EmployeeWorkTaskView extends ConsumerWidget {
 
   const EmployeeWorkTaskView({super.key, required this.workId});
 
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ssmState = ref.watch(employeeSSMProvider);
@@ -186,9 +185,9 @@ class EmployeeWorkTaskView extends ConsumerWidget {
                       work.assignedEmployees.join(', '),
                     ),
                     const Divider(height: 20, color: AppColors.borderLight),
-                    
+
                     const Divider(height: 20, color: AppColors.borderLight),
-                    
+
                     const Divider(height: 20, color: AppColors.borderLight),
                     _buildDetailRow('Duration', '${work.durationDays} Days'),
                     const Divider(height: 20, color: AppColors.borderLight),

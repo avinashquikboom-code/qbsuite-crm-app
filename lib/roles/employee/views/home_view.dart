@@ -133,20 +133,18 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
       ref.read(employeeNotificationProvider.notifier).loadNotifications(),
 
       // 3. Work Permissions
-      ref
-          .read(workPermissionsProvider.notifier)
-          .loadPermissions()
-          .catchError((e) {
-            debugPrint('[EMPLOYEE_HOME] Work permissions load error: $e');
-          }),
+      ref.read(workPermissionsProvider.notifier).loadPermissions().catchError((
+        e,
+      ) {
+        debugPrint('[EMPLOYEE_HOME] Work permissions load error: $e');
+      }),
 
       // 4. RBAC Permissions
-      ref
-          .read(loginStateProvider.notifier)
-          .refreshPermissions()
-          .catchError((e) {
-            debugPrint('[EMPLOYEE_HOME] RBAC permissions refresh error: $e');
-          }),
+      ref.read(loginStateProvider.notifier).refreshPermissions().catchError((
+        e,
+      ) {
+        debugPrint('[EMPLOYEE_HOME] RBAC permissions refresh error: $e');
+      }),
 
       // 5. Lead Generation Quota
       ref.read(leadLimitProvider.future).then((_) {}).catchError((e) {
@@ -155,12 +153,11 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
 
       // 6. Attendance Status & Location
       if (canViewAttendance && !ref.read(employeeAttendanceProvider).isLoading)
-        ref
-            .read(employeeAttendanceProvider.notifier)
-            .loadStatus()
-            .catchError((e) {
-              debugPrint('[EMPLOYEE_HOME] Attendance load error: $e');
-            }),
+        ref.read(employeeAttendanceProvider.notifier).loadStatus().catchError((
+          e,
+        ) {
+          debugPrint('[EMPLOYEE_HOME] Attendance load error: $e');
+        }),
       if (canViewAttendance)
         ref
             .read(employeeAttendanceProvider.notifier)

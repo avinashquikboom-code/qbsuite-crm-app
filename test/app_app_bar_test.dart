@@ -1,3 +1,4 @@
+import 'package:remixicon/remixicon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:remixicon/remixicon.dart';
@@ -63,7 +64,7 @@ void main() {
               title: AppBarTitles.leadsPipeline,
               actions: [
                 IconButton(
-                  icon: const Icon(Icons.add_circle_outline),
+                  icon: const Icon(Remix.add_circle_line),
                   onPressed: () => actionPressed = true,
                 ),
               ],
@@ -72,8 +73,8 @@ void main() {
         ),
       );
 
-      expect(find.byIcon(Icons.add_circle_outline), findsOneWidget);
-      await tester.tap(find.byIcon(Icons.add_circle_outline));
+      expect(find.byIcon(Remix.add_circle_line), findsOneWidget);
+      await tester.tap(find.byIcon(Remix.add_circle_line));
       expect(actionPressed, isTrue);
     });
 

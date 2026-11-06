@@ -1,4 +1,3 @@
-
 class EmployeeWorkPermissions {
   final int? employeeId;
   final String? employeeCode;

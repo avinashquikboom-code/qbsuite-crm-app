@@ -175,14 +175,18 @@ class _EmployeeHomeCalendarSectionState
     for (final a in raw7DayActivities) {
       final key = getScheduledDateString(a);
       final list = dateActivityMap.putIfAbsent(key, () => []);
-      if (!list.any((existing) => existing.id == a.id && existing.type == a.type)) {
+      if (!list.any(
+        (existing) => existing.id == a.id && existing.type == a.type,
+      )) {
         list.add(a);
       }
     }
     for (final a in rawDateActivities) {
       final key = getScheduledDateString(a);
       final list = dateActivityMap.putIfAbsent(key, () => []);
-      if (!list.any((existing) => existing.id == a.id && existing.type == a.type)) {
+      if (!list.any(
+        (existing) => existing.id == a.id && existing.type == a.type,
+      )) {
         list.add(a);
       }
     }
@@ -416,12 +420,13 @@ class _EmployeeHomeCalendarSectionState
               final uniqueColors = <Color>[];
               final seenCustomerKeys = <String>{};
               for (final act in matchingDateActivities) {
-                final custKey = act.customerId.trim().isNotEmpty &&
+                final custKey =
+                    act.customerId.trim().isNotEmpty &&
                         act.customerId.trim() != '0'
                     ? act.customerId.trim()
                     : (act.businessName.trim().isNotEmpty
-                        ? act.businessName.trim().toLowerCase()
-                        : act.customerName.trim().toLowerCase());
+                          ? act.businessName.trim().toLowerCase()
+                          : act.customerName.trim().toLowerCase());
                 if (seenCustomerKeys.add(custKey)) {
                   uniqueColors.add(resolveCustomerColor(act));
                 }
@@ -605,12 +610,7 @@ class _EmployeeHomeCalendarSectionState
 
         // 5. Selected Date Activities List (4 Distinct UI States)
         if (liveDateAsync.isLoading)
-          Column(
-            children: const [
-              SkeletonCard(),
-              SkeletonCard(),
-            ],
-          )
+          Column(children: const [SkeletonCard(), SkeletonCard()])
         else if (liveDateAsync.hasError)
           Container(
             width: double.infinity,
@@ -746,7 +746,8 @@ class _EmployeeHomeCalendarSectionState
                             const SizedBox(height: 2),
                             Builder(
                               builder: (context) {
-                                final custName = act.businessName.trim().isNotEmpty
+                                final custName =
+                                    act.businessName.trim().isNotEmpty
                                     ? act.businessName.trim()
                                     : act.customerName.trim();
                                 final customerColor = resolveCustomerColor(act);

@@ -364,10 +364,22 @@ class SocialMediaModel {
         final segments = uri.pathSegments.where((s) => s.isNotEmpty).toList();
         if (segments.isNotEmpty) {
           final last = segments.last;
-          if (['Instagram', 'X (Twitter)', 'TikTok', 'Threads', 'Telegram'].contains(platform)) {
+          if ([
+            'Instagram',
+            'X (Twitter)',
+            'TikTok',
+            'Threads',
+            'Telegram',
+          ].contains(platform)) {
             return last.startsWith('@') ? last : '@$last';
           }
-          if (['Facebook', 'LinkedIn', 'YouTube', 'Pinterest', 'GitHub'].contains(platform)) {
+          if ([
+            'Facebook',
+            'LinkedIn',
+            'YouTube',
+            'Pinterest',
+            'GitHub',
+          ].contains(platform)) {
             return last;
           }
           if (segments.length == 1) {
@@ -378,7 +390,14 @@ class SocialMediaModel {
         return uri.host;
       } catch (_) {}
     }
-    if (['Instagram', 'X (Twitter)', 'TikTok', 'Threads', 'Telegram', 'LinkedIn'].contains(platform)) {
+    if ([
+      'Instagram',
+      'X (Twitter)',
+      'TikTok',
+      'Threads',
+      'Telegram',
+      'LinkedIn',
+    ].contains(platform)) {
       return clean.startsWith('@') ? clean : '@$clean';
     }
     return clean;

@@ -453,11 +453,7 @@ class _CustomerOfferSliderSectionState
                       );
                     },
                   )
-                : _buildBannerCard(
-                    context,
-                    banners.first,
-                    isTablet: isTablet,
-                  ),
+                : _buildBannerCard(context, banners.first, isTablet: isTablet),
           ),
           if (isMultiple)
             Positioned(
@@ -505,7 +501,10 @@ class _CustomerOfferSliderSectionState
     );
   }
 
-  Widget _buildBannerImage(MarketingBannerModel banner, {bool isTablet = false}) {
+  Widget _buildBannerImage(
+    MarketingBannerModel banner, {
+    bool isTablet = false,
+  }) {
     final imageUrl = banner.effectiveImageUrl;
 
     if (imageUrl.isEmpty) {
@@ -560,9 +559,7 @@ class _CustomerOfferSliderSectionState
             ),
           ),
           Positioned.fill(
-            child: Container(
-              color: Colors.black.withValues(alpha: 0.12),
-            ),
+            child: Container(color: Colors.black.withValues(alpha: 0.12)),
           ),
         ],
 
@@ -591,7 +588,9 @@ class _CustomerOfferSliderSectionState
                     return _buildFallbackBackground();
                   },
                   errorBuilder: (context, error, stackTrace) {
-                    debugPrint('[BANNER_IMAGE_ERROR] url: $imageUrl, error: $error');
+                    debugPrint(
+                      '[BANNER_IMAGE_ERROR] url: $imageUrl, error: $error',
+                    );
                     return _buildFallbackBackground();
                   },
                 ),

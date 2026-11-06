@@ -579,7 +579,9 @@ class CustomerCard extends ConsumerWidget {
                           width: 28,
                           height: 28,
                           decoration: BoxDecoration(
-                            color: const Color(0xFFF59E0B).withValues(alpha: 0.16),
+                            color: const Color(
+                              0xFFF59E0B,
+                            ).withValues(alpha: 0.16),
                             borderRadius: BorderRadius.circular(6),
                           ),
                           alignment: Alignment.center,

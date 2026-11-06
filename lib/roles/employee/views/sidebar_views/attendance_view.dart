@@ -370,7 +370,10 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                 ],
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: badgeBg,
                   borderRadius: BorderRadius.circular(20),
@@ -688,8 +691,12 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         final picked = await showDatePicker(
                           context: sheetContext,
                           initialDate: selectedDate,
-                          firstDate: DateTime.now().add(const Duration(days: 1)),
-                          lastDate: DateTime.now().add(const Duration(days: 60)),
+                          firstDate: DateTime.now().add(
+                            const Duration(days: 1),
+                          ),
+                          lastDate: DateTime.now().add(
+                            const Duration(days: 60),
+                          ),
                         );
                         if (picked != null) {
                           setModalState(() => selectedDate = picked);
@@ -931,7 +938,8 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                       controller: reasonController,
                       maxLines: 2,
                       decoration: InputDecoration(
-                        hintText: 'e.g. Urgent client release, deployment tasks',
+                        hintText:
+                            'e.g. Urgent client release, deployment tasks',
                         hintStyle: AppTypography.inter(
                           fontSize: 12.5,
                           color: AppColors.textSecondary,

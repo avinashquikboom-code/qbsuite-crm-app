@@ -20,11 +20,9 @@ class _RoleSelectionViewState extends State<RoleSelectionView> {
 
   void _navigateToLogin(MobileUserRole role) {
     setState(() => _selectedRole = role);
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => LoginView(initialRole: role),
-      ),
-    );
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => LoginView(initialRole: role)));
   }
 
   @override
@@ -74,9 +72,9 @@ class _RoleSelectionViewState extends State<RoleSelectionView> {
                       ),
                     ),
                   ).animate().scale(
-                        duration: 400.ms,
-                        curve: Curves.easeOutBack,
-                      ),
+                    duration: 400.ms,
+                    curve: Curves.easeOutBack,
+                  ),
                   const SizedBox(height: 18),
 
                   Text(

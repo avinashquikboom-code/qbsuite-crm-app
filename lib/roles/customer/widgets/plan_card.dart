@@ -92,7 +92,10 @@ class PlanCard extends StatelessWidget {
                               ? [AppColors.warning, AppColors.orange]
                               : (isUpcoming
                                     ? [AppColors.sky, AppColors.purple]
-                                    : [AppColors.primaryDark, AppColors.primary]))
+                                    : [
+                                        AppColors.primaryDark,
+                                        AppColors.primary,
+                                      ]))
                         : [AppColors.primary, AppColors.primaryDark],
                   ),
                   borderRadius: const BorderRadius.vertical(

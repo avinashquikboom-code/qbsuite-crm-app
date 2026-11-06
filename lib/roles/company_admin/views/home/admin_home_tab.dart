@@ -94,8 +94,6 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                 _buildKpiGrid(context, state),
                 const SizedBox(height: 20),
 
-
-
                 // 5. Live Field Movement & Today's Visits (Permission-gated)
                 if (perms.canView(AppModule.visits)) ...[
                   _buildTodayVisitsSection(context, todayVisits),
@@ -111,7 +109,6 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                 const SizedBox(height: 20),
 
                 // 7. Interactive Customer Calendar & Schedule
-                
                 const SizedBox(height: 20),
 
                 // 8. Trending Velocity Preview
@@ -699,8 +696,6 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
       ],
     );
   }
-
-
 
   // ── 5. Field Movement & Today's Visits ────────────────────────────────────
   Widget _buildTodayVisitsSection(

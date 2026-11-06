@@ -461,7 +461,8 @@ class LeadModel {
             leadId: json['id']?.toString() ?? '',
             content: str,
             authorName: 'Team Member',
-            createdAt: json['updatedAt']?.toString() ??
+            createdAt:
+                json['updatedAt']?.toString() ??
                 json['createdAt']?.toString() ??
                 '',
           ),

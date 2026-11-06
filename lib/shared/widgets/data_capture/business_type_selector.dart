@@ -11,19 +11,22 @@ class BusinessCategoryItem {
 }
 
 const List<BusinessCategoryItem> kDefaultBusinessCategories = [
-  BusinessCategoryItem('Gym', LegacyRemixIcons.fitness_center_rounded),
-  BusinessCategoryItem('Restaurant', LegacyRemixIcons.restaurant_rounded),
-  BusinessCategoryItem('Hotel', LegacyRemixIcons.hotel_rounded),
-  BusinessCategoryItem('Salon', LegacyRemixIcons.content_cut_rounded),
-  BusinessCategoryItem('Hospital', LegacyRemixIcons.local_hospital_rounded),
-  BusinessCategoryItem('Clinic', LegacyRemixIcons.medical_services_rounded),
-  BusinessCategoryItem('Real Estate', LegacyRemixIcons.home_work_rounded),
-  BusinessCategoryItem('School', LegacyRemixIcons.school_rounded),
-  BusinessCategoryItem('College', LegacyRemixIcons.account_balance_rounded),
-  BusinessCategoryItem('Retail Store', LegacyRemixIcons.storefront_rounded),
-  BusinessCategoryItem('Travel Agency', LegacyRemixIcons.flight_takeoff_rounded),
-  BusinessCategoryItem('Automobile Dealer', LegacyRemixIcons.directions_car_rounded),
-  BusinessCategoryItem('Custom Business', LegacyRemixIcons.tune_rounded),
+  BusinessCategoryItem('Gym', LegacyRemixIcons.fitnessCenterRounded),
+  BusinessCategoryItem('Restaurant', LegacyRemixIcons.restaurantRounded),
+  BusinessCategoryItem('Hotel', LegacyRemixIcons.hotelRounded),
+  BusinessCategoryItem('Salon', LegacyRemixIcons.contentCutRounded),
+  BusinessCategoryItem('Hospital', LegacyRemixIcons.localHospitalRounded),
+  BusinessCategoryItem('Clinic', LegacyRemixIcons.medicalServicesRounded),
+  BusinessCategoryItem('Real Estate', LegacyRemixIcons.homeWorkRounded),
+  BusinessCategoryItem('School', LegacyRemixIcons.schoolRounded),
+  BusinessCategoryItem('College', LegacyRemixIcons.accountBalanceRounded),
+  BusinessCategoryItem('Retail Store', LegacyRemixIcons.storefrontRounded),
+  BusinessCategoryItem('Travel Agency', LegacyRemixIcons.flightTakeoffRounded),
+  BusinessCategoryItem(
+    'Automobile Dealer',
+    LegacyRemixIcons.directionsCarRounded,
+  ),
+  BusinessCategoryItem('Custom Business', LegacyRemixIcons.tuneRounded),
 ];
 
 class BusinessTypeSelector extends StatefulWidget {
@@ -83,7 +86,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Icon(
-                LegacyRemixIcons.business_center_rounded,
+                LegacyRemixIcons.businessCenterRounded,
                 color: AppColors.primary,
                 size: 20,
               ),
@@ -116,7 +119,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
               ),
             ),
             const Icon(
-              LegacyRemixIcons.search_rounded,
+              LegacyRemixIcons.searchRounded,
               color: AppColors.textSecondary,
               size: 20,
             ),
@@ -224,7 +227,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
                   color: AppColors.textPlaceholder,
                 ),
                 prefixIcon: const Icon(
-                  LegacyRemixIcons.search_rounded,
+                  LegacyRemixIcons.searchRounded,
                   color: AppColors.textSecondary,
                 ),
                 filled: true,
@@ -281,11 +284,11 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
                     ),
                     trailing: isSelected
                         ? const Icon(
-                            LegacyRemixIcons.check_circle_rounded,
+                            LegacyRemixIcons.checkCircleRounded,
                             color: AppColors.primary,
                           )
                         : const Icon(
-                            LegacyRemixIcons.chevron_right_rounded,
+                            LegacyRemixIcons.chevronRightRounded,
                             color: AppColors.border,
                           ),
                     onTap: () => Navigator.pop(context, item.label),

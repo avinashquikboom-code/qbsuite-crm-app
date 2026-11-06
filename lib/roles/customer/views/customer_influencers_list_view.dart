@@ -655,7 +655,9 @@ class _CustomerInfluencersListViewState
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
-                      isFav ? LegacyRemixIcons.favorite : LegacyRemixIcons.favorite_border,
+                      isFav
+                          ? LegacyRemixIcons.favorite
+                          : LegacyRemixIcons.favoriteBorder,
                       color: isFav ? const Color(0xFFEF4444) : Colors.white,
                       size: 15,
                     ),

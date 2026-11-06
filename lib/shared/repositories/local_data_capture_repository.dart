@@ -1,6 +1,5 @@
 import 'dart:math';
 
-
 import 'package:quickboom_app/shared/models/data_capture_model.dart';
 
 /// Local in-memory repository for Data Capture / Lead Extraction.
@@ -129,13 +128,15 @@ class LocalDataCaptureRepository {
       skippedDuplicates: 0,
       message: 'Captured places imported successfully.',
       records: placesToImport
-          .map((p) => ImportedRecordResult(
-                googlePlaceId: p.googlePlaceId,
-                businessName: p.businessName,
-                imported: true,
-                duplicate: false,
-                leadId: 1,
-              ))
+          .map(
+            (p) => ImportedRecordResult(
+              googlePlaceId: p.googlePlaceId,
+              businessName: p.businessName,
+              imported: true,
+              duplicate: false,
+              leadId: 1,
+            ),
+          )
           .toList(),
     );
 

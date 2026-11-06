@@ -245,7 +245,11 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
               ),
               if (creator.isVerified) ...[
                 const SizedBox(width: 5),
-                const Icon(LegacyRemixIcons.verified, color: Color(0xFF3B82F6), size: 18),
+                const Icon(
+                  LegacyRemixIcons.verified,
+                  color: Color(0xFF3B82F6),
+                  size: 18,
+                ),
               ],
             ],
           ),
@@ -492,7 +496,9 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
           ),
           const SizedBox(width: 12),
           // Book Now Button
-          if (ref.watch(permissionManagerProvider).customerCan('CUSTOMER_INFLUENCER_BOOKINGS', 'VIEW'))
+          if (ref
+              .watch(permissionManagerProvider)
+              .customerCan('CUSTOMER_INFLUENCER_BOOKINGS', 'VIEW'))
             Expanded(
               flex: 2,
               child: SizedBox(

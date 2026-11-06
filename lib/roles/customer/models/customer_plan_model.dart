@@ -93,9 +93,7 @@ List<String> _featureLabels(dynamic raw) {
     return raw.map((e) => e.toString()).toList();
   }
   if (raw is Map) {
-    return raw.entries
-        .map((entry) => '${entry.key}: ${entry.value}')
-        .toList();
+    return raw.entries.map((entry) => '${entry.key}: ${entry.value}').toList();
   }
   return const [];
 }
@@ -233,10 +231,7 @@ class PaymentMethodsConfig {
   Map<String, dynamic> toJson() => {
     'online': online,
     'offline': offline,
-    'paymentMethods': {
-      'online': online,
-      'offline': offline,
-    },
+    'paymentMethods': {'online': online, 'offline': offline},
     'paymentMode': paymentMode,
     'razorpayKeyId': razorpayKeyId,
     'bankDetails': bankDetails,
@@ -319,7 +314,9 @@ class SubscriptionPlan {
       pmConfig = PaymentMethodsConfig.fromJson(
         Map<String, dynamic>.from(json['paymentMethods'] as Map),
       );
-    } else if (json['offlinePaymentEnabled'] != null || json['onlinePaymentEnabled'] != null || json['razorpayEnabled'] != null) {
+    } else if (json['offlinePaymentEnabled'] != null ||
+        json['onlinePaymentEnabled'] != null ||
+        json['razorpayEnabled'] != null) {
       pmConfig = PaymentMethodsConfig.fromJson(json);
     }
 
@@ -432,7 +429,8 @@ class CustomerSubscription {
     if (status == SubscriptionStatus.expired || reminder == 'EXPIRED') {
       return true;
     }
-    if (status == SubscriptionStatus.pending || status == SubscriptionStatus.upcoming) {
+    if (status == SubscriptionStatus.pending ||
+        status == SubscriptionStatus.upcoming) {
       return false;
     }
     final endOfDay = DateTime(
@@ -524,7 +522,9 @@ class CustomerSubscription {
       planType:
           json['planType']?.toString() ??
           (json['isCustomized'] == true ? 'CUSTOM' : 'DEFAULT'),
-      status: SubscriptionStatus.fromString(_statusFromPlanJson(json, start, end)),
+      status: SubscriptionStatus.fromString(
+        _statusFromPlanJson(json, start, end),
+      ),
       billingCycle: SubscriptionBillingCycle.fromString(
         json['billingCycle']?.toString(),
       ),

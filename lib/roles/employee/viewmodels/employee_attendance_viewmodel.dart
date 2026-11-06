@@ -412,16 +412,28 @@ isInsideRadius: $inside''');
         if (bioResult.isSuccess) {
           biometricVerified = true;
         } else if (bioResult.status == BiometricAuthStatus.cancelled) {
-          debugPrint('[PUNCH_IN_BIOMETRIC_CANCELLED] Authentication cancelled.');
-          state = state.copyWith(isActionRunning: false, actionError: 'Authentication cancelled.');
+          debugPrint(
+            '[PUNCH_IN_BIOMETRIC_CANCELLED] Authentication cancelled.',
+          );
+          state = state.copyWith(
+            isActionRunning: false,
+            actionError: 'Authentication cancelled.',
+          );
           return false;
         } else if (bioResult.status == BiometricAuthStatus.failed) {
-          debugPrint('[PUNCH_IN_BIOMETRIC_FAILED] Biometric verification failed.');
-          state = state.copyWith(isActionRunning: false, actionError: 'Biometric verification failed.');
+          debugPrint(
+            '[PUNCH_IN_BIOMETRIC_FAILED] Biometric verification failed.',
+          );
+          state = state.copyWith(
+            isActionRunning: false,
+            actionError: 'Biometric verification failed.',
+          );
           return false;
         } else {
           // Device has no hardware or enrollment: proceed with location-based verification
-          debugPrint('[PUNCH_IN_BIOMETRIC_UNAVAILABLE] ${bioResult.message}; proceeding with GPS.');
+          debugPrint(
+            '[PUNCH_IN_BIOMETRIC_UNAVAILABLE] ${bioResult.message}; proceeding with GPS.',
+          );
           biometricVerified = false;
         }
       }
@@ -454,7 +466,8 @@ isInsideRadius: $inside''');
       final office = state.status.assignedOffice;
 
       // 4. Local pre-validation check (unless approved remote work or policy allows outside check-in)
-      final allowOutside = state.status.policy?.allowOutsideCheckIn == true ||
+      final allowOutside =
+          state.status.policy?.allowOutsideCheckIn == true ||
           state.status.policy?.officeAttendanceRequired == false;
 
       if (!state.isRemoteWork && !allowOutside && dist != null && !inside) {
@@ -587,7 +600,9 @@ allowedRadius: ${office?.radiusMeters}''');
         if (bioResult.isSuccess) {
           biometricVerified = true;
         } else if (bioResult.status == BiometricAuthStatus.cancelled) {
-          debugPrint('[PUNCH_OUT_BIOMETRIC_CANCELLED] Authentication cancelled.');
+          debugPrint(
+            '[PUNCH_OUT_BIOMETRIC_CANCELLED] Authentication cancelled.',
+          );
           state = state.copyWith(
             isActionRunning: false,
             actionError: 'Authentication cancelled.',
@@ -595,16 +610,22 @@ allowedRadius: ${office?.radiusMeters}''');
           );
           return false;
         } else if (bioResult.status == BiometricAuthStatus.failed) {
-          debugPrint('[PUNCH_OUT_BIOMETRIC_FAILED] Biometric verification failed.');
+          debugPrint(
+            '[PUNCH_OUT_BIOMETRIC_FAILED] Biometric verification failed.',
+          );
           state = state.copyWith(
             isActionRunning: false,
-            actionError: 'Biometric verification failed. Punch out was not completed.',
-            errorMessage: 'Biometric verification failed. Punch out was not completed.',
+            actionError:
+                'Biometric verification failed. Punch out was not completed.',
+            errorMessage:
+                'Biometric verification failed. Punch out was not completed.',
           );
           return false;
         } else {
           // Device has no hardware or enrollment: proceed
-          debugPrint('[PUNCH_OUT_BIOMETRIC_UNAVAILABLE] ${bioResult.message}; proceeding with GPS.');
+          debugPrint(
+            '[PUNCH_OUT_BIOMETRIC_UNAVAILABLE] ${bioResult.message}; proceeding with GPS.',
+          );
           biometricVerified = false;
         }
       }
@@ -705,7 +726,8 @@ allowedRadius: ${office?.radiusMeters}''');
       state = state.copyWith(
         isActionRunning: false,
         actionFeedback: null,
-        successMessage: resp['message']?.toString() ??
+        successMessage:
+            resp['message']?.toString() ??
             'Overtime request submitted successfully.',
       );
       return true;

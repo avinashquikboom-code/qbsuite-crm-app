@@ -1296,7 +1296,10 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
       ),
       child: Text(
         'Assigned team is unavailable because this item is not linked to a customer record.',
-        style: AppTypography.inter(fontSize: 13, color: AppColors.textSecondary),
+        style: AppTypography.inter(
+          fontSize: 13,
+          color: AppColors.textSecondary,
+        ),
       ),
     );
   }
@@ -1352,9 +1355,11 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
               ),
               teamAsync.maybeWhen(
                 data: (data) {
-                  final team = (data?['team'] as Map<String, dynamic>?) ??
+                  final team =
+                      (data?['team'] as Map<String, dynamic>?) ??
                       (data?['assignedTeam'] as Map<String, dynamic>?);
-                  final teamId = (team?['id'] as num?)?.toInt() ??
+                  final teamId =
+                      (team?['id'] as num?)?.toInt() ??
                       (data?['assignedTeamId'] as num?)?.toInt();
                   return TextButton.icon(
                     onPressed: () =>
@@ -1445,7 +1450,8 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
               ],
             ),
             data: (data) {
-              final team = (data?['team'] as Map<String, dynamic>?) ??
+              final team =
+                  (data?['team'] as Map<String, dynamic>?) ??
                   (data?['assignedTeam'] as Map<String, dynamic>?);
               if (team == null) {
                 return Container(

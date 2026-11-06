@@ -148,7 +148,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                 children: [
                   _buildInfoRow('Business Name', activity.businessName),
                   const SizedBox(height: 10),
-                  
+
                   const SizedBox(height: 10),
                   _buildInfoRow('Time', activity.time),
                   const SizedBox(height: 10),
@@ -209,7 +209,6 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                   ),
                   const SizedBox(width: 10),
                 ],
-                
               ],
             ),
           ],

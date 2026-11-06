@@ -936,7 +936,7 @@ class _CustomerAiCreationFormViewState
       child: Row(
         children: [
           Icon(
-            hasEnough ? LegacyRemixIcons.auto_awesome : Remix.alert_line,
+            hasEnough ? LegacyRemixIcons.autoAwesome : Remix.alert_line,
             size: 18,
             color: hasEnough
                 ? const Color(0xFF4F46E5)
@@ -1103,7 +1103,7 @@ class _CustomerAiCreationFormViewState
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
-                        LegacyRemixIcons.auto_awesome,
+                        LegacyRemixIcons.autoAwesome,
                         size: 18,
                         color: Colors.white,
                       ),
@@ -1131,7 +1131,7 @@ class _CustomerAiCreationFormViewState
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
-                        LegacyRemixIcons.auto_awesome,
+                        LegacyRemixIcons.autoAwesome,
                         size: 18,
                         color: Colors.white,
                       ),

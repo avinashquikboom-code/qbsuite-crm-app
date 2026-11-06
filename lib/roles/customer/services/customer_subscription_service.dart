@@ -468,7 +468,8 @@ class CustomerSubscriptionService {
         map.putIfAbsent('planCode', () => plan['planCode'] ?? plan['code']);
         map.putIfAbsent('code', () => plan['code'] ?? plan['planCode']);
       }
-      final hasPlan = map['planName'] != null ||
+      final hasPlan =
+          map['planName'] != null ||
           map['name'] != null ||
           map['planId'] != null ||
           map['subscriptionId'] != null ||
@@ -508,7 +509,6 @@ class CustomerSubscriptionService {
     }
     return null;
   }
-
 
   Map<String, dynamic>? _extractUpcomingPlan(dynamic raw, dynamic nestedData) {
     if (raw is Map && raw['upcomingPlan'] is Map) {
@@ -812,7 +812,9 @@ class CustomerSubscriptionService {
                   ),
                 )
                 .toList();
-            debugPrint('[CACHE] Updating orders from server (${orders.length})');
+            debugPrint(
+              '[CACHE] Updating orders from server (${orders.length})',
+            );
             await _cacheOrders(orders);
             return orders;
           }

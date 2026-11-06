@@ -4,7 +4,6 @@ import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
-
 class AdminQuickActionSheet extends StatelessWidget {
   final VoidCallback onScheduleVisit;
   final VoidCallback onCreateProposal;
@@ -19,9 +18,7 @@ class AdminQuickActionSheet extends StatelessWidget {
     required this.onAssignTask,
   });
 
-  static void show(BuildContext context) {
-    
-  }
+  static void show(BuildContext context) {}
 
   @override
   Widget build(BuildContext context) {
@@ -200,7 +197,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                   ),
                 ),
                 const Icon(
-                  LegacyRemixIcons.arrow_forward_ios_rounded,
+                  LegacyRemixIcons.arrowForwardIosRounded,
                   size: 14,
                   color: Color(0xFFCBD5E1),
                 ),

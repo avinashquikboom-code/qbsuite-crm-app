@@ -34,23 +34,31 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
 
   @override
   AsyncValue<List<LeadModel>> build() {
-    Future.microtask(() { if (ref.mounted && _fetchGeneration == 0) fetchLeads(); });
+    Future.microtask(() {
+      if (ref.mounted && _fetchGeneration == 0) fetchLeads();
+    });
     return const AsyncValue.loading();
   }
 
   void _updateCounts(List<LeadModel> leads) {
     final stagesNotifier = ref.read(leadStagesProvider.notifier);
     final counts = <String, int>{'': leads.length, 'ALL': leads.length};
-    for (final stage in ref.read(activeLeadStagesProvider)) { counts[stage.key.toUpperCase()] = 0; counts[stage.id.toString()] = 0; }
+    for (final stage in ref.read(activeLeadStagesProvider)) {
+      counts[stage.key.toUpperCase()] = 0;
+      counts[stage.id.toString()] = 0;
+    }
     for (final lead in leads) {
       final resolved = stagesNotifier.resolveLeadStage(
         lead.stageId,
         lead.status,
       );
-      final key = (resolved?.key ?? lead.stage?.key ?? lead.status).toUpperCase();
+      final key = (resolved?.key ?? lead.stage?.key ?? lead.status)
+          .toUpperCase();
       counts[key] = (counts[key] ?? 0) + 1;
-      if (key == 'VISIT') counts['VISIT_SCHEDULED'] = (counts['VISIT_SCHEDULED'] ?? 0) + 1;
-      if (key == 'VISIT_SCHEDULED') counts['VISIT'] = (counts['VISIT'] ?? 0) + 1;
+      if (key == 'VISIT')
+        counts['VISIT_SCHEDULED'] = (counts['VISIT_SCHEDULED'] ?? 0) + 1;
+      if (key == 'VISIT_SCHEDULED')
+        counts['VISIT'] = (counts['VISIT'] ?? 0) + 1;
       if (lead.stageId != null) {
         counts[lead.stageId.toString()] =
             (counts[lead.stageId.toString()] ?? 0) + 1;
@@ -59,17 +67,33 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
     _stageCounts = counts;
   }
 
-  Future<void> fetchLeads({String? status, String? search, int? stageId, bool refreshCounts = false}) async {
+  Future<void> fetchLeads({
+    String? status,
+    String? search,
+    int? stageId,
+    bool refreshCounts = false,
+  }) async {
     final generation = ++_fetchGeneration;
     _lastStatus = status;
     _lastStageId = stageId;
     _lastSearch = search;
     state = const AsyncValue.loading();
     try {
-      final reloadCounts = refreshCounts && (stageId != null || status?.isNotEmpty == true || search?.isNotEmpty == true);
+      final reloadCounts =
+          refreshCounts &&
+          (stageId != null ||
+              status?.isNotEmpty == true ||
+              search?.isNotEmpty == true);
       final countsRequest = reloadCounts ? _leadService.getLeads() : null;
-      final filteredRequest = _leadService.getLeads(status: status, search: search, stageId: stageId);
-      final results = await Future.wait([filteredRequest, if (countsRequest != null) countsRequest]);
+      final filteredRequest = _leadService.getLeads(
+        status: status,
+        search: search,
+        stageId: stageId,
+      );
+      final results = await Future.wait([
+        filteredRequest,
+        if (countsRequest != null) countsRequest,
+      ]);
       final serverLeads = results.first;
       if (!ref.mounted || generation != _fetchGeneration) return;
       debugPrint(
@@ -78,7 +102,9 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
       if (reloadCounts) {
         _allLeads = List<LeadModel>.unmodifiable(results.last);
         _updateCounts(_allLeads);
-      } else if (stageId == null && (status == null || status.isEmpty) && (search == null || search.trim().isEmpty)) {
+      } else if (stageId == null &&
+          (status == null || status.isEmpty) &&
+          (search == null || search.trim().isEmpty)) {
         _allLeads = List<LeadModel>.unmodifiable(serverLeads);
         _updateCounts(_allLeads);
       }
@@ -91,7 +117,12 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
   }
 
   Future<void> refreshLeads() async {
-    await fetchLeads(status: _lastStatus, search: _lastSearch, stageId: _lastStageId, refreshCounts: _allLeads.isNotEmpty);
+    await fetchLeads(
+      status: _lastStatus,
+      search: _lastSearch,
+      stageId: _lastStageId,
+      refreshCounts: _allLeads.isNotEmpty,
+    );
   }
 
   Future<LeadModel?> getLeadDetails(String id) async {
@@ -197,11 +228,18 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
   bool _matchesStage(LeadModel lead) {
     if (_lastStageId != null) {
       if (lead.stageId != null) return lead.stageId == _lastStageId;
-      return ref.read(leadStagesProvider.notifier).resolveLeadStage(null, lead.status)?.id == _lastStageId;
+      return ref
+              .read(leadStagesProvider.notifier)
+              .resolveLeadStage(null, lead.status)
+              ?.id ==
+          _lastStageId;
     }
     if (_lastStatus == null || _lastStatus!.isEmpty) return true;
-    final stage = ref.read(leadStagesProvider.notifier).resolveLeadStage(lead.stageId, lead.status);
-    return (stage?.key ?? lead.status).toUpperCase() == _lastStatus!.toUpperCase();
+    final stage = ref
+        .read(leadStagesProvider.notifier)
+        .resolveLeadStage(lead.stageId, lead.status);
+    return (stage?.key ?? lead.status).toUpperCase() ==
+        _lastStatus!.toUpperCase();
   }
 
   void addOrUpdateLead(LeadModel lead) {
@@ -218,7 +256,10 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
     }
     final currentList = state.asData?.value;
     if (!_matchesStage(lead)) {
-      if (currentList != null) state = AsyncValue.data(currentList.where((item) => item.id != lead.id).toList());
+      if (currentList != null)
+        state = AsyncValue.data(
+          currentList.where((item) => item.id != lead.id).toList(),
+        );
       return;
     }
     if (currentList == null) {
@@ -247,7 +288,10 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
     }
     final currentList = state.asData?.value;
     if (!_matchesStage(lead)) {
-      if (currentList != null) state = AsyncValue.data(currentList.where((item) => item.id != lead.id).toList());
+      if (currentList != null)
+        state = AsyncValue.data(
+          currentList.where((item) => item.id != lead.id).toList(),
+        );
       return;
     }
     if (currentList == null) return;

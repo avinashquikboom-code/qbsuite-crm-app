@@ -28,19 +28,25 @@ class CaptureHistorySession {
       parsedDate = DateTime.now();
     }
 
-    final rawCaptured = json['capturedResults'] ?? json['captured'] ?? json['captured_results'];
+    final rawCaptured =
+        json['capturedResults'] ?? json['captured'] ?? json['captured_results'];
     final captured = rawCaptured is num
         ? rawCaptured.toInt()
         : (int.tryParse(rawCaptured?.toString() ?? '') ?? 0);
 
-    final rawFound = json['foundResults'] ?? json['found'] ?? json['found_results'];
+    final rawFound =
+        json['foundResults'] ?? json['found'] ?? json['found_results'];
     final found = rawFound is num
         ? rawFound.toInt()
         : (rawFound != null ? int.tryParse(rawFound.toString()) : null);
 
     return CaptureHistorySession(
       jobId: json['jobId']?.toString() ?? json['id']?.toString() ?? '',
-      keyword: json['keyword']?.toString() ?? json['query']?.toString() ?? json['search']?.toString() ?? '',
+      keyword:
+          json['keyword']?.toString() ??
+          json['query']?.toString() ??
+          json['search']?.toString() ??
+          '',
       location: json['location']?.toString() ?? json['city']?.toString() ?? '',
       createdAt: parsedDate,
       captured: captured,
@@ -86,7 +92,10 @@ class CaptureHistoryPage {
       if (payload is List) {
         final list = payload
             .whereType<Map>()
-            .map((e) => CaptureHistorySession.fromJson(Map<String, dynamic>.from(e)))
+            .map(
+              (e) =>
+                  CaptureHistorySession.fromJson(Map<String, dynamic>.from(e)),
+            )
             .toList();
         return CaptureHistoryPage(
           sessions: list,
@@ -109,7 +118,12 @@ class CaptureHistoryPage {
       rawList = map['data'];
     } else if (map['data'] is Map) {
       final nested = map['data'] as Map;
-      rawList = nested['data'] ?? nested['items'] ?? nested['sessions'] ?? nested['records'] ?? [];
+      rawList =
+          nested['data'] ??
+          nested['items'] ??
+          nested['sessions'] ??
+          nested['records'] ??
+          [];
     } else if (map['items'] is List) {
       rawList = map['items'];
     } else if (map['sessions'] is List) {
@@ -122,16 +136,23 @@ class CaptureHistoryPage {
 
     final sessions = (rawList is List)
         ? rawList
-            .whereType<Map>()
-            .map((e) => CaptureHistorySession.fromJson(Map<String, dynamic>.from(e)))
-            .toList()
+              .whereType<Map>()
+              .map(
+                (e) => CaptureHistorySession.fromJson(
+                  Map<String, dynamic>.from(e),
+                ),
+              )
+              .toList()
         : <CaptureHistorySession>[];
 
     Map<String, dynamic>? pagination;
     if (map['pagination'] is Map) {
       pagination = Map<String, dynamic>.from(map['pagination'] as Map);
-    } else if (map['data'] is Map && (map['data'] as Map)['pagination'] is Map) {
-      pagination = Map<String, dynamic>.from((map['data'] as Map)['pagination'] as Map);
+    } else if (map['data'] is Map &&
+        (map['data'] as Map)['pagination'] is Map) {
+      pagination = Map<String, dynamic>.from(
+        (map['data'] as Map)['pagination'] as Map,
+      );
     } else if (map['meta'] is Map) {
       pagination = Map<String, dynamic>.from(map['meta'] as Map);
     }
@@ -139,20 +160,20 @@ class CaptureHistoryPage {
     final page = pagination?['page'] is num
         ? (pagination!['page'] as num).toInt()
         : (int.tryParse(pagination?['page']?.toString() ?? '') ??
-            int.tryParse(map['page']?.toString() ?? '') ??
-            1);
+              int.tryParse(map['page']?.toString() ?? '') ??
+              1);
 
     final total = pagination?['total'] is num
         ? (pagination!['total'] as num).toInt()
         : (int.tryParse(pagination?['total']?.toString() ?? '') ??
-            int.tryParse(map['total']?.toString() ?? '') ??
-            sessions.length);
+              int.tryParse(map['total']?.toString() ?? '') ??
+              sessions.length);
 
     final totalPages = pagination?['totalPages'] is num
         ? (pagination!['totalPages'] as num).toInt()
         : (int.tryParse(pagination?['totalPages']?.toString() ?? '') ??
-            int.tryParse(map['totalPages']?.toString() ?? '') ??
-            (total > 0 ? (total / 20).ceil() : 1));
+              int.tryParse(map['totalPages']?.toString() ?? '') ??
+              (total > 0 ? (total / 20).ceil() : 1));
 
     return CaptureHistoryPage(
       sessions: sessions,

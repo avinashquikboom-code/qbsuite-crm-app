@@ -27,7 +27,9 @@ class LeadContactInfoCard extends StatelessWidget {
   Future<void> _openGoogleMaps(String address) async {
     final clean = address.trim();
     final query = Uri.encodeComponent(clean);
-    final uri = Uri.parse('https://www.google.com/maps/search/?api=1&query=$query');
+    final uri = Uri.parse(
+      'https://www.google.com/maps/search/?api=1&query=$query',
+    );
     try {
       if (await canLaunchUrl(uri)) {
         await launchUrl(uri, mode: LaunchMode.externalApplication);

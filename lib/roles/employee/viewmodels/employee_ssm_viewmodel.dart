@@ -133,9 +133,7 @@ class EmployeeSSMState {
         calendarFilter.trim().isEmpty) {
       return allSchedules;
     }
-    return allSchedules
-        .where((s) => s.assignedTeam == calendarFilter)
-        .toList();
+    return allSchedules.where((s) => s.assignedTeam == calendarFilter).toList();
   }
 
   /// Schedules spanning the selected calendar date

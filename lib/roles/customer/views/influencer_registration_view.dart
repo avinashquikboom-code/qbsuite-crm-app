@@ -624,7 +624,10 @@ class _InfluencerRegistrationViewState
           obscureText: obscureText,
           maxLines: maxLines,
           validator: validator,
-          style: AppTypography.inter(fontSize: 14, color: AppColors.textPrimary),
+          style: AppTypography.inter(
+            fontSize: 14,
+            color: AppColors.textPrimary,
+          ),
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: AppTypography.inter(

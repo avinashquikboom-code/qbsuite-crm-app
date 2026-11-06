@@ -219,7 +219,9 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
     for (final a in [...rawWeekActivities, ...rawDateActivities]) {
       final key = getScheduledDateString(a);
       final list = dateActivityMap.putIfAbsent(key, () => []);
-      if (!list.any((existing) => existing.id == a.id && existing.type == a.type)) {
+      if (!list.any(
+        (existing) => existing.id == a.id && existing.type == a.type,
+      )) {
         list.add(a);
       }
     }
@@ -530,12 +532,13 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                         final uniqueColors = <Color>[];
                         final seenCustomerKeys = <String>{};
                         for (final act in matchingActs) {
-                          final custKey = act.customerId.trim().isNotEmpty &&
+                          final custKey =
+                              act.customerId.trim().isNotEmpty &&
                                   act.customerId.trim() != '0'
                               ? act.customerId.trim()
                               : (act.businessName.trim().isNotEmpty
-                                  ? act.businessName.trim().toLowerCase()
-                                  : act.customerName.trim().toLowerCase());
+                                    ? act.businessName.trim().toLowerCase()
+                                    : act.customerName.trim().toLowerCase());
                           if (seenCustomerKeys.add(custKey)) {
                             uniqueColors.add(resolveCustomerColor(act));
                           }

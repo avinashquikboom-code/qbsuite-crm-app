@@ -184,7 +184,9 @@ class CurrentSubscriptionNotifier extends AsyncNotifier<CustomerSubscription?> {
     final customerId = await ref.watch(currentCustomerIdProvider.future);
     final service = ref.watch(customerSubscriptionServiceProvider);
     debugPrint('[CACHE] Fetching latest subscription');
-    debugPrint('[Riverpod] customerId: ${customerId.isEmpty ? "NONE" : customerId}');
+    debugPrint(
+      '[Riverpod] customerId: ${customerId.isEmpty ? "NONE" : customerId}',
+    );
     return service.getCurrentSubscription();
   }
 

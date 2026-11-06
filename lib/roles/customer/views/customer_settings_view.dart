@@ -76,7 +76,7 @@ class _CustomerSettingsViewState extends ConsumerState<CustomerSettingsView> {
                     ),
                     ListTile(
                       contentPadding: EdgeInsets.zero,
-                      leading: const Icon(LegacyRemixIcons.lock_outline),
+                      leading: const Icon(LegacyRemixIcons.lockOutline),
                       title: const Text('Change password'),
                       subtitle: const Text(
                         'Update your customer login password',

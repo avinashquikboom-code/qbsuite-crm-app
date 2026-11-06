@@ -57,11 +57,7 @@ class SkeletonCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SkeletonBox(
-      width: size,
-      height: size,
-      shape: BoxShape.circle,
-    );
+    return SkeletonBox(width: size, height: size, shape: BoxShape.circle);
   }
 }
 
@@ -217,13 +213,9 @@ class SkeletonAttendanceCard extends StatelessWidget {
           const SizedBox(height: 18),
           Row(
             children: const [
-              Expanded(
-                child: SkeletonBox(height: 52, borderRadius: 14),
-              ),
+              Expanded(child: SkeletonBox(height: 52, borderRadius: 14)),
               SizedBox(width: 12),
-              Expanded(
-                child: SkeletonBox(height: 52, borderRadius: 14),
-              ),
+              Expanded(child: SkeletonBox(height: 52, borderRadius: 14)),
             ],
           ),
           const SizedBox(height: 16),

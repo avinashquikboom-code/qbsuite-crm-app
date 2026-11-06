@@ -354,7 +354,7 @@ class _MarketingVideoIntroductionScreenState
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Icon(
-                    LegacyRemixIcons.error_outline,
+                    LegacyRemixIcons.errorOutline,
                     color: Colors.white54,
                     size: 48,
                   ),
@@ -385,7 +385,7 @@ class _MarketingVideoIntroductionScreenState
                     border: Border.all(color: Colors.white30, width: 1.5),
                   ),
                   child: const Icon(
-                    LegacyRemixIcons.play_arrow_rounded,
+                    LegacyRemixIcons.playArrowRounded,
                     color: Colors.white,
                     size: 36,
                   ),

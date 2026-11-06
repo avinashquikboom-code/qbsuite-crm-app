@@ -133,7 +133,9 @@ class ProfileView extends ConsumerWidget {
               _buildMenuSection(context, ref),
               const SizedBox(height: 20),
 
-              if (ref.watch(permissionManagerProvider).canView(AppModule.salary)) ...[
+              if (ref
+                  .watch(permissionManagerProvider)
+                  .canView(AppModule.salary)) ...[
                 _buildSalaryDetails(ref),
                 const SizedBox(height: 20),
               ],
@@ -832,16 +834,29 @@ class ProfileView extends ConsumerWidget {
         padding: const EdgeInsets.all(20),
         child: salary.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (error, stack) => Column(children: [
-            const Text('Unable to load salary details'),
-            TextButton(onPressed: () => ref.invalidate(employeeSalaryDetailsProvider), child: const Text('Retry')),
-          ]),
+          error: (error, stack) => Column(
+            children: [
+              const Text('Unable to load salary details'),
+              TextButton(
+                onPressed: () => ref.invalidate(employeeSalaryDetailsProvider),
+                child: const Text('Retry'),
+              ),
+            ],
+          ),
           data: (details) {
-            if (details == null) return const Text('No current salary structure available');
-            String money(String key) => '₹${(num.tryParse('${details[key]}') ?? 0).toStringAsFixed(2)}';
+            if (details == null)
+              return const Text('No current salary structure available');
+            String money(String key) =>
+                '₹${(num.tryParse('${details[key]}') ?? 0).toStringAsFixed(2)}';
             final rows = <String, String>{
-              'Current salary structure': details['id'] == null ? 'Employee compensation' : '#${details['id']}',
-              'Effective from': DateTime.tryParse('${details['effectiveFrom']}')?.toLocal().toString().split(' ').first ?? '—',
+              'Current salary structure': details['id'] == null
+                  ? 'Employee compensation'
+                  : '#${details['id']}',
+              'Effective from':
+                  DateTime.tryParse(
+                    '${details['effectiveFrom']}',
+                  )?.toLocal().toString().split(' ').first ??
+                  '—',
               'Monthly Basic Salary': money('basicSalary'),
               'HRA': money('hra'),
               'Allowances': money('allowances'),
@@ -854,16 +869,41 @@ class ProfileView extends ConsumerWidget {
               'Deductions': money('totalDeductions'),
               'Net Salary': money('netSalary'),
             };
-            return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('Salary Details', style: AppTypography.inter(fontWeight: FontWeight.bold, fontSize: 16)),
-              const Text('Monthly structure amounts. Payslips include attendance and payroll adjustments.'),
-              const SizedBox(height: 12),
-              ...rows.entries.map((row) => Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: Row(children: [Expanded(child: Text(row.key)), const SizedBox(width: 8), Flexible(child: Text(row.value, textAlign: TextAlign.end))]),
-              )),
-              TextButton(onPressed: () => ref.invalidate(employeeSalaryDetailsProvider), child: const Text('Refresh salary')),
-            ]);
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Salary Details',
+                  style: AppTypography.inter(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                const Text(
+                  'Monthly structure amounts. Payslips include attendance and payroll adjustments.',
+                ),
+                const SizedBox(height: 12),
+                ...rows.entries.map(
+                  (row) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      children: [
+                        Expanded(child: Text(row.key)),
+                        const SizedBox(width: 8),
+                        Flexible(
+                          child: Text(row.value, textAlign: TextAlign.end),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () =>
+                      ref.invalidate(employeeSalaryDetailsProvider),
+                  child: const Text('Refresh salary'),
+                ),
+              ],
+            );
           },
         ),
       ),
@@ -896,7 +936,10 @@ class ProfileView extends ConsumerWidget {
       ),
       subtitle: Text(
         '₹ ${slip.netSalary.toStringAsFixed(0)} Net • Paid on $paidDateText',
-        style: AppTypography.inter(color: AppColors.textSecondary, fontSize: 12),
+        style: AppTypography.inter(
+          color: AppColors.textSecondary,
+          fontSize: 12,
+        ),
       ),
       trailing: IconButton(
         icon: const Icon(

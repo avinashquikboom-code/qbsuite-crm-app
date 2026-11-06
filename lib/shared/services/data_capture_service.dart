@@ -36,7 +36,9 @@ class DataCaptureService {
       if (to != null) 'to': to.toUtc().toIso8601String(),
     };
     if (kDebugMode) {
-      debugPrint('[DATA_CAPTURE_HISTORY] GET /data-capture/history params=$query');
+      debugPrint(
+        '[DATA_CAPTURE_HISTORY] GET /data-capture/history params=$query',
+      );
     }
     final response = await _apiClient.get(
       '/data-capture/history',

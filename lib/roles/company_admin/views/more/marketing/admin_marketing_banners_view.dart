@@ -858,7 +858,10 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
           fontSize: 13,
           color: AppColors.textSecondary,
         ),
-        hintStyle: AppTypography.inter(fontSize: 13, color: AppColors.textMuted),
+        hintStyle: AppTypography.inter(
+          fontSize: 13,
+          color: AppColors.textMuted,
+        ),
         filled: true,
         fillColor: Colors.white,
         contentPadding: const EdgeInsets.symmetric(

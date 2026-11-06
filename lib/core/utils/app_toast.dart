@@ -38,7 +38,8 @@ class AppToast {
     // Check if this is a login success toast
     final bool isLoginSuccess =
         isAuthToast ||
-        ((lowerTitle.contains('login') || lowerTitle.contains('admin access')) &&
+        ((lowerTitle.contains('login') ||
+                lowerTitle.contains('admin access')) &&
             (type == ToastType.success ||
                 lowerMsg.contains('successful') ||
                 lowerMsg.contains('authenticated') ||
@@ -149,40 +150,78 @@ class AppToast {
     BuildContext? context,
     String? message,
     String? title,
-  }) =>
-      show(
-        context,
-        message: message ?? 'Login successful!',
-        title: title ?? 'Login Successful',
-        type: ToastType.success,
-        isAuthToast: true,
-      );
+  }) => show(
+    context,
+    message: message ?? 'Login successful!',
+    title: title ?? 'Login Successful',
+    type: ToastType.success,
+    isAuthToast: true,
+  );
 
   /// Explicit helper for logout
   static void logoutSuccess({
     BuildContext? context,
     String? message,
     String? title,
-  }) =>
-      show(
-        context,
-        message: message ?? 'You have been logged out successfully.',
-        title: title ?? 'Logged Out',
-        type: ToastType.info,
-        isAuthToast: true,
-      );
+  }) => show(
+    context,
+    message: message ?? 'You have been logged out successfully.',
+    title: title ?? 'Logged Out',
+    type: ToastType.info,
+    isAuthToast: true,
+  );
 
-  static void success(BuildContext? context, String message, {String? title, bool isAuthToast = false}) =>
-      show(context, message: message, title: title, type: ToastType.success, isAuthToast: isAuthToast);
+  static void success(
+    BuildContext? context,
+    String message, {
+    String? title,
+    bool isAuthToast = false,
+  }) => show(
+    context,
+    message: message,
+    title: title,
+    type: ToastType.success,
+    isAuthToast: isAuthToast,
+  );
 
-  static void error(BuildContext? context, String message, {String? title, bool isAuthToast = false}) =>
-      show(context, message: message, title: title, type: ToastType.error, isAuthToast: isAuthToast);
+  static void error(
+    BuildContext? context,
+    String message, {
+    String? title,
+    bool isAuthToast = false,
+  }) => show(
+    context,
+    message: message,
+    title: title,
+    type: ToastType.error,
+    isAuthToast: isAuthToast,
+  );
 
-  static void warning(BuildContext? context, String message, {String? title, bool isAuthToast = false}) =>
-      show(context, message: message, title: title, type: ToastType.warning, isAuthToast: isAuthToast);
+  static void warning(
+    BuildContext? context,
+    String message, {
+    String? title,
+    bool isAuthToast = false,
+  }) => show(
+    context,
+    message: message,
+    title: title,
+    type: ToastType.warning,
+    isAuthToast: isAuthToast,
+  );
 
-  static void info(BuildContext? context, String message, {String? title, bool isAuthToast = false}) =>
-      show(context, message: message, title: title, type: ToastType.info, isAuthToast: isAuthToast);
+  static void info(
+    BuildContext? context,
+    String message, {
+    String? title,
+    bool isAuthToast = false,
+  }) => show(
+    context,
+    message: message,
+    title: title,
+    type: ToastType.info,
+    isAuthToast: isAuthToast,
+  );
 
   /// Show a global floating SnackBar with white readable text and matching icon
   static void snackBar(
@@ -190,8 +229,12 @@ class AppToast {
     required String message,
     SnackBarType type = SnackBarType.success,
     Duration duration = const Duration(seconds: 3),
-  }) =>
-      AppSnackBar.show(context, message: message, type: type, duration: duration);
+  }) => AppSnackBar.show(
+    context,
+    message: message,
+    type: type,
+    duration: duration,
+  );
 }
 
 class _ToastWidget extends StatefulWidget {

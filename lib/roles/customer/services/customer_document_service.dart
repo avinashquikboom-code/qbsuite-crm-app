@@ -133,14 +133,18 @@ class CustomerDocumentService {
     final cleanInvoiceId = invoiceId?.trim() ?? '';
 
     if (cleanPaymentId.isEmpty && cleanInvoiceId.isEmpty) {
-      throw Exception('Payment or Invoice ID is missing. Cannot generate agreement.');
+      throw Exception(
+        'Payment or Invoice ID is missing. Cannot generate agreement.',
+      );
     }
 
     // Agreement is generated from the payment row.
     // ORD-PAY-78 is the display key; PaymentHistory.id is 78.
     // Do not fall through to /invoices/:id — that id is not this order's agreement.
-    final ordPay = RegExp(r'^ORD-PAY-(\d+)$', caseSensitive: false)
-        .firstMatch(cleanPaymentId);
+    final ordPay = RegExp(
+      r'^ORD-PAY-(\d+)$',
+      caseSensitive: false,
+    ).firstMatch(cleanPaymentId);
     final resolvedPaymentId = ordPay != null
         ? ordPay.group(1)!
         : (cleanPaymentId.isNotEmpty ? cleanPaymentId : cleanInvoiceId);

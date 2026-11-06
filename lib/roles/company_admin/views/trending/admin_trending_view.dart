@@ -4,7 +4,6 @@ import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
-
 class AdminTrendingView extends ConsumerStatefulWidget {
   final bool isStandaloneScreen;
   final String? customerId;
@@ -248,8 +247,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
   ];
 
   List<Map<String, dynamic>> _getFilteredAds() {
-    final targetCustomer =
-        (widget.customerId ?? 'T001').toUpperCase();
+    final targetCustomer = (widget.customerId ?? 'T001').toUpperCase();
     final isCustomerB =
         targetCustomer == 'T002' || targetCustomer == 'CUSTOMER_B';
     final targetId = isCustomerB ? 'T002' : 'T001';
@@ -263,8 +261,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
   }
 
   List<Map<String, dynamic>> _getFilteredStories() {
-    final targetCustomer =
-        (widget.customerId ?? 'T001').toUpperCase();
+    final targetCustomer = (widget.customerId ?? 'T001').toUpperCase();
     final isCustomerB =
         targetCustomer == 'T002' || targetCustomer == 'CUSTOMER_B';
     final targetId = isCustomerB ? 'T002' : 'T001';

@@ -151,8 +151,7 @@ class CustomerService {
       r'^CUST-(\d+)$',
       caseSensitive: false,
     ).firstMatch(rawId);
-    final parsedId =
-        directId ?? int.tryParse(prefixedMatch?.group(1) ?? '');
+    final parsedId = directId ?? int.tryParse(prefixedMatch?.group(1) ?? '');
     if (parsedId == null || parsedId <= 0) {
       throw ArgumentError.value(
         customerId,
@@ -211,8 +210,7 @@ class CustomerService {
       r'^CUST-(\d+)$',
       caseSensitive: false,
     ).firstMatch(rawId);
-    final parsedId =
-        directId ?? int.tryParse(prefixedMatch?.group(1) ?? '');
+    final parsedId = directId ?? int.tryParse(prefixedMatch?.group(1) ?? '');
     if (parsedId == null || parsedId <= 0) {
       throw ArgumentError.value(
         customerId,
@@ -256,7 +254,8 @@ class CustomerService {
             list = raw['data'] as List<dynamic>;
           } else if (raw['items'] is List) {
             list = raw['items'] as List<dynamic>;
-          } else if (raw['data'] is Map && (raw['data'] as Map)['items'] is List) {
+          } else if (raw['data'] is Map &&
+              (raw['data'] as Map)['items'] is List) {
             list = (raw['data'] as Map)['items'] as List<dynamic>;
           }
         } else if (raw is List) {

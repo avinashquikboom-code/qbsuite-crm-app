@@ -310,10 +310,13 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
       ),
       subtitle: Text(
         subtitle,
-        style: AppTypography.inter(fontSize: 12, color: AppColors.textSecondary),
+        style: AppTypography.inter(
+          fontSize: 12,
+          color: AppColors.textSecondary,
+        ),
       ),
       trailing: const Icon(
-        LegacyRemixIcons.arrow_forward_ios_rounded,
+        LegacyRemixIcons.arrowForwardIosRounded,
         size: 14,
         color: Color(0xFFCBD5E1),
       ),

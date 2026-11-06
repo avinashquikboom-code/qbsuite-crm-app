@@ -23,11 +23,6 @@ import 'secure_storage_service.dart';
 import '../utils/app_toast.dart';
 import '../../roles/employee/views/notifications_view.dart';
 
-
-
-
-
-
 /// One push-notification entry point for FCM, local foreground presentation,
 /// token registration, and notification-tap navigation.
 class NotificationService with WidgetsBindingObserver {
@@ -95,11 +90,12 @@ class NotificationService with WidgetsBindingObserver {
     if (type == 'WELCOME' || type == 'CUSTOMER_WELCOME') return true;
     final title = (message.notification?.title ?? message.data['title'] ?? '')
         .toString();
-    final body = (message.notification?.body ??
-            message.data['body'] ??
-            message.data['message'] ??
-            '')
-        .toString();
+    final body =
+        (message.notification?.body ??
+                message.data['body'] ??
+                message.data['message'] ??
+                '')
+            .toString();
     if (title.contains('Welcome to QuikBoom') ||
         body.contains('account has been created successfully')) {
       return true;
@@ -113,8 +109,8 @@ class NotificationService with WidgetsBindingObserver {
 
     final customerId =
         message.data['customerId']?.toString().trim().isNotEmpty == true
-            ? message.data['customerId'].toString().trim()
-            : 'default';
+        ? message.data['customerId'].toString().trim()
+        : 'default';
     final key = 'WELCOME_$customerId';
 
     if (_inMemoryShownWelcomeKeys.contains(key)) {
@@ -137,8 +133,8 @@ class NotificationService with WidgetsBindingObserver {
     if (!_isWelcomeNotification(message)) return;
     final customerId =
         message.data['customerId']?.toString().trim().isNotEmpty == true
-            ? message.data['customerId'].toString().trim()
-            : 'default';
+        ? message.data['customerId'].toString().trim()
+        : 'default';
     final key = 'WELCOME_$customerId';
     _inMemoryShownWelcomeKeys.add(key);
     try {
@@ -302,8 +298,8 @@ class NotificationService with WidgetsBindingObserver {
     if (_isWelcomeNotification(message)) {
       final customerId =
           message.data['customerId']?.toString().trim().isNotEmpty == true
-              ? message.data['customerId'].toString().trim()
-              : 'customer';
+          ? message.data['customerId'].toString().trim()
+          : 'customer';
       return ('WELCOME_CUSTOMER_$customerId').hashCode.abs() % 2147483647;
     }
 
@@ -635,7 +631,8 @@ class NotificationService with WidgetsBindingObserver {
               .getInitialMessage()
               .timeout(const Duration(seconds: 2));
           if (initialMessage != null) {
-            final initialKey = initialMessage.messageId ??
+            final initialKey =
+                initialMessage.messageId ??
                 initialMessage.data['notificationId']?.toString() ??
                 initialMessage.data['type']?.toString() ??
                 'initial_msg';
@@ -652,7 +649,9 @@ class NotificationService with WidgetsBindingObserver {
         debugPrint('[FCM] Firebase messaging setup warning: $e');
       }
     } else {
-      debugPrint('[FCM] Firebase not initialized; skipping FCM message listener setup');
+      debugPrint(
+        '[FCM] Firebase not initialized; skipping FCM message listener setup',
+      );
     }
 
     _initialized = true;
@@ -1068,9 +1067,11 @@ class NotificationService with WidgetsBindingObserver {
 
     // Suppress lead assignment notifications from in-app toast/snackBar
     final notifType = message.data['type']?.toString().toUpperCase() ?? '';
-    final isLeadAssign = (notifType.contains('LEAD') && notifType.contains('ASSIGN')) ||
+    final isLeadAssign =
+        (notifType.contains('LEAD') && notifType.contains('ASSIGN')) ||
         (title.toLowerCase().contains('assign') &&
-            (title.toLowerCase().contains('lead') || body.toLowerCase().contains('lead')));
+            (title.toLowerCase().contains('lead') ||
+                body.toLowerCase().contains('lead')));
     if (isLeadAssign) return;
 
     final snackBarLabel =
@@ -1183,21 +1184,17 @@ class NotificationService with WidgetsBindingObserver {
 
     // Direct match against known routes or aliases
     if (route == '/plans' || route == '/customer/plans') {
-      
       return;
     }
     if (route == '/orders' || route == '/customer/orders') {
-      
       return;
     }
     if (route == '/leads' || route == '/employee/leads') {
-      
       return;
     }
     if (route == '/work-requests' ||
         route == '/customer/work-requests' ||
         route == '/customer/work') {
-      
       return;
     }
 
@@ -1219,7 +1216,6 @@ class NotificationService with WidgetsBindingObserver {
 
     final leadId = payload['leadId'];
     if (leadId != null && leadId.isNotEmpty) {
-      
       return;
     }
 
@@ -1230,7 +1226,6 @@ class NotificationService with WidgetsBindingObserver {
     }
 
     if (payload['type'] == 'WORK_COMPLETED' || payload['type'] == 'WORK') {
-      
       return;
     }
 

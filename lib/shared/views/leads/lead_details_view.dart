@@ -90,7 +90,12 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
   bool get _isVisitor {
     final rbac = ref.read(permissionManagerProvider);
     final rawRole = (rbac.role ?? '').trim().toUpperCase();
-    return !(rawRole.contains('ADMIN') || rawRole.contains('CUSTOMER') || rawRole.contains('BPO')) && (rawRole.contains('VISITOR') || rawRole.contains('FIELD') || rbac.canCompleteVisit);
+    return !(rawRole.contains('ADMIN') ||
+            rawRole.contains('CUSTOMER') ||
+            rawRole.contains('BPO')) &&
+        (rawRole.contains('VISITOR') ||
+            rawRole.contains('FIELD') ||
+            rbac.canCompleteVisit);
   }
 
   bool get _canScheduleVisits {
@@ -139,7 +144,8 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
       final currentStatus = (lead.status).toUpperCase();
       final currentStageKey = (lead.stage?.key ?? '').toUpperCase();
       final currentStageName = (lead.stage?.name ?? '').toUpperCase();
-      final isCurrentScheduled = currentStatus == 'VISIT_SCHEDULED' ||
+      final isCurrentScheduled =
+          currentStatus == 'VISIT_SCHEDULED' ||
           currentStatus == 'VISIT' ||
           currentStageKey == 'VISIT_SCHEDULED' ||
           currentStageKey == 'VISIT' ||
@@ -156,7 +162,8 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
 
       final targetKey = targetStage.key.toUpperCase();
       final targetName = targetStage.name.toUpperCase();
-      final isTargetVisitDone = targetKey == 'VISIT_DONE' ||
+      final isTargetVisitDone =
+          targetKey == 'VISIT_DONE' ||
           targetName == 'VISIT DONE' ||
           targetName == 'VISIT DONE';
 
@@ -311,7 +318,9 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                         onTap: () {
                           if (_isVisitor &&
                               stage.key.toUpperCase() != 'VISIT_DONE' &&
-                              !stage.name.toUpperCase().contains('VISIT DONE')) {
+                              !stage.name.toUpperCase().contains(
+                                'VISIT DONE',
+                              )) {
                             AppToast.error(
                               context,
                               'Visitors can only advance leads to Visit Done stage.',
@@ -984,8 +993,18 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
       if (isToday) return 'Today at $timeStr';
 
       const months = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
       ];
       return '${dt.day} ${months[dt.month - 1]} ${dt.year}, $timeStr';
     } catch (_) {
@@ -1170,7 +1189,9 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
 
                                 if (context.mounted) {
                                   Navigator.pop(sheetContext);
-                                  ref.invalidate(sharedLeadNotesProvider(widget.leadId));
+                                  ref.invalidate(
+                                    sharedLeadNotesProvider(widget.leadId),
+                                  );
                                   _fetchLead();
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
@@ -1232,7 +1253,8 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
     return notesAsync.when(
       data: (notes) {
         final hasApiNotes = notes.isNotEmpty;
-        final hasLegacyNote = lead.notes != null && lead.notes!.trim().isNotEmpty;
+        final hasLegacyNote =
+            lead.notes != null && lead.notes!.trim().isNotEmpty;
 
         if (!hasApiNotes && !hasLegacyNote) {
           return Padding(
@@ -1369,14 +1391,16 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
               itemBuilder: (context, index) {
                 final note = allNotes[index];
                 final content = note['content']?.toString() ?? '';
-                final author = (note['authorName']?.toString() ??
-                        (note['user'] is Map
-                            ? '${note['user']['firstName'] ?? ''} ${note['user']['lastName'] ?? ''}'
-                            : null) ??
-                        'Team Member')
-                    .trim();
-                final dateStr =
-                    _formatDateTime(note['createdAt']?.toString() ?? '');
+                final author =
+                    (note['authorName']?.toString() ??
+                            (note['user'] is Map
+                                ? '${note['user']['firstName'] ?? ''} ${note['user']['lastName'] ?? ''}'
+                                : null) ??
+                            'Team Member')
+                        .trim();
+                final dateStr = _formatDateTime(
+                  note['createdAt']?.toString() ?? '',
+                );
 
                 return Container(
                   width: double.infinity,
@@ -1620,11 +1644,12 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
             final statusColor = isDone
                 ? const Color(0xFF10B981)
                 : (statusStr == 'IN_PROGRESS'
-                    ? const Color(0xFFF59E0B)
-                    : AppColors.primary);
+                      ? const Color(0xFFF59E0B)
+                      : AppColors.primary);
             final statusBg = statusColor.withValues(alpha: 0.1);
-            final dateLabel =
-                v.date.isNotEmpty ? _formatDateTime(v.date) : 'Scheduled';
+            final dateLabel = v.date.isNotEmpty
+                ? _formatDateTime(v.date)
+                : 'Scheduled';
             final timeLabel = v.time ?? '';
 
             return Container(
@@ -1661,8 +1686,8 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                           isDone
                               ? 'Visit Done'
                               : (statusStr == 'IN_PROGRESS'
-                                  ? 'In Progress'
-                                  : 'Scheduled'),
+                                    ? 'In Progress'
+                                    : 'Scheduled'),
                           style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
