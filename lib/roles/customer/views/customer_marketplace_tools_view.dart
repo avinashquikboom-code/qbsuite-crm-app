@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../shared/widgets/skeleton_loader.dart';
@@ -53,7 +53,7 @@ class _CustomerMarketplaceToolsViewState
               Expanded(
                 child: Text(
                   '${tool.title} is coming soon! Stay tuned.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
@@ -144,7 +144,7 @@ class _CustomerMarketplaceToolsViewState
           children: [
             Text(
               'QB Marketplace',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -152,7 +152,7 @@ class _CustomerMarketplaceToolsViewState
             ),
             Text(
               'Integrated Business & Marketing Suite',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w400,
                 color: const Color(0xFF64748B),
@@ -221,13 +221,13 @@ class _CustomerMarketplaceToolsViewState
                         onChanged: (val) => setState(
                           () => _searchQuery = val.trim().toLowerCase(),
                         ),
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           color: const Color(0xFF0F172A),
                         ),
                         decoration: InputDecoration(
                           hintText: 'Search tools, CRM, AI, marketing...',
-                          hintStyle: GoogleFonts.inter(
+                          hintStyle: AppTypography.inter(
                             fontSize: 13.5,
                             color: const Color(0xFF94A3B8),
                           ),
@@ -307,7 +307,7 @@ class _CustomerMarketplaceToolsViewState
                               child: Center(
                                 child: Text(
                                   cat['label']!,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12.5,
                                     fontWeight: isSelected
                                         ? FontWeight.w600
@@ -382,7 +382,7 @@ class _CustomerMarketplaceToolsViewState
                       const SizedBox(height: 12),
                       Text(
                         'Unable to load tools catalog',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textPrimary,
@@ -463,7 +463,7 @@ class _CustomerMarketplaceToolsViewState
                     const SizedBox(width: 4),
                     Text(
                       'PRO TOOLS',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF34D399),
@@ -482,7 +482,7 @@ class _CustomerMarketplaceToolsViewState
               const SizedBox(width: 4),
               Text(
                 'Enterprise Ready',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
                   color: const Color(0xFF94A3B8),
@@ -493,7 +493,7 @@ class _CustomerMarketplaceToolsViewState
           const SizedBox(height: 12),
           Text(
             'Power Up Your Growth',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 20,
               fontWeight: FontWeight.w800,
               color: Colors.white,
@@ -503,7 +503,7 @@ class _CustomerMarketplaceToolsViewState
           const SizedBox(height: 4),
           Text(
             'Explore specialized automation, messaging, CRM, and AI solutions integrated into your workspace.',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w400,
               color: const Color(0xFFCBD5E1),
@@ -567,7 +567,7 @@ class _CustomerMarketplaceToolsViewState
                             Expanded(
                               child: Text(
                                 tool.title,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 15.5,
                                   fontWeight: FontWeight.w700,
                                   color: const Color(0xFF0F172A),
@@ -587,7 +587,7 @@ class _CustomerMarketplaceToolsViewState
                                 ),
                                 child: Text(
                                   'COMING SOON',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 9.5,
                                     fontWeight: FontWeight.w700,
                                     color: const Color(0xFFB45309),
@@ -607,7 +607,7 @@ class _CustomerMarketplaceToolsViewState
                                 ),
                                 child: Text(
                                   badgeText,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 9.5,
                                     fontWeight: FontWeight.w700,
                                     color: _badgeTextColor(badgeText),
@@ -622,7 +622,7 @@ class _CustomerMarketplaceToolsViewState
                           tool.subtitle?.isNotEmpty == true
                               ? tool.subtitle!
                               : _formatCategoryName(tool.category),
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11.5,
                             fontWeight: FontWeight.w500,
                             color: AppColors.primary,
@@ -638,7 +638,7 @@ class _CustomerMarketplaceToolsViewState
               // Description
               Text(
                 tool.description,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
                   color: const Color(0xFF64748B),
@@ -664,7 +664,7 @@ class _CustomerMarketplaceToolsViewState
                         _formatCategoryName(tool.category),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFF64748B),
@@ -696,7 +696,7 @@ class _CustomerMarketplaceToolsViewState
                           const SizedBox(width: 4),
                           Text(
                             'Coming Soon',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11.5,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF64748B),
@@ -720,7 +720,7 @@ class _CustomerMarketplaceToolsViewState
                         children: [
                           Text(
                             'Open Tool',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11.5,
                               fontWeight: FontWeight.w700,
                               color: const Color(0xFF15803D),
@@ -767,7 +767,7 @@ class _CustomerMarketplaceToolsViewState
             const SizedBox(height: 16),
             Text(
               'No tools found',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF0F172A),
@@ -779,7 +779,7 @@ class _CustomerMarketplaceToolsViewState
                   ? 'No results matching "$_searchQuery" in this category.'
                   : 'No tools available under this category yet.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: const Color(0xFF64748B),
               ),
@@ -800,7 +800,7 @@ class _CustomerMarketplaceToolsViewState
               ),
               label: Text(
                 'Reset Filters',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                   color: AppColors.primary,

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -150,7 +150,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
               ),
               Text(
                 'Change Profile Photo',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -168,14 +168,14 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 ),
                 title: Text(
                   'Take Photo',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 subtitle: Text(
                   'Use camera to capture a new photo',
-                  style: GoogleFonts.inter(fontSize: 12, color: AppColors.textMuted),
+                  style: AppTypography.inter(fontSize: 12, color: AppColors.textMuted),
                 ),
                 onTap: () {
                   Navigator.pop(sheetContext);
@@ -193,14 +193,14 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 ),
                 title: Text(
                   'Choose from Gallery',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 subtitle: Text(
                   'Select from photos using Android Photo Picker',
-                  style: GoogleFonts.inter(fontSize: 12, color: AppColors.textMuted),
+                  style: AppTypography.inter(fontSize: 12, color: AppColors.textMuted),
                 ),
                 onTap: () {
                   Navigator.pop(sheetContext);
@@ -287,7 +287,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
               onPressed: _handleSave,
               child: Text(
                 'Save',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
                   fontSize: 15,
@@ -390,7 +390,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                       : const Icon(Remix.save_line, size: 18),
                   label: Text(
                     _isSaving ? 'Saving…' : 'Save Changes',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
@@ -513,7 +513,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
           const SizedBox(height: 10),
           Text(
             'Tap camera to change photo',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -526,7 +526,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
   Widget _buildSectionLabel(String label) {
     return Text(
       label.toUpperCase(),
-      style: GoogleFonts.inter(
+      style: AppTypography.inter(
         fontSize: 11,
         fontWeight: FontWeight.bold,
         color: AppColors.textSecondary,
@@ -551,14 +551,14 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
       inputFormatters: inputFormatters,
       readOnly: readOnly,
       validator: validator,
-      style: GoogleFonts.inter(
+      style: AppTypography.inter(
         fontSize: 14,
         fontWeight: FontWeight.w500,
         color: readOnly ? AppColors.textSecondary : AppColors.textPrimary,
       ),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: GoogleFonts.inter(
+        labelStyle: AppTypography.inter(
           fontSize: 13,
           color: AppColors.textSecondary,
         ),
@@ -568,7 +568,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
           color: readOnly ? AppColors.textPlaceholder : AppColors.primary,
         ),
         helperText: helperText,
-        helperStyle: GoogleFonts.inter(
+        helperStyle: AppTypography.inter(
           fontSize: 11,
           color: AppColors.textPlaceholder,
         ),
@@ -634,7 +634,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                 children: [
                   Text(
                     'Change Password',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
                       color: AppColors.textPrimary,
@@ -642,7 +642,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                   ),
                   Text(
                     'Update your account password',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -702,7 +702,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
               const SizedBox(height: 20),
               Text(
                 'Change Password',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -757,7 +757,7 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
                   ),
                   child: Text(
                     'Update Password',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
@@ -780,10 +780,10 @@ class _EditProfileViewState extends ConsumerState<EditProfileView> {
     return TextField(
       controller: controller,
       obscureText: !isVisible,
-      style: GoogleFonts.inter(fontSize: 14),
+      style: AppTypography.inter(fontSize: 14),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: GoogleFonts.inter(
+        labelStyle: AppTypography.inter(
           fontSize: 13,
           color: AppColors.textSecondary,
         ),

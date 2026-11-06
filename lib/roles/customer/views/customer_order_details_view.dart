@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -279,7 +279,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Order Details',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -346,7 +346,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                       Expanded(
                         child: Text(
                           order.orderNumber,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.w900,
                             color: AppColors.textPrimary,
@@ -396,7 +396,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                                       : (order.isPartiallyPaid
                                             ? 'Partially Paid'
                                             : 'Payment Pending'),
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                     color: isPaid
@@ -458,7 +458,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                 children: [
                   Text(
                     'PAYMENT SUMMARY',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w800,
                       color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -519,7 +519,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                       Expanded(
                         child: Text(
                           'DOCUMENTS & RECEIPTS',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w800,
                             color: AppColors.textSecondary.withValues(
@@ -710,7 +710,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                   children: [
                     Text(
                       'PLAN FEATURES INCLUDED',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
                         color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -739,7 +739,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
           flex: 2,
           child: Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               color: AppColors.textSecondary,
             ),
@@ -753,7 +753,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
           child: Text(
             value,
             textAlign: TextAlign.end,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -773,7 +773,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
         Expanded(
           child: Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               color: AppColors.textSecondary,
             ),
@@ -785,7 +785,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
         Text(
           value,
           textAlign: TextAlign.end,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 13,
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -841,7 +841,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: isAvailable
@@ -854,7 +854,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                 const SizedBox(height: 2),
                 Text(
                   isAvailable ? subtitle : '🔒 $subtitle',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: isAvailable
                         ? AppColors.textSecondary
@@ -892,7 +892,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                       ),
                       child: Text(
                         'View',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10.5,
                           fontWeight: FontWeight.bold,
                         ),
@@ -926,7 +926,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
                           const SizedBox(width: 3),
                           Text(
                             'Save',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10.5,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -972,7 +972,7 @@ class CustomerOrderDetailsView extends ConsumerWidget {
               ),
               child: Text(
                 'Locked',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 10.5,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPlaceholder,

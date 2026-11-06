@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
 
 class CalendarActivityLegend extends StatelessWidget {
@@ -58,7 +58,7 @@ class CalendarActivityLegend extends StatelessWidget {
               const SizedBox(width: 5),
               Text(
                 cat.label,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   color: const Color(0xFF475569),

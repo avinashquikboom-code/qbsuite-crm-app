@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
@@ -162,7 +162,7 @@ class _LeadEmailComposerSheetState
                         children: [
                           Text(
                             'Send Email to Lead',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -170,7 +170,7 @@ class _LeadEmailComposerSheetState
                           ),
                           Text(
                             hasEmail ? email : 'No email address registered',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               color: hasEmail
                                   ? AppColors.textSecondary
@@ -198,7 +198,7 @@ class _LeadEmailComposerSheetState
                         label: Center(
                           child: Text(
                             'Lead Details Card',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -217,7 +217,7 @@ class _LeadEmailComposerSheetState
                         label: Center(
                           child: Text(
                             'Custom Message',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -255,7 +255,7 @@ class _LeadEmailComposerSheetState
                             const SizedBox(width: 8),
                             Text(
                               'Branded HTML Template',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 13,
                                 color: AppColors.textPrimary,
@@ -266,7 +266,7 @@ class _LeadEmailComposerSheetState
                         const SizedBox(height: 6),
                         Text(
                           'Sends a beautifully styled HTML email summary containing full registered contact information, stage, deal value, and your organization logo directly via configured SMTP.',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                             height: 1.4,
@@ -342,7 +342,7 @@ class _LeadEmailComposerSheetState
                         : (_isCustom
                               ? 'Send Custom Email'
                               : 'Send Lead Details Email'),
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/core/services/employee_live_tracking_service.dart';
@@ -418,7 +418,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                 children: [
                   Text(
                     'QB Suite',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -429,7 +429,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                   ),
                   Text(
                     'EMPLOYEE WORKSPACE',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 9,
                       fontWeight: FontWeight.w800,
                       color: AppColors.primaryDark,
@@ -486,7 +486,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                         children: [
                           Text(
                             _getGreeting(),
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12.5,
                               fontWeight: FontWeight.w500,
                               color: AppColors.textSecondary,
@@ -494,7 +494,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                           ),
                           Text(
                             empName,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -517,7 +517,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                         ),
                         child: Text(
                           empCode,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryDark,
@@ -938,7 +938,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           const SizedBox(height: 14),
           Text(
             'Unable to load permissions',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -948,7 +948,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           Text(
             error,
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               color: AppColors.textSecondary,
             ),
@@ -961,7 +961,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
             icon: const Icon(Remix.refresh_line, size: 16),
             label: Text(
               'Retry',
-              style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              style: AppTypography.inter(fontWeight: FontWeight.w600),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
@@ -1013,7 +1013,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           const SizedBox(height: 18),
           Text(
             'No workspace access configured',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 17,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1023,7 +1023,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           const SizedBox(height: 8),
           Text(
             'Your administrator has not assigned any Employee Mobile App modules to your account yet.\n\nPlease contact your administrator.',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               color: AppColors.textSecondary,
               height: 1.45,
@@ -1038,7 +1038,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
             icon: const Icon(Remix.refresh_line, size: 16),
             label: Text(
               'Check Access / Refresh',
-              style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              style: AppTypography.inter(fontWeight: FontWeight.w600),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
@@ -1058,7 +1058,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
             ),
             label: Text(
               'View Diagnostics',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
                 decoration: TextDecoration.underline,
@@ -1080,7 +1080,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
       builder: (ctx) => AlertDialog(
         title: Text(
           'Workspace RBAC Diagnostics',
-          style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 16),
+          style: AppTypography.inter(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         content: SingleChildScrollView(
           child: Column(
@@ -1125,7 +1125,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               const SizedBox(height: 8),
               Text(
                 'Permission Keys (${perms.permissions.length}):',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontWeight: FontWeight.bold,
                   fontSize: 12,
                 ),
@@ -1144,7 +1144,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                       : perms.permissions
                             .map((p) => '${p.module}:${p.action}')
                             .join(', '),
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: Colors.black87,
                   ),
@@ -1180,7 +1180,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
             width: 120,
             child: Text(
               '$label:',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textSecondary,
@@ -1190,7 +1190,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           Expanded(
             child: Text(
               value,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -1255,7 +1255,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                       children: [
                         Text(
                           'Lead Pipeline',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1265,7 +1265,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                         ),
                         Text(
                           'Manage & track your leads',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                           ),
@@ -1306,7 +1306,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                   ),
                   label: Text(
                     'View All Leads',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primary,
@@ -1369,7 +1369,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                       children: [
                         Text(
                           'Follow-ups',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1379,7 +1379,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                         ),
                         Text(
                           "Manage and track today's follow-ups",
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                           ),
@@ -1443,7 +1443,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     children: [
                       Text(
                         'Assigned Tasks',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -1453,7 +1453,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                       ),
                       Text(
                         'Track daily tasks & milestones',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           color: AppColors.textSecondary,
                         ),
@@ -1545,7 +1545,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                   children: [
                     Text(
                       "Today's Attendance",
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -1554,7 +1554,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     const SizedBox(height: 2),
                     Text(
                       dateStr,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: AppColors.textSecondary,
                       ),
@@ -1586,7 +1586,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     const SizedBox(width: 5),
                     Text(
                       statusLabel,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         color: badgeText,
@@ -1671,7 +1671,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                   state.isRemoteWork
                       ? 'Approved Remote Work Mode'
                       : '$officeName • ${distMeters != null ? (isInside ? "Inside Office (${distMeters.round()}m)" : "Outside Radius (${distMeters.round()}m)") : "GPS Locating..."}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w500,
                     color: state.isRemoteWork
@@ -1707,7 +1707,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                       const SizedBox(width: 2),
                       Text(
                         'Refresh GPS',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           color: AppColors.textSecondary,
                         ),
@@ -1763,7 +1763,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               const SizedBox(width: 10),
               Text(
                 'Checking attendance...',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -1804,7 +1804,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               const SizedBox(width: 10),
               Text(
                 state.actionFeedback ?? 'Processing...',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primaryDark,
@@ -1843,7 +1843,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               ),
               label: Text(
                 'End Overtime',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -1878,7 +1878,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               ),
               label: Text(
                 'Start Overtime',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -1915,7 +1915,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
             const SizedBox(width: 8),
             Text(
               'Attendance Completed',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF334155),
@@ -1942,7 +1942,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                 ),
                 label: Text(
                   'End Break',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -1976,7 +1976,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                 ),
                 label: Text(
                   'PUNCH OUT',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -2013,7 +2013,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                 ),
                 label: Text(
                   'Start Break',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.warning,
@@ -2041,7 +2041,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                 ),
                 label: Text(
                   'PUNCH OUT',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -2071,7 +2071,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
         icon: const Icon(Remix.fingerprint_line, size: 20, color: Colors.white),
         label: Text(
           'PUNCH IN',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 15,
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -2183,7 +2183,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                         children: [
                           Text(
                             'Confirm Punch Out',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -2192,7 +2192,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                           const SizedBox(height: 2),
                           Text(
                             'Finalize your attendance for today',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -2205,7 +2205,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                 const SizedBox(height: 18),
                 Text(
                   'Are you sure you want to punch out? This will finalize your shift and record your check-out timestamp.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                     height: 1.4,
@@ -2227,7 +2227,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                           ),
                           child: Text(
                             'Cancel',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPrimary,
@@ -2251,7 +2251,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                           ),
                           child: Text(
                             'Yes, Punch Out',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -2307,7 +2307,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               Flexible(
                 child: Text(
                   label,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 9,
                     color: AppColors.textSecondary,
                     fontWeight: FontWeight.w500,
@@ -2321,7 +2321,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           const SizedBox(height: 4),
           Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: isHighlight ? AppColors.primary : AppColors.textPrimary,

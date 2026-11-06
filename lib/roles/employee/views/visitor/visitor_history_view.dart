@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -153,10 +153,10 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                       controller: _searchController,
                       onChanged: (val) =>
                           setState(() => _searchQuery = val.trim()),
-                      style: GoogleFonts.inter(fontSize: 13),
+                      style: AppTypography.inter(fontSize: 13),
                       decoration: InputDecoration(
                         hintText: 'Search by client, purpose or location...',
-                        hintStyle: GoogleFonts.inter(
+                        hintStyle: AppTypography.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),
@@ -263,7 +263,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
             child: Center(
               child: Text(
                 label,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                   color: isSelected ? Colors.white : AppColors.textPrimary,
@@ -374,7 +374,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                     children: [
                       Text(
                         customer,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -385,7 +385,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                       const SizedBox(height: 2),
                       Text(
                         purpose,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12.5,
                           color: AppColors.textSecondary,
                         ),
@@ -395,7 +395,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                       const SizedBox(height: 4),
                       Text(
                         '$dateStr | $location',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -409,7 +409,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                           Flexible(
                             child: Text(
                               displayStatus,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color:
@@ -428,7 +428,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                           const SizedBox(width: 6),
                           Text(
                             '|',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               color: AppColors.borderLight,
                             ),
                           ),
@@ -441,7 +441,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                           const SizedBox(width: 3),
                           Text(
                             '$rating',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/shared/models/data_capture_model.dart';
 
@@ -66,7 +66,7 @@ class CaptureUsageCard extends StatelessWidget {
                         children: [
                           Text(
                             'SUBSCRIPTION USAGE',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -77,7 +77,7 @@ class CaptureUsageCard extends StatelessWidget {
                           ),
                           Text(
                             'Data Capture Quota',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -105,7 +105,7 @@ class CaptureUsageCard extends StatelessWidget {
                 ),
                 child: Text(
                   isExhausted ? 'Quota Limit Reached' : '$remaining Leads Left',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: isExhausted
@@ -139,7 +139,7 @@ class CaptureUsageCard extends StatelessWidget {
             children: [
               Text(
                 'Used: $used / $limit',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -147,7 +147,7 @@ class CaptureUsageCard extends StatelessWidget {
               ),
               Text(
                 '${(progress * 100).toInt()}% consumed',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -175,7 +175,7 @@ class CaptureUsageCard extends StatelessWidget {
                   Expanded(
                     child: Text(
                       'Data Capture limit reached. Please contact your administrator or upgrade your plan.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w500,
                         color: AppColors.error,

@@ -2,7 +2,7 @@ import "package:quickboom_app/core/models/permission_model.dart";
 import "package:quickboom_app/core/services/permission_manager.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/viewmodels/company_admin_viewmodel.dart';
@@ -28,18 +28,18 @@ class AdminMoreTab extends ConsumerWidget {
       builder: (ctx) => AlertDialog(
         title: Text(
           'Confirm Logout',
-          style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+          style: AppTypography.inter(fontWeight: FontWeight.bold),
         ),
         content: Text(
           'Are you sure you want to sign out?',
-          style: GoogleFonts.inter(),
+          style: AppTypography.inter(),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.inter(color: AppColors.textSecondary),
+              style: AppTypography.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -59,7 +59,7 @@ class AdminMoreTab extends ConsumerWidget {
             ),
             child: Text(
               'Logout',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
@@ -121,7 +121,7 @@ class AdminMoreTab extends ConsumerWidget {
                         children: [
                           Text(
                             state.profile.companyName,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -129,7 +129,7 @@ class AdminMoreTab extends ConsumerWidget {
                           ),
                           Text(
                             'Company Admin Control Center',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -145,7 +145,7 @@ class AdminMoreTab extends ConsumerWidget {
               // Modules List
               Text(
                 'Agency Modules & Operations',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -322,7 +322,7 @@ class AdminMoreTab extends ConsumerWidget {
               // General & Account
               Text(
                 'Company Administration',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -431,7 +431,7 @@ class AdminMoreTab extends ConsumerWidget {
                   children: [
                     Text(
                       title,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -439,7 +439,7 @@ class AdminMoreTab extends ConsumerWidget {
                     ),
                     Text(
                       subtitle,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         color: AppColors.textSecondary,
                       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 
 class AuthHeader extends StatelessWidget {
@@ -54,7 +54,7 @@ class AuthHeader extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 portalSubtitle,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 10.5,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF667085),
@@ -74,7 +74,7 @@ class AuthHeader extends StatelessWidget {
         // Title
         Text(
           'Login to Your Account',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 20,
             fontWeight: FontWeight.w700,
             color: const Color(0xFF1D2939),
@@ -83,7 +83,7 @@ class AuthHeader extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           'Choose your login type to continue',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 13,
             fontWeight: FontWeight.w400,
             color: const Color(0xFF667085),

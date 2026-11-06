@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/services/notification_service.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -90,7 +90,7 @@ class AppSnackBar {
           Expanded(
             child: Text(
               message,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: Colors.white,
                 fontSize: 14,
                 fontWeight: FontWeight.w600,

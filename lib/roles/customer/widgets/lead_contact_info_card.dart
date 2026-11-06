@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -106,7 +106,7 @@ class LeadContactInfoCard extends StatelessWidget {
             ),
             title: Text(
               'Contact Information',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF0F172A),
@@ -286,7 +286,7 @@ class LeadContactInfoCard extends StatelessWidget {
                   children: [
                     Text(
                       label,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
                         color: const Color(0xFF94A3B8),
@@ -294,7 +294,7 @@ class LeadContactInfoCard extends StatelessWidget {
                     ),
                     Text(
                       value,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: onTap != null

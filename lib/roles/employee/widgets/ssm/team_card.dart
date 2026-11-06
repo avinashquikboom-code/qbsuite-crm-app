@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
@@ -54,7 +54,7 @@ class TeamCard extends StatelessWidget {
                   children: [
                     Text(
                       teamName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -65,7 +65,7 @@ class TeamCard extends StatelessWidget {
                     if (teamLeader != null)
                       Text(
                         'Leader: $teamLeader',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),
@@ -90,7 +90,7 @@ class TeamCard extends StatelessWidget {
                 ),
                 child: Text(
                   member,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,

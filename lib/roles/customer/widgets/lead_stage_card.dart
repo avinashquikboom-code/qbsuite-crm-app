@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
 import 'package:quickboom_app/roles/customer/models/lead_stage_model.dart';
@@ -75,7 +75,7 @@ class LeadStageCard extends StatelessWidget {
                     Flexible(
                       child: Text(
                         'Lead Stage',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF0F172A),
@@ -126,7 +126,7 @@ class LeadStageCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         stageName,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF0F172A),
@@ -155,7 +155,7 @@ class LeadStageCard extends StatelessWidget {
                           children: [
                             Text(
                               'Change',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: stageColor,
@@ -182,7 +182,7 @@ class LeadStageCard extends StatelessWidget {
                         ),
                         child: Text(
                           'Current',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             color: const Color(0xFF64748B),
                             fontWeight: FontWeight.w500,
@@ -221,7 +221,7 @@ class LeadStageCard extends StatelessWidget {
                           child: RichText(
                             overflow: TextOverflow.ellipsis,
                             text: TextSpan(
-                              style: GoogleFonts.inter(fontSize: 13),
+                              style: AppTypography.inter(fontSize: 13),
                               children: [
                                 const TextSpan(
                                   text: 'Next: ',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/theme/app_colors.dart';
 import '../models/ai_studio_model.dart';
@@ -187,7 +187,7 @@ class _CustomerSocialPublishDialogState
               children: [
                 Text(
                   'Publish to Social Channels',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -226,7 +226,7 @@ class _CustomerSocialPublishDialogState
                             const SizedBox(width: 8),
                             Text(
                               'No Social Channel Connected',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF92400E),
@@ -237,7 +237,7 @@ class _CustomerSocialPublishDialogState
                         const SizedBox(height: 6),
                         Text(
                           'Link your Instagram, Facebook, or YouTube channel to publish this post directly.',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             color: const Color(0xFF78350F),
                           ),
@@ -263,7 +263,7 @@ class _CustomerSocialPublishDialogState
                             ),
                             label: Text(
                               'Connect Social Channel Now',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -314,7 +314,7 @@ class _CustomerSocialPublishDialogState
                     InputDecorator(
                       decoration: InputDecoration(
                         labelText: 'Select Destination Channel',
-                        labelStyle: GoogleFonts.inter(fontSize: 13),
+                        labelStyle: AppTypography.inter(fontSize: 13),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -332,7 +332,7 @@ class _CustomerSocialPublishDialogState
                             : null,
                         isExpanded: true,
                         underline: const SizedBox.shrink(),
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           color: AppColors.textPrimary,
                         ),
@@ -341,7 +341,7 @@ class _CustomerSocialPublishDialogState
                             value: acc.id,
                             child: Text(
                               '${acc.platform} \u2014 ${acc.accountName}',
-                              style: GoogleFonts.inter(fontSize: 13),
+                              style: AppTypography.inter(fontSize: 13),
                             ),
                           );
                         }).toList(),
@@ -380,7 +380,7 @@ class _CustomerSocialPublishDialogState
                         ),
                         label: Text(
                           'Connect another channel',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w600,
                             color: AppColors.primary,
@@ -410,7 +410,7 @@ class _CustomerSocialPublishDialogState
                     Expanded(
                       child: Text(
                         'Failed to load channels. Tap retry.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFFB91C1C),
                         ),
@@ -451,7 +451,7 @@ class _CustomerSocialPublishDialogState
                       child: Center(
                         child: Text(
                           'Publish Now',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: !_isScheduled
@@ -483,7 +483,7 @@ class _CustomerSocialPublishDialogState
                       child: Center(
                         child: Text(
                           'Schedule for Later',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: _isScheduled
@@ -513,7 +513,7 @@ class _CustomerSocialPublishDialogState
                       icon: const Icon(Remix.calendar_line, size: 16),
                       label: Text(
                         '${_scheduledDate.day}/${_scheduledDate.month}/${_scheduledDate.year}',
-                        style: GoogleFonts.inter(fontSize: 12),
+                        style: AppTypography.inter(fontSize: 12),
                       ),
                       onPressed: _pickDate,
                     ),
@@ -529,7 +529,7 @@ class _CustomerSocialPublishDialogState
                       icon: const Icon(Remix.time_line, size: 16),
                       label: Text(
                         _scheduledTime.format(context),
-                        style: GoogleFonts.inter(fontSize: 12),
+                        style: AppTypography.inter(fontSize: 12),
                       ),
                       onPressed: _pickTime,
                     ),
@@ -574,7 +574,7 @@ class _CustomerSocialPublishDialogState
                           )
                         : Text(
                             hasAccounts ? buttonText : 'Connect Social Channel',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,

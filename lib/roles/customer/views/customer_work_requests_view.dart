@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/viewmodels/current_customer_viewmodel.dart';
@@ -229,7 +229,7 @@ class _CustomerWorkRequestsViewState
                   children: [
                     Text(
                       'New Creative Request',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -246,7 +246,7 @@ class _CustomerWorkRequestsViewState
                 // Request Type
                 Text(
                   'Creative Type',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textSecondary,
@@ -266,7 +266,7 @@ class _CustomerWorkRequestsViewState
                         label: Text(t),
                         selected: isSel,
                         selectedColor: AppColors.primary,
-                        labelStyle: GoogleFonts.inter(
+                        labelStyle: AppTypography.inter(
                           fontSize: 12,
                           color: isSel ? Colors.white : AppColors.textPrimary,
                           fontWeight: isSel ? FontWeight.bold : FontWeight.w500,
@@ -283,7 +283,7 @@ class _CustomerWorkRequestsViewState
                 // Title
                 Text(
                   'Request Title / Campaign Name',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textSecondary,
@@ -294,7 +294,7 @@ class _CustomerWorkRequestsViewState
                   controller: titleController,
                   decoration: InputDecoration(
                     hintText: 'e.g. Sunday Boot Camp Promo Video',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 13,
                       color: const Color(0xFF94A3B8),
                     ),
@@ -314,7 +314,7 @@ class _CustomerWorkRequestsViewState
                 // Platform
                 Text(
                   'Target Platform',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textSecondary,
@@ -346,7 +346,7 @@ class _CustomerWorkRequestsViewState
                 // Concept & Instructions
                 Text(
                   'Brief / Instructions / Hook Idea',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textSecondary,
@@ -359,7 +359,7 @@ class _CustomerWorkRequestsViewState
                   decoration: InputDecoration(
                     hintText:
                         'Mention special offers, key hooks, colors or reference links...',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 13,
                       color: const Color(0xFF94A3B8),
                     ),
@@ -426,7 +426,7 @@ class _CustomerWorkRequestsViewState
                     },
                     child: Text(
                       'Submit Creative Request',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
@@ -489,7 +489,7 @@ class _CustomerWorkRequestsViewState
                         children: [
                           Text(
                             'Work Requests',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -498,7 +498,7 @@ class _CustomerWorkRequestsViewState
                           ),
                           Text(
                             'SUBMIT & TRACK CREATIVES',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.w800,
                               color: AppColors.primaryDark,
@@ -539,7 +539,7 @@ class _CustomerWorkRequestsViewState
                           const SizedBox(width: 4),
                           Text(
                             'New Request',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -584,7 +584,7 @@ class _CustomerWorkRequestsViewState
                         child: Center(
                           child: Text(
                             _filters[index],
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11.5,
                               fontWeight: isSel
                                   ? FontWeight.bold
@@ -617,7 +617,7 @@ class _CustomerWorkRequestsViewState
                           const SizedBox(height: 8),
                           Text(
                             'No requests found in this status',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               color: const Color(0xFF64748B),
                             ),
@@ -685,7 +685,7 @@ class _CustomerWorkRequestsViewState
                   const SizedBox(width: 8),
                   Text(
                     req['type'] as String,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: typeColor,
@@ -694,7 +694,7 @@ class _CustomerWorkRequestsViewState
                   const SizedBox(width: 6),
                   Text(
                     '• ${req['platform']}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: const Color(0xFF94A3B8),
                     ),
@@ -709,7 +709,7 @@ class _CustomerWorkRequestsViewState
                 ),
                 child: Text(
                   req['status'] as String,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10.5,
                     fontWeight: FontWeight.bold,
                     color: statusColor,
@@ -724,7 +724,7 @@ class _CustomerWorkRequestsViewState
           // Title
           Text(
             req['title'] as String,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14.5,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -736,7 +736,7 @@ class _CustomerWorkRequestsViewState
           // Concept note
           Text(
             req['concept'] as String,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: const Color(0xFF64748B),
               height: 1.3,
@@ -763,7 +763,7 @@ class _CustomerWorkRequestsViewState
                   const SizedBox(width: 4),
                   Text(
                     'Due: ${req['dueDate']}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF64748B),
@@ -781,7 +781,7 @@ class _CustomerWorkRequestsViewState
                   const SizedBox(width: 4),
                   Text(
                     req['assignedTeam'] as String,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: const Color(0xFF64748B),
                     ),

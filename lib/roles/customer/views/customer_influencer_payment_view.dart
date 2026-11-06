@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/services/razorpay_checkout_service.dart';
 import '../../../core/theme/app_colors.dart';
@@ -328,7 +328,7 @@ class _CustomerInfluencerPaymentViewState
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Payment',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -348,7 +348,7 @@ class _CustomerInfluencerPaymentViewState
                   // Section Title: Order Summary
                   Text(
                     'Order Summary',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -397,7 +397,7 @@ class _CustomerInfluencerPaymentViewState
                                 children: [
                                   Text(
                                     widget.creator.name,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -405,7 +405,7 @@ class _CustomerInfluencerPaymentViewState
                                   ),
                                   Text(
                                     '${widget.package.name} Package',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11.5,
                                       color: AppColors.textSecondary,
                                     ),
@@ -448,7 +448,7 @@ class _CustomerInfluencerPaymentViewState
                           children: [
                             Text(
                               'Total Amount',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -456,7 +456,7 @@ class _CustomerInfluencerPaymentViewState
                             ),
                             Text(
                               '₹${_totalAmount.toStringAsFixed(0)}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -473,7 +473,7 @@ class _CustomerInfluencerPaymentViewState
                   // Section Title: Select Payment Method
                   Text(
                     'Select Payment Method',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -544,7 +544,7 @@ class _CustomerInfluencerPaymentViewState
                         _selectedMethodIndex == 0
                             ? 'Pay ₹${_totalAmount.toStringAsFixed(0)} with Razorpay'
                             : 'Submit Offline Payment',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -564,14 +564,14 @@ class _CustomerInfluencerPaymentViewState
       children: [
         Text(
           label,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 12.5,
             color: AppColors.textSecondary,
           ),
         ),
         Text(
           value,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 12.5,
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -650,7 +650,7 @@ class _CustomerInfluencerPaymentViewState
                     children: [
                       Text(
                         category,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 0.6,
@@ -671,7 +671,7 @@ class _CustomerInfluencerPaymentViewState
                           ),
                           child: Text(
                             badge,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9.5,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryDark,
@@ -683,7 +683,7 @@ class _CustomerInfluencerPaymentViewState
                   const SizedBox(height: 2),
                   Text(
                     title,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -692,7 +692,7 @@ class _CustomerInfluencerPaymentViewState
                   const SizedBox(height: 1),
                   Text(
                     subtitle,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11.5,
                       color: AppColors.textSecondary,
                     ),
@@ -753,7 +753,7 @@ class _CustomerInfluencerPaymentViewState
               const SizedBox(width: 6),
               Text(
                 'Bank Transfer Details',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12.5,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -772,7 +772,7 @@ class _CustomerInfluencerPaymentViewState
           const SizedBox(height: 12),
           Text(
             'Submit Payment Reference',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -782,15 +782,15 @@ class _CustomerInfluencerPaymentViewState
           TextField(
             controller: _utrController,
             enabled: !_isProcessing,
-            style: GoogleFonts.inter(fontSize: 12.5),
+            style: AppTypography.inter(fontSize: 12.5),
             decoration: InputDecoration(
               labelText: 'Transaction Reference / UTR Number *',
-              labelStyle: GoogleFonts.inter(
+              labelStyle: AppTypography.inter(
                 fontSize: 11.5,
                 color: AppColors.textSecondary,
               ),
               hintText: 'e.g. 12-digit UTR or Reference Number',
-              hintStyle: GoogleFonts.inter(
+              hintStyle: AppTypography.inter(
                 fontSize: 11.5,
                 color: AppColors.textSecondary.withValues(alpha: 0.5),
               ),
@@ -821,15 +821,15 @@ class _CustomerInfluencerPaymentViewState
           TextField(
             controller: _offlineNotesController,
             enabled: !_isProcessing,
-            style: GoogleFonts.inter(fontSize: 12.5),
+            style: AppTypography.inter(fontSize: 12.5),
             decoration: InputDecoration(
               labelText: 'Notes / Remarks (Optional)',
-              labelStyle: GoogleFonts.inter(
+              labelStyle: AppTypography.inter(
                 fontSize: 11.5,
                 color: AppColors.textSecondary,
               ),
               hintText: 'e.g. Paid via Google Pay / Net Banking',
-              hintStyle: GoogleFonts.inter(
+              hintStyle: AppTypography.inter(
                 fontSize: 11.5,
                 color: AppColors.textSecondary.withValues(alpha: 0.5),
               ),
@@ -873,7 +873,7 @@ class _CustomerInfluencerPaymentViewState
         children: [
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11.5,
               color: AppColors.textSecondary,
             ),
@@ -883,7 +883,7 @@ class _CustomerInfluencerPaymentViewState
             children: [
               Text(
                 value,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,

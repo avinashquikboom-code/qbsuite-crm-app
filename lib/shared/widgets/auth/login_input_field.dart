@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 
 class LoginInputField extends StatelessWidget {
   final TextEditingController controller;
@@ -33,14 +33,14 @@ class LoginInputField extends StatelessWidget {
       onChanged: onChanged,
       obscureText: isPassword && !isPasswordVisible,
       keyboardType: keyboardType,
-      style: GoogleFonts.inter(
+      style: AppTypography.inter(
         fontSize: 14.5,
         fontWeight: FontWeight.w500,
         color: const Color(0xFF101828),
       ),
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: GoogleFonts.inter(
+        hintStyle: AppTypography.inter(
           fontSize: 14,
           color: const Color(0xFF98A2B3),
         ),

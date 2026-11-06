@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/services/permission_manager.dart';
 import '../../../shared/widgets/permission_guarded_view.dart';
@@ -70,7 +70,7 @@ class _CustomerMyInfluencerBookingsViewState
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'My Influencer Bookings',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -106,7 +106,7 @@ class _CustomerMyInfluencerBookingsViewState
                             const SizedBox(height: 10),
                             Text(
                               'Unable to load bookings',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -116,7 +116,7 @@ class _CustomerMyInfluencerBookingsViewState
                             Text(
                               'Please check your connection and try again.',
                               textAlign: TextAlign.center,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),
@@ -141,7 +141,7 @@ class _CustomerMyInfluencerBookingsViewState
                               ),
                               label: Text(
                                 'Retry',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -166,7 +166,7 @@ class _CustomerMyInfluencerBookingsViewState
                             const SizedBox(height: 10),
                             Text(
                               'No $activeTabName Bookings',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -176,7 +176,7 @@ class _CustomerMyInfluencerBookingsViewState
                             Text(
                               'Your influencer bookings in this state will appear here.',
                               textAlign: TextAlign.center,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),
@@ -232,7 +232,7 @@ class _CustomerMyInfluencerBookingsViewState
                 child: Center(
                   child: Text(
                     _tabs[idx],
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11.5,
                       fontWeight: isSelected
                           ? FontWeight.bold
@@ -311,7 +311,7 @@ class _CustomerMyInfluencerBookingsViewState
               children: [
                 Text(
                   booking.influencerName,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -320,14 +320,14 @@ class _CustomerMyInfluencerBookingsViewState
                 const SizedBox(height: 2),
                 Text(
                   booking.packageName,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                   ),
                 ),
                 Text(
                   booking.campaignDate,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                   ),
@@ -335,7 +335,7 @@ class _CustomerMyInfluencerBookingsViewState
                 const SizedBox(height: 4),
                 Text(
                   '₹${booking.totalAmount.toStringAsFixed(0)}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -359,7 +359,7 @@ class _CustomerMyInfluencerBookingsViewState
                 ),
                 child: Text(
                   booking.status,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFFEA580C),
@@ -377,7 +377,7 @@ class _CustomerMyInfluencerBookingsViewState
                   children: [
                     Text(
                       'View Details',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primaryDark,
@@ -439,7 +439,7 @@ class _BookingDetailModal extends StatelessWidget {
               children: [
                 Text(
                   'Booking Details',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -456,7 +456,7 @@ class _BookingDetailModal extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               'Booking ID: ${booking.bookingId}',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryDark,
@@ -504,7 +504,7 @@ class _BookingDetailModal extends StatelessWidget {
         children: [
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -513,7 +513,7 @@ class _BookingDetailModal extends StatelessWidget {
             child: Text(
               value,
               textAlign: TextAlign.right,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 fontWeight: isBold ? FontWeight.bold : FontWeight.w600,
                 color: isBold ? AppColors.primaryDark : AppColors.textPrimary,

@@ -3,7 +3,7 @@ import "package:quickboom_app/core/services/permission_manager.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'calendar/admin_calendar_tab.dart';
@@ -162,7 +162,7 @@ class _CompanyAdminMainViewState extends ConsumerState<CompanyAdminMainView> {
           automaticallyImplyLeading: false,
           title: Text(
             visibleTabs[safeIndex].title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -273,7 +273,7 @@ class _CompanyAdminMainViewState extends ConsumerState<CompanyAdminMainView> {
             const SizedBox(height: 2),
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 10,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                 color: isSelected ? AppColors.primary : AppColors.textSecondary,

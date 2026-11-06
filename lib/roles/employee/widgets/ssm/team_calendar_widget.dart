@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -176,7 +176,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                       const SizedBox(width: 8),
                       Text(
                         '${_monthNames[state.currentMonth.month - 1]} ${state.currentMonth.year}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w800,
                           color: AppColors.textPrimary,
@@ -236,7 +236,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                           ),
                           child: Text(
                             'Today',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w700,
                               color: AppColors.primaryDark,
@@ -327,7 +327,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                             children: [
                               Text(
                                 _getDayName(date.weekday),
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w600,
                                   color: isSelected
@@ -338,7 +338,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                               const SizedBox(height: 3),
                               Text(
                                 '${date.day}',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 16,
                                   fontWeight: isSelected
                                       ? FontWeight.w800
@@ -398,7 +398,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
               children: [
                 Text(
                   'Schedule for ${_formatDisplayDate(state.selectedDate)}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -407,7 +407,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                 const SizedBox(height: 2),
                 Text(
                   '${activitiesForSelectedDate.length} ${activitiesForSelectedDate.length == 1 ? 'activity' : 'activities'} scheduled',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),
@@ -499,7 +499,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                 children: [
                   Text(
                     selectedTeam?.name ?? 'My Team',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -507,7 +507,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                   ),
                   Text(
                     '${selectedTeam?.memberCount ?? 0} team members',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: AppColors.textSecondary,
                     ),
@@ -530,7 +530,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                   children: [
                     Text(
                       'Change',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -556,7 +556,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                       children: [
                         Text(
                           t.name,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontWeight: isCurrent
                                 ? FontWeight.bold
                                 : FontWeight.normal,
@@ -673,7 +673,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                       const SizedBox(width: 5),
                       Text(
                         cat.label,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w700,
                           color: actColor,
@@ -693,7 +693,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                   ),
                   child: Text(
                     activity.status,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: statusBadgeColor,
@@ -708,7 +708,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
             // Title
             Text(
               activity.title ?? cat.label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -731,7 +731,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                     activity.customerName.isNotEmpty
                         ? activity.customerName
                         : 'Customer',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textPrimary,
@@ -750,7 +750,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                 const SizedBox(width: 4),
                 Text(
                   activity.time.trim(),
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textSecondary,
@@ -786,7 +786,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
                     const SizedBox(width: 8),
                     Text(
                       'Employee: $employeeDisplay',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -836,7 +836,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
           const SizedBox(height: 12),
           Text(
             'No activities scheduled',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -845,7 +845,7 @@ class _TeamCalendarWidgetState extends ConsumerState<TeamCalendarWidget> {
           const SizedBox(height: 4),
           Text(
             'No team activities found for this date.',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
@@ -126,7 +126,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
             children: [
               Text(
                 'Start Field Visit',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -134,7 +134,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
               const SizedBox(height: 8),
               Text(
                 'Verify GPS and confirm arrival at customer site.',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   color: AppColors.textSecondary,
                   fontSize: 13,
                 ),
@@ -156,7 +156,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                         children: [
                           Text(
                             visit['customer']?.toString() ?? 'Customer',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryDark,
@@ -164,7 +164,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                           ),
                           Text(
                             visit['location']?.toString() ?? '',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.primaryDark,
                             ),
@@ -244,7 +244,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                   Expanded(
                     child: Text(
                       visit['customer']?.toString() ?? 'Customer Visit',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -265,7 +265,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                   visit['purpose'].toString().isNotEmpty) ...[
                 Text(
                   visit['purpose'].toString(),
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     color: AppColors.textSecondary,
                     fontSize: 14,
                   ),
@@ -291,7 +291,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                         const SizedBox(width: 8),
                         Text(
                           '${visit['date'] ?? ''} at ${visit['time'] ?? ''}',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
                           ),
@@ -310,7 +310,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                         Expanded(
                           child: Text(
                             visit['location']?.toString() ?? 'N/A',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               color: AppColors.textSecondary,
                             ),
@@ -336,7 +336,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                       visit['status']?.toString().toUpperCase() == 'COMPLETED'
                           ? 'Completed By: ${visit['completedBy'] ?? visit['assignedEmployee']}'
                           : 'Visitor: ${visit['assignedEmployee']}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -358,7 +358,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                     const SizedBox(width: 8),
                     Text(
                       'Completed: ${visit['completedAtFormatted'] ?? visit['completedAt']}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.success,
@@ -379,7 +379,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                   ),
                   child: Text(
                     'Outcome: ${visit['outcome']}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: AppColors.success,
                       fontWeight: FontWeight.w600,
@@ -403,7 +403,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                     children: [
                       Text(
                         'Meeting Notes:',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textSecondary,
@@ -412,7 +412,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                       const SizedBox(height: 4),
                       Text(
                         '${visit['notes']}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           color: AppColors.textPrimary,
                         ),
@@ -497,7 +497,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
           labelColor: AppColors.primary,
           unselectedLabelColor: AppColors.textSecondary,
           indicatorColor: AppColors.primary,
-          labelStyle: GoogleFonts.inter(
+          labelStyle: AppTypography.inter(
             fontWeight: FontWeight.bold,
             fontSize: 13,
           ),
@@ -526,7 +526,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                     Text(
                       _errorMessage!,
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         color: AppColors.textSecondary,
                       ),
@@ -747,7 +747,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                   visit['customer']?.toString() ??
                                       visit['customerName']?.toString() ??
                                       'Sharma Enterprises',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.textPrimary,
@@ -758,7 +758,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                 const SizedBox(height: 3),
                                 Text(
                                   visit['purpose']?.toString() ?? 'Field Visit',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12.5,
                                     fontWeight: FontWeight.w500,
                                     color: AppColors.textSecondary,
@@ -769,7 +769,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                 const SizedBox(height: 6),
                                 Text(
                                   '${visit['time'] ?? '10:00 AM'} | ${visit['location'] ?? 'Delhi'}',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12,
                                     color: AppColors.textSecondary,
                                   ),
@@ -781,7 +781,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                   const SizedBox(height: 4),
                                   Text(
                                     visit['phone'].toString(),
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500,
                                       color: AppColors.textSecondary,
@@ -812,7 +812,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                 ),
                                 child: Text(
                                   'View',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
@@ -858,7 +858,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                             Expanded(
                               child: Text(
                                 visit['customer']?.toString() ?? 'Customer',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -878,7 +878,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                         const SizedBox(height: 6),
                         Text(
                           visit['purpose']?.toString() ?? '',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             color: AppColors.textSecondary,
                           ),
@@ -894,7 +894,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                             const SizedBox(width: 6),
                             Text(
                               '${visit['date'] ?? ''} at ${visit['time'] ?? ''}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -913,7 +913,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                             Expanded(
                               child: Text(
                                 visit['location']?.toString() ?? '',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12,
                                   color: AppColors.textSecondary,
                                 ),
@@ -935,7 +935,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                               Expanded(
                                 child: Text(
                                   visit['phone'].toString(),
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12,
                                     color: AppColors.textSecondary,
                                   ),
@@ -969,7 +969,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                         const SizedBox(width: 4),
                                         Text(
                                           'Call',
-                                          style: GoogleFonts.inter(
+                                          style: AppTypography.inter(
                                             fontSize: 11,
                                             fontWeight: FontWeight.bold,
                                             color: AppColors.primaryDark,
@@ -1001,7 +1001,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                 Expanded(
                                   child: Text(
                                     'Completed By: ${visit['completedBy'] ?? visit['assignedEmployee']}',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500,
                                       color: AppColors.textSecondary,
@@ -1024,7 +1024,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                                 const SizedBox(width: 6),
                                 Text(
                                   'Completed: ${visit['completedAtFormatted'] ?? visit['completedAt']}',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.success,
@@ -1049,7 +1049,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                               ),
                               child: Text(
                                 'Outcome: ${visit['outcome']}',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11,
                                   color: AppColors.success,
                                   fontWeight: FontWeight.w600,
@@ -1062,7 +1062,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
                             const SizedBox(height: 6),
                             Text(
                               'Notes: ${visit['notes']}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontStyle: FontStyle.italic,
                                 color: AppColors.textSecondary,
@@ -1236,7 +1236,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
         child: Center(
           child: Text(
             title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
               color: isSelected
                   ? AppColors.textPrimary

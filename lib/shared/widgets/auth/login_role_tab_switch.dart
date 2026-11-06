@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/shared/views/auth/login_view.dart';
@@ -92,7 +92,7 @@ class LoginRoleTabSwitch extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: Text(
                       title,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: isSelected
                             ? FontWeight.bold

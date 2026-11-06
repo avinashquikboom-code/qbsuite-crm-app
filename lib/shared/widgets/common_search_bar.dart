@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
@@ -39,10 +39,10 @@ class CommonSearchBar extends StatelessWidget {
       child: TextField(
         controller: controller,
         onChanged: onChanged,
-        style: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
+        style: AppTypography.inter(fontSize: 14, color: AppColors.textPrimary),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: GoogleFonts.inter(
+          hintStyle: AppTypography.inter(
             fontSize: 13,
             color: AppColors.textPlaceholder,
           ),

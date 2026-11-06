@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:video_player/video_player.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -156,7 +156,7 @@ class _ReelsStyleVideoFeedViewState extends State<ReelsStyleVideoFeedView> {
                         ),
                         child: Text(
                           '${_currentIndex + 1} / ${widget.videos.length}',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             color: Colors.white,
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
@@ -484,7 +484,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                                     item.category.displayLabel,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       color: Colors.black,
                                       fontSize: 11,
                                       fontWeight: FontWeight.w900,
@@ -511,7 +511,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                               item.platform.toUpperCase(),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 color: Colors.white,
                                 fontSize: 10,
                                 fontWeight: FontWeight.w800,
@@ -545,7 +545,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                                       item.formattedDateOnly,
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         color: Colors.white,
                                         fontSize: 10,
                                         fontWeight: FontWeight.w600,
@@ -566,7 +566,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                       item.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -582,7 +582,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                         item.description!,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           color: Colors.white70,
                           fontSize: 13,
                           fontWeight: FontWeight.w400,
@@ -608,7 +608,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                             item.ctaText?.isNotEmpty == true
                                 ? item.ctaText!
                                 : 'Learn More',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               color: Colors.black,
                               fontSize: 13,
                               fontWeight: FontWeight.w800,
@@ -694,7 +694,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
           const SizedBox(height: 12),
           Text(
             'Unable to play video',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               color: Colors.white,
               fontSize: 14,
               fontWeight: FontWeight.w600,
@@ -779,7 +779,7 @@ class _ReelVideoProgressWithTimestamp extends StatelessWidget {
                   ),
                   child: Text(
                     '$posFormatted / $durFormatted',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       color: Colors.white.withValues(alpha: 0.9),
                       fontSize: 11,
                       fontWeight: FontWeight.w600,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
 
@@ -60,7 +60,7 @@ class LeadCommissionCard extends StatelessWidget {
               children: [
                 Text(
                   'Commission',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF64748B),
@@ -69,7 +69,7 @@ class LeadCommissionCard extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   'Upcoming Commission: ₹$amountStr',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF16A34A),

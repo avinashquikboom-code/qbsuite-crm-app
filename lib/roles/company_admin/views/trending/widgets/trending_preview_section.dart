@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import '../admin_trending_view.dart';
@@ -70,7 +70,7 @@ class TrendingPreviewSection extends StatelessWidget {
                   Flexible(
                     child: Text(
                       'TRENDING VELOCITY',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
                         color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -94,7 +94,7 @@ class TrendingPreviewSection extends StatelessWidget {
                   children: [
                     Text(
                       'View All',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
@@ -161,7 +161,7 @@ class TrendingPreviewSection extends StatelessWidget {
                       child: Center(
                         child: Text(
                           '#$rank',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                             color: rank == 1
@@ -188,7 +188,7 @@ class TrendingPreviewSection extends StatelessWidget {
                         children: [
                           Text(
                             item['name'] as String,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -198,7 +198,7 @@ class TrendingPreviewSection extends StatelessWidget {
                           ),
                           Text(
                             item['count'] as String,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: const Color(0xFF64748B),
                               fontWeight: FontWeight.w500,
@@ -221,7 +221,7 @@ class TrendingPreviewSection extends StatelessWidget {
                       ),
                       child: Text(
                         item['trend'] as String,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10.5,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF16A34A),

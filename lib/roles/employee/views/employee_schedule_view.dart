@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -337,7 +337,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                   onChanged: (_) => setState(() {}),
                   decoration: InputDecoration(
                     hintText: 'Search customer, task, service, location...',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       color: const Color(0xFF94A3B8),
                       fontSize: 13,
                     ),
@@ -411,7 +411,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                               _isWeekView
                                   ? '${_getMonthName(weekDays.first.month).substring(0, 3)} ${weekDays.first.day} – ${_getMonthName(weekDays.last.month).substring(0, 3)} ${weekDays.last.day}'
                                   : '${_getMonthName(_displayedMonth.month)} ${_displayedMonth.year}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -472,7 +472,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           child: Center(
                             child: Text(
                               entry.value,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: isSelectedWeekday
@@ -577,7 +577,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                               children: [
                                 Text(
                                   '$dayNum',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 13,
                                     fontWeight: isSelected
                                         ? FontWeight.bold
@@ -658,7 +658,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                         Flexible(
                           child: Text(
                             '${selectedDate.day} ${_getMonthName(selectedDate.month).toUpperCase()} ${selectedDate.year} · ',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -669,7 +669,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                         ),
                         Text(
                           'ASSIGNED TASKS (${filteredActivities.length})',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -691,7 +691,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                       ),
                       child: Text(
                         'TODAY',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primaryDark,
@@ -734,7 +734,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                                       true
                                   ? 'Session Expired (401)'
                                   : 'Unable to load your schedule'),
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -751,7 +751,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                                       true
                                   ? 'Please log out and log in again to refresh your session.'
                                   : 'Check your internet connection and try again.'),
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -766,7 +766,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           onPressed: _refreshData,
                           child: Text(
                             'Retry',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
                             ),
@@ -867,7 +867,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
           const SizedBox(height: 10),
           Text(
             'No matching tasks',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14.5,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -876,7 +876,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
           const SizedBox(height: 4),
           Text(
             'Try a different search or category for this date.',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               color: AppColors.textSecondary,
             ),
@@ -906,7 +906,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
           const SizedBox(height: 10),
           Text(
             'No assigned work for this date',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14.5,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -916,7 +916,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
           const SizedBox(height: 4),
           Text(
             'When you are scheduled or assigned work, it will appear here.',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               color: AppColors.textSecondary,
             ),
@@ -1024,7 +1024,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                   children: [
                     Text(
                       displayName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -1049,7 +1049,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           Flexible(
                             child: Text(
                               customerName,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textSecondary,
@@ -1073,7 +1073,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                         Flexible(
                           child: Text(
                             '${formatActivityDate(activity.date)} • ${_taskTimeRange(activity)}',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF475569),
@@ -1098,7 +1098,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           Expanded(
                             child: Text(
                               'Team: ${activity.team!.trim()}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: const Color(0xFF475569),
@@ -1127,7 +1127,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           Expanded(
                             child: Text(
                               'Assigned: ${activity.assignedEmployee.trim()}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: const Color(0xFF475569),
@@ -1152,7 +1152,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           Expanded(
                             child: Text(
                               location,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.primaryDark,
@@ -1171,7 +1171,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                       const SizedBox(height: 5),
                       Text(
                         activity.notes!.trim(),
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: const Color(0xFF64748B),
                         ),
@@ -1195,7 +1195,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           ),
                           child: Text(
                             category.label,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10.5,
                               fontWeight: FontWeight.bold,
                               color: catColor,
@@ -1213,7 +1213,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
                           ),
                           child: Text(
                             statusLabel,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9.5,
                               fontWeight: FontWeight.bold,
                               color: statusStyle.color,
@@ -1262,7 +1262,7 @@ class _EmployeeScheduleViewState extends ConsumerState<EmployeeScheduleView> {
         ),
         child: Text(
           title,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 11.5,
             fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
             color: isSelected ? Colors.white : const Color(0xFF64748B),

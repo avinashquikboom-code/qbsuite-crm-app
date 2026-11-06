@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -255,7 +255,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                         children: [
                           Text(
                             'Create SSM Work',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -263,7 +263,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                           ),
                           Text(
                             'Schedule Reel, Shoot, or Post workflow',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -300,7 +300,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                     DropdownButtonFormField<String>(
                       isExpanded: true,
                       initialValue: _selectedCustomer,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         color: AppColors.textPrimary,
                       ),
@@ -336,7 +336,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                               _buildLabel('Social Media Account *'),
                               TextFormField(
                                 controller: _socialAccountController,
-                                style: GoogleFonts.inter(fontSize: 14),
+                                style: AppTypography.inter(fontSize: 14),
                                 decoration: _inputDecoration(
                                   '@handle',
                                   Remix.at_line,
@@ -358,7 +358,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                               DropdownButtonFormField<String>(
                                 isExpanded: true,
                                 initialValue: _selectedPlatform,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 14,
                                   color: AppColors.textPrimary,
                                 ),
@@ -433,7 +433,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                     const SizedBox(height: 4),
                                     Text(
                                       type.label,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 13,
                                         fontWeight: isSelected
                                             ? FontWeight.bold
@@ -445,7 +445,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                     ),
                                     Text(
                                       '${type.defaultDurationDays} Day${type.defaultDurationDays > 1 ? 's' : ''}',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 10.5,
                                         color: isSelected
                                             ? AppColors.primary
@@ -480,7 +480,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                 children: [
                                   Text(
                                     'Start Date',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11.5,
                                       color: AppColors.textSecondary,
                                     ),
@@ -498,7 +498,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                         const SizedBox(width: 4),
                                         Text(
                                           '${_startDate.day} ${_getMonthName(_startDate.month)} ${_startDate.year}',
-                                          style: GoogleFonts.inter(
+                                          style: AppTypography.inter(
                                             fontSize: 13.5,
                                             fontWeight: FontWeight.bold,
                                             color: AppColors.textPrimary,
@@ -520,7 +520,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                 ),
                                 child: Text(
                                   '$_durationDays Days Plan',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11.5,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.primary,
@@ -532,7 +532,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                 children: [
                                   Text(
                                     'Calculated End Date',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11.5,
                                       color: AppColors.textSecondary,
                                     ),
@@ -540,7 +540,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                   const SizedBox(height: 2),
                                   Text(
                                     '${_endDate.day} ${_getMonthName(_endDate.month)} ${_endDate.year}',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 13.5,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -566,7 +566,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                               DropdownButtonFormField<String>(
                                 isExpanded: true,
                                 initialValue: _selectedTeam,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 14,
                                   color: AppColors.textPrimary,
                                 ),
@@ -615,7 +615,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                                   '$_selectedTeam-$_selectedEmployee',
                                 ),
                                 initialValue: _selectedEmployee,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 14,
                                   color: AppColors.textPrimary,
                                 ),
@@ -667,7 +667,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                           const SizedBox(width: 6),
                           Text(
                             '$_selectedTeam Members: ${teamMembers.join(', ')}',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11.5,
                               color: const Color(0xFF475569),
                             ),
@@ -687,7 +687,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                               _buildLabel('Priority'),
                               DropdownButtonFormField<String>(
                                 initialValue: _selectedPriority,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 14,
                                   color: AppColors.textPrimary,
                                 ),
@@ -720,11 +720,11 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                     TextFormField(
                       controller: _notesController,
                       maxLines: 2,
-                      style: GoogleFonts.inter(fontSize: 14),
+                      style: AppTypography.inter(fontSize: 14),
                       decoration: InputDecoration(
                         hintText:
                             'Add campaign goal, hashtags, reference reel link...',
-                        hintStyle: GoogleFonts.inter(
+                        hintStyle: AppTypography.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),
@@ -763,7 +763,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
                         ),
                         child: Text(
                           'Schedule Work',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -786,7 +786,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         label,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: AppColors.textPrimary,
@@ -798,7 +798,7 @@ class _AdminCreateWorkSheetState extends ConsumerState<AdminCreateWorkSheet> {
   InputDecoration _inputDecoration(String hint, IconData icon) {
     return InputDecoration(
       hintText: hint,
-      hintStyle: GoogleFonts.inter(
+      hintStyle: AppTypography.inter(
         fontSize: 13,
         color: const Color(0xFF94A3B8),
       ),

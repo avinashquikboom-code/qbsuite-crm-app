@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 const List<String> kQuickCitySuggestions = [
@@ -38,7 +38,7 @@ class LocationSelector extends StatelessWidget {
           onChanged: onLocationChanged,
           decoration: InputDecoration(
             hintText: 'Enter city, area, or locality (e.g. Vadodara)',
-            hintStyle: GoogleFonts.inter(
+            hintStyle: AppTypography.inter(
               fontSize: 14,
               color: AppColors.textPlaceholder,
             ),
@@ -61,7 +61,7 @@ class LocationSelector extends StatelessWidget {
                   SnackBar(
                     content: Text(
                       'Detected Current City: Vadodara, Gujarat',
-                      style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+                      style: AppTypography.inter(fontWeight: FontWeight.w600),
                     ),
                     backgroundColor: AppColors.primary,
                     duration: const Duration(seconds: 2),
@@ -110,7 +110,7 @@ class LocationSelector extends StatelessWidget {
                   side: BorderSide(
                     color: isSelected ? AppColors.primary : AppColors.border,
                   ),
-                  labelStyle: GoogleFonts.inter(
+                  labelStyle: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                     color: isSelected

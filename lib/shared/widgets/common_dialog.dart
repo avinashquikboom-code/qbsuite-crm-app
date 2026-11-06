@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'common_button.dart';
@@ -78,7 +78,7 @@ class CommonConfirmDialog extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 17,
               ),
@@ -88,7 +88,7 @@ class CommonConfirmDialog extends StatelessWidget {
       ),
       content: Text(
         message,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 14,
           color: AppColors.textSecondary,
           height: 1.4,
@@ -100,7 +100,7 @@ class CommonConfirmDialog extends StatelessWidget {
           onPressed: onCancel ?? () => Navigator.pop(context, false),
           child: Text(
             cancelLabel,
-            style: GoogleFonts.inter(color: AppColors.textSecondary),
+            style: AppTypography.inter(color: AppColors.textSecondary),
           ),
         ),
         CommonButton(

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/constants/app_bar_titles.dart';
 import 'package:quickboom_app/shared/services/data_capture_service.dart';
@@ -46,7 +46,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
         SnackBar(
           content: Text(
             'Please specify a target city or locality.',
-            style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+            style: AppTypography.inter(fontWeight: FontWeight.w600),
           ),
           backgroundColor: AppColors.error,
         ),
@@ -63,7 +63,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
         SnackBar(
           content: Text(
             'Please enter a custom business keyword or specialty.',
-            style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+            style: AppTypography.inter(fontWeight: FontWeight.w600),
           ),
           backgroundColor: AppColors.error,
         ),
@@ -117,7 +117,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
           SnackBar(
             content: Text(
               friendlyMessage,
-              style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              style: AppTypography.inter(fontWeight: FontWeight.w600),
             ),
             backgroundColor: AppColors.error,
             behavior: SnackBarBehavior.floating,
@@ -200,7 +200,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                     Expanded(
                       child: Text(
                         'Select a business type and location to extract live, verified Google Places prospects.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: AppColors.primaryDark,
                           fontWeight: FontWeight.w600,
@@ -231,7 +231,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                   decoration: InputDecoration(
                     hintText:
                         'e.g. Interior designers, Solar panel dealers, Chartered accountants',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 13,
                       color: AppColors.textPlaceholder,
                     ),
@@ -312,7 +312,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                                 child: Center(
                                   child: Text(
                                     '$count',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: isSelected
@@ -330,7 +330,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                     const SizedBox(height: 10),
                     Text(
                       'Google Places API returns up to 60 verified commercial places per query. Extractions will capture available records up to your selected maximum.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: AppColors.textSecondary,
                         height: 1.3,
@@ -368,7 +368,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                           children: [
                             Text(
                               'Capturing Business Prospects...',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -376,7 +376,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                             ),
                             Text(
                               _extractionStep,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 color: AppColors.primaryDark,
                               ),
@@ -399,7 +399,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
                   icon: const Icon(Icons.travel_explore_rounded, size: 22),
                   label: Text(
                     _isExtracting ? 'Extracting...' : 'Start Capture',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -427,7 +427,7 @@ class _NewDataCaptureScreenState extends State<NewDataCaptureScreen> {
       padding: const EdgeInsets.only(bottom: 8.0, left: 2.0),
       child: Text(
         label,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 13,
           fontWeight: FontWeight.bold,
           color: AppColors.textPrimary,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
@@ -61,7 +61,7 @@ class SocialAccountCard extends StatelessWidget {
               children: [
                 Text(
                   accountName,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -71,7 +71,7 @@ class SocialAccountCard extends StatelessWidget {
                 ),
                 Text(
                   handle ?? platform,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11.5,
                     color: AppColors.textSecondary,
                   ),

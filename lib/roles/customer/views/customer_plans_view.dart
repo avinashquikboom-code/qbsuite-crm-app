@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/viewmodels/customer_subscription_viewmodel.dart';
@@ -67,7 +67,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               : null,
           title: Text(
             'Subscription Plans',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -104,7 +104,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                 const SizedBox(height: 16),
                 Text(
                   'Access Denied',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -114,7 +114,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                 Text(
                   'You do not have permission to view Subscription Plans. Please contact your administrator if you need access.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                   ),
@@ -139,7 +139,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
         automaticallyImplyLeading: false,
         title: Text(
           'Subscription Plans',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -204,7 +204,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               // 2. Section Header
               Text(
                 'AVAILABLE PLANS',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -214,7 +214,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               const SizedBox(height: 4),
               Text(
                 'Choose a curated plan that fits your business.',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
@@ -407,7 +407,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                   children: [
                     Text(
                       'Build Your Own Plan',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -419,7 +419,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                     const SizedBox(height: 2),
                     Text(
                       'Customise your services & quantities',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10.5,
                         color: AppColors.textSecondary,
                         height: 1.15,
@@ -437,7 +437,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
           const SizedBox(height: 8),
           Text(
             'Select exact quantities of Reels, Posts, Stories, Influencer Promos, and Ads Management tailored to your goals.',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11,
               color: AppColors.textSecondary,
               height: 1.3,
@@ -461,7 +461,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               icon: const Icon(Remix.add_line, size: 16, color: Colors.white),
               label: Text(
                 'Create Custom Plan',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -519,7 +519,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 12),
             Text(
               'No Plans Available',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -528,7 +528,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 4),
             Text(
               'Please check again later or contact support.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -558,7 +558,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 12),
             Text(
               'Unable to Load Plans',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -567,7 +567,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 4),
             Text(
               'Please check your internet connection.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -580,7 +580,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               icon: const Icon(Remix.refresh_line, size: 16),
               label: Text(
                 'Retry',
-                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                style: AppTypography.inter(fontWeight: FontWeight.bold),
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,

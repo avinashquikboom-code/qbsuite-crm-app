@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/core/theme/app_theme.dart';
@@ -88,7 +88,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
               const SizedBox(height: 24),
               Text(
                 'QB SUITE',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: AppTheme.textPrimary,
@@ -98,7 +98,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
               const SizedBox(height: 8),
               Text(
                 'Your Business Suite',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   color: AppTheme.textSecondary,
                   letterSpacing: 2,
@@ -129,7 +129,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                           const SizedBox(width: 8),
                           Text(
                             'Startup Connection Issue',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF991B1B),
@@ -143,7 +143,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                         textAlign: TextAlign.center,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFF7F1D1D),
                         ),
@@ -178,7 +178,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                             },
                             child: Text(
                               'Continue to Role Selection',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 color: const Color(0xFF475569),
                                 fontWeight: FontWeight.w600,
@@ -200,7 +200,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                   },
                   child: Text(
                     'Continue to Role Selection',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       color: AppTheme.primaryColor,
                       fontWeight: FontWeight.w600,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/employee/models/employee_ssm_work_model.dart';
 
@@ -54,7 +54,7 @@ class WorkStatusBadge extends StatelessWidget {
           const SizedBox(width: 5),
           Text(
             status.displayName.toUpperCase(),
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 10,
               fontWeight: FontWeight.w800,
               color: statusTextColor,

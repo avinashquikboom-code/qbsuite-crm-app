@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/customer_roles_work_models.dart';
@@ -78,7 +78,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                       workToEdit != null
                           ? 'Edit Work Type'
                           : 'Add New Work Type',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -93,7 +93,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                 const SizedBox(height: 16),
                 Text(
                   'Work / Task Name',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -104,7 +104,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                   controller: nameCtrl,
                   decoration: InputDecoration(
                     hintText: 'e.g. Reels Shoot, Post Design',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 14,
                       color: AppColors.textMuted,
                     ),
@@ -127,7 +127,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                 const SizedBox(height: 16),
                 Text(
                   'Assigned Role',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -155,7 +155,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                           value: role,
                           child: Text(
                             role,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPrimary,
@@ -174,7 +174,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                 const SizedBox(height: 16),
                 Text(
                   'Description (Optional)',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -186,7 +186,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                   maxLines: 2,
                   decoration: InputDecoration(
                     hintText: 'Work requirements, guidelines, deliverables...',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 14,
                       color: AppColors.textMuted,
                     ),
@@ -248,7 +248,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                     },
                     child: Text(
                       'Save Work Type',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
@@ -281,7 +281,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Work Types',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -309,7 +309,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                   onChanged: (val) => setState(() => _searchQuery = val),
                   decoration: InputDecoration(
                     hintText: 'Search work types or assigned role...',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 13.5,
                       color: AppColors.textMuted,
                     ),
@@ -346,7 +346,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                     Expanded(
                       child: Text(
                         '${workTypes.length} WORK TYPES',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFF64748B),
@@ -375,7 +375,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                             const SizedBox(width: 4),
                             Text(
                               '+ Add Work',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -447,7 +447,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                   children: [
                     Text(
                       work.workName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -457,7 +457,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                         work.description!.isNotEmpty)
                       Text(
                         work.description!,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFF64748B),
                         ),
@@ -485,7 +485,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
             children: [
               Text(
                 'ASSIGNED ROLE:',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 10,
                   fontWeight: FontWeight.w800,
                   color: const Color(0xFF94A3B8),
@@ -514,7 +514,7 @@ class _AdminWorkTypesViewState extends ConsumerState<AdminWorkTypesView> {
                       Flexible(
                         child: Text(
                           work.assignedRole,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: work.color,

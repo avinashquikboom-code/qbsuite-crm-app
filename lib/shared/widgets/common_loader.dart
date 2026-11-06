@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 /// Reusable loading indicator for async operations across all roles.
@@ -30,7 +30,7 @@ class CommonLoader extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               message!,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/employee/models/employee_ssm_work_model.dart';
@@ -134,7 +134,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'COMPLETED',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 9,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.primaryDark,
@@ -153,7 +153,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'ACTIVE TODAY',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 9,
                                     fontWeight: FontWeight.bold,
                                     color: const Color(0xFFB54708),
@@ -165,7 +165,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                         const SizedBox(height: 4),
                         Text(
                           task.title,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13.5,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -174,7 +174,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                         const SizedBox(height: 2),
                         Text(
                           task.description,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -191,7 +191,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                               icon: const Icon(Remix.check_line, size: 14),
                               label: Text(
                                 'Mark Day ${task.dayNumber} Complete',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11.5,
                                   fontWeight: FontWeight.bold,
                                 ),

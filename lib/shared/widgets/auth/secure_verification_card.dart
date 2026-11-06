@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 
 class SecureVerificationCard extends StatelessWidget {
@@ -28,7 +28,7 @@ class SecureVerificationCard extends StatelessWidget {
               children: [
                 Text(
                   'Secure Verification',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF166534),
@@ -36,7 +36,7 @@ class SecureVerificationCard extends StatelessWidget {
                 ),
                 Text(
                   'Your information is protected with advanced security.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: const Color(0xFF475569),
                   ),

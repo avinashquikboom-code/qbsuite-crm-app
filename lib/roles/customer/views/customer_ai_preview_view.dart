@@ -4,7 +4,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:video_player/video_player.dart';
@@ -251,11 +251,11 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
       builder: (ctx) => AlertDialog(
         title: Text(
           'Regenerate Content?',
-          style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 16),
+          style: AppTypography.inter(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         content: Text(
           'This will open the creator form to generate a fresh variation using ${widget.generation.creditsSpent} credit(s).',
-          style: GoogleFonts.inter(fontSize: 13),
+          style: AppTypography.inter(fontSize: 13),
         ),
         actions: [
           TextButton(
@@ -396,7 +396,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Generation Output',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -501,7 +501,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         const SizedBox(width: 6),
                         Text(
                           'Rendering Video...',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF2563EB),
@@ -516,7 +516,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         const SizedBox(width: 4),
                         Text(
                           'Ready to Publish',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF059669),
@@ -532,7 +532,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                     _gen.generationId,
                     textAlign: TextAlign.end,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: const Color(0xFF64748B),
                     ),
@@ -580,7 +580,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         _shareDownloadProgress > 0
                             ? 'Preparing to share… ${(_shareDownloadProgress * 100).toStringAsFixed(0)}%'
                             : 'Preparing to share…',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFF1D4ED8),
                         ),
@@ -612,7 +612,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                           _gen.type.toUpperCase() == 'VIDEO'
                               ? 'Generated Video Script & Breakdown'
                               : 'Generated Copy / Caption',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -636,7 +636,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                             const SizedBox(width: 4),
                             Text(
                               'Copy',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF2563EB),
@@ -650,7 +650,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                   const SizedBox(height: 10),
                   SelectableText(
                     _gen.caption ?? 'No caption generated.',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       height: 1.5,
                       color: const Color(0xFF334155),
@@ -681,7 +681,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         Expanded(
                           child: Text(
                             'Trending Hashtags',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -705,7 +705,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                               const SizedBox(width: 4),
                               Text(
                                 'Copy All',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                   color: const Color(0xFF2563EB),
@@ -734,7 +734,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                             ),
                             child: Text(
                               tag,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xFF2563EB),
@@ -770,7 +770,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                     ),
                     label: Text(
                       'Publish to Social Media',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -807,7 +807,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         ),
                         label: Text(
                           'Copy All Text',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF334155),
@@ -834,7 +834,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                         ),
                         label: Text(
                           'Regenerate',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF4F46E5),
@@ -945,7 +945,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
                   const SizedBox(width: 4),
                   Text(
                     'Tap to zoom',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
@@ -977,7 +977,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
               progress != null
                   ? 'Loading… ${(progress * 100).toStringAsFixed(0)}%'
                   : 'Loading image…',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: const Color(0xFF64748B),
               ),
@@ -999,7 +999,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
             const SizedBox(height: 10),
             Text(
               message,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: const Color(0xFF64748B),
               ),
@@ -1014,7 +1014,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
               ),
               label: Text(
                 'Retry',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
@@ -1153,7 +1153,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
           const SizedBox(height: 12),
           Text(
             'Loading video…',
-            style: GoogleFonts.inter(fontSize: 13, color: Colors.white70),
+            style: AppTypography.inter(fontSize: 13, color: Colors.white70),
           ),
         ],
       ),
@@ -1175,7 +1175,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
           const SizedBox(height: 10),
           Text(
             'Could not load video.',
-            style: GoogleFonts.inter(fontSize: 13, color: Colors.white70),
+            style: AppTypography.inter(fontSize: 13, color: Colors.white70),
           ),
           const SizedBox(height: 10),
           TextButton.icon(
@@ -1187,7 +1187,7 @@ class _CustomerAiPreviewViewState extends ConsumerState<CustomerAiPreviewView> {
             ),
             label: Text(
               'Retry',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primary,

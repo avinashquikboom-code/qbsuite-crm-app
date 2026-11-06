@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_ssm_viewmodel.dart';
 import 'package:quickboom_app/shared/widgets/app_app_bar.dart';
@@ -75,7 +75,7 @@ class SSMClientDetailView extends ConsumerWidget {
                           child: Center(
                             child: Text(
                               initial,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -90,7 +90,7 @@ class SSMClientDetailView extends ConsumerWidget {
                             children: [
                               Text(
                                 client.customerName,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -100,7 +100,7 @@ class SSMClientDetailView extends ConsumerWidget {
                               ),
                               Text(
                                 client.customerBusiness,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 13,
                                   color: AppColors.textSecondary,
                                 ),
@@ -151,7 +151,7 @@ class SSMClientDetailView extends ConsumerWidget {
               // ── Social Media Account & Team Info ──
               Text(
                 'ACCOUNT & TEAM DETAILS',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -262,7 +262,7 @@ class SSMClientDetailView extends ConsumerWidget {
                               SnackBar(
                                 content: Text(
                                   'Work started! Day 1 is now in progress.',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -319,7 +319,7 @@ class SSMClientDetailView extends ConsumerWidget {
   Widget _buildSectionTitle(String title) {
     return Text(
       title,
-      style: GoogleFonts.inter(
+      style: AppTypography.inter(
         fontSize: 11.5,
         fontWeight: FontWeight.w800,
         color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -340,7 +340,7 @@ class SSMClientDetailView extends ConsumerWidget {
         children: [
           Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: color,
@@ -348,7 +348,7 @@ class SSMClientDetailView extends ConsumerWidget {
           ),
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 10.5,
               color: AppColors.textSecondary,
             ),
@@ -366,7 +366,7 @@ class SSMClientDetailView extends ConsumerWidget {
           width: 100,
           child: Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -377,7 +377,7 @@ class SSMClientDetailView extends ConsumerWidget {
           child: Text(
             value,
             textAlign: TextAlign.end,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -399,7 +399,7 @@ class SSMClientDetailView extends ConsumerWidget {
       ),
       child: Text(
         message,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 12.5,
           color: AppColors.textSecondary,
         ),

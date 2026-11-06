@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
@@ -103,7 +103,7 @@ class LeadNotesTab extends ConsumerWidget {
                         children: [
                           Text(
                             'Add Note',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -111,7 +111,7 @@ class LeadNotesTab extends ConsumerWidget {
                           ),
                           Text(
                             'Record an internal note or meeting summary',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -135,14 +135,14 @@ class LeadNotesTab extends ConsumerWidget {
                   maxLines: 5,
                   minLines: 3,
                   autofocus: true,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     color: AppColors.textPrimary,
                   ),
                   decoration: InputDecoration(
                     hintText:
                         'Enter note details, discussion summary, or next steps...',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 13,
                       color: AppColors.textPlaceholder,
                     ),
@@ -180,7 +180,7 @@ class LeadNotesTab extends ConsumerWidget {
                           : () => Navigator.pop(sheetContext),
                       child: Text(
                         'Cancel',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textSecondary,
@@ -247,7 +247,7 @@ class LeadNotesTab extends ConsumerWidget {
                             )
                           : Text(
                               'Save Note',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -290,7 +290,7 @@ class LeadNotesTab extends ConsumerWidget {
                 const SizedBox(height: 16),
                 Text(
                   'No Notes Yet',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -300,7 +300,7 @@ class LeadNotesTab extends ConsumerWidget {
                 Text(
                   'Add a note to keep track of important information about this lead.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -322,7 +322,7 @@ class LeadNotesTab extends ConsumerWidget {
                   icon: const Icon(Remix.add_line, size: 16),
                   label: Text(
                     'Add Note',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                     ),
@@ -345,7 +345,7 @@ class LeadNotesTab extends ConsumerWidget {
                   Expanded(
                     child: Text(
                       'Lead Notes (${notes.length})',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -372,7 +372,7 @@ class LeadNotesTab extends ConsumerWidget {
                           const SizedBox(width: 4),
                           Text(
                             'Add Note',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
@@ -421,7 +421,7 @@ class LeadNotesTab extends ConsumerWidget {
             const SizedBox(height: 10),
             Text(
               'Unable to load notes.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -439,7 +439,7 @@ class LeadNotesTab extends ConsumerWidget {
               onPressed: () => ref.invalidate(leadNotesProvider(lead.id)),
               child: Text(
                 'Retry',
-                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                style: AppTypography.inter(fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -474,7 +474,7 @@ class LeadNotesTab extends ConsumerWidget {
         children: [
           Text(
             note.content,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13.5,
               height: 1.45,
               color: AppColors.textPrimary,
@@ -493,7 +493,7 @@ class LeadNotesTab extends ConsumerWidget {
               Expanded(
                 child: Text(
                   '$author • $dateStr',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11.5,
                     color: AppColors.textSecondary,
                     fontWeight: FontWeight.w500,

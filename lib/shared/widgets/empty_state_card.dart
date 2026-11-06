@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 class EmptyStateCard extends StatelessWidget {
@@ -42,7 +42,7 @@ class EmptyStateCard extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -52,7 +52,7 @@ class EmptyStateCard extends StatelessWidget {
           const SizedBox(height: 6),
           Text(
             description,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               color: AppColors.textSecondary,
             ),
@@ -75,7 +75,7 @@ class EmptyStateCard extends StatelessWidget {
               ),
               child: Text(
                 actionLabel!,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                 ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'common_button.dart';
@@ -49,7 +49,7 @@ class CommonEmptyState extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               title,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -59,7 +59,7 @@ class CommonEmptyState extends StatelessWidget {
             const SizedBox(height: 6),
             Text(
               description,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
                 height: 1.4,

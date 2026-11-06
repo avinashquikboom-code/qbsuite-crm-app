@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
@@ -196,7 +196,7 @@ class _CustomerMarketingVideoSectionState
                     Text(
                       'Marketing Videos',
                       maxLines: 1,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 16.5,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF0F172A),
@@ -208,7 +208,7 @@ class _CustomerMarketingVideoSectionState
                       'Watch platform guides, tips & offers 🎬',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.w400,
                         color: const Color(0xFF64748B),
@@ -229,7 +229,7 @@ class _CustomerMarketingVideoSectionState
                   ),
                   child: Text(
                     '${_currentPage + 1}/${videos.length}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF475569),
@@ -828,7 +828,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                         ),
                         child: Text(
                           'Video unavailable',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -856,7 +856,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                         widget.video.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: const Color(0xFF0F172A),
@@ -869,7 +869,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                           widget.video.subtitle!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11.5,
                             fontWeight: FontWeight.w400,
                             color: const Color(0xFF64748B),
@@ -903,7 +903,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                       children: [
                         Text(
                           widget.video.ctaText!,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                           ),

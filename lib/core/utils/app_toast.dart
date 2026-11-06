@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/utils/app_snack_bar.dart';
@@ -338,7 +338,7 @@ class _ToastWidgetState extends State<_ToastWidget>
                         if (widget.title != null) ...[
                           Text(
                             widget.title!,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               color: Colors.white,
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
@@ -348,7 +348,7 @@ class _ToastWidgetState extends State<_ToastWidget>
                         ],
                         Text(
                           widget.message,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             color: Colors.white.withValues(alpha: 0.85),
                             fontSize: 13,
                             fontWeight: FontWeight.w500,

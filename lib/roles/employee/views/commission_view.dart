@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/shared/widgets/app_app_bar.dart';
@@ -121,7 +121,7 @@ class _EmployeeCommissionViewState
                         Expanded(
                           child: Text(
                             'Commission History',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -132,7 +132,7 @@ class _EmployeeCommissionViewState
                         const SizedBox(width: 8),
                         Text(
                           '${state.items.length} records',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: AppColors.textSecondary,
@@ -229,7 +229,7 @@ class _EmployeeCommissionViewState
                   const SizedBox(width: 8),
                   Text(
                     'TOTAL COMMISSION',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w700,
                       letterSpacing: 0.5,
@@ -250,7 +250,7 @@ class _EmployeeCommissionViewState
                   ),
                   child: Text(
                     emp.designation,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFFE2E8F0),
@@ -265,7 +265,7 @@ class _EmployeeCommissionViewState
             alignment: Alignment.centerLeft,
             child: Text(
               _formatCurrency(summary.totalCommission),
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 32,
                 fontWeight: FontWeight.w900,
                 color: Colors.white,
@@ -276,7 +276,7 @@ class _EmployeeCommissionViewState
           const SizedBox(height: 6),
           Text(
             '${summary.totalCount} successful lead conversions',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               fontWeight: FontWeight.w500,
               color: const Color(0xFF94A3B8),
@@ -359,7 +359,7 @@ class _EmployeeCommissionViewState
                   title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: color,
@@ -374,7 +374,7 @@ class _EmployeeCommissionViewState
             alignment: Alignment.centerLeft,
             child: Text(
               _formatCurrency(amount),
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF1E293B),
@@ -384,7 +384,7 @@ class _EmployeeCommissionViewState
           const SizedBox(height: 2),
           Text(
             '$count deals',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 10,
               fontWeight: FontWeight.w500,
               color: Colors.grey.shade600,
@@ -415,7 +415,7 @@ class _EmployeeCommissionViewState
             child: ChoiceChip(
               label: Text(
                 f['label']!,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                   color: isSelected ? Colors.white : AppColors.textSecondary,
@@ -508,7 +508,7 @@ class _EmployeeCommissionViewState
                   children: [
                     Text(
                       '$custName · #${item.customerId}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -519,7 +519,7 @@ class _EmployeeCommissionViewState
                     const SizedBox(height: 2),
                     Text(
                       'Lead: $leadTitle',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                         color: AppColors.textSecondary,
@@ -545,7 +545,7 @@ class _EmployeeCommissionViewState
                     const SizedBox(width: 4),
                     Text(
                       statusLabel,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w700,
                         color: statusColor,
@@ -584,7 +584,7 @@ class _EmployeeCommissionViewState
                     ),
                     child: Text(
                       planName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,
@@ -593,7 +593,7 @@ class _EmployeeCommissionViewState
                   ),
                   Text(
                     'Base: ${_formatCurrency(item.purchaseAmount)}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w500,
                       color: AppColors.textSecondary,
@@ -604,7 +604,7 @@ class _EmployeeCommissionViewState
               Text(
                 'Your share: ${item.commissionRate}${item.commissionType == 'PERCENTAGE' ? '%' : '₹'}'
                 '${item.originalCommissionRate != null ? ' of ${item.originalCommissionRate}${item.commissionType == 'PERCENTAGE' ? '%' : '₹'} total' : ''}',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
@@ -643,7 +643,7 @@ class _EmployeeCommissionViewState
                 children: [
                   Text(
                     'COMMISSION EARNED',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.w700,
                       letterSpacing: 0.5,
@@ -653,7 +653,7 @@ class _EmployeeCommissionViewState
                   const SizedBox(height: 2),
                   Text(
                     _formatCurrency(item.commissionAmount),
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                       color: const Color(0xFF059669),
@@ -675,7 +675,7 @@ class _EmployeeCommissionViewState
                       const SizedBox(width: 4),
                       Text(
                         earnedDateStr,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textSecondary,
@@ -687,7 +687,7 @@ class _EmployeeCommissionViewState
                     const SizedBox(height: 2),
                     Text(
                       'Paid: ${_formatDate(item.paidAt!)}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF2563EB),
@@ -729,7 +729,7 @@ class _EmployeeCommissionViewState
           const SizedBox(height: 14),
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -739,7 +739,7 @@ class _EmployeeCommissionViewState
           Text(
             'When you convert a lead into a paying customer, your commission will appear here automatically.',
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.w400,
               color: AppColors.textSecondary,
@@ -792,7 +792,7 @@ class _EmployeeCommissionViewState
             const SizedBox(height: 14),
             Text(
               'Unable to Load Commissions',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -802,7 +802,7 @@ class _EmployeeCommissionViewState
             Text(
               message,
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),

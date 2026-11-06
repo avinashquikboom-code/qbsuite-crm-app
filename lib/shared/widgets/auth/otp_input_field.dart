@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 /// A 6-box responsive OTP input widget supporting auto-advance, backspace,
@@ -163,7 +163,7 @@ class OtpInputFieldState extends State<OtpInputField> {
                   inputFormatters: [
                     FilteringTextInputFormatter.digitsOnly,
                   ],
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF0F172A),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
@@ -67,7 +67,7 @@ class _CustomerActivityDetailSheetState
           SnackBar(
             content: Text(
               'Deliverable approved successfully! Quota consumed.',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
             backgroundColor: const Color(0xFF16A34A),
             behavior: SnackBarBehavior.floating,
@@ -105,7 +105,7 @@ class _CustomerActivityDetailSheetState
             const SizedBox(width: 8),
             Text(
               actionLabel,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -118,7 +118,7 @@ class _CustomerActivityDetailSheetState
           children: [
             Text(
               'Provide feedback / instructions for the creative team:',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 color: AppColors.textSecondary,
               ),
@@ -130,7 +130,7 @@ class _CustomerActivityDetailSheetState
               decoration: InputDecoration(
                 hintText:
                     'e.g. Please change background audio and adjust color grading...',
-                hintStyle: GoogleFonts.inter(fontSize: 12.5),
+                hintStyle: AppTypography.inter(fontSize: 12.5),
                 filled: true,
                 fillColor: const Color(0xFFF8FAFC),
                 border: OutlineInputBorder(
@@ -138,7 +138,7 @@ class _CustomerActivityDetailSheetState
                   borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
                 ),
               ),
-              style: GoogleFonts.inter(fontSize: 13),
+              style: AppTypography.inter(fontSize: 13),
             ),
           ],
         ),
@@ -147,7 +147,7 @@ class _CustomerActivityDetailSheetState
             onPressed: () => Navigator.pop(dlgCtx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.inter(color: AppColors.textSecondary),
+              style: AppTypography.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -186,7 +186,7 @@ class _CustomerActivityDetailSheetState
                     SnackBar(
                       content: Text(
                         '$actionLabel submitted successfully. Creative team notified.',
-                        style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                        style: AppTypography.inter(fontWeight: FontWeight.bold),
                       ),
                       backgroundColor: const Color(0xFFD97706),
                       behavior: SnackBarBehavior.floating,
@@ -215,7 +215,7 @@ class _CustomerActivityDetailSheetState
             ),
             child: Text(
               'Submit Request',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -243,7 +243,7 @@ class _CustomerActivityDetailSheetState
           SnackBar(
             content: Text(
               'Scheduling on Sundays is not allowed by working calendar policy.',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
             backgroundColor: const Color(0xFFDC2626),
             behavior: SnackBarBehavior.floating,
@@ -291,7 +291,7 @@ class _CustomerActivityDetailSheetState
           SnackBar(
             content: Text(
               'Schedule successfully moved to ${_formatDate(pickedDate)} at $timeStr',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
             backgroundColor: const Color(0xFF2563EB),
             behavior: SnackBarBehavior.floating,
@@ -385,7 +385,7 @@ class _CustomerActivityDetailSheetState
                     Flexible(
                       child: Text(
                         _activity.activityType.label,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: themeColor,
@@ -401,7 +401,7 @@ class _CustomerActivityDetailSheetState
             Text(
               '${_activity.customerName} • ${_activity.activityType.label}',
               softWrap: true,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
                 color: AppColors.tierEnterpriseDark,
@@ -412,7 +412,7 @@ class _CustomerActivityDetailSheetState
             Text(
               _activity.businessName,
               softWrap: true,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textSecondary,
@@ -449,7 +449,7 @@ class _CustomerActivityDetailSheetState
                     Expanded(
                       child: Text(
                         'CARRIED FORWARD${_activity.originalScheduledDateDisplay != null ? ' • Originally scheduled: ${_activity.originalScheduledDateDisplay}' : ''}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           fontWeight: FontWeight.w700,
                           color: const Color(0xFFB45309),
@@ -512,7 +512,7 @@ class _CustomerActivityDetailSheetState
               const SizedBox(height: 14),
               Text(
                 'NOTES & DELIVERABLES',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: const Color(0xFF64748B),
@@ -531,7 +531,7 @@ class _CustomerActivityDetailSheetState
                 child: Text(
                   _activity.notes!,
                   softWrap: true,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: AppColors.textPrimary,
                     height: 1.45,
@@ -572,7 +572,7 @@ class _CustomerActivityDetailSheetState
                           'Reschedule Date & Time',
                           textAlign: TextAlign.center,
                           softWrap: true,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF2563EB),
                           ),
@@ -599,7 +599,7 @@ class _CustomerActivityDetailSheetState
                       ),
                       label: Text(
                         'Request Revision',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFFD97706),
                         ),
@@ -624,7 +624,7 @@ class _CustomerActivityDetailSheetState
                       ),
                       label: Text(
                         'Approve Work',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
@@ -656,7 +656,7 @@ class _CustomerActivityDetailSheetState
                   ),
                   label: Text(
                     _activity.reworkActionLabel ?? 'Request Rework / Revision',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontWeight: FontWeight.bold,
                       color: const Color(0xFFD97706),
                     ),
@@ -701,7 +701,7 @@ class _CustomerActivityDetailSheetState
                               'Close',
                               textAlign: TextAlign.center,
                               softWrap: true,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -748,7 +748,7 @@ class _CustomerActivityDetailSheetState
                               'SSM Account Access',
                               textAlign: TextAlign.center,
                               softWrap: true,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                                 height: 1.2,
@@ -786,7 +786,7 @@ class _CustomerActivityDetailSheetState
           child: Text(
             label,
             softWrap: true,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               color: const Color(0xFF64748B),
               height: 1.3,
@@ -800,7 +800,7 @@ class _CustomerActivityDetailSheetState
             value,
             textAlign: TextAlign.right,
             softWrap: true,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

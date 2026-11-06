@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 /// Reusable theme-aware AppBar across all roles with responsive actions.
@@ -47,7 +47,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -56,7 +56,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
           if (subtitle != null) ...[
             Text(
               subtitle!,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),

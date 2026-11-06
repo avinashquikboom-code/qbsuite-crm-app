@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -99,7 +99,7 @@ class LeadLimitCard extends ConsumerWidget {
                   children: [
                     Text(
                       'Lead Generation Quota',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -111,7 +111,7 @@ class LeadLimitCard extends ConsumerWidget {
                       const SizedBox(height: 1),
                       Text(
                         displayRole,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10.5,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 0.4,
@@ -190,7 +190,7 @@ class LeadLimitCard extends ConsumerWidget {
                       isDailyExhausted
                           ? 'Daily lead generation limit reached.'
                           : 'Monthly lead generation limit reached.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: AppColors.error,
@@ -253,7 +253,7 @@ class LeadLimitCard extends ConsumerWidget {
           // narrow phones, even when the remaining-count badge is long.
           Text(
             title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11.5,
               fontWeight: FontWeight.w700,
               color: AppColors.textPrimary,
@@ -272,7 +272,7 @@ class LeadLimitCard extends ConsumerWidget {
               ),
               child: Text(
                 '${period.remaining} left',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 9.5,
                   fontWeight: FontWeight.bold,
                   color: statusColor,
@@ -293,7 +293,7 @@ class LeadLimitCard extends ConsumerWidget {
               Flexible(
                 child: Text(
                   '${period.used}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: isExhausted
@@ -307,7 +307,7 @@ class LeadLimitCard extends ConsumerWidget {
               Flexible(
                 child: Text(
                   ' / ${period.limit}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11.5,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textSecondary,
@@ -502,7 +502,7 @@ class LeadLimitCard extends ConsumerWidget {
                   children: [
                     Text(
                       'Lead Generation Quota',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -510,7 +510,7 @@ class LeadLimitCard extends ConsumerWidget {
                     ),
                     Text(
                       'Unable to load quota',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: AppColors.textSecondary,
                       ),
@@ -524,7 +524,7 @@ class LeadLimitCard extends ConsumerWidget {
                 icon: const Icon(Remix.refresh_line, size: 14),
                 label: Text(
                   'Retry',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                   ),
@@ -586,7 +586,7 @@ class LeadLimitCard extends ConsumerWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11.5,
               fontWeight: FontWeight.w700,
               color: AppColors.textSecondary,
@@ -595,7 +595,7 @@ class LeadLimitCard extends ConsumerWidget {
           const SizedBox(height: 5),
           Text(
             '—',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: AppColors.textSecondary,

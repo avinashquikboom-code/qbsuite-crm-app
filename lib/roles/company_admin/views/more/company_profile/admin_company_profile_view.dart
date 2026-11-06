@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -61,7 +61,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                 children: [
                   Text(
                     'Edit Company Profile',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -124,7 +124,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                           ),
                           child: Text(
                             'SAVE CHANGES',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -154,7 +154,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
         children: [
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -164,7 +164,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
           TextField(
             controller: ctrl,
             maxLines: maxLines,
-            style: GoogleFonts.inter(fontSize: 13.5),
+            style: AppTypography.inter(fontSize: 13.5),
             decoration: InputDecoration(
               filled: true,
               fillColor: const Color(0xFFF8FAFC),
@@ -196,7 +196,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           'Company Profile',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -215,7 +215,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
             ),
             label: Text(
               'EDIT',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primary,
@@ -263,7 +263,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                     const SizedBox(height: 12),
                     Text(
                       profile.companyName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -272,7 +272,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                     const SizedBox(height: 2),
                     Text(
                       profile.businessName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         color: AppColors.textSecondary,
                       ),
@@ -289,7 +289,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                       ),
                       child: Text(
                         'VERIFIED AGENCY WORKSPACE',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10.5,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
@@ -315,7 +315,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                   children: [
                     Text(
                       'Contact & Location',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -354,7 +354,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                   children: [
                     Text(
                       'Business Summary & Scope',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -363,7 +363,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
                     const SizedBox(height: 10),
                     Text(
                       profile.businessDetails,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13.5,
                         color: const Color(0xFF475569),
                         height: 1.4,
@@ -390,7 +390,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
           width: 90,
           child: Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               color: AppColors.textSecondary,
             ),
@@ -399,7 +399,7 @@ class AdminCompanyProfileView extends ConsumerWidget {
         Expanded(
           child: Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

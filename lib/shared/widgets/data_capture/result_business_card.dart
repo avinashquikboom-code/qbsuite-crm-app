@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/services/secure_storage_service.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -282,7 +282,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                           business.businessName.isNotEmpty
                               ? business.businessName
                               : 'No business name available',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: business.businessName.isNotEmpty
@@ -313,7 +313,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                               ),
                               child: Text(
                                 business.category,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryDark,
@@ -333,7 +333,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                                   const SizedBox(width: 2),
                                   Text(
                                     '${business.rating}',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -342,7 +342,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                                   if (business.reviewCount != null)
                                     Text(
                                       ' (${business.reviewCount})',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 11,
                                         color: AppColors.textSecondary,
                                       ),
@@ -378,7 +378,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                   Expanded(
                     child: Text(
                       business.address,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                         height: 1.4,
@@ -406,7 +406,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                   Flexible(
                     child: Text(
                       business.phone,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -684,7 +684,7 @@ class _CompactTextBtn extends StatelessWidget {
             const SizedBox(width: 4),
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
                 color: color,

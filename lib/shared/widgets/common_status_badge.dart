@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 
 /// Reusable status badge with configurable colors, text and border.
 class CommonStatusBadge extends StatelessWidget {
@@ -31,7 +31,7 @@ class CommonStatusBadge extends StatelessWidget {
       ),
       child: Text(
         label.toUpperCase(),
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: fontSize,
           fontWeight: FontWeight.w700,
           color: color,

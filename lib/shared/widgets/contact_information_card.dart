@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -229,7 +229,7 @@ class ContactInformationCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -391,7 +391,7 @@ class ContactInformationCard extends StatelessWidget {
                   children: [
                     Text(
                       label,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         color: const Color(0xFF64748B),
                       ),
@@ -399,7 +399,7 @@ class ContactInformationCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       value,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         color: onTap != null

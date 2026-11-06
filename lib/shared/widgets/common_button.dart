@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 enum CommonButtonVariant { primary, secondary, outline, text, danger }
@@ -104,7 +104,7 @@ class CommonButton extends StatelessWidget {
                         if (icon != null) ...[icon!, const SizedBox(width: 8)],
                         Text(
                           label,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
                             color: textColor,

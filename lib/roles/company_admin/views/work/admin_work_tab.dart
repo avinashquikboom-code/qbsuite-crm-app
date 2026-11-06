@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -99,10 +99,10 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                           child: TextField(
                             controller: _searchController,
                             onChanged: (val) => setState(() {}),
-                            style: GoogleFonts.inter(fontSize: 14),
+                            style: AppTypography.inter(fontSize: 14),
                             decoration: InputDecoration(
                               hintText: 'Search SSM Work, customer, staff...',
-                              hintStyle: GoogleFonts.inter(
+                              hintStyle: AppTypography.inter(
                                 fontSize: 13,
                                 color: const Color(0xFF94A3B8),
                               ),
@@ -138,7 +138,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                         icon: const Icon(Remix.add_line, size: 16),
                         label: Text(
                           'New Work',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12.5,
                             fontWeight: FontWeight.bold,
                           ),
@@ -176,7 +176,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                                 setState(() => _selectedFilter = filter),
                             backgroundColor: const Color(0xFFF1F5F9),
                             selectedColor: AppColors.primaryLight,
-                            labelStyle: GoogleFonts.inter(
+                            labelStyle: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: isSelected
                                   ? FontWeight.bold
@@ -222,7 +222,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                           const SizedBox(height: 12),
                           Text(
                             'No SSM Work found',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -231,7 +231,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                           const SizedBox(height: 4),
                           Text(
                             'Schedule work using the "New Work" button above',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: const Color(0xFF94A3B8),
                             ),
@@ -314,7 +314,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                               Expanded(
                                 child: Text(
                                   w.customerName,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.textPrimary,
@@ -332,7 +332,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                                 ),
                                 child: Text(
                                   w.status.label,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 10.5,
                                     fontWeight: FontWeight.bold,
                                     color: w.status.color,
@@ -344,7 +344,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
                           const SizedBox(height: 2),
                           Text(
                             '${w.socialAccount} • ${w.platform}',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12.5,
                               color: AppColors.textSecondary,
                             ),
@@ -427,7 +427,7 @@ class _AdminWorkTabState extends ConsumerState<AdminWorkTab> {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             text: TextSpan(
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11.5,
                 color: AppColors.textSecondary,
               ),

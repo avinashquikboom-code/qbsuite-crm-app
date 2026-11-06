@@ -5,7 +5,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import '../../../core/services/permission_manager.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../models/data_capture_record.dart';
@@ -387,7 +387,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
       ),
       child: Text(
         _formatFilterLabel(upper),
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 11,
           fontWeight: FontWeight.w700,
           color: fg,
@@ -485,7 +485,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             record.businessName.isNotEmpty
                                 ? record.businessName
                                 : 'Unnamed Business',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF111827),
@@ -536,7 +536,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                         Expanded(
                           child: Text(
                             address,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: const Color(0xFF64748B),
                               height: 1.35,
@@ -562,7 +562,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             phone,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF111827),
@@ -589,7 +589,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                 const SizedBox(width: 3),
                                 Text(
                                   'Copy',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500,
                                     color: const Color(0xFF64748B),
@@ -616,7 +616,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                           formattedDate,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             color: const Color(0xFF94A3B8),
                             fontWeight: FontWeight.w500,
@@ -678,7 +678,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                 'Data Capture Records',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xFF111827),
@@ -690,7 +690,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                 'View and manage captured business records',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.normal,
                   color: const Color(0xFF64748B),
@@ -766,7 +766,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             ),
                             child: Text(
                               'Clear Selection',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xFF475569),
@@ -798,7 +798,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                               _importing
                                   ? 'Importing…'
                                   : 'Import to Leads (${_selected.length})',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -837,13 +837,13 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                     ),
                     child: TextField(
                       controller: _search,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         color: const Color(0xFF111827),
                       ),
                       decoration: InputDecoration(
                         hintText: 'Search businesses, phone or location...',
-                        hintStyle: GoogleFonts.inter(
+                        hintStyle: AppTypography.inter(
                           fontSize: 13,
                           color: const Color(0xFF94A3B8),
                         ),
@@ -945,7 +945,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                       const SizedBox(width: 4),
                       Text(
                         'Select All',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFF475569),
@@ -965,7 +965,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                           ),
                           child: Text(
                             '${_selected.length} selected',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF166534),
@@ -975,7 +975,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                       else
                         Text(
                           '(${_data?.total ?? 0} ${_data?.total == 1 ? "record" : "records"})',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
                             color: const Color(0xFF64748B),
@@ -1018,7 +1018,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             const SizedBox(height: 14),
                             Text(
                               'Failed to load records',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF111827),
@@ -1028,7 +1028,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             Text(
                               _error!,
                               textAlign: TextAlign.center,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 color: const Color(0xFF64748B),
                               ),
@@ -1082,7 +1082,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                     const SizedBox(height: 14),
                                     Text(
                                       'No Records Found',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,
                                         color: const Color(0xFF111827),
@@ -1092,7 +1092,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                                     Text(
                                       'Try adjusting your search query or filters to discover captured businesses.',
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 12,
                                         color: const Color(0xFF64748B),
                                       ),
@@ -1448,7 +1448,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
             Expanded(
               child: Text(
                 title,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                   color: const Color(0xFF17243B),
@@ -1587,7 +1587,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
               record.businessName.isEmpty
                   ? 'Business name unavailable'
                   : record.businessName,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 23,
                 fontWeight: FontWeight.w700,
                 color: const Color(0xFF17243B),
@@ -1791,7 +1791,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
           child: ExpansionTile(
             title: Text(
               'Additional Information',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.w600,
               ),

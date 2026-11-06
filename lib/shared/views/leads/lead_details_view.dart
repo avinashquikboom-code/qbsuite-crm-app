@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:quickboom_app/core/network/api_exception.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -265,7 +265,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                         children: [
                           Text(
                             'Select Pipeline Stage',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -273,7 +273,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                           ),
                           Text(
                             'Move this lead to any configured CRM stage',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -358,7 +358,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                 alignment: Alignment.center,
                                 child: Text(
                                   '${idx + 1}',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
@@ -372,7 +372,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                   children: [
                                     Text(
                                       stage.name,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 14,
                                         fontWeight: isCurrent
                                             ? FontWeight.bold
@@ -384,7 +384,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                     ),
                                     Text(
                                       'KEY: ${stage.key}',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 11,
                                         color: AppColors.textSecondary,
                                       ),
@@ -404,7 +404,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                   ),
                                   child: Text(
                                     'Current',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
@@ -550,7 +550,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                   children: [
                                     Text(
                                       lead.displayName,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                         color: AppColors.textPrimary,
@@ -561,7 +561,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                       const SizedBox(height: 4),
                                       Text(
                                         lead.fullName,
-                                        style: GoogleFonts.inter(
+                                        style: AppTypography.inter(
                                           fontSize: 14,
                                           color: AppColors.textSecondary,
                                         ),
@@ -603,7 +603,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                       alignment: Alignment.center,
                                       child: Text(
                                         '$currentOrder',
-                                        style: GoogleFonts.inter(
+                                        style: AppTypography.inter(
                                           fontSize: 10,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white,
@@ -613,7 +613,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                     const SizedBox(width: 6),
                                     Text(
                                       currentStage?.name ?? lead.stageName,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold,
                                         color:
@@ -642,7 +642,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                 ),
                                 child: Text(
                                   'SOURCE: ${lead.source}',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.w600,
                                     color: const Color(0xFF64748B),
@@ -660,7 +660,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                 ),
                                 child: Text(
                                   'FROM: ${lead.createdFrom}',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.w600,
                                     color: const Color(0xFF64748B),
@@ -710,7 +710,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                         'Pipeline Stage',
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
-                                        style: GoogleFonts.inter(
+                                        style: AppTypography.inter(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
                                           color: AppColors.textPrimary,
@@ -723,7 +723,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                               const SizedBox(width: 8),
                               Text(
                                 'Stage $currentOrder of ${stages.length}',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.textSecondary,
@@ -770,7 +770,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                     alignment: Alignment.center,
                                     child: Text(
                                       '$currentOrder',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
@@ -785,7 +785,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                       children: [
                                         Text(
                                           currentStage?.name ?? lead.stageName,
-                                          style: GoogleFonts.inter(
+                                          style: AppTypography.inter(
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold,
                                             color:
@@ -795,7 +795,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                         ),
                                         Text(
                                           'Tap to change pipeline stage',
-                                          style: GoogleFonts.inter(
+                                          style: AppTypography.inter(
                                             fontSize: 12,
                                             color:
                                                 (currentStage?.stageColor ??
@@ -850,7 +850,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                                 ),
                                 label: Text(
                                   'Advance to ${nextStage.name}',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 14,
                                   ),
@@ -909,11 +909,11 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                         indicatorSize: TabBarIndicatorSize.tab,
                         labelColor: AppColors.primary,
                         unselectedLabelColor: const Color(0xFF64748B),
-                        labelStyle: GoogleFonts.inter(
+                        labelStyle: AppTypography.inter(
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
                         ),
-                        unselectedLabelStyle: GoogleFonts.inter(
+                        unselectedLabelStyle: AppTypography.inter(
                           fontWeight: FontWeight.w500,
                           fontSize: 12,
                         ),
@@ -1051,7 +1051,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                         children: [
                           Text(
                             'Add Note',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -1059,7 +1059,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                           ),
                           Text(
                             'Record an internal note or meeting summary',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -1083,14 +1083,14 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                   maxLines: 5,
                   minLines: 3,
                   autofocus: true,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     color: AppColors.textPrimary,
                   ),
                   decoration: InputDecoration(
                     hintText:
                         'Enter note details, discussion summary, or next steps...',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 13,
                       color: AppColors.textPlaceholder,
                     ),
@@ -1128,7 +1128,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                           : () => Navigator.pop(sheetContext),
                       child: Text(
                         'Cancel',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textSecondary,
@@ -1210,7 +1210,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                             )
                           : Text(
                               'Save Note',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -1255,7 +1255,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                 const SizedBox(height: 16),
                 Text(
                   'No Notes Yet',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -1265,7 +1265,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                 Text(
                   'Add a note to keep track of important information about this lead.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -1287,7 +1287,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                   icon: const Icon(Remix.add_line, size: 16),
                   label: Text(
                     'Add Note',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                     ),
@@ -1320,7 +1320,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                   Expanded(
                     child: Text(
                       'Lead Notes (${allNotes.length})',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -1347,7 +1347,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                           const SizedBox(width: 4),
                           Text(
                             'Add Note',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
@@ -1398,7 +1398,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                     children: [
                       Text(
                         content,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13.5,
                           height: 1.45,
                           color: AppColors.textPrimary,
@@ -1417,7 +1417,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                           Expanded(
                             child: Text(
                               '$author • $dateStr',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11.5,
                                 color: AppColors.textSecondary,
                                 fontWeight: FontWeight.w500,
@@ -1458,7 +1458,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
             const SizedBox(height: 10),
             Text(
               'Unable to load notes.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -1476,7 +1476,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
               onPressed: () => ref.invalidate(sharedLeadNotesProvider(lead.id)),
               child: Text(
                 'Retry',
-                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                style: AppTypography.inter(fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -1508,7 +1508,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
             const SizedBox(height: 16),
             Text(
               'No Visits Scheduled',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -1518,7 +1518,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
             Text(
               'Visits scheduled for this lead will appear here.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),
@@ -1541,7 +1541,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                 icon: const Icon(Remix.add_line, size: 16),
                 label: Text(
                   'Schedule Visit',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                   ),
@@ -1565,7 +1565,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
               Expanded(
                 child: Text(
                   'Field Visits (${visits.length})',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -1593,7 +1593,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                         const SizedBox(width: 4),
                         Text(
                           'Schedule Visit',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primary,
@@ -1663,7 +1663,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                               : (statusStr == 'IN_PROGRESS'
                                   ? 'In Progress'
                                   : 'Scheduled'),
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: statusColor,
@@ -1682,7 +1682,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                             const SizedBox(width: 4),
                             Text(
                               v.assignedEmployee!,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11.5,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textPrimary,
@@ -1695,7 +1695,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                   const SizedBox(height: 8),
                   Text(
                     v.purpose,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13.5,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textPrimary,
@@ -1713,7 +1713,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                       Expanded(
                         child: Text(
                           v.location,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -1734,7 +1734,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                       const SizedBox(width: 4),
                       Text(
                         '$dateLabel${timeLabel.isNotEmpty ? ' • $timeLabel' : ''}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                           fontWeight: FontWeight.w500,
@@ -1753,7 +1753,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                       ),
                       child: Text(
                         v.notes!.trim(),
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -1803,7 +1803,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                   children: [
                     Text(
                       'Lead Created (${lead.source.replaceAll('_', ' ')})',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13.5,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -1811,7 +1811,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                     ),
                     Text(
                       createdStr,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         color: AppColors.textSecondary,
                       ),
@@ -1844,7 +1844,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                     children: [
                       Text(
                         'Current Stage: ${lead.stageName}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13.5,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textPrimary,
@@ -1852,7 +1852,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
                       ),
                       Text(
                         'Active in pipeline',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),
@@ -1882,7 +1882,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
         children: [
           Text(
             'Stage History',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1903,7 +1903,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
               Expanded(
                 child: Text(
                   '${lead.stageName} (Current)',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -1915,7 +1915,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
           const SizedBox(height: 8),
           Text(
             'Created from: ${lead.createdFrom.replaceAll('_', ' ')}',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -1925,7 +1925,7 @@ class _LeadDetailsViewState extends ConsumerState<LeadDetailsView>
             const SizedBox(height: 4),
             Text(
               'Assigned to: ${lead.assignedToName}',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -57,7 +57,7 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
       appBar: AppBar(
         title: Text(
           'Audit Logs & Activity',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -85,10 +85,10 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
                     child: TextField(
                       controller: _searchController,
                       onChanged: (val) => setState(() {}),
-                      style: GoogleFonts.inter(fontSize: 14),
+                      style: AppTypography.inter(fontSize: 14),
                       decoration: InputDecoration(
                         hintText: 'Search logs by action, user, event...',
-                        hintStyle: GoogleFonts.inter(
+                        hintStyle: AppTypography.inter(
                           fontSize: 13,
                           color: const Color(0xFF94A3B8),
                         ),
@@ -120,7 +120,7 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
                                 setState(() => _selectedModule = mod),
                             backgroundColor: const Color(0xFFF1F5F9),
                             selectedColor: AppColors.primaryLight,
-                            labelStyle: GoogleFonts.inter(
+                            labelStyle: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: isSelected
                                   ? FontWeight.bold
@@ -153,7 +153,7 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
                   ? Center(
                       child: Text(
                         'No audit logs recorded',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           color: AppColors.textSecondary,
                         ),
@@ -198,7 +198,7 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
                 ),
                 child: Text(
                   log.action,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primary,
@@ -207,7 +207,7 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
               ),
               Text(
                 '${log.date} • ${log.time}',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   color: const Color(0xFF94A3B8),
                 ),
@@ -217,7 +217,7 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
           const SizedBox(height: 8),
           Text(
             log.description,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -231,14 +231,14 @@ class _AdminAuditLogsViewState extends ConsumerState<AdminAuditLogsView> {
             children: [
               Text(
                 'User: ${log.user} (${log.role})',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   color: AppColors.textSecondary,
                 ),
               ),
               Text(
                 'Module: ${log.module}',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   fontWeight: FontWeight.w600,
                   color: const Color(0xFF64748B),

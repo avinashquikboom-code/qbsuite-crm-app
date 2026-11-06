@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 class StatCard extends StatelessWidget {
@@ -68,7 +68,7 @@ class StatCard extends StatelessWidget {
           const Spacer(),
           Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 26,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -78,7 +78,7 @@ class StatCard extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11,
               fontWeight: FontWeight.w700,
               color: AppColors.textPrimary,
@@ -90,7 +90,7 @@ class StatCard extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             subtitle,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 10,
               fontWeight: FontWeight.w500,
               color: AppColors.textSecondary,
@@ -169,7 +169,7 @@ class AttendanceCard extends StatelessWidget {
                       children: [
                         Text(
                           'Active Session',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -220,7 +220,7 @@ class AttendanceCard extends StatelessWidget {
       children: [
         Text(
           '12:24 PM',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             color: Colors.white,
             fontSize: isMobile ? 24 : 28,
             fontWeight: FontWeight.bold,

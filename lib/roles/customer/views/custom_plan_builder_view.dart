@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/custom_plan_model.dart';
@@ -48,7 +48,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
           children: [
             Text(
               'Custom Plan Builder',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -56,7 +56,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
             ),
             Text(
               'Tailor features & duration for your business',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w500,
                 color: AppColors.textSecondary,
@@ -105,7 +105,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                     // 4. Feature Options List
                     Text(
                       'CONFIGURABLE FEATURES & SERVICES',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w800,
                         color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -160,7 +160,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                 const SizedBox(height: 12),
                 Text(
                   'Failed to load plan options',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -214,7 +214,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
               children: [
                 Text(
                   'Server-Verified Pricing',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -223,7 +223,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                 const SizedBox(height: 2),
                 Text(
                   'All pricing, duration discounts, and GST are calculated live by the backend server based on your selected quantities.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textSecondary,
@@ -253,7 +253,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
       children: [
         Text(
           'SELECT PLAN DURATION',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 11,
             fontWeight: FontWeight.w800,
             color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -299,7 +299,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                     children: [
                       Text(
                         d['label'] as String,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: isSelected
@@ -322,7 +322,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                           ),
                           child: Text(
                             discount,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.w800,
                               color: isSelected
@@ -359,7 +359,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
             child: ChoiceChip(
               label: Text(
                 cat['label']!,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                   color: isSelected ? Colors.white : AppColors.textPrimary,
@@ -459,7 +459,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                           Expanded(
                             child: Text(
                               opt.name,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -468,7 +468,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                           ),
                           Text(
                             '₹${opt.monthlyPrice.toInt()}/mo',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.w800,
                               color: AppColors.primary,
@@ -481,7 +481,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                         const SizedBox(height: 2),
                         Text(
                           opt.description!,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w500,
                             color: AppColors.textSecondary,
@@ -503,7 +503,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                 children: [
                   Text(
                     'Quantity (${opt.unitName}s):',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -525,7 +525,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                         padding: const EdgeInsets.symmetric(horizontal: 12.0),
                         child: Text(
                           '$quantity',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -575,7 +575,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
       alignment: Alignment.center,
       child: Text(
         'No options available under this category',
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 12,
           fontWeight: FontWeight.w500,
           color: AppColors.textSecondary,
@@ -598,7 +598,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
             ),
             child: Text(
               'Select features to view live server price preview',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textSecondary,
@@ -629,7 +629,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                 children: [
                   Text(
                     'PLAN SUMMARY BREAKDOWN',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w800,
                       color: AppColors.primary,
@@ -647,7 +647,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                     ),
                     child: Text(
                       '${preview.duration} ${preview.durationUnit}S',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w800,
                         color: AppColors.primary,
@@ -666,7 +666,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                       Expanded(
                         child: Text(
                           '${it.quantity}x ${it.name}',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: AppColors.textPrimary,
@@ -675,7 +675,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                       ),
                       Text(
                         '₹${it.totalPrice.toInt()}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textPrimary,
@@ -700,7 +700,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                 children: [
                   Text(
                     'Final Payable Amount',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.w900,
                       color: AppColors.textPrimary,
@@ -708,7 +708,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                   ),
                   Text(
                     '₹${preview.totalAmount.toInt()}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.w900,
                       color: AppColors.primary,
@@ -737,7 +737,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
         ),
         child: Text(
           'Failed to calculate price: ${err.toString()}',
-          style: GoogleFonts.inter(fontSize: 12, color: AppColors.error),
+          style: AppTypography.inter(fontSize: 12, color: AppColors.error),
         ),
       ),
     );
@@ -751,7 +751,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
         children: [
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11,
               fontWeight: FontWeight.w500,
               color: isDiscount ? AppColors.primary : AppColors.textSecondary,
@@ -759,7 +759,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
           ),
           Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11,
               fontWeight: FontWeight.bold,
               color: isDiscount ? AppColors.primary : AppColors.textPrimary,
@@ -799,7 +799,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
               children: [
                 Text(
                   'TOTAL AMOUNT',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10,
                     fontWeight: FontWeight.w800,
                     color: AppColors.textSecondary,
@@ -807,7 +807,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                 ),
                 Text(
                   '₹${total.toInt()}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.w900,
                     color: AppColors.textPrimary,
@@ -862,7 +862,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                           const SizedBox(width: 8),
                           Text(
                             'Activate Custom Plan',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -904,7 +904,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
               const SizedBox(width: 10),
               Text(
                 'Plan Activated!',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -917,7 +917,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
             children: [
               Text(
                 'Your custom plan is now active.',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   color: AppColors.textSecondary,
                 ),
@@ -935,7 +935,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                   children: [
                     Text(
                       '• Expiry calculated from activation date.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),
@@ -943,7 +943,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                     const SizedBox(height: 4),
                     Text(
                       '• Monthly milestone schedules generated.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),
@@ -951,7 +951,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                     const SizedBox(height: 4),
                     Text(
                       '• Expiry reminders enabled (10d, 5d, 1d, 0d).',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),

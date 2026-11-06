@@ -3,7 +3,7 @@ import "package:quickboom_app/core/services/permission_manager.dart";
 import "package:quickboom_app/shared/widgets/permission_guarded_view.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -66,7 +66,7 @@ class _AdminVisitsViewState extends ConsumerState<AdminVisitsView>
       appBar: AppBar(
         title: Text(
           'Client Field Visits',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -88,7 +88,7 @@ class _AdminVisitsViewState extends ConsumerState<AdminVisitsView>
               indicatorWeight: 3,
               labelColor: AppColors.primary,
               unselectedLabelColor: AppColors.textSecondary,
-              labelStyle: GoogleFonts.inter(
+              labelStyle: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
               ),
@@ -137,7 +137,7 @@ class _AdminVisitsViewState extends ConsumerState<AdminVisitsView>
       return Center(
         child: Text(
           'No visits in this category',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -175,7 +175,7 @@ class _AdminVisitsViewState extends ConsumerState<AdminVisitsView>
                   v.customerName,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 15.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -191,7 +191,7 @@ class _AdminVisitsViewState extends ConsumerState<AdminVisitsView>
                 ),
                 child: Text(
                   v.status.label,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10.5,
                     fontWeight: FontWeight.bold,
                     color: v.status.color,
@@ -217,7 +217,7 @@ class _AdminVisitsViewState extends ConsumerState<AdminVisitsView>
               ),
               child: Text(
                 'Notes: ${v.notes}',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   color: const Color(0xFF475569),
                 ),
@@ -239,7 +239,7 @@ class _AdminVisitsViewState extends ConsumerState<AdminVisitsView>
             text,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),

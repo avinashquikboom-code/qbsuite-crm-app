@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../core/theme/app_colors.dart';
 import '../models/ai_studio_model.dart';
@@ -269,7 +269,7 @@ class _CustomerSocialConnectModalState
               children: [
                 Text(
                   'Connect Social Channel',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -291,7 +291,7 @@ class _CustomerSocialConnectModalState
               initialValue: _platform,
               decoration: InputDecoration(
                 labelText: 'Platform',
-                labelStyle: GoogleFonts.inter(fontSize: 13),
+                labelStyle: AppTypography.inter(fontSize: 13),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -349,7 +349,7 @@ class _CustomerSocialConnectModalState
                     Expanded(
                       child: Text(
                         _oauthError!,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFFB91C1C),
                         ),
@@ -370,7 +370,7 @@ class _CustomerSocialConnectModalState
                 controller: _nameController,
                 decoration: InputDecoration(
                   labelText: 'Account / Page Name',
-                  labelStyle: GoogleFonts.inter(fontSize: 13),
+                  labelStyle: AppTypography.inter(fontSize: 13),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -381,7 +381,7 @@ class _CustomerSocialConnectModalState
                 controller: _usernameController,
                 decoration: InputDecoration(
                   labelText: 'Handle / Username (@)',
-                  labelStyle: GoogleFonts.inter(fontSize: 13),
+                  labelStyle: AppTypography.inter(fontSize: 13),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -410,7 +410,7 @@ class _CustomerSocialConnectModalState
                         )
                       : Text(
                           'Connect Account',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -470,7 +470,7 @@ class _CustomerSocialConnectModalState
                   const SizedBox(width: 6),
                   Text(
                     'Secure OAuth Connection',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: const Color(0xFF1D4ED8),
@@ -482,7 +482,7 @@ class _CustomerSocialConnectModalState
               Text(
                 'You will be redirected to $platformLabel to authorize QuikBoom. '
                 'No passwords are stored — only a secure access token.',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   color: const Color(0xFF1E3A8A),
                   height: 1.4,
@@ -521,7 +521,7 @@ class _CustomerSocialConnectModalState
               _isLaunchingOAuth
                   ? 'Opening $platformLabel…'
                   : 'Connect with $platformLabel',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -569,7 +569,7 @@ class _CustomerSocialConnectModalState
               Text(
                 'Waiting for $platformLabel authorization…',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xFF065F46),
@@ -579,7 +579,7 @@ class _CustomerSocialConnectModalState
               Text(
                 'Complete authorization in the browser,\nthen return to this app.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   color: const Color(0xFF047857),
                   height: 1.4,
@@ -588,7 +588,7 @@ class _CustomerSocialConnectModalState
               const SizedBox(height: 12),
               Text(
                 'Checking… ($_pollCount/$_maxPolls)',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   color: const Color(0xFF6B7280),
                 ),
@@ -601,7 +601,7 @@ class _CustomerSocialConnectModalState
           onPressed: _cancelPolling,
           child: Text(
             'Cancel',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               color: const Color(0xFF6B7280),
             ),

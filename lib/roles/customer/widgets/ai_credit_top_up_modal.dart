@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/app_toast.dart';
 import '../services/customer_ai_studio_service.dart';
@@ -101,7 +101,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
               children: [
                 Text(
                   'Top-Up AI Credits',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -144,7 +144,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                         children: [
                           Text(
                             '${p['credits']} Credits',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -152,7 +152,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                           ),
                           Text(
                             p['label'] as String,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: const Color(0xFF059669),
                               fontWeight: FontWeight.w600,
@@ -162,7 +162,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                       ),
                       Text(
                         '₹${(p['price'] as double).toStringAsFixed(0)}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -196,7 +196,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                       )
                     : Text(
                         'Pay ₹${_selectedPrice.toStringAsFixed(0)} & Add Credits',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

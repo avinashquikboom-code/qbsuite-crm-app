@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:video_player/video_player.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -361,7 +361,7 @@ class _MarketingVideoIntroductionScreenState
                   Text(
                     'Video unavailable.\nContinuing…',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       color: Colors.white70,
                     ),
@@ -449,7 +449,7 @@ class _MarketingVideoIntroductionScreenState
                             widget.video.title,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
@@ -463,7 +463,7 @@ class _MarketingVideoIntroductionScreenState
                               widget.video.subtitle!,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white70,
@@ -588,7 +588,7 @@ class _SkipButton extends StatelessWidget {
           children: [
             Text(
               'Skip',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13.5,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,

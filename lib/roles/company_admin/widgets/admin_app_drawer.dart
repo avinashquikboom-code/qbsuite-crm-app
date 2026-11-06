@@ -3,7 +3,7 @@ import "package:quickboom_app/core/models/permission_model.dart";
 import "package:quickboom_app/core/services/permission_manager.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 
 import 'package:remixicon/remixicon.dart';
 
@@ -49,7 +49,7 @@ class AdminAppDrawer extends ConsumerWidget {
             const SizedBox(width: 8),
             Text(
               'Sign Out',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -58,7 +58,7 @@ class AdminAppDrawer extends ConsumerWidget {
         ),
         content: Text(
           'Are you sure you want to end your Company Admin session?',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -68,7 +68,7 @@ class AdminAppDrawer extends ConsumerWidget {
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.inter(color: AppColors.textSecondary),
+              style: AppTypography.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -93,7 +93,7 @@ class AdminAppDrawer extends ConsumerWidget {
             },
             child: Text(
               'Logout',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -215,7 +215,7 @@ class AdminAppDrawer extends ConsumerWidget {
                           ),
                           child: Text(
                             'ADMIN',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
@@ -228,7 +228,7 @@ class AdminAppDrawer extends ConsumerWidget {
                     const SizedBox(height: 14),
                     Text(
                       adminName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -239,7 +239,7 @@ class AdminAppDrawer extends ConsumerWidget {
                     const SizedBox(height: 2),
                     Text(
                       companyName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         color: const Color(0xFF94A3B8),
                       ),
@@ -441,7 +441,7 @@ class AdminAppDrawer extends ConsumerWidget {
                 padding: const EdgeInsets.all(14),
                 child: Text(
                   'QB Suite v1.0.0 • Company Admin Workspace',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: const Color(0xFF94A3B8),
                   ),
@@ -459,7 +459,7 @@ class AdminAppDrawer extends ConsumerWidget {
       padding: const EdgeInsets.only(left: 12, top: 10, bottom: 6),
       child: Text(
         title,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 10.5,
           fontWeight: FontWeight.w800,
           color: const Color(0xFF94A3B8),
@@ -500,7 +500,7 @@ class AdminAppDrawer extends ConsumerWidget {
           leading: Icon(icon, color: itemColor, size: 20),
           title: Text(
             title,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13.5,
               fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
               color: itemColor,
@@ -518,7 +518,7 @@ class AdminAppDrawer extends ConsumerWidget {
                   ),
                   child: Text(
                     badge,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 9.5,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryDark,

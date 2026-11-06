@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/customer_plan_model.dart';
@@ -124,7 +124,7 @@ class PlanCard extends StatelessWidget {
                                         ? 'YOUR UPCOMING PLAN'
                                         : 'YOUR CURRENT ACTIVE PLAN'))
                             : 'MOST POPULAR',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w800,
                           color: Colors.white,
@@ -155,7 +155,7 @@ class PlanCard extends StatelessWidget {
                           children: [
                             Text(
                               plan.name,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 17,
                                 fontWeight: FontWeight.w900,
                                 color: AppColors.textPrimary,
@@ -169,7 +169,7 @@ class PlanCard extends StatelessWidget {
                               const SizedBox(height: 2),
                               Text(
                                 plan.subtitle!,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.primaryDark,
@@ -197,7 +197,7 @@ class PlanCard extends StatelessWidget {
                           ),
                           child: Text(
                             'Save 20%',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w800,
                               color: AppColors.primaryDark,
@@ -217,7 +217,7 @@ class PlanCard extends StatelessWidget {
                       Flexible(
                         child: Text(
                           '₹${_formatPrice(price)}',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 24,
                             fontWeight: FontWeight.w900,
                             color: AppColors.textPrimary,
@@ -230,7 +230,7 @@ class PlanCard extends StatelessWidget {
                       const SizedBox(width: 6),
                       Text(
                         billingCycle.priceSuffix,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textSecondary,
@@ -253,7 +253,7 @@ class PlanCard extends StatelessWidget {
                         Expanded(
                           child: Text(
                             '20% off applied — billed yearly',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: AppColors.primaryDark,
@@ -273,7 +273,7 @@ class PlanCard extends StatelessWidget {
                   // Features Header
                   Text(
                     'PACKAGE INCLUDES',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.w800,
                       color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -324,7 +324,7 @@ class PlanCard extends StatelessWidget {
                                                           ? 'Renew Subscription'
                                                           : 'Current Plan')))
                                         : 'Purchase Now',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -353,7 +353,7 @@ class PlanCard extends StatelessWidget {
                                 Flexible(
                                   child: Text(
                                     'Purchase Now',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),

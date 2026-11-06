@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
@@ -319,7 +319,7 @@ class LeadSocialMediaCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     'Social Media Presence',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: const Color(0xFF0F172A),
@@ -353,7 +353,7 @@ class LeadSocialMediaCard extends StatelessWidget {
                       const SizedBox(width: 5),
                       Text(
                         '${platforms.length} Found',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFF475569),
@@ -381,7 +381,7 @@ class LeadSocialMediaCard extends StatelessWidget {
                         const SizedBox(height: 6),
                         Text(
                           'No social media handles added',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                             color: const Color(0xFF94A3B8),
@@ -448,7 +448,7 @@ class LeadSocialMediaCard extends StatelessWidget {
                   children: [
                     Text(
                       p.label,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF0F172A),
@@ -457,7 +457,7 @@ class LeadSocialMediaCard extends StatelessWidget {
                     const SizedBox(height: 1),
                     Text(
                       p.handle,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                         color: const Color(0xFF64748B),
@@ -521,7 +521,7 @@ class LeadSocialMediaCard extends StatelessWidget {
                         children: [
                           Text(
                             'Open',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w700,
                               color: p.brandColor,

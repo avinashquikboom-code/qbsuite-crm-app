@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/customer_plan_model.dart';
@@ -115,7 +115,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                 const SizedBox(width: 10),
                 Text(
                   'Upcoming Plan',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFF92400E),
@@ -134,7 +134,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                   ),
                   child: Text(
                     'Upcoming',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w800,
                       color: Colors.white,
@@ -161,7 +161,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                         children: [
                           Text(
                             upcomingPlan.planName,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -170,7 +170,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                           const SizedBox(height: 2),
                           Text(
                             upcomingPlan.billingCycle.label,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppColors.textSecondary,
@@ -192,7 +192,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                         ),
                         child: Text(
                           '₹${upcomingPlan.price.round()}',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                             color: AppColors.textPrimary,
@@ -219,7 +219,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                           children: [
                             Text(
                               'Starts',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textSecondary,
@@ -228,7 +228,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                             const SizedBox(height: 2),
                             Text(
                               startDateFormatted,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -249,7 +249,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                           children: [
                             Text(
                               'Ends',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textSecondary,
@@ -258,7 +258,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                             const SizedBox(height: 2),
                             Text(
                               endDateFormatted,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -283,7 +283,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         'Plan schedules and deliverables will activate on $startDateFormatted.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           color: AppColors.textSecondary,
                         ),

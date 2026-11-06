@@ -2,7 +2,7 @@ import 'data_capture_history_screen.dart';
 import '../../services/data_capture_records_service.dart';
 import 'data_capture_records_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/constants/app_bar_titles.dart';
 import 'package:quickboom_app/shared/models/data_capture_model.dart';
@@ -135,7 +135,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                           ),
                           child: Text(
                             'GOOGLE PLACES LEAD CAPTURE',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryLight,
@@ -153,7 +153,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                     const SizedBox(height: 12),
                     Text(
                       'Find Businesses & Prospects',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -162,7 +162,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                     const SizedBox(height: 4),
                     Text(
                       'Find verified businesses and extract prospective leads directly from Google Places into your CRM pipeline.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         color: Colors.white70,
                         height: 1.3,
@@ -187,7 +187,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                         icon: const Icon(Icons.search_rounded, size: 20),
                         label: Text(
                           'Start New Capture',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -234,7 +234,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                   ),
                   title: Text(
                     'Capture History',
-                    style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+                    style: AppTypography.inter(fontWeight: FontWeight.w600),
                   ),
                   subtitle: const Text(
                     'View your previous business searches and captures',
@@ -450,7 +450,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                 title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: titleFontSize,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -464,7 +464,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
             value,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: valueFontSize,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,

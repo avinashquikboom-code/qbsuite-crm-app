@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/constants/app_bar_titles.dart';
@@ -143,7 +143,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               const SizedBox(height: 20),
               Text(
                 'Reset Your Password',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 26,
                   fontWeight: FontWeight.w900,
                   color: AppColors.textPrimary,
@@ -157,7 +157,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     : _stage == 'success'
                     ? 'Your password reset was successful.'
                     : 'Choose how you want to receive the reset link.',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   color: AppColors.textSecondary,
                   height: 1.5,
@@ -270,7 +270,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   : _resetMethod == 'email'
                   ? 'Send Reset Link'
                   : 'Send OTP to Mobile',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
@@ -309,7 +309,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   _resetMethod == 'email'
                       ? 'A reset link will be sent to your registered corporate email. Check your inbox and spam folder.'
                       : 'A 6-digit OTP will be sent to your registered mobile number via SMS.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                     height: 1.4,
@@ -351,7 +351,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               Expanded(
                 child: Text(
                   'OTP sent to +91 ${_mobileController.text.trim()}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.primary,
@@ -362,7 +362,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 onTap: _isLoading ? null : _resetToInput,
                 child: Text(
                   'Change',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primary,
@@ -436,7 +436,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 : const Icon(Remix.check_double_line, size: 18),
             label: Text(
               _isLoading ? 'Verifying…' : 'Verify OTP & Reset Password',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
@@ -458,7 +458,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
             icon: const Icon(Remix.refresh_line, size: 16),
             label: Text(
               'Resend OTP',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textSecondary,
@@ -516,7 +516,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               const SizedBox(height: 18),
               Text(
                 isEmail ? 'Check Your Email' : 'Password Reset!',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -528,7 +528,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                     ? 'Reset instructions have been sent to:\n$sentTo'
                     : 'Your password has been successfully reset.\nYou can now sign in.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   color: AppColors.textSecondary,
                   height: 1.5,
@@ -546,7 +546,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
             icon: const Icon(Remix.arrow_left_line, size: 18),
             label: Text(
               'Back to Sign In',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
@@ -604,7 +604,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               const SizedBox(width: 6),
               Text(
                 label,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: isActive ? FontWeight.bold : FontWeight.w500,
                   color: isActive ? AppColors.primary : AppColors.textSecondary,
@@ -658,7 +658,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   Widget _fieldLabel(String label) {
     return Text(
       label,
-      style: GoogleFonts.inter(
+      style: AppTypography.inter(
         fontSize: 12,
         fontWeight: FontWeight.bold,
         color: AppColors.textPrimary,
@@ -681,14 +681,14 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
       obscureText: isPassword && !isPasswordVisible,
-      style: GoogleFonts.inter(
+      style: AppTypography.inter(
         color: AppColors.textPrimary,
         fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: GoogleFonts.inter(
+        hintStyle: AppTypography.inter(
           color: AppColors.textSecondary.withValues(alpha: 0.7),
           fontSize: 14,
           fontWeight: FontWeight.w400,

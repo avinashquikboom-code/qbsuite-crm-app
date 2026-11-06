@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../models/influencer_model.dart';
@@ -29,7 +29,7 @@ class _AdminInfluencerBookingManagementViewState
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         title: Text(
           booking.influencerName,
-          style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 16),
+          style: AppTypography.inter(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -37,7 +37,7 @@ class _AdminInfluencerBookingManagementViewState
           children: [
             Text(
               'Booking ID: ${booking.bookingId}',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -45,22 +45,22 @@ class _AdminInfluencerBookingManagementViewState
             const SizedBox(height: 6),
             Text(
               'Package: ${booking.packageName}',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
               ),
             ),
             Text(
               'Date: ${booking.campaignDate}',
-              style: GoogleFonts.inter(fontSize: 13),
+              style: AppTypography.inter(fontSize: 13),
             ),
             Text(
               'Client: ${booking.brandName} (${booking.contactPerson})',
-              style: GoogleFonts.inter(fontSize: 13),
+              style: AppTypography.inter(fontSize: 13),
             ),
             Text(
               'Amount: ₹${booking.totalAmount.toStringAsFixed(0)}',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryDark,
@@ -69,7 +69,7 @@ class _AdminInfluencerBookingManagementViewState
             const SizedBox(height: 8),
             Text(
               'Current Status: ${booking.status}',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontStyle: FontStyle.italic,
               ),
@@ -94,7 +94,7 @@ class _AdminInfluencerBookingManagementViewState
             },
             child: Text(
               'Reject',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
               ),
@@ -121,7 +121,7 @@ class _AdminInfluencerBookingManagementViewState
             },
             child: Text(
               'Approve',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
@@ -155,7 +155,7 @@ class _AdminInfluencerBookingManagementViewState
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Admin Panel',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -198,7 +198,7 @@ class _AdminInfluencerBookingManagementViewState
                     children: [
                       Text(
                         'Recent Bookings',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -206,7 +206,7 @@ class _AdminInfluencerBookingManagementViewState
                       ),
                       Text(
                         'View All >',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12.5,
                           fontWeight: FontWeight.w600,
                           color: AppColors.primaryDark,
@@ -223,7 +223,7 @@ class _AdminInfluencerBookingManagementViewState
                         padding: const EdgeInsets.symmetric(vertical: 36),
                         child: Text(
                           'No influencer bookings found',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             color: AppColors.textSecondary,
                           ),
@@ -272,7 +272,7 @@ class _AdminInfluencerBookingManagementViewState
                 child: Center(
                   child: Text(
                     _tabs[idx],
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11.5,
                       fontWeight: isSelected
                           ? FontWeight.bold
@@ -312,7 +312,7 @@ class _AdminInfluencerBookingManagementViewState
             Text(
               title,
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 10.5,
                 color: AppColors.textSecondary,
               ),
@@ -323,7 +323,7 @@ class _AdminInfluencerBookingManagementViewState
             Text(
               value,
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -410,7 +410,7 @@ class _AdminInfluencerBookingManagementViewState
                 children: [
                   Text(
                     booking.influencerName,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13.5,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -419,14 +419,14 @@ class _AdminInfluencerBookingManagementViewState
                   const SizedBox(height: 2),
                   Text(
                     booking.packageName,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: AppColors.textSecondary,
                     ),
                   ),
                   Text(
                     booking.campaignDate,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: AppColors.textSecondary,
                     ),
@@ -444,7 +444,7 @@ class _AdminInfluencerBookingManagementViewState
               ),
               child: Text(
                 booking.status,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
                   color: badgeText,

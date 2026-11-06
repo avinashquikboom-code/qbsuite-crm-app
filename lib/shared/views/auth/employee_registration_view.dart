@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -218,13 +218,13 @@ class _EmployeeRegistrationViewState
                 const SizedBox(width: 8),
                 Text(
                   'Account Created',
-                  style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                  style: AppTypography.inter(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             content: Text(
               'Your employee account (${_selectedEmployeeType == 'FREELANCER' ? 'Freelancer' : 'Company Employee'}) has been registered.\n\nUse your Email (${_emailCtrl.text.trim()}) and Password to log in.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14,
                 color: AppColors.textSecondary,
               ),
@@ -244,7 +244,7 @@ class _EmployeeRegistrationViewState
                 },
                 child: Text(
                   'Proceed to Login',
-                  style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                  style: AppTypography.inter(fontWeight: FontWeight.bold),
                 ),
               ),
             ],
@@ -286,7 +286,7 @@ class _EmployeeRegistrationViewState
               : _currentStep == 2
               ? 'Step 2 of 3: Choose Plan'
               : 'Step 3 of 3: Payment',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 14,
             fontWeight: FontWeight.w600,
             color: AppColors.textSecondary,
@@ -340,7 +340,7 @@ class _EmployeeRegistrationViewState
                 const SizedBox(width: 6),
                 Text(
                   'EMPLOYEE REGISTRATION',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10,
                     fontWeight: FontWeight.w800,
                     color: AppColors.primaryDark,
@@ -355,7 +355,7 @@ class _EmployeeRegistrationViewState
           // Title
           Text(
             'Create Your Account',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 26,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -367,7 +367,7 @@ class _EmployeeRegistrationViewState
           // Subtitle
           Text(
             'Personal & Professional Details',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14,
               color: AppColors.textSecondary,
             ),
@@ -476,7 +476,7 @@ class _EmployeeRegistrationViewState
           // ══════════════════════════════════════════════════
           Text(
             'Employee Type *',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -524,7 +524,7 @@ class _EmployeeRegistrationViewState
                   const SizedBox(width: 4),
                   Text(
                     _employeeTypeError!,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppColors.error,
@@ -583,7 +583,7 @@ class _EmployeeRegistrationViewState
               Expanded(
                 child: Text(
                   'I agree to the Terms & Conditions and Privacy Policy of QB Suite.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),
@@ -598,7 +598,7 @@ class _EmployeeRegistrationViewState
               padding: const EdgeInsets.only(left: 4),
               child: Text(
                 _termsError!,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   color: AppColors.error,
@@ -629,7 +629,7 @@ class _EmployeeRegistrationViewState
                 children: [
                   Text(
                     'Aage Jao — Plan Choose Karo',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
@@ -655,7 +655,7 @@ class _EmployeeRegistrationViewState
               children: [
                 Text(
                   'Already registered? ',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -664,7 +664,7 @@ class _EmployeeRegistrationViewState
                   onTap: () => Navigator.pop(context),
                   child: Text(
                     'Sign In',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primary,
@@ -724,7 +724,7 @@ class _EmployeeRegistrationViewState
       children: [
         Text(
           'Step 2: Choose Your Plan',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 24,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -733,7 +733,7 @@ class _EmployeeRegistrationViewState
         const SizedBox(height: 4),
         Text(
           'Select the plan that fits your work requirements.',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -763,7 +763,7 @@ class _EmployeeRegistrationViewState
                     children: [
                       Text(
                         p['name'] as String,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -771,7 +771,7 @@ class _EmployeeRegistrationViewState
                       ),
                       Text(
                         p['price'] as String,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.w800,
                           color: AppColors.primary,
@@ -782,7 +782,7 @@ class _EmployeeRegistrationViewState
                   const SizedBox(height: 6),
                   Text(
                     p['desc'] as String,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -803,7 +803,7 @@ class _EmployeeRegistrationViewState
                           const SizedBox(width: 4),
                           Text(
                             f,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: AppColors.textPrimary,
                             ),
@@ -838,7 +838,7 @@ class _EmployeeRegistrationViewState
               children: [
                 Text(
                   'Proceed to Payment',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
@@ -866,7 +866,7 @@ class _EmployeeRegistrationViewState
       children: [
         Text(
           'Step 3: Payment Verification',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 24,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -875,7 +875,7 @@ class _EmployeeRegistrationViewState
         const SizedBox(height: 4),
         Text(
           'Choose your preferred payment mode to activate account.',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -895,7 +895,7 @@ class _EmployeeRegistrationViewState
             children: [
               Text(
                 'Registration Summary',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
@@ -925,7 +925,7 @@ class _EmployeeRegistrationViewState
 
         Text(
           'Select Payment Method',
-          style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold),
+          style: AppTypography.inter(fontSize: 14, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 10),
 
@@ -975,7 +975,7 @@ class _EmployeeRegistrationViewState
                     _selectedPaymentMethod == 'ONLINE'
                         ? 'Pay & Activate Account'
                         : 'Submit Registration Request',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
@@ -994,14 +994,14 @@ class _EmployeeRegistrationViewState
         children: [
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
           ),
           Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1045,7 +1045,7 @@ class _EmployeeRegistrationViewState
                 children: [
                   Text(
                     title,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -1053,7 +1053,7 @@ class _EmployeeRegistrationViewState
                   ),
                   Text(
                     subtitle,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: AppColors.textSecondary,
                     ),
@@ -1137,7 +1137,7 @@ class _EmployeeRegistrationViewState
             const SizedBox(height: 10),
             Text(
               title,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: isSelected
@@ -1148,7 +1148,7 @@ class _EmployeeRegistrationViewState
             const SizedBox(height: 2),
             Text(
               subtitle,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11,
                 color: AppColors.textSecondary,
               ),
@@ -1179,7 +1179,7 @@ class _EmployeeRegistrationViewState
       children: [
         Text(
           label,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 12,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -1192,14 +1192,14 @@ class _EmployeeRegistrationViewState
           keyboardType: keyboardType,
           inputFormatters: inputFormatters,
           onChanged: onChanged,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             color: AppColors.textPrimary,
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: GoogleFonts.inter(
+            hintStyle: AppTypography.inter(
               color: AppColors.textSecondary.withValues(alpha: 0.8),
               fontSize: 14,
               fontWeight: FontWeight.w400,
@@ -1261,7 +1261,7 @@ class _EmployeeRegistrationViewState
                 Expanded(
                   child: Text(
                     errorText,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppColors.error,

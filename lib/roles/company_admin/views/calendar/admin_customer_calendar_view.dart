@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
@@ -275,7 +275,7 @@ class _AdminCustomerCalendarViewState
       appBar: AppBar(
         title: Text(
           widget.isCustomerScope ? 'Customer Calendar' : 'Customer Calendar',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 15,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -304,7 +304,7 @@ class _AdminCustomerCalendarViewState
                   SnackBar(
                     content: Text(
                       'Scheduling is active',
-                      style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                      style: AppTypography.inter(fontWeight: FontWeight.bold),
                     ),
                     backgroundColor: const Color(0xFF16A34A),
                     behavior: SnackBarBehavior.floating,
@@ -381,7 +381,7 @@ class _AdminCustomerCalendarViewState
                                         const SizedBox(width: 4),
                                         Text(
                                           planName,
-                                          style: GoogleFonts.inter(
+                                          style: AppTypography.inter(
                                             fontSize: 11.5,
                                             fontWeight: FontWeight.bold,
                                             color: AppColors.primaryDark,
@@ -394,7 +394,7 @@ class _AdminCustomerCalendarViewState
                               ),
                               Text(
                                 '$remainingWork Remaining',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w800,
                                   color: remainingWork > 0
@@ -407,7 +407,7 @@ class _AdminCustomerCalendarViewState
                           const SizedBox(height: 8),
                           Text(
                             '$completedWork / $totalWork Schedules Used',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12.5,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -447,7 +447,7 @@ class _AdminCustomerCalendarViewState
                   onChanged: (_) => setState(() {}),
                   decoration: InputDecoration(
                     hintText: 'Search customer, activity, staff…',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       color: const Color(0xFF94A3B8),
                       fontSize: 13,
                     ),
@@ -523,7 +523,7 @@ class _AdminCustomerCalendarViewState
                         ),
                         Text(
                           '${_getMonthName(_displayedMonth.month)} ${_displayedMonth.year}',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -565,7 +565,7 @@ class _AdminCustomerCalendarViewState
                                 child: Center(
                                   child: Text(
                                     day,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 9.5,
                                       fontWeight: FontWeight.bold,
                                       color: const Color(0xFF94A3B8),
@@ -672,7 +672,7 @@ class _AdminCustomerCalendarViewState
                               children: [
                                 Text(
                                   '$dayNum',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 13,
                                     fontWeight: isSelected
                                         ? FontWeight.bold
@@ -779,7 +779,7 @@ class _AdminCustomerCalendarViewState
                   Expanded(
                     child: Text(
                       '${_selectedDate.day} ${_getMonthName(_selectedDate.month).toUpperCase()} ${_selectedDate.year}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -805,7 +805,7 @@ class _AdminCustomerCalendarViewState
                       ),
                       child: Text(
                         'TODAY',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primaryDark,
@@ -845,7 +845,7 @@ class _AdminCustomerCalendarViewState
                       const SizedBox(height: 8),
                       Text(
                         'Loading activities...',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12.5,
                           color: AppColors.textSecondary,
                         ),
@@ -877,7 +877,7 @@ class _AdminCustomerCalendarViewState
                       const SizedBox(height: 8),
                       Text(
                         'Unable to load customer activities. Please try again.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13.5,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -892,7 +892,7 @@ class _AdminCustomerCalendarViewState
                         ),
                         child: Text(
                           'Retry',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryDark,
@@ -924,7 +924,7 @@ class _AdminCustomerCalendarViewState
                       const SizedBox(height: 10),
                       Text(
                         'No customer activities scheduled for this date.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -934,7 +934,7 @@ class _AdminCustomerCalendarViewState
                       const SizedBox(height: 4),
                       Text(
                         'You can enjoy a clear schedule today.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12.5,
                           color: AppColors.textSecondary,
                         ),
@@ -1059,7 +1059,7 @@ class _AdminCustomerCalendarViewState
                             Flexible(
                               child: Text(
                                 resolveTaskCategory(activity).label,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 10.5,
                                   fontWeight: FontWeight.bold,
                                   color: resolveTaskColor(activity),
@@ -1085,7 +1085,7 @@ class _AdminCustomerCalendarViewState
                     ),
                     child: Text(
                       activity.status,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 9.5,
                         fontWeight: FontWeight.bold,
                         color: activity.statusColor,
@@ -1117,7 +1117,7 @@ class _AdminCustomerCalendarViewState
                       widget.isCustomerScope
                           ? resolveActivityDisplayName(activity)
                           : activity.customerName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -1130,7 +1130,7 @@ class _AdminCustomerCalendarViewState
                       const SizedBox(height: 2),
                       Text(
                         activity.businessName,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -1157,7 +1157,7 @@ class _AdminCustomerCalendarViewState
                   const SizedBox(width: 4),
                   Text(
                     activity.time.isEmpty ? 'Time not set' : activity.time,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -1177,7 +1177,7 @@ class _AdminCustomerCalendarViewState
                         Flexible(
                           child: Text(
                             calendarAssigneeLabel(activity),
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPrimary,

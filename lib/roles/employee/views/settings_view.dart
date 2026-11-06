@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -134,7 +134,7 @@ class SettingsView extends ConsumerWidget {
       padding: const EdgeInsets.only(left: 4, bottom: 4),
       child: Text(
         title.toUpperCase(),
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 12,
           fontWeight: FontWeight.bold,
           color: AppColors.textSecondary,
@@ -199,7 +199,7 @@ class SettingsView extends ConsumerWidget {
       ),
       title: Text(
         title,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontWeight: FontWeight.w600,
           fontSize: 15,
           color: AppColors.textPrimary,
@@ -208,7 +208,7 @@ class SettingsView extends ConsumerWidget {
       subtitle: subtitle != null
           ? Text(
               subtitle,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),

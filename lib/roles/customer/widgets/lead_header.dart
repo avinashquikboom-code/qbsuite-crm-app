@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/constants/app_bar_titles.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -60,7 +60,7 @@ class LeadHeader extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         title,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: AppColors.textPrimary,

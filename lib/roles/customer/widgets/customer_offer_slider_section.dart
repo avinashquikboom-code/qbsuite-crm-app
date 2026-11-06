@@ -4,7 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -169,7 +169,7 @@ class _CustomerOfferSliderSectionState
                 Expanded(
                   child: Text(
                     'Coupon code "${banner.couponCode}" copied to clipboard!',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 13,
                     ),
@@ -254,7 +254,7 @@ class _CustomerOfferSliderSectionState
               if (banner.title != null)
                 Text(
                   banner.title!,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -264,7 +264,7 @@ class _CustomerOfferSliderSectionState
                 const SizedBox(height: 4),
                 Text(
                   banner.subtitle!,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -274,7 +274,7 @@ class _CustomerOfferSliderSectionState
                 const SizedBox(height: 12),
                 Text(
                   banner.description!,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: AppColors.textPrimary,
                     height: 1.4,
@@ -303,7 +303,7 @@ class _CustomerOfferSliderSectionState
                         children: [
                           Text(
                             'COUPON CODE',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryDark,
@@ -311,7 +311,7 @@ class _CustomerOfferSliderSectionState
                           ),
                           Text(
                             banner.couponCode!,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryDark,
@@ -372,7 +372,7 @@ class _CustomerOfferSliderSectionState
                             banner.ctaText!.trim().isNotEmpty
                         ? Text(
                             banner.ctaText!.trim(),
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -702,7 +702,7 @@ class _CustomerOfferSliderSectionState
                               if (hasTitle)
                                 Text(
                                   banner.title!,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 14.5,
                                     fontWeight: FontWeight.w800,
                                     color: Colors.white,
@@ -725,7 +725,7 @@ class _CustomerOfferSliderSectionState
                                   hasSubtitle
                                       ? banner.subtitle!
                                       : banner.description!,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11.5,
                                     color: const Color(0xFFE2E8F0),
                                     fontWeight: FontWeight.w400,
@@ -775,7 +775,7 @@ class _CustomerOfferSliderSectionState
                                   if (ctaButtonText != null) ...[
                                     Text(
                                       ctaButtonText,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 11.5,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,

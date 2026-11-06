@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/employee/models/employee_ssm_work_model.dart';
@@ -25,7 +25,7 @@ class SSMActionDialogs {
             const SizedBox(width: 8),
             Text(
               'Start this work?',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -50,7 +50,7 @@ class SSMActionDialogs {
             onPressed: () => Navigator.pop(ctx, false),
             child: Text(
               'Cancel',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: AppColors.textSecondary,
                 fontWeight: FontWeight.w600,
               ),
@@ -68,7 +68,7 @@ class SSMActionDialogs {
             onPressed: () => Navigator.pop(ctx, true),
             child: Text(
               'Start Work',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -97,7 +97,7 @@ class SSMActionDialogs {
             Flexible(
               child: Text(
                 'Mark today\'s task as completed?',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontWeight: FontWeight.bold,
                   fontSize: 17,
                 ),
@@ -111,7 +111,7 @@ class SSMActionDialogs {
           children: [
             Text(
               'Day $dayNumber: $taskTitle',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textPrimary,
@@ -120,7 +120,7 @@ class SSMActionDialogs {
             const SizedBox(height: 4),
             Text(
               'This will mark today\'s deliverable as completed in the system.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 color: AppColors.textSecondary,
               ),
@@ -132,7 +132,7 @@ class SSMActionDialogs {
             onPressed: () => Navigator.pop(ctx, false),
             child: Text(
               'Cancel',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: AppColors.textSecondary,
                 fontWeight: FontWeight.w600,
               ),
@@ -150,7 +150,7 @@ class SSMActionDialogs {
             onPressed: () => Navigator.pop(ctx, true),
             child: Text(
               'Complete',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -173,7 +173,7 @@ class SSMActionDialogs {
             const SizedBox(width: 8),
             Text(
               'Complete this work?',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -201,7 +201,7 @@ class SSMActionDialogs {
             onPressed: () => Navigator.pop(ctx, false),
             child: Text(
               'Cancel',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: AppColors.textSecondary,
                 fontWeight: FontWeight.w600,
               ),
@@ -219,7 +219,7 @@ class SSMActionDialogs {
             onPressed: () => Navigator.pop(ctx, true),
             child: Text(
               'Complete Work',
-              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+              style: AppTypography.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -237,7 +237,7 @@ class SSMActionDialogs {
       children: [
         Text(
           '$label:',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 11.5,
             fontWeight: FontWeight.w600,
             color: AppColors.textSecondary,
@@ -246,7 +246,7 @@ class SSMActionDialogs {
         const SizedBox(height: 1),
         Text(
           value,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 13.5,
             fontWeight: isBold ? FontWeight.bold : FontWeight.w600,
             color: AppColors.textPrimary,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
@@ -142,7 +142,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         title: Text(
           'Submit Task Proof',
-          style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 18),
+          style: AppTypography.inter(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         content: SingleChildScrollView(
           child: Column(
@@ -157,7 +157,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                 ),
                 child: Text(
                   '⚠️ Photo proof is mandatory before completing task.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     color: AppColors.warning,
                     fontWeight: FontWeight.bold,
@@ -167,7 +167,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
               const SizedBox(height: 14),
               Text(
                 'Photo URL / Upload Link *',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
@@ -188,7 +188,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
               const SizedBox(height: 12),
               Text(
                 'Completion Comments',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
@@ -215,7 +215,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.inter(color: AppColors.textSecondary),
+              style: AppTypography.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -254,7 +254,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
             },
             child: Text(
               'Submit for Review',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -374,7 +374,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
         selected: isSelected,
         selectedColor: AppColors.primaryLight,
         checkmarkColor: AppColors.primaryDark,
-        labelStyle: GoogleFonts.inter(
+        labelStyle: AppTypography.inter(
           color: isSelected ? AppColors.primaryDark : AppColors.textPrimary,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
           fontSize: 11,
@@ -398,7 +398,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
         selected: isSelected,
         selectedColor: AppColors.primaryLight,
         checkmarkColor: AppColors.primaryDark,
-        labelStyle: GoogleFonts.inter(
+        labelStyle: AppTypography.inter(
           color: isSelected ? AppColors.primaryDark : AppColors.textSecondary,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
           fontSize: 10,
@@ -466,7 +466,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                       ),
                       child: Text(
                         priority,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: _getPriorityColor(priority),
@@ -476,7 +476,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                     const SizedBox(width: 8),
                     Text(
                       task['taskNumber'] ?? 'TSK-${task['id']}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: AppColors.textSecondary,
                         fontWeight: FontWeight.bold,
@@ -495,7 +495,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                   ),
                   child: Text(
                     status == 'UNDER_REVIEW' ? 'Awaiting Review' : status,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: _getStatusColor(status),
@@ -507,7 +507,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
             const SizedBox(height: 10),
             Text(
               task['title'] ?? 'Untitled Task',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: isCompleted
@@ -521,7 +521,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
               const SizedBox(height: 4),
               Text(
                 task['description'],
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   color: AppColors.textSecondary,
                 ),
@@ -548,7 +548,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                     Expanded(
                       child: Text(
                         'Reason: ${task['rejectionReason']}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           color: AppColors.error,
                           fontWeight: FontWeight.bold,
@@ -573,7 +573,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                     const SizedBox(width: 4),
                     Text(
                       'Due: ${task['dueTime'] ?? ''} ${task['dueDate'] ?? ''}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: AppColors.textSecondary,
                         fontWeight: FontWeight.w600,
@@ -602,7 +602,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                       ),
                       label: Text(
                         'Start Task',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -629,7 +629,7 @@ class _TasksViewState extends ConsumerState<TasksView> {
                       ),
                       label: Text(
                         'Upload Proof',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

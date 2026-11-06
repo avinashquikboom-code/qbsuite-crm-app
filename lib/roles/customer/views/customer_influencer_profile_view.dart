@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/services/permission_manager.dart';
@@ -56,7 +56,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Text(
                           creator.bio!.trim(),
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12.5,
                             color: AppColors.textSecondary,
                             height: 1.4,
@@ -210,7 +210,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
                         creator.name.isNotEmpty
                             ? creator.name[0].toUpperCase()
                             : 'C',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primaryDark,
@@ -236,7 +236,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
             children: [
               Text(
                 creator.name,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -269,7 +269,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
                 const SizedBox(width: 4),
                 Text(
                   'Top Creator',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryDark,
@@ -296,7 +296,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
                 ),
                 child: Text(
                   creator.categoryName,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10.5,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF2563EB),
@@ -315,7 +315,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
                     const SizedBox(width: 3),
                     Text(
                       creator.location,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: const Color(0xFF64748B),
                       ),
@@ -361,7 +361,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
           children: [
             Text(
               value,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -370,7 +370,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
             const SizedBox(height: 2),
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 10,
                 color: AppColors.textSecondary,
                 fontWeight: FontWeight.w500,
@@ -398,7 +398,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
         children: [
           Text(
             'Recent Content',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -480,7 +480,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
                 ),
                 label: Text(
                   'Chat',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryDark,
@@ -515,7 +515,7 @@ class CustomerInfluencerProfileView extends ConsumerWidget {
                   },
                   child: Text(
                     'Book Now',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,

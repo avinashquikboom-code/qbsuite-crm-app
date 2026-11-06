@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 class AdminStatCard extends StatelessWidget {
@@ -70,7 +70,7 @@ class AdminStatCard extends StatelessWidget {
                 children: [
                   Text(
                     value,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.w800,
                       color: AppColors.textPrimary,
@@ -81,7 +81,7 @@ class AdminStatCard extends StatelessWidget {
                     title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11.5,
                       fontWeight: FontWeight.w500,
                       color: AppColors.textSecondary,

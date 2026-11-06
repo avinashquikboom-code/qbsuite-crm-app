@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/services/permission_manager.dart';
@@ -113,7 +113,7 @@ class _CustomerInfluencerPackagesViewState
           children: [
             Text(
               widget.creator.name,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -143,7 +143,7 @@ class _CustomerInfluencerPackagesViewState
                   // Section Header: Packages & Pricing
                   Text(
                     'Packages & Pricing',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -178,7 +178,7 @@ class _CustomerInfluencerPackagesViewState
                             const SizedBox(height: 6),
                             Text(
                               'Failed to load packages',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12.5,
                                 color: AppColors.textPrimary,
                               ),
@@ -217,7 +217,7 @@ class _CustomerInfluencerPackagesViewState
                           const SizedBox(height: 8),
                           Text(
                             'No packages available for this creator',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -239,7 +239,7 @@ class _CustomerInfluencerPackagesViewState
                   // Section Header: Available Dates
                   Text(
                     'Available Dates',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -254,7 +254,7 @@ class _CustomerInfluencerPackagesViewState
                     children: [
                       Text(
                         '${_months[_selectedDate.month - 1]} ${_selectedDate.year}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -322,7 +322,7 @@ class _CustomerInfluencerPackagesViewState
                           : null,
                       child: Text(
                         'Book Now',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -368,7 +368,7 @@ class _CustomerInfluencerPackagesViewState
                 child: Center(
                   child: Text(
                     _tabs[idx],
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: isSelected
                           ? FontWeight.bold
@@ -453,7 +453,7 @@ class _CustomerInfluencerPackagesViewState
                     children: [
                       Text(
                         pkg.name,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -471,7 +471,7 @@ class _CustomerInfluencerPackagesViewState
                           ),
                           child: Text(
                             pkg.badgeText,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9.5,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF0284C7),
@@ -484,7 +484,7 @@ class _CustomerInfluencerPackagesViewState
                   const SizedBox(height: 2),
                   Text(
                     pkg.subtitle,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: AppColors.textSecondary,
                     ),
@@ -494,7 +494,7 @@ class _CustomerInfluencerPackagesViewState
                   const SizedBox(height: 6),
                   Text(
                     pkg.formattedPrice,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -521,7 +521,7 @@ class _CustomerInfluencerPackagesViewState
                 onPressed: () => _proceedToCheckout(pkg),
                 child: Text(
                   'Book Now',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -552,7 +552,7 @@ class _CustomerInfluencerPackagesViewState
             children: [
               Text(
                 _weekdays[dt.weekday - 1],
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w500,
                   color: AppColors.textSecondary,
@@ -576,7 +576,7 @@ class _CustomerInfluencerPackagesViewState
                 child: Center(
                   child: Text(
                     '${dt.day}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: isSelected ? Colors.white : AppColors.textPrimary,

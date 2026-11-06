@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
@@ -341,7 +341,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
       appBar: AppBar(
         title: Text(
           'Customer Details',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -445,7 +445,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 child: Center(
                   child: Text(
                     initials,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -463,7 +463,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                         Expanded(
                           child: Text(
                             c.name,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -485,7 +485,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                           ),
                           child: Text(
                             isActive ? 'ACTIVE' : 'INACTIVE',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: isActive
@@ -499,7 +499,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                     const SizedBox(height: 2),
                     Text(
                       c.businessName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         color: AppColors.textSecondary,
                       ),
@@ -598,7 +598,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 children: [
                   Text(
                     'CURRENT ACTIVE PLAN',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 0.8,
@@ -607,7 +607,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                   ),
                   Text(
                     'No Active Plan',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -624,7 +624,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
               ),
               child: Text(
                 'NO PLAN',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xFF64748B),
@@ -677,7 +677,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                   children: [
                     Text(
                       'CURRENT ACTIVE PLAN',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.8,
@@ -686,7 +686,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                     ),
                     Text(
                       plan.planName,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -708,7 +708,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 ),
                 child: Text(
                   plan.status,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: plan.status == 'ACTIVE'
@@ -801,7 +801,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
               Expanded(
                 child: Text(
                   'PLAN QUOTAS & USAGE',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 0.8,
@@ -814,7 +814,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
               const SizedBox(width: 8),
               Text(
                 '$totalDone/$totalQuota Deliverables Done',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xFF16A34A),
@@ -885,7 +885,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
               children: [
                 Text(
                   quota.serviceName,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -896,7 +896,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 const SizedBox(height: 2),
                 Text(
                   '${quota.usedQty}/${quota.totalQty} Done • ${quota.remainingQty} Left',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textSecondary,
@@ -934,7 +934,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                   Expanded(
                     child: Text(
                       'CUSTOMER SCHEDULE & DELIVERABLES',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.8,
@@ -957,7 +957,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 ),
                 child: Text(
                   '${activities.length} Scheduled',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF16A34A),
@@ -989,7 +989,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 Text(
                   _scheduleError!,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -1028,7 +1028,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 const SizedBox(height: 12),
                 Text(
                   'No scheduled activities found',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -1038,7 +1038,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 Text(
                   'Scheduled deliverables will appear here as soon as they are assigned.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),
@@ -1094,7 +1094,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 children: [
                   Text(
                     _formatDay(act.date),
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -1102,7 +1102,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                   ),
                   Text(
                     _formatMonth(act.date).toUpperCase(),
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: const Color(0xFF16A34A),
@@ -1123,7 +1123,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                       Expanded(
                         child: Text(
                           act.notes ?? act.activityType.label,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1143,7 +1143,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                         ),
                         child: Text(
                           act.status,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                             color: act.statusColor,
@@ -1163,7 +1163,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                       const SizedBox(width: 4),
                       Text(
                         act.time,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),
@@ -1178,7 +1178,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                       Expanded(
                         child: Text(
                           act.assignedEmployee,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11.5,
                             color: AppColors.textSecondary,
                           ),
@@ -1206,7 +1206,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
         Expanded(
           child: Text(
             text,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               color: AppColors.textPrimary,
             ),
@@ -1240,7 +1240,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
               Expanded(
                 child: Text(
                   label,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textSecondary,
@@ -1254,7 +1254,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
           const SizedBox(height: 4),
           Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1296,7 +1296,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
       ),
       child: Text(
         'Assigned team is unavailable because this item is not linked to a customer record.',
-        style: GoogleFonts.inter(fontSize: 13, color: AppColors.textSecondary),
+        style: AppTypography.inter(fontSize: 13, color: AppColors.textSecondary),
       ),
     );
   }
@@ -1342,7 +1342,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                   const SizedBox(width: 10),
                   Text(
                     'Assigned Team',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -1366,7 +1366,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                     ),
                     label: Text(
                       team != null ? 'Change' : 'Assign Team',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,
@@ -1391,7 +1391,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                   ),
                   label: Text(
                     'Assign Team',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primary,
@@ -1431,7 +1431,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 Expanded(
                   child: Text(
                     'Failed to load assigned team.',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       color: const Color(0xFFEF4444),
                     ),
@@ -1469,7 +1469,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                       Expanded(
                         child: Text(
                           'No team currently assigned to this customer.',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             color: AppColors.textSecondary,
                           ),
@@ -1515,7 +1515,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                               ),
                               child: Text(
                                 teamName,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primary,
@@ -1526,7 +1526,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                               const SizedBox(width: 8),
                               Text(
                                 '($teamCode)',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12,
                                   color: AppColors.textSecondary,
                                 ),
@@ -1535,7 +1535,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                             const Spacer(),
                             Text(
                               '${members.length} Member${members.length == 1 ? '' : 's'}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),
@@ -1554,7 +1554,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                               const SizedBox(width: 6),
                               Text(
                                 'Team Leader:',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.textSecondary,
@@ -1564,7 +1564,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                               Expanded(
                                 child: Text(
                                   leaderName,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.textPrimary,
@@ -1608,7 +1608,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                           side: const BorderSide(color: Color(0xFFE2E8F0)),
                           label: Text(
                             label,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: AppColors.textPrimary,
                             ),
@@ -1683,7 +1683,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                       Expanded(
                         child: Text(
                           'Assign Customer to Team',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1695,7 +1695,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                   const SizedBox(height: 6),
                   Text(
                     'Select a team to handle services and deliverables for this customer.',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       color: AppColors.textSecondary,
                     ),
@@ -1710,7 +1710,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                           error: (e, _) => Center(
                             child: Text(
                               'Failed to load teams: $e',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 color: const Color(0xFFEF4444),
                               ),
                             ),
@@ -1739,13 +1739,13 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                                       : Colors.white,
                                   title: Text(
                                     'Unassigned (Remove Team)',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                   subtitle: Text(
                                     'No team will be assigned',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 12,
                                       color: AppColors.textSecondary,
                                     ),
@@ -1803,14 +1803,14 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                                           : Colors.white,
                                       title: Text(
                                         name,
-                                        style: GoogleFonts.inter(
+                                        style: AppTypography.inter(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 14,
                                         ),
                                       ),
                                       subtitle: Text(
                                         'Leader: ${leaderName ?? "Not specified"} • $memberCount members',
-                                        style: GoogleFonts.inter(
+                                        style: AppTypography.inter(
                                           fontSize: 12,
                                           color: AppColors.textSecondary,
                                         ),
@@ -1891,7 +1891,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                             )
                           : Text(
                               'CONFIRM ASSIGNMENT',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

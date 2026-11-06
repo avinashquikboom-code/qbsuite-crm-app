@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -202,7 +202,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
               children: [
                 Text(
                   "Today's Visits",
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -220,7 +220,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                   ),
                   child: Text(
                     '${_todayVisits.length}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryDark,
@@ -234,7 +234,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
               icon: const Icon(Remix.arrow_right_s_line, size: 16),
               label: Text(
                 'View All',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primaryDark,
@@ -276,7 +276,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                 const SizedBox(height: 12),
                 Text(
                   'No visits scheduled for today',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -286,7 +286,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                 Text(
                   'New assigned field visits will appear here automatically.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12.5,
                     color: AppColors.textSecondary,
                   ),
@@ -338,7 +338,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                 Icon(icon, color: color, size: 18),
                 Text(
                   '$count',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: color,
@@ -349,7 +349,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
             const SizedBox(height: 8),
             Text(
               title,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textPrimary,
@@ -439,7 +439,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                           Expanded(
                             child: Text(
                               customerName,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -463,7 +463,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                       const SizedBox(height: 3),
                       Text(
                         purpose,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12.5,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textSecondary,
@@ -476,7 +476,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                         children: [
                           Text(
                             timeStr,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textSecondary,
@@ -485,7 +485,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                           const SizedBox(width: 8),
                           Text(
                             '|',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               color: AppColors.borderLight,
                             ),
                           ),
@@ -493,7 +493,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                           Expanded(
                             child: Text(
                               location,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -120,7 +120,7 @@ class SocialMediaProfilesCard extends StatelessWidget {
                         title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -139,7 +139,7 @@ class SocialMediaProfilesCard extends StatelessWidget {
                 ),
                 child: Text(
                   '${entries.length} ${entries.length == 1 ? 'profile' : 'profiles'}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF64748B),
@@ -189,7 +189,7 @@ class SocialMediaProfilesCard extends StatelessWidget {
                               children: [
                                 Text(
                                   entry.platform,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.textPrimary,
@@ -200,7 +200,7 @@ class SocialMediaProfilesCard extends StatelessWidget {
                                   entry.handle,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12,
                                     color: const Color(0xFF64748B),
                                   ),

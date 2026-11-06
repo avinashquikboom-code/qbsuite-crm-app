@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
@@ -70,7 +70,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                 children: [
                   Text(
                     'Company Quick Actions',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -78,7 +78,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                   ),
                   Text(
                     'Quickly execute actions across your agency',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -182,7 +182,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: AppColors.textPrimary,
@@ -190,7 +190,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                       ),
                       Text(
                         subtitle,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),

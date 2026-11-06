@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../services/customer_influencer_service.dart';
@@ -101,7 +101,7 @@ class _InfluencerRegistrationViewState
           SnackBar(
             content: Text(
               'Application submitted! Status: ${created.status}',
-              style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+              style: AppTypography.inter(fontWeight: FontWeight.w600),
             ),
             backgroundColor: AppColors.primaryDark,
           ),
@@ -126,7 +126,7 @@ class _InfluencerRegistrationViewState
           SnackBar(
             content: Text(
               e.toString().replaceAll('Exception:', '').trim(),
-              style: GoogleFonts.inter(),
+              style: AppTypography.inter(),
             ),
             backgroundColor: Colors.redAccent,
           ),
@@ -151,7 +151,7 @@ class _InfluencerRegistrationViewState
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Join as an Influencer',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 17,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -169,7 +169,7 @@ class _InfluencerRegistrationViewState
             },
             child: Text(
               'Check Status',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryDark,
@@ -221,7 +221,7 @@ class _InfluencerRegistrationViewState
                         children: [
                           Text(
                             'Become a Verified Creator',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -230,7 +230,7 @@ class _InfluencerRegistrationViewState
                           const SizedBox(height: 2),
                           Text(
                             'Submit your application. Once approved by admin, you will receive client bookings.',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -246,7 +246,7 @@ class _InfluencerRegistrationViewState
 
               Text(
                 'Personal & Account Information',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -325,7 +325,7 @@ class _InfluencerRegistrationViewState
 
               Text(
                 'Creator Profile & Socials',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -352,7 +352,7 @@ class _InfluencerRegistrationViewState
                         value: _selectedCategoryId,
                         hint: Text(
                           'Select Category (Optional)',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             color: AppColors.textSecondary,
                           ),
@@ -362,7 +362,7 @@ class _InfluencerRegistrationViewState
                             value: cat.id,
                             child: Text(
                               cat.name,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 14,
                                 color: AppColors.textPrimary,
                               ),
@@ -384,7 +384,7 @@ class _InfluencerRegistrationViewState
               // Primary Platform
               Text(
                 'Primary Platform',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
@@ -423,7 +423,7 @@ class _InfluencerRegistrationViewState
                             const SizedBox(width: 8),
                             Text(
                               'Instagram',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: _selectedPlatform == 'INSTAGRAM'
@@ -467,7 +467,7 @@ class _InfluencerRegistrationViewState
                             const SizedBox(width: 8),
                             Text(
                               'YouTube',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: _selectedPlatform == 'YOUTUBE'
@@ -576,7 +576,7 @@ class _InfluencerRegistrationViewState
                             const SizedBox(width: 8),
                             Text(
                               'Submit Application',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -611,7 +611,7 @@ class _InfluencerRegistrationViewState
       children: [
         Text(
           label,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 13,
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -624,10 +624,10 @@ class _InfluencerRegistrationViewState
           obscureText: obscureText,
           maxLines: maxLines,
           validator: validator,
-          style: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
+          style: AppTypography.inter(fontSize: 14, color: AppColors.textPrimary),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: GoogleFonts.inter(
+            hintStyle: AppTypography.inter(
               fontSize: 13,
               color: AppColors.textSecondary.withValues(alpha: 0.7),
             ),

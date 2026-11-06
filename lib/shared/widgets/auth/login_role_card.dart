@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 
 class LoginRoleCard extends StatelessWidget {
@@ -102,7 +102,7 @@ class LoginRoleCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14.5,
                         fontWeight: FontWeight.bold,
                         color: isSelected
@@ -116,7 +116,7 @@ class LoginRoleCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       subtitle,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         color: isSelected
                             ? const Color(0xFF475569)

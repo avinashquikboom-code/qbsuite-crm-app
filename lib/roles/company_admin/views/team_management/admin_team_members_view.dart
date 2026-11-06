@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/customer_roles_work_models.dart';
@@ -94,7 +94,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                       memberToEdit != null
                           ? 'Edit Team Member'
                           : 'Add Team Member',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -109,7 +109,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                 const SizedBox(height: 16),
                 Text(
                   'Employee / Member Name',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -120,7 +120,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                   controller: nameCtrl,
                   decoration: InputDecoration(
                     hintText: 'e.g. Avinash, Rahul, Priya',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 14,
                       color: AppColors.textMuted,
                     ),
@@ -143,7 +143,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                 const SizedBox(height: 16),
                 Text(
                   'Role',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -171,7 +171,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                           value: role,
                           child: Text(
                             role,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPrimary,
@@ -190,7 +190,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                 const SizedBox(height: 16),
                 Text(
                   'Assigned Work',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -218,7 +218,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                           value: work,
                           child: Text(
                             work,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPrimary,
@@ -237,7 +237,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                 const SizedBox(height: 16),
                 Text(
                   'Team / Department',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -248,7 +248,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                   controller: teamCtrl,
                   decoration: InputDecoration(
                     hintText: 'e.g. SSM Team A, Outreach Team',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 14,
                       color: AppColors.textMuted,
                     ),
@@ -271,7 +271,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                 const SizedBox(height: 16),
                 Text(
                   'Email & Phone (Optional)',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -285,7 +285,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                         controller: emailCtrl,
                         decoration: InputDecoration(
                           hintText: 'email@quickboom.com',
-                          hintStyle: GoogleFonts.inter(
+                          hintStyle: AppTypography.inter(
                             fontSize: 13,
                             color: AppColors.textMuted,
                           ),
@@ -316,7 +316,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                         controller: phoneCtrl,
                         decoration: InputDecoration(
                           hintText: '+91 98765 43210',
-                          hintStyle: GoogleFonts.inter(
+                          hintStyle: AppTypography.inter(
                             fontSize: 13,
                             color: AppColors.textMuted,
                           ),
@@ -395,7 +395,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                     },
                     child: Text(
                       'Save Team Member',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
@@ -430,7 +430,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Team Members',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -458,7 +458,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                   onChanged: (val) => setState(() => _searchQuery = val),
                   decoration: InputDecoration(
                     hintText: 'Search members, role, team...',
-                    hintStyle: GoogleFonts.inter(
+                    hintStyle: AppTypography.inter(
                       fontSize: 13.5,
                       color: AppColors.textMuted,
                     ),
@@ -495,7 +495,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                     Expanded(
                       child: Text(
                         '${members.length} TEAM MEMBERS',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFF64748B),
@@ -524,7 +524,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                             const SizedBox(width: 4),
                             Text(
                               '+ Add Member',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -592,7 +592,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                 child: Center(
                   child: Text(
                     member.name.isNotEmpty ? member.name[0].toUpperCase() : 'E',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -610,7 +610,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                         Flexible(
                           child: Text(
                             member.name,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -631,7 +631,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                           ),
                           child: Text(
                             member.status,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9.5,
                               fontWeight: FontWeight.w800,
                               color: member.statusColor,
@@ -644,7 +644,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                     const SizedBox(height: 2),
                     Text(
                       member.team,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF64748B),
@@ -677,7 +677,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                   children: [
                     Text(
                       'ROLE',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 9.5,
                         fontWeight: FontWeight.w800,
                         color: const Color(0xFF94A3B8),
@@ -687,7 +687,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                     const SizedBox(height: 2),
                     Text(
                       member.role,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -705,7 +705,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                   children: [
                     Text(
                       'ASSIGNED WORK',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 9.5,
                         fontWeight: FontWeight.w800,
                         color: const Color(0xFF94A3B8),
@@ -715,7 +715,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                     const SizedBox(height: 2),
                     Text(
                       member.assignedWork,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
@@ -742,7 +742,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                   Flexible(
                     child: Text(
                       member.email,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: const Color(0xFF64748B),
                       ),
@@ -761,7 +761,7 @@ class _AdminTeamMembersViewState extends ConsumerState<AdminTeamMembersView> {
                   const SizedBox(width: 4),
                   Text(
                     member.phone,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: const Color(0xFF64748B),
                     ),

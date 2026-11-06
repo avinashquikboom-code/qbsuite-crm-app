@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
@@ -63,7 +63,7 @@ class _AdminFilterSheetState extends State<AdminFilterSheet> {
             children: [
               Text(
                 widget.title,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -116,7 +116,7 @@ class _AdminFilterSheetState extends State<AdminFilterSheet> {
                             children: [
                               Text(
                                 opt,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 14,
                                   fontWeight: isSelected
                                       ? FontWeight.bold

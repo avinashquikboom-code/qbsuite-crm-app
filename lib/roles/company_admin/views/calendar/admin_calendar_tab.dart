@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -92,7 +92,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                               'Team Calendar',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -100,7 +100,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                             ),
                             Text(
                               '${_getMonthName(_selectedDate.month)} ${_selectedDate.year}',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12.5,
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w600,
@@ -140,7 +140,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                               ),
                               child: Text(
                                 'Today',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primary,
@@ -230,7 +230,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                       'Schedule for ${_selectedDate.day} ${_getMonthName(_selectedDate.month)}',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -240,7 +240,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                   const SizedBox(width: 8),
                   Text(
                     '${scheduledItems.length} active',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -263,7 +263,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                           const SizedBox(height: 10),
                           Text(
                             'No scheduled tasks on this day',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -272,7 +272,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                           const SizedBox(height: 4),
                           Text(
                             'Select another date or reset filters',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: const Color(0xFF94A3B8),
                             ),
@@ -343,7 +343,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                   children: [
                     Text(
                       weekDays[d.weekday - 1],
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10.5,
                         fontWeight: FontWeight.w600,
                         color: isSelected
@@ -356,7 +356,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                     const SizedBox(height: 2),
                     Text(
                       '${d.day}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: isSelected
@@ -394,7 +394,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
           children: [
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11.5,
                 fontWeight: isActive ? FontWeight.bold : FontWeight.w500,
                 color: isActive ? AppColors.primary : AppColors.textSecondary,
@@ -450,7 +450,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                       ),
                       child: Text(
                         w.workType.label.toUpperCase(),
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: _getWorkTypeColor(w.workType),
@@ -461,7 +461,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                     Expanded(
                       child: Text(
                         w.customerName,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14.5,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -479,7 +479,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                       ),
                       child: Text(
                         w.status.label,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: w.status.color,
@@ -491,7 +491,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
                 const SizedBox(height: 8),
                 Text(
                   'Task: ${w.todayTask}',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12.5,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF334155),
@@ -527,7 +527,7 @@ class _AdminCalendarTabState extends ConsumerState<AdminCalendarTab> {
             text,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11.5,
               color: AppColors.textSecondary,
             ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 class BusinessCategoryItem {
@@ -94,7 +94,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
                 children: [
                   Text(
                     'Business Category',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -105,7 +105,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
                     widget.selectedCategory.isNotEmpty
                         ? widget.selectedCategory
                         : 'Select business type...',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -198,7 +198,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
             const SizedBox(height: 16),
             Text(
               'Select Business Type',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -207,7 +207,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
             const SizedBox(height: 4),
             Text(
               'Choose the category of commercial prospects you want to extract.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -218,7 +218,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
               autofocus: false,
               decoration: InputDecoration(
                 hintText: 'Search business category...',
-                hintStyle: GoogleFonts.inter(
+                hintStyle: AppTypography.inter(
                   fontSize: 14,
                   color: AppColors.textPlaceholder,
                 ),
@@ -268,7 +268,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
                     ),
                     title: Text(
                       item.label,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: isSelected
                             ? FontWeight.bold

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../models/capture_history.dart';
 import '../../services/data_capture_records_service.dart';
@@ -98,7 +98,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
           children: [
             Text(
               session.keyword,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 17,
                 fontWeight: FontWeight.w600,
               ),
@@ -153,7 +153,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
       appBar: AppBar(
         title: Text(
           'Capture History',
-          style: GoogleFonts.inter(fontWeight: FontWeight.w600),
+          style: AppTypography.inter(fontWeight: FontWeight.w600),
         ),
       ),
       body: SafeArea(
@@ -262,7 +262,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                             const SizedBox(height: 12),
                             Text(
                               'No capture history found.',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.textSecondary,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/theme/app_colors.dart';
 import '../models/marketplace_tool_model.dart';
@@ -39,7 +39,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
               Expanded(
                 child: Text(
                   '${tool.title} is coming soon! Stay tuned.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
@@ -193,7 +193,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                     Text(
                       'QB Marketplace',
                       maxLines: 1,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 16.5,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF0F172A),
@@ -205,7 +205,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                       'Your Business Growth Tools in One Place 🚀',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.w400,
                         color: const Color(0xFF64748B),
@@ -235,7 +235,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                     children: [
                       Text(
                         'View All',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFF0F172A),
@@ -338,7 +338,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                           child: Text(
                             'COMING SOON',
                             maxLines: 1,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 8.5,
                               fontWeight: FontWeight.w700,
                               color: const Color(0xFFB45309),
@@ -364,7 +364,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                           child: Text(
                             badgeText,
                             maxLines: 1,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 8.5,
                               fontWeight: FontWeight.w700,
                               color: _badgeTextColor(badgeText),
@@ -383,7 +383,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                 tool.title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12.5,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF0F172A),
@@ -400,7 +400,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                       : tool.description,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10,
                     fontWeight: FontWeight.w400,
                     color: const Color(0xFF64748B),
@@ -426,7 +426,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                         child: Text(
                           'Coming Soon',
                           maxLines: 1,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 10.5,
                             fontWeight: FontWeight.w600,
                             color: const Color(0xFF64748B),
@@ -441,7 +441,7 @@ class CustomerQbMarketplaceSection extends ConsumerWidget {
                   children: [
                     Text(
                       'Open',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10.5,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/customer_plan_model.dart';
@@ -69,7 +69,7 @@ class BillingCycleToggle extends StatelessWidget {
                       Flexible(
                         child: Text(
                           'Monthly',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: isMonthly
                                 ? FontWeight.bold
@@ -129,7 +129,7 @@ class BillingCycleToggle extends StatelessWidget {
                       Flexible(
                         child: Text(
                           'Yearly',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: !isMonthly
                                 ? FontWeight.bold
@@ -161,7 +161,7 @@ class BillingCycleToggle extends StatelessWidget {
                           ),
                           child: Text(
                             'SAVE ${maxSavingsPercentage!.toStringAsFixed(0)}%',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,

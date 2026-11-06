@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
@@ -204,7 +204,7 @@ class _CustomerDashboardViewState extends ConsumerState<CustomerDashboardView>
                       Text(
                         perms.error!,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           color: AppColors.textSecondary,
                         ),
@@ -220,7 +220,7 @@ class _CustomerDashboardViewState extends ConsumerState<CustomerDashboardView>
               ? Center(
                   child: Text(
                     'No modules are available for this account.',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       color: AppColors.textSecondary,
                     ),
@@ -296,7 +296,7 @@ class _CustomerDashboardViewState extends ConsumerState<CustomerDashboardView>
             const SizedBox(height: 2),
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 10,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                 color: isSelected

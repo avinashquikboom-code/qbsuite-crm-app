@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 class TeamBadge extends StatelessWidget {
@@ -19,7 +19,7 @@ class TeamBadge extends StatelessWidget {
       ),
       child: Text(
         teamName,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 11,
           fontWeight: FontWeight.bold,
           color: isTeamA ? AppColors.primaryDark : const Color(0xFF6941C6),

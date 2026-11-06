@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/utils/app_date_formatter.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
@@ -220,7 +220,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                 children: [
                   Text(
                     'Attendance Records',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -228,7 +228,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                   ),
                   Text(
                     '${filteredLogs.length} ${filteredLogs.length == 1 ? "Record" : "Records"}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -352,7 +352,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     children: [
                       Text(
                         'Overtime Management',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -360,7 +360,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                       ),
                       Text(
                         'Shift: ${attendanceState.shiftTimeFormatted}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),
@@ -377,7 +377,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                 ),
                 child: Text(
                   badgeLabel,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: badgeText,
@@ -406,7 +406,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         activeOt.otType == 'PRE_SHIFT'
                             ? 'Pre-Shift Overtime'
                             : 'Post-Shift Overtime',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.w700,
                           color: const Color(0xFF0F172A),
@@ -414,7 +414,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                       ),
                       Text(
                         activeOt.otDate,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFF64748B),
@@ -425,7 +425,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                   const SizedBox(height: 6),
                   Text(
                     'Planned: ${activeOt.plannedStartTime} - ${activeOt.plannedEndTime} (${activeOt.plannedDurationMinutes} mins)',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: const Color(0xFF334155),
                     ),
@@ -434,7 +434,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     const SizedBox(height: 4),
                     Text(
                       'Reason: ${activeOt.reason}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         fontStyle: FontStyle.italic,
                         color: const Color(0xFF64748B),
@@ -445,7 +445,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     const SizedBox(height: 4),
                     Text(
                       'Approved by: ${activeOt.approvedByName}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF16A34A),
@@ -456,7 +456,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     const SizedBox(height: 4),
                     Text(
                       'Recorded: ${activeOt.actualDurationMinutes ?? 0} mins (${activeOt.payableHours} hrs payable)',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF0F763E),
@@ -494,7 +494,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                 ),
                 label: Text(
                   'End Overtime',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -534,7 +534,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                 ),
                 label: Text(
                   'Start Overtime',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -569,7 +569,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                   Expanded(
                     child: Text(
                       'Start OT disabled: Awaiting HR Approval.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF1E40AF),
@@ -593,7 +593,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
               activeOt != null
                   ? 'Request Advance OT for Another Day'
                   : 'Request Overtime (Advance)',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryDark,
@@ -657,7 +657,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     const SizedBox(height: 16),
                     Text(
                       'Request Overtime (Advance)',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -666,7 +666,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     const SizedBox(height: 4),
                     Text(
                       'Must be submitted at least 1 day in advance.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
@@ -676,7 +676,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     // OT Date Selector
                     Text(
                       'Overtime Date',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -711,7 +711,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                               AppDateFormatter.formatAttendanceDate(
                                 selectedDate,
                               ),
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13.5,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textPrimary,
@@ -731,7 +731,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     // OT Type Selection
                     Text(
                       'Overtime Type',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -764,7 +764,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                               child: Center(
                                 child: Text(
                                   'Post-Shift OT',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                     color: otType == 'POST_SHIFT'
@@ -801,7 +801,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                               child: Center(
                                 child: Text(
                                   'Pre-Shift OT',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                     color: otType == 'PRE_SHIFT'
@@ -826,7 +826,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                             children: [
                               Text(
                                 'Start Time',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12.5,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.textPrimary,
@@ -856,7 +856,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                                   ),
                                   child: Text(
                                     startTime.format(sheetContext),
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -873,7 +873,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                             children: [
                               Text(
                                 'End Time',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12.5,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.textPrimary,
@@ -903,7 +903,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                                   ),
                                   child: Text(
                                     endTime.format(sheetContext),
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -920,7 +920,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     // Reason Text Field
                     Text(
                       'Reason for Overtime',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -932,7 +932,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                       maxLines: 2,
                       decoration: InputDecoration(
                         hintText: 'e.g. Urgent client release, deployment tasks',
-                        hintStyle: GoogleFonts.inter(
+                        hintStyle: AppTypography.inter(
                           fontSize: 12.5,
                           color: AppColors.textSecondary,
                         ),
@@ -960,7 +960,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         Expanded(
                           child: Text(
                             'I consent to perform overtime under company policies.',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11.5,
                               color: const Color(0xFF334155),
                             ),
@@ -1059,7 +1059,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                               )
                             : Text(
                                 'Submit OT Request',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -1187,7 +1187,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
               Expanded(
                 child: Text(
                   title,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textSecondary,
@@ -1214,7 +1214,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
             children: [
               Text(
                 value,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -1223,7 +1223,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
               const SizedBox(width: 3),
               Text(
                 unit,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 10,
                   fontWeight: FontWeight.w500,
                   color: AppColors.textSecondary,
@@ -1292,7 +1292,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         size: 16,
                         color: AppColors.textSecondary,
                       ),
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -1338,7 +1338,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         size: 16,
                         color: AppColors.textSecondary,
                       ),
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -1393,7 +1393,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         const SizedBox(width: 4),
                         Text(
                           'Reset',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: _isFilterActive
@@ -1489,7 +1489,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
             ],
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                 color: isSelected ? Colors.white : AppColors.textSecondary,
@@ -1506,7 +1506,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
               ),
               child: Text(
                 '$count',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 10,
                   fontWeight: FontWeight.bold,
                   color: isSelected ? Colors.white : AppColors.textDarkSlate,
@@ -1600,7 +1600,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     Flexible(
                       child: Text(
                         formattedDate,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -1621,7 +1621,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         ),
                         child: Text(
                           log.day,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w600,
                             color: AppColors.textDarkSlate,
@@ -1646,7 +1646,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                     const SizedBox(width: 4),
                     Text(
                       badgeLabel,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                         color: badgeText,
@@ -1684,7 +1684,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                           const SizedBox(width: 4),
                           Text(
                             'CHECK IN',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -1695,7 +1695,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                       const SizedBox(height: 3),
                       Text(
                         log.checkIn,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -1723,7 +1723,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                           const SizedBox(width: 4),
                           Text(
                             'CHECK OUT',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -1738,7 +1738,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                                 log.checkOut == 'null')
                             ? '--:--'
                             : log.checkOut,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -1766,7 +1766,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                           const SizedBox(width: 4),
                           Text(
                             'WORK HOURS',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -1777,7 +1777,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                       const SizedBox(height: 3),
                       Text(
                         log.workingHours,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primaryDark,
@@ -1810,7 +1810,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                         Expanded(
                           child: Text(
                             log.location,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: AppColors.textSecondary,
                             ),
@@ -1845,7 +1845,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
                       const SizedBox(width: 4),
                       Text(
                         'Break: ${(log.breakDuration.isEmpty || log.breakDuration == '—') ? "0h 0m" : log.breakDuration}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFFB45309),
@@ -1889,7 +1889,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
           const SizedBox(height: 14),
           Text(
             'No Attendance Records',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1899,7 +1899,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
           Text(
             'No logs found for ${_months[_selectedMonth - 1]} $_selectedYear${_selectedStatus != "ALL" ? " with status '$_selectedStatus'" : ""}.',
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
               height: 1.4,
@@ -1912,7 +1912,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
               icon: const Icon(Remix.filter_off_line, size: 14),
               label: Text(
                 'Clear Filters',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
@@ -1933,7 +1933,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
               icon: const Icon(Remix.refresh_line, size: 14),
               label: Text(
                 'Refresh',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
@@ -1983,7 +1983,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
           const SizedBox(height: 12),
           Text(
             'Unable to Load Attendance',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1993,7 +1993,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
           Text(
             error,
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -2006,7 +2006,7 @@ class _AttendanceViewState extends ConsumerState<AttendanceView> {
             icon: const Icon(Remix.refresh_line, size: 14),
             label: Text(
               'Retry',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
               ),

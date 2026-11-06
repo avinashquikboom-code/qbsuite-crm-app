@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/theme/app_colors.dart';
 import '../models/ai_studio_model.dart';
@@ -87,11 +87,11 @@ class _CustomerAiStudioHomeViewState
       builder: (ctx) => AlertDialog(
         title: Text(
           'Disconnect ${acc.platform}?',
-          style: GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.bold),
+          style: AppTypography.inter(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         content: Text(
           'Are you sure you want to disconnect ${acc.accountName} (${acc.platform})?',
-          style: GoogleFonts.inter(fontSize: 13),
+          style: AppTypography.inter(fontSize: 13),
         ),
         actions: [
           TextButton(
@@ -158,7 +158,7 @@ class _CustomerAiStudioHomeViewState
           children: [
             Text(
               'AI Content Studio',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -166,7 +166,7 @@ class _CustomerAiStudioHomeViewState
             ),
             Text(
               'QB Marketplace Creative Suite',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11,
                 color: const Color(0xFF64748B),
               ),
@@ -198,7 +198,7 @@ class _CustomerAiStudioHomeViewState
                   const SizedBox(width: 4),
                   Text(
                     '${wallet?.balance ?? 0} Credits',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: const Color(0xFF065F46),
@@ -251,7 +251,7 @@ class _CustomerAiStudioHomeViewState
                 children: [
                   Text(
                     'Quick Actions',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -259,7 +259,7 @@ class _CustomerAiStudioHomeViewState
                   ),
                   Text(
                     'Select a creative model',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: const Color(0xFF64748B),
                     ),
@@ -345,7 +345,7 @@ class _CustomerAiStudioHomeViewState
                     const SizedBox(width: 5),
                     Text(
                       'AI STUDIO POWERED',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFFA5B4FC),
@@ -363,7 +363,7 @@ class _CustomerAiStudioHomeViewState
                 ),
                 child: Text(
                   '$balance credits available',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w500,
                     color: const Color(0xFFCBD5E1),
@@ -375,7 +375,7 @@ class _CustomerAiStudioHomeViewState
           const SizedBox(height: 12),
           Text(
             'Smart AI Content & Media Creator',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -384,7 +384,7 @@ class _CustomerAiStudioHomeViewState
           const SizedBox(height: 5),
           Text(
             'Generate posts, reels, video scripts, ad copy, and visuals tailored for your brand.',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: const Color(0xFFCBD5E1),
               height: 1.35,
@@ -405,7 +405,7 @@ class _CustomerAiStudioHomeViewState
                   ),
                   label: Text(
                     'Generate Content',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -432,7 +432,7 @@ class _CustomerAiStudioHomeViewState
                 ),
                 label: Text(
                   'View History',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
@@ -505,7 +505,7 @@ class _CustomerAiStudioHomeViewState
                   children: [
                     Text(
                       'AI Credit Wallet',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         color: const Color(0xFF64748B),
                         fontWeight: FontWeight.w500,
@@ -513,7 +513,7 @@ class _CustomerAiStudioHomeViewState
                     ),
                     Text(
                       '$balance Credits',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF0F172A),
@@ -527,7 +527,7 @@ class _CustomerAiStudioHomeViewState
                 icon: const Icon(Remix.add_line, size: 14, color: Colors.white),
                 label: Text(
                   'Top-Up',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -571,7 +571,7 @@ class _CustomerAiStudioHomeViewState
                       balance == 0
                           ? 'You have 0 credits. Recharge to start generating content.'
                           : 'Low credit balance ($balance left). Recharge to prevent generation interruptions.',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         color: const Color(0xFF92400E),
                         fontWeight: FontWeight.w500,
@@ -707,7 +707,7 @@ class _CustomerAiStudioHomeViewState
                   ),
                   child: Text(
                     costText,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.w700,
                       color: const Color(0xFF475569),
@@ -721,7 +721,7 @@ class _CustomerAiStudioHomeViewState
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -732,7 +732,7 @@ class _CustomerAiStudioHomeViewState
                 const SizedBox(height: 2),
                 Text(
                   desc,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10,
                     color: const Color(0xFF64748B),
                     height: 1.2,
@@ -755,7 +755,7 @@ class _CustomerAiStudioHomeViewState
       children: [
         Text(
           'Recent AI Generations',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -767,7 +767,7 @@ class _CustomerAiStudioHomeViewState
             children: [
               Text(
                 'View All',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
@@ -810,7 +810,7 @@ class _CustomerAiStudioHomeViewState
                 const SizedBox(height: 8),
                 Text(
                   'No Generations Yet',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -819,7 +819,7 @@ class _CustomerAiStudioHomeViewState
                 const SizedBox(height: 4),
                 Text(
                   'Select any tool above to create your first content.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: const Color(0xFF64748B),
                   ),
@@ -895,7 +895,7 @@ class _CustomerAiStudioHomeViewState
                                         : 'AI Creation',
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -913,7 +913,7 @@ class _CustomerAiStudioHomeViewState
                                   ),
                                   child: Text(
                                     gen.status,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 9,
                                       fontWeight: FontWeight.w700,
                                       color: statusColor,
@@ -929,7 +929,7 @@ class _CustomerAiStudioHomeViewState
                                   'AI Generated Content',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 color: const Color(0xFF64748B),
                               ),
@@ -973,7 +973,7 @@ class _CustomerAiStudioHomeViewState
           children: [
             Text(
               'Creative Tools Marketplace',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -981,7 +981,7 @@ class _CustomerAiStudioHomeViewState
             ),
             Text(
               'On-Demand Suite',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 11,
                 color: const Color(0xFF64748B),
               ),
@@ -1032,7 +1032,7 @@ class _CustomerAiStudioHomeViewState
                           children: [
                             Text(
                               s.name,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -1044,7 +1044,7 @@ class _CustomerAiStudioHomeViewState
                                 s.description!,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11,
                                   color: const Color(0xFF64748B),
                                 ),
@@ -1072,7 +1072,7 @@ class _CustomerAiStudioHomeViewState
                         ),
                         child: Text(
                           '${s.creditCost} Crd • Use',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                           ),
@@ -1118,7 +1118,7 @@ class _CustomerAiStudioHomeViewState
                   const SizedBox(width: 6),
                   Text(
                     'Connected Channels',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -1138,7 +1138,7 @@ class _CustomerAiStudioHomeViewState
                     const SizedBox(width: 2),
                     Text(
                       'Connect Channel',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primary,
@@ -1155,7 +1155,7 @@ class _CustomerAiStudioHomeViewState
               if (accounts.isEmpty) {
                 return Text(
                   'No social accounts connected yet. Connect Instagram, Facebook, or LinkedIn to publish generated content instantly.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: const Color(0xFF64748B),
                     height: 1.3,
@@ -1190,7 +1190,7 @@ class _CustomerAiStudioHomeViewState
                         Flexible(
                           child: Text(
                             '${acc.platform}: ${acc.accountName}',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF1E293B),
@@ -1237,11 +1237,11 @@ class _CustomerAiStudioHomeViewState
           controller: _tabController,
           labelColor: AppColors.primary,
           unselectedLabelColor: AppColors.textSecondary,
-          labelStyle: GoogleFonts.inter(
+          labelStyle: AppTypography.inter(
             fontSize: 13,
             fontWeight: FontWeight.bold,
           ),
-          unselectedLabelStyle: GoogleFonts.inter(
+          unselectedLabelStyle: AppTypography.inter(
             fontSize: 13,
             fontWeight: FontWeight.w500,
           ),
@@ -1282,14 +1282,14 @@ class _CustomerAiStudioHomeViewState
                 const SizedBox(height: 8),
                 Text(
                   'No Content Logged',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   'Generated copy and media will appear here.',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                   ),
@@ -1348,7 +1348,7 @@ class _CustomerAiStudioHomeViewState
                             gen.product,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -1359,7 +1359,7 @@ class _CustomerAiStudioHomeViewState
                             gen.caption ?? gen.objective ?? 'AI Generated',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: AppColors.textSecondary,
                             ),
@@ -1399,7 +1399,7 @@ class _CustomerAiStudioHomeViewState
                 const SizedBox(height: 8),
                 Text(
                   'No Scheduled Posts',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                   ),
@@ -1407,7 +1407,7 @@ class _CustomerAiStudioHomeViewState
                 Text(
                   'After generating content, tap "Publish to Social Media" to queue posts.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                   ),
@@ -1438,7 +1438,7 @@ class _CustomerAiStudioHomeViewState
                       children: [
                         Text(
                           '${pub.platform} Post',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1448,7 +1448,7 @@ class _CustomerAiStudioHomeViewState
                           pub.content ?? '(Media post)',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                           ),
@@ -1469,7 +1469,7 @@ class _CustomerAiStudioHomeViewState
                     ),
                     child: Text(
                       pub.status,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                         color: pub.status == 'PUBLISHED'

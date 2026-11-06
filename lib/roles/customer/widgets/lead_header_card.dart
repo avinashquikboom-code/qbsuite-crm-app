@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
@@ -119,7 +119,7 @@ class LeadHeaderCard extends StatelessWidget {
                   children: [
                     Text(
                       lead.displayTitle,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 16.5,
                         fontWeight: FontWeight.bold,
                         color: lead.displayName.isNotEmpty
@@ -146,7 +146,7 @@ class LeadHeaderCard extends StatelessWidget {
                           Flexible(
                             child: Text(
                               lead.validContactPerson ?? lead.fullName,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 color: const Color(0xFF475569),
                                 fontWeight: FontWeight.w500,
@@ -194,7 +194,7 @@ class LeadHeaderCard extends StatelessWidget {
                               Flexible(
                                 child: Text(
                                   stageName,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                     color: stageColor,
@@ -232,7 +232,7 @@ class LeadHeaderCard extends StatelessWidget {
                                 Flexible(
                                   child: Text(
                                     lead.sourceDisplayName,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 10.5,
                                       fontWeight: FontWeight.w600,
                                       color: const Color(0xFF475569),
@@ -275,7 +275,7 @@ class LeadHeaderCard extends StatelessWidget {
                       flex: createdDateStr.isNotEmpty ? 3 : 1,
                       child: Text(
                         'Assigned: $assignedName',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
                           color: const Color(0xFF475569),
@@ -303,7 +303,7 @@ class LeadHeaderCard extends StatelessWidget {
                       flex: hasAssigned ? 2 : 1,
                       child: Text(
                         'Created: $createdDateStr',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11,
                           color: const Color(0xFF64748B),
                         ),
@@ -343,7 +343,7 @@ class LeadHeaderCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           locationStr,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             color: const Color(0xFF475569),
                           ),
@@ -367,7 +367,7 @@ class LeadHeaderCard extends StatelessWidget {
       alignment: Alignment.center,
       child: Text(
         _getInitials(lead.displayName),
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 20,
           fontWeight: FontWeight.bold,
           color: const Color(0xFF334155),

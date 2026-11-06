@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:dio/dio.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
@@ -404,7 +404,7 @@ class _ScheduleVisitBottomSheetState
                       children: [
                         Text(
                           'Schedule Field Visit',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -414,7 +414,7 @@ class _ScheduleVisitBottomSheetState
                           const SizedBox(height: 2),
                           Text(
                             'For $displayName',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppColors.textSecondary,
@@ -455,7 +455,7 @@ class _ScheduleVisitBottomSheetState
                       const SizedBox(height: 6),
                       TextFormField(
                         controller: _purposeCtrl,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
@@ -504,7 +504,7 @@ class _ScheduleVisitBottomSheetState
                       const SizedBox(height: 6),
                       TextFormField(
                         controller: _locationCtrl,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
@@ -576,7 +576,7 @@ class _ScheduleVisitBottomSheetState
                                     Expanded(
                                       child: Text(
                                         _formatDate(_selectedDate),
-                                        style: GoogleFonts.inter(
+                                        style: AppTypography.inter(
                                           fontSize: 13,
                                           fontWeight: FontWeight.w600,
                                           color: AppColors.textPrimary,
@@ -616,7 +616,7 @@ class _ScheduleVisitBottomSheetState
                                     Expanded(
                                       child: Text(
                                         _selectedTime.format(context),
-                                        style: GoogleFonts.inter(
+                                        style: AppTypography.inter(
                                           fontSize: 13,
                                           fontWeight: FontWeight.w600,
                                           color: AppColors.textPrimary,
@@ -653,7 +653,7 @@ class _ScheduleVisitBottomSheetState
                             ),
                             child: Text(
                               'Visitors Only',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF3730A3),
@@ -699,7 +699,7 @@ class _ScheduleVisitBottomSheetState
                               Expanded(
                                 child: Text(
                                   'No visitor or field officers found. Please assign "Visitor" or "Field Officer" designation to an employee in Admin Settings.',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,
                                     color: const Color(0xFF92400E),
@@ -767,7 +767,7 @@ class _ScheduleVisitBottomSheetState
                                       name.isNotEmpty
                                           ? name
                                           : 'Employee #${emp['id']}',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w600,
                                         color: AppColors.textPrimary,
@@ -779,7 +779,7 @@ class _ScheduleVisitBottomSheetState
                                     const SizedBox(width: 4),
                                     Text(
                                       '($code)',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 11,
                                         color: AppColors.textSecondary,
                                       ),
@@ -800,7 +800,7 @@ class _ScheduleVisitBottomSheetState
                                     ),
                                     child: Text(
                                       desig.toString(),
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 10,
                                         fontWeight: FontWeight.bold,
                                         color: const Color(0xFF065F46),
@@ -827,7 +827,7 @@ class _ScheduleVisitBottomSheetState
                       TextFormField(
                         controller: _notesCtrl,
                         maxLines: 3,
-                        style: GoogleFonts.inter(fontSize: 13),
+                        style: AppTypography.inter(fontSize: 13),
                         decoration: InputDecoration(
                           hintText:
                               'Key stakeholder names, presentation items, or special instructions...',
@@ -904,7 +904,7 @@ class _ScheduleVisitBottomSheetState
                         )
                       : Text(
                           'CONFIRM VISIT SCHEDULE',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 0.5,
@@ -926,7 +926,7 @@ class _ScheduleVisitBottomSheetState
         const SizedBox(width: 6),
         Text(
           title,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontWeight: FontWeight.w600,
             fontSize: 13,
             color: AppColors.textPrimary,

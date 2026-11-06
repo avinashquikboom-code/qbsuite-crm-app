@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
@@ -537,7 +537,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
                 fit: BoxFit.scaleDown,
                 child: Text(
                   label,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 10,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                     color: isSelected

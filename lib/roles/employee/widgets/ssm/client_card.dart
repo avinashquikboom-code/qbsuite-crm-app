@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/employee/models/employee_ssm_work_model.dart';
@@ -97,7 +97,7 @@ class ClientCard extends StatelessWidget {
                   child: Center(
                     child: Text(
                       initial,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
@@ -112,7 +112,7 @@ class ClientCard extends StatelessWidget {
                     children: [
                       Text(
                         client.customerName,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -122,7 +122,7 @@ class ClientCard extends StatelessWidget {
                       ),
                       Text(
                         client.customerBusiness,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),
@@ -144,7 +144,7 @@ class ClientCard extends StatelessWidget {
                   ),
                   child: Text(
                     status,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.w800,
                       color: statusTextColor,
@@ -165,7 +165,7 @@ class ClientCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     client.socialMediaAccount,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12.5,
                       color: AppColors.textSecondary,
                       fontWeight: FontWeight.w500,
@@ -186,7 +186,7 @@ class ClientCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     '${work.workType.displayName} Shoot • ${work.assignedTeam}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -197,7 +197,7 @@ class ClientCard extends StatelessWidget {
                 const SizedBox(width: 6),
                 Text(
                   _formatDateRange(work.startDate, work.endDate),
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                     fontWeight: FontWeight.w500,
@@ -222,7 +222,7 @@ class ClientCard extends StatelessWidget {
                 children: [
                   Text(
                     'Day $currentDay of ${work.durationDays}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w700,
                       color: AppColors.primaryDark,
@@ -231,7 +231,7 @@ class ClientCard extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                     taskForDay?.title ?? 'Deliverable Stage',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12.5,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textPrimary,
@@ -261,7 +261,7 @@ class ClientCard extends StatelessWidget {
                     ),
                     child: Text(
                       '${client.allWorks.length} Campaigns',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textSecondary,
@@ -278,7 +278,7 @@ class ClientCard extends StatelessWidget {
                     children: [
                       Text(
                         'View Client',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primaryDark,

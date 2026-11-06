@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import '../models/trending_content.dart';
@@ -158,7 +158,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                           const Spacer(),
                           Text(
                             item.shortDate,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textPlaceholder,
                               fontWeight: FontWeight.w500,
@@ -228,7 +228,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                       // Title
                       Text(
                         item.title,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFF0F172A),
@@ -242,7 +242,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                         const SizedBox(height: 10),
                         Text(
                           item.description!,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             color: AppColors.textSecondary,
                             height: 1.5,
@@ -263,7 +263,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                           const SizedBox(width: 6),
                           Text(
                             item.formattedDateTime,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPlaceholder,
@@ -281,7 +281,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             ),
                             child: Text(
                               item.objective,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -296,7 +296,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                         const SizedBox(height: 20),
                         Text(
                           'CAMPAIGN METRICS',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w800,
                             letterSpacing: 0.8,
@@ -370,7 +370,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                           ),
                           label: Text(
                             item.isYouTube ? 'Watch Video' : 'Play Reel',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -415,7 +415,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                         ),
                         child: Text(
                           'Use This Hook',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -454,7 +454,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
           const SizedBox(width: 6),
           Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: const Color(0xFF0F172A),
@@ -463,7 +463,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
           const SizedBox(width: 4),
           Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 11,
               color: AppColors.textPlaceholder,
             ),
@@ -493,7 +493,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
               : null,
           title: Text(
             'Trending Campaigns',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -521,7 +521,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                 const SizedBox(height: 16),
                 Text(
                   'Access Denied',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -531,7 +531,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                 Text(
                   'You do not have permission to view Trending Campaigns. Please contact your administrator if you need access.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                   ),
@@ -631,7 +631,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                               children: [
                                 Text.rich(
                                   TextSpan(
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: isNarrow
                                           ? 17.5
                                           : (isTablet ? 22.0 : 19.0),
@@ -661,7 +661,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                                     'High-converting reels, story hooks & offers',
                                     maxLines: 1,
                                     softWrap: false,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: isNarrow
                                           ? 10.5
                                           : (isCompact ? 11.0 : 11.5),
@@ -782,7 +782,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                                 .read(trendingSearchQueryProvider.notifier)
                                 .setSearchQuery(val);
                           },
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: isNarrow ? 12.0 : 12.5,
                             color: const Color(0xFF0F172A),
                           ),
@@ -790,7 +790,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             isDense: true,
                             hintText:
                                 'Search trending reels, videos, hooks, ads...',
-                            hintStyle: GoogleFonts.inter(
+                            hintStyle: AppTypography.inter(
                               fontSize: isNarrow ? 11.5 : 12.5,
                               color: AppColors.textPlaceholder,
                             ),
@@ -892,7 +892,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                               ),
                               child: Text(
                                 chipLabel,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11.5,
                                   fontWeight: isSelected
                                       ? FontWeight.bold
@@ -979,7 +979,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                                   opt.label,
                                   maxLines: 1,
                                   textAlign: TextAlign.center,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: isNarrow ? 10.0 : 11.0,
                                     fontWeight: isSelected
                                         ? FontWeight.bold
@@ -1029,7 +1029,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                                 'Trending Content',
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: isNarrow ? 14 : 15,
                                   fontWeight: FontWeight.w800,
                                   color: const Color(0xFF0F172A),
@@ -1049,7 +1049,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                                 ),
                                 child: Text(
                                   '${items.length}',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 9.5,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.primaryDark,
@@ -1085,7 +1085,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             children: [
                               Text(
                                 'View All',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: isNarrow ? 11.0 : 11.5,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primary,
@@ -1144,7 +1144,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                         const SizedBox(height: 12),
                         Text(
                           'Unable to load trending campaigns',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF0F172A),
@@ -1154,7 +1154,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                         Text(
                           error.toString().replaceFirst('Exception: ', ''),
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -1172,7 +1172,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            textStyle: GoogleFonts.inter(
+                            textStyle: AppTypography.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 13,
                             ),
@@ -1216,7 +1216,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             const SizedBox(height: 16),
                             Text(
                               'No trending campaigns available',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF0F172A),
@@ -1228,7 +1228,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                                   ? 'No active campaigns found for "${activeFilter.label}". Try a different filter!'
                                   : 'New high-converting campaigns and reel ideas will appear here once published.',
                               textAlign: TextAlign.center,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),
@@ -1255,7 +1255,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                               ),
                               label: Text(
                                 'Reset Filters',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   color: AppColors.primary,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -1359,7 +1359,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                           const SizedBox(width: 3),
                           Text(
                             'TRENDING SHORTS & REELS',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.w800,
                               color: const Color(0xFF15803D),
@@ -1375,7 +1375,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                   // Main Title: "Get Inspired.\nCreate. Grow."
                   RichText(
                     text: TextSpan(
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: screenWidth < 360
                             ? 15
                             : (screenWidth >= 600 ? 19 : 16.5),
@@ -1398,7 +1398,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                   // Subtitle / Description
                   Text(
                     'Explore viral Shorts & Reels hooks and ideas from top creators.',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: screenWidth < 360
                           ? 9.5
                           : (screenWidth >= 600 ? 12 : 10.5),
@@ -1433,7 +1433,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                       children: [
                         Text(
                           'Browse Ideas',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                           ),
@@ -1724,7 +1724,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                         ),
                         child: Text(
                           item.formattedDuration!,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 9.5,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -1761,7 +1761,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                               item.displayCategoryName,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: isNarrow ? 8.5 : 9.5,
                                 fontWeight: FontWeight.w700,
                                 color: const Color(0xFF475569),
@@ -1772,7 +1772,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                         const SizedBox(width: 4),
                         Text(
                           item.shortDate,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: isNarrow ? 8.5 : 9.5,
                             fontWeight: FontWeight.w500,
                             color: AppColors.textPlaceholder,
@@ -1786,7 +1786,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                       item.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: isNarrow ? 10.5 : 11.5,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF0F172A),
@@ -1811,7 +1811,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             const SizedBox(width: 2.5),
                             Text(
                               item.formattedViews!,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 9.5,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.textSecondary,
@@ -1830,7 +1830,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                             const SizedBox(width: 2.5),
                             Text(
                               item.formattedLikes!,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 9.5,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.textSecondary,
@@ -1850,7 +1850,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                               const SizedBox(width: 2.5),
                               Text(
                                 item.formattedComments!,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 9.5,
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.textSecondary,
@@ -1867,7 +1867,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
                               const SizedBox(width: 2.5),
                               Text(
                                 item.formattedShares!,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 9.5,
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.textSecondary,
@@ -1910,7 +1910,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
             const SizedBox(width: 3),
             Text(
               'Shorts',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 9,
                 fontWeight: FontWeight.w800,
                 color: Colors.white,
@@ -1943,7 +1943,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
           const SizedBox(width: 3),
           Text(
             'Reel',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 9,
               fontWeight: FontWeight.w800,
               color: Colors.white,
@@ -1978,7 +1978,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
             const SizedBox(width: 4),
             Text(
               'INSTAGRAM',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 9,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFFDB2777),
@@ -2005,7 +2005,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
             const SizedBox(width: 4),
             Text(
               'YOUTUBE',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 9,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFFDC2626),
@@ -2025,7 +2025,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
         ),
         child: Text(
           item.displayPlatform.toUpperCase(),
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 9,
             fontWeight: FontWeight.w800,
             color: AppColors.textSecondary,
@@ -2070,7 +2070,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
         '${item.category.emoji} ${item.displayCategoryTag}',
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 9,
           fontWeight: FontWeight.bold,
           color: fg,

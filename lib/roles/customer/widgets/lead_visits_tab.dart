@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
@@ -101,7 +101,7 @@ class LeadVisitsTab extends StatelessWidget {
         child: Text(
           'Visit information is not available.',
           textAlign: TextAlign.center,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             color: const Color(0xFF94A3B8),
             fontSize: 13,
           ),
@@ -140,7 +140,7 @@ class LeadVisitsTab extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               'No Visits Yet',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -150,7 +150,7 @@ class LeadVisitsTab extends StatelessWidget {
             Text(
               'No field visits have been scheduled for this lead.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),
@@ -205,7 +205,7 @@ class LeadVisitsTab extends StatelessWidget {
                 ),
                 child: Text(
                   _displayStatus(visit.status),
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: _statusFg(visit.status),
@@ -226,7 +226,7 @@ class LeadVisitsTab extends StatelessWidget {
                       if (dateLabel.isNotEmpty) dateLabel,
                       if (timeLabel != null) timeLabel,
                     ].join(' • '),
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF0F172A),
@@ -240,7 +240,7 @@ class LeadVisitsTab extends StatelessWidget {
             const SizedBox(height: 6),
             Text(
               visit.purpose.trim(),
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
                 color: const Color(0xFF334155),
@@ -273,7 +273,7 @@ class LeadVisitsTab extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               'Visitor Comment:',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF64748B),
@@ -282,7 +282,7 @@ class LeadVisitsTab extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               notes,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 color: AppColors.textPrimary,
                 fontStyle: FontStyle.italic,
@@ -300,7 +300,7 @@ class LeadVisitsTab extends StatelessWidget {
               ),
               child: Text(
                 'Outcome: $outcome',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: const Color(0xFF047857),
@@ -322,7 +322,7 @@ class LeadVisitsTab extends StatelessWidget {
         Expanded(
           child: Text(
             text,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.w500,
               color: color ?? const Color(0xFF64748B),

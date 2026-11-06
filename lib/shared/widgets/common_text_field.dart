@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
 /// Reusable styled text input field across all roles.
@@ -42,7 +42,7 @@ class CommonTextField extends StatelessWidget {
         if (label != null) ...[
           Text(
             label!,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -59,10 +59,10 @@ class CommonTextField extends StatelessWidget {
           maxLines: maxLines,
           readOnly: readOnly,
           onTap: onTap,
-          style: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
+          style: AppTypography.inter(fontSize: 14, color: AppColors.textPrimary),
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle: GoogleFonts.inter(
+            hintStyle: AppTypography.inter(
               fontSize: 14,
               color: AppColors.textPlaceholder,
             ),

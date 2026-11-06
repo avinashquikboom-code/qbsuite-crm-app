@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_theme.dart';
 import 'package:quickboom_app/shared/services/onboarding_service.dart';
@@ -105,7 +105,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         ),
                         child: Text(
                           'Skip',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
@@ -170,7 +170,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         children: [
                           Text(
                             isLastPage ? 'Get Started' : 'Next',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ),
@@ -222,7 +222,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           Text(
             content.title,
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 26,
               fontWeight: FontWeight.bold,
               color: AppTheme.textPrimary,
@@ -233,7 +233,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           Text(
             content.description,
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 15,
               color: AppTheme.textSecondary,
               height: 1.5,

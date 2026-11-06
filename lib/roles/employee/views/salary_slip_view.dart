@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
@@ -309,7 +309,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                   children: [
                     Text(
                       'LATEST SALARY SLIP',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         color: Colors.white.withValues(alpha: 0.8),
                         fontSize: 10.5,
                         fontWeight: FontWeight.w800,
@@ -321,7 +321,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                       slip.month,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         color: Colors.white,
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
@@ -342,7 +342,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                 ),
                 child: Text(
                   '[$statusText]',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     color: Colors.white,
                     fontSize: 10.5,
                     fontWeight: FontWeight.w800,
@@ -358,7 +358,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
           // Main Net Payable & Disbursement Date
           Text(
             'Net Payable',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               color: Colors.white.withValues(alpha: 0.85),
               fontSize: 12.5,
               fontWeight: FontWeight.w500,
@@ -370,7 +370,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             alignment: Alignment.centerLeft,
             child: Text(
               formatCurrency(slip.netSalary),
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 34,
                 fontWeight: FontWeight.w900,
                 color: Colors.white,
@@ -389,7 +389,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
               const SizedBox(width: 5),
               Text(
                 'Disbursed on: $disbursedDate',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                   color: Colors.white.withValues(alpha: 0.85),
@@ -454,7 +454,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             child: Text(
               label,
               maxLines: 1,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: Colors.white.withValues(alpha: 0.85),
                 fontSize: 10,
                 fontWeight: FontWeight.w600,
@@ -467,7 +467,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             child: Text(
               value,
               maxLines: 1,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 color: Colors.white,
                 fontSize: 12.5,
                 fontWeight: FontWeight.w800,
@@ -495,7 +495,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                 fit: BoxFit.scaleDown,
                 child: Text(
                   'View Salary Slip',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -532,7 +532,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                 fit: BoxFit.scaleDown,
                 child: Text(
                   'Download PDF',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primary,
@@ -632,7 +632,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                   Expanded(
                     child: Text(
                       'Employee Information',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -765,7 +765,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                   Expanded(
                     child: Text(
                       'Bank & Payment Details',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -835,7 +835,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             children: [
               Text(
                 leftLabel,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 10,
                   fontWeight: FontWeight.w700,
                   color: AppColors.textSecondary,
@@ -847,7 +847,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                 leftValue,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
                   color: AppColors.textPrimary,
@@ -863,7 +863,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             children: [
               Text(
                 rightLabel,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 10,
                   fontWeight: FontWeight.w700,
                   color: AppColors.textSecondary,
@@ -875,7 +875,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                 rightValue,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
                   color: AppColors.textPrimary,
@@ -899,7 +899,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
           children: [
             Text(
               'Payslip History',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -908,7 +908,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             const SizedBox(height: 2),
             Text(
               'View and download your monthly salary slips',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 color: AppColors.textSecondary,
               ),
@@ -922,7 +922,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             }),
             child: Text(
               _showAllHistory ? 'Show Less' : 'View All >',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primary,
@@ -985,7 +985,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                   slip.month,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -994,7 +994,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                 const SizedBox(height: 2),
                 Text(
                   'Disbursed on $disbursedDate',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11.5,
                     color: AppColors.textSecondary,
                   ),
@@ -1011,7 +1011,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             children: [
               Text(
                 formatCurrency(slip.netSalary),
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14.5,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primaryDark,
@@ -1043,7 +1043,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                           const SizedBox(width: 3),
                           Text(
                             'View',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
@@ -1080,7 +1080,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                             const SizedBox(width: 8),
                             Text(
                               'View Breakdown',
-                              style: GoogleFonts.inter(fontSize: 13),
+                              style: AppTypography.inter(fontSize: 13),
                             ),
                           ],
                         ),
@@ -1097,7 +1097,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                             const SizedBox(width: 8),
                             Text(
                               'Download PDF',
-                              style: GoogleFonts.inter(fontSize: 13),
+                              style: AppTypography.inter(fontSize: 13),
                             ),
                           ],
                         ),
@@ -1194,7 +1194,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                         children: [
                           Text(
                             'Salary Slip Breakdown',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 19,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -1203,7 +1203,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                           const SizedBox(height: 2),
                           Text(
                             'Pay Period: ${slip.month}',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF0F763E),
@@ -1223,7 +1223,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                   // Attendance Summary Section
                   Text(
                     'ATTENDANCE SUMMARY',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.w800,
                       color: AppColors.textPrimary,
@@ -1249,7 +1249,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                               Expanded(
                                 child: Text(
                                   'ATTENDANCE DETAIL',
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.w700,
                                     color: Colors.white,
@@ -1259,7 +1259,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                               ),
                               Text(
                                 'VALUE',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w700,
                                   color: Colors.white,
@@ -1277,7 +1277,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
 
                   Text(
                     'SALARY BREAKDOWN',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.w800,
                       color: AppColors.textPrimary,
@@ -1303,7 +1303,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                           children: [
                             Text(
                               'MONTHLY SALARY',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w700,
                                 color: const Color(0xFF64748B),
@@ -1315,7 +1315,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                               formatCurrency(slip.monthlySalary > 0
                                   ? slip.monthlySalary
                                   : (slip.basicSalary + slip.hra + slip.allowances + slip.specialAllowance)),
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w800,
                                 color: const Color(0xFF0F172A),
@@ -1328,7 +1328,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                           children: [
                             Text(
                               'ATTENDANCE-BASED PAYABLE',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w700,
                                 color: const Color(0xFF64748B),
@@ -1340,7 +1340,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                               formatCurrency(slip.attendanceSalary > 0
                                   ? slip.attendanceSalary
                                   : slip.grossSalary),
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w800,
                                 color: const Color(0xFF0F763E),
@@ -1375,7 +1375,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   width: 155,
                                   child: Text(
                                     'EARNINGS',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11.5,
                                       fontWeight: FontWeight.w700,
                                       color: Colors.white,
@@ -1388,7 +1388,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   child: Text(
                                     'AMOUNT',
                                     textAlign: TextAlign.right,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11.5,
                                       fontWeight: FontWeight.w700,
                                       color: Colors.white,
@@ -1401,7 +1401,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   width: 165,
                                   child: Text(
                                     'DEDUCTIONS',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11.5,
                                       fontWeight: FontWeight.w700,
                                       color: Colors.white,
@@ -1414,7 +1414,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   child: Text(
                                     'AMOUNT',
                                     textAlign: TextAlign.right,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11.5,
                                       fontWeight: FontWeight.w700,
                                       color: Colors.white,
@@ -1442,7 +1442,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                     width: 155,
                                     child: Text(
                                       i < earningsRows.length ? earningsRows[i].key : '—',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 12.5,
                                         color: i < earningsRows.length
                                             ? AppColors.textPrimary
@@ -1457,7 +1457,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                           ? formatCurrency(earningsRows[i].value)
                                           : '—',
                                       textAlign: TextAlign.right,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 12.5,
                                         fontWeight: FontWeight.w600,
                                         color: i < earningsRows.length
@@ -1471,7 +1471,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                     width: 165,
                                     child: Text(
                                       i < deductionRows.length ? deductionRows[i].key : '—',
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 12.5,
                                         color: i < deductionRows.length
                                             ? AppColors.textPrimary
@@ -1486,7 +1486,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                           ? formatCurrency(deductionRows[i].value)
                                           : '—',
                                       textAlign: TextAlign.right,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 12.5,
                                         fontWeight: FontWeight.w600,
                                         color: i < deductionRows.length
@@ -1509,7 +1509,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   width: 155,
                                   child: Text(
                                     'Total Gross Salary',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 12.5,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -1521,7 +1521,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   child: Text(
                                     formatCurrency(slip.grossSalary),
                                     textAlign: TextAlign.right,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                       color: const Color(0xFF0F763E),
@@ -1533,7 +1533,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   width: 165,
                                   child: Text(
                                     'Total Deductions',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 12.5,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -1545,7 +1545,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   child: Text(
                                     formatCurrency(slip.deductions),
                                     textAlign: TextAlign.right,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                       color: const Color(0xFFDC2626),
@@ -1584,7 +1584,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                 children: [
                                   Text(
                                     'NET PAYABLE (TAKE HOME SALARY)',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11,
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 0.5,
@@ -1594,7 +1594,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                                   const SizedBox(height: 4),
                                   Text(
                                     formatCurrency(slip.netSalary),
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 24,
                                       fontWeight: FontWeight.w800,
                                       color: const Color(0xFF0F763E),
@@ -1608,7 +1608,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                               icon: const Icon(Remix.download_2_line, size: 16, color: Colors.white),
                               label: Text(
                                 'Download PDF',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 12.5,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white,
@@ -1631,7 +1631,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                         const SizedBox(height: 8),
                         Text(
                           'Confidential Document — Generated electronically by QB Suite',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontStyle: FontStyle.italic,
                             color: const Color(0xFF15803D),
@@ -1694,7 +1694,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             Expanded(
               child: Text(
                 row.key,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12.5,
                   fontWeight: FontWeight.w500,
                   color: const Color(0xFF334155),
@@ -1703,7 +1703,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             ),
             Text(
               row.value,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 fontWeight: FontWeight.w700,
                 color: const Color(0xFF0F172A),
@@ -1724,7 +1724,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
               Expanded(
                 child: Text(
                   'Approved Extra Working Dates',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11.5,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF047857),
@@ -1733,7 +1733,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
               ),
               Text(
                 slip.extraWorkingDates.join(', '),
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF047857),
@@ -1800,7 +1800,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             Text(
               'Unable to load salary slips.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -1810,7 +1810,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
             Text(
               error,
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12.5,
                 color: AppColors.textSecondary,
               ),
@@ -1863,7 +1863,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
           const SizedBox(height: 12),
           Text(
             'No Salary Slips Yet',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1873,7 +1873,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
           Text(
             'Salary slips will appear here once payroll is processed.',
             textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               color: AppColors.textSecondary,
             ),

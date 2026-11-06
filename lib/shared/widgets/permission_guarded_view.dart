@@ -76,7 +76,7 @@ class PermissionGuardedView extends ConsumerWidget {
               const SizedBox(height: 20),
               Text(
                 "Access Restricted",
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textPrimary,
@@ -86,7 +86,7 @@ class PermissionGuardedView extends ConsumerWidget {
               Text(
                 "You do not have permission to access the $moduleTitle module. Contact your administrator if you need access.",
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   color: AppColors.textSecondary,
                   height: 1.4,
@@ -111,7 +111,7 @@ class PermissionGuardedView extends ConsumerWidget {
                     icon: const Icon(Remix.arrow_left_line, size: 16),
                     label: Text(
                       "Go Back",
-                      style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                      style: AppTypography.inter(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],

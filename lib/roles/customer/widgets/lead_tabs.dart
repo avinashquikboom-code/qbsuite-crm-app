@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
@@ -62,11 +62,11 @@ class LeadTabs extends StatelessWidget {
             indicatorSize: TabBarIndicatorSize.tab,
             labelColor: AppColors.primary,
             unselectedLabelColor: const Color(0xFF64748B),
-            labelStyle: GoogleFonts.inter(
+            labelStyle: AppTypography.inter(
               fontWeight: FontWeight.bold,
               fontSize: 12,
             ),
-            unselectedLabelStyle: GoogleFonts.inter(
+            unselectedLabelStyle: AppTypography.inter(
               fontWeight: FontWeight.w500,
               fontSize: 12,
             ),
@@ -127,7 +127,7 @@ class LeadTabs extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8),
         child: Text(
           'No activity logged yet.',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             color: const Color(0xFF94A3B8),
             fontSize: 13,
           ),
@@ -184,7 +184,7 @@ class LeadTabs extends StatelessWidget {
                         Expanded(
                           child: Text(
                             item.action.replaceAll('_', ' '),
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF0F172A),
@@ -197,7 +197,7 @@ class LeadTabs extends StatelessWidget {
                           item.createdAt.isNotEmpty
                               ? item.createdAt.split('T')[0]
                               : '',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             color: const Color(0xFF64748B),
                           ),
@@ -207,7 +207,7 @@ class LeadTabs extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       item.description,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 12,
                         color: const Color(0xFF475569),
                       ),
@@ -231,7 +231,7 @@ class LeadTabs extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8),
         child: Text(
           'No status transitions recorded yet.',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             color: const Color(0xFF94A3B8),
             fontSize: 13,
           ),
@@ -276,7 +276,7 @@ class LeadTabs extends StatelessWidget {
                   children: [
                     Text(
                       'Stage: ${history.toStatus.replaceAll('_', ' ')}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF0F172A),
@@ -286,7 +286,7 @@ class LeadTabs extends StatelessWidget {
                       const SizedBox(height: 2),
                       Text(
                         history.notes!,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFF64748B),
                         ),
@@ -295,7 +295,7 @@ class LeadTabs extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       history.createdAt.split('T')[0],
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 10,
                         color: const Color(0xFF94A3B8),
                       ),

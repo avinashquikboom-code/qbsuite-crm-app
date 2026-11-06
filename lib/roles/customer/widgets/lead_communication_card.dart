@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/customer/models/lead_model.dart';
@@ -78,7 +78,7 @@ class LeadCommunicationCard extends ConsumerWidget {
               Expanded(
                 child: Text(
                   'BPO Communications',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF0F172A),
@@ -117,7 +117,7 @@ class LeadCommunicationCard extends ConsumerWidget {
                         children: [
                           Text(
                             'Emails',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: const Color(0xFF64748B),
                             ),
@@ -125,7 +125,7 @@ class LeadCommunicationCard extends ConsumerWidget {
                           const SizedBox(height: 2),
                           Text(
                             '${res.summary.totalEmails}',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF4F46E5),
@@ -147,7 +147,7 @@ class LeadCommunicationCard extends ConsumerWidget {
                         children: [
                           Text(
                             'WhatsApp',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: const Color(0xFF64748B),
                             ),
@@ -155,7 +155,7 @@ class LeadCommunicationCard extends ConsumerWidget {
                           const SizedBox(height: 2),
                           Text(
                             '${res.summary.totalWhatsApp}',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF25D366),
@@ -177,7 +177,7 @@ class LeadCommunicationCard extends ConsumerWidget {
                         children: [
                           Text(
                             'Last',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: const Color(0xFF64748B),
                             ),
@@ -185,7 +185,7 @@ class LeadCommunicationCard extends ConsumerWidget {
                           const SizedBox(height: 2),
                           Text(
                             _formatTimeAgo(latestDate),
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF0F172A),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -92,7 +92,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                     children: [
                       Text(
                         activity.activityType.label,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12.5,
                           fontWeight: FontWeight.bold,
                           color: activity.activityType.color,
@@ -100,7 +100,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                       ),
                       Text(
                         activity.customerName,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -122,7 +122,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                   ),
                   child: Text(
                     activity.status,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                       color: activity.statusColor,
@@ -192,7 +192,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                       icon: const Icon(Remix.eye_line, size: 16),
                       label: Text(
                         'View Work',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                         ),
@@ -226,7 +226,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
           width: 110,
           child: Text(
             label,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
               fontWeight: FontWeight.w500,
@@ -237,7 +237,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
         Expanded(
           child: Text(
             value,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

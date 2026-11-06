@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 
@@ -325,7 +325,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                       const SizedBox(width: 8),
                       Text(
                         story['title'] as String,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -354,7 +354,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
               const SizedBox(height: 20),
               Text(
                 '${story['views']} Instagram Story Views',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Colors.white.withValues(alpha: 0.9),
@@ -364,7 +364,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
               Text(
                 'Top trending format for fitness & wellness business ads',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 12,
                   color: Colors.white.withValues(alpha: 0.75),
                 ),
@@ -394,7 +394,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                   },
                   child: Text(
                     'Use This Story Template',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
                     ),
@@ -460,7 +460,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                     const SizedBox(width: 8),
                     Text(
                       ad['handle'] as String,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -542,7 +542,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                             ),
                             child: Text(
                               ad['badge'] as String,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 10.5,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -561,7 +561,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                             children: [
                               Text(
                                 ad['hook'] as String,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -581,7 +581,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                                   Expanded(
                                     child: Text(
                                       ad['audio'] as String,
-                                      style: GoogleFonts.inter(
+                                      style: AppTypography.inter(
                                         fontSize: 11,
                                         color: Colors.white70,
                                       ),
@@ -650,7 +650,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                       icon: const Icon(Remix.sparkling_fill, size: 18),
                       label: Text(
                         'Request Similar Reel For My Brand',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
@@ -697,7 +697,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
             const SizedBox(height: 4),
             Text(
               value,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -705,7 +705,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
             ),
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 10,
                 color: const Color(0xFF94A3B8),
               ),
@@ -733,7 +733,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
               Expanded(
                 child: Text(
                   'TRENDING STORIES & HOOKS',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w800,
                     color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -746,7 +746,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
               const SizedBox(width: 8),
               Text(
                 'Tap to preview',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   color: const Color(0xFF94A3B8),
                 ),
@@ -821,7 +821,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                           const SizedBox(height: 4),
                           Text(
                             story['title'] as String,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPrimary,
@@ -891,7 +891,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                           child: Center(
                             child: Text(
                               tab,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11.5,
                                 fontWeight: isSelected
                                     ? FontWeight.bold
@@ -920,7 +920,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
               Expanded(
                 child: Text(
                   'VIRAL REELS & AD CREATIVES',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w800,
                     color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -933,7 +933,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
               const SizedBox(width: 8),
               Text(
                 '${filteredAds.length} Templates',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primary,
@@ -965,7 +965,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
         appBar: AppBar(
           title: Text(
             'Trending Ads & Reels',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -1028,7 +1028,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                             children: [
                               Text(
                                 'Trending',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -1039,7 +1039,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                               ),
                               Text(
                                 'ADS, REELS & STORIES',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 9,
                                   fontWeight: FontWeight.w800,
                                   color: AppColors.primaryDark,
@@ -1072,7 +1072,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                         const SizedBox(width: 4),
                         Text(
                           'Viral Library',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFFB45309),
@@ -1185,7 +1185,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                                 Flexible(
                                   child: Text(
                                     ad['handle'] as String,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 10.5,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
@@ -1210,7 +1210,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                           ),
                           child: Text(
                             ad['badge'] as String,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 9.5,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -1246,7 +1246,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                           Expanded(
                             child: Text(
                               ad['audio'] as String,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 10.5,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500,
@@ -1271,7 +1271,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                 children: [
                   Text(
                     ad['title'] as String,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14.5,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -1282,7 +1282,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                   const SizedBox(height: 4),
                   Text(
                     ad['hook'] as String,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: const Color(0xFF64748B),
                       height: 1.3,
@@ -1307,7 +1307,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                           const SizedBox(width: 3),
                           Text(
                             ad['views'] as String,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF334155),
@@ -1322,7 +1322,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                           const SizedBox(width: 3),
                           Text(
                             ad['likes'] as String,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF334155),
@@ -1345,7 +1345,7 @@ class _AdminTrendingViewState extends ConsumerState<AdminTrendingView> {
                             '${ad['ctr']} • ${ad['roas']}',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF16A34A),

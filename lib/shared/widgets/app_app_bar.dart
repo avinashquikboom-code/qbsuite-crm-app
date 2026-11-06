@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 
 /// Global standardized AppBar for the QuikBoom application.
@@ -117,7 +117,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
             overflow: TextOverflow.ellipsis,
             style:
                 appBarTheme.titleTextStyle ??
-                GoogleFonts.inter(
+                AppTypography.inter(
                   color: effectiveFg,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,

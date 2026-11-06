@@ -1,7 +1,7 @@
 import 'package:quickboom_app/roles/company_admin/views/customers/admin_customers_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 
 import 'package:quickboom_app/core/constants/constants.dart';
@@ -62,7 +62,7 @@ class AppDrawer extends ConsumerWidget {
               const SizedBox(width: 12),
               Text(
                 'Sign Out',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
@@ -71,7 +71,7 @@ class AppDrawer extends ConsumerWidget {
           ),
           content: Text(
             'Are you sure you want to end your current session and sign out?',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14,
               color: AppColors.textSecondary,
             ),
@@ -82,7 +82,7 @@ class AppDrawer extends ConsumerWidget {
                 onPressed: () => Navigator.pop(ctx),
                 child: Text(
                   'Cancel',
-                  style: GoogleFonts.inter(color: AppColors.textSecondary),
+                  style: AppTypography.inter(color: AppColors.textSecondary),
                 ),
               ),
             ElevatedButton(
@@ -116,7 +116,7 @@ class AppDrawer extends ConsumerWidget {
                     )
                   : Text(
                       'Logout',
-                      style: GoogleFonts.inter(fontWeight: FontWeight.bold),
+                      style: AppTypography.inter(fontWeight: FontWeight.bold),
                     ),
             ),
           ],
@@ -497,7 +497,7 @@ class AppDrawer extends ConsumerWidget {
                         const SizedBox(width: 12),
                         Text(
                           'Logout',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.error,
@@ -637,7 +637,7 @@ class AppDrawer extends ConsumerWidget {
                 children: [
                   Text(
                     'QB Suite',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 19,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -646,7 +646,7 @@ class AppDrawer extends ConsumerWidget {
                   ),
                   Text(
                     'BUSINESS SUITE',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.w800,
                       color: AppColors.primary,
@@ -692,7 +692,7 @@ class AppDrawer extends ConsumerWidget {
                     children: [
                       Text(
                         empName,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                           color: AppColors.textPrimary,
@@ -706,7 +706,7 @@ class AppDrawer extends ConsumerWidget {
                             Flexible(
                               child: Text(
                                 empCode,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primary,
@@ -720,7 +720,7 @@ class AppDrawer extends ConsumerWidget {
                               designation.toLowerCase() != 'staff')
                             Text(
                               ' • ',
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 color: AppColors.textSecondary,
                               ),
@@ -730,7 +730,7 @@ class AppDrawer extends ConsumerWidget {
                             Flexible(
                               child: Text(
                                 designation,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11,
                                   color: AppColors.textSecondary,
                                 ),
@@ -754,7 +754,7 @@ class AppDrawer extends ConsumerWidget {
                   ),
                   child: Text(
                     status.toUpperCase(),
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 9,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryDark,
@@ -774,7 +774,7 @@ class AppDrawer extends ConsumerWidget {
       padding: const EdgeInsets.only(left: 8, bottom: 8, top: 4),
       child: Text(
         title,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 10,
           fontWeight: FontWeight.w800,
           color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -820,7 +820,7 @@ class AppDrawer extends ConsumerWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 14,
                       fontWeight: isSelected
                           ? FontWeight.bold
@@ -843,7 +843,7 @@ class AppDrawer extends ConsumerWidget {
                     ),
                     child: Text(
                       badge,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 9,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

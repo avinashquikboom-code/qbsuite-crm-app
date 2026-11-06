@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
@@ -98,7 +98,7 @@ class CustomerHomeView extends ConsumerWidget {
                 children: [
                   Text(
                     'QB Suite',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -109,7 +109,7 @@ class CustomerHomeView extends ConsumerWidget {
                   ),
                   Text(
                     'CUSTOMER WORKSPACE',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 9,
                       fontWeight: FontWeight.w800,
                       color: AppColors.primaryDark,

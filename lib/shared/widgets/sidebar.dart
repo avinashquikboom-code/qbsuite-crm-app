@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/constants/constants.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
@@ -119,7 +119,7 @@ class Sidebar extends ConsumerWidget {
                   children: [
                     Text(
                       'QB Suite',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -128,7 +128,7 @@ class Sidebar extends ConsumerWidget {
                     ),
                     Text(
                       'BUSINESS SUITE',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 9,
                         fontWeight: FontWeight.w800,
                         color: AppColors.primary,
@@ -232,7 +232,7 @@ class Sidebar extends ConsumerWidget {
                         children: [
                           Text(
                             empName,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -245,7 +245,7 @@ class Sidebar extends ConsumerWidget {
                               if (empCode.isNotEmpty) ...[
                                 Text(
                                   empCode,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.primary,
@@ -255,7 +255,7 @@ class Sidebar extends ConsumerWidget {
                                     designation.toLowerCase() != 'staff') ...[
                                   Text(
                                     ' • ',
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -267,7 +267,7 @@ class Sidebar extends ConsumerWidget {
                                 Expanded(
                                   child: Text(
                                     designation,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -297,7 +297,7 @@ class Sidebar extends ConsumerWidget {
       padding: const EdgeInsets.only(left: 10, bottom: 8, top: 4),
       child: Text(
         title,
-        style: GoogleFonts.inter(
+        style: AppTypography.inter(
           fontSize: 10,
           fontWeight: FontWeight.w800,
           color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -334,7 +334,7 @@ class Sidebar extends ConsumerWidget {
                 const SizedBox(width: 12),
                 Text(
                   label,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: isActive
                         ? AppColors.primaryDark
@@ -382,7 +382,7 @@ class Sidebar extends ConsumerWidget {
               const SizedBox(width: 8),
               Text(
                 'Logout',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   color: AppColors.error,
                   fontWeight: FontWeight.bold,

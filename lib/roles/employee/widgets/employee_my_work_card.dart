@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -175,7 +175,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         actTitle,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.w800,
                           letterSpacing: 0.8,
@@ -229,7 +229,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                         const SizedBox(width: 5),
                         Text(
                           'CARRIED FORWARD${activity.originalScheduledDateDisplay != null ? ' • Originally scheduled: ${activity.originalScheduledDateDisplay}' : ''}',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
                             color: const Color(0xFFB45309),
@@ -245,7 +245,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                 Text(
                   (companyName.isNotEmpty ? companyName : customerDisplayName)
                       .toUpperCase(),
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.w800,
                     color: AppColors.textPrimary,
@@ -260,7 +260,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                 // 2. Customer Name (Second line)
                 Text(
                   customerDisplayName,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -274,7 +274,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                   const SizedBox(height: 3),
                   Text(
                     companyName,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: AppColors.textSecondary,
@@ -310,7 +310,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                           const SizedBox(width: 5),
                           Text(
                             dateFormatted,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF334155),
@@ -341,7 +341,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                           const SizedBox(width: 5),
                           Text(
                             timeStr,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF334155),
@@ -385,7 +385,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                             const SizedBox(width: 4),
                             Text(
                               activity.assignedEmployee.trim(),
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xFF4338CA),
@@ -416,7 +416,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                             const SizedBox(width: 4),
                             Text(
                               activity.team!.trim(),
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xFF475569),
@@ -438,7 +438,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                         ),
                         child: Text(
                           activity.purchaseId!.trim(),
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w700,
                             color: AppColors.primaryDark,
@@ -475,7 +475,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                         Expanded(
                           child: Text(
                             activity.notes!.trim(),
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11.5,
                               color: const Color(0xFF475569),
                               height: 1.3,
@@ -525,7 +525,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                             activity.isCarriedForward && !isCompleted && !isInProgress
                                 ? 'PENDING / CARRIED FORWARD'
                                 : activity.status.toUpperCase(),
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11.5,
                               fontWeight: FontWeight.w700,
                               color: activity.isCarriedForward && !isCompleted && !isInProgress
@@ -566,7 +566,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                           const SizedBox(width: 4),
                           Text(
                             'Completed',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12.5,
                               fontWeight: FontWeight.w700,
                               color: const Color(0xFF16A34A),
@@ -587,7 +587,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                           (isVideoOrGraphics && hasRevisions)
                               ? 'Final Complete'
                               : 'Complete Work',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12.5,
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
@@ -615,7 +615,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                         ),
                         label: Text(
                           'Final Complete',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12.5,
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
@@ -644,7 +644,7 @@ class EmployeeMyWorkCard extends StatelessWidget {
                         ),
                         label: Text(
                           'Start Work',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12.5,
                             fontWeight: FontWeight.w700,
                             color: Colors.white,

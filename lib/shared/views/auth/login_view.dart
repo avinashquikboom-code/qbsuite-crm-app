@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:dio/dio.dart';
 import 'package:quickboom_app/core/models/user_role.dart';
@@ -906,7 +906,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               icon: const Icon(Remix.arrow_left_s_line, size: 18),
               label: Text(
                 'Change Role',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                 ),
@@ -951,7 +951,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               // "Login with" Label & Method Pills
               Text(
                 'Login with',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF1D2939),
@@ -968,7 +968,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 const SizedBox(height: 6),
                 Text(
                   _identifierError!,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                     color: const Color(0xFFDC2626),
@@ -1028,7 +1028,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                           const SizedBox(width: 8),
                           Text(
                             'Remember Me',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 13,
                               color: const Color(0xFF475569),
                               fontWeight: FontWeight.w500,
@@ -1048,7 +1048,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       },
                       child: Text(
                         'Forgot Password?',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF23C45E),
@@ -1068,7 +1068,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   children: [
                     Text(
                       'Enter 6-digit OTP',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF334155),
@@ -1087,7 +1087,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                           const SizedBox(width: 4),
                           Text(
                             'Change Number',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12.5,
                               fontWeight: FontWeight.w600,
                               color: const Color(0xFF16A34A),
@@ -1121,7 +1121,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   const SizedBox(height: 6),
                   Text(
                     _otpError!,
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: const Color(0xFFDC2626),
@@ -1182,7 +1182,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                                     : (_isMobileLogin
                                         ? (_mobileOtpSent ? 'Verify OTP & Sign In' : 'Send OTP')
                                         : 'Send OTP'),
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
@@ -1215,7 +1215,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       const SizedBox(width: 6),
                       Text(
                         'Resend OTP in 00:${_resendCountdown.toString().padLeft(2, '0')}',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.w500,
                           color: const Color(0xFF64748B),
@@ -1237,7 +1237,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                         const SizedBox(width: 6),
                         Text(
                           'Resend OTP',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13.5,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF23C45E),
@@ -1263,7 +1263,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Text(
                       'OR',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         color: const Color(0xFF98A2B3),
@@ -1346,7 +1346,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     children: [
                       Text(
                         "Don't have an account? ",
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           color: const Color(0xFF64748B),
                         ),
@@ -1355,7 +1355,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                         onTap: _openRegistration,
                         child: Text(
                           'Register',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF16A34A),
@@ -1408,7 +1408,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
             const SizedBox(width: 8),
             Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 14.5,
                 fontWeight: FontWeight.w600,
                 color: const Color(0xFF334155),
@@ -1502,7 +1502,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     fit: BoxFit.scaleDown,
                     child: Text(
                       label,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                         color: isSelected ? Colors.white : const Color(0xFF475569),
@@ -1543,7 +1543,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     : (_acceptsEmployeeCode()
                         ? 'e.g. employee@company.com or EMP-004'
                         : 'e.g. employee@company.com'),
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   color: const Color(0xFF94A3B8),
                   fontWeight: FontWeight.w400,
@@ -1583,7 +1583,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                         const SizedBox(width: 6),
                         Text(
                           '+91',
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF1E293B),
@@ -1618,7 +1618,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 _mobileOtpSent
                     ? 'OTP sent to +91 ${_identifierController.text.trim()}'
                     : 'e.g. 9876543210',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   color: _mobileOtpSent ? const Color(0xFF16A34A) : const Color(0xFF94A3B8),
                   fontWeight: _mobileOtpSent ? FontWeight.w500 : FontWeight.w400,
@@ -1643,7 +1643,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               padding: const EdgeInsets.only(left: 4),
               child: Text(
                 'e.g. EMP-004',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 11.5,
                   color: const Color(0xFF94A3B8),
                   fontWeight: FontWeight.w400,
@@ -1693,7 +1693,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     const SizedBox(width: 4),
                     Text(
                       'Back',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF475569),
@@ -1736,7 +1736,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
         // Headings
         Text(
           'Verify OTP',
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 22,
             fontWeight: FontWeight.bold,
             color: const Color(0xFF0F172A),
@@ -1745,7 +1745,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
         const SizedBox(height: 6),
         Text(
           "We've sent a 6-digit OTP to",
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 13.5,
             color: const Color(0xFF64748B),
           ),
@@ -1759,7 +1759,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
           ),
           child: Text(
             _maskedDestination,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: const Color(0xFF0F172A),
@@ -1826,7 +1826,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     children: [
                       Text(
                         'Verify OTP & Sign In',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -1855,7 +1855,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   ),
                 ),
                 const SizedBox(height: 8),
-                Text('Sending OTP...', style: GoogleFonts.inter(fontSize: 13)),
+                Text('Sending OTP...', style: AppTypography.inter(fontSize: 13)),
                 const SizedBox(height: 8),
               ],
               if (_resendCountdown > 0) ...[
@@ -1870,7 +1870,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     const SizedBox(width: 6),
                     Text(
                       'Resend OTP in 00:${_resendCountdown.toString().padLeft(2, '0')}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w500,
                         color: const Color(0xFF64748B),
@@ -1892,7 +1892,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       const SizedBox(width: 6),
                       Text(
                         'Resend OTP',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13.5,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF23C45E),
@@ -1918,7 +1918,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     const SizedBox(width: 6),
                     Text(
                       '✎ $changeText',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF475569),
@@ -1982,7 +1982,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               // Heading & Subtitle
               Text(
                 'Verifying OTP',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xFF0F172A),
@@ -1991,7 +1991,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               const SizedBox(height: 6),
               Text(
                 'Please wait while we verify your code',
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 13,
                   color: const Color(0xFF64748B),
                 ),
@@ -2060,7 +2060,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
           Expanded(
             child: Text(
               label,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: isDone || isCurrent ? FontWeight.w600 : FontWeight.w400,
                 color: isDone || isCurrent ? const Color(0xFF166534) : const Color(0xFF64748B),

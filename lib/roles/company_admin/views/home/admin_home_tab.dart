@@ -2,7 +2,7 @@ import "package:quickboom_app/core/models/permission_model.dart";
 import "package:quickboom_app/core/services/permission_manager.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/utils/app_date_formatter.dart';
@@ -209,7 +209,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                         Flexible(
                           child: Text(
                             'LIVE WORKSPACE',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.w800,
                               color: const Color(0xFF86EFAC),
@@ -225,7 +225,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                       state.profile.companyName,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -310,7 +310,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                         children: [
                           Text(
                             'Live Staff Attendance',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -319,7 +319,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                           ),
                           Text(
                             'Real-time workforce & break monitoring',
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 11,
                               color: AppColors.textSecondary,
                             ),
@@ -350,7 +350,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                     children: [
                       Text(
                         'Roster',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 11.5,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
@@ -464,7 +464,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
               child: Center(
                 child: Text(
                   'No staff members in this filter',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12.5,
                     color: AppColors.textSecondary,
                   ),
@@ -503,7 +503,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                                 Flexible(
                                   child: Text(
                                     att.employeeName,
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 13.5,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -523,7 +523,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                                   ),
                                   child: Text(
                                     att.status.label.toUpperCase(),
-                                    style: GoogleFonts.inter(
+                                    style: AppTypography.inter(
                                       fontSize: 9.5,
                                       fontWeight: FontWeight.w800,
                                       color: att.status.color,
@@ -541,7 +541,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                                         : 'In: ${AppDateFormatter.formatAttendanceTime(att.punchInTime, fallback: "—")} • ${att.location}'),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.inter(
+                              style: AppTypography.inter(
                                 fontSize: 11.5,
                                 color: AppColors.textSecondary,
                               ),
@@ -552,7 +552,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                       if (att.status == LiveAttendanceStatus.working)
                         Text(
                           att.totalWorkingHours,
-                          style: GoogleFonts.inter(
+                          style: AppTypography.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
                             color: const Color(0xFF16A34A),
@@ -598,7 +598,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
             const SizedBox(height: 2),
             Text(
               '$count',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.w800,
                 color: color,
@@ -608,7 +608,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
               label,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 8.5,
                 fontWeight: FontWeight.w700,
                 color: color,
@@ -680,7 +680,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
       children: [
         Text(
           "Operational KPIs",
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 15,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -770,7 +770,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                                 v.customerName,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 13.5,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -780,7 +780,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                                 '${v.employeeName} • ${v.time} • ${v.location}',
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 11.5,
                                   color: AppColors.textSecondary,
                                 ),
@@ -799,7 +799,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                           ),
                           child: Text(
                             v.status.label,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 10.5,
                               fontWeight: FontWeight.bold,
                               color: v.status.color,
@@ -900,7 +900,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                                   log.action,
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.inter(
+                                  style: AppTypography.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.textPrimary,
@@ -910,7 +910,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                               const SizedBox(width: 6),
                               Text(
                                 '${log.date}, ${log.time}',
-                                style: GoogleFonts.inter(
+                                style: AppTypography.inter(
                                   fontSize: 10.5,
                                   color: const Color(0xFF94A3B8),
                                 ),
@@ -920,7 +920,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                           const SizedBox(height: 2),
                           Text(
                             log.description,
-                            style: GoogleFonts.inter(
+                            style: AppTypography.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -948,7 +948,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
             title,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -960,7 +960,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
           onTap: onSeeAll,
           child: Text(
             'See All >',
-            style: GoogleFonts.inter(
+            style: AppTypography.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppColors.primary,
@@ -1004,7 +1004,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                         work.customerName,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14.5,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -1022,7 +1022,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                       ),
                       child: Text(
                         work.status.label,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 10.5,
                           fontWeight: FontWeight.bold,
                           color: work.status.color,
@@ -1036,7 +1036,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                   '${work.workType.label} • ${work.platform} • ${work.team}',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),
@@ -1062,7 +1062,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
                     const SizedBox(width: 10),
                     Text(
                       'Day ${work.currentDay}/${work.durationDays}',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primary,
@@ -1090,7 +1090,7 @@ class _AdminHomeTabState extends ConsumerState<AdminHomeTab> {
       child: Center(
         child: Text(
           message,
-          style: GoogleFonts.inter(
+          style: AppTypography.inter(
             fontSize: 12.5,
             color: AppColors.textSecondary,
           ),

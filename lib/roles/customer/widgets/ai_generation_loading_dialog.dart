@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import '../../../core/theme/app_colors.dart';
 
@@ -226,7 +226,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                     const SizedBox(width: 6),
                     Text(
                       'CREATING WITH AI',
-                      style: GoogleFonts.inter(
+                      style: AppTypography.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 1.1,
@@ -355,7 +355,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
               Text(
                 meta.title,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.inter(
+                style: AppTypography.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -380,7 +380,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                         displaySubtitle,
                         key: ValueKey<String>(displaySubtitle),
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 13,
                           color: const Color(0xFF94A3B8), // Slate 400
                           height: 1.4,
@@ -393,7 +393,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                 Text(
                   meta.defaultSubtitle,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontSize: 13,
                     color: const Color(0xFF94A3B8),
                     height: 1.4,
@@ -458,7 +458,7 @@ class _AiGenerationLoadingDialogState extends State<AiGenerationLoadingDialog>
                   const SizedBox(width: 8),
                   Text(
                     'Generating via official AI backend...',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 11,
                       color: const Color(0xFF64748B),
                     ),

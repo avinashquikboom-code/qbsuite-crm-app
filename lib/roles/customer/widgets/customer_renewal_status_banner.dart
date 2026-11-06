@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/roles/customer/models/customer_plan_model.dart';
 import 'package:quickboom_app/roles/customer/viewmodels/customer_subscription_viewmodel.dart';
@@ -71,7 +71,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                     children: [
                       Text(
                         'Renewal Required',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF92400E),
@@ -79,7 +79,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                       ),
                       Text(
                         'Your plan renewal is pending.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFFB45309),
                         ),
@@ -112,7 +112,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         'Renew before ${renewal.bufferEndDate} (${renewal.daysRemaining} days remaining)',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFF92400E),
@@ -140,7 +140,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                 icon: const Icon(Remix.arrow_right_line, size: 16),
                 label: Text(
                   'Renew Now (${renewal.nextInstallment != null ? '₹${renewal.nextInstallment!.amount.toStringAsFixed(0)}' : 'Next Installment'})',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontWeight: FontWeight.bold,
                     fontSize: 13,
                   ),
@@ -199,7 +199,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                     children: [
                       Text(
                         'Renewal Failed',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF991B1B),
@@ -207,7 +207,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                       ),
                       Text(
                         'Your installment renewal period has expired.',
-                        style: GoogleFonts.inter(
+                        style: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFFB91C1C),
                         ),
@@ -220,7 +220,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
             const SizedBox(height: 10),
             Text(
               'You must start a new plan to continue.',
-              style: GoogleFonts.inter(
+              style: AppTypography.inter(
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
                 color: const Color(0xFF7F1D1D),
@@ -239,14 +239,14 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                 children: [
                   Text(
                     'Original Plan Value',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       color: Colors.grey[700],
                     ),
                   ),
                   Text(
                     '₹${renewal.originalPlanValue.toStringAsFixed(0)}',
-                    style: GoogleFonts.inter(
+                    style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -271,7 +271,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                 icon: const Icon(Remix.shopping_bag_3_line, size: 16),
                 label: Text(
                   'Start New Plan (₹${renewal.originalPlanValue.toStringAsFixed(0)})',
-                  style: GoogleFonts.inter(
+                  style: AppTypography.inter(
                     fontWeight: FontWeight.bold,
                     fontSize: 13,
                   ),
