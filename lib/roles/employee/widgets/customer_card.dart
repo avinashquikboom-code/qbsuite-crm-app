@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -108,19 +109,8 @@ class CustomerCard extends ConsumerWidget {
   }
 
   /// Format number into Indian currency format (e.g. ₹2,500, ₹10,000, ₹1,25,000)
-  static String formatIndianCurrency(double amount) {
-    final rounded = amount.round();
-    final str = rounded.toString();
-    if (str.length <= 3) return '₹$str';
-
-    final lastThree = str.substring(str.length - 3);
-    final remaining = str.substring(0, str.length - 3);
-    final formattedRemaining = remaining.replaceAllMapped(
-      RegExp(r'(\d)(?=(\d{2})+(?!\d))'),
-      (Match m) => '${m[1]},',
-    );
-    return '₹$formattedRemaining,$lastThree';
-  }
+  static String formatIndianCurrency(double amount) =>
+      AppCurrency.format(amount);
 
   void _callNumber(String phone) async {
     final cleanPhone = phone.replaceAll(RegExp(r'[^\d+]'), '');

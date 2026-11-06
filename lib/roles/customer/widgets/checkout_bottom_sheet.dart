@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -139,24 +140,6 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
       'Dec',
     ];
     return '${dt.day} ${months[dt.month - 1]} ${dt.year}';
-  }
-
-  String _formatPrice(double amount) {
-    final intVal = amount.round();
-    final str = intVal.toString();
-    if (str.length <= 3) return str;
-
-    final lastThree = str.substring(str.length - 3);
-    var remaining = str.substring(0, str.length - 3);
-    final chunks = <String>[];
-    while (remaining.length > 2) {
-      chunks.insert(0, remaining.substring(remaining.length - 2));
-      remaining = remaining.substring(0, remaining.length - 2);
-    }
-    if (remaining.isNotEmpty) {
-      chunks.insert(0, remaining);
-    }
-    return '${chunks.join(',')},$lastThree';
   }
 
   Future<void> _handlePayment() async {
@@ -537,7 +520,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             ),
                             child: Center(
                               child: Text(
-                                'Monthly (₹${_formatPrice(widget.plan.monthlyPrice)})',
+                                'Monthly (${AppCurrency.format(widget.plan.monthlyPrice)})',
                                 style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight:
@@ -583,7 +566,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             ),
                             child: Center(
                               child: Text(
-                                'Yearly (₹${_formatPrice(widget.plan.yearlyPrice)})',
+                                'Yearly (${AppCurrency.format(widget.plan.yearlyPrice)})',
                                 style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight:
@@ -670,7 +653,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                '₹${_formatPrice(fullPlanTotal)} now',
+                                '${AppCurrency.format(fullPlanTotal)} now',
                                 style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
@@ -735,7 +718,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                '₹${_formatPrice(fullPlanTotal * 0.5)} now',
+                                '${AppCurrency.format(fullPlanTotal * 0.5)} now',
                                 style: AppTypography.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
@@ -920,27 +903,27 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                     children: [
                       _buildPriceRow(
                         'Total Plan Price',
-                        '₹${_formatPrice(basePrice)}',
+                        AppCurrency.format(basePrice),
                       ),
                       if (_couponQuote != null) ...[
                         const SizedBox(height: 8),
                         _buildPriceRow(
                           'Coupon ${_couponQuote!['couponCode']}',
-                          '-₹${_formatPrice(discountAmount)}',
+                          '-${AppCurrency.format(discountAmount)}',
                         ),
                       ],
                       const SizedBox(height: 8),
-                      _buildPriceRow('GST (18%)', '₹${_formatPrice(gstTax)}'),
+                      _buildPriceRow('GST (18%)', AppCurrency.format(gstTax)),
                       if (isAdvance) ...[
                         const SizedBox(height: 8),
                         _buildPriceRow(
                           'Total with GST',
-                          '₹${_formatPrice(fullPlanTotal)}',
+                          AppCurrency.format(fullPlanTotal),
                         ),
                         const SizedBox(height: 8),
                         _buildPriceRow(
                           'Remaining on Delivery (50%)',
-                          '₹${_formatPrice(remainingBalance)}',
+                          AppCurrency.format(remainingBalance),
                         ),
                       ],
                       const SizedBox(height: 10),
@@ -960,7 +943,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             ),
                           ),
                           Text(
-                            '₹${_formatPrice(finalAmount)}',
+                            AppCurrency.format(finalAmount),
                             style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.w900,
@@ -1326,8 +1309,8 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                                       _selectedMethod ==
                                                           'OFFLINE') &&
                                                   _offlinePaymentEnabled)
-                                              ? 'Submit Offline Request (₹${_formatPrice(finalAmount)})'
-                                              : 'Proceed to Payment (₹${_formatPrice(finalAmount)})'),
+                                              ? 'Submit Offline Request (${AppCurrency.format(finalAmount)})'
+                                              : 'Proceed to Payment (${AppCurrency.format(finalAmount)})'),
                                     style: AppTypography.inter(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
@@ -1390,7 +1373,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
           const SizedBox(height: 10),
           _buildBankDetailRow(
             'Payable Amount',
-            '₹${_formatPrice(finalAmount)}',
+            AppCurrency.format(finalAmount),
             canCopy: true,
           ),
           if (hasBankInfo) ...[

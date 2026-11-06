@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -33,14 +34,7 @@ class _EmployeeCommissionViewState
     'Dec',
   ];
 
-  String _formatCurrency(double amount) {
-    final parts = amount.toStringAsFixed(2).split('.');
-    final formatted = parts[0].replaceAllMapped(
-      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
-      (Match m) => '${m[1]},',
-    );
-    return '₹$formatted${parts[1] == '00' ? '' : '.${parts[1]}'}';
-  }
+  String _formatCurrency(double amount) => AppCurrency.format(amount);
 
   String _formatDate(String raw) {
     try {
@@ -602,8 +596,8 @@ class _EmployeeCommissionViewState
                 ],
               ),
               Text(
-                'Your share: ${item.commissionRate}${item.commissionType == 'PERCENTAGE' ? '%' : '₹'}'
-                '${item.originalCommissionRate != null ? ' of ${item.originalCommissionRate}${item.commissionType == 'PERCENTAGE' ? '%' : '₹'} total' : ''}',
+                'Your share: ${item.commissionType == 'PERCENTAGE' ? '${item.commissionRate}%' : AppCurrency.format(item.commissionRate)}'
+                '${item.originalCommissionRate != null ? ' of ${item.commissionType == 'PERCENTAGE' ? '${item.originalCommissionRate}%' : AppCurrency.format(item.originalCommissionRate)} total' : ''}',
                 style: AppTypography.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,

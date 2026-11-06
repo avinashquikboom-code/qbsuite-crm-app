@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -28,24 +29,6 @@ class PlanCard extends StatelessWidget {
     required this.onSelectPlan,
     this.onCardTap,
   });
-
-  String _formatPrice(double amount) {
-    final intVal = amount.round();
-    final str = intVal.toString();
-    if (str.length <= 3) return str;
-
-    final lastThree = str.substring(str.length - 3);
-    var remaining = str.substring(0, str.length - 3);
-    final chunks = <String>[];
-    while (remaining.length > 2) {
-      chunks.insert(0, remaining.substring(remaining.length - 2));
-      remaining = remaining.substring(0, remaining.length - 2);
-    }
-    if (remaining.isNotEmpty) {
-      chunks.insert(0, remaining);
-    }
-    return '${chunks.join(',')},$lastThree';
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -219,7 +202,7 @@ class PlanCard extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          '₹${_formatPrice(price)}',
+                          AppCurrency.format(price),
                           style: AppTypography.inter(
                             fontSize: 24,
                             fontWeight: FontWeight.w900,

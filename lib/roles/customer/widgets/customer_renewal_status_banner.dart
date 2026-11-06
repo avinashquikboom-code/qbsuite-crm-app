@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -139,7 +140,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                 ),
                 icon: const Icon(Remix.arrow_right_line, size: 16),
                 label: Text(
-                  'Renew Now (${renewal.nextInstallment != null ? '₹${renewal.nextInstallment!.amount.toStringAsFixed(0)}' : 'Next Installment'})',
+                  'Renew Now (${renewal.nextInstallment != null ? AppCurrency.format(renewal.nextInstallment!.amount) : 'Next Installment'})',
                   style: AppTypography.inter(
                     fontWeight: FontWeight.bold,
                     fontSize: 13,
@@ -245,7 +246,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                     ),
                   ),
                   Text(
-                    '₹${renewal.originalPlanValue.toStringAsFixed(0)}',
+                    AppCurrency.format(renewal.originalPlanValue),
                     style: AppTypography.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
@@ -270,7 +271,7 @@ class CustomerRenewalStatusBanner extends ConsumerWidget {
                 ),
                 icon: const Icon(Remix.shopping_bag_3_line, size: 16),
                 label: Text(
-                  'Start New Plan (₹${renewal.originalPlanValue.toStringAsFixed(0)})',
+                  'Start New Plan (${AppCurrency.format(renewal.originalPlanValue)})',
                   style: AppTypography.inter(
                     fontWeight: FontWeight.bold,
                     fontSize: 13,

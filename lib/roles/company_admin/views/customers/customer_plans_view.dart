@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
@@ -23,8 +24,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView> {
   String? _storageKey;
   SubscriptionService get _service =>
       SubscriptionService(dio: ref.read(apiClientProvider).dio);
-  String _money(dynamic paise) =>
-      '₹${((paise as num) / 100).toStringAsFixed(2)}';
+  String _money(dynamic paise) => AppCurrency.format(((paise as num) / 100));
   @override
   void initState() {
     super.initState();

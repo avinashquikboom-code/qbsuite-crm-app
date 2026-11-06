@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -167,9 +168,13 @@ class AdminReportsView extends ConsumerWidget {
                 color: const Color(0xFF0D9488),
                 bgColor: const Color(0xFFCCFBF1),
                 metrics: [
-                  _Metric('Total Quoted', '₹1,75,000', '4 Proposals'),
-                  _Metric('Accepted', '₹60,000', '1 Active'),
-                  _Metric('Pending', '₹95,000', 'In review'),
+                  _Metric(
+                    'Total Quoted',
+                    AppCurrency.format(175000),
+                    '4 Proposals',
+                  ),
+                  _Metric('Accepted', AppCurrency.format(60000), '1 Active'),
+                  _Metric('Pending', AppCurrency.format(95000), 'In review'),
                 ],
                 progressLabel: 'Proposal Close Rate',
                 progressValue: 0.65,

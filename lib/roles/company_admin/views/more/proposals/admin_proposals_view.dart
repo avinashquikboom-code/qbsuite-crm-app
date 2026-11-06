@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import "package:quickboom_app/core/models/permission_model.dart";
 import "package:quickboom_app/core/services/permission_manager.dart";
 import "package:quickboom_app/shared/widgets/permission_guarded_view.dart";
@@ -202,7 +203,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
               ),
               const SizedBox(width: 8),
               Text(
-                '₹${p.amount.toStringAsFixed(0)}',
+                AppCurrency.format(p.amount),
                 style: AppTypography.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.w800,

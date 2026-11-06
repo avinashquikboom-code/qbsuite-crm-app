@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/roles/company_admin/models/company_admin_models.dart';
@@ -180,7 +181,7 @@ class CompanyAdminState {
           statusColor: prop.status.color,
           statusBgColor: prop.status.bgColor,
           notes:
-              'Package: ${prop.packageName}. Amount: ₹${prop.amount.toStringAsFixed(0)}.',
+              'Package: ${prop.packageName}. Amount: ${AppCurrency.format(prop.amount)}.',
         ),
       );
     }
@@ -1470,7 +1471,7 @@ class CompanyAdminNotifier extends Notifier<CompanyAdminState> {
         date: '18 Aug 2026',
         time: '11:00 AM',
         description:
-            'Generated Proposal PROP-001 (Growth Plan ₹35,000) for Care Fitness Gym.',
+            'Generated Proposal PROP-001 (Growth Plan ${AppCurrency.format(35000)}) for Care Fitness Gym.',
       ),
       AdminAuditLog(
         id: 'AUD-005',
@@ -1784,7 +1785,7 @@ class CompanyAdminNotifier extends Notifier<CompanyAdminState> {
           date: 'Today',
           time: _formattedCurrentTime(),
           description:
-              'Generated Proposal ${proposal.id} for ${proposal.customerName} (₹${proposal.amount.toStringAsFixed(0)}).',
+              'Generated Proposal ${proposal.id} for ${proposal.customerName} (${AppCurrency.format(proposal.amount)}).',
         ),
         ...state.auditLogs,
       ],
@@ -1804,7 +1805,7 @@ class CompanyAdminNotifier extends Notifier<CompanyAdminState> {
           date: 'Today',
           time: _formattedCurrentTime(),
           description:
-              'Created new package "${pkg.name}" priced at ₹${pkg.price.toStringAsFixed(0)}.',
+              'Created new package "${pkg.name}" priced at ${AppCurrency.format(pkg.price)}.',
         ),
         ...state.auditLogs,
       ],

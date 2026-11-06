@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -257,7 +258,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                     // Package Row
                     _buildConfirmedItem(
                       'Package',
-                      '${booking.packageName} (₹${booking.packageCost.toStringAsFixed(0)})',
+                      '${booking.packageName} (${AppCurrency.format(booking.packageCost)})',
                     ),
                     const SizedBox(height: 10),
 
@@ -274,7 +275,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                           ),
                         ),
                         Text(
-                          '₹${booking.totalAmount.toStringAsFixed(0)}',
+                          AppCurrency.format(booking.totalAmount),
                           style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,

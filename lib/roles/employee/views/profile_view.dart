@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -848,7 +849,7 @@ class ProfileView extends ConsumerWidget {
               return const Text('No current salary structure available');
             }
             String money(String key) =>
-                '₹${(num.tryParse('${details[key]}') ?? 0).toStringAsFixed(2)}';
+                AppCurrency.format((num.tryParse('${details[key]}') ?? 0));
             final rows = <String, String>{
               'Current salary structure': details['id'] == null
                   ? 'Employee compensation'
@@ -936,7 +937,7 @@ class ProfileView extends ConsumerWidget {
         style: AppTypography.inter(fontWeight: FontWeight.bold, fontSize: 14),
       ),
       subtitle: Text(
-        '₹ ${slip.netSalary.toStringAsFixed(0)} Net • Paid on $paidDateText',
+        '${AppCurrency.format(slip.netSalary)} Net • Paid on $paidDateText',
         style: AppTypography.inter(
           color: AppColors.textSecondary,
           fontSize: 12,

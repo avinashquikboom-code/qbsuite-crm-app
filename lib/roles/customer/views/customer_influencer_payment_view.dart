@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -425,18 +426,15 @@ class _CustomerInfluencerPaymentViewState
                         const SizedBox(height: 10),
                         _buildSummaryRow(
                           'Package Cost',
-                          '₹${_packageCost.toStringAsFixed(0)}',
+                          AppCurrency.format(_packageCost),
                         ),
                         const SizedBox(height: 10),
                         _buildSummaryRow(
                           'Platform Fee',
-                          '₹${_platformFee.toStringAsFixed(0)}',
+                          AppCurrency.format(_platformFee),
                         ),
                         const SizedBox(height: 10),
-                        _buildSummaryRow(
-                          'GST (18%)',
-                          '₹${_gst.toStringAsFixed(0)}',
-                        ),
+                        _buildSummaryRow('GST (18%)', AppCurrency.format(_gst)),
 
                         const SizedBox(height: 14),
                         const Divider(height: 1, color: Color(0xFFF1F5F9)),
@@ -455,7 +453,7 @@ class _CustomerInfluencerPaymentViewState
                               ),
                             ),
                             Text(
-                              '₹${_totalAmount.toStringAsFixed(0)}',
+                              AppCurrency.format(_totalAmount),
                               style: AppTypography.inter(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -542,7 +540,7 @@ class _CustomerInfluencerPaymentViewState
                       )
                     : Text(
                         _selectedMethodIndex == 0
-                            ? 'Pay ₹${_totalAmount.toStringAsFixed(0)} with Razorpay'
+                            ? 'Pay ${AppCurrency.format(_totalAmount)} with Razorpay'
                             : 'Submit Offline Payment',
                         style: AppTypography.inter(
                           fontSize: 14,

@@ -195,8 +195,8 @@ void main() {
         expect(find.text('View All'), findsOneWidget);
         expect(find.text('August 2026'), findsOneWidget);
         expect(find.text('July 2026'), findsOneWidget);
-        expect(find.text('₹ 52000 Net • Paid on 01 Aug'), findsOneWidget);
-        expect(find.text('₹ 51000 Net • Paid on 01 Jul'), findsOneWidget);
+        expect(find.text('₹52,000.00 Net • Paid on 01 Aug'), findsOneWidget);
+        expect(find.text('₹51,000.00 Net • Paid on 01 Jul'), findsOneWidget);
         expect(find.text('No payslips available yet.'), findsNothing);
       },
     );
@@ -230,7 +230,14 @@ void main() {
 
       expect(find.text('Recent Payslips'), findsOneWidget);
       expect(find.text('Unable to load payslips'), findsOneWidget);
-      expect(find.text('Retry'), findsOneWidget);
+      final payslipErrorRow = find.ancestor(
+        of: find.text('Unable to load payslips'),
+        matching: find.byType(Row),
+      ).first;
+      expect(find.descendant(
+        of: payslipErrorRow,
+        matching: find.widgetWithText(TextButton, 'Retry'),
+      ), findsOneWidget);
       expect(find.text('July 2026'), findsNothing);
     });
   });

@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -801,7 +802,7 @@ class _CustomerInfluencersListViewState
                 // Starting Price
                 Text(
                   creator.pricing != null && creator.pricing! > 0
-                      ? '₹${creator.pricing!.toStringAsFixed(0)} / ${creator.platform == 'YOUTUBE' ? 'Video' : 'Post'}'
+                      ? '${AppCurrency.format(creator.pricing!)} / ${creator.platform == 'YOUTUBE' ? 'Video' : 'Post'}'
                       : 'Price on Request',
                   style: AppTypography.inter(
                     fontSize: 12,

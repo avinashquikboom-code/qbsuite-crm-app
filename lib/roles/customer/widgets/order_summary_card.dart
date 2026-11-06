@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -37,24 +38,6 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
       'Dec',
     ];
     return '${dt.day} ${months[dt.month - 1]} ${dt.year}';
-  }
-
-  String _formatPrice(double amount) {
-    final intVal = amount.round();
-    final str = intVal.toString();
-    if (str.length <= 3) return str;
-
-    final lastThree = str.substring(str.length - 3);
-    var remaining = str.substring(0, str.length - 3);
-    final chunks = <String>[];
-    while (remaining.length > 2) {
-      chunks.insert(0, remaining.substring(remaining.length - 2));
-      remaining = remaining.substring(0, remaining.length - 2);
-    }
-    if (remaining.isNotEmpty) {
-      chunks.insert(0, remaining);
-    }
-    return '${chunks.join(',')},$lastThree';
   }
 
   void _showInvoice(BuildContext context) {
@@ -373,7 +356,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                           ),
                           const SizedBox(height: 2),
                           Text(
-                            '₹${_formatPrice(order.totalAmount)}',
+                            AppCurrency.format(order.totalAmount),
                             style: AppTypography.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.w900,

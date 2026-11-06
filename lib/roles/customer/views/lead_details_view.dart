@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
@@ -1286,7 +1287,7 @@ targetStageName=${targetStage.name}
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Unit Price (₹)',
+                                'Unit Price (${AppCurrency.symbol})',
                                 style: AppTypography.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
@@ -1298,7 +1299,7 @@ targetStageName=${targetStage.name}
                                 keyboardType: TextInputType.number,
                                 onChanged: (_) => setSheetState(() {}),
                                 decoration: InputDecoration(
-                                  prefixText: '₹ ',
+                                  prefixText: '${AppCurrency.symbol} ',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),
@@ -1311,7 +1312,7 @@ targetStageName=${targetStage.name}
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      'Discount (₹)',
+                      'Discount (${AppCurrency.symbol})',
                       style: AppTypography.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
@@ -1323,7 +1324,7 @@ targetStageName=${targetStage.name}
                       keyboardType: TextInputType.number,
                       onChanged: (_) => setSheetState(() {}),
                       decoration: InputDecoration(
-                        prefixText: '₹ ',
+                        prefixText: '${AppCurrency.symbol} ',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -1341,17 +1342,17 @@ targetStageName=${targetStage.name}
                         children: [
                           _buildSummaryRow(
                             'Subtotal',
-                            '₹${subTotal.toStringAsFixed(0)}',
+                            AppCurrency.format(subTotal),
                           ),
                           const SizedBox(height: 6),
                           _buildSummaryRow(
                             'GST (18%)',
-                            '₹${tax.toStringAsFixed(0)}',
+                            AppCurrency.format(tax),
                           ),
                           const Divider(height: 14),
                           _buildSummaryRow(
                             'Total Proposal Amount',
-                            '₹${grandTotal.toStringAsFixed(0)}',
+                            AppCurrency.format(grandTotal),
                             isBold: true,
                             color: AppColors.primaryDark,
                           ),
@@ -1427,7 +1428,7 @@ targetStageName=${targetStage.name}
                           }
                         },
                         child: Text(
-                          'SEND PROPOSAL (₹${grandTotal.toStringAsFixed(0)})',
+                          'SEND PROPOSAL (${AppCurrency.format(grandTotal)})',
                           style: AppTypography.inter(
                             fontWeight: FontWeight.bold,
                           ),
@@ -1720,7 +1721,7 @@ targetStageName=${targetStage.name}
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Total Deal Amount (₹)',
+                                'Total Deal Amount (${AppCurrency.symbol})',
                                 style: AppTypography.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
@@ -1731,7 +1732,7 @@ targetStageName=${targetStage.name}
                                 controller: totalCtrl,
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
-                                  prefixText: '₹ ',
+                                  prefixText: '${AppCurrency.symbol} ',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),
@@ -1746,7 +1747,7 @@ targetStageName=${targetStage.name}
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Amount Paid (₹) *',
+                                'Amount Paid (${AppCurrency.symbol}) *',
                                 style: AppTypography.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
@@ -1757,7 +1758,7 @@ targetStageName=${targetStage.name}
                                 controller: paidCtrl,
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
-                                  prefixText: '₹ ',
+                                  prefixText: '${AppCurrency.symbol} ',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),

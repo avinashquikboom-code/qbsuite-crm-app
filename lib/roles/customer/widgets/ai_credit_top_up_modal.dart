@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -162,7 +163,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                         ],
                       ),
                       Text(
-                        '₹${(p['price'] as double).toStringAsFixed(0)}',
+                        AppCurrency.format((p['price'] as double)),
                         style: AppTypography.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -196,7 +197,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                         ),
                       )
                     : Text(
-                        'Pay ₹${_selectedPrice.toStringAsFixed(0)} & Add Credits',
+                        'Pay ${AppCurrency.format(_selectedPrice)} & Add Credits',
                         style: AppTypography.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

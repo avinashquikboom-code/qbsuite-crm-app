@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,24 +34,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
     super.dispose();
   }
 
-  String _formatNumber(double val) {
-    final intVal = val.round();
-    final str = intVal.toString();
-    if (str.length <= 3) return str;
-
-    // Indian currency comma formatting
-    final lastThree = str.substring(str.length - 3);
-    var remaining = str.substring(0, str.length - 3);
-    final chunks = <String>[];
-    while (remaining.length > 2) {
-      chunks.insert(0, remaining.substring(remaining.length - 2));
-      remaining = remaining.substring(0, remaining.length - 2);
-    }
-    if (remaining.isNotEmpty) {
-      chunks.insert(0, remaining);
-    }
-    return '${chunks.join(',')},$lastThree';
-  }
+  String _formatNumber(double val) => AppCurrency.number(val);
 
   @override
   Widget build(BuildContext context) {
@@ -1007,7 +991,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               ),
                               const SizedBox(height: 2),
                               Text(
-                                '₹${widget.formatNumber(pkg.totalPrice)}',
+                                AppCurrency.format(pkg.totalPrice),
                                 style: AppTypography.inter(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -1017,7 +1001,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               ),
                               const SizedBox(height: 2),
                               Text(
-                                'incl. ${pkg.gstPercent.toStringAsFixed(0)}% GST (₹${widget.formatNumber(pkg.gstAmount)})',
+                                'incl. ${pkg.gstPercent.toStringAsFixed(0)}% GST (${AppCurrency.format(pkg.gstAmount)})',
                                 style: AppTypography.inter(
                                   fontSize: 11,
                                   color: AppColors.textSecondary,
@@ -1204,7 +1188,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                                   ),
                                 ),
                                 Text(
-                                  '${item.quantity} × ₹${widget.formatNumber(item.unitPrice)} (${item.planType})',
+                                  '${item.quantity} × ${AppCurrency.format(item.unitPrice)} (${item.planType})',
                                   style: AppTypography.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
@@ -1227,7 +1211,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Base: ₹${widget.formatNumber(pkg.basePrice)}',
+                        'Base: ${AppCurrency.format(pkg.basePrice)}',
                         style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
@@ -1513,7 +1497,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                     child: Text(
                                       item.unitPrice == 0
                                           ? 'Included'
-                                          : '₹${formatNumber(item.total)}',
+                                          : AppCurrency.format(item.total),
                                       textAlign: TextAlign.right,
                                       style: AppTypography.inter(
                                         fontSize: 13,
@@ -1546,12 +1530,12 @@ class _PackageDetailsSheet extends StatelessWidget {
                         children: [
                           _buildSummaryLine(
                             'Base Price',
-                            '₹${formatNumber(package.basePrice)}',
+                            AppCurrency.format(package.basePrice),
                           ),
                           const SizedBox(height: 6),
                           _buildSummaryLine(
                             'GST (${package.gstPercent.toStringAsFixed(0)}%)',
-                            '₹${formatNumber(package.gstAmount)}',
+                            AppCurrency.format(package.gstAmount),
                           ),
                           const Padding(
                             padding: EdgeInsets.symmetric(vertical: 8),
@@ -1572,7 +1556,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '₹${formatNumber(package.totalPrice)}',
+                                AppCurrency.format(package.totalPrice),
                                 style: AppTypography.inter(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -1995,7 +1979,9 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                _fieldLabel('Base Price (₹) *'),
+                                _fieldLabel(
+                                  'Base Price (${AppCurrency.symbol}) *',
+                                ),
                                 _buildTextField(
                                   _priceCtrl,
                                   '50000',
@@ -2053,7 +2039,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                                 ),
                               ),
                               Text(
-                                '₹${totalPreview.toStringAsFixed(0)}',
+                                AppCurrency.format(totalPreview),
                                 style: AppTypography.inter(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
@@ -2290,7 +2276,9 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                   controller: ctrl['price'],
                   keyboardType: TextInputType.number,
                   style: AppTypography.inter(fontSize: 13),
-                  decoration: _inputDecoration('Unit Rate (₹)'),
+                  decoration: _inputDecoration(
+                    'Unit Rate (${AppCurrency.symbol})',
+                  ),
                 ),
               ),
               const SizedBox(width: 8),

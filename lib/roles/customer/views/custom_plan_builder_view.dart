@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -467,7 +468,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                             ),
                           ),
                           Text(
-                            '₹${opt.monthlyPrice.toInt()}/mo',
+                            '${AppCurrency.format(opt.monthlyPrice)}/mo',
                             style: AppTypography.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.w800,
@@ -674,7 +675,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                         ),
                       ),
                       Text(
-                        '₹${it.totalPrice.toInt()}',
+                        AppCurrency.format(it.totalPrice),
                         style: AppTypography.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
@@ -686,14 +687,14 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                 );
               }),
               const Divider(height: 18, color: AppColors.border),
-              _buildPriceRow('Subtotal', '₹${preview.subtotal.toInt()}'),
+              _buildPriceRow('Subtotal', AppCurrency.format(preview.subtotal)),
               if (preview.discount > 0)
                 _buildPriceRow(
                   'Duration Discount (${preview.discountPercentage.toInt()}% Off)',
-                  '-₹${preview.discount.toInt()}',
+                  '-${AppCurrency.format(preview.discount)}',
                   isDiscount: true,
                 ),
-              _buildPriceRow('GST (18%)', '₹${preview.tax.toInt()}'),
+              _buildPriceRow('GST (18%)', AppCurrency.format(preview.tax)),
               const Divider(height: 18, color: AppColors.border),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -707,7 +708,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                     ),
                   ),
                   Text(
-                    '₹${preview.totalAmount.toInt()}',
+                    AppCurrency.format(preview.totalAmount),
                     style: AppTypography.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.w900,
@@ -806,7 +807,7 @@ class _CustomPlanBuilderViewState extends ConsumerState<CustomPlanBuilderView> {
                   ),
                 ),
                 Text(
-                  '₹${total.toInt()}',
+                  AppCurrency.format(total),
                   style: AppTypography.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.w900,

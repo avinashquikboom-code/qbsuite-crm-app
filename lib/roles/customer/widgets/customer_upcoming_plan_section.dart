@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -191,7 +192,7 @@ class CustomerUpcomingPlanSection extends ConsumerWidget {
                           border: Border.all(color: AppColors.border),
                         ),
                         child: Text(
-                          '₹${upcomingPlan.price.round()}',
+                          AppCurrency.format(upcomingPlan.price),
                           style: AppTypography.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,

@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -47,24 +48,6 @@ class InvoicePreviewDialog extends ConsumerWidget {
       'Dec',
     ];
     return '${dt.day} ${months[dt.month - 1]} ${dt.year}';
-  }
-
-  String _formatPrice(double amount) {
-    final intVal = amount.round();
-    final str = intVal.toString();
-    if (str.length <= 3) return str;
-
-    final lastThree = str.substring(str.length - 3);
-    var remaining = str.substring(0, str.length - 3);
-    final chunks = <String>[];
-    while (remaining.length > 2) {
-      chunks.insert(0, remaining.substring(remaining.length - 2));
-      remaining = remaining.substring(0, remaining.length - 2);
-    }
-    if (remaining.isNotEmpty) {
-      chunks.insert(0, remaining);
-    }
-    return '${chunks.join(',')},$lastThree';
   }
 
   @override
@@ -396,16 +379,16 @@ class InvoicePreviewDialog extends ConsumerWidget {
                     const SizedBox(height: 10),
 
                     // Subtotal
-                    _buildRow('Subtotal', '₹${_formatPrice(basePrice)}'),
+                    _buildRow('Subtotal', AppCurrency.format(basePrice)),
                     const SizedBox(height: 6),
                     if ((invoice?.discount ?? 0) > 0.005) ...[
                       _buildRow(
                         'Discount',
-                        '- ₹${_formatPrice(invoice!.discount)}',
+                        '- ${AppCurrency.format(invoice!.discount)}',
                       ),
                       const SizedBox(height: 6),
                     ],
-                    _buildRow('GST (18%)', '₹${_formatPrice(tax)}'),
+                    _buildRow('GST (18%)', AppCurrency.format(tax)),
                     const SizedBox(height: 10),
                     const Divider(height: 1, color: AppColors.borderLight),
                     const SizedBox(height: 10),
@@ -423,7 +406,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           ),
                         ),
                         Text(
-                          '₹${_formatPrice(total)}',
+                          AppCurrency.format(total),
                           style: AppTypography.inter(
                             fontSize: 17,
                             fontWeight: FontWeight.w900,
@@ -740,7 +723,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
         SizedBox(
           width: 72,
           child: Text(
-            '₹${_formatPrice(unitPrice)}',
+            AppCurrency.format(unitPrice),
             textAlign: TextAlign.right,
             style: AppTypography.inter(
               fontSize: 12,
@@ -751,7 +734,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
         SizedBox(
           width: 72,
           child: Text(
-            '₹${_formatPrice(total)}',
+            AppCurrency.format(total),
             textAlign: TextAlign.right,
             style: AppTypography.inter(
               fontSize: 12,

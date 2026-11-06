@@ -1,3 +1,5 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
+
 /// Influencer model representing verified creators returned by the real backend API.
 class InfluencerModel {
   final int id;
@@ -376,7 +378,7 @@ class InfluencerPackageModel {
     if (priceDisplay != null && priceDisplay!.isNotEmpty) {
       return priceDisplay!;
     }
-    return '₹${price.toStringAsFixed(0)}';
+    return AppCurrency.format(price);
   }
 
   factory InfluencerPackageModel.fromJson(Map<String, dynamic> json) {

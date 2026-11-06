@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -734,7 +735,7 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
             _field(
               _discount,
               'Discount Value',
-              hint: 'e.g. 30% OFF or ₹500 OFF',
+              hint: 'e.g. 30% OFF or ${AppCurrency.format(500)} OFF',
               required: false,
             ),
             _field(

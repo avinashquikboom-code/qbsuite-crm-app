@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -452,8 +453,8 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         decimal: true,
                       ),
                       decoration: InputDecoration(
-                        labelText: 'Claim Amount (₹) *',
-                        prefixText: '₹ ',
+                        labelText: 'Claim Amount (${AppCurrency.symbol}) *',
+                        prefixText: '${AppCurrency.symbol} ',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -663,8 +664,9 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                       keyboardType: TextInputType.number,
                       onChanged: (_) => setModalState(() {}),
                       decoration: InputDecoration(
-                        labelText: 'Requested Loan Amount (₹) *',
-                        prefixText: '₹ ',
+                        labelText:
+                            'Requested Loan Amount (${AppCurrency.symbol}) *',
+                        prefixText: '${AppCurrency.symbol} ',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -715,7 +717,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                               ),
                             ),
                             Text(
-                              '₹ $estimatedEmi / mo',
+                              '${AppCurrency.format(estimatedEmi)} / mo',
                               style: AppTypography.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -1659,7 +1661,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Claimed: ₹ ${c.amount.toStringAsFixed(0)}',
+                              'Claimed: ${AppCurrency.format(c.amount)}',
                               style: AppTypography.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
@@ -1668,7 +1670,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             ),
                             if (c.approvedAmount != null && c.isApproved)
                               Text(
-                                'Approved: ₹ ${c.approvedAmount!.toStringAsFixed(0)}',
+                                'Approved: ${AppCurrency.format(c.approvedAmount!)}',
                                 style: AppTypography.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
@@ -1783,7 +1785,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '₹ ${l.loanAmount.toStringAsFixed(0)} (${l.termMonths} Mo)',
+                              '${AppCurrency.format(l.loanAmount)} (${l.termMonths} Mo)',
                               style: AppTypography.inter(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
@@ -1801,7 +1803,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Monthly EMI: ₹ ${l.monthlyEmi.toStringAsFixed(0)}',
+                              'Monthly EMI: ${AppCurrency.format(l.monthlyEmi)}',
                               style: AppTypography.inter(
                                 fontSize: 13,
                                 color: AppColors.textSecondary,
@@ -1809,7 +1811,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             ),
                             if (l.remainingBalance != null && l.isActive)
                               Text(
-                                'Remaining: ₹ ${l.remainingBalance!.toStringAsFixed(0)}',
+                                'Remaining: ${AppCurrency.format(l.remainingBalance!)}',
                                 style: AppTypography.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,

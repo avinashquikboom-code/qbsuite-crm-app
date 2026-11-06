@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -20,7 +21,7 @@ class AdminSettingsView extends ConsumerStatefulWidget {
 
 class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
   String _selectedLanguage = 'English (US)';
-  String _selectedCurrency = 'INR (₹)';
+  String _selectedCurrency = AppCurrency.label;
   bool _biometricEnabled = true;
   bool _pushNotifications = true;
 
@@ -141,10 +142,10 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
                   },
                 ),
                 _buildSettingDropdown(
-                  icon: Remix.money_dollar_circle_line,
+                  icon: Remix.money_rupee_circle_line,
                   title: 'Currency',
                   value: _selectedCurrency,
-                  options: ['INR (₹)', 'USD (\$)', 'EUR (€)', 'AED (د.إ)'],
+                  options: [AppCurrency.label],
                   onChanged: (val) {
                     if (val != null) {
                       setState(() => _selectedCurrency = val);

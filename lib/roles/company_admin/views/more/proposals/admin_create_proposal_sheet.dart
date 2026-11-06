@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -314,14 +315,14 @@ class _AdminCreateProposalSheetState
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              _buildLabel('Amount (₹) *'),
+                              _buildLabel('Amount (${AppCurrency.symbol}) *'),
                               TextFormField(
                                 controller: _amountController,
                                 keyboardType: TextInputType.number,
                                 style: AppTypography.inter(fontSize: 14),
                                 decoration: _inputDecoration(
-                                  '₹ Amount',
-                                  Remix.money_dollar_circle_line,
+                                  '${AppCurrency.symbol} Amount',
+                                  Remix.money_rupee_circle_line,
                                 ),
                                 validator: (val) =>
                                     val == null || val.trim().isEmpty

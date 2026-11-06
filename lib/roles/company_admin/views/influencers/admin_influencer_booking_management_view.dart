@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -59,7 +60,7 @@ class _AdminInfluencerBookingManagementViewState
               style: AppTypography.inter(fontSize: 13),
             ),
             Text(
-              'Amount: ₹${booking.totalAmount.toStringAsFixed(0)}',
+              'Amount: ${AppCurrency.format(booking.totalAmount)}',
               style: AppTypography.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
@@ -185,7 +186,7 @@ class _AdminInfluencerBookingManagementViewState
                       const SizedBox(width: 10),
                       _buildKpiCard(
                         'Total Revenue',
-                        '₹${revenueTotal.toStringAsFixed(0).replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (m) => '${m[1]},')}',
+                        AppCurrency.format(revenueTotal),
                       ),
                     ],
                   ),

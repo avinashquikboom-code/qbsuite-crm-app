@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -802,7 +803,7 @@ class _CustomerAiCreationFormViewState
                       style: AppTypography.inter(fontSize: 13),
                       decoration: InputDecoration(
                         hintText:
-                            'e.g. Include emoji accents, mention free shipping over ₹499, and include a strong hook in the first sentence.',
+                            'e.g. Include emoji accents, mention free shipping over ${AppCurrency.format(499)} and include a strong hook in the first sentence.',
                         hintStyle: AppTypography.inter(
                           fontSize: 12,
                           color: const Color(0xFF94A3B8),

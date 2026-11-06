@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -41,12 +42,13 @@ class _VisitorRequirementViewState
     'E-commerce Website',
     'Social Media Marketing',
   };
-  String _selectedBudget = '₹50,000 - ₹1,00,000';
+  String _selectedBudget =
+      '${AppCurrency.symbol}50,000 - ${AppCurrency.symbol}1,00,000';
   final List<String> _budgetOptions = [
-    '< ₹50,000',
-    '₹50,000 - ₹1,00,000',
-    '₹1,00,000 - ₹2,50,000',
-    '₹2,50,000+',
+    '< ${AppCurrency.symbol}50,000',
+    '${AppCurrency.symbol}50,000 - ${AppCurrency.symbol}1,00,000',
+    '${AppCurrency.symbol}1,00,000 - ${AppCurrency.symbol}2,50,000',
+    '${AppCurrency.symbol}2,50,000+',
   ];
 
   String _selectedTimeline = 'Within 1 Month';

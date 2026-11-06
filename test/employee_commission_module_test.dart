@@ -390,7 +390,7 @@ void main() {
       // Title & Hero Banner
       expect(find.text('My Commissions'), findsOneWidget);
       expect(find.text('TOTAL COMMISSION'), findsOneWidget);
-      expect(find.text('₹1,500'), findsOneWidget);
+      expect(find.text('₹1,500.00'), findsOneWidget);
       expect(find.text('Telesales Executive'), findsOneWidget);
 
       // KPI Metric Cards
@@ -404,8 +404,8 @@ void main() {
       // List Items
       expect(find.text('ABC Fitness · #10'), findsOneWidget);
       expect(find.text('XYZ Dental Clinic · #11'), findsOneWidget);
-      expect(find.text('₹1,000'), findsWidgets);
-      expect(find.text('₹500'), findsWidgets);
+      expect(find.text('₹1,000.00'), findsWidgets);
+      expect(find.text('₹500.00'), findsWidgets);
     });
 
     testWidgets(

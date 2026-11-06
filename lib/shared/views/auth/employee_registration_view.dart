@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -690,14 +691,14 @@ class _EmployeeRegistrationViewState
       {
         'id': 1,
         'name': 'Starter Plan',
-        'price': '₹2,499 / mo',
+        'price': '${AppCurrency.format(2499)} / mo',
         'desc': 'For growing professionals and freelancers starting out.',
         'features': ['CRM & Calendar', 'Up to 500 Leads', 'Standard Support'],
       },
       {
         'id': 2,
         'name': 'Professional Plan',
-        'price': '₹4,999 / mo',
+        'price': '${AppCurrency.format(4999)} / mo',
         'desc': 'For teams and seasoned freelancers with high volumes.',
         'features': [
           'All Starter Features',
@@ -709,7 +710,7 @@ class _EmployeeRegistrationViewState
       {
         'id': 3,
         'name': 'Elite Plan',
-        'price': '₹9,999 / mo',
+        'price': '${AppCurrency.format(9999)} / mo',
         'desc': 'Enterprise features for high-performance production.',
         'features': [
           'All Pro Features',

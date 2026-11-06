@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -124,7 +125,7 @@ class AdminPackagesView extends ConsumerWidget {
                 ],
               ),
               Text(
-                '₹${p.price.toStringAsFixed(0)}',
+                AppCurrency.format(p.price),
                 style: AppTypography.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.w800,

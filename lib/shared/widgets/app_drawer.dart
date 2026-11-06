@@ -367,7 +367,7 @@ class AppDrawer extends ConsumerWidget {
                         _buildDrawerItem(
                           context: context,
                           ref: ref,
-                          icon: Remix.money_dollar_circle_line,
+                          icon: Remix.money_rupee_circle_line,
                           title: 'Expenses & Claims',
                           item: SidebarItem.expenses,
                           isSelected: currentSelection == SidebarItem.expenses,

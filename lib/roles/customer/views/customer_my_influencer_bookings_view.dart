@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
@@ -334,7 +335,7 @@ class _CustomerMyInfluencerBookingsViewState
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '₹${booking.totalAmount.toStringAsFixed(0)}',
+                  AppCurrency.format(booking.totalAmount),
                   style: AppTypography.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
@@ -477,16 +478,16 @@ class _BookingDetailModal extends StatelessWidget {
             const Divider(height: 20),
             _buildDetailRow(
               'Package Cost',
-              '₹${booking.packageCost.toStringAsFixed(0)}',
+              AppCurrency.format(booking.packageCost),
             ),
             _buildDetailRow(
               'Platform Fee',
-              '₹${booking.platformFee.toStringAsFixed(0)}',
+              AppCurrency.format(booking.platformFee),
             ),
-            _buildDetailRow('GST (18%)', '₹${booking.gst.toStringAsFixed(0)}'),
+            _buildDetailRow('GST (18%)', AppCurrency.format(booking.gst)),
             _buildDetailRow(
               'Total Paid',
-              '₹${booking.totalAmount.toStringAsFixed(0)}',
+              AppCurrency.format(booking.totalAmount),
               isBold: true,
             ),
             const SizedBox(height: 16),

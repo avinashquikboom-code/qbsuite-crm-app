@@ -1,3 +1,5 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
+
 /// Deal payment transaction model representing payments recorded for closed deals and proposals.
 class PaymentModel {
   final String id;
@@ -38,9 +40,9 @@ class PaymentModel {
       totalAmount > 0 ? (paidAmount / totalAmount).clamp(0.0, 1.0) : 0.0;
   int get progressPercent => (progressRatio * 100).round();
 
-  String get formattedTotal => '₹${totalAmount.toStringAsFixed(0)}';
-  String get formattedPaid => '₹${paidAmount.toStringAsFixed(0)}';
-  String get formattedPending => '₹${pendingAmount.toStringAsFixed(0)}';
+  String get formattedTotal => AppCurrency.format(totalAmount);
+  String get formattedPaid => AppCurrency.format(paidAmount);
+  String get formattedPending => AppCurrency.format(pendingAmount);
 
   String get methodLabel {
     switch (method.toUpperCase()) {

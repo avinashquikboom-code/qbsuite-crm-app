@@ -1,3 +1,5 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
+
 /// A Proposal links a Customer to a set of items (optionally loaded from a Package).
 /// Relationship: Customer → Proposal → ProposalItems → (optional) Package
 class ProposalModel {
@@ -55,7 +57,7 @@ class ProposalModel {
   });
 
   /// Returns the formatted amount with currency symbol
-  String get formattedTotal => '₹${netTotal.toStringAsFixed(0)}';
+  String get formattedTotal => AppCurrency.format(netTotal);
 
   /// Convenience display for proposal card
   String get serviceDescription {

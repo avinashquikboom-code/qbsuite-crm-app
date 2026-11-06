@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -35,24 +36,6 @@ class CurrentPlanCard extends StatelessWidget {
       'Dec',
     ];
     return '${dt.day} ${months[dt.month - 1]} ${dt.year}';
-  }
-
-  String _formatPrice(double amount) {
-    final intVal = amount.round();
-    final str = intVal.toString();
-    if (str.length <= 3) return str;
-
-    final lastThree = str.substring(str.length - 3);
-    var remaining = str.substring(0, str.length - 3);
-    final chunks = <String>[];
-    while (remaining.length > 2) {
-      chunks.insert(0, remaining.substring(remaining.length - 2));
-      remaining = remaining.substring(0, remaining.length - 2);
-    }
-    if (remaining.isNotEmpty) {
-      chunks.insert(0, remaining);
-    }
-    return '${chunks.join(',')},$lastThree';
   }
 
   void _showPlanDetails(BuildContext context, CustomerSubscription sub) {
@@ -122,7 +105,7 @@ class CurrentPlanCard extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '₹${_formatPrice(sub.purchasedPrice)}',
+                            AppCurrency.format(sub.purchasedPrice),
                             style: AppTypography.inter(
                               fontSize: 22,
                               fontWeight: FontWeight.w900,
@@ -551,7 +534,9 @@ class CurrentPlanCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          '₹${_formatPrice(sub.paidAmount ?? sub.purchasedPrice)}',
+                          AppCurrency.format(
+                            sub.paidAmount ?? sub.purchasedPrice,
+                          ),
                           style: AppTypography.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.w800,
@@ -583,7 +568,7 @@ class CurrentPlanCard extends StatelessWidget {
                   ),
                   if (sub.originalAmount != null)
                     Text(
-                      'Original ₹${_formatPrice(sub.originalAmount!)}',
+                      'Original ${AppCurrency.format(sub.originalAmount!)}',
                       style: AppTypography.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
@@ -591,7 +576,7 @@ class CurrentPlanCard extends StatelessWidget {
                     ),
                   if (sub.discountAmount != null)
                     Text(
-                      'Discount -₹${_formatPrice(sub.discountAmount!)}',
+                      'Discount -${AppCurrency.format(sub.discountAmount!)}',
                       style: AppTypography.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,

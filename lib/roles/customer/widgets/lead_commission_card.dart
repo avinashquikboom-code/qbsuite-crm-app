@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
@@ -17,12 +18,6 @@ class LeadCommissionCard extends StatelessWidget {
     if (lead.upcomingCommission == null || lead.upcomingCommission! <= 0) {
       return const SizedBox.shrink();
     }
-
-    final intVal = lead.upcomingCommission!.round();
-    final amountStr = intVal.toString().replaceAllMapped(
-      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'),
-      (Match m) => '${m[1]},',
-    );
 
     return Container(
       width: double.infinity,
@@ -68,7 +63,7 @@ class LeadCommissionCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  'Upcoming Commission: ₹$amountStr',
+                  'Upcoming Commission: ${AppCurrency.format(lead.upcomingCommission)}',
                   style: AppTypography.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,

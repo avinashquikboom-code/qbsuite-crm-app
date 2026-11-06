@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
@@ -81,28 +82,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView>
     return raw;
   }
 
-  static String formatCurrency(num amount) {
-    final isNegative = amount < 0;
-    final absAmount = amount.abs();
-    final parts = absAmount.toStringAsFixed(2).split('.');
-    final intPart = parts[0];
-    final decPart = parts.length > 1 ? parts[1] : '00';
-    if (intPart.length <= 3) {
-      return '${isNegative ? "- " : ""}₹$intPart.$decPart';
-    }
-    final lastThree = intPart.substring(intPart.length - 3);
-    final rest = intPart.substring(0, intPart.length - 3);
-    final buffer = StringBuffer();
-    for (int i = 0; i < rest.length; i++) {
-      if (i > 0 && (rest.length - i) % 2 == 0) {
-        buffer.write(',');
-      }
-      buffer.write(rest[i]);
-    }
-    buffer.write(',');
-    buffer.write(lastThree);
-    return '${isNegative ? "- " : ""}₹${buffer.toString()}.$decPart';
-  }
+  static String formatCurrency(num amount) => AppCurrency.format(amount);
 
   static String maskAccountNumber(String? raw) {
     if (raw == null || raw.trim().isEmpty) return '—';

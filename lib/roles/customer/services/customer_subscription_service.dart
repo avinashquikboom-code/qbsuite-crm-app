@@ -1,3 +1,4 @@
+import 'package:quickboom_app/core/utils/app_currency.dart';
 import 'dart:convert';
 import 'dart:math';
 import 'package:dio/dio.dart';
@@ -1016,7 +1017,7 @@ class CustomerSubscriptionService {
     debugPrint('Plan ID: ${plan.id} (${plan.name})');
     debugPrint('Billing Cycle: ${billingCycle.label} (${billingCycle.code})');
     debugPrint('Payment Option: $paymentOption');
-    debugPrint('Payable Amount: ₹${payableAmount.round()}');
+    debugPrint('Payable Amount: ${AppCurrency.format(payableAmount)}');
     debugPrint('Amount in Paise: $amountInPaise paise');
     debugPrint(
       'Validity Period: ${startDate.toIso8601String().split('T').first} -> ${expiryDate.toIso8601String().split('T').first}',
