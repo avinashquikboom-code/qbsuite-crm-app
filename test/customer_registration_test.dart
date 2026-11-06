@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quickboom_app/core/theme/app_theme.dart';
-import 'package:quickboom_app/shared/views/auth/login_view.dart';
 import 'package:quickboom_app/shared/views/auth/customer_registration_view.dart';
 
 void main() {
@@ -102,95 +101,6 @@ void main() {
       expect(find.text('Please enter your city/location.'), findsNothing);
       expect(find.text('Please enter a valid mobile number.'), findsOneWidget);
       expect(find.text('Please enter a valid email address.'), findsOneWidget);
-    });
-  });
-
-  group('Customer & Employee Role Card Selection on Login Screen', () {
-    testWidgets(
-      'Renders the customer login form matching the reference design',
-      (tester) async {
-        await tester.pumpWidget(
-          const ProviderScope(
-            child: MaterialApp(
-              home: LoginView(initialRole: MobileUserRole.customer),
-            ),
-          ),
-        );
-        await tester.pumpAndSettle();
-
-        expect(find.text('Login to Your Account'), findsOneWidget);
-        expect(find.text('Choose your login type to continue'), findsOneWidget);
-        expect(find.text('CUSTOMER WORKFORCE PORTAL'), findsOneWidget);
-        expect(find.text('Employee'), findsOneWidget);
-        expect(find.text('Enter your email address'), findsOneWidget);
-        expect(find.text('Send OTP'), findsOneWidget);
-        expect(find.text('Login with Password'), findsOneWidget);
-        expect(find.text('Secure Login'), findsOneWidget);
-        expect(find.text('Register'), findsOneWidget);
-      },
-    );
-
-    testWidgets('Register opens the customer registration screen', (tester) async {
-      await tester.pumpWidget(
-        const ProviderScope(
-          child: MaterialApp(
-            home: LoginView(initialRole: MobileUserRole.customer),
-          ),
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      final register = find.text('Register');
-      await tester.ensureVisible(register);
-      await tester.pumpAndSettle();
-      await tester.tap(register);
-      await tester.pumpAndSettle();
-
-      expect(find.text('Create Your Account'), findsOneWidget);
-      expect(find.text('Business / Company Name *'), findsOneWidget);
-    });
-
-    testWidgets(
-      'Tapping Employee switches the portal, and Customer switches back',
-      (tester) async {
-        await tester.pumpWidget(
-          const ProviderScope(
-            child: MaterialApp(
-              home: LoginView(initialRole: MobileUserRole.customer),
-            ),
-          ),
-        );
-        await tester.pumpAndSettle();
-
-        expect(find.text('CUSTOMER WORKFORCE PORTAL'), findsOneWidget);
-
-        // Tap Employee Login
-        await tester.tap(find.text('Employee'));
-        await tester.pumpAndSettle();
-        expect(find.text('EMPLOYEE WORKFORCE PORTAL'), findsOneWidget);
-
-        await tester.tap(find.text('Customer'));
-        await tester.pumpAndSettle();
-        expect(find.text('CUSTOMER WORKFORCE PORTAL'), findsOneWidget);
-      },
-    );
-
-    testWidgets('Password login stays on the customer portal', (tester) async {
-      await tester.pumpWidget(
-        const ProviderScope(
-          child: MaterialApp(
-            home: LoginView(initialRole: MobileUserRole.customer),
-          ),
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      await tester.tap(find.text('Login with Password'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('CUSTOMER WORKFORCE PORTAL'), findsOneWidget);
-      expect(find.text('Sign In'), findsOneWidget);
-      expect(find.text('Forgot Password?'), findsOneWidget);
     });
   });
 

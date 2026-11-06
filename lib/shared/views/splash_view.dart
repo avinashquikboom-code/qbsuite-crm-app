@@ -63,14 +63,14 @@ class _SplashViewState extends ConsumerState<SplashView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 260,
-                height: 148,
-                child: Image.asset(
-                  'assets/images/app_logo_brand.png',
-                  fit: BoxFit.contain,
-                  semanticLabel: 'QB Suite logo',
-                ),
-              )
+                    width: 260,
+                    height: 148,
+                    child: Image.asset(
+                      'assets/images/app_logo_brand.png',
+                      fit: BoxFit.contain,
+                      semanticLabel: 'QB Suite logo',
+                    ),
+                  )
                   .animate()
                   .scale(duration: 800.ms, curve: Curves.easeOutBack)
                   .shimmer(delay: 1000.ms, duration: 1500.ms),
@@ -166,7 +166,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                                   .forceCompleteInitialization();
                             },
                             child: Text(
-                              'Continue to Role Selection',
+                              'Continue to Login',
                               style: AppTypography.inter(
                                 fontSize: 13,
                                 color: const Color(0xFF475569),
@@ -188,7 +188,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                         .forceCompleteInitialization();
                   },
                   child: Text(
-                    'Continue to Role Selection',
+                    'Continue to Login',
                     style: AppTypography.inter(
                       fontSize: 14,
                       color: AppTheme.primaryColor,

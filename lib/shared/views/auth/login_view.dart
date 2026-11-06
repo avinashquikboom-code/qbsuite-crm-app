@@ -109,7 +109,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
   @override
   void initState() {
     super.initState();
-    _currentRole = widget.initialRole;
+    _currentRole = widget.initialRole == MobileUserRole.admin
+        ? MobileUserRole.admin
+        : MobileUserRole.employee;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       NotificationService.instance.requestAndroidNotificationPermission();
     });
@@ -917,29 +919,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
       key: const ValueKey('stage_input'),
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        if (Navigator.canPop(context)) ...[
-          Align(
-            alignment: Alignment.centerLeft,
-            child: TextButton.icon(
-              onPressed: () => Navigator.of(context).pop(),
-              icon: const Icon(Remix.arrow_left_s_line, size: 18),
-              label: Text(
-                'Change Role',
-                style: AppTypography.inter(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              style: TextButton.styleFrom(
-                foregroundColor: const Color(0xFF64748B),
-                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-              ),
-            ),
-          ),
-          const SizedBox(height: 4),
-        ] else ...[
-          const SizedBox(height: 8),
-        ],
+        const SizedBox(height: 8),
 
         // Logo, Portal Subtitle & Titles
         AuthHeader(portalSubtitle: _getPortalSubtitle()),
@@ -1327,29 +1307,6 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       _enteredOtp = '';
                     });
                     _countdownTimer?.cancel();
-                  },
-                ),
-              ],
-              if (_currentRole != MobileUserRole.admin) ...[
-                const SizedBox(height: 10),
-                _buildSecondaryAction(
-                  icon: _currentRole == MobileUserRole.customer
-                      ? Remix.briefcase_line
-                      : Remix.user_3_line,
-                  label: _currentRole == MobileUserRole.customer
-                      ? 'Employee'
-                      : 'Customer',
-                  onTap: () {
-                    setState(() {
-                      _currentRole = _currentRole == MobileUserRole.customer
-                          ? MobileUserRole.employee
-                          : MobileUserRole.customer;
-                      if (_currentRole == MobileUserRole.customer &&
-                          _loginMethod == LoginMethod.employeeId) {
-                        _loginMethod = LoginMethod.email;
-                      }
-                      _identifierError = null;
-                    });
                   },
                 ),
               ],

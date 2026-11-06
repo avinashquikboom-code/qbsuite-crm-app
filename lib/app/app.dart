@@ -10,7 +10,7 @@ import '../core/utils/app_toast.dart';
 import '../shared/services/onboarding_service.dart';
 import '../shared/views/splash_view.dart';
 import '../shared/views/onboarding_view.dart';
-import '../shared/views/auth/role_selection_view.dart';
+import '../shared/views/auth/login_view.dart';
 import '../roles/employee/views/dashboard_view.dart';
 import '../roles/company_admin/views/company_admin_main_view.dart';
 import '../roles/customer/views/customer_dashboard_view.dart';
@@ -36,7 +36,7 @@ class MyApp extends ConsumerWidget {
         NotificationService.instance.unregisterToken();
         NotificationService.instance.navigatorKey.currentState
             ?.pushAndRemoveUntil(
-              MaterialPageRoute(builder: (_) => const RoleSelectionView()),
+              MaterialPageRoute(builder: (_) => const LoginView()),
               (route) => false,
             );
       }
@@ -86,12 +86,10 @@ class MyApp extends ConsumerWidget {
       debugPrint('[STARTUP] navigating to Login/Home');
       debugPrint('[STARTUP] Navigating to Home');
     } else {
-      targetHome = !onboardingDone
-          ? const OnboardingView()
-          : const RoleSelectionView();
+      targetHome = !onboardingDone ? const OnboardingView() : const LoginView();
       debugPrint('[STARTUP] Router initialization completed');
-      debugPrint('[STARTUP] navigating to RoleSelection');
-      debugPrint('[STARTUP] Navigating to RoleSelection');
+      debugPrint('[STARTUP] navigating to Login');
+      debugPrint('[STARTUP] Navigating to Login');
     }
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
