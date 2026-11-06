@@ -169,7 +169,7 @@ class _CustomerOfferSliderSectionState
                 Expanded(
                   child: Text(
                     'Coupon code "${banner.couponCode}" copied to clipboard!',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 13,
                     ),
@@ -254,7 +254,7 @@ class _CustomerOfferSliderSectionState
               if (banner.title != null)
                 Text(
                   banner.title!,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -264,7 +264,7 @@ class _CustomerOfferSliderSectionState
                 const SizedBox(height: 4),
                 Text(
                   banner.subtitle!,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -274,7 +274,7 @@ class _CustomerOfferSliderSectionState
                 const SizedBox(height: 12),
                 Text(
                   banner.description!,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13,
                     color: AppColors.textPrimary,
                     height: 1.4,
@@ -303,7 +303,7 @@ class _CustomerOfferSliderSectionState
                         children: [
                           Text(
                             'COUPON CODE',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryDark,
@@ -311,7 +311,7 @@ class _CustomerOfferSliderSectionState
                           ),
                           Text(
                             banner.couponCode!,
-                            style: GoogleFonts.robotoMono(
+                            style: GoogleFonts.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryDark,
@@ -372,7 +372,7 @@ class _CustomerOfferSliderSectionState
                             banner.ctaText!.trim().isNotEmpty
                         ? Text(
                             banner.ctaText!.trim(),
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -702,7 +702,7 @@ class _CustomerOfferSliderSectionState
                               if (hasTitle)
                                 Text(
                                   banner.title!,
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 14.5,
                                     fontWeight: FontWeight.w800,
                                     color: Colors.white,
@@ -725,7 +725,7 @@ class _CustomerOfferSliderSectionState
                                   hasSubtitle
                                       ? banner.subtitle!
                                       : banner.description!,
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11.5,
                                     color: const Color(0xFFE2E8F0),
                                     fontWeight: FontWeight.w400,
@@ -775,7 +775,7 @@ class _CustomerOfferSliderSectionState
                                   if (ctaButtonText != null) ...[
                                     Text(
                                       ctaButtonText,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 11.5,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,

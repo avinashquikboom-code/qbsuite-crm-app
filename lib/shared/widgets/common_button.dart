@@ -104,7 +104,7 @@ class CommonButton extends StatelessWidget {
                         if (icon != null) ...[icon!, const SizedBox(width: 8)],
                         Text(
                           label,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
                             color: textColor,

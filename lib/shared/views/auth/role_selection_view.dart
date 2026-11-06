@@ -81,7 +81,7 @@ class _RoleSelectionViewState extends State<RoleSelectionView> {
 
                   Text(
                     'QB SUITE',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 26,
                       fontWeight: FontWeight.w900,
                       color: const Color(0xFF0F172A),
@@ -92,7 +92,7 @@ class _RoleSelectionViewState extends State<RoleSelectionView> {
                   Text(
                     'Select your account type to continue',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       color: const Color(0xFF64748B),
                       fontWeight: FontWeight.w500,
@@ -125,7 +125,7 @@ class _RoleSelectionViewState extends State<RoleSelectionView> {
                   Text(
                     'Need assistance? Contact your organization administrator.',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       color: const Color(0xFF94A3B8),
                     ),

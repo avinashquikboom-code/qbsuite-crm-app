@@ -54,7 +54,7 @@ class TeamCard extends StatelessWidget {
                   children: [
                     Text(
                       teamName,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -65,7 +65,7 @@ class TeamCard extends StatelessWidget {
                     if (teamLeader != null)
                       Text(
                         'Leader: $teamLeader',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),
@@ -90,7 +90,7 @@ class TeamCard extends StatelessWidget {
                 ),
                 child: Text(
                   member,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,

@@ -409,7 +409,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                       children: [
                         Text(
                           'Checkout Summary',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -417,7 +417,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                         ),
                         Text(
                           'Review and confirm your subscription order',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -465,7 +465,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                           children: [
                             Text(
                               '${widget.plan.name} Plan',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 17,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -473,7 +473,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             ),
                             Text(
                               '${widget.plan.userLimit} Users Included • ${_cycle.label}',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.primaryDark,
@@ -527,7 +527,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             child: Center(
                               child: Text(
                                 'Monthly (₹${_formatPrice(widget.plan.monthlyPrice)})',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight:
                                       _cycle == SubscriptionBillingCycle.monthly
@@ -573,7 +573,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             child: Center(
                               child: Text(
                                 'Yearly (₹${_formatPrice(widget.plan.yearlyPrice)})',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight:
                                       _cycle == SubscriptionBillingCycle.yearly
@@ -598,7 +598,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                 // Payment Option Selector (Full 100% vs 50% Advance)
                 Text(
                   'Payment Option',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -649,7 +649,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                   const SizedBox(width: 6),
                                   Text(
                                     'Full (100%)',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -660,7 +660,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                               const SizedBox(height: 4),
                               Text(
                                 '₹${_formatPrice(fullPlanTotal)} now',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.primaryDark,
@@ -714,7 +714,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                   const SizedBox(width: 6),
                                   Text(
                                     '50% Advance',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -725,7 +725,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                               const SizedBox(height: 4),
                               Text(
                                 '₹${_formatPrice(fullPlanTotal * 0.5)} now',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.primaryDark,
@@ -762,7 +762,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             const SizedBox(width: 6),
                             Text(
                               '50% Advance Payment',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF166534),
@@ -773,7 +773,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                         const SizedBox(height: 4),
                         Text(
                           '• 50% Advance Payment paid before work starts for the first installation.\n• Once the first installation is completed, the remaining 50% second installment is scheduled.\n• Reminder notifications sent prior to the payment due date.',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11.5,
                             color: const Color(0xFF15803D),
                             height: 1.4,
@@ -808,7 +808,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                           children: [
                             Text(
                               'Subscription Validity',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textSecondary,
@@ -816,7 +816,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             ),
                             Text(
                               'Starts ${_formatDate(startDate)}',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -838,7 +838,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                           _cycle == SubscriptionBillingCycle.monthly
                               ? '1 Month'
                               : '12 Months',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryDark,
@@ -866,7 +866,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             onPressed: _applyingCoupon ? null : _applyCoupon,
                             child: Text(
                               _applyingCoupon ? '...' : 'APPLY',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
                               ),
@@ -887,7 +887,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                       },
                       child: Text(
                         'Remove Coupon',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontWeight: FontWeight.w600,
                           color: AppColors.error,
                         ),
@@ -942,7 +942,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                             isAdvance
                                 ? 'Advance Payable Now'
                                 : 'Final Payable Amount',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -950,7 +950,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                           ),
                           Text(
                             '₹${_formatPrice(finalAmount)}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.w900,
                               color: AppColors.primaryDark,
@@ -966,7 +966,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                 const SizedBox(height: 18),
                 Text(
                   'Payment Method',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -996,7 +996,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                         Expanded(
                           child: Text(
                             'No payment methods are currently configured for this plan. Please contact your administrator.',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.error,
                             ),
@@ -1059,7 +1059,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                     children: [
                                       Text(
                                         'Online Payment',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           color: AppColors.textPrimary,
@@ -1067,7 +1067,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                       ),
                                       Text(
                                         'Pay securely via UPI, Card, NetBanking (Razorpay)',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 11,
                                           color: AppColors.textSecondary,
                                         ),
@@ -1132,7 +1132,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                     children: [
                                       Text(
                                         'Offline Payment',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                           color: AppColors.textPrimary,
@@ -1140,7 +1140,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                       ),
                                       Text(
                                         'Bank Transfer / UPI / Cash payment to admin',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 11,
                                           color: AppColors.textSecondary,
                                         ),
@@ -1163,15 +1163,15 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                   TextField(
                     controller: _offlineRefController,
                     enabled: !_isProcessing,
-                    style: GoogleFonts.outfit(fontSize: 13),
+                    style: GoogleFonts.inter(fontSize: 13),
                     decoration: InputDecoration(
                       labelText: 'Transaction Reference / UTR Number (Optional)',
-                      labelStyle: GoogleFonts.outfit(
+                      labelStyle: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
                       hintText: 'e.g. 12-digit UTR or transaction ID',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary.withValues(alpha: 0.5),
                       ),
@@ -1203,15 +1203,15 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                   TextField(
                     controller: _offlineNotesController,
                     enabled: !_isProcessing,
-                    style: GoogleFonts.outfit(fontSize: 13),
+                    style: GoogleFonts.inter(fontSize: 13),
                     decoration: InputDecoration(
                       labelText: 'Payment Remarks / Notes (Optional)',
-                      labelStyle: GoogleFonts.outfit(
+                      labelStyle: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
                       hintText: 'e.g. Paid via Google Pay / Handed cash to office',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary.withValues(alpha: 0.5),
                       ),
@@ -1298,7 +1298,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
                                                 _offlinePaymentEnabled)
                                             ? 'Submit Offline Request (₹${_formatPrice(finalAmount)})'
                                             : 'Proceed to Payment (₹${_formatPrice(finalAmount)})'),
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -1348,7 +1348,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
               const SizedBox(width: 8),
               Text(
                 'Offline / Bank Transfer Details',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -1379,7 +1379,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
             const Divider(height: 12, color: AppColors.borderLight),
             Text(
               instructions,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 color: AppColors.textSecondary,
                 fontStyle: FontStyle.italic,
@@ -1403,7 +1403,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
         children: [
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -1413,7 +1413,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
             children: [
               Text(
                 value,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
@@ -1453,14 +1453,14 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             color: AppColors.textSecondary,
           ),
         ),
         Text(
           value,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,

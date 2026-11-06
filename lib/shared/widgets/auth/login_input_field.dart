@@ -33,14 +33,14 @@ class LoginInputField extends StatelessWidget {
       onChanged: onChanged,
       obscureText: isPassword && !isPasswordVisible,
       keyboardType: keyboardType,
-      style: GoogleFonts.outfit(
+      style: GoogleFonts.inter(
         fontSize: 14.5,
         fontWeight: FontWeight.w500,
         color: const Color(0xFF101828),
       ),
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: GoogleFonts.outfit(
+        hintStyle: GoogleFonts.inter(
           fontSize: 14,
           color: const Color(0xFF98A2B3),
         ),

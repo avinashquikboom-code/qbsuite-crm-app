@@ -166,7 +166,7 @@ class _VisitorRequirementViewState
         ),
         title: Text(
           'Customer Requirement',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -201,7 +201,7 @@ class _VisitorRequirementViewState
                       children: [
                         Text(
                           customerName,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryDark,
@@ -209,7 +209,7 @@ class _VisitorRequirementViewState
                         ),
                         Text(
                           widget.visit['location']?.toString() ?? '',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: AppColors.primaryDark,
                           ),
@@ -228,7 +228,7 @@ class _VisitorRequirementViewState
                     ),
                     child: Text(
                       'Step 1 of 2',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
@@ -254,7 +254,7 @@ class _VisitorRequirementViewState
                 children: [
                   Text(
                     'Requirement Details *',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -267,7 +267,7 @@ class _VisitorRequirementViewState
                     decoration: InputDecoration(
                       hintText:
                           'e.g. Client needs high-converting e-commerce web app & marketing campaign...',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textPlaceholder,
                       ),
@@ -298,7 +298,7 @@ class _VisitorRequirementViewState
 
                   Text(
                     'Required Services',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -313,7 +313,7 @@ class _VisitorRequirementViewState
                       return FilterChip(
                         selected: isSelected,
                         label: Text(service),
-                        labelStyle: GoogleFonts.outfit(
+                        labelStyle: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: isSelected
                               ? FontWeight.bold
@@ -356,7 +356,7 @@ class _VisitorRequirementViewState
                           children: [
                             Text(
                               'Budget (Approx.)',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -383,7 +383,7 @@ class _VisitorRequirementViewState
                                   value: b,
                                   child: Text(
                                     b,
-                                    style: GoogleFonts.outfit(fontSize: 12),
+                                    style: GoogleFonts.inter(fontSize: 12),
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 );
@@ -404,7 +404,7 @@ class _VisitorRequirementViewState
                           children: [
                             Text(
                               'Expected Timeline',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -431,7 +431,7 @@ class _VisitorRequirementViewState
                                   value: t,
                                   child: Text(
                                     t,
-                                    style: GoogleFonts.outfit(fontSize: 12),
+                                    style: GoogleFonts.inter(fontSize: 12),
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 );
@@ -452,7 +452,7 @@ class _VisitorRequirementViewState
 
                   Text(
                     'Additional Notes',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -465,7 +465,7 @@ class _VisitorRequirementViewState
                     decoration: InputDecoration(
                       hintText:
                           'Client ne branding aur ad campaign bhi discuss kiya...',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textPlaceholder,
                       ),
@@ -507,7 +507,7 @@ class _VisitorRequirementViewState
                           const SizedBox(width: 8),
                           Text(
                             'Add Photos (Optional)',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12.5,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textPrimary,
@@ -565,7 +565,7 @@ class _VisitorRequirementViewState
                   : const Icon(Remix.arrow_right_line, size: 20),
               label: Text(
                 _isSaving ? 'SAVING...' : 'Save & Continue',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 0.5,

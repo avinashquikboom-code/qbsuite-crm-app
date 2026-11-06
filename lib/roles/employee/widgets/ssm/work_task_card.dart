@@ -74,7 +74,7 @@ class WorkTaskCard extends StatelessWidget {
                         const SizedBox(width: 4),
                         Text(
                           "TODAY'S TASK",
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10.5,
                             fontWeight: FontWeight.w800,
                             color: AppColors.primaryDark,
@@ -111,7 +111,7 @@ class WorkTaskCard extends StatelessWidget {
                         const SizedBox(width: 5),
                         Text(
                           work.status.displayName.toUpperCase(),
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.w800,
                             color: work.status == SSMWorkStatus.inProgress
@@ -130,7 +130,7 @@ class WorkTaskCard extends StatelessWidget {
               // ── Work Type & Customer ──
               Text(
                 '${work.workType.displayName} Shoot',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -141,7 +141,7 @@ class WorkTaskCard extends StatelessWidget {
               const SizedBox(height: 2),
               Text(
                 work.customerName,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13.5,
                   color: AppColors.textSecondary,
                   fontWeight: FontWeight.w600,
@@ -171,7 +171,7 @@ class WorkTaskCard extends StatelessWidget {
                     const SizedBox(width: 5),
                     Text(
                       work.assignedTeam, // e.g. "SSM Team A"
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
@@ -201,7 +201,7 @@ class WorkTaskCard extends StatelessWidget {
                         Flexible(
                           child: Text(
                             'Day $currentDay of ${work.durationDays}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11.5,
                               fontWeight: FontWeight.w700,
                               color: AppColors.primaryDark,
@@ -216,7 +216,7 @@ class WorkTaskCard extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       taskForDay?.title ?? 'Deliverable Stage',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -229,7 +229,7 @@ class WorkTaskCard extends StatelessWidget {
                       const SizedBox(height: 2),
                       Text(
                         taskForDay.description,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),
@@ -254,7 +254,7 @@ class WorkTaskCard extends StatelessWidget {
                       children: [
                         Text(
                           'View Task',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryDark,
@@ -297,7 +297,7 @@ class WorkTaskCard extends StatelessWidget {
                             : (isFinalDay
                                   ? 'Complete Work'
                                   : 'Complete Day $currentDay'),
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                         ),

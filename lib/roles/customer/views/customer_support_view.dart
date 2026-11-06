@@ -44,7 +44,7 @@ class CustomerSupportView extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Text(
           'Submit Support Ticket',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 18),
+          style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -53,9 +53,9 @@ class CustomerSupportView extends StatelessWidget {
               controller: titleCtrl,
               decoration: InputDecoration(
                 labelText: 'Subject',
-                labelStyle: GoogleFonts.outfit(fontSize: 13),
+                labelStyle: GoogleFonts.inter(fontSize: 13),
                 hintText: 'e.g., Billing query or user limit upgrade',
-                hintStyle: GoogleFonts.outfit(fontSize: 12),
+                hintStyle: GoogleFonts.inter(fontSize: 12),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -67,9 +67,9 @@ class CustomerSupportView extends StatelessWidget {
               maxLines: 4,
               decoration: InputDecoration(
                 labelText: 'Description',
-                labelStyle: GoogleFonts.outfit(fontSize: 13),
+                labelStyle: GoogleFonts.inter(fontSize: 13),
                 hintText: 'Provide detailed information about your issue...',
-                hintStyle: GoogleFonts.outfit(fontSize: 12),
+                hintStyle: GoogleFonts.inter(fontSize: 12),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -82,7 +82,7 @@ class CustomerSupportView extends StatelessWidget {
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(color: AppColors.textSecondary),
+              style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -103,7 +103,7 @@ class CustomerSupportView extends StatelessWidget {
             },
             child: Text(
               'Submit Ticket',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -124,7 +124,7 @@ class CustomerSupportView extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Text(
           'Help & Support',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -140,7 +140,7 @@ class CustomerSupportView extends StatelessWidget {
             // Contact Cards Grid
             Text(
               'DIRECT CHANNELS',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
                 color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -221,7 +221,7 @@ class CustomerSupportView extends StatelessWidget {
                       children: [
                         Text(
                           'Have a Custom Query?',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -230,7 +230,7 @@ class CustomerSupportView extends StatelessWidget {
                         const SizedBox(height: 4),
                         Text(
                           'Submit a priority ticket for invoice questions, limits, or billing.',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: Colors.white.withValues(alpha: 0.9),
                           ),
@@ -248,7 +248,7 @@ class CustomerSupportView extends StatelessWidget {
                           ),
                           child: Text(
                             'Submit a Ticket',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -271,7 +271,7 @@ class CustomerSupportView extends StatelessWidget {
             // FAQs Section
             Text(
               'FREQUENTLY ASKED QUESTIONS',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
                 color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -338,7 +338,7 @@ class CustomerSupportView extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -346,7 +346,7 @@ class CustomerSupportView extends StatelessWidget {
                   ),
                   Text(
                     subtitle,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       color: AppColors.textSecondary,
                     ),
@@ -376,7 +376,7 @@ class CustomerSupportView extends StatelessWidget {
         childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 14),
         title: Text(
           question,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -385,7 +385,7 @@ class CustomerSupportView extends StatelessWidget {
         children: [
           Text(
             answer,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
               height: 1.4,

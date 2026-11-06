@@ -101,7 +101,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
               children: [
                 Text(
                   'Top-Up AI Credits',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -144,7 +144,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                         children: [
                           Text(
                             '${p['credits']} Credits',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -152,7 +152,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                           ),
                           Text(
                             p['label'] as String,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               color: const Color(0xFF059669),
                               fontWeight: FontWeight.w600,
@@ -162,7 +162,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                       ),
                       Text(
                         '₹${(p['price'] as double).toStringAsFixed(0)}',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -196,7 +196,7 @@ class _AiCreditTopUpModalState extends ConsumerState<AiCreditTopUpModal> {
                       )
                     : Text(
                         'Pay ₹${_selectedPrice.toStringAsFixed(0)} & Add Credits',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

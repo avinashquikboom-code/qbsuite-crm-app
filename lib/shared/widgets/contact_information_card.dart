@@ -229,7 +229,7 @@ class ContactInformationCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -391,7 +391,7 @@ class ContactInformationCard extends StatelessWidget {
                   children: [
                     Text(
                       label,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         color: const Color(0xFF64748B),
                       ),
@@ -399,7 +399,7 @@ class ContactInformationCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       value,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                         color: onTap != null

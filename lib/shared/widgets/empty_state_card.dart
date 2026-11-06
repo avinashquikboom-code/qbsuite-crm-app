@@ -42,7 +42,7 @@ class EmptyStateCard extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -52,7 +52,7 @@ class EmptyStateCard extends StatelessWidget {
           const SizedBox(height: 6),
           Text(
             description,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: AppColors.textSecondary,
             ),
@@ -75,7 +75,7 @@ class EmptyStateCard extends StatelessWidget {
               ),
               child: Text(
                 actionLabel!,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                 ),

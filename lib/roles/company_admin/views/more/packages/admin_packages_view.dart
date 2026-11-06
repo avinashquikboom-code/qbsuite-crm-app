@@ -28,7 +28,7 @@ class AdminPackagesView extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           'SSM Service Packages',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -106,7 +106,7 @@ class AdminPackagesView extends ConsumerWidget {
                     children: [
                       Text(
                         '${p.name} Package',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -114,7 +114,7 @@ class AdminPackagesView extends ConsumerWidget {
                       ),
                       Text(
                         p.duration,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -125,7 +125,7 @@ class AdminPackagesView extends ConsumerWidget {
               ),
               Text(
                 '₹${p.price.toStringAsFixed(0)}',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
                   color: AppColors.primary,
@@ -136,7 +136,7 @@ class AdminPackagesView extends ConsumerWidget {
           const SizedBox(height: 12),
           Text(
             p.description,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: const Color(0xFF475569),
             ),
@@ -147,7 +147,7 @@ class AdminPackagesView extends ConsumerWidget {
 
           Text(
             'Included Deliverables & Features:',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -170,7 +170,7 @@ class AdminPackagesView extends ConsumerWidget {
                   Expanded(
                     child: Text(
                       s,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12.5,
                         color: const Color(0xFF334155),
                       ),

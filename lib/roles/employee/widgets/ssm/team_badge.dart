@@ -19,7 +19,7 @@ class TeamBadge extends StatelessWidget {
       ),
       child: Text(
         teamName,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 11,
           fontWeight: FontWeight.bold,
           color: isTeamA ? AppColors.primaryDark : const Color(0xFF6941C6),

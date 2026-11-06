@@ -156,7 +156,7 @@ class _ReelsStyleVideoFeedViewState extends State<ReelsStyleVideoFeedView> {
                         ),
                         child: Text(
                           '${_currentIndex + 1} / ${widget.videos.length}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             color: Colors.white,
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
@@ -484,7 +484,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                                     item.category.displayLabel,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       color: Colors.black,
                                       fontSize: 11,
                                       fontWeight: FontWeight.w900,
@@ -511,7 +511,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                               item.platform.toUpperCase(),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 color: Colors.white,
                                 fontSize: 10,
                                 fontWeight: FontWeight.w800,
@@ -545,7 +545,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                                       item.formattedDateOnly,
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         color: Colors.white,
                                         fontSize: 10,
                                         fontWeight: FontWeight.w600,
@@ -566,7 +566,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                       item.title,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -582,7 +582,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                         item.description!,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           color: Colors.white70,
                           fontSize: 13,
                           fontWeight: FontWeight.w400,
@@ -608,7 +608,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                             item.ctaText?.isNotEmpty == true
                                 ? item.ctaText!
                                 : 'Learn More',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               color: Colors.black,
                               fontSize: 13,
                               fontWeight: FontWeight.w800,
@@ -694,7 +694,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
           const SizedBox(height: 12),
           Text(
             'Unable to play video',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               color: Colors.white,
               fontSize: 14,
               fontWeight: FontWeight.w600,
@@ -779,7 +779,7 @@ class _ReelVideoProgressWithTimestamp extends StatelessWidget {
                   ),
                   child: Text(
                     '$posFormatted / $durFormatted',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       color: Colors.white.withValues(alpha: 0.9),
                       fontSize: 11,
                       fontWeight: FontWeight.w600,

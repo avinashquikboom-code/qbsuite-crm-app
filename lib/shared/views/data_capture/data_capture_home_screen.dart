@@ -135,7 +135,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                           ),
                           child: Text(
                             'GOOGLE PLACES LEAD CAPTURE',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primaryLight,
@@ -153,7 +153,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                     const SizedBox(height: 12),
                     Text(
                       'Find Businesses & Prospects',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -162,7 +162,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                     const SizedBox(height: 4),
                     Text(
                       'Find verified businesses and extract prospective leads directly from Google Places into your CRM pipeline.',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: Colors.white70,
                         height: 1.3,
@@ -187,7 +187,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                         icon: const Icon(Icons.search_rounded, size: 20),
                         label: Text(
                           'Start New Capture',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -234,7 +234,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                   ),
                   title: Text(
                     'Capture History',
-                    style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+                    style: GoogleFonts.inter(fontWeight: FontWeight.w600),
                   ),
                   subtitle: const Text(
                     'View your previous business searches and captures',
@@ -450,7 +450,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                 title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: titleFontSize,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -464,7 +464,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
             value,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: valueFontSize,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,

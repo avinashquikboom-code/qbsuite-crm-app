@@ -98,7 +98,7 @@ class CustomerHomeView extends ConsumerWidget {
                 children: [
                   Text(
                     'QB Suite',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -109,7 +109,7 @@ class CustomerHomeView extends ConsumerWidget {
                   ),
                   Text(
                     'CUSTOMER WORKSPACE',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 9,
                       fontWeight: FontWeight.w800,
                       color: AppColors.primaryDark,

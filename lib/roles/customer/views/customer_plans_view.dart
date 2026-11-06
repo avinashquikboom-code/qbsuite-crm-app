@@ -67,7 +67,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               : null,
           title: Text(
             'Subscription Plans',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -104,7 +104,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                 const SizedBox(height: 16),
                 Text(
                   'Access Denied',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -114,7 +114,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                 Text(
                   'You do not have permission to view Subscription Plans. Please contact your administrator if you need access.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                   ),
@@ -139,7 +139,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
         automaticallyImplyLeading: false,
         title: Text(
           'Subscription Plans',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -204,7 +204,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               // 2. Section Header
               Text(
                 'AVAILABLE PLANS',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -214,7 +214,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               const SizedBox(height: 4),
               Text(
                 'Choose a curated plan that fits your business.',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
@@ -407,7 +407,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                   children: [
                     Text(
                       'Build Your Own Plan',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -419,7 +419,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
                     const SizedBox(height: 2),
                     Text(
                       'Customise your services & quantities',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 10.5,
                         color: AppColors.textSecondary,
                         height: 1.15,
@@ -437,7 +437,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
           const SizedBox(height: 8),
           Text(
             'Select exact quantities of Reels, Posts, Stories, Influencer Promos, and Ads Management tailored to your goals.',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 11,
               color: AppColors.textSecondary,
               height: 1.3,
@@ -461,7 +461,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               icon: const Icon(Remix.add_line, size: 16, color: Colors.white),
               label: Text(
                 'Create Custom Plan',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -519,7 +519,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 12),
             Text(
               'No Plans Available',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -528,7 +528,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 4),
             Text(
               'Please check again later or contact support.',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -558,7 +558,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 12),
             Text(
               'Unable to Load Plans',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -567,7 +567,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
             const SizedBox(height: 4),
             Text(
               'Please check your internet connection.',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -580,7 +580,7 @@ class _CustomerPlansViewState extends ConsumerState<CustomerPlansView>
               icon: const Icon(Remix.refresh_line, size: 16),
               label: Text(
                 'Retry',
-                style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,

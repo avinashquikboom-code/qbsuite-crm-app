@@ -18,7 +18,7 @@ class AdminWorkDetailView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Work Details',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -82,7 +82,7 @@ class AdminWorkDetailView extends StatelessWidget {
                                   Expanded(
                                     child: Text(
                                       w.customerName,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 17,
                                         fontWeight: FontWeight.bold,
                                         color: AppColors.textPrimary,
@@ -100,7 +100,7 @@ class AdminWorkDetailView extends StatelessWidget {
                                     ),
                                     child: Text(
                                       w.status.label,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 10.5,
                                         fontWeight: FontWeight.bold,
                                         color: w.status.color,
@@ -112,7 +112,7 @@ class AdminWorkDetailView extends StatelessWidget {
                               const SizedBox(height: 2),
                               Text(
                                 '${w.workType.label} • ${w.socialAccount} (${w.platform})',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   color: AppColors.textSecondary,
                                 ),
@@ -147,7 +147,7 @@ class AdminWorkDetailView extends StatelessWidget {
               // Day-Wise Visual Timeline Section
               Text(
                 'Day-wise Work Breakdown & Tasks',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -177,7 +177,7 @@ class AdminWorkDetailView extends StatelessWidget {
                 const SizedBox(height: 18),
                 Text(
                   'Creative Brief & Instructions',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -194,7 +194,7 @@ class AdminWorkDetailView extends StatelessWidget {
                   ),
                   child: Text(
                     w.notes!,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13.5,
                       color: AppColors.textPrimary,
                       height: 1.4,
@@ -238,7 +238,7 @@ class AdminWorkDetailView extends StatelessWidget {
                         )
                       : Text(
                           '${task.day}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: task.isCurrent
@@ -273,7 +273,7 @@ class AdminWorkDetailView extends StatelessWidget {
                           'Day ${task.day}: ${task.title}',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14.5,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -293,7 +293,7 @@ class AdminWorkDetailView extends StatelessWidget {
                           ),
                           child: Text(
                             'TODAY',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 9.5,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
@@ -306,7 +306,7 @@ class AdminWorkDetailView extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     task.description,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12.5,
                       color: AppColors.textSecondary,
                       height: 1.35,
@@ -331,7 +331,7 @@ class AdminWorkDetailView extends StatelessWidget {
             width: 120,
             child: Text(
               label,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12.5,
                 color: AppColors.textSecondary,
               ),
@@ -340,7 +340,7 @@ class AdminWorkDetailView extends StatelessWidget {
           Expanded(
             child: Text(
               value,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12.5,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textPrimary,

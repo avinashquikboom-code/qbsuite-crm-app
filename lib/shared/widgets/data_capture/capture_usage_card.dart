@@ -66,7 +66,7 @@ class CaptureUsageCard extends StatelessWidget {
                         children: [
                           Text(
                             'SUBSCRIPTION USAGE',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -77,7 +77,7 @@ class CaptureUsageCard extends StatelessWidget {
                           ),
                           Text(
                             'Data Capture Quota',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -105,7 +105,7 @@ class CaptureUsageCard extends StatelessWidget {
                 ),
                 child: Text(
                   isExhausted ? 'Quota Limit Reached' : '$remaining Leads Left',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: isExhausted
@@ -139,7 +139,7 @@ class CaptureUsageCard extends StatelessWidget {
             children: [
               Text(
                 'Used: $used / $limit',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -147,7 +147,7 @@ class CaptureUsageCard extends StatelessWidget {
               ),
               Text(
                 '${(progress * 100).toInt()}% consumed',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -175,7 +175,7 @@ class CaptureUsageCard extends StatelessWidget {
                   Expanded(
                     child: Text(
                       'Data Capture limit reached. Please contact your administrator or upgrade your plan.',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w500,
                         color: AppColors.error,

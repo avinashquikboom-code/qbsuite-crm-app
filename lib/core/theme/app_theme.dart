@@ -41,7 +41,7 @@ class AppTheme {
         brightness: Brightness.light,
       ),
 
-      textTheme: GoogleFonts.outfitTextTheme().apply(
+      textTheme: GoogleFonts.interTextTheme().apply(
         bodyColor: AppColors.textPrimary,
         displayColor: AppColors.textPrimary,
       ),
@@ -59,7 +59,7 @@ class AppTheme {
           systemNavigationBarIconBrightness: Brightness.dark,
         ),
         iconTheme: const IconThemeData(color: AppColors.textPrimary),
-        titleTextStyle: GoogleFonts.outfit(
+        titleTextStyle: GoogleFonts.inter(
           color: AppColors.textPrimary,
           fontSize: 18,
           fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          textStyle: GoogleFonts.outfit(
+          textStyle: GoogleFonts.inter(
             fontWeight: FontWeight.w700,
             fontSize: 15,
           ),
@@ -106,7 +106,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: AppColors.error),
         ),
-        hintStyle: GoogleFonts.outfit(
+        hintStyle: GoogleFonts.inter(
           color: AppColors.textSecondary,
           fontSize: 14,
         ),
@@ -133,7 +133,7 @@ class AppTheme {
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         backgroundColor: const Color(0xFF1E293B),
-        contentTextStyle: GoogleFonts.outfit(
+        contentTextStyle: GoogleFonts.inter(
           color: Colors.white,
           fontSize: 14,
           fontWeight: FontWeight.w500,
@@ -166,7 +166,7 @@ class AppTheme {
         error: AppColors.error,
         brightness: Brightness.dark,
       ),
-      textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme).apply(
+      textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme).apply(
         bodyColor: AppColors.textPrimaryDark,
         displayColor: AppColors.textPrimaryDark,
       ),
@@ -176,7 +176,7 @@ class AppTheme {
         elevation: 0,
         centerTitle: false,
         iconTheme: const IconThemeData(color: AppColors.textPrimaryDark),
-        titleTextStyle: GoogleFonts.outfit(
+        titleTextStyle: GoogleFonts.inter(
           color: AppColors.textPrimaryDark,
           fontSize: 18,
           fontWeight: FontWeight.bold,
@@ -192,7 +192,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          textStyle: GoogleFonts.outfit(
+          textStyle: GoogleFonts.inter(
             fontWeight: FontWeight.w700,
             fontSize: 15,
           ),
@@ -217,7 +217,7 @@ class AppTheme {
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         backgroundColor: const Color(0xFF1E293B),
-        contentTextStyle: GoogleFonts.outfit(
+        contentTextStyle: GoogleFonts.inter(
           color: Colors.white,
           fontSize: 14,
           fontWeight: FontWeight.w500,

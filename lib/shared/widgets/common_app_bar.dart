@@ -47,7 +47,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -56,7 +56,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
           if (subtitle != null) ...[
             Text(
               subtitle!,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),

@@ -141,7 +141,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
                         const SizedBox(width: 8),
                         Text(
                           'Create Package',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 14,
@@ -183,10 +183,10 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
                         child: TextField(
                           controller: _searchCtrl,
                           onChanged: (v) => setState(() => _search = v),
-                          style: GoogleFonts.outfit(fontSize: 13),
+                          style: GoogleFonts.inter(fontSize: 13),
                           decoration: InputDecoration(
                             hintText: 'Search packages or modules…',
-                            hintStyle: GoogleFonts.outfit(
+                            hintStyle: GoogleFonts.inter(
                               color: AppColors.textPlaceholder,
                               fontSize: 13,
                             ),
@@ -431,7 +431,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
               ],
               Text(
                 label,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                   color: isSelected
@@ -450,7 +450,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
                 ),
                 child: Text(
                   '$count',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
                     color: isSelected
@@ -528,7 +528,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
           const SizedBox(width: 10),
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
               color: isSelected ? AppColors.primary : AppColors.textPrimary,
@@ -623,7 +623,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
             const SizedBox(width: 10),
             Text(
               'Delete Package?',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -632,7 +632,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
         ),
         content: Text(
           'Are you sure you want to delete "${pkg.name}"? This action cannot be undone.',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             color: AppColors.textSecondary,
             fontSize: 13,
           ),
@@ -642,7 +642,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 color: AppColors.textSecondary,
                 fontWeight: FontWeight.bold,
               ),
@@ -664,7 +664,7 @@ class _PackagesViewState extends ConsumerState<PackagesView> {
             ),
             child: Text(
               'Delete',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -775,7 +775,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                     children: [
                       Text(
                         pkg.name,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -786,7 +786,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                       ),
                       Text(
                         'ID: ${pkg.id.toUpperCase()}',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           color: Colors.white.withValues(alpha: 0.75),
                           fontWeight: FontWeight.w500,
@@ -823,7 +823,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                       const SizedBox(width: 5),
                       Text(
                         pkg.status,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: pkg.isActive
@@ -881,7 +881,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               const SizedBox(width: 8),
                               Text(
                                 'Edit Package',
-                                style: GoogleFonts.outfit(fontSize: 13),
+                                style: GoogleFonts.inter(fontSize: 13),
                               ),
                             ],
                           ),
@@ -899,7 +899,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               const SizedBox(width: 8),
                               Text(
                                 'Duplicate',
-                                style: GoogleFonts.outfit(fontSize: 13),
+                                style: GoogleFonts.inter(fontSize: 13),
                               ),
                             ],
                           ),
@@ -919,7 +919,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               const SizedBox(width: 8),
                               Text(
                                 pkg.isActive ? 'Mark Inactive' : 'Mark Active',
-                                style: GoogleFonts.outfit(fontSize: 13),
+                                style: GoogleFonts.inter(fontSize: 13),
                               ),
                             ],
                           ),
@@ -938,7 +938,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               const SizedBox(width: 8),
                               Text(
                                 'Delete',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   color: AppColors.error,
                                   fontWeight: FontWeight.bold,
@@ -969,7 +969,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                   if (pkg.description.isNotEmpty) ...[
                     Text(
                       pkg.description,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textSecondary,
                         height: 1.4,
@@ -998,7 +998,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                             children: [
                               Text(
                                 'TOTAL INVESTMENT',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textSecondary,
@@ -1008,7 +1008,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               const SizedBox(height: 2),
                               Text(
                                 '₹${widget.formatNumber(pkg.totalPrice)}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -1018,7 +1018,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               const SizedBox(height: 2),
                               Text(
                                 'incl. ${pkg.gstPercent.toStringAsFixed(0)}% GST (₹${widget.formatNumber(pkg.gstAmount)})',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11,
                                   color: AppColors.textSecondary,
                                   fontWeight: FontWeight.w500,
@@ -1051,7 +1051,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               const SizedBox(width: 5),
                               Text(
                                 pkg.durationLabel,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -1080,7 +1080,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                           const SizedBox(width: 6),
                           Text(
                             'Included Features (${pkg.items.length})',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -1103,7 +1103,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                               children: [
                                 Text(
                                   _isExpanded ? 'Collapse' : 'Breakdown',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.primaryDark,
@@ -1154,7 +1154,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                                 item.quantity > 1
                                     ? '${item.name} (${item.quantity}×)'
                                     : item.name,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.textPrimary,
@@ -1196,7 +1196,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                                 Expanded(
                                   child: Text(
                                     item.name,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w600,
                                       color: AppColors.textPrimary,
@@ -1205,7 +1205,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                                 ),
                                 Text(
                                   '${item.quantity} × ₹${widget.formatNumber(item.unitPrice)} (${item.planType})',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
                                     fontWeight: FontWeight.w500,
@@ -1228,7 +1228,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                     children: [
                       Text(
                         'Base: ₹${widget.formatNumber(pkg.basePrice)}',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textSecondary,
@@ -1244,7 +1244,7 @@ class _RedesignedPackageCardState extends State<_RedesignedPackageCard> {
                             horizontal: 10,
                             vertical: 4,
                           ),
-                          textStyle: GoogleFonts.outfit(
+                          textStyle: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                           ),
@@ -1331,7 +1331,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                       children: [
                         Text(
                           package.name,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1339,7 +1339,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                         ),
                         Text(
                           '${package.id.toUpperCase()} • ${package.durationLabel}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -1369,7 +1369,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                     if (package.description.isNotEmpty) ...[
                       Text(
                         'Package Overview',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -1386,7 +1386,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                         ),
                         child: Text(
                           package.description,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             color: AppColors.textSecondary,
                             height: 1.4,
@@ -1399,7 +1399,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                     // Included Modules Table
                     Text(
                       'Included Modules & Pricing Items',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -1431,7 +1431,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                   flex: 3,
                                   child: Text(
                                     'MODULE',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textSecondary,
@@ -1443,7 +1443,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                   child: Text(
                                     'QTY',
                                     textAlign: TextAlign.center,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textSecondary,
@@ -1455,7 +1455,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                   child: Text(
                                     'RATE',
                                     textAlign: TextAlign.right,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textSecondary,
@@ -1481,7 +1481,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                       children: [
                                         Text(
                                           item.name,
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 13,
                                             fontWeight: FontWeight.w600,
                                             color: AppColors.textPrimary,
@@ -1489,7 +1489,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                         ),
                                         Text(
                                           item.planType,
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 11,
                                             color: AppColors.textSecondary,
                                           ),
@@ -1502,7 +1502,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                     child: Text(
                                       '${item.quantity}',
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -1515,7 +1515,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                                           ? 'Included'
                                           : '₹${formatNumber(item.total)}',
                                       textAlign: TextAlign.right,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold,
                                         color: item.unitPrice == 0
@@ -1565,7 +1565,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                             children: [
                               Text(
                                 'Grand Total',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -1573,7 +1573,7 @@ class _PackageDetailsSheet extends StatelessWidget {
                               ),
                               Text(
                                 '₹${formatNumber(package.totalPrice)}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryDark,
@@ -1649,14 +1649,14 @@ class _PackageDetailsSheet extends StatelessWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             color: AppColors.textSecondary,
           ),
         ),
         Text(
           value,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -1871,7 +1871,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                   Expanded(
                     child: Text(
                       isEdit ? 'Edit Package' : 'Create New Package',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -2046,7 +2046,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                             children: [
                               Text(
                                 'Calculated Total (incl. GST):',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.primaryDark,
@@ -2054,7 +2054,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                               ),
                               Text(
                                 '₹${totalPreview.toStringAsFixed(0)}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryDark,
@@ -2140,7 +2140,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                               ),
                               child: Text(
                                 'Cancel',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -2193,7 +2193,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                                           isEdit
                                               ? 'Save Changes'
                                               : 'Create Package',
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 14,
                                             color: Colors.white,
@@ -2227,7 +2227,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
         const SizedBox(width: 6),
         Text(
           title,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -2255,7 +2255,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                 flex: 3,
                 child: TextFormField(
                   controller: ctrl['name'],
-                  style: GoogleFonts.outfit(fontSize: 13),
+                  style: GoogleFonts.inter(fontSize: 13),
                   decoration: _inputDecoration('Feature / Module Name'),
                 ),
               ),
@@ -2265,7 +2265,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                 child: TextFormField(
                   controller: ctrl['qty'],
                   keyboardType: TextInputType.number,
-                  style: GoogleFonts.outfit(fontSize: 13),
+                  style: GoogleFonts.inter(fontSize: 13),
                   decoration: _inputDecoration('Qty'),
                 ),
               ),
@@ -2289,7 +2289,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
                 child: TextFormField(
                   controller: ctrl['price'],
                   keyboardType: TextInputType.number,
-                  style: GoogleFonts.outfit(fontSize: 13),
+                  style: GoogleFonts.inter(fontSize: 13),
                   decoration: _inputDecoration('Unit Rate (₹)'),
                 ),
               ),
@@ -2297,7 +2297,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
               Expanded(
                 child: TextFormField(
                   controller: ctrl['planType'],
-                  style: GoogleFonts.outfit(fontSize: 13),
+                  style: GoogleFonts.inter(fontSize: 13),
                   decoration: _inputDecoration('Billing Cycle (e.g. Yearly)'),
                 ),
               ),
@@ -2313,7 +2313,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
       padding: const EdgeInsets.only(bottom: 5),
       child: Text(
         text,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 12,
           fontWeight: FontWeight.w600,
           color: AppColors.textSecondary,
@@ -2336,7 +2336,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
       keyboardType: keyboardType,
       maxLines: maxLines,
       onChanged: onChanged,
-      style: GoogleFonts.outfit(fontSize: 13),
+      style: GoogleFonts.inter(fontSize: 13),
       validator: required
           ? (v) => (v == null || v.trim().isEmpty) ? 'Required' : null
           : null,
@@ -2347,7 +2347,7 @@ class _PackageFormSheetState extends State<_PackageFormSheet> {
   InputDecoration _inputDecoration(String hint, {IconData? prefixIcon}) {
     return InputDecoration(
       hintText: hint,
-      hintStyle: GoogleFonts.outfit(
+      hintStyle: GoogleFonts.inter(
         color: AppColors.textPlaceholder,
         fontSize: 13,
       ),

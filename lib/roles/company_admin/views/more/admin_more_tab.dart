@@ -28,18 +28,18 @@ class AdminMoreTab extends ConsumerWidget {
       builder: (ctx) => AlertDialog(
         title: Text(
           'Confirm Logout',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+          style: GoogleFonts.inter(fontWeight: FontWeight.bold),
         ),
         content: Text(
           'Are you sure you want to sign out?',
-          style: GoogleFonts.outfit(),
+          style: GoogleFonts.inter(),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(color: AppColors.textSecondary),
+              style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -59,7 +59,7 @@ class AdminMoreTab extends ConsumerWidget {
             ),
             child: Text(
               'Logout',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
@@ -121,7 +121,7 @@ class AdminMoreTab extends ConsumerWidget {
                         children: [
                           Text(
                             state.profile.companyName,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -129,7 +129,7 @@ class AdminMoreTab extends ConsumerWidget {
                           ),
                           Text(
                             'Company Admin Control Center',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -145,7 +145,7 @@ class AdminMoreTab extends ConsumerWidget {
               // Modules List
               Text(
                 'Agency Modules & Operations',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -322,7 +322,7 @@ class AdminMoreTab extends ConsumerWidget {
               // General & Account
               Text(
                 'Company Administration',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -431,7 +431,7 @@ class AdminMoreTab extends ConsumerWidget {
                   children: [
                     Text(
                       title,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -439,7 +439,7 @@ class AdminMoreTab extends ConsumerWidget {
                     ),
                     Text(
                       subtitle,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11.5,
                         color: AppColors.textSecondary,
                       ),

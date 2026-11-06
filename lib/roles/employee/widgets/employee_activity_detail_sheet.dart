@@ -133,7 +133,7 @@ class _EmployeeActivityDetailSheetState
                       : (targetStatus == 'BLOCKED'
                             ? 'Work marked as blocked!'
                             : 'Work updated!')),
-            style: GoogleFonts.outfit(),
+            style: GoogleFonts.inter(),
           ),
           backgroundColor: targetStatus == 'COMPLETED'
               ? const Color(0xFF16A34A)
@@ -149,7 +149,7 @@ class _EmployeeActivityDetailSheetState
         SnackBar(
           content: Text(
             'Failed to save update. Please try again.',
-            style: GoogleFonts.outfit(),
+            style: GoogleFonts.inter(),
           ),
           backgroundColor: Colors.red,
           behavior: SnackBarBehavior.floating,
@@ -219,7 +219,7 @@ class _EmployeeActivityDetailSheetState
                       const SizedBox(width: 5),
                       Text(
                         activity.activityType.label,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: catColor,
@@ -240,7 +240,7 @@ class _EmployeeActivityDetailSheetState
                   ),
                   child: Text(
                     _status.toUpperCase(),
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                       color: _getStatusColor(_status),
@@ -266,7 +266,7 @@ class _EmployeeActivityDetailSheetState
             // Task / Service Name
             Text(
               displayName,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -300,7 +300,7 @@ class _EmployeeActivityDetailSheetState
                         children: [
                           Text(
                             'CARRIED FORWARD TASK',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.w800,
                               color: const Color(0xFFB45309),
@@ -310,7 +310,7 @@ class _EmployeeActivityDetailSheetState
                           if (activity.originalScheduledDateDisplay != null)
                             Text(
                               'Originally scheduled: ${activity.originalScheduledDateDisplay} • Current: ${formatActivityDate(activity.date)}',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11.5,
                                 fontWeight: FontWeight.w500,
                                 color: const Color(0xFF92400E),
@@ -336,7 +336,7 @@ class _EmployeeActivityDetailSheetState
                   const SizedBox(width: 4),
                   Text(
                     activity.planName!,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12.5,
                       color: AppColors.primary,
                       fontWeight: FontWeight.w600,
@@ -353,7 +353,7 @@ class _EmployeeActivityDetailSheetState
             // Key Details Section
             Text(
               'ASSIGNMENT & WORK DETAILS',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF94A3B8),
@@ -437,7 +437,7 @@ class _EmployeeActivityDetailSheetState
             // ── LATEST WORK UPDATE BOX ──
             Text(
               'LATEST WORK UPDATE',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF94A3B8),
@@ -468,7 +468,7 @@ class _EmployeeActivityDetailSheetState
                       (_notes != null && _notes!.trim().isNotEmpty)
                           ? _notes!
                           : 'No updates recorded yet.',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: (_notes != null && _notes!.trim().isNotEmpty)
                             ? AppColors.textPrimary
@@ -486,7 +486,7 @@ class _EmployeeActivityDetailSheetState
             // ── SUBMIT PROGRESS UPDATE INPUT ──
             Text(
               'SUBMIT PROGRESS UPDATE',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF94A3B8),
@@ -508,7 +508,7 @@ class _EmployeeActivityDetailSheetState
                       controller: _updateNoteController,
                       decoration: InputDecoration(
                         hintText: 'Enter update (e.g. Editing 80% complete)...',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 13,
                           color: const Color(0xFF94A3B8),
                         ),
@@ -518,7 +518,7 @@ class _EmployeeActivityDetailSheetState
                           vertical: 10,
                         ),
                       ),
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textPrimary,
                       ),
@@ -546,7 +546,7 @@ class _EmployeeActivityDetailSheetState
                       ),
                       child: Text(
                         'Send',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
@@ -615,7 +615,7 @@ class _EmployeeActivityDetailSheetState
                 const SizedBox(width: 8),
                 Text(
                   'Work Completed',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFF15803D),
@@ -640,7 +640,7 @@ class _EmployeeActivityDetailSheetState
                 ),
                 child: Text(
                   'Reopen Work (Set to In Progress)',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF475569),
@@ -675,7 +675,7 @@ class _EmployeeActivityDetailSheetState
                 const SizedBox(width: 8),
                 Text(
                   'Work Blocked',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFFB91C1C),
@@ -693,7 +693,7 @@ class _EmployeeActivityDetailSheetState
               icon: const Icon(Remix.play_fill, size: 18, color: Colors.white),
               label: Text(
                 'Resume Work (In Progress)',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
@@ -728,7 +728,7 @@ class _EmployeeActivityDetailSheetState
                 ),
                 label: Text(
                   'Complete Work',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: Colors.white,
@@ -758,7 +758,7 @@ class _EmployeeActivityDetailSheetState
                 ),
                 label: Text(
                   'Block',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
                     color: const Color(0xFFDC2626),
@@ -789,7 +789,7 @@ class _EmployeeActivityDetailSheetState
               icon: const Icon(Remix.play_fill, size: 18, color: Colors.white),
               label: Text(
                 'Start Work',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
@@ -819,7 +819,7 @@ class _EmployeeActivityDetailSheetState
               ),
               label: Text(
                 'Block',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFFDC2626),
@@ -870,7 +870,7 @@ class _EmployeeActivityDetailSheetState
               children: [
                 Text(
                   label,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: const Color(0xFF64748B),
                     fontWeight: FontWeight.w500,
@@ -879,7 +879,7 @@ class _EmployeeActivityDetailSheetState
                 const SizedBox(height: 1),
                 Text(
                   value,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
                     color: valueColor ?? AppColors.textPrimary,

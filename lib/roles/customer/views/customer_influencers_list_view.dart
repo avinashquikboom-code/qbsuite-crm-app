@@ -142,7 +142,7 @@ class _CustomerInfluencersListViewState
                         Expanded(
                           child: Text(
                             'Featured Influencers',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -160,7 +160,7 @@ class _CustomerInfluencersListViewState
                             children: [
                               Text(
                                 'View All',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.primaryDark,
@@ -213,7 +213,7 @@ class _CustomerInfluencersListViewState
                                     isFiltered
                                         ? 'No influencers available in this category'
                                         : 'No influencers available',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -227,7 +227,7 @@ class _CustomerInfluencersListViewState
                                       ),
                                       child: Text(
                                         'View All Influencers',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           color: AppColors.primaryDark,
                                         ),
                                       ),
@@ -282,7 +282,7 @@ class _CustomerInfluencersListViewState
                               const SizedBox(height: 8),
                               Text(
                                 'Unable to load creators',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   color: AppColors.textSecondary,
                                 ),
@@ -295,7 +295,7 @@ class _CustomerInfluencersListViewState
                                 ),
                                 child: Text(
                                   'Retry',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     color: AppColors.primary,
                                   ),
                                 ),
@@ -352,7 +352,7 @@ class _CustomerInfluencersListViewState
               children: [
                 Text(
                   'QB Suite',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -361,7 +361,7 @@ class _CustomerInfluencersListViewState
                 ),
                 Text(
                   'CUSTOMER WORKSPACE',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 9,
                     fontWeight: FontWeight.w700,
                     color: AppColors.primaryDark,
@@ -430,7 +430,7 @@ class _CustomerInfluencersListViewState
               children: [
                 Text(
                   'Influencer Hub',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -439,7 +439,7 @@ class _CustomerInfluencersListViewState
                 const SizedBox(height: 2),
                 Text(
                   'Find, Connect & Book Influencers\nfor Your Brand',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                     height: 1.2,
@@ -488,7 +488,7 @@ class _CustomerInfluencersListViewState
                   ),
                   child: Text(
                     'Join as Creator',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -561,7 +561,7 @@ class _CustomerInfluencersListViewState
               Text(
                 cat['title'] as String,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 10,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                   color: isSelected
@@ -676,7 +676,7 @@ class _CustomerInfluencersListViewState
                     Expanded(
                       child: Text(
                         creator.name,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -710,7 +710,7 @@ class _CustomerInfluencersListViewState
                   ),
                   child: Text(
                     creator.categoryName,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 9.5,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF2563EB),
@@ -733,7 +733,7 @@ class _CustomerInfluencersListViewState
                       Expanded(
                         child: Text(
                           creator.location,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10.5,
                             color: const Color(0xFF64748B),
                           ),
@@ -758,7 +758,7 @@ class _CustomerInfluencersListViewState
                     Expanded(
                       child: Text(
                         '${creator.followersCount} Followers',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textPrimary,
@@ -781,7 +781,7 @@ class _CustomerInfluencersListViewState
                     Expanded(
                       child: Text(
                         '${creator.engagementRate}% Engagement',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w500,
                           color: AppColors.textPrimary,
@@ -800,7 +800,7 @@ class _CustomerInfluencersListViewState
                   creator.pricing != null && creator.pricing! > 0
                       ? '₹${creator.pricing!.toStringAsFixed(0)} / ${creator.platform == 'YOUTUBE' ? 'Video' : 'Post'}'
                       : 'Price on Request',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -833,7 +833,7 @@ class _CustomerInfluencersListViewState
                     },
                     child: Text(
                       'View Profile',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

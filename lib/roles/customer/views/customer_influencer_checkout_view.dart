@@ -142,7 +142,7 @@ class _CustomerInfluencerCheckoutViewState
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Book Now',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -167,7 +167,7 @@ class _CustomerInfluencerCheckoutViewState
                     // Section Title: Campaign Details
                     Text(
                       'Campaign Details',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -235,7 +235,7 @@ class _CustomerInfluencerCheckoutViewState
                       children: [
                         Text(
                           'Campaign Objective *',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: AppColors.textSecondary,
@@ -256,7 +256,7 @@ class _CustomerInfluencerCheckoutViewState
                                 Remix.arrow_down_s_line,
                                 size: 18,
                               ),
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 color: AppColors.textPrimary,
                               ),
@@ -282,7 +282,7 @@ class _CustomerInfluencerCheckoutViewState
                     // Section Title: Booking Details
                     Text(
                       'Booking Details',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -333,7 +333,7 @@ class _CustomerInfluencerCheckoutViewState
                                   children: [
                                     Text(
                                       widget.creator.name,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 13.5,
                                         fontWeight: FontWeight.bold,
                                         color: AppColors.textPrimary,
@@ -341,7 +341,7 @@ class _CustomerInfluencerCheckoutViewState
                                     ),
                                     Text(
                                       '${widget.creator.categoryName} • ${widget.creator.followersCount} Followers',
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 11,
                                         color: AppColors.textSecondary,
                                       ),
@@ -353,7 +353,7 @@ class _CustomerInfluencerCheckoutViewState
                                 onTap: () => Navigator.pop(context),
                                 child: Text(
                                   'Change',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11.5,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.primaryDark,
@@ -368,7 +368,7 @@ class _CustomerInfluencerCheckoutViewState
                           // Selected Package Row
                           Text(
                             'Selected Package *',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11.5,
                               color: AppColors.textSecondary,
                             ),
@@ -389,7 +389,7 @@ class _CustomerInfluencerCheckoutViewState
                             ),
                             child: Text(
                               '${_currentPackage.name} (${_currentPackage.formattedPrice})',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textPrimary,
@@ -402,7 +402,7 @@ class _CustomerInfluencerCheckoutViewState
                           // Campaign Date Row
                           Text(
                             'Campaign Date *',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11.5,
                               color: AppColors.textSecondary,
                             ),
@@ -432,7 +432,7 @@ class _CustomerInfluencerCheckoutViewState
                                 Expanded(
                                   child: Text(
                                     _currentDateString,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w500,
                                       color: AppColors.textPrimary,
@@ -453,7 +453,7 @@ class _CustomerInfluencerCheckoutViewState
                           // Notes / Instructions
                           Text(
                             'Notes / Instructions',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11.5,
                               color: AppColors.textSecondary,
                             ),
@@ -464,7 +464,7 @@ class _CustomerInfluencerCheckoutViewState
                             maxLines: 2,
                             decoration: InputDecoration(
                               hintText: 'Any specific requirements...',
-                              hintStyle: GoogleFonts.outfit(
+                              hintStyle: GoogleFonts.inter(
                                 fontSize: 12,
                                 color: const Color(0xFF94A3B8),
                               ),
@@ -516,7 +516,7 @@ class _CustomerInfluencerCheckoutViewState
                   onPressed: _onProceed,
                   child: Text(
                     'Proceed to Payment',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -544,7 +544,7 @@ class _CustomerInfluencerCheckoutViewState
         children: [
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.w600,
               color: AppColors.textSecondary,
@@ -555,7 +555,7 @@ class _CustomerInfluencerCheckoutViewState
             controller: controller,
             keyboardType: keyboardType,
             validator: validator,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: AppColors.textPrimary,
             ),

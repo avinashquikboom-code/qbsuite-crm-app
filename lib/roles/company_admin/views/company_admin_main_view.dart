@@ -162,7 +162,7 @@ class _CompanyAdminMainViewState extends ConsumerState<CompanyAdminMainView> {
           automaticallyImplyLeading: false,
           title: Text(
             visibleTabs[safeIndex].title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -273,7 +273,7 @@ class _CompanyAdminMainViewState extends ConsumerState<CompanyAdminMainView> {
             const SizedBox(height: 2),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 10,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                 color: isSelected ? AppColors.primary : AppColors.textSecondary,

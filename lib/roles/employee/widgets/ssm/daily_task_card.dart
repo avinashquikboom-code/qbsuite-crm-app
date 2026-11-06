@@ -60,7 +60,7 @@ class DailyTaskCard extends StatelessWidget {
                       const SizedBox(width: 3),
                       Text(
                         'DONE',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 9.5,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF16A34A),
@@ -81,7 +81,7 @@ class DailyTaskCard extends StatelessWidget {
                   ),
                   child: Text(
                     'TODAY',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 9.5,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryDark,
@@ -93,7 +93,7 @@ class DailyTaskCard extends StatelessWidget {
           const SizedBox(height: 6),
           Text(
             task.title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -102,7 +102,7 @@ class DailyTaskCard extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             task.description,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -117,7 +117,7 @@ class DailyTaskCard extends StatelessWidget {
                 icon: const Icon(Remix.checkbox_circle_line, size: 16),
                 label: Text(
                   'Mark Task Complete',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     fontWeight: FontWeight.bold,
                   ),

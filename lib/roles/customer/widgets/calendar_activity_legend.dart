@@ -58,7 +58,7 @@ class CalendarActivityLegend extends StatelessWidget {
               const SizedBox(width: 5),
               Text(
                 cat.label,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   color: const Color(0xFF475569),

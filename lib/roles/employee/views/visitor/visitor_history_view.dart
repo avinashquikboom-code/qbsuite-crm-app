@@ -153,10 +153,10 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                       controller: _searchController,
                       onChanged: (val) =>
                           setState(() => _searchQuery = val.trim()),
-                      style: GoogleFonts.outfit(fontSize: 13),
+                      style: GoogleFonts.inter(fontSize: 13),
                       decoration: InputDecoration(
                         hintText: 'Search by client, purpose or location...',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),
@@ -263,7 +263,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
             child: Center(
               child: Text(
                 label,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                   color: isSelected ? Colors.white : AppColors.textPrimary,
@@ -374,7 +374,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                     children: [
                       Text(
                         customer,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -385,7 +385,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                       const SizedBox(height: 2),
                       Text(
                         purpose,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12.5,
                           color: AppColors.textSecondary,
                         ),
@@ -395,7 +395,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                       const SizedBox(height: 4),
                       Text(
                         '$dateStr | $location',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -409,7 +409,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                           Flexible(
                             child: Text(
                               displayStatus,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color:
@@ -428,7 +428,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                           const SizedBox(width: 6),
                           Text(
                             '|',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               color: AppColors.borderLight,
                             ),
                           ),
@@ -441,7 +441,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
                           const SizedBox(width: 3),
                           Text(
                             '$rating',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,

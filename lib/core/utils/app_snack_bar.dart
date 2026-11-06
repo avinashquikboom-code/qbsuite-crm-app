@@ -90,7 +90,7 @@ class AppSnackBar {
           Expanded(
             child: Text(
               message,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 color: Colors.white,
                 fontSize: 14,
                 fontWeight: FontWeight.w600,

@@ -18,7 +18,7 @@ class AdminTeamDetailView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Team Details',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -64,7 +64,7 @@ class AdminTeamDetailView extends StatelessWidget {
                     const SizedBox(height: 12),
                     Text(
                       t.name,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -73,7 +73,7 @@ class AdminTeamDetailView extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       'Team Leader: ${t.teamLeader}',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13.5,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xFF9333EA),
@@ -104,7 +104,7 @@ class AdminTeamDetailView extends StatelessWidget {
               // Team Members List
               Text(
                 'Assigned Team Members',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -141,7 +141,7 @@ class AdminTeamDetailView extends StatelessWidget {
                             backgroundColor: AppColors.primaryLight,
                             child: Text(
                               memberName.substring(0, 1),
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primary,
@@ -157,7 +157,7 @@ class AdminTeamDetailView extends StatelessWidget {
                                   children: [
                                     Text(
                                       memberName,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold,
                                         color: AppColors.textPrimary,
@@ -178,7 +178,7 @@ class AdminTeamDetailView extends StatelessWidget {
                                         ),
                                         child: Text(
                                           'LEAD',
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 9,
                                             fontWeight: FontWeight.bold,
                                             color: const Color(0xFF9333EA),
@@ -190,7 +190,7 @@ class AdminTeamDetailView extends StatelessWidget {
                                 ),
                                 Text(
                                   'SSM Creative Specialist',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11.5,
                                     color: AppColors.textSecondary,
                                   ),
@@ -214,7 +214,7 @@ class AdminTeamDetailView extends StatelessWidget {
               // Active Projects Handled
               Text(
                 'Active Projects Under ${t.name}',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -268,7 +268,7 @@ class AdminTeamDetailView extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 11.5,
           fontWeight: FontWeight.bold,
           color: textColor,
@@ -286,7 +286,7 @@ class AdminTeamDetailView extends StatelessWidget {
           children: [
             Text(
               client,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13.5,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -294,7 +294,7 @@ class AdminTeamDetailView extends StatelessWidget {
             ),
             Text(
               scope,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11.5,
                 color: AppColors.textSecondary,
               ),
@@ -311,7 +311,7 @@ class AdminTeamDetailView extends StatelessWidget {
           ),
           child: Text(
             status,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 9.5,
               fontWeight: FontWeight.bold,
               color: status == 'IN PROGRESS'

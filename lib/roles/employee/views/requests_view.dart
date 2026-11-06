@@ -113,7 +113,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                   children: [
                     Text(
                       'Apply for Leave',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -196,7 +196,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 children: [
                                   Text(
                                     'Start Date',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -204,7 +204,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                   const SizedBox(height: 4),
                                   Text(
                                     fromDate.toIso8601String().split('T')[0],
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -241,7 +241,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 children: [
                                   Text(
                                     'End Date',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -249,7 +249,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                   const SizedBox(height: 4),
                                   Text(
                                     toDate.toIso8601String().split('T')[0],
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -280,14 +280,14 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         children: [
                           Text(
                             'Calculated Leave Duration:',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               color: AppColors.textSecondary,
                             ),
                           ),
                           Text(
                             '$durationDays ${durationDays == 1 ? "Day" : "Days"}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: AppColors.primary,
@@ -357,7 +357,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         ),
                         child: Text(
                           'Submit Application',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -406,7 +406,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                   children: [
                     Text(
                       'Submit Expense Claim',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -489,7 +489,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                               children: [
                                 Text(
                                   'Expense Date',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
                                   ),
@@ -497,7 +497,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 const SizedBox(height: 4),
                                 Text(
                                   claimDate.toIso8601String().split('T')[0],
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -600,7 +600,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         ),
                         child: Text(
                           'Submit Expense Claim',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -650,7 +650,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                   children: [
                     Text(
                       'Request Employee Loan',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -709,14 +709,14 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           children: [
                             Text(
                               'Estimated Monthly Deduction:',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 color: AppColors.textSecondary,
                               ),
                             ),
                             Text(
                               '₹ $estimatedEmi / mo',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primary,
@@ -793,7 +793,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         ),
                         child: Text(
                           'Submit Loan Request',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -849,7 +849,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                   children: [
                     Text(
                       'Apply Remote / WFH',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -892,7 +892,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 children: [
                                   Text(
                                     'Start Date',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -900,7 +900,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                   const SizedBox(height: 4),
                                   Text(
                                     fromDate.toIso8601String().split('T')[0],
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -937,7 +937,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 children: [
                                   Text(
                                     'End Date',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -945,7 +945,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                   const SizedBox(height: 4),
                                   Text(
                                     toDate.toIso8601String().split('T')[0],
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -983,7 +983,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 children: [
                                   Text(
                                     'Start Time',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -991,7 +991,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                   const SizedBox(height: 4),
                                   Text(
                                     formatTimeOfDay(startTime),
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -1024,7 +1024,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 children: [
                                   Text(
                                     'End Time',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 11,
                                       color: AppColors.textSecondary,
                                     ),
@@ -1032,7 +1032,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                   const SizedBox(height: 4),
                                   Text(
                                     formatTimeOfDay(endTime),
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -1106,7 +1106,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         ),
                         child: Text(
                           'Submit WFH Request',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
@@ -1185,7 +1185,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
               const SizedBox(height: 12),
               Text(
                 'You do not have permission to view any requests.',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.textSecondary,
                   fontSize: 14,
                 ),
@@ -1244,7 +1244,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
             isScrollable: true,
             tabAlignment: TabAlignment.start,
             labelPadding: const EdgeInsets.symmetric(horizontal: 16),
-            labelStyle: GoogleFonts.outfit(
+            labelStyle: GoogleFonts.inter(
               fontWeight: FontWeight.bold,
               fontSize: 13,
             ),
@@ -1312,7 +1312,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
               const SizedBox(height: 12),
               Text(
                 leaveState.errorMessage!,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.textPrimary,
                   fontSize: 14,
                 ),
@@ -1392,7 +1392,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
               children: [
                 Text(
                   'Leave Applications',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -1446,7 +1446,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             Expanded(
                               child: Text(
                                 req.leaveType,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15,
                                 ),
@@ -1473,7 +1473,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             Expanded(
                               child: Text(
                                 '${req.fromDate} to ${req.toDate} • ${req.isHalfDay ? 'Half Day' : 'Full Day'} (${req.days} ${req.days == 1 ? 'day' : 'days'})',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   color: AppColors.textSecondary,
                                   fontSize: 13,
                                 ),
@@ -1496,7 +1496,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                               const SizedBox(width: 4),
                               Text(
                                 'Applied: ${req.appliedOn}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   color: AppColors.textPlaceholder,
                                   fontSize: 12,
                                 ),
@@ -1508,7 +1508,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           const SizedBox(height: 6),
                           Text(
                             req.reason,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               color: AppColors.textPrimary,
                             ),
@@ -1543,7 +1543,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 Expanded(
                                   child: Text(
                                     'Reason: ${req.rejectionReason}',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 12,
                                       color: AppColors.error,
                                       fontWeight: FontWeight.w500,
@@ -1590,7 +1590,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
               children: [
                 Text(
                   'Expense Claims',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -1643,7 +1643,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           children: [
                             Text(
                               c.category,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
                               ),
@@ -1660,7 +1660,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           children: [
                             Text(
                               'Claimed: ₹ ${c.amount.toStringAsFixed(0)}',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.primary,
@@ -1669,7 +1669,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             if (c.approvedAmount != null && c.isApproved)
                               Text(
                                 'Approved: ₹ ${c.approvedAmount!.toStringAsFixed(0)}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.success,
@@ -1680,7 +1680,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         const SizedBox(height: 6),
                         Text(
                           c.description,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             color: AppColors.textPrimary,
                           ),
@@ -1689,7 +1689,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           const SizedBox(height: 4),
                           Text(
                             'Reason: ${c.rejectionReason}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.error,
                             ),
@@ -1731,7 +1731,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
               children: [
                 Text(
                   'Loan Requests',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -1784,7 +1784,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           children: [
                             Text(
                               '₹ ${l.loanAmount.toStringAsFixed(0)} (${l.termMonths} Mo)',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                                 color: AppColors.primary,
@@ -1802,7 +1802,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           children: [
                             Text(
                               'Monthly EMI: ₹ ${l.monthlyEmi.toStringAsFixed(0)}',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 color: AppColors.textSecondary,
                               ),
@@ -1810,7 +1810,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             if (l.remainingBalance != null && l.isActive)
                               Text(
                                 'Remaining: ₹ ${l.remainingBalance!.toStringAsFixed(0)}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.warning,
@@ -1821,7 +1821,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         const SizedBox(height: 6),
                         Text(
                           l.reason,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             color: AppColors.textPrimary,
                           ),
@@ -1830,7 +1830,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                           const SizedBox(height: 4),
                           Text(
                             'Reason: ${l.rejectionReason}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.error,
                             ),
@@ -1871,7 +1871,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
               const SizedBox(height: 12),
               Text(
                 remoteState.errorMessage!,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.textPrimary,
                   fontSize: 14,
                 ),
@@ -1920,7 +1920,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
               children: [
                 Text(
                   'Remote Work (WFH)',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -1974,7 +1974,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             Expanded(
                               child: Text(
                                 '${r.fromDate} to ${r.toDate}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
                                 ),
@@ -2001,7 +2001,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                             Expanded(
                               child: Text(
                                 '${r.startTime} – ${r.endTime} • ${r.duration ?? '${r.days} Days'}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11.5,
                                   color: AppColors.textSecondary,
                                   fontWeight: FontWeight.w500,
@@ -2024,7 +2024,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                               const SizedBox(width: 4),
                               Text(
                                 'Applied: ${r.appliedOn}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11.5,
                                   color: AppColors.textPlaceholder,
                                 ),
@@ -2035,7 +2035,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                         const SizedBox(height: 6),
                         Text(
                           r.reason,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             color: AppColors.textPrimary,
                           ),
@@ -2069,7 +2069,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                                 Expanded(
                                   child: Text(
                                     'Reason: ${r.rejectionReason}',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 12,
                                       color: AppColors.error,
                                       fontWeight: FontWeight.w500,
@@ -2141,7 +2141,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
         alignment: Alignment.center,
         child: Text(
           title,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             fontWeight: FontWeight.bold,
             color: isSelected ? Colors.white : AppColors.textSecondary,
@@ -2169,7 +2169,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
         children: [
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -2177,7 +2177,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
           const SizedBox(height: 4),
           Text(
             count,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 22,
               fontWeight: FontWeight.bold,
               color: color,
@@ -2186,7 +2186,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
           const SizedBox(height: 2),
           Text(
             subtext,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 11,
               color: AppColors.textPlaceholder,
             ),
@@ -2210,7 +2210,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
             const SizedBox(height: 8),
             Text(
               text,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 color: AppColors.textSecondary,
                 fontSize: 13,
               ),

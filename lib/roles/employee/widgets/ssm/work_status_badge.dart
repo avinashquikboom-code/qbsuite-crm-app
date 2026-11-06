@@ -54,7 +54,7 @@ class WorkStatusBadge extends StatelessWidget {
           const SizedBox(width: 5),
           Text(
             status.displayName.toUpperCase(),
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 10,
               fontWeight: FontWeight.w800,
               color: statusTextColor,

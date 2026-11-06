@@ -91,7 +91,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                     children: [
                       Text(
                         'Apply for Remote Work (WFH)',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -113,7 +113,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                           children: [
                             Text(
                               'From Date',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 13,
                               ),
@@ -143,7 +143,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                               icon: const Icon(Remix.calendar_line, size: 15),
                               label: Text(
                                 '${fromDate.day}/${fromDate.month}/${fromDate.year}',
-                                style: GoogleFonts.outfit(fontSize: 12),
+                                style: GoogleFonts.inter(fontSize: 12),
                               ),
                             ),
                           ],
@@ -156,7 +156,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                           children: [
                             Text(
                               'To Date',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 13,
                               ),
@@ -182,7 +182,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                               ),
                               label: Text(
                                 '${toDate.day}/${toDate.month}/${toDate.year}',
-                                style: GoogleFonts.outfit(fontSize: 12),
+                                style: GoogleFonts.inter(fontSize: 12),
                               ),
                             ),
                           ],
@@ -199,7 +199,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                           children: [
                             Text(
                               'Start Time',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 13,
                               ),
@@ -218,7 +218,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                               icon: const Icon(Remix.time_line, size: 15),
                               label: Text(
                                 formatTimeOfDay(startTime),
-                                style: GoogleFonts.outfit(fontSize: 12),
+                                style: GoogleFonts.inter(fontSize: 12),
                               ),
                             ),
                           ],
@@ -231,7 +231,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                           children: [
                             Text(
                               'End Time',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 13,
                               ),
@@ -250,7 +250,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                               icon: const Icon(Remix.time_fill, size: 15),
                               label: Text(
                                 formatTimeOfDay(endTime),
-                                style: GoogleFonts.outfit(fontSize: 12),
+                                style: GoogleFonts.inter(fontSize: 12),
                               ),
                             ),
                           ],
@@ -261,7 +261,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                   const SizedBox(height: 14),
                   Text(
                     'Reason & Deliverables Plan *',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 13,
                     ),
@@ -273,7 +273,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                     decoration: InputDecoration(
                       hintText:
                           'Explain reason and planned deliverables during remote work...',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
@@ -332,7 +332,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                       },
                       child: Text(
                         'SUBMIT APPLICATION',
-                        style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                        style: GoogleFonts.inter(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -371,7 +371,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
               icon: const Icon(Remix.add_line),
               label: Text(
                 'Apply WFH',
-                style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
               ),
             )
           : null,
@@ -432,7 +432,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
         selected: isSelected,
         selectedColor: AppColors.primaryLight,
         checkmarkColor: AppColors.primaryDark,
-        labelStyle: GoogleFonts.outfit(
+        labelStyle: GoogleFonts.inter(
           color: isSelected ? AppColors.primaryDark : AppColors.textPrimary,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
           fontSize: 12,
@@ -478,7 +478,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
                     Expanded(
                       child: Text(
                         '${item.fromDate} - ${item.toDate}',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13.5,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -519,7 +519,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
               const SizedBox(width: 4),
               Text(
                 '${item.startTime} – ${item.endTime}',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11.5,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -530,7 +530,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
           const SizedBox(height: 8),
           Text(
             item.reason,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: AppColors.textSecondary,
               height: 1.3,
@@ -542,7 +542,7 @@ class _RemoteWorkViewState extends ConsumerState<RemoteWorkView> {
             children: [
               Text(
                 'Duration: ${item.days} ${item.days == 1 ? 'day' : 'days'}',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,

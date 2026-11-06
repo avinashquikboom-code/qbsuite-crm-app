@@ -204,7 +204,7 @@ class _CustomerDashboardViewState extends ConsumerState<CustomerDashboardView>
                       Text(
                         perms.error!,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           color: AppColors.textSecondary,
                         ),
@@ -220,7 +220,7 @@ class _CustomerDashboardViewState extends ConsumerState<CustomerDashboardView>
               ? Center(
                   child: Text(
                     'No modules are available for this account.',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       color: AppColors.textSecondary,
                     ),
@@ -296,7 +296,7 @@ class _CustomerDashboardViewState extends ConsumerState<CustomerDashboardView>
             const SizedBox(height: 2),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 10,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                 color: isSelected

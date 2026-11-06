@@ -62,7 +62,7 @@ class _AdminMarketingBannersViewState
           children: [
             Text(
               'Marketing Banners',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -70,7 +70,7 @@ class _AdminMarketingBannersViewState
             ),
             Text(
               'Manage promotional banners & coupon offers',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 color: AppColors.textSecondary,
               ),
@@ -94,7 +94,7 @@ class _AdminMarketingBannersViewState
               icon: const Icon(Remix.add_line, size: 16),
               label: Text(
                 'New',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                 ),
@@ -206,7 +206,7 @@ class _AdminMarketingBannersViewState
     child: ChoiceChip(
       label: Text(
         label,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 12,
           fontWeight: FontWeight.w600,
           color: _filter == value ? Colors.white : AppColors.textSecondary,
@@ -252,18 +252,18 @@ class _AdminMarketingBannersViewState
       builder: (ctx) => AlertDialog(
         title: Text(
           'Delete Banner',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+          style: GoogleFonts.inter(fontWeight: FontWeight.bold),
         ),
         content: Text(
           'Delete "${b.title ?? 'this banner'}"? This action cannot be undone.',
-          style: GoogleFonts.outfit(),
+          style: GoogleFonts.inter(),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx, false),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(color: AppColors.textSecondary),
+              style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -272,7 +272,7 @@ class _AdminMarketingBannersViewState
               backgroundColor: AppColors.error,
               foregroundColor: Colors.white,
             ),
-            child: Text('Delete', style: GoogleFonts.outfit()),
+            child: Text('Delete', style: GoogleFonts.inter()),
           ),
         ],
       ),
@@ -368,7 +368,7 @@ class _BannerCard extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(
                         hasCoupon ? 'COUPON' : 'BANNER',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 9,
                           fontWeight: FontWeight.w800,
                           color: hasCoupon
@@ -408,7 +408,7 @@ class _BannerCard extends StatelessWidget {
                         children: [
                           const Icon(Remix.edit_line, size: 16),
                           const SizedBox(width: 8),
-                          Text('Edit', style: GoogleFonts.outfit()),
+                          Text('Edit', style: GoogleFonts.inter()),
                         ],
                       ),
                     ),
@@ -424,7 +424,7 @@ class _BannerCard extends StatelessWidget {
                           const SizedBox(width: 8),
                           Text(
                             'Delete',
-                            style: GoogleFonts.outfit(color: AppColors.error),
+                            style: GoogleFonts.inter(color: AppColors.error),
                           ),
                         ],
                       ),
@@ -443,7 +443,7 @@ class _BannerCard extends StatelessWidget {
               children: [
                 Text(
                   banner.title ?? banner.discount ?? 'Untitled Banner',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -453,7 +453,7 @@ class _BannerCard extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                     banner.subtitle!,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -494,7 +494,7 @@ class _BannerCard extends StatelessWidget {
                 const SizedBox(width: 4),
                 Text(
                   _dateRange(banner.startAt, banner.endAt),
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: AppColors.textMuted,
                   ),
@@ -508,7 +508,7 @@ class _BannerCard extends StatelessWidget {
                 const SizedBox(width: 4),
                 Text(
                   'Priority ${banner.priority}',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: AppColors.textMuted,
                   ),
@@ -527,7 +527,7 @@ class _BannerCard extends StatelessWidget {
                   ),
                   child: Text(
                     banner.isActive ? 'ACTIVE' : 'INACTIVE',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 9,
                       fontWeight: FontWeight.w800,
                       color: banner.isActive
@@ -553,7 +553,7 @@ class _BannerCard extends StatelessWidget {
     ),
     child: Text(
       text,
-      style: GoogleFonts.outfit(
+      style: GoogleFonts.inter(
         fontSize: 11,
         fontWeight: FontWeight.w700,
         color: fg,
@@ -664,7 +664,7 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           _isEdit ? 'Edit Banner' : 'New Banner',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -694,7 +694,7 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
                     )
                   : Text(
                       _isEdit ? 'Save' : 'Create',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                       ),
@@ -766,7 +766,7 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
             const SizedBox(height: 4),
             Text(
               'Paste a publicly accessible HTTPS image URL.',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 color: AppColors.textMuted,
               ),
@@ -829,7 +829,7 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
     padding: const EdgeInsets.only(top: 20, bottom: 8),
     child: Text(
       label,
-      style: GoogleFonts.outfit(
+      style: GoogleFonts.inter(
         fontSize: 13,
         fontWeight: FontWeight.bold,
         color: AppColors.textPrimary,
@@ -850,15 +850,15 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
       controller: ctrl,
       maxLines: maxLines,
       keyboardType: keyboard,
-      style: GoogleFonts.outfit(fontSize: 14),
+      style: GoogleFonts.inter(fontSize: 14),
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
-        labelStyle: GoogleFonts.outfit(
+        labelStyle: GoogleFonts.inter(
           fontSize: 13,
           color: AppColors.textSecondary,
         ),
-        hintStyle: GoogleFonts.outfit(fontSize: 13, color: AppColors.textMuted),
+        hintStyle: GoogleFonts.inter(fontSize: 13, color: AppColors.textMuted),
         filled: true,
         fillColor: Colors.white,
         contentPadding: const EdgeInsets.symmetric(
@@ -895,7 +895,7 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
         child: Row(
           children: [
             Expanded(
-              child: Text(label, style: GoogleFonts.outfit(fontSize: 14)),
+              child: Text(label, style: GoogleFonts.inter(fontSize: 14)),
             ),
             Switch.adaptive(
               value: value,
@@ -945,7 +945,7 @@ class _BannerFormViewState extends ConsumerState<_BannerFormView> {
             Expanded(
               child: Text(
                 current != null ? _fmtDate(current) : label,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 14,
                   color: current != null
                       ? AppColors.textPrimary
@@ -1053,7 +1053,7 @@ class _EmptyState extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             msg,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 15,
               fontWeight: FontWeight.w600,
               color: AppColors.textSecondary,
@@ -1065,7 +1065,7 @@ class _EmptyState extends StatelessWidget {
             icon: const Icon(Remix.add_line, size: 16),
             label: Text(
               'Create Banner',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
             ),
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primary,
@@ -1099,7 +1099,7 @@ class _ErrorState extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             'Failed to load banners',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 15,
               color: AppColors.textSecondary,
             ),
@@ -1113,7 +1113,7 @@ class _ErrorState extends StatelessWidget {
             ),
             child: Text(
               'Retry',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],

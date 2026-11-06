@@ -80,7 +80,7 @@ class _EmployeeSSMWorkListViewState
                   Flexible(
                     child: Text(
                       message,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         color: Colors.white,
                         fontSize: 13.5,
                         fontWeight: FontWeight.w600,
@@ -204,7 +204,7 @@ class _EmployeeSSMWorkListViewState
                       isSupervisor
                           ? 'Supervisory Access'
                           : 'Authorized Modules',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textSecondary,
@@ -229,7 +229,7 @@ class _EmployeeSSMWorkListViewState
                           ),
                           child: Text(
                             permState.permissions.role,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10.5,
                               fontWeight: FontWeight.w800,
                               color: AppColors.primaryDark,
@@ -272,7 +272,7 @@ class _EmployeeSSMWorkListViewState
                   const SizedBox(width: 6),
                   Text(
                     'Production Metrics',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13.5,
                       fontWeight: FontWeight.w800,
                       color: AppColors.textPrimary,
@@ -282,7 +282,7 @@ class _EmployeeSSMWorkListViewState
               ),
               Text(
                 '${state.activities.length} filtered items',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -393,7 +393,7 @@ class _EmployeeSSMWorkListViewState
               Expanded(
                 child: Text(
                   label,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textSecondary,
@@ -407,7 +407,7 @@ class _EmployeeSSMWorkListViewState
           const SizedBox(height: 6),
           Text(
             '$count',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 22,
               fontWeight: FontWeight.w800,
               color: color,
@@ -505,7 +505,7 @@ class _EmployeeSSMWorkListViewState
             ],
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11.5,
                 fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
                 color: isSelected ? Colors.white : AppColors.textPrimary,
@@ -557,7 +557,7 @@ class _EmployeeSSMWorkListViewState
               Text(
                 'Unable to load production work',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.textPrimary,
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
@@ -567,7 +567,7 @@ class _EmployeeSSMWorkListViewState
               Text(
                 'Please check your internet connection or try again.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.textSecondary,
                   fontSize: 13,
                 ),
@@ -582,7 +582,7 @@ class _EmployeeSSMWorkListViewState
                 ),
                 label: Text(
                   'Retry',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
                     color: Colors.white,
@@ -630,7 +630,7 @@ class _EmployeeSSMWorkListViewState
               Text(
                 isSupervisor ? 'No production tasks found' : 'No work assigned',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.textPrimary,
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
@@ -642,7 +642,7 @@ class _EmployeeSSMWorkListViewState
                     ? 'No production work matches the selected filters for your workspace.'
                     : 'Your assigned activities will appear here.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.textSecondary,
                   fontSize: 13.5,
                 ),

@@ -25,7 +25,7 @@ class AdminReportsView extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           'Analytics & Reports',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -58,7 +58,7 @@ class AdminReportsView extends ConsumerWidget {
                       children: [
                         Text(
                           'Reporting Cycle: August 2026',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -66,7 +66,7 @@ class AdminReportsView extends ConsumerWidget {
                         ),
                         Text(
                           'Real-time agency operational metrics',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -84,7 +84,7 @@ class AdminReportsView extends ConsumerWidget {
                       ),
                       child: Text(
                         'Monthly',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11.5,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
@@ -232,7 +232,7 @@ class AdminReportsView extends ConsumerWidget {
               const SizedBox(width: 12),
               Text(
                 title,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -249,7 +249,7 @@ class AdminReportsView extends ConsumerWidget {
                   children: [
                     Text(
                       m.value,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 16,
                         fontWeight: FontWeight.w800,
                         color: AppColors.textPrimary,
@@ -257,7 +257,7 @@ class AdminReportsView extends ConsumerWidget {
                     ),
                     Text(
                       m.title,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textSecondary,
@@ -265,7 +265,7 @@ class AdminReportsView extends ConsumerWidget {
                     ),
                     Text(
                       m.sub,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 10.5,
                         color: const Color(0xFF16A34A),
                         fontWeight: FontWeight.w500,
@@ -285,14 +285,14 @@ class AdminReportsView extends ConsumerWidget {
                 children: [
                   Text(
                     progressLabel,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11.5,
                       color: AppColors.textSecondary,
                     ),
                   ),
                   Text(
                     '${(progressValue * 100).toInt()}%',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11.5,
                       fontWeight: FontWeight.bold,
                       color: color,

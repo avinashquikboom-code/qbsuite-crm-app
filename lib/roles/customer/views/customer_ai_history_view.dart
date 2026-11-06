@@ -152,7 +152,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
           children: [
             Text(
               'AI Generation History',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -160,7 +160,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
             ),
             Text(
               'All creations, drafts & published scripts',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 color: const Color(0xFF64748B),
               ),
@@ -190,10 +190,10 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                     child: TextField(
                       controller: _searchController,
                       onChanged: (val) => setState(() => _searchQuery = val),
-                      style: GoogleFonts.outfit(fontSize: 13),
+                      style: GoogleFonts.inter(fontSize: 13),
                       decoration: InputDecoration(
                         hintText: 'Search content, topic, or tags...',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 13,
                           color: const Color(0xFF94A3B8),
                         ),
@@ -242,7 +242,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                                 setState(() => _selectedType = t['id']!),
                             selectedColor: AppColors.primary,
                             backgroundColor: const Color(0xFFF1F5F9),
-                            labelStyle: GoogleFonts.outfit(
+                            labelStyle: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: isSel
                                   ? FontWeight.bold
@@ -284,7 +284,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                                 setState(() => _selectedStatus = s['id']!),
                             selectedColor: const Color(0xFFE0E7FF),
                             backgroundColor: Colors.transparent,
-                            labelStyle: GoogleFonts.outfit(
+                            labelStyle: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: isSel
                                   ? FontWeight.bold
@@ -345,7 +345,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                       const SizedBox(height: 8),
                       Text(
                         'Failed to load history',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
@@ -391,7 +391,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
             const SizedBox(height: 16),
             Text(
               'No Content Found',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF1E293B),
@@ -405,7 +405,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                   ? 'Try adjusting your filters or search terms.'
                   : 'You haven\'t created any AI content yet. Start your first generation now!',
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: const Color(0xFF64748B),
                 height: 1.4,
@@ -505,7 +505,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                       const SizedBox(width: 4),
                       Text(
                         typeLabel,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: typeColor,
@@ -517,7 +517,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                 const SizedBox(width: 8),
                 Text(
                   _formatDate(gen.createdAt),
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: const Color(0xFF94A3B8),
                   ),
@@ -534,7 +534,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                   ),
                   child: Text(
                     statusText,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.w700,
                       color: statusFg,
@@ -549,7 +549,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
             // Product / Prompt Title
             Text(
               gen.product.isNotEmpty ? gen.product : 'AI Creation',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF0F172A),
@@ -567,7 +567,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                   : (gen.objective != null
                         ? 'Objective: ${gen.objective}'
                         : 'Tap to view generated content output'),
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: const Color(0xFF475569),
                 height: 1.35,
@@ -601,7 +601,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                       const SizedBox(width: 3),
                       Text(
                         '${gen.creditsSpent} Credit${gen.creditsSpent > 1 ? 's' : ''}',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xFF475569),
@@ -624,7 +624,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                     ),
                     child: Text(
                       gen.platform!,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 10,
                         color: const Color(0xFF64748B),
                       ),
@@ -636,7 +636,7 @@ class _CustomerAiHistoryViewState extends ConsumerState<CustomerAiHistoryView> {
                   children: [
                     Text(
                       'View Output',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: AppColors.primary,

@@ -31,7 +31,7 @@ class CommonStatusBadge extends StatelessWidget {
       ),
       child: Text(
         label.toUpperCase(),
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: fontSize,
           fontWeight: FontWeight.w700,
           color: color,

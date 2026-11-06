@@ -412,7 +412,7 @@ class _CustomerAiCreationFormViewState
           children: [
             Text(
               _currentToolTitle,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -420,7 +420,7 @@ class _CustomerAiCreationFormViewState
             ),
             Text(
               'Cost: $_currentCreditCost Credit${_currentCreditCost > 1 ? 's' : ''}',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 color: const Color(0xFF64748B),
               ),
@@ -456,7 +456,7 @@ class _CustomerAiCreationFormViewState
                   const SizedBox(width: 4),
                   Text(
                     '$balance cr',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                       color: hasEnoughCredits
@@ -511,11 +511,11 @@ class _CustomerAiCreationFormViewState
                       controller: _productController,
                       maxLines: 3,
                       minLines: 2,
-                      style: GoogleFonts.outfit(fontSize: 14),
+                      style: GoogleFonts.inter(fontSize: 14),
                       decoration: InputDecoration(
                         hintText:
                             'e.g. Summer Flat 30% Off sale on Organic Green Tea. Mention fast delivery & natural antioxidants.',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 13,
                           color: const Color(0xFF94A3B8),
                         ),
@@ -581,7 +581,7 @@ class _CustomerAiCreationFormViewState
                               setState(() => _targetAudience = aud),
                           selectedColor: const Color(0xFFEEF2FF),
                           backgroundColor: const Color(0xFFF8FAFC),
-                          labelStyle: GoogleFonts.outfit(
+                          labelStyle: GoogleFonts.inter(
                             fontSize: 11,
                             fontWeight: isSel
                                 ? FontWeight.bold
@@ -749,7 +749,7 @@ class _CustomerAiCreationFormViewState
                             ),
                             child: Text(
                               cta,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11,
                                 fontWeight: isSel
                                     ? FontWeight.bold
@@ -766,11 +766,11 @@ class _CustomerAiCreationFormViewState
                     const SizedBox(height: 8),
                     TextFormField(
                       controller: _ctaController,
-                      style: GoogleFonts.outfit(fontSize: 13),
+                      style: GoogleFonts.inter(fontSize: 13),
                       decoration: InputDecoration(
                         hintText:
                             'Or enter custom CTA (e.g. Claim 50% Off Now)',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 12,
                           color: const Color(0xFF94A3B8),
                         ),
@@ -798,11 +798,11 @@ class _CustomerAiCreationFormViewState
                       controller: _customInstructionsController,
                       maxLines: 3,
                       minLines: 2,
-                      style: GoogleFonts.outfit(fontSize: 13),
+                      style: GoogleFonts.inter(fontSize: 13),
                       decoration: InputDecoration(
                         hintText:
                             'e.g. Include emoji accents, mention free shipping over ₹499, and include a strong hook in the first sentence.',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 12,
                           color: const Color(0xFF94A3B8),
                         ),
@@ -882,7 +882,7 @@ class _CustomerAiCreationFormViewState
                       const SizedBox(width: 6),
                       Text(
                         t['title'] as String,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: isSel ? FontWeight.bold : FontWeight.w500,
                           color: isSel ? Colors.white : const Color(0xFF334155),
@@ -902,7 +902,7 @@ class _CustomerAiCreationFormViewState
                         ),
                         child: Text(
                           '${t['credits']}c',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                             color: isSel
@@ -950,7 +950,7 @@ class _CustomerAiCreationFormViewState
                   hasEnough
                       ? 'Requires $_currentCreditCost Credit${_currentCreditCost > 1 ? 's' : ''} (Balance: $balance)'
                       : 'Insufficient Credits: Needs $_currentCreditCost, you have $balance',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                     color: hasEnough
@@ -962,7 +962,7 @@ class _CustomerAiCreationFormViewState
                   hasEnough
                       ? 'Credits are deducted only upon successful generation.'
                       : 'Recharge your wallet to run this generation model.',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: hasEnough
                         ? const Color(0xFF6366F1)
@@ -1008,7 +1008,7 @@ class _CustomerAiCreationFormViewState
           children: [
             Text(
               title,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
                 color: const Color(0xFF1E293B),
@@ -1025,7 +1025,7 @@ class _CustomerAiCreationFormViewState
           const SizedBox(height: 2),
           Text(
             subtitle,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 11,
               color: const Color(0xFF64748B),
             ),
@@ -1056,7 +1056,7 @@ class _CustomerAiCreationFormViewState
             color: Color(0xFF64748B),
             size: 18,
           ),
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             color: const Color(0xFF1E293B),
             fontWeight: FontWeight.w500,
@@ -1118,7 +1118,7 @@ class _CustomerAiCreationFormViewState
                       const SizedBox(width: 10),
                       Text(
                         '✨ Creating...',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -1139,7 +1139,7 @@ class _CustomerAiCreationFormViewState
                         hasEnough
                             ? '✨ Generate ${_getGenerateButtonNoun()} • $_currentCreditCost Credit${_currentCreditCost > 1 ? 's' : ''}'
                             : 'Insufficient Credits (Recharge to Generate)',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

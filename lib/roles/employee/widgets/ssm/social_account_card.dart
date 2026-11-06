@@ -61,7 +61,7 @@ class SocialAccountCard extends StatelessWidget {
               children: [
                 Text(
                   accountName,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -71,7 +71,7 @@ class SocialAccountCard extends StatelessWidget {
                 ),
                 Text(
                   handle ?? platform,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11.5,
                     color: AppColors.textSecondary,
                   ),

@@ -42,7 +42,7 @@ class CommonTextField extends StatelessWidget {
         if (label != null) ...[
           Text(
             label!,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -59,10 +59,10 @@ class CommonTextField extends StatelessWidget {
           maxLines: maxLines,
           readOnly: readOnly,
           onTap: onTap,
-          style: GoogleFonts.outfit(fontSize: 14, color: AppColors.textPrimary),
+          style: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle: GoogleFonts.outfit(
+            hintStyle: GoogleFonts.inter(
               fontSize: 14,
               color: AppColors.textPlaceholder,
             ),

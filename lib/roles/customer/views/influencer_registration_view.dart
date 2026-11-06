@@ -101,7 +101,7 @@ class _InfluencerRegistrationViewState
           SnackBar(
             content: Text(
               'Application submitted! Status: ${created.status}',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+              style: GoogleFonts.inter(fontWeight: FontWeight.w600),
             ),
             backgroundColor: AppColors.primaryDark,
           ),
@@ -126,7 +126,7 @@ class _InfluencerRegistrationViewState
           SnackBar(
             content: Text(
               e.toString().replaceAll('Exception:', '').trim(),
-              style: GoogleFonts.outfit(),
+              style: GoogleFonts.inter(),
             ),
             backgroundColor: Colors.redAccent,
           ),
@@ -151,7 +151,7 @@ class _InfluencerRegistrationViewState
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Join as an Influencer',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 17,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -169,7 +169,7 @@ class _InfluencerRegistrationViewState
             },
             child: Text(
               'Check Status',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryDark,
@@ -221,7 +221,7 @@ class _InfluencerRegistrationViewState
                         children: [
                           Text(
                             'Become a Verified Creator',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -230,7 +230,7 @@ class _InfluencerRegistrationViewState
                           const SizedBox(height: 2),
                           Text(
                             'Submit your application. Once approved by admin, you will receive client bookings.',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -246,7 +246,7 @@ class _InfluencerRegistrationViewState
 
               Text(
                 'Personal & Account Information',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -325,7 +325,7 @@ class _InfluencerRegistrationViewState
 
               Text(
                 'Creator Profile & Socials',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -352,7 +352,7 @@ class _InfluencerRegistrationViewState
                         value: _selectedCategoryId,
                         hint: Text(
                           'Select Category (Optional)',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             color: AppColors.textSecondary,
                           ),
@@ -362,7 +362,7 @@ class _InfluencerRegistrationViewState
                             value: cat.id,
                             child: Text(
                               cat.name,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 14,
                                 color: AppColors.textPrimary,
                               ),
@@ -384,7 +384,7 @@ class _InfluencerRegistrationViewState
               // Primary Platform
               Text(
                 'Primary Platform',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
@@ -423,7 +423,7 @@ class _InfluencerRegistrationViewState
                             const SizedBox(width: 8),
                             Text(
                               'Instagram',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: _selectedPlatform == 'INSTAGRAM'
@@ -467,7 +467,7 @@ class _InfluencerRegistrationViewState
                             const SizedBox(width: 8),
                             Text(
                               'YouTube',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: _selectedPlatform == 'YOUTUBE'
@@ -576,7 +576,7 @@ class _InfluencerRegistrationViewState
                             const SizedBox(width: 8),
                             Text(
                               'Submit Application',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -611,7 +611,7 @@ class _InfluencerRegistrationViewState
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -624,10 +624,10 @@ class _InfluencerRegistrationViewState
           obscureText: obscureText,
           maxLines: maxLines,
           validator: validator,
-          style: GoogleFonts.outfit(fontSize: 14, color: AppColors.textPrimary),
+          style: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: GoogleFonts.outfit(
+            hintStyle: GoogleFonts.inter(
               fontSize: 13,
               color: AppColors.textSecondary.withValues(alpha: 0.7),
             ),

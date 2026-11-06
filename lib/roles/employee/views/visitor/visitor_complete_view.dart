@@ -121,7 +121,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
         ),
         title: Text(
           'Complete Visit',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -148,7 +148,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
                 children: [
                   Text(
                     'Visit Summary',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -171,7 +171,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
                   const SizedBox(height: 12),
                   Text(
                     'Remarks',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12.5,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -181,14 +181,14 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
                   TextField(
                     controller: _remarksController,
                     maxLines: 2,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       color: AppColors.textPrimary,
                     ),
                     decoration: InputDecoration(
                       hintText:
                           'Client interested hai. Further proposal bhejna hai.',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textPlaceholder,
                       ),
@@ -221,7 +221,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
                 children: [
                   Text(
                     'Visit Status',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -247,7 +247,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
                       return ChoiceChip(
                         selected: isSelected,
                         label: Text(status),
-                        labelStyle: GoogleFonts.outfit(
+                        labelStyle: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: isSelected
                               ? FontWeight.bold
@@ -293,7 +293,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
                   children: [
                     Text(
                       'Next Follow-up Date',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -324,7 +324,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
                             Expanded(
                               child: Text(
                                 _formatDate(_nextFollowUpDate),
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.textPrimary,
@@ -378,7 +378,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
               onPressed: _onProceedToReview,
               child: Text(
                 'Complete Visit',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 0.5,
@@ -399,7 +399,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
           width: 120,
           child: Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               color: AppColors.textSecondary,
             ),
@@ -408,7 +408,7 @@ class _VisitorCompleteViewState extends ConsumerState<VisitorCompleteView> {
         Expanded(
           child: Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: isBold ? FontWeight.bold : FontWeight.w500,
               color: AppColors.textPrimary,

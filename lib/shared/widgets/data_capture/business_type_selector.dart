@@ -94,7 +94,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
                 children: [
                   Text(
                     'Business Category',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textSecondary,
@@ -105,7 +105,7 @@ class _BusinessTypeSelectorState extends State<BusinessTypeSelector> {
                     widget.selectedCategory.isNotEmpty
                         ? widget.selectedCategory
                         : 'Select business type...',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -198,7 +198,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
             const SizedBox(height: 16),
             Text(
               'Select Business Type',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -207,7 +207,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
             const SizedBox(height: 4),
             Text(
               'Choose the category of commercial prospects you want to extract.',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -218,7 +218,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
               autofocus: false,
               decoration: InputDecoration(
                 hintText: 'Search business category...',
-                hintStyle: GoogleFonts.outfit(
+                hintStyle: GoogleFonts.inter(
                   fontSize: 14,
                   color: AppColors.textPlaceholder,
                 ),
@@ -268,7 +268,7 @@ class _SearchableCategorySheetState extends State<_SearchableCategorySheet> {
                     ),
                     title: Text(
                       item.label,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         fontWeight: isSelected
                             ? FontWeight.bold

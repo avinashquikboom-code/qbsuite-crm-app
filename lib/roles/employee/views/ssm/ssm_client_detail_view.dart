@@ -75,7 +75,7 @@ class SSMClientDetailView extends ConsumerWidget {
                           child: Center(
                             child: Text(
                               initial,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -90,7 +90,7 @@ class SSMClientDetailView extends ConsumerWidget {
                             children: [
                               Text(
                                 client.customerName,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -100,7 +100,7 @@ class SSMClientDetailView extends ConsumerWidget {
                               ),
                               Text(
                                 client.customerBusiness,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   color: AppColors.textSecondary,
                                 ),
@@ -151,7 +151,7 @@ class SSMClientDetailView extends ConsumerWidget {
               // ── Social Media Account & Team Info ──
               Text(
                 'ACCOUNT & TEAM DETAILS',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -262,7 +262,7 @@ class SSMClientDetailView extends ConsumerWidget {
                               SnackBar(
                                 content: Text(
                                   'Work started! Day 1 is now in progress.',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
@@ -319,7 +319,7 @@ class SSMClientDetailView extends ConsumerWidget {
   Widget _buildSectionTitle(String title) {
     return Text(
       title,
-      style: GoogleFonts.outfit(
+      style: GoogleFonts.inter(
         fontSize: 11.5,
         fontWeight: FontWeight.w800,
         color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -340,7 +340,7 @@ class SSMClientDetailView extends ConsumerWidget {
         children: [
           Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: color,
@@ -348,7 +348,7 @@ class SSMClientDetailView extends ConsumerWidget {
           ),
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 10.5,
               color: AppColors.textSecondary,
             ),
@@ -366,7 +366,7 @@ class SSMClientDetailView extends ConsumerWidget {
           width: 100,
           child: Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -377,7 +377,7 @@ class SSMClientDetailView extends ConsumerWidget {
           child: Text(
             value,
             textAlign: TextAlign.end,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -399,7 +399,7 @@ class SSMClientDetailView extends ConsumerWidget {
       ),
       child: Text(
         message,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 12.5,
           color: AppColors.textSecondary,
         ),

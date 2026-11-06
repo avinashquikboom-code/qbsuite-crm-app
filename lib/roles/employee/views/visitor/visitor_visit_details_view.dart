@@ -301,7 +301,7 @@ class _VisitorVisitDetailsViewState
         ),
         title: Text(
           'Visit Details',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -367,7 +367,7 @@ class _VisitorVisitDetailsViewState
                                 children: [
                                   Text(
                                     customerName,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -377,7 +377,7 @@ class _VisitorVisitDetailsViewState
                                   const SizedBox(height: 4),
                                   Text(
                                     purpose,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.w500,
                                       color: AppColors.textSecondary,
@@ -411,7 +411,7 @@ class _VisitorVisitDetailsViewState
                               Expanded(
                                 child: Text(
                                   phone,
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.textPrimary,
@@ -442,7 +442,7 @@ class _VisitorVisitDetailsViewState
                                       const SizedBox(width: 6),
                                       Text(
                                         'Call',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
                                           color: AppColors.primaryDark,
@@ -477,7 +477,7 @@ class _VisitorVisitDetailsViewState
                                       const SizedBox(width: 6),
                                       Text(
                                         'Chat',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
                                           color: const Color(0xFF16A34A),
@@ -510,7 +510,7 @@ class _VisitorVisitDetailsViewState
                       children: [
                         Text(
                           'Schedule & Location',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -538,7 +538,7 @@ class _VisitorVisitDetailsViewState
                               children: [
                                 Text(
                                   'Visit Time',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
                                     fontWeight: FontWeight.w500,
@@ -546,7 +546,7 @@ class _VisitorVisitDetailsViewState
                                 ),
                                 Text(
                                   '$timeStr, $dateStr',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.textPrimary,
@@ -590,7 +590,7 @@ class _VisitorVisitDetailsViewState
                                       children: [
                                         Text(
                                           'Location',
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 11,
                                             color: AppColors.textSecondary,
                                             fontWeight: FontWeight.w500,
@@ -598,7 +598,7 @@ class _VisitorVisitDetailsViewState
                                         ),
                                         Text(
                                           location,
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 13,
                                             fontWeight: FontWeight.w600,
                                             color: AppColors.textPrimary,
@@ -645,7 +645,7 @@ class _VisitorVisitDetailsViewState
                       children: [
                         Text(
                           'Visit Information',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -664,14 +664,14 @@ class _VisitorVisitDetailsViewState
                               const SizedBox(width: 8),
                               Text(
                                 'Assigned Visitor: ',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   color: AppColors.textSecondary,
                                 ),
                               ),
                               Text(
                                 assignedVisitor,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -692,14 +692,14 @@ class _VisitorVisitDetailsViewState
                               const SizedBox(width: 8),
                               Text(
                                 'Visited By: ',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   color: AppColors.textSecondary,
                                 ),
                               ),
                               Text(
                                 completedBy,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryDark,
@@ -713,7 +713,7 @@ class _VisitorVisitDetailsViewState
                           const SizedBox(height: 6),
                           Text(
                             'Preparation & Notes:',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -730,7 +730,7 @@ class _VisitorVisitDetailsViewState
                             ),
                             child: Text(
                               notes,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 color: AppColors.textPrimary,
                                 height: 1.4,
@@ -742,7 +742,7 @@ class _VisitorVisitDetailsViewState
                           const SizedBox(height: 10),
                           Text(
                             'Recorded Outcome:',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -761,7 +761,7 @@ class _VisitorVisitDetailsViewState
                             ),
                             child: Text(
                               outcome,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.primaryDark,
@@ -829,7 +829,7 @@ class _VisitorVisitDetailsViewState
                                   _isActionLoading
                                       ? 'STARTING...'
                                       : 'START VISIT',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 0.5,
@@ -874,7 +874,7 @@ class _VisitorVisitDetailsViewState
                                 ),
                                 label: Text(
                                   'REQUIREMENTS',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -918,7 +918,7 @@ class _VisitorVisitDetailsViewState
                                 ),
                                 label: Text(
                                   'CONTINUE TO REQUIREMENTS',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 0.5,
@@ -947,7 +947,7 @@ class _VisitorVisitDetailsViewState
                                   const SizedBox(width: 8),
                                   Text(
                                     'VISIT COMPLETED & RECORDED',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.primaryDark,

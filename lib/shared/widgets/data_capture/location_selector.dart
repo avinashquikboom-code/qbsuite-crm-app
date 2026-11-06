@@ -38,7 +38,7 @@ class LocationSelector extends StatelessWidget {
           onChanged: onLocationChanged,
           decoration: InputDecoration(
             hintText: 'Enter city, area, or locality (e.g. Vadodara)',
-            hintStyle: GoogleFonts.outfit(
+            hintStyle: GoogleFonts.inter(
               fontSize: 14,
               color: AppColors.textPlaceholder,
             ),
@@ -61,7 +61,7 @@ class LocationSelector extends StatelessWidget {
                   SnackBar(
                     content: Text(
                       'Detected Current City: Vadodara, Gujarat',
-                      style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+                      style: GoogleFonts.inter(fontWeight: FontWeight.w600),
                     ),
                     backgroundColor: AppColors.primary,
                     duration: const Duration(seconds: 2),
@@ -110,7 +110,7 @@ class LocationSelector extends StatelessWidget {
                   side: BorderSide(
                     color: isSelected ? AppColors.primary : AppColors.border,
                   ),
-                  labelStyle: GoogleFonts.outfit(
+                  labelStyle: GoogleFonts.inter(
                     fontSize: 12,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                     color: isSelected

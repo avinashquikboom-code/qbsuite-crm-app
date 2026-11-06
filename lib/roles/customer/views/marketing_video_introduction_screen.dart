@@ -361,7 +361,7 @@ class _MarketingVideoIntroductionScreenState
                   Text(
                     'Video unavailable.\nContinuing…',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       color: Colors.white70,
                     ),
@@ -449,7 +449,7 @@ class _MarketingVideoIntroductionScreenState
                             widget.video.title,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
@@ -463,7 +463,7 @@ class _MarketingVideoIntroductionScreenState
                               widget.video.subtitle!,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white70,
@@ -588,7 +588,7 @@ class _SkipButton extends StatelessWidget {
           children: [
             Text(
               'Skip',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13.5,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,

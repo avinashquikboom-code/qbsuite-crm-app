@@ -282,7 +282,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                           business.businessName.isNotEmpty
                               ? business.businessName
                               : 'No business name available',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: business.businessName.isNotEmpty
@@ -313,7 +313,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                               ),
                               child: Text(
                                 business.category,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryDark,
@@ -333,7 +333,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                                   const SizedBox(width: 2),
                                   Text(
                                     '${business.rating}',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textPrimary,
@@ -342,7 +342,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                                   if (business.reviewCount != null)
                                     Text(
                                       ' (${business.reviewCount})',
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 11,
                                         color: AppColors.textSecondary,
                                       ),
@@ -378,7 +378,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                   Expanded(
                     child: Text(
                       business.address,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                         height: 1.4,
@@ -406,7 +406,7 @@ companyId/tenantId: ${tenantId ?? 'N/A'}
                   Flexible(
                     child: Text(
                       business.phone,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -684,7 +684,7 @@ class _CompactTextBtn extends StatelessWidget {
             const SizedBox(width: 4),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
                 color: color,

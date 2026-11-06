@@ -102,7 +102,7 @@ class CurrentPlanCard extends StatelessWidget {
                               children: [
                                 Text(
                                   sub.planName,
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.textPrimary,
@@ -112,7 +112,7 @@ class CurrentPlanCard extends StatelessWidget {
                                   sub.isCustomPlan
                                       ? 'Custom Plan'
                                       : 'Standard Package',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
                                     color: AppColors.primaryDark,
@@ -123,7 +123,7 @@ class CurrentPlanCard extends StatelessWidget {
                           ),
                           Text(
                             '₹${_formatPrice(sub.purchasedPrice)}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 22,
                               fontWeight: FontWeight.w900,
                               color: AppColors.textPrimary,
@@ -143,14 +143,14 @@ class CurrentPlanCard extends StatelessWidget {
                               children: [
                                 Text(
                                   'Started',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
                                 Text(
                                   _formatDate(sub.startDate),
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -164,14 +164,14 @@ class CurrentPlanCard extends StatelessWidget {
                               children: [
                                 Text(
                                   'Expires',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
                                 Text(
                                   _formatDate(sub.expiryDate),
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                     color: sub.isExpired
@@ -188,14 +188,14 @@ class CurrentPlanCard extends StatelessWidget {
                               children: [
                                 Text(
                                   'Status',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
                                   ),
                                 ),
                                 Text(
                                   sub.isExpired ? 'Expired' : 'Active',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 13,
                                     fontWeight: FontWeight.bold,
                                     color: sub.isExpired
@@ -211,7 +211,7 @@ class CurrentPlanCard extends StatelessWidget {
                       const SizedBox(height: 20),
                       Text(
                         'INCLUDED FEATURES & SERVICES',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w800,
                           color: AppColors.textSecondary,
@@ -222,7 +222,7 @@ class CurrentPlanCard extends StatelessWidget {
                       if (sub.features.isEmpty)
                         Text(
                           'All core CRM features, leads tracking, and monthly schedules included.',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             color: AppColors.textSecondary,
                           ),
@@ -243,7 +243,7 @@ class CurrentPlanCard extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     f,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       color: AppColors.textPrimary,
                                     ),
@@ -274,7 +274,7 @@ class CurrentPlanCard extends StatelessWidget {
                     ),
                     child: Text(
                       'Close',
-                      style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.inter(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -328,7 +328,7 @@ class CurrentPlanCard extends StatelessWidget {
                     children: [
                       Text(
                         'No Active Subscription',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -336,7 +336,7 @@ class CurrentPlanCard extends StatelessWidget {
                       ),
                       Text(
                         'Choose a plan to unlock all features and invite team members.',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -361,7 +361,7 @@ class CurrentPlanCard extends StatelessWidget {
                 ),
                 child: Text(
                   'Choose a Plan',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
@@ -445,7 +445,7 @@ class CurrentPlanCard extends StatelessWidget {
                                     : (sub.isPending
                                           ? 'MY PENDING PLAN'
                                           : 'MY ACTIVE PLAN')),
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w800,
                             color: isExpired
@@ -497,7 +497,7 @@ class CurrentPlanCard extends StatelessWidget {
                                 : (sub.reminder == '5_DAYS'
                                       ? 'Your plan expires in 5 days.'
                                       : 'Your plan expires in ${sub.daysRemaining} days.')),
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         color: isExpired
@@ -525,7 +525,7 @@ class CurrentPlanCard extends StatelessWidget {
                         children: [
                           Text(
                             sub.planName,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -538,7 +538,7 @@ class CurrentPlanCard extends StatelessWidget {
                             sub.isCustomPlan
                                 ? 'Custom Plan'
                                 : '${sub.billingCycle.label} Billing Cycle',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppColors.textSecondary,
@@ -552,7 +552,7 @@ class CurrentPlanCard extends StatelessWidget {
                       children: [
                         Text(
                           '₹${_formatPrice(sub.paidAmount ?? sub.purchasedPrice)}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.w800,
                             color: AppColors.textPrimary,
@@ -560,7 +560,7 @@ class CurrentPlanCard extends StatelessWidget {
                         ),
                         Text(
                           sub.billingCycle.priceSuffix,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                           ),
@@ -574,7 +574,7 @@ class CurrentPlanCard extends StatelessWidget {
                   const SizedBox(height: 10),
                   Text(
                     'Coupon ${sub.couponCode}',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                       color: AppColors.primaryDark,
@@ -583,7 +583,7 @@ class CurrentPlanCard extends StatelessWidget {
                   if (sub.originalAmount != null)
                     Text(
                       'Original ₹${_formatPrice(sub.originalAmount!)}',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
@@ -591,7 +591,7 @@ class CurrentPlanCard extends StatelessWidget {
                   if (sub.discountAmount != null)
                     Text(
                       'Discount -₹${_formatPrice(sub.discountAmount!)}',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
@@ -611,7 +611,7 @@ class CurrentPlanCard extends StatelessWidget {
                         children: [
                           Text(
                             'Started:',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textSecondary,
@@ -620,7 +620,7 @@ class CurrentPlanCard extends StatelessWidget {
                           const SizedBox(height: 2),
                           Text(
                             _formatDate(sub.startDate),
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -641,7 +641,7 @@ class CurrentPlanCard extends StatelessWidget {
                         children: [
                           Text(
                             'Expires:',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textSecondary,
@@ -650,7 +650,7 @@ class CurrentPlanCard extends StatelessWidget {
                           const SizedBox(height: 2),
                           Text(
                             _formatDate(sub.expiryDate),
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: isExpired
@@ -677,7 +677,7 @@ class CurrentPlanCard extends StatelessWidget {
                           icon: const Icon(Remix.information_line, size: 15),
                           label: Text(
                             'View Details',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 12,
                             ),
@@ -716,7 +716,7 @@ class CurrentPlanCard extends StatelessWidget {
                                 : (sub.isPending
                                       ? 'Pending Approval'
                                       : 'Change Plan'),
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontSize: 12,
                             ),

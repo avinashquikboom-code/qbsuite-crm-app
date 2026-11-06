@@ -75,7 +75,7 @@ class LeadStageCard extends StatelessWidget {
                     Flexible(
                       child: Text(
                         'Lead Stage',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF0F172A),
@@ -126,7 +126,7 @@ class LeadStageCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         stageName,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF0F172A),
@@ -155,7 +155,7 @@ class LeadStageCard extends StatelessWidget {
                           children: [
                             Text(
                               'Change',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: stageColor,
@@ -182,7 +182,7 @@ class LeadStageCard extends StatelessWidget {
                         ),
                         child: Text(
                           'Current',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             color: const Color(0xFF64748B),
                             fontWeight: FontWeight.w500,
@@ -221,7 +221,7 @@ class LeadStageCard extends StatelessWidget {
                           child: RichText(
                             overflow: TextOverflow.ellipsis,
                             text: TextSpan(
-                              style: GoogleFonts.outfit(fontSize: 13),
+                              style: GoogleFonts.inter(fontSize: 13),
                               children: [
                                 const TextSpan(
                                   text: 'Next: ',

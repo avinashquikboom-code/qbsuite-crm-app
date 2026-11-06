@@ -102,7 +102,7 @@ class LoginRoleCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14.5,
                         fontWeight: FontWeight.bold,
                         color: isSelected
@@ -116,7 +116,7 @@ class LoginRoleCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       subtitle,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11.5,
                         color: isSelected
                             ? const Color(0xFF475569)

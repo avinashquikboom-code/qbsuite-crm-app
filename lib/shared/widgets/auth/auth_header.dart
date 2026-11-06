@@ -54,7 +54,7 @@ class AuthHeader extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 portalSubtitle,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 10.5,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF667085),
@@ -74,7 +74,7 @@ class AuthHeader extends StatelessWidget {
         // Title
         Text(
           'Login to Your Account',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 20,
             fontWeight: FontWeight.w700,
             color: const Color(0xFF1D2939),
@@ -83,7 +83,7 @@ class AuthHeader extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           'Choose your login type to continue',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             fontWeight: FontWeight.w400,
             color: const Color(0xFF667085),

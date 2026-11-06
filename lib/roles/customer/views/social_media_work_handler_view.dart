@@ -176,7 +176,7 @@ class _SocialMediaWorkHandlerViewState
                   wasEditing
                       ? 'Social media account updated successfully.'
                       : 'Social media account saved successfully.',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                     fontSize: 13,
@@ -215,11 +215,11 @@ class _SocialMediaWorkHandlerViewState
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Text(
           'Delete Social Handler',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 17),
+          style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 17),
         ),
         content: Text(
           'Are you sure you want to remove ${handler.accountName} (${handler.platform})?',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             color: AppColors.textSecondary,
           ),
@@ -229,7 +229,7 @@ class _SocialMediaWorkHandlerViewState
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(color: AppColors.textSecondary),
+              style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -259,7 +259,7 @@ class _SocialMediaWorkHandlerViewState
             },
             child: Text(
               'Delete',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -297,7 +297,7 @@ class _SocialMediaWorkHandlerViewState
           children: [
             Text(
               'SSM ACCOUNT ACCESS',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -307,7 +307,7 @@ class _SocialMediaWorkHandlerViewState
             ),
             Text(
               'Linked Accounts & Schedules',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 9,
                 fontWeight: FontWeight.w800,
                 color: AppColors.primaryDark,
@@ -395,7 +395,7 @@ class _SocialMediaWorkHandlerViewState
               children: [
                 Text(
                   '$customerName Social Accounts',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryDark,
@@ -404,7 +404,7 @@ class _SocialMediaWorkHandlerViewState
                 const SizedBox(height: 2),
                 Text(
                   'Manage social media accounts and active handling campaigns for $customerName.',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                   ),
@@ -464,7 +464,7 @@ class _SocialMediaWorkHandlerViewState
               Expanded(
                 child: Text(
                   isEdit ? 'Edit SSM Account' : 'Add SSM Account',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -482,7 +482,7 @@ class _SocialMediaWorkHandlerViewState
                   ),
                   label: Text(
                     'Cancel Edit',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.error,
@@ -538,7 +538,7 @@ class _SocialMediaWorkHandlerViewState
                 value: opt['value'],
                 child: Text(
                   opt['label']!,
-                  style: GoogleFonts.outfit(fontSize: 13),
+                  style: GoogleFonts.inter(fontSize: 13),
                 ),
               );
             }).toList(),
@@ -577,7 +577,7 @@ class _SocialMediaWorkHandlerViewState
                 vertical: 12,
               ),
             ),
-            style: GoogleFonts.outfit(fontSize: 13),
+            style: GoogleFonts.inter(fontSize: 13),
           ),
 
           const SizedBox(height: 10),
@@ -608,7 +608,7 @@ class _SocialMediaWorkHandlerViewState
                 vertical: 12,
               ),
             ),
-            style: GoogleFonts.outfit(fontSize: 13),
+            style: GoogleFonts.inter(fontSize: 13),
           ),
 
           const SizedBox(height: 10),
@@ -652,7 +652,7 @@ class _SocialMediaWorkHandlerViewState
                 vertical: 12,
               ),
             ),
-            style: GoogleFonts.outfit(fontSize: 13),
+            style: GoogleFonts.inter(fontSize: 13),
           ),
 
           const SizedBox(height: 10),
@@ -686,7 +686,7 @@ class _SocialMediaWorkHandlerViewState
             items: SocialMediaWorkService.workTypes.map((w) {
               return DropdownMenuItem(
                 value: w,
-                child: Text(w, style: GoogleFonts.outfit(fontSize: 13)),
+                child: Text(w, style: GoogleFonts.inter(fontSize: 13)),
               );
             }).toList(),
             onChanged: (val) {
@@ -723,7 +723,7 @@ class _SocialMediaWorkHandlerViewState
                 vertical: 12,
               ),
             ),
-            style: GoogleFonts.outfit(fontSize: 13),
+            style: GoogleFonts.inter(fontSize: 13),
           ),
 
           const SizedBox(height: 14),
@@ -753,7 +753,7 @@ class _SocialMediaWorkHandlerViewState
                     )
                   : Text(
                       'SUBMIT ACCOUNT DETAILS',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
                       ),
@@ -794,7 +794,7 @@ class _SocialMediaWorkHandlerViewState
             const SizedBox(height: 8),
             Text(
               'No Social Media Accounts Linked',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),
@@ -802,7 +802,7 @@ class _SocialMediaWorkHandlerViewState
             const SizedBox(height: 4),
             Text(
               'Use the form above to add your active social media handles.',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -818,7 +818,7 @@ class _SocialMediaWorkHandlerViewState
       children: [
         Text(
           'Linked Accounts (${state.handlers.length})',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -876,7 +876,7 @@ class _SocialMediaWorkHandlerViewState
                       children: [
                         Text(
                           item.accountName,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13.5,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -884,7 +884,7 @@ class _SocialMediaWorkHandlerViewState
                         ),
                         Text(
                           '${item.platform} • ${item.workType}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                           ),
@@ -893,7 +893,7 @@ class _SocialMediaWorkHandlerViewState
                             item.handlerName!.isNotEmpty)
                           Text(
                             'Handler: ${item.handlerName}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10.5,
                               color: AppColors.primaryDark,
                               fontWeight: FontWeight.w600,

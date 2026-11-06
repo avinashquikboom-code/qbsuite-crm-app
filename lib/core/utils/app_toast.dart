@@ -338,7 +338,7 @@ class _ToastWidgetState extends State<_ToastWidget>
                         if (widget.title != null) ...[
                           Text(
                             widget.title!,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               color: Colors.white,
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
@@ -348,7 +348,7 @@ class _ToastWidgetState extends State<_ToastWidget>
                         ],
                         Text(
                           widget.message,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             color: Colors.white.withValues(alpha: 0.85),
                             fontSize: 13,
                             fontWeight: FontWeight.w500,

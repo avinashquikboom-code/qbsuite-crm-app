@@ -70,7 +70,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                 children: [
                   Text(
                     'Company Quick Actions',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -78,7 +78,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                   ),
                   Text(
                     'Quickly execute actions across your agency',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -182,7 +182,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: AppColors.textPrimary,
@@ -190,7 +190,7 @@ class AdminQuickActionSheet extends StatelessWidget {
                       ),
                       Text(
                         subtitle,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11.5,
                           color: AppColors.textSecondary,
                         ),

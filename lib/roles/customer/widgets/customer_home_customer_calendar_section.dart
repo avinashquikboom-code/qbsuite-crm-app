@@ -134,7 +134,7 @@ class _CustomerHomeCustomerCalendarSectionState
           widthFactor: 1,
           child: Text(
             filter,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: isTablet ? 15 : 12,
               fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
               color: isSelected ? Colors.white : AppColors.textSecondary,
@@ -192,7 +192,7 @@ class _CustomerHomeCustomerCalendarSectionState
           children: [
             Text(
               weekdayName,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 10.5,
                 fontWeight: FontWeight.w600,
                 color: isSelected
@@ -202,7 +202,7 @@ class _CustomerHomeCustomerCalendarSectionState
             ),
             Text(
               '${date.day}',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.w800,
                 color: isSelected ? Colors.white : AppColors.textPrimary,
@@ -436,7 +436,7 @@ class _CustomerHomeCustomerCalendarSectionState
             Expanded(
               child: Text(
                 'CUSTOMER CALENDAR',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -468,7 +468,7 @@ class _CustomerHomeCustomerCalendarSectionState
                   children: [
                     Text(
                       'View All',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
@@ -533,7 +533,7 @@ class _CustomerHomeCustomerCalendarSectionState
                           Flexible(
                             child: Text(
                               planName,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11.5,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -550,7 +550,7 @@ class _CustomerHomeCustomerCalendarSectionState
                   Flexible(
                     child: Text(
                       '$remainingWork Remaining',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w800,
                         color: remainingWork > 0
@@ -570,7 +570,7 @@ class _CustomerHomeCustomerCalendarSectionState
                   Expanded(
                     child: Text(
                       '$completedWork/$totalWork Schedules Done',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -715,7 +715,7 @@ class _CustomerHomeCustomerCalendarSectionState
             Expanded(
               child: Text(
                 '${_selectedDate.day} ${_getMonthName(_selectedDate.month).toUpperCase()} ${_selectedDate.year}',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13.5,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -739,7 +739,7 @@ class _CustomerHomeCustomerCalendarSectionState
                 ),
                 child: Text(
                   'TODAY',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 9.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryDark,
@@ -775,7 +775,7 @@ class _CustomerHomeCustomerCalendarSectionState
                 const SizedBox(height: 8),
                 Text(
                   'Loading activities...',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     color: AppColors.textSecondary,
                   ),
@@ -797,7 +797,7 @@ class _CustomerHomeCustomerCalendarSectionState
               children: [
                 Text(
                   _getCalendarErrorMessage(liveDateAsync.error),
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     color: AppColors.textSecondary,
                   ),
@@ -826,7 +826,7 @@ class _CustomerHomeCustomerCalendarSectionState
                   ),
                   label: Text(
                     'Retry',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryDark,
@@ -848,7 +848,7 @@ class _CustomerHomeCustomerCalendarSectionState
             child: Center(
               child: Text(
                 'No customer activities scheduled for this date.',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12.5,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -918,7 +918,7 @@ class _CustomerHomeCustomerCalendarSectionState
                           Expanded(
                             child: Text(
                               'Schedule Locked',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF92400E),
@@ -933,7 +933,7 @@ class _CustomerHomeCustomerCalendarSectionState
                                 !act.notes!.contains('Schedule Locked')
                             ? act.notes!
                             : 'Complete the remaining 50% payment for the upcoming second installation.',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11.5,
                           color: const Color(0xFFB45309),
                           height: 1.35,
@@ -981,7 +981,7 @@ class _CustomerHomeCustomerCalendarSectionState
                           children: [
                             Text(
                               resolveActivityDisplayName(act),
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -991,7 +991,7 @@ class _CustomerHomeCustomerCalendarSectionState
                             ),
                             Text(
                               act.time.isEmpty ? 'Time not set' : act.time,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11,
                                 color: AppColors.textSecondary,
                               ),
@@ -1001,7 +1001,7 @@ class _CustomerHomeCustomerCalendarSectionState
                             const SizedBox(height: 2),
                             Text(
                               calendarAssigneeLabel(act),
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textPrimary,
@@ -1022,7 +1022,7 @@ class _CustomerHomeCustomerCalendarSectionState
                         ),
                         child: Text(
                           act.status,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10.5,
                             fontWeight: FontWeight.bold,
                             color: act.statusColor,

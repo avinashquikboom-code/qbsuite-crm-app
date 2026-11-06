@@ -117,7 +117,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
             overflow: TextOverflow.ellipsis,
             style:
                 appBarTheme.titleTextStyle ??
-                GoogleFonts.outfit(
+                GoogleFonts.inter(
                   color: effectiveFg,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,

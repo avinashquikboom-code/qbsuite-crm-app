@@ -105,7 +105,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         ),
                         child: Text(
                           'Skip',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
                           ),
@@ -170,7 +170,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         children: [
                           Text(
                             isLastPage ? 'Get Started' : 'Next',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ),
@@ -222,7 +222,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           Text(
             content.title,
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 26,
               fontWeight: FontWeight.bold,
               color: AppTheme.textPrimary,
@@ -233,7 +233,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           Text(
             content.description,
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 15,
               color: AppTheme.textSecondary,
               height: 1.5,

@@ -116,7 +116,7 @@ class _InfluencerApplicationStatusViewState
                     children: [
                       Text(
                         'Update & Resubmit Profile',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -131,7 +131,7 @@ class _InfluencerApplicationStatusViewState
                   const SizedBox(height: 8),
                   Text(
                     'Correct any issues noted by the admin team and resubmit for review.',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -141,7 +141,7 @@ class _InfluencerApplicationStatusViewState
                     controller: instaCtrl,
                     decoration: InputDecoration(
                       labelText: 'Instagram Profile / Handle',
-                      labelStyle: GoogleFonts.outfit(fontSize: 13),
+                      labelStyle: GoogleFonts.inter(fontSize: 13),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -153,7 +153,7 @@ class _InfluencerApplicationStatusViewState
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: 'Followers Count',
-                      labelStyle: GoogleFonts.outfit(fontSize: 13),
+                      labelStyle: GoogleFonts.inter(fontSize: 13),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -165,7 +165,7 @@ class _InfluencerApplicationStatusViewState
                     maxLines: 3,
                     decoration: InputDecoration(
                       labelText: 'Updated Bio & Details',
-                      labelStyle: GoogleFonts.outfit(fontSize: 13),
+                      labelStyle: GoogleFonts.inter(fontSize: 13),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -235,7 +235,7 @@ class _InfluencerApplicationStatusViewState
                             )
                           : Text(
                               'Submit For Re-review',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -261,7 +261,7 @@ class _InfluencerApplicationStatusViewState
         leading: const BackButton(color: AppColors.textPrimary),
         title: Text(
           'Application Status',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 17,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -287,7 +287,7 @@ class _InfluencerApplicationStatusViewState
                 children: [
                   Text(
                     'Track Creator Application',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -296,7 +296,7 @@ class _InfluencerApplicationStatusViewState
                   const SizedBox(height: 6),
                   Text(
                     'Enter your registered email address to check your application review status.',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -308,7 +308,7 @@ class _InfluencerApplicationStatusViewState
                         child: TextField(
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
-                          style: GoogleFonts.outfit(fontSize: 13),
+                          style: GoogleFonts.inter(fontSize: 13),
                           decoration: InputDecoration(
                             hintText: 'e.g. rohan.creator@gmail.com',
                             prefixIcon: const Icon(Remix.mail_line, size: 18),
@@ -378,7 +378,7 @@ class _InfluencerApplicationStatusViewState
                     Expanded(
                       child: Text(
                         _errorMessage!,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12.5,
                           color: Colors.red.shade800,
                         ),
@@ -479,7 +479,7 @@ class _InfluencerApplicationStatusViewState
                   children: [
                     Text(
                       title,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: primaryColor,
@@ -488,7 +488,7 @@ class _InfluencerApplicationStatusViewState
                     const SizedBox(height: 2),
                     Text(
                       'Status: $status',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: primaryColor,
@@ -504,7 +504,7 @@ class _InfluencerApplicationStatusViewState
 
           Text(
             description,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: AppColors.textPrimary,
               height: 1.4,
@@ -535,7 +535,7 @@ class _InfluencerApplicationStatusViewState
                       const SizedBox(width: 6),
                       Text(
                         'Reason from Admin:',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: Colors.red.shade900,
@@ -546,7 +546,7 @@ class _InfluencerApplicationStatusViewState
                   const SizedBox(height: 6),
                   Text(
                     inf.rejectionReason!,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       color: Colors.red.shade900,
                     ),
@@ -563,7 +563,7 @@ class _InfluencerApplicationStatusViewState
           // Creator Profile Details
           Text(
             'Submitted Profile Summary',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -599,7 +599,7 @@ class _InfluencerApplicationStatusViewState
                 ),
                 label: Text(
                   'Edit & Resubmit Application',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -633,7 +633,7 @@ class _InfluencerApplicationStatusViewState
                 ),
                 label: Text(
                   'Browse Influencer Hub',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -660,7 +660,7 @@ class _InfluencerApplicationStatusViewState
                 ),
                 label: Text(
                   'Refresh Status',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFFD97706),
                   ),
@@ -680,14 +680,14 @@ class _InfluencerApplicationStatusViewState
         children: [
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
           ),
           Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

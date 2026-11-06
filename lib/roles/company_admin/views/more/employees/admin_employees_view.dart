@@ -56,7 +56,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
       appBar: AppBar(
         title: Text(
           'Employees & Teams',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -77,7 +77,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
               indicatorWeight: 3,
               labelColor: AppColors.primary,
               unselectedLabelColor: AppColors.textSecondary,
-              labelStyle: GoogleFonts.outfit(
+              labelStyle: GoogleFonts.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
               ),
@@ -107,10 +107,10 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                 child: TextField(
                   controller: _searchController,
                   onChanged: (val) => setState(() {}),
-                  style: GoogleFonts.outfit(fontSize: 14),
+                  style: GoogleFonts.inter(fontSize: 14),
                   decoration: InputDecoration(
                     hintText: 'Search staff by name, team...',
-                    hintStyle: GoogleFonts.outfit(
+                    hintStyle: GoogleFonts.inter(
                       fontSize: 13,
                       color: const Color(0xFF94A3B8),
                     ),
@@ -148,7 +148,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
       return Center(
         child: Text(
           'No employees found',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -199,7 +199,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                       backgroundColor: AppColors.primaryLight,
                       child: Text(
                         e.name.substring(0, 1),
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
@@ -216,7 +216,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                               Expanded(
                                 child: Text(
                                   e.name,
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.textPrimary,
@@ -234,7 +234,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                                 ),
                                 child: Text(
                                   e.status,
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 10,
                                     fontWeight: FontWeight.bold,
                                     color: const Color(0xFF16A34A),
@@ -246,7 +246,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                           const SizedBox(height: 2),
                           Text(
                             '${e.role} • ${e.team}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12.5,
                               color: AppColors.textSecondary,
                             ),
@@ -343,7 +343,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                             children: [
                               Text(
                                 t.name,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -351,7 +351,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
                               ),
                               Text(
                                 'Leader: ${t.teamLeader}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12.5,
                                   color: AppColors.textSecondary,
                                 ),
@@ -372,7 +372,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
 
                     Text(
                       'Members: ${t.members.join(', ')}',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12.5,
                         color: const Color(0xFF475569),
                       ),
@@ -413,7 +413,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
             text,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 11.5,
               color: AppColors.textSecondary,
             ),
@@ -432,7 +432,7 @@ class _AdminEmployeesViewState extends ConsumerState<AdminEmployeesView>
       ),
       child: Text(
         text,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 11,
           fontWeight: FontWeight.bold,
           color: textColor,

@@ -537,7 +537,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
                 fit: BoxFit.scaleDown,
                 child: Text(
                   label,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 10,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                     color: isSelected

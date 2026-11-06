@@ -38,7 +38,7 @@ class CustomerAccountView extends ConsumerWidget {
             const SizedBox(width: 8),
             Text(
               'Sign Out',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -47,7 +47,7 @@ class CustomerAccountView extends ConsumerWidget {
         ),
         content: Text(
           'Are you sure you want to end your customer workspace session?',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -57,7 +57,7 @@ class CustomerAccountView extends ConsumerWidget {
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(color: AppColors.textSecondary),
+              style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -88,7 +88,7 @@ class CustomerAccountView extends ConsumerWidget {
             },
             child: Text(
               'Logout',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -165,7 +165,7 @@ class CustomerAccountView extends ConsumerWidget {
         automaticallyImplyLeading: false,
         title: Text(
           'Account Details',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -268,7 +268,7 @@ class CustomerAccountView extends ConsumerWidget {
                       children: [
                         Text(
                           customerPersonName,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -280,7 +280,7 @@ class CustomerAccountView extends ConsumerWidget {
                           const SizedBox(height: 2),
                           Text(
                             profile.businessWithCode,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                               fontWeight: FontWeight.w600,
@@ -292,7 +292,7 @@ class CustomerAccountView extends ConsumerWidget {
                         const SizedBox(height: 2),
                         Text(
                           customerEmail,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             color: AppColors.textSecondary,
                           ),
@@ -316,7 +316,7 @@ class CustomerAccountView extends ConsumerWidget {
                               ),
                               child: Text(
                                 '$planName Tier',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primaryDark,
@@ -336,7 +336,7 @@ class CustomerAccountView extends ConsumerWidget {
                               ),
                               child: Text(
                                 profile.isActive ? 'ACTIVE' : 'INACTIVE',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 9,
                                   fontWeight: FontWeight.w700,
                                   color: profile.isActive
@@ -373,7 +373,7 @@ class CustomerAccountView extends ConsumerWidget {
                 Expanded(
                   child: Text(
                     'ORGANIZATION INFORMATION',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w800,
                       color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -393,7 +393,7 @@ class CustomerAccountView extends ConsumerWidget {
                       ),
                       child: Text(
                         'Edit',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
@@ -466,14 +466,14 @@ class CustomerAccountView extends ConsumerWidget {
                       ),
                       title: Text(
                         'Manage Subscription Plan',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       subtitle: Text(
                         'Switch between Monthly & Yearly cycles',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           color: AppColors.textSecondary,
                         ),
@@ -498,14 +498,14 @@ class CustomerAccountView extends ConsumerWidget {
                       ),
                       title: Text(
                         'SSM Account Access',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       subtitle: Text(
                         'Linked Accounts & Schedules',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           color: AppColors.textSecondary,
                         ),
@@ -537,14 +537,14 @@ class CustomerAccountView extends ConsumerWidget {
                       ),
                       title: Text(
                         'Invoices & Order History',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       subtitle: Text(
                         'Download PDF tax receipts',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           color: AppColors.textSecondary,
                         ),
@@ -562,7 +562,7 @@ class CustomerAccountView extends ConsumerWidget {
             // HELP & SUPPORT
             Text(
               'HELP & SUPPORT',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
                 color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -595,14 +595,14 @@ class CustomerAccountView extends ConsumerWidget {
                   ),
                   title: Text(
                     'Customer Support & Helpdesk',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   subtitle: Text(
                     'Create tickets, WhatsApp & 24/7 assistance',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       color: AppColors.textSecondary,
                     ),
@@ -631,7 +631,7 @@ class CustomerAccountView extends ConsumerWidget {
                 icon: const Icon(Remix.logout_box_r_line, size: 18),
                 label: Text(
                   'Sign Out of Customer Workspace',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
@@ -698,7 +698,7 @@ class CustomerAccountView extends ConsumerWidget {
       child: Center(
         child: Text(
           profile.personInitials,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -717,7 +717,7 @@ class CustomerAccountView extends ConsumerWidget {
           flex: 4,
           child: Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -729,7 +729,7 @@ class CustomerAccountView extends ConsumerWidget {
           child: Text(
             value,
             textAlign: TextAlign.end,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -810,7 +810,7 @@ class CustomerAccountView extends ConsumerWidget {
             const SizedBox(height: 16),
             Text(
               'Unable to Load Profile',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -820,7 +820,7 @@ class CustomerAccountView extends ConsumerWidget {
             Text(
               'We could not load your customer profile data. Please verify your connection and try again.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),
@@ -836,7 +836,7 @@ class CustomerAccountView extends ConsumerWidget {
               icon: const Icon(Remix.refresh_line, size: 16),
               label: Text(
                 'Retry',
-                style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
@@ -1008,7 +1008,7 @@ class _EditProfileBottomSheetState
                       children: [
                         Text(
                           'Edit Customer Profile',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1169,7 +1169,7 @@ class _EditProfileBottomSheetState
                           )
                         : Text(
                             'Save Changes',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ),
@@ -1195,10 +1195,10 @@ class _EditProfileBottomSheetState
       controller: controller,
       keyboardType: keyboardType,
       validator: validator,
-      style: GoogleFonts.outfit(fontSize: 14, color: AppColors.textPrimary),
+      style: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: GoogleFonts.outfit(
+        labelStyle: GoogleFonts.inter(
           fontSize: 13,
           color: AppColors.textSecondary,
         ),

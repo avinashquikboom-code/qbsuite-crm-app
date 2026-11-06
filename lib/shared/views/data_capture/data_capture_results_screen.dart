@@ -57,7 +57,7 @@ class _DataCaptureResultsScreenState
         SnackBar(
           content: Text(
             'Please select at least one business to import.',
-            style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+            style: GoogleFonts.inter(fontWeight: FontWeight.w600),
           ),
           backgroundColor: AppColors.error,
         ),
@@ -191,7 +191,7 @@ class _DataCaptureResultsScreenState
               Flexible(
                 child: Text(
                   dialogTitle,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -205,7 +205,7 @@ class _DataCaptureResultsScreenState
             children: [
               Text(
                 dialogDescription,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   color: AppColors.textSecondary,
                 ),
@@ -255,7 +255,7 @@ class _DataCaptureResultsScreenState
                 ),
                 child: Text(
                   'Done',
-                  style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                  style: GoogleFonts.inter(fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -269,7 +269,7 @@ class _DataCaptureResultsScreenState
           SnackBar(
             content: Text(
               err.toString().replaceAll('Exception: ', ''),
-              style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+              style: GoogleFonts.inter(fontWeight: FontWeight.w600),
             ),
             backgroundColor: AppColors.error,
             duration: const Duration(seconds: 6),
@@ -292,7 +292,7 @@ class _DataCaptureResultsScreenState
         children: [
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -300,7 +300,7 @@ class _DataCaptureResultsScreenState
           ),
           Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               color: color,
@@ -348,7 +348,7 @@ class _DataCaptureResultsScreenState
                           Expanded(
                             child: Text(
                               '${widget.jobRecord.keyword} in ${widget.jobRecord.location}',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -362,7 +362,7 @@ class _DataCaptureResultsScreenState
                       const SizedBox(height: 4),
                       Text(
                         'Captured: ${_places.length} (Requested: ${widget.jobRecord.requestedResults})',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
@@ -384,7 +384,7 @@ class _DataCaptureResultsScreenState
                   ),
                   child: Text(
                     '$_selectedCount Selected',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryDark,
@@ -406,7 +406,7 @@ class _DataCaptureResultsScreenState
               children: [
                 Text(
                   'Verified Prospects (${_places.length})',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -426,7 +426,7 @@ class _DataCaptureResultsScreenState
                         ),
                         child: Text(
                           'Select All',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primary,
@@ -444,7 +444,7 @@ class _DataCaptureResultsScreenState
                         ),
                         child: Text(
                           'Deselect All',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textSecondary,
@@ -520,7 +520,7 @@ class _DataCaptureResultsScreenState
                     _isImporting
                         ? 'Importing into CRM Leads...'
                         : 'Import Selected ($_selectedCount) to Leads',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),

@@ -60,7 +60,7 @@ class LeadHeader extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         title,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: AppColors.textPrimary,

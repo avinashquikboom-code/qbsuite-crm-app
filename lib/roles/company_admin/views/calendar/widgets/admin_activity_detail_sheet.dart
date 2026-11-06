@@ -92,7 +92,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                     children: [
                       Text(
                         activity.activityType.label,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12.5,
                           fontWeight: FontWeight.bold,
                           color: activity.activityType.color,
@@ -100,7 +100,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                       ),
                       Text(
                         activity.customerName,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -122,7 +122,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                   ),
                   child: Text(
                     activity.status,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                       color: activity.statusColor,
@@ -192,7 +192,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
                       icon: const Icon(Remix.eye_line, size: 16),
                       label: Text(
                         'View Work',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                         ),
@@ -226,7 +226,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
           width: 110,
           child: Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
               fontWeight: FontWeight.w500,
@@ -237,7 +237,7 @@ class AdminActivityDetailSheet extends ConsumerWidget {
         Expanded(
           child: Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

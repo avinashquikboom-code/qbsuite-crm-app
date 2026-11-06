@@ -92,7 +92,7 @@ class LoginRoleTabSwitch extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: Text(
                       title,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         fontWeight: isSelected
                             ? FontWeight.bold

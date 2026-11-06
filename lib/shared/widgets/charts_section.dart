@@ -75,7 +75,7 @@ class ChartsSection extends StatelessWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppTheme.textPrimary,
@@ -83,7 +83,7 @@ class ChartsSection extends StatelessWidget {
           ),
           Text(
             subtitle,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: AppTheme.textSecondary,
               fontWeight: FontWeight.w500,
@@ -131,7 +131,7 @@ class RevenueLineChart extends StatelessWidget {
                 if (value >= 0 && value < days.length) {
                   return Text(
                     days[value.toInt()],
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       color: AppTheme.textSecondary,
                       fontSize: 11,
                     ),
@@ -148,7 +148,7 @@ class RevenueLineChart extends StatelessWidget {
               getTitlesWidget: (value, meta) {
                 return Text(
                   '${value.toInt()}k',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     color: AppTheme.textSecondary,
                     fontSize: 11,
                   ),
@@ -214,7 +214,7 @@ class LeadPieChart extends StatelessWidget {
             value: 40,
             title: '40%',
             radius: 50,
-            titleStyle: GoogleFonts.outfit(
+            titleStyle: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -225,7 +225,7 @@ class LeadPieChart extends StatelessWidget {
             value: 30,
             title: '30%',
             radius: 50,
-            titleStyle: GoogleFonts.outfit(
+            titleStyle: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -236,7 +236,7 @@ class LeadPieChart extends StatelessWidget {
             value: 15,
             title: '15%',
             radius: 50,
-            titleStyle: GoogleFonts.outfit(
+            titleStyle: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -247,7 +247,7 @@ class LeadPieChart extends StatelessWidget {
             value: 15,
             title: '15%',
             radius: 50,
-            titleStyle: GoogleFonts.outfit(
+            titleStyle: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,

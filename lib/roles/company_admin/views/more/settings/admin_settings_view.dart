@@ -29,18 +29,18 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
       builder: (ctx) => AlertDialog(
         title: Text(
           'Confirm Logout',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+          style: GoogleFonts.inter(fontWeight: FontWeight.bold),
         ),
         content: Text(
           'Are you sure you want to exit your Company Admin workspace?',
-          style: GoogleFonts.outfit(),
+          style: GoogleFonts.inter(),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(color: AppColors.textSecondary),
+              style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -60,7 +60,7 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
             ),
             child: Text(
               'Logout',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
@@ -88,7 +88,7 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
       appBar: AppBar(
         title: Text(
           'Settings',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -171,14 +171,14 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
                   ),
                   title: Text(
                     'Biometric Quick Access',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   subtitle: Text(
                     'FaceID / TouchID for quick login',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       color: AppColors.textSecondary,
                     ),
@@ -204,14 +204,14 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
                     ),
                     title: Text(
                       'Push Notifications',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     subtitle: Text(
                       'Alerts on work assignment & leads',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         color: AppColors.textSecondary,
                       ),
@@ -237,7 +237,7 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
                   ),
                   label: Text(
                     'LOGOUT FROM WORKSPACE',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: const Color(0xFFDC2626),
@@ -266,7 +266,7 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
       children: [
         Text(
           title,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -305,11 +305,11 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
       ),
       title: Text(
         title,
-        style: GoogleFonts.outfit(fontSize: 14, fontWeight: FontWeight.bold),
+        style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold),
       ),
       subtitle: Text(
         subtitle,
-        style: GoogleFonts.outfit(fontSize: 12, color: AppColors.textSecondary),
+        style: GoogleFonts.inter(fontSize: 12, color: AppColors.textSecondary),
       ),
       trailing: const Icon(
         Icons.arrow_forward_ios_rounded,
@@ -343,7 +343,7 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
           Expanded(
             child: Text(
               title,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),
@@ -352,7 +352,7 @@ class _AdminSettingsViewState extends ConsumerState<AdminSettingsView> {
           DropdownButton<String>(
             value: value,
             underline: const SizedBox(),
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: AppColors.primary,
               fontWeight: FontWeight.bold,

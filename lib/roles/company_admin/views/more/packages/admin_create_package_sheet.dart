@@ -102,7 +102,7 @@ class _AdminCreatePackageSheetState
                     Expanded(
                       child: Text(
                         'Create SSM Package',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -134,7 +134,7 @@ class _AdminCreatePackageSheetState
                     _buildLabel('Package Name *'),
                     TextFormField(
                       controller: _nameController,
-                      style: GoogleFonts.outfit(fontSize: 14),
+                      style: GoogleFonts.inter(fontSize: 14),
                       decoration: _inputDecoration(
                         'e.g. Enterprise Viral',
                         Remix.vip_diamond_line,
@@ -149,7 +149,7 @@ class _AdminCreatePackageSheetState
                     TextFormField(
                       controller: _descController,
                       maxLines: 2,
-                      style: GoogleFonts.outfit(fontSize: 14),
+                      style: GoogleFonts.inter(fontSize: 14),
                       decoration: _inputDecoration(
                         'Package target audience & summary',
                         Remix.file_text_line,
@@ -167,7 +167,7 @@ class _AdminCreatePackageSheetState
                               TextFormField(
                                 controller: _priceController,
                                 keyboardType: TextInputType.number,
-                                style: GoogleFonts.outfit(fontSize: 14),
+                                style: GoogleFonts.inter(fontSize: 14),
                                 decoration: _inputDecoration(
                                   '₹ 30000',
                                   Remix.money_dollar_circle_line,
@@ -188,7 +188,7 @@ class _AdminCreatePackageSheetState
                               _buildLabel('Duration'),
                               TextFormField(
                                 controller: _durationController,
-                                style: GoogleFonts.outfit(fontSize: 14),
+                                style: GoogleFonts.inter(fontSize: 14),
                                 decoration: _inputDecoration(
                                   '1 Month',
                                   Remix.time_line,
@@ -205,7 +205,7 @@ class _AdminCreatePackageSheetState
                     TextFormField(
                       controller: _servicesController,
                       maxLines: 3,
-                      style: GoogleFonts.outfit(fontSize: 14),
+                      style: GoogleFonts.inter(fontSize: 14),
                       decoration: InputDecoration(
                         hintText:
                             '10 Reels\n10 Posts\n1 Shoot Session\nMonthly Analytics',
@@ -242,7 +242,7 @@ class _AdminCreatePackageSheetState
                         ),
                         child: Text(
                           'SAVE PACKAGE',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -264,7 +264,7 @@ class _AdminCreatePackageSheetState
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         label,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: AppColors.textPrimary,
@@ -276,7 +276,7 @@ class _AdminCreatePackageSheetState
   InputDecoration _inputDecoration(String hint, IconData icon) {
     return InputDecoration(
       hintText: hint,
-      hintStyle: GoogleFonts.outfit(
+      hintStyle: GoogleFonts.inter(
         fontSize: 13,
         color: const Color(0xFF94A3B8),
       ),

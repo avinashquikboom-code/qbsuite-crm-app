@@ -37,7 +37,7 @@ class StatusBadge extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           color: config.textColor,
           fontSize: 11,
           fontWeight: FontWeight.bold,

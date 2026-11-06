@@ -63,7 +63,7 @@ class _AdminFilterSheetState extends State<AdminFilterSheet> {
             children: [
               Text(
                 widget.title,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -116,7 +116,7 @@ class _AdminFilterSheetState extends State<AdminFilterSheet> {
                             children: [
                               Text(
                                 opt,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 14,
                                   fontWeight: isSelected
                                       ? FontWeight.bold

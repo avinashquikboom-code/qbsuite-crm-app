@@ -23,7 +23,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
       SnackBar(
         content: Text(
           'Booking ID ${booking.bookingId} copied to clipboard!',
-          style: GoogleFonts.outfit(color: Colors.white),
+          style: GoogleFonts.inter(color: Colors.white),
         ),
         behavior: SnackBarBehavior.floating,
         backgroundColor: AppColors.primaryDark,
@@ -37,7 +37,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
       SnackBar(
         content: Text(
           'Invoice downloaded for ${booking.bookingId}',
-          style: GoogleFonts.outfit(color: Colors.white),
+          style: GoogleFonts.inter(color: Colors.white),
         ),
         behavior: SnackBarBehavior.floating,
         backgroundColor: AppColors.primaryDark,
@@ -123,7 +123,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
               // Title
               Text(
                 'Booking Confirmed!',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -136,7 +136,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
               Text(
                 'Your influencer booking has been\nsuccessfully confirmed.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12.5,
                   color: AppColors.textSecondary,
                   height: 1.3,
@@ -174,7 +174,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                             children: [
                               Text(
                                 'Booking ID',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11,
                                   color: AppColors.textSecondary,
                                 ),
@@ -182,7 +182,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                               const SizedBox(height: 2),
                               Text(
                                 booking.bookingId,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13.5,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -229,7 +229,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                             children: [
                               Text(
                                 booking.influencerName,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.textPrimary,
@@ -237,7 +237,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                               ),
                               Text(
                                 '${booking.categoryName} • ${booking.followersCount} Followers',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11.5,
                                   color: AppColors.textSecondary,
                                 ),
@@ -267,7 +267,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                       children: [
                         Text(
                           'Total Amount',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12.5,
                             fontWeight: FontWeight.w600,
                             color: AppColors.textPrimary,
@@ -275,7 +275,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                         ),
                         Text(
                           '₹${booking.totalAmount.toStringAsFixed(0)}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryDark,
@@ -312,7 +312,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                   },
                   child: Text(
                     'View Booking Details',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -337,7 +337,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
                   onPressed: () => _downloadInvoice(context),
                   child: Text(
                     'Download Invoice',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textPrimary,
@@ -352,7 +352,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
               Text(
                 'You will receive a confirmation email\nand notification shortly.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11.5,
                   color: AppColors.textSecondary,
                   height: 1.3,
@@ -373,7 +373,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 12,
             color: AppColors.textSecondary,
           ),
@@ -383,7 +383,7 @@ class CustomerInfluencerBookingConfirmedView extends ConsumerWidget {
           child: Text(
             value,
             textAlign: TextAlign.right,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

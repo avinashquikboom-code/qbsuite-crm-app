@@ -71,7 +71,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
       appBar: AppBar(
         title: Text(
           'Client Proposals',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -99,7 +99,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
               indicatorWeight: 3,
               labelColor: AppColors.primary,
               unselectedLabelColor: AppColors.textSecondary,
-              labelStyle: GoogleFonts.outfit(
+              labelStyle: GoogleFonts.inter(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
               ),
@@ -155,7 +155,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
       return Center(
         child: Text(
           'No proposals in this category',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -193,7 +193,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
                   p.customerName,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 15.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -203,7 +203,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
               const SizedBox(width: 8),
               Text(
                 '₹${p.amount.toStringAsFixed(0)}',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.w800,
                   color: AppColors.primary,
@@ -216,7 +216,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
             '${p.packageName} • ${p.id}',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               color: AppColors.textSecondary,
             ),
@@ -231,7 +231,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
             ),
             child: Text(
               p.services,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: const Color(0xFF334155),
               ),
@@ -245,7 +245,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
                   'Validity: ${p.validity} • Date: ${p.date}',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11.5,
                     color: const Color(0xFF94A3B8),
                   ),
@@ -260,7 +260,7 @@ class _AdminProposalsViewState extends ConsumerState<AdminProposalsView>
                 ),
                 child: Text(
                   p.status.label,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 10.5,
                     fontWeight: FontWeight.bold,
                     color: p.status.color,

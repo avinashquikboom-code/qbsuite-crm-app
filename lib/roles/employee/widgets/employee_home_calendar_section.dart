@@ -219,7 +219,7 @@ class _EmployeeHomeCalendarSectionState
             Expanded(
               child: Text(
                 'EMPLOYEE CALENDAR',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -244,7 +244,7 @@ class _EmployeeHomeCalendarSectionState
                     children: [
                       Text(
                         'View All',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primaryDark,
@@ -309,7 +309,7 @@ class _EmployeeHomeCalendarSectionState
                           Flexible(
                             child: Text(
                               '${_getMonthName(_selectedDate.month)} Work Overview',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11.5,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -330,7 +330,7 @@ class _EmployeeHomeCalendarSectionState
                           : remainingWork > 0
                           ? '$remainingWork Remaining'
                           : 'All Completed',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.w800,
                         color: remainingWork > 0 || totalWork == 0
@@ -354,7 +354,7 @@ class _EmployeeHomeCalendarSectionState
                           : isMonthLoading
                           ? 'Loading this month\'s tasks'
                           : 'No tasks scheduled this month',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -478,7 +478,7 @@ class _EmployeeHomeCalendarSectionState
                     children: [
                       Text(
                         weekdayName,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 10.5,
                           fontWeight: FontWeight.w600,
                           color: isSelected
@@ -488,7 +488,7 @@ class _EmployeeHomeCalendarSectionState
                       ),
                       Text(
                         '${date.day}',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 15,
                           fontWeight: FontWeight.w800,
                           color: isSelected
@@ -566,7 +566,7 @@ class _EmployeeHomeCalendarSectionState
             Expanded(
               child: Text(
                 '${_selectedDate.day} ${_getMonthName(_selectedDate.month).toUpperCase()} ${_selectedDate.year}',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13.5,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -591,7 +591,7 @@ class _EmployeeHomeCalendarSectionState
                 ),
                 child: Text(
                   'TODAY',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 9.5,
                     fontWeight: FontWeight.bold,
                     color: AppColors.primaryDark,
@@ -625,7 +625,7 @@ class _EmployeeHomeCalendarSectionState
               children: [
                 Text(
                   'Unable to load activities.',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     color: AppColors.textSecondary,
                   ),
@@ -654,7 +654,7 @@ class _EmployeeHomeCalendarSectionState
                   ),
                   label: Text(
                     'Retry',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryDark,
@@ -676,7 +676,7 @@ class _EmployeeHomeCalendarSectionState
             child: Center(
               child: Text(
                 'No activities scheduled for this date.',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12.5,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textSecondary,
@@ -735,7 +735,7 @@ class _EmployeeHomeCalendarSectionState
                           children: [
                             Text(
                               resolveActivityDisplayName(act),
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -768,7 +768,7 @@ class _EmployeeHomeCalendarSectionState
                                         custName.isNotEmpty
                                             ? '$custName • ${act.time}'
                                             : act.time,
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 11,
                                           color: AppColors.textSecondary,
                                         ),
@@ -794,7 +794,7 @@ class _EmployeeHomeCalendarSectionState
                         ),
                         child: Text(
                           act.status,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10.5,
                             fontWeight: FontWeight.bold,
                             color: act.statusColor,

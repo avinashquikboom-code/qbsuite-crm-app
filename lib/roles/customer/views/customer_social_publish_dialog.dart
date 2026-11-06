@@ -187,7 +187,7 @@ class _CustomerSocialPublishDialogState
               children: [
                 Text(
                   'Publish to Social Channels',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -226,7 +226,7 @@ class _CustomerSocialPublishDialogState
                             const SizedBox(width: 8),
                             Text(
                               'No Social Channel Connected',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF92400E),
@@ -237,7 +237,7 @@ class _CustomerSocialPublishDialogState
                         const SizedBox(height: 6),
                         Text(
                           'Link your Instagram, Facebook, or YouTube channel to publish this post directly.',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: const Color(0xFF78350F),
                           ),
@@ -263,7 +263,7 @@ class _CustomerSocialPublishDialogState
                             ),
                             label: Text(
                               'Connect Social Channel Now',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -314,7 +314,7 @@ class _CustomerSocialPublishDialogState
                     InputDecorator(
                       decoration: InputDecoration(
                         labelText: 'Select Destination Channel',
-                        labelStyle: GoogleFonts.outfit(fontSize: 13),
+                        labelStyle: GoogleFonts.inter(fontSize: 13),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -332,7 +332,7 @@ class _CustomerSocialPublishDialogState
                             : null,
                         isExpanded: true,
                         underline: const SizedBox.shrink(),
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           color: AppColors.textPrimary,
                         ),
@@ -341,7 +341,7 @@ class _CustomerSocialPublishDialogState
                             value: acc.id,
                             child: Text(
                               '${acc.platform} \u2014 ${acc.accountName}',
-                              style: GoogleFonts.outfit(fontSize: 13),
+                              style: GoogleFonts.inter(fontSize: 13),
                             ),
                           );
                         }).toList(),
@@ -380,7 +380,7 @@ class _CustomerSocialPublishDialogState
                         ),
                         label: Text(
                           'Connect another channel',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             fontWeight: FontWeight.w600,
                             color: AppColors.primary,
@@ -410,7 +410,7 @@ class _CustomerSocialPublishDialogState
                     Expanded(
                       child: Text(
                         'Failed to load channels. Tap retry.',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           color: const Color(0xFFB91C1C),
                         ),
@@ -451,7 +451,7 @@ class _CustomerSocialPublishDialogState
                       child: Center(
                         child: Text(
                           'Publish Now',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: !_isScheduled
@@ -483,7 +483,7 @@ class _CustomerSocialPublishDialogState
                       child: Center(
                         child: Text(
                           'Schedule for Later',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: _isScheduled
@@ -513,7 +513,7 @@ class _CustomerSocialPublishDialogState
                       icon: const Icon(Remix.calendar_line, size: 16),
                       label: Text(
                         '${_scheduledDate.day}/${_scheduledDate.month}/${_scheduledDate.year}',
-                        style: GoogleFonts.outfit(fontSize: 12),
+                        style: GoogleFonts.inter(fontSize: 12),
                       ),
                       onPressed: _pickDate,
                     ),
@@ -529,7 +529,7 @@ class _CustomerSocialPublishDialogState
                       icon: const Icon(Remix.time_line, size: 16),
                       label: Text(
                         _scheduledTime.format(context),
-                        style: GoogleFonts.outfit(fontSize: 12),
+                        style: GoogleFonts.inter(fontSize: 12),
                       ),
                       onPressed: _pickTime,
                     ),
@@ -574,7 +574,7 @@ class _CustomerSocialPublishDialogState
                           )
                         : Text(
                             hasAccounts ? buttonText : 'Connect Social Channel',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,

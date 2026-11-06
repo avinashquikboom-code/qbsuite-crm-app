@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // ── QuikBoom Brand Primary ───────────────────────────────────────
-  static const Color primary = Color(0xFF23C45E);
-  static const Color primaryDark = Color(0xFF1AA14D);
-  static const Color primaryLight = Color(0xFFE8F9EE);
+  static const Color primary = Color(0xFF5EC269);
+  static const Color primaryDark = Color(0xFF43A854);
+  static const Color primaryLight = Color(0xFFE8F5E9);
 
   // Backward-compat aliases used in other views
-  static const Color secondary = Color(0xFF23C45E);
-  static const Color accent = Color(0xFF23C45E);
+  static const Color secondary = Color(0xFF5EC269);
+  static const Color accent = Color(0xFF5EC269);
 
   // ── Backgrounds & Surfaces ───────────────────────────────────────
-  static const Color background = Color(0xFFFFFFFF);
+  static const Color background = Color(0xFFF8FAFC);
   static const Color surface = Color(0xFFFFFFFF);
   static const Color scaffoldBg = Color(0xFFF8FAFC); // Slate 50
   static const Color pillBg = Color(0xFFF1F5F9); // Slate 100
@@ -19,20 +19,20 @@ class AppColors {
   static const Color subtleGreenBg = Color(0xFFF0FDF4); // Green 50
 
   // ── Text & Typography ────────────────────────────────────────────
-  static const Color textPrimary = Color(0xFF111827); // Gray 900
+  static const Color textPrimary = Color(0xFF1E293B); // Gray 900
   static const Color textSecondary = Color(0xFF64748B); // Slate 500
   static const Color textPlaceholder = Color(0xFF94A3B8); // Slate 400
   static const Color textMuted = Color(0xFF94A3B8); // Slate 400
   static const Color textDarkSlate = Color(0xFF475569); // Slate 600
 
   // ── Borders & Dividers ───────────────────────────────────────────
-  static const Color border = Color(0xFFE5E7EB); // Gray 200
+  static const Color border = Color(0xFFE2E8F0); // Gray 200
   static const Color borderLight = Color(0xFFE2E8F0); // Slate 200
   static const Color borderMuted = Color(0xFFCBD5E1); // Slate 300
   static const Color cardBorder = Color(0xFFE2E8F0); // Slate 200
 
   // ── Status & Accents ─────────────────────────────────────────────
-  static const Color success = Color(0xFF23C45E);
+  static const Color success = Color(0xFF5EC269);
   static const Color warning = Color(0xFFF59E0B);
   static const Color error = Color(0xFFDC2626);
   static const Color info = Color(0xFF64748B);
@@ -50,17 +50,17 @@ class AppColors {
   static const Color successLight = Color(0xFFD1FAE5);
   static const Color successBadge = Color(0xFFD1FAE5);
   static const Color successText = Color(0xFF166534);
-  static const Color primaryColor = Color(0xFF23C45E);
-  static const Color darkGreen = Color(0xFF1AA14D);
-  static const Color lightGreen = Color(0xFFE8F9EE);
-  static const Color accentColor = Color(0xFF23C45E);
-  static const Color successColor = Color(0xFF23C45E);
+  static const Color primaryColor = Color(0xFF5EC269);
+  static const Color darkGreen = Color(0xFF43A854);
+  static const Color lightGreen = Color(0xFFE8F5E9);
+  static const Color accentColor = Color(0xFF5EC269);
+  static const Color successColor = Color(0xFF5EC269);
   static const Color warningColor = Color(0xFFF59E0B);
   static const Color errorColor = Color(0xFFDC2626);
   static const Color sidebarBg = Color(0xFFF8FAFC);
   static const Color mainBg = Color(0xFFFFFFFF);
   static const Color dashboardBg = Color(0xFFF8FAFC);
-  static const Color borderSide = Color(0xFFE5E7EB);
+  static const Color borderSide = Color(0xFFE2E8F0);
 
   // ── Dark theme tokens ────────────────────────────────────────────
   static const Color backgroundDark = Color(0xFF0F172A);

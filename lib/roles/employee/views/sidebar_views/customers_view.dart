@@ -98,7 +98,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
                 },
                 decoration: InputDecoration(
                   hintText: 'Search by client name, business, account…',
-                  hintStyle: GoogleFonts.outfit(
+                  hintStyle: GoogleFonts.inter(
                     color: AppColors.textPlaceholder,
                     fontSize: 13,
                   ),
@@ -273,7 +273,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
                         const SizedBox(height: 12),
                         Text(
                           'Failed to load customers',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -283,7 +283,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
                         Text(
                           err.toString(),
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -296,7 +296,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
                           icon: const Icon(Remix.refresh_line, size: 16),
                           label: Text(
                             'Retry',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -386,7 +386,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
                     children: [
                       Text(
                         tab,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           fontWeight: isSelected
                               ? FontWeight.bold
@@ -410,7 +410,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
                         ),
                         child: Text(
                           '$count',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                             color: isSelected
@@ -446,7 +446,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
               const SizedBox(height: 12),
               Text(
                 'No Results for "$searchQuery"',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -457,7 +457,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
               Text(
                 'Try checking the spelling or search with a different keyword.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12.5,
                   color: AppColors.textSecondary,
                 ),
@@ -509,7 +509,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
             const SizedBox(height: 12),
             Text(
               title,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -519,7 +519,7 @@ class _CustomersViewState extends ConsumerState<CustomersView>
             Text(
               description,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12.5,
                 color: AppColors.textSecondary,
               ),

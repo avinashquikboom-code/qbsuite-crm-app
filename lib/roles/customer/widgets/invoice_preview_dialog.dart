@@ -173,7 +173,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                         children: [
                           Text(
                             'QB Suite',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -181,7 +181,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           ),
                           Text(
                             docTitle,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.w800,
                               color: AppColors.primaryDark,
@@ -214,7 +214,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                       children: [
                         Text(
                           'BILLED TO',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.w800,
                             color: AppColors.textSecondary,
@@ -224,7 +224,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                         const SizedBox(height: 4),
                         Text(
                           clientName,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -232,7 +232,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                         ),
                         Text(
                           displayAddress,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                             height: 1.3,
@@ -246,7 +246,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                     children: [
                       Text(
                         invoice != null ? 'INVOICE NUMBER' : 'ORDER NUMBER',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 10,
                           fontWeight: FontWeight.w800,
                           color: AppColors.textSecondary,
@@ -256,7 +256,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                       const SizedBox(height: 2),
                       Text(
                         docNumber,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.w800,
                           color: AppColors.primaryDark,
@@ -265,7 +265,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                       if (order?.orderNumber != null)
                         Text(
                           'Ref: ${order!.orderNumber}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 10,
                             fontWeight: FontWeight.w500,
                             color: AppColors.textSecondary,
@@ -274,7 +274,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                       const SizedBox(height: 2),
                       Text(
                         'Purchase Date: ${_formatDate(purchaseDate)}',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           color: AppColors.textSecondary,
                         ),
@@ -283,7 +283,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                         const SizedBox(height: 2),
                         Text(
                           'Plan Start: ${_formatDate(planStartDate)}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                           ),
@@ -312,7 +312,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           flex: 4,
                           child: Text(
                             'PLAN NAME / ITEM',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -324,7 +324,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           child: Text(
                             'QTY',
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -336,7 +336,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           child: Text(
                             'UNIT PRICE',
                             textAlign: TextAlign.right,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -348,7 +348,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           child: Text(
                             'TOTAL',
                             textAlign: TextAlign.right,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textSecondary,
@@ -366,7 +366,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'CUSTOM PLAN: ${invoice!.planName}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w700,
                             color: AppColors.textPrimary,
@@ -383,7 +383,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           padding: const EdgeInsets.only(top: 6),
                           child: Text(
                             'Validity: ${_formatDate(planStartDate)} → ${_formatDate(planEndDate)}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               color: AppColors.textSecondary,
                             ),
@@ -416,7 +416,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                       children: [
                         Text(
                           isPaid ? 'Total Paid' : 'Total Amount',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -424,7 +424,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                         ),
                         Text(
                           '₹${_formatPrice(total)}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 17,
                             fontWeight: FontWeight.w900,
                             color: AppColors.primaryDark,
@@ -465,7 +465,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                             isPaid
                                 ? 'Payment Status: PAID'
                                 : 'Status: ${invoice?.status ?? order?.paymentStatus ?? 'PENDING'}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: isPaid
@@ -476,7 +476,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                           if (order?.transactionId != null)
                             Text(
                               'Transaction ID: ${order!.transactionId}',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 10,
                                 color: AppColors.textSecondary,
                               ),
@@ -565,7 +565,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                             fit: BoxFit.scaleDown,
                             child: Text(
                               'Download PDF',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -642,7 +642,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
                               fit: BoxFit.scaleDown,
                               child: Text(
                                 'Agreement',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.primary,
@@ -717,7 +717,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
           flex: 4,
           child: Text(
             '$index. $name',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -729,7 +729,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
           child: Text(
             '$quantity',
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textPrimary,
             ),
@@ -740,7 +740,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
           child: Text(
             '₹${_formatPrice(unitPrice)}',
             textAlign: TextAlign.right,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textPrimary,
             ),
@@ -751,7 +751,7 @@ class InvoicePreviewDialog extends ConsumerWidget {
           child: Text(
             '₹${_formatPrice(total)}',
             textAlign: TextAlign.right,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -768,14 +768,14 @@ class InvoicePreviewDialog extends ConsumerWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 12,
             color: AppColors.textSecondary,
           ),
         ),
         Text(
           value,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 12,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,

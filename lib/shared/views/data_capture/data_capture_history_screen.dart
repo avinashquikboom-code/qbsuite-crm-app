@@ -98,7 +98,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
           children: [
             Text(
               session.keyword,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 17,
                 fontWeight: FontWeight.w600,
               ),
@@ -153,7 +153,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
       appBar: AppBar(
         title: Text(
           'Capture History',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+          style: GoogleFonts.inter(fontWeight: FontWeight.w600),
         ),
       ),
       body: SafeArea(
@@ -262,7 +262,7 @@ class _HistoryState extends State<DataCaptureHistoryScreen> {
                             const SizedBox(height: 12),
                             Text(
                               'No capture history found.',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.textSecondary,

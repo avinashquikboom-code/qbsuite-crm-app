@@ -196,7 +196,7 @@ class _CustomerMarketingVideoSectionState
                     Text(
                       'Marketing Videos',
                       maxLines: 1,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 16.5,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF0F172A),
@@ -208,7 +208,7 @@ class _CustomerMarketingVideoSectionState
                       'Watch platform guides, tips & offers 🎬',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.w400,
                         color: const Color(0xFF64748B),
@@ -229,7 +229,7 @@ class _CustomerMarketingVideoSectionState
                   ),
                   child: Text(
                     '${_currentPage + 1}/${videos.length}',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xFF475569),
@@ -828,7 +828,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                         ),
                         child: Text(
                           'Video unavailable',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -856,7 +856,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                         widget.video.title,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: const Color(0xFF0F172A),
@@ -869,7 +869,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                           widget.video.subtitle!,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11.5,
                             fontWeight: FontWeight.w400,
                             color: const Color(0xFF64748B),
@@ -903,7 +903,7 @@ class _MarketingVideoCardState extends State<_MarketingVideoCard>
                       children: [
                         Text(
                           widget.video.ctaText!,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                           ),

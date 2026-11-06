@@ -81,7 +81,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
                             ),
                             child: Text(
                               "TODAY'S TASK • DAY $currentDay OF ${work.durationDays}",
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 10.5,
                                 fontWeight: FontWeight.w800,
                                 color: AppColors.primaryDark,
@@ -105,7 +105,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
                           ),
                           child: Text(
                             work.status.displayName.toUpperCase(),
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.w800,
                               color: work.status == SSMWorkStatus.inProgress
@@ -122,7 +122,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
 
                     Text(
                       taskForDay?.title ?? 'Deliverable Stage',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -132,7 +132,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
                     Text(
                       taskForDay?.description ??
                           'Production activity in progress.',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textSecondary,
                         height: 1.4,
@@ -147,7 +147,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
               // ── 2. Work & Team Specifications ──
               Text(
                 'WORK SPECIFICATIONS',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -207,7 +207,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
               // ── 3. Multi-Day Task Timeline ──
               Text(
                 'MULTI-DAY TASK BREAKDOWN',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -318,7 +318,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
                           : (isFinalDay
                                 ? 'Complete Work'
                                 : 'Mark Day $currentDay Task Complete'),
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
@@ -343,7 +343,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
           width: 100,
           child: Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -354,7 +354,7 @@ class EmployeeWorkTaskView extends ConsumerWidget {
           child: Text(
             value,
             textAlign: TextAlign.end,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

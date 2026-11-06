@@ -90,7 +90,7 @@ class SSMWorkCard extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(
                         '${work.workType.displayName} Shoot',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -112,7 +112,7 @@ class SSMWorkCard extends StatelessWidget {
                   ),
                   child: Text(
                     work.assignedTeam,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                       color: work.assignedTeam.contains('Team A')
@@ -132,7 +132,7 @@ class SSMWorkCard extends StatelessWidget {
                   ),
                   child: Text(
                     work.status.displayName.toUpperCase(),
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 9.5,
                       fontWeight: FontWeight.w800,
                       color: statusTextColor,
@@ -148,7 +148,7 @@ class SSMWorkCard extends StatelessWidget {
             // Customer Name
             Text(
               work.customerName,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -167,7 +167,7 @@ class SSMWorkCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     work.socialMediaAccount,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 12.5,
                       color: AppColors.textSecondary,
                       fontWeight: FontWeight.w500,
@@ -200,7 +200,7 @@ class SSMWorkCard extends StatelessWidget {
                       Flexible(
                         child: Text(
                           'Day $currentDayNumber of ${work.durationDays}',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11.5,
                             fontWeight: FontWeight.w700,
                             color: AppColors.primaryDark,
@@ -215,7 +215,7 @@ class SSMWorkCard extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     taskForDay?.title ?? 'Scheduled Task',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                       color: AppColors.textPrimary,
@@ -243,7 +243,7 @@ class SSMWorkCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           work.assignedEmployees.join(', '),
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11.5,
                             color: AppColors.textSecondary,
                           ),
@@ -273,7 +273,7 @@ class SSMWorkCard extends StatelessWidget {
                     ),
                     child: Text(
                       'START WORK',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11.5,
                         fontWeight: FontWeight.bold,
                       ),
@@ -289,7 +289,7 @@ class SSMWorkCard extends StatelessWidget {
                     ),
                     label: Text(
                       'View Work',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,

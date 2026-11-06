@@ -28,7 +28,7 @@ class SecureVerificationCard extends StatelessWidget {
               children: [
                 Text(
                   'Secure Verification',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF166534),
@@ -36,7 +36,7 @@ class SecureVerificationCard extends StatelessWidget {
                 ),
                 Text(
                   'Your information is protected with advanced security.',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: const Color(0xFF475569),
                   ),

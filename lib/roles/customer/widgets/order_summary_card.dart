@@ -185,7 +185,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                     Expanded(
                       child: Text(
                         order.orderNumber,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.w800,
                           color: AppColors.textPrimary,
@@ -223,7 +223,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                           const SizedBox(width: 5),
                           Text(
                             isPaid ? 'Paid' : 'Pending',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: isPaid
@@ -247,7 +247,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                     Expanded(
                       child: Text(
                         order.planName,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -268,7 +268,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                       ),
                       child: Text(
                         order.billingCycle.label,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textSecondary,
@@ -296,7 +296,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                           children: [
                             Text(
                               'Purchase Date',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textSecondary,
@@ -305,7 +305,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                             const SizedBox(height: 2),
                             Text(
                               _formatDate(order.purchaseDate),
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -328,7 +328,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                           children: [
                             Text(
                               'Expiry Date',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.textSecondary,
@@ -337,7 +337,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                             const SizedBox(height: 2),
                             Text(
                               _formatDate(order.expiryDate),
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -365,7 +365,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                         children: [
                           Text(
                             'Total Amount',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 10,
                               fontWeight: FontWeight.w600,
                               color: AppColors.textSecondary,
@@ -374,7 +374,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                           const SizedBox(height: 2),
                           Text(
                             '₹${_formatPrice(order.totalAmount)}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.w900,
                               color: AppColors.textPrimary,
@@ -421,7 +421,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                                     const SizedBox(width: 4),
                                     Text(
                                       'Agreement',
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -448,7 +448,7 @@ class _OrderSummaryCardState extends ConsumerState<OrderSummaryCard> {
                         ),
                         child: Text(
                           'Preview',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,

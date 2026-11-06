@@ -80,7 +80,7 @@ class VisitorCompletedSuccessView extends StatelessWidget {
 
                 Text(
                   'Visit Completed!',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -90,7 +90,7 @@ class VisitorCompletedSuccessView extends StatelessWidget {
                 Text(
                   'Your field visit has been successfully recorded.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                   ),
@@ -127,7 +127,7 @@ class VisitorCompletedSuccessView extends StatelessWidget {
                           children: [
                             Text(
                               'Customer Rating',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 color: AppColors.textSecondary,
                               ),
@@ -175,7 +175,7 @@ class VisitorCompletedSuccessView extends StatelessWidget {
                     },
                     child: Text(
                       'BACK TO HOME',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.5,
@@ -203,7 +203,7 @@ class VisitorCompletedSuccessView extends StatelessWidget {
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             color: AppColors.textSecondary,
           ),
@@ -212,7 +212,7 @@ class VisitorCompletedSuccessView extends StatelessWidget {
           child: Text(
             value,
             textAlign: TextAlign.right,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: isBold ? FontWeight.bold : FontWeight.w600,
               color: isSuccess ? AppColors.primaryDark : AppColors.textPrimary,

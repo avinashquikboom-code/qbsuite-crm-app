@@ -18,7 +18,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Employee Details',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -60,7 +60,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
                       child: Center(
                         child: Text(
                           e.name.substring(0, 2).toUpperCase(),
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -71,7 +71,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
                     const SizedBox(height: 12),
                     Text(
                       e.name,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -80,7 +80,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       '${e.role} • ${e.team}',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textSecondary,
                       ),
@@ -97,7 +97,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
                       ),
                       child: Text(
                         e.status,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFF16A34A),
@@ -140,7 +140,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
                         const SizedBox(width: 6),
                         Text(
                           "Today's Work Task",
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primary,
@@ -151,7 +151,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
                     const SizedBox(height: 6),
                     Text(
                       e.todayWork,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -165,7 +165,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
               // Activity Performance Stats
               Text(
                 'Performance & Activity Metrics',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -213,7 +213,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
               // Recent Activity Log
               Text(
                 'Recent Employee Log',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -260,7 +260,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
         const SizedBox(width: 8),
         Text(
           text,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             color: AppColors.textPrimary,
             fontWeight: FontWeight.w500,
@@ -284,7 +284,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
         children: [
           Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: color,
@@ -293,7 +293,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 11.5,
               color: AppColors.textSecondary,
             ),
@@ -325,7 +325,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
@@ -333,7 +333,7 @@ class AdminEmployeeDetailView extends StatelessWidget {
                 ),
                 Text(
                   time,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     color: AppColors.textSecondary,
                   ),

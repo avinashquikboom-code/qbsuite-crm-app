@@ -106,7 +106,7 @@ class LeadContactInfoCard extends StatelessWidget {
             ),
             title: Text(
               'Contact Information',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: const Color(0xFF0F172A),
@@ -286,7 +286,7 @@ class LeadContactInfoCard extends StatelessWidget {
                   children: [
                     Text(
                       label,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
                         color: const Color(0xFF94A3B8),
@@ -294,7 +294,7 @@ class LeadContactInfoCard extends StatelessWidget {
                     ),
                     Text(
                       value,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: onTap != null

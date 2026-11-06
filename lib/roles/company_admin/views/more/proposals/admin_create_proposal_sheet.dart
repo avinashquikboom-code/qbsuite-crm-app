@@ -170,7 +170,7 @@ class _AdminCreateProposalSheetState
                     Expanded(
                       child: Text(
                         'Create Proposal',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -204,7 +204,7 @@ class _AdminCreateProposalSheetState
                       isExpanded: true,
                       key: ValueKey(_selectedCustomer),
                       initialValue: _selectedCustomer,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         color: AppColors.textPrimary,
                       ),
@@ -239,7 +239,7 @@ class _AdminCreateProposalSheetState
                         children: [
                           Text(
                             'Auto-Filled Client Data:',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11.5,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF64748B),
@@ -248,21 +248,21 @@ class _AdminCreateProposalSheetState
                           const SizedBox(height: 4),
                           Text(
                             'Business: ${_bizNameController.text}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.textPrimary,
                             ),
                           ),
                           Text(
                             'Phone: ${_mobileController.text} • Email: ${_emailController.text}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.textPrimary,
                             ),
                           ),
                           Text(
                             'Address: ${_addressController.text}',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.textPrimary,
                             ),
@@ -283,7 +283,7 @@ class _AdminCreateProposalSheetState
                                 isExpanded: true,
                                 key: ValueKey(_selectedPackage),
                                 initialValue: _selectedPackage,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 14,
                                   color: AppColors.textPrimary,
                                 ),
@@ -318,7 +318,7 @@ class _AdminCreateProposalSheetState
                               TextFormField(
                                 controller: _amountController,
                                 keyboardType: TextInputType.number,
-                                style: GoogleFonts.outfit(fontSize: 14),
+                                style: GoogleFonts.inter(fontSize: 14),
                                 decoration: _inputDecoration(
                                   '₹ Amount',
                                   Remix.money_dollar_circle_line,
@@ -339,7 +339,7 @@ class _AdminCreateProposalSheetState
                     TextFormField(
                       controller: _servicesController,
                       maxLines: 2,
-                      style: GoogleFonts.outfit(fontSize: 14),
+                      style: GoogleFonts.inter(fontSize: 14),
                       decoration: InputDecoration(
                         hintText: 'e.g. 10 Reels, 5 Posts, Ad Spend',
                         filled: true,
@@ -371,7 +371,7 @@ class _AdminCreateProposalSheetState
                               DropdownButtonFormField<String>(
                                 isExpanded: true,
                                 initialValue: _validity,
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 14,
                                   color: AppColors.textPrimary,
                                 ),
@@ -407,7 +407,7 @@ class _AdminCreateProposalSheetState
                     TextFormField(
                       controller: _notesController,
                       maxLines: 2,
-                      style: GoogleFonts.outfit(fontSize: 14),
+                      style: GoogleFonts.inter(fontSize: 14),
                       decoration: InputDecoration(
                         hintText: 'Payment milestones, discount terms, etc.',
                         filled: true,
@@ -443,7 +443,7 @@ class _AdminCreateProposalSheetState
                         ),
                         child: Text(
                           'CREATE PROPOSAL',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -465,7 +465,7 @@ class _AdminCreateProposalSheetState
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         label,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: AppColors.textPrimary,
@@ -477,7 +477,7 @@ class _AdminCreateProposalSheetState
   InputDecoration _inputDecoration(String hint, IconData icon) {
     return InputDecoration(
       hintText: hint,
-      hintStyle: GoogleFonts.outfit(
+      hintStyle: GoogleFonts.inter(
         fontSize: 13,
         color: const Color(0xFF94A3B8),
       ),

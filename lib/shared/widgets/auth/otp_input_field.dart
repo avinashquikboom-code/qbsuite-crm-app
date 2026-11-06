@@ -163,7 +163,7 @@ class OtpInputFieldState extends State<OtpInputField> {
                   inputFormatters: [
                     FilteringTextInputFormatter.digitsOnly,
                   ],
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF0F172A),

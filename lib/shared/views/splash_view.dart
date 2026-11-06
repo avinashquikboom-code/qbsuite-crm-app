@@ -88,7 +88,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
               const SizedBox(height: 24),
               Text(
                 'QB SUITE',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: AppTheme.textPrimary,
@@ -98,7 +98,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
               const SizedBox(height: 8),
               Text(
                 'Your Business Suite',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 14,
                   color: AppTheme.textSecondary,
                   letterSpacing: 2,
@@ -129,7 +129,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                           const SizedBox(width: 8),
                           Text(
                             'Startup Connection Issue',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF991B1B),
@@ -143,7 +143,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                         textAlign: TextAlign.center,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 12,
                           color: const Color(0xFF7F1D1D),
                         ),
@@ -178,7 +178,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                             },
                             child: Text(
                               'Continue to Role Selection',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 color: const Color(0xFF475569),
                                 fontWeight: FontWeight.w600,
@@ -200,7 +200,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                   },
                   child: Text(
                     'Continue to Role Selection',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       color: AppTheme.primaryColor,
                       fontWeight: FontWeight.w600,

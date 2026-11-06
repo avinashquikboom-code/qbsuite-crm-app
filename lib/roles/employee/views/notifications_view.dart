@@ -97,7 +97,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
                   .markAllAsRead(),
               child: Text(
                 'Mark all read',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   color: AppColors.primaryDark,
                   fontWeight: FontWeight.bold,
                   fontSize: 13,
@@ -154,7 +154,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
             const SizedBox(height: 12),
             Text(
               'Unable to load notifications',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -163,7 +163,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
             const SizedBox(height: 4),
             Text(
               message,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),
@@ -217,7 +217,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
             const SizedBox(height: 12),
             Text(
               'No notifications available',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -226,7 +226,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
             const SizedBox(height: 4),
             Text(
               subtitle,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),
@@ -358,7 +358,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
                       Expanded(
                         child: Text(
                           formattedTime,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: const Color(0xFF64748B), // Slate 500
@@ -438,7 +438,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
                   // Notification Title
                   Text(
                     title,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: AppTheme.textPrimary,
@@ -451,7 +451,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
                     const SizedBox(height: 4),
                     Text(
                       message,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: const Color(0xFF475569), // Slate 600
                         height: 1.45,
@@ -497,7 +497,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
                         ),
                         child: Text(
                           ctaText,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                           ),

@@ -78,7 +78,7 @@ class CommonConfirmDialog extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 17,
               ),
@@ -88,7 +88,7 @@ class CommonConfirmDialog extends StatelessWidget {
       ),
       content: Text(
         message,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 14,
           color: AppColors.textSecondary,
           height: 1.4,
@@ -100,7 +100,7 @@ class CommonConfirmDialog extends StatelessWidget {
           onPressed: onCancel ?? () => Navigator.pop(context, false),
           child: Text(
             cancelLabel,
-            style: GoogleFonts.outfit(color: AppColors.textSecondary),
+            style: GoogleFonts.inter(color: AppColors.textSecondary),
           ),
         ),
         CommonButton(

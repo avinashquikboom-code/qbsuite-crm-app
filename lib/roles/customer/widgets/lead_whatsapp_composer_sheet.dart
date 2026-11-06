@@ -170,7 +170,7 @@ class _LeadWhatsAppComposerSheetState
                         children: [
                           Text(
                             'Send WhatsApp Message',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -178,7 +178,7 @@ class _LeadWhatsAppComposerSheetState
                           ),
                           Text(
                             hasPhone ? phone : 'No phone number registered',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               color: hasPhone
                                   ? AppColors.textSecondary
@@ -206,7 +206,7 @@ class _LeadWhatsAppComposerSheetState
                         label: Center(
                           child: Text(
                             'Stage Template',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -225,7 +225,7 @@ class _LeadWhatsAppComposerSheetState
                         label: Center(
                           child: Text(
                             'Custom Message',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -255,7 +255,7 @@ class _LeadWhatsAppComposerSheetState
                           ),
                           child: Text(
                             'Default stage template will be dispatched based on lead status "${widget.lead.stageNameConfig ?? widget.lead.status}".',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               color: AppColors.textSecondary,
                             ),
@@ -303,7 +303,7 @@ class _LeadWhatsAppComposerSheetState
                                 value: tpl,
                                 child: Text(
                                   tpl.title,
-                                  style: GoogleFonts.outfit(fontSize: 14),
+                                  style: GoogleFonts.inter(fontSize: 14),
                                 ),
                               );
                             }).toList(),
@@ -338,7 +338,7 @@ class _LeadWhatsAppComposerSheetState
                                       const SizedBox(width: 6),
                                       Text(
                                         'Message Preview',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 12,
                                           color: AppColors.textPrimary,
@@ -351,7 +351,7 @@ class _LeadWhatsAppComposerSheetState
                                     _renderTemplatePreview(
                                       _selectedTemplate!.body,
                                     ),
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       color: AppColors.textPrimary,
                                       height: 1.4,
@@ -371,7 +371,7 @@ class _LeadWhatsAppComposerSheetState
                     ),
                     error: (_, _) => Text(
                       'Default stage template will be automatically applied.',
-                      style: GoogleFonts.outfit(color: AppColors.textSecondary),
+                      style: GoogleFonts.inter(color: AppColors.textSecondary),
                     ),
                   ),
                 ] else ...[
@@ -424,7 +424,7 @@ class _LeadWhatsAppComposerSheetState
                         : (_isCustom
                               ? 'Send Custom WhatsApp'
                               : 'Send WhatsApp Template'),
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),

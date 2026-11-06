@@ -3,10 +3,14 @@ class AppUrl {
   AppUrl._();
 
   //baseurl for local
-  // static const String baseUrl = 'https://api.qbapp.online/api/v1';
+  // static const String baseUrl = String.fromEnvironment(
+    'API_BASE_URL', defaultValue: 'https://api.qbapp.online/api/v1',
+  );
   // static const String baseUrl = 'http://[IP_ADDRESS]/api/v1';
 
-  static const String baseUrl = 'https://api.qbapp.online/api/v1';
+  static const String baseUrl = String.fromEnvironment(
+    'API_BASE_URL', defaultValue: 'https://api.qbapp.online/api/v1',
+  );
   // auth
   static const String login = '/auth/login';
   static const String loginCustomer = '/mobile/auth/login/customer';

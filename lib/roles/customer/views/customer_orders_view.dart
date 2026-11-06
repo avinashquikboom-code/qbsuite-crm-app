@@ -99,7 +99,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
               : null,
           title: Text(
             'Orders & Invoices',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -136,7 +136,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                 const SizedBox(height: 16),
                 Text(
                   'Access Denied',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -146,7 +146,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                 Text(
                   'You do not have permission to view Orders or Invoices. Please contact your administrator if you need access.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     color: AppColors.textSecondary,
                   ),
@@ -169,7 +169,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
         automaticallyImplyLeading: false,
         title: Text(
           'Orders & Invoices',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -246,7 +246,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                                   const SizedBox(width: 6),
                                   Text(
                                     'Orders',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: _selectedMainTab == 0
                                           ? FontWeight.bold
@@ -298,7 +298,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                                   const SizedBox(width: 6),
                                   Text(
                                     'Invoices',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 13,
                                       fontWeight: _selectedMainTab == 1
                                           ? FontWeight.bold
@@ -330,7 +330,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                 child: TextField(
                   controller: _searchCtrl,
                   onChanged: (val) => setState(() => _searchQuery = val.trim()),
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     color: AppColors.textPrimary,
                   ),
@@ -338,7 +338,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                     hintText: _selectedMainTab == 0
                         ? 'Search by Order ID or Plan...'
                         : 'Search by Invoice Number...',
-                    hintStyle: GoogleFonts.outfit(
+                    hintStyle: GoogleFonts.inter(
                       fontSize: 13,
                       color: AppColors.textPlaceholder,
                     ),
@@ -545,7 +545,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                                         const SizedBox(width: 6),
                                         Text(
                                           inv.invoiceNumber,
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: AppColors.textPrimary,
@@ -566,7 +566,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                                       ),
                                       child: Text(
                                         inv.status.toUpperCase(),
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 10.5,
                                           fontWeight: FontWeight.bold,
                                           color: inv.isPaid
@@ -593,14 +593,14 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                                       children: [
                                         Text(
                                           'Issue Date',
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 10.5,
                                             color: AppColors.textSecondary,
                                           ),
                                         ),
                                         Text(
                                           _formatDate(inv.issueDate),
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -615,14 +615,14 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
                                           inv.isPaid
                                               ? 'Total Paid'
                                               : 'Total Amount',
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 10.5,
                                             color: AppColors.textSecondary,
                                           ),
                                         ),
                                         Text(
                                           '₹${_formatPrice(inv.totalAmount)}',
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w900,
                                             color: AppColors.primaryDark,
@@ -668,7 +668,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
         onSelected: (selected) {
           if (selected) setState(() => _statusFilter = key);
         },
-        labelStyle: GoogleFonts.outfit(
+        labelStyle: GoogleFonts.inter(
           fontSize: 12,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
           color: isSelected ? Colors.white : AppColors.textSecondary,
@@ -703,7 +703,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
             const SizedBox(height: 12),
             Text(
               'No Orders Found',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -712,7 +712,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
             const SizedBox(height: 4),
             Text(
               'No matching subscription orders match your criteria.',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -730,7 +730,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
               ),
               child: Text(
                 'Browse Plans',
-                style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -758,7 +758,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
             const SizedBox(height: 12),
             Text(
               'No Invoices Available',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -768,7 +768,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
             Text(
               'Final Tax Invoices are generated once full 100% plan payment is completed.',
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 12,
                 color: AppColors.textSecondary,
               ),
@@ -798,7 +798,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
             const SizedBox(height: 12),
             Text(
               'Unable to Load $label',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
@@ -821,7 +821,7 @@ class _CustomerOrdersViewState extends ConsumerState<CustomerOrdersView> {
               ),
               child: Text(
                 'Retry',
-                style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                style: GoogleFonts.inter(fontWeight: FontWeight.bold),
               ),
             ),
           ],

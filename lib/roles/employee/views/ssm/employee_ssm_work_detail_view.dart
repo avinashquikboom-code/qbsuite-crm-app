@@ -35,7 +35,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
         SnackBar(
           content: Text(
             'Work started! Day $currentDay task is now in progress.',
-            style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+            style: GoogleFonts.inter(fontWeight: FontWeight.w600),
           ),
           backgroundColor: AppColors.primaryDark,
           behavior: SnackBarBehavior.floating,
@@ -60,7 +60,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
         SnackBar(
           content: Text(
             'Social media work completed successfully!',
-            style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+            style: GoogleFonts.inter(fontWeight: FontWeight.w600),
           ),
           backgroundColor: AppColors.primaryDark,
           behavior: SnackBarBehavior.floating,
@@ -114,7 +114,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                 const SizedBox(height: 16),
                 Text(
                   'Access Denied',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 20,
                     fontWeight: FontWeight.w800,
                     color: AppColors.textPrimary,
@@ -124,7 +124,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                 Text(
                   'Your role does not have permission to access this work module.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 13,
                     color: AppColors.textSecondary,
                   ),
@@ -180,7 +180,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                             ),
                             child: Text(
                               '${work.workType.displayName.toUpperCase()} • ${work.durationDays} DAYS',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 11,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primaryDark,
@@ -203,7 +203,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                           ),
                           child: Text(
                             work.assignedTeam,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: work.assignedTeam.contains('Team A')
@@ -217,7 +217,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                     const SizedBox(height: 12),
                     Text(
                       work.customerName,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -226,7 +226,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                     const SizedBox(height: 2),
                     Text(
                       work.customerBusiness,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textSecondary,
                       ),
@@ -239,7 +239,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                         Expanded(
                           child: Text(
                             work.socialMediaAccount,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               fontWeight: FontWeight.w500,
                               color: AppColors.textPrimary,
@@ -258,7 +258,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
               // ── Key Specifications ──
               Text(
                 'SPECIFICATIONS & TIMELINE',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -303,7 +303,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
               if (work.notes.isNotEmpty) ...[
                 Text(
                   'CAMPAIGN NOTES',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11,
                     fontWeight: FontWeight.w800,
                     color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -321,7 +321,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                   ),
                   child: Text(
                     work.notes,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       color: AppColors.textSecondary,
                       height: 1.4,
@@ -334,7 +334,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
               // ── Daily Task Breakdown Timeline ──
               Text(
                 'DAILY TASK STAGES (${work.durationDays} DAYS)',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -354,7 +354,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                     SnackBar(
                       content: Text(
                         'Day $dayNum task marked complete!',
-                        style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+                        style: GoogleFonts.inter(fontWeight: FontWeight.w600),
                       ),
                       backgroundColor: AppColors.primaryDark,
                       behavior: SnackBarBehavior.floating,
@@ -376,7 +376,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                     icon: const Icon(Remix.play_fill, size: 18),
                     label: Text(
                       'START WORK',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
@@ -410,7 +410,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                         icon: const Icon(Remix.task_line, size: 18),
                         label: Text(
                           "VIEW TODAY'S TASK",
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -435,7 +435,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
                         icon: const Icon(Remix.check_double_line, size: 18),
                         label: Text(
                           'COMPLETE WORK',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
                           ),
@@ -468,7 +468,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
           width: 95,
           child: Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               color: AppColors.textSecondary,
             ),
@@ -479,7 +479,7 @@ class EmployeeSSMWorkDetailView extends ConsumerWidget {
           child: Text(
             value,
             textAlign: TextAlign.end,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12.5,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,

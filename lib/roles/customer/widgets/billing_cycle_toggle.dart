@@ -69,7 +69,7 @@ class BillingCycleToggle extends StatelessWidget {
                       Flexible(
                         child: Text(
                           'Monthly',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: isMonthly
                                 ? FontWeight.bold
@@ -129,7 +129,7 @@ class BillingCycleToggle extends StatelessWidget {
                       Flexible(
                         child: Text(
                           'Yearly',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: !isMonthly
                                 ? FontWeight.bold
@@ -161,7 +161,7 @@ class BillingCycleToggle extends StatelessWidget {
                           ),
                           child: Text(
                             'SAVE ${maxSavingsPercentage!.toStringAsFixed(0)}%',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 9,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,

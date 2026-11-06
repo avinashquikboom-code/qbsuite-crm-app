@@ -360,7 +360,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
                     children: [
                       Text(
                         _isEdit ? 'Edit Lead' : 'New Lead',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -553,7 +553,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
                                         isDailyExhausted
                                             ? 'Daily lead generation limit reached.'
                                             : 'Monthly lead generation limit reached.',
-                                        style: GoogleFonts.outfit(
+                                        style: GoogleFonts.inter(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
                                           color: AppColors.error,
@@ -598,7 +598,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
                                           _isEdit
                                               ? 'SAVE CHANGES'
                                               : 'CREATE LEAD',
-                                          style: GoogleFonts.outfit(
+                                          style: GoogleFonts.inter(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                             letterSpacing: 0.5,
@@ -626,7 +626,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
       padding: const EdgeInsets.only(bottom: 12, top: 4),
       child: Text(
         title,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.bold,
           color: AppColors.textSecondary,
@@ -647,7 +647,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
         children: [
           Text(
             'Lead Stage',
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -680,7 +680,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
               child: Center(
                 child: Text(
                   'Failed to load stages',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     color: AppColors.error,
                     fontSize: 13,
                   ),
@@ -726,7 +726,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
                       activeStages.isEmpty
                           ? 'No stages configured'
                           : 'Select stage',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         color: AppColors.textSecondary,
                         fontSize: 14,
                       ),
@@ -751,7 +751,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
                             const SizedBox(width: 8),
                             Text(
                               stage.name,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 14,
                                 color: AppColors.textPrimary,
                               ),
@@ -788,7 +788,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
         children: [
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -802,7 +802,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
             validator: validator,
             decoration: InputDecoration(
               hintText: hint,
-              hintStyle: GoogleFonts.outfit(
+              hintStyle: GoogleFonts.inter(
                 color: AppColors.textSecondary,
                 fontSize: 14,
               ),
@@ -848,7 +848,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
         children: [
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: AppColors.textPrimary,
@@ -875,7 +875,7 @@ class _NewLeadBottomSheetState extends ConsumerState<_NewLeadBottomSheet> {
                     value: item,
                     child: Text(
                       item,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         color: AppColors.textPrimary,
                       ),

@@ -155,7 +155,7 @@ class ProfileView extends ConsumerWidget {
                   ),
                   label: Text(
                     'Sign Out Account',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: AppColors.error,
@@ -172,7 +172,7 @@ class ProfileView extends ConsumerWidget {
               const SizedBox(height: 16),
               Text(
                 'QB Suite Employee Mobile v1.0.0',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 11,
                   color: AppColors.textSecondary,
                 ),
@@ -196,11 +196,11 @@ class ProfileView extends ConsumerWidget {
           ),
           title: Text(
             'Sign Out',
-            style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+            style: GoogleFonts.inter(fontWeight: FontWeight.bold),
           ),
           content: Text(
             'Are you sure you want to end your current session?',
-            style: GoogleFonts.outfit(),
+            style: GoogleFonts.inter(),
           ),
           actions: [
             if (!isLoggingOut)
@@ -208,7 +208,7 @@ class ProfileView extends ConsumerWidget {
                 onPressed: () => Navigator.pop(ctx),
                 child: Text(
                   'Cancel',
-                  style: GoogleFonts.outfit(color: AppColors.textSecondary),
+                  style: GoogleFonts.inter(color: AppColors.textSecondary),
                 ),
               ),
             ElevatedButton(
@@ -356,7 +356,7 @@ class ProfileView extends ConsumerWidget {
                       const SizedBox(width: 4),
                       Text(
                         'Edit',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
                           color: AppColors.primary,
@@ -372,7 +372,7 @@ class ProfileView extends ConsumerWidget {
           // Employee Name
           Text(
             name,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -394,7 +394,7 @@ class ProfileView extends ConsumerWidget {
                 ),
                 child: Text(
                   designation,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12.5,
                     color: AppColors.primaryDark,
                     fontWeight: FontWeight.bold,
@@ -414,7 +414,7 @@ class ProfileView extends ConsumerWidget {
                 ),
                 child: Text(
                   empCode,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 11.5,
                     color: const Color(0xFF64748B),
                     fontWeight: FontWeight.w600,
@@ -455,7 +455,7 @@ class ProfileView extends ConsumerWidget {
         const SizedBox(width: 8),
         Text(
           '$label: ',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 12,
             color: AppColors.textSecondary,
           ),
@@ -463,7 +463,7 @@ class ProfileView extends ConsumerWidget {
         Expanded(
           child: Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -614,7 +614,7 @@ class ProfileView extends ConsumerWidget {
       leading: Icon(icon, color: AppColors.primary, size: 22),
       title: Text(
         title,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w600,
           color: AppColors.textPrimary,
@@ -653,7 +653,7 @@ class ProfileView extends ConsumerWidget {
               children: [
                 Text(
                   'Recent Payslips',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
@@ -667,7 +667,7 @@ class ProfileView extends ConsumerWidget {
                     ),
                     child: Text(
                       'View All',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primary,
@@ -694,7 +694,7 @@ class ProfileView extends ConsumerWidget {
                   Expanded(
                     child: Text(
                       'Unable to load payslips',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textSecondary,
                       ),
@@ -706,7 +706,7 @@ class ProfileView extends ConsumerWidget {
                         .loadSalarySlips(),
                     child: Text(
                       'Retry',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primary,
@@ -739,7 +739,7 @@ class ProfileView extends ConsumerWidget {
                     const SizedBox(height: 8),
                     Text(
                       'No payslips available yet.',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textSecondary,
@@ -748,7 +748,7 @@ class ProfileView extends ConsumerWidget {
                     const SizedBox(height: 2),
                     Text(
                       'Your generated payslips will appear here.',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 11.5,
                         color: AppColors.textPlaceholder,
                       ),
@@ -855,7 +855,7 @@ class ProfileView extends ConsumerWidget {
               'Net Salary': money('netSalary'),
             };
             return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('Salary Details', style: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 16)),
+              Text('Salary Details', style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 16)),
               const Text('Monthly structure amounts. Payslips include attendance and payroll adjustments.'),
               const SizedBox(height: 12),
               ...rows.entries.map((row) => Padding(
@@ -892,11 +892,11 @@ class ProfileView extends ConsumerWidget {
       ),
       title: Text(
         slip.month,
-        style: GoogleFonts.outfit(fontWeight: FontWeight.bold, fontSize: 14),
+        style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 14),
       ),
       subtitle: Text(
         '₹ ${slip.netSalary.toStringAsFixed(0)} Net • Paid on $paidDateText',
-        style: GoogleFonts.outfit(color: AppColors.textSecondary, fontSize: 12),
+        style: GoogleFonts.inter(color: AppColors.textSecondary, fontSize: 12),
       ),
       trailing: IconButton(
         icon: const Icon(

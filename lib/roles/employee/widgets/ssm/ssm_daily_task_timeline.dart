@@ -134,7 +134,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'COMPLETED',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 9,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.primaryDark,
@@ -153,7 +153,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'ACTIVE TODAY',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 9,
                                     fontWeight: FontWeight.bold,
                                     color: const Color(0xFFB54708),
@@ -165,7 +165,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                         const SizedBox(height: 4),
                         Text(
                           task.title,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 13.5,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -174,7 +174,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                         const SizedBox(height: 2),
                         Text(
                           task.description,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: AppColors.textSecondary,
                           ),
@@ -191,7 +191,7 @@ class SSMDailyTaskTimeline extends StatelessWidget {
                               icon: const Icon(Remix.check_line, size: 14),
                               label: Text(
                                 'Mark Day ${task.dayNumber} Complete',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11.5,
                                   fontWeight: FontWeight.bold,
                                 ),

@@ -39,10 +39,10 @@ class CommonSearchBar extends StatelessWidget {
       child: TextField(
         controller: controller,
         onChanged: onChanged,
-        style: GoogleFonts.outfit(fontSize: 14, color: AppColors.textPrimary),
+        style: GoogleFonts.inter(fontSize: 14, color: AppColors.textPrimary),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: GoogleFonts.outfit(
+          hintStyle: GoogleFonts.inter(
             fontSize: 13,
             color: AppColors.textPlaceholder,
           ),

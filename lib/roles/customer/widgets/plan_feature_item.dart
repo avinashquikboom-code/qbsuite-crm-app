@@ -40,7 +40,7 @@ class PlanFeatureItem extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13,
                 fontWeight: isHighlighted ? FontWeight.w600 : FontWeight.w500,
                 color: isHighlighted

@@ -30,7 +30,7 @@ class CommonLoader extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               message!,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 13,
                 color: AppColors.textSecondary,
               ),

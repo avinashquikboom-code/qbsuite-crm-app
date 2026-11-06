@@ -126,7 +126,7 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
         ),
         title: Text(
           'Customer Review',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -171,7 +171,7 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
                   const SizedBox(height: 14),
                   Text(
                     'Rate Your Experience',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -218,7 +218,7 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
                 children: [
                   Text(
                     'Customer Feedback',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
@@ -231,7 +231,7 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
                     decoration: InputDecoration(
                       hintText:
                           'Very professional approach. Solutions are well explained. Will definitely work together.',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 13,
                         color: AppColors.textPlaceholder,
                       ),
@@ -280,7 +280,7 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
                     children: [
                       Text(
                         'Customer Signature (Optional)',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -294,7 +294,7 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
                         },
                         child: Text(
                           'Clear',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12.5,
                             fontWeight: FontWeight.bold,
                             color: AppColors.primary,
@@ -376,7 +376,7 @@ class _VisitorReviewViewState extends ConsumerState<VisitorReviewView> {
                     )
                   : Text(
                       'Submit Review',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.5,

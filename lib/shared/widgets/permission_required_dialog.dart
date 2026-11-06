@@ -42,7 +42,7 @@ class PermissionRequiredDialog extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               title,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
@@ -52,7 +52,7 @@ class PermissionRequiredDialog extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               description,
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 14,
                 color: AppColors.textSecondary,
               ),
@@ -69,7 +69,7 @@ class PermissionRequiredDialog extends StatelessWidget {
                     ),
                     child: Text(
                       'Cancel',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         color: AppColors.textSecondary,
                         fontWeight: FontWeight.w600,
                       ),
@@ -90,7 +90,7 @@ class PermissionRequiredDialog extends StatelessWidget {
                     ),
                     child: Text(
                       isPermanentlyDenied ? 'Open Settings' : 'Allow',
-                      style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.inter(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

@@ -38,7 +38,7 @@ class CustomerAppDrawer extends ConsumerWidget {
             const SizedBox(width: 8),
             Text(
               'Sign Out',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -47,7 +47,7 @@ class CustomerAppDrawer extends ConsumerWidget {
         ),
         content: Text(
           'Are you sure you want to end your customer workspace session?',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             color: AppColors.textSecondary,
           ),
@@ -57,7 +57,7 @@ class CustomerAppDrawer extends ConsumerWidget {
             onPressed: () => Navigator.pop(ctx),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(color: AppColors.textSecondary),
+              style: GoogleFonts.inter(color: AppColors.textSecondary),
             ),
           ),
           ElevatedButton(
@@ -95,7 +95,7 @@ class CustomerAppDrawer extends ConsumerWidget {
             },
             child: Text(
               'Logout',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: GoogleFonts.inter(fontWeight: FontWeight.bold),
             ),
           ),
         ],
@@ -274,7 +274,7 @@ class CustomerAppDrawer extends ConsumerWidget {
                         const SizedBox(width: 12),
                         Text(
                           'Logout',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: AppColors.error,
@@ -395,7 +395,7 @@ class CustomerAppDrawer extends ConsumerWidget {
                   children: [
                     Text(
                       'QB Suite',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 19,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -406,7 +406,7 @@ class CustomerAppDrawer extends ConsumerWidget {
                     ),
                     Text(
                       'CUSTOMER WORKSPACE',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 10,
                         fontWeight: FontWeight.w800,
                         color: AppColors.primary,
@@ -449,7 +449,7 @@ class CustomerAppDrawer extends ConsumerWidget {
                     children: [
                       Text(
                         customerPersonName,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                           color: AppColors.textPrimary,
@@ -461,7 +461,7 @@ class CustomerAppDrawer extends ConsumerWidget {
                         const SizedBox(height: 2),
                         Text(
                           businessWithCode,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 11,
                             color: AppColors.textSecondary,
                             fontWeight: FontWeight.w500,
@@ -486,7 +486,7 @@ class CustomerAppDrawer extends ConsumerWidget {
       padding: const EdgeInsets.only(left: 8, bottom: 8, top: 4),
       child: Text(
         title,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 10,
           fontWeight: FontWeight.w800,
           color: AppColors.textSecondary.withValues(alpha: 0.8),
@@ -529,7 +529,7 @@ class CustomerAppDrawer extends ConsumerWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 14,
                       fontWeight: isSelected
                           ? FontWeight.bold
@@ -552,7 +552,7 @@ class CustomerAppDrawer extends ConsumerWidget {
                     ),
                     child: Text(
                       badge,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 9,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

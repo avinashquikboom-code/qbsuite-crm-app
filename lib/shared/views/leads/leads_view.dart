@@ -203,7 +203,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
               leading: const Icon(Remix.error_warning_line, color: Colors.red),
               title: Text(
                 'Unable to load pipeline stages',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 13,
                   color: Colors.red.shade900,
                 ),
@@ -227,7 +227,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                     controller: _searchController,
                     decoration: InputDecoration(
                       hintText: 'Search leads by company, contact, phone...',
-                      hintStyle: GoogleFonts.outfit(
+                      hintStyle: GoogleFonts.inter(
                         fontSize: 14,
                         color: AppColors.textSecondary,
                       ),
@@ -329,7 +329,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                       Text(
                         'Failed to load leads: $err',
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           color: AppColors.textSecondary,
                         ),
                       ),
@@ -407,7 +407,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                           const SizedBox(height: 12),
                           Text(
                             'No leads found',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -419,7 +419,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                                 ? 'No leads in the "$_selectedStatus" stage.'
                                 : 'No leads currently in your CRM pipeline.',
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               color: AppColors.textSecondary,
                             ),
@@ -508,7 +508,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
             children: [
               Text(
                 name,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                   color: isSelected ? color : const Color(0xFF475569),
@@ -532,7 +532,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                   alignment: Alignment.center,
                   child: Text(
                     '$count',
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -594,7 +594,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                     Expanded(
                       child: Text(
                         lead.displayName,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -627,7 +627,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                             alignment: Alignment.center,
                             child: Text(
                               '$stageOrder',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 9,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -637,7 +637,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                           const SizedBox(width: 6),
                           Text(
                             stageName,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: stageColor,
@@ -661,7 +661,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                       const SizedBox(width: 4),
                       Text(
                         lead.fullName,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),
@@ -681,7 +681,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                       const SizedBox(width: 4),
                       Text(
                         lead.phone!,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),
@@ -697,7 +697,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                       const SizedBox(width: 4),
                       Text(
                         lead.city!,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),

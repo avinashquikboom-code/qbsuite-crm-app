@@ -204,7 +204,7 @@ class _CustomerRegistrationViewState
                           Flexible(
                             child: Text(
                               'CUSTOMER REGISTRATION',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w800,
                                 color: AppColors.primaryDark,
@@ -222,7 +222,7 @@ class _CustomerRegistrationViewState
                     // Title
                     Text(
                       'Create Your Account',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
@@ -234,7 +234,7 @@ class _CustomerRegistrationViewState
                     // Subtitle
                     Text(
                       'Personal / Business Details',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         color: AppColors.textSecondary,
                       ),
@@ -370,7 +370,7 @@ class _CustomerRegistrationViewState
                                 children: [
                                   Text(
                                     'Create Account',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -396,7 +396,7 @@ class _CustomerRegistrationViewState
                         children: [
                           Text(
                             'Already registered? ',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 13,
                               color: AppColors.textSecondary,
                             ),
@@ -405,7 +405,7 @@ class _CustomerRegistrationViewState
                             onTap: () => Navigator.pop(context),
                             child: Text(
                               'Sign In',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.primary,
@@ -447,7 +447,7 @@ class _CustomerRegistrationViewState
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 12,
             fontWeight: FontWeight.bold,
             color: AppColors.textPrimary,
@@ -460,14 +460,14 @@ class _CustomerRegistrationViewState
           keyboardType: keyboardType,
           inputFormatters: inputFormatters,
           onChanged: onChanged,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             color: AppColors.textPrimary,
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: GoogleFonts.outfit(
+            hintStyle: GoogleFonts.inter(
               color: AppColors.textSecondary.withValues(alpha: 0.8),
               fontSize: 14,
               fontWeight: FontWeight.w400,
@@ -529,7 +529,7 @@ class _CustomerRegistrationViewState
                 Expanded(
                   child: Text(
                     errorText,
-                    style: GoogleFonts.outfit(
+                    style: GoogleFonts.inter(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: AppColors.error,

@@ -247,7 +247,7 @@ class CustomerCard extends ConsumerWidget {
                       alignment: Alignment.center,
                       child: Text(
                         initial,
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -264,7 +264,7 @@ class CustomerCard extends ConsumerWidget {
                         children: [
                           Text(
                             titleText,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 14.5,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -287,7 +287,7 @@ class CustomerCard extends ConsumerWidget {
                                 Flexible(
                                   child: Text(
                                     subtitleText,
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500,
                                       color: AppColors.textSecondary,
@@ -326,7 +326,7 @@ class CustomerCard extends ConsumerWidget {
                                   Flexible(
                                     child: Text(
                                       'Converted from Lead',
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 10,
                                         fontWeight: FontWeight.w600,
                                         color: const Color(0xFF6D28D9),
@@ -361,7 +361,7 @@ class CustomerCard extends ConsumerWidget {
                           const SizedBox(width: 5),
                           Text(
                             statusLabel,
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 11,
                               fontWeight: FontWeight.bold,
                               color: statusText,
@@ -412,7 +412,7 @@ class CustomerCard extends ConsumerWidget {
                           Expanded(
                             child: Text(
                               planDisplayName,
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.bold,
                                 color: hasPlan
@@ -444,7 +444,7 @@ class CustomerCard extends ConsumerWidget {
                               Expanded(
                                 child: Text(
                                   'Started: ${formatDate(customer.subscriptionStartDate)}',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: AppColors.textSecondary,
                                   ),
@@ -469,7 +469,7 @@ class CustomerCard extends ConsumerWidget {
                               Expanded(
                                 child: Text(
                                   'Expires: ${formatDate(customer.subscriptionEndDate)}',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 11,
                                     color: isActive
                                         ? AppColors.textSecondary
@@ -504,7 +504,7 @@ class CustomerCard extends ConsumerWidget {
                                   children: [
                                     TextSpan(
                                       text: 'Upcoming Commission: ',
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 11.5,
                                         fontWeight: FontWeight.w600,
                                         color: const Color(0xFF065F46),
@@ -514,7 +514,7 @@ class CustomerCard extends ConsumerWidget {
                                       text: formatIndianCurrency(
                                         customer.upcomingCommission!,
                                       ),
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold,
                                         color: const Color(0xFF047857),
@@ -544,7 +544,7 @@ class CustomerCard extends ConsumerWidget {
                             Expanded(
                               child: Text(
                                 'Assigned: ${customer.assignedEmployee}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11,
                                   color: AppColors.textSecondary,
                                 ),
@@ -597,7 +597,7 @@ class CustomerCard extends ConsumerWidget {
                             children: [
                               Text(
                                 customer.upcomingCallType ?? 'Final Call',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                   color: const Color(0xFFB45309),
@@ -608,7 +608,7 @@ class CustomerCard extends ConsumerWidget {
                               const SizedBox(height: 1),
                               Text(
                                 '${customer.upcomingCallDate ?? "Upcoming"}${customer.upcomingCallTime != null && customer.upcomingCallTime!.isNotEmpty ? " • ${customer.upcomingCallTime}" : ""}',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontSize: 11,
                                   fontWeight: FontWeight.w500,
                                   color: const Color(0xFFD97706),
@@ -647,7 +647,7 @@ class CustomerCard extends ConsumerWidget {
                               customer.mobile.isNotEmpty
                                   ? customer.mobile
                                   : 'N/A',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),
@@ -676,7 +676,7 @@ class CustomerCard extends ConsumerWidget {
                           Expanded(
                             child: Text(
                               customer.city.isNotEmpty ? customer.city : 'N/A',
-                              style: GoogleFonts.outfit(
+                              style: GoogleFonts.inter(
                                 fontSize: 12,
                                 color: AppColors.textSecondary,
                               ),
@@ -830,7 +830,7 @@ class CustomerCard extends ConsumerWidget {
                       children: [
                         Text(
                           customer.displayTitle,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF0F172A),
@@ -838,7 +838,7 @@ class CustomerCard extends ConsumerWidget {
                         ),
                         Text(
                           customer.customerStatus,
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 12,
                             color: const Color(0xFF64748B),
                           ),
@@ -877,14 +877,14 @@ class CustomerCard extends ConsumerWidget {
         children: [
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               color: const Color(0xFF64748B),
             ),
           ),
           Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 13,
               fontWeight: FontWeight.w600,
               color: const Color(0xFF0F172A),

@@ -119,7 +119,7 @@ class _AdminScheduleVisitSheetState
                     Expanded(
                       child: Text(
                         'Schedule Client Visit',
-                        style: GoogleFonts.outfit(
+                        style: GoogleFonts.inter(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textPrimary,
@@ -152,7 +152,7 @@ class _AdminScheduleVisitSheetState
                     DropdownButtonFormField<String>(
                       isExpanded: true,
                       initialValue: _selectedCustomer,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         color: AppColors.textPrimary,
                       ),
@@ -177,7 +177,7 @@ class _AdminScheduleVisitSheetState
                     DropdownButtonFormField<String>(
                       isExpanded: true,
                       initialValue: _selectedEmployee,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontSize: 14,
                         color: AppColors.textPrimary,
                       ),
@@ -207,7 +207,7 @@ class _AdminScheduleVisitSheetState
                               _buildLabel('Visit Time *'),
                               TextFormField(
                                 controller: _timeController,
-                                style: GoogleFonts.outfit(fontSize: 14),
+                                style: GoogleFonts.inter(fontSize: 14),
                                 decoration: _inputDecoration(
                                   '11:00 AM',
                                   Remix.time_line,
@@ -228,7 +228,7 @@ class _AdminScheduleVisitSheetState
                               _buildLabel('Location Area *'),
                               TextFormField(
                                 controller: _locationController,
-                                style: GoogleFonts.outfit(fontSize: 14),
+                                style: GoogleFonts.inter(fontSize: 14),
                                 decoration: _inputDecoration(
                                   'Mumbai',
                                   Remix.map_pin_2_line,
@@ -249,11 +249,11 @@ class _AdminScheduleVisitSheetState
                     TextFormField(
                       controller: _notesController,
                       maxLines: 2,
-                      style: GoogleFonts.outfit(fontSize: 14),
+                      style: GoogleFonts.inter(fontSize: 14),
                       decoration: InputDecoration(
                         hintText:
                             'e.g. Testimonial recording, shoot prep meeting...',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),
@@ -290,7 +290,7 @@ class _AdminScheduleVisitSheetState
                         ),
                         child: Text(
                           'SCHEDULE VISIT',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -312,7 +312,7 @@ class _AdminScheduleVisitSheetState
       padding: const EdgeInsets.only(bottom: 6),
       child: Text(
         label,
-        style: GoogleFonts.outfit(
+        style: GoogleFonts.inter(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: AppColors.textPrimary,
@@ -324,7 +324,7 @@ class _AdminScheduleVisitSheetState
   InputDecoration _inputDecoration(String hint, IconData icon) {
     return InputDecoration(
       hintText: hint,
-      hintStyle: GoogleFonts.outfit(
+      hintStyle: GoogleFonts.inter(
         fontSize: 13,
         color: const Color(0xFF94A3B8),
       ),

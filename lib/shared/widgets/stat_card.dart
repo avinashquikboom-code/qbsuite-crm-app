@@ -68,7 +68,7 @@ class StatCard extends StatelessWidget {
           const Spacer(),
           Text(
             value,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 26,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -78,7 +78,7 @@ class StatCard extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 11,
               fontWeight: FontWeight.w700,
               color: AppColors.textPrimary,
@@ -90,7 +90,7 @@ class StatCard extends StatelessWidget {
           const SizedBox(height: 2),
           Text(
             subtitle,
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.inter(
               fontSize: 10,
               fontWeight: FontWeight.w500,
               color: AppColors.textSecondary,
@@ -169,7 +169,7 @@ class AttendanceCard extends StatelessWidget {
                       children: [
                         Text(
                           'Active Session',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -220,7 +220,7 @@ class AttendanceCard extends StatelessWidget {
       children: [
         Text(
           '12:24 PM',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             color: Colors.white,
             fontSize: isMobile ? 24 : 28,
             fontWeight: FontWeight.bold,

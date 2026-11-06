@@ -497,7 +497,7 @@ targetStageName=${targetStage.name}
                             _isVisitor
                                 ? 'Complete Visit'
                                 : 'Select Pipeline Stage',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: AppColors.textPrimary,
@@ -507,7 +507,7 @@ targetStageName=${targetStage.name}
                             _isVisitor
                                 ? 'Move lead from Visit Scheduled to Visit Done'
                                 : 'Move this lead to any configured CRM stage',
-                            style: GoogleFonts.outfit(
+                            style: GoogleFonts.inter(
                               fontSize: 12,
                               color: AppColors.textSecondary,
                             ),
@@ -574,7 +574,7 @@ targetStageName=${targetStage.name}
                                 alignment: Alignment.center,
                                 child: Text(
                                   '${idx + 1}',
-                                  style: GoogleFonts.outfit(
+                                  style: GoogleFonts.inter(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
@@ -588,7 +588,7 @@ targetStageName=${targetStage.name}
                                   children: [
                                     Text(
                                       stage.name,
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 14,
                                         fontWeight: isCurrent
                                             ? FontWeight.bold
@@ -600,7 +600,7 @@ targetStageName=${targetStage.name}
                                     ),
                                     Text(
                                       'KEY: ${stage.key}',
-                                      style: GoogleFonts.outfit(
+                                      style: GoogleFonts.inter(
                                         fontSize: 11,
                                         color: AppColors.textSecondary,
                                       ),
@@ -620,7 +620,7 @@ targetStageName=${targetStage.name}
                                   ),
                                   child: Text(
                                     'Current',
-                                    style: GoogleFonts.outfit(
+                                    style: GoogleFonts.inter(
                                       fontSize: 11,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
@@ -694,7 +694,7 @@ targetStageName=${targetStage.name}
                       children: [
                         Text(
                           'Log Follow-up Call',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -710,7 +710,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 16),
                     Text(
                       'Call Outcome *',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -725,7 +725,7 @@ targetStageName=${targetStage.name}
                           label: Text(outcome),
                           selected: isSel,
                           selectedColor: AppColors.primaryLight,
-                          labelStyle: GoogleFonts.outfit(
+                          labelStyle: GoogleFonts.inter(
                             fontWeight: isSel
                                 ? FontWeight.bold
                                 : FontWeight.normal,
@@ -745,7 +745,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 16),
                     Text(
                       'Next Follow-up Schedule',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -775,7 +775,7 @@ targetStageName=${targetStage.name}
                             ),
                             label: Text(
                               '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
-                              style: GoogleFonts.outfit(fontSize: 13),
+                              style: GoogleFonts.inter(fontSize: 13),
                             ),
                           ),
                         ),
@@ -798,7 +798,7 @@ targetStageName=${targetStage.name}
                             ),
                             label: Text(
                               selectedTime.format(context),
-                              style: GoogleFonts.outfit(fontSize: 13),
+                              style: GoogleFonts.inter(fontSize: 13),
                             ),
                           ),
                         ),
@@ -807,7 +807,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 16),
                     Text(
                       'Call Notes',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -818,7 +818,7 @@ targetStageName=${targetStage.name}
                       maxLines: 3,
                       decoration: InputDecoration(
                         hintText: 'Enter discussion highlights...',
-                        hintStyle: GoogleFonts.outfit(
+                        hintStyle: GoogleFonts.inter(
                           fontSize: 13,
                           color: AppColors.textSecondary,
                         ),
@@ -872,7 +872,7 @@ targetStageName=${targetStage.name}
                         },
                         child: Text(
                           'SAVE CALL OUTCOME',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                             letterSpacing: 0.5,
                           ),
@@ -1030,7 +1030,7 @@ targetStageName=${targetStage.name}
                       children: [
                         Text(
                           'Complete Field Visit',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1046,7 +1046,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Customer Response *',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1068,7 +1068,7 @@ targetStageName=${targetStage.name}
                                   value: r,
                                   child: Text(
                                     r,
-                                    style: GoogleFonts.outfit(fontSize: 13),
+                                    style: GoogleFonts.inter(fontSize: 13),
                                   ),
                                 ),
                               )
@@ -1084,7 +1084,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Visit Summary *',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1104,7 +1104,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 12),
                     Text(
                       'Additional Notes',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1160,7 +1160,7 @@ targetStageName=${targetStage.name}
                         },
                         child: Text(
                           'MARK VISIT COMPLETED',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -1220,7 +1220,7 @@ targetStageName=${targetStage.name}
                       children: [
                         Text(
                           'Create Proposal / Quotation',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1236,7 +1236,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Service / Product Name *',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1260,7 +1260,7 @@ targetStageName=${targetStage.name}
                             children: [
                               Text(
                                 'Quantity',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
                                 ),
@@ -1287,7 +1287,7 @@ targetStageName=${targetStage.name}
                             children: [
                               Text(
                                 'Unit Price (₹)',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
                                 ),
@@ -1312,7 +1312,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 12),
                     Text(
                       'Discount (₹)',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1361,7 +1361,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Terms & Notes',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1428,7 +1428,7 @@ targetStageName=${targetStage.name}
                         },
                         child: Text(
                           'SEND PROPOSAL (₹${grandTotal.toStringAsFixed(0)})',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -1483,7 +1483,7 @@ targetStageName=${targetStage.name}
                       children: [
                         Text(
                           'Final Call / Negotiation',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1499,7 +1499,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Client Decision *',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1518,7 +1518,7 @@ targetStageName=${targetStage.name}
                               : resp == 'Rejected'
                               ? AppColors.error.withValues(alpha: 0.15)
                               : AppColors.warning.withValues(alpha: 0.15),
-                          labelStyle: GoogleFonts.outfit(
+                          labelStyle: GoogleFonts.inter(
                             fontWeight: isSel
                                 ? FontWeight.bold
                                 : FontWeight.normal,
@@ -1538,7 +1538,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Expected Closing / Payment Date',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1566,7 +1566,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Negotiation & Closing Notes',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1630,7 +1630,7 @@ targetStageName=${targetStage.name}
                           customerResponse == 'Accepted'
                               ? 'ACCEPT & MOVE TO PAYMENT'
                               : 'SAVE FINAL CALL OUTCOME',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -1699,7 +1699,7 @@ targetStageName=${targetStage.name}
                       children: [
                         Text(
                           'Record & Verify Payment',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -1721,7 +1721,7 @@ targetStageName=${targetStage.name}
                             children: [
                               Text(
                                 'Total Deal Amount (₹)',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
                                 ),
@@ -1747,7 +1747,7 @@ targetStageName=${targetStage.name}
                             children: [
                               Text(
                                 'Amount Paid (₹) *',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
                                 ),
@@ -1777,7 +1777,7 @@ targetStageName=${targetStage.name}
                             children: [
                               Text(
                                 'Payment Method',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
                                 ),
@@ -1801,7 +1801,7 @@ targetStageName=${targetStage.name}
                                             value: m,
                                             child: Text(
                                               m.replaceAll('_', ' '),
-                                              style: GoogleFonts.outfit(
+                                              style: GoogleFonts.inter(
                                                 fontSize: 12,
                                               ),
                                             ),
@@ -1828,7 +1828,7 @@ targetStageName=${targetStage.name}
                             children: [
                               Text(
                                 'Payment Status',
-                                style: GoogleFonts.outfit(
+                                style: GoogleFonts.inter(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 13,
                                 ),
@@ -1852,7 +1852,7 @@ targetStageName=${targetStage.name}
                                             value: s,
                                             child: Text(
                                               s,
-                                              style: GoogleFonts.outfit(
+                                              style: GoogleFonts.inter(
                                                 fontSize: 12,
                                               ),
                                             ),
@@ -1877,7 +1877,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 12),
                     Text(
                       'Transaction / UTR Reference',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1895,7 +1895,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 12),
                     Text(
                       'Notes',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -1959,7 +1959,7 @@ targetStageName=${targetStage.name}
                         },
                         child: Text(
                           'CONFIRM PAYMENT RECORD',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -2013,7 +2013,7 @@ targetStageName=${targetStage.name}
                       children: [
                         Text(
                           'Start Project Work',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.textPrimary,
@@ -2029,7 +2029,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 14),
                     Text(
                       'Work Kickoff Date *',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -2059,7 +2059,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 12),
                     Text(
                       'Assigned Team / Squad *',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -2077,7 +2077,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 12),
                     Text(
                       'Service / Project Scope',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -2095,7 +2095,7 @@ targetStageName=${targetStage.name}
                     const SizedBox(height: 12),
                     Text(
                       'Kickoff Notes',
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 13,
                       ),
@@ -2154,7 +2154,7 @@ targetStageName=${targetStage.name}
                         },
                         child: Text(
                           'OFFICIALLY START WORK',
-                          style: GoogleFonts.outfit(
+                          style: GoogleFonts.inter(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -2203,7 +2203,7 @@ targetStageName=${targetStage.name}
             Expanded(
               child: Text(
                 'Delete Lead?',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xFF0F172A),
@@ -2214,7 +2214,7 @@ targetStageName=${targetStage.name}
         ),
         content: Text(
           'Are you sure you want to delete this lead? This action cannot be undone.',
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             color: const Color(0xFF475569),
           ),
@@ -2225,7 +2225,7 @@ targetStageName=${targetStage.name}
             onPressed: () => Navigator.pop(dialogCtx, false),
             child: Text(
               'Cancel',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
                 color: const Color(0xFF64748B),
@@ -2245,7 +2245,7 @@ targetStageName=${targetStage.name}
             onPressed: () => Navigator.pop(dialogCtx, true),
             child: Text(
               'Delete',
-              style: GoogleFonts.outfit(
+              style: GoogleFonts.inter(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),
@@ -2302,7 +2302,7 @@ targetStageName=${targetStage.name}
               _buildSheetHandle(),
               Text(
                 'Send Both Communications',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: const Color(0xFF0F172A),
@@ -2311,7 +2311,7 @@ targetStageName=${targetStage.name}
               const SizedBox(height: 4),
               Text(
                 'Compose and send email and WhatsApp to ${lead.displayName}.',
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.inter(
                   fontSize: 12,
                   color: const Color(0xFF64748B),
                 ),
@@ -2333,14 +2333,14 @@ targetStageName=${targetStage.name}
                 ),
                 title: Text(
                   '1. Compose Email',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 subtitle: Text(
                   lead.email ?? 'No email available',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12,
                     color: const Color(0xFF64748B),
                   ),
@@ -2377,14 +2377,14 @@ targetStageName=${targetStage.name}
                 ),
                 title: Text(
                   '2. Compose WhatsApp',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 subtitle: Text(
                   lead.phone ?? 'No phone available',
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 12,
                     color: const Color(0xFF64748B),
                   ),
@@ -2510,7 +2510,7 @@ targetStageName=${targetStage.name}
                 const SizedBox(height: 16),
                 Text(
                   errorHeading,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: const Color(0xFF0F172A),
@@ -2520,7 +2520,7 @@ targetStageName=${targetStage.name}
                 Text(
                   _errorMessage!,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: GoogleFonts.inter(
                     fontSize: 14,
                     color: const Color(0xFF64748B),
                     height: 1.3,
@@ -2786,7 +2786,7 @@ targetStageName=${targetStage.name}
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 13,
             fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
             color: color ?? AppColors.textPrimary,
@@ -2794,7 +2794,7 @@ targetStageName=${targetStage.name}
         ),
         Text(
           value,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.inter(
             fontSize: 14,
             fontWeight: isBold ? FontWeight.bold : FontWeight.w600,
             color: color ?? AppColors.textPrimary,
