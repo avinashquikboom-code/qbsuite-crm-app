@@ -56,7 +56,7 @@ class RemixIcon extends StatelessWidget {
   );
 }
 
-/// Compatibility glyphs for legacy views; all resolve to Remix LegacyRemixIcons.
+/// Compatibility glyphs for legacy views; all resolve to Remix Icons.
 abstract final class LegacyRemixIcons {
   static const accessTimeRounded = Remix.time_line;
   static const accountBalanceRounded = Remix.bank_line;

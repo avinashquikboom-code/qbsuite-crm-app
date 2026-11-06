@@ -132,7 +132,10 @@ void main() {
         expect(find.text('Subpage Screen'), findsOneWidget);
         expect(find.byType(BackButton), findsOneWidget);
         final subpageIcons = tester.widgetList<Icon>(find.byType(Icon));
-        expect(subpageIcons.any((i) => i.icon == RemixIcons.mapping[AppIcon.back]), isTrue);
+        expect(
+          subpageIcons.any((i) => i.icon == RemixIcons.mapping[AppIcon.back]),
+          isTrue,
+        );
 
         // Tap back button pops route
         await tester.tap(find.byType(BackButton));
