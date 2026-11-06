@@ -189,7 +189,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
     final desigName =
         (profile?.designation ??
                 empInfo?.designation ??
-                authState.userRole ??
+                authState.designation ??
                 '')
             .trim()
             .toUpperCase();
@@ -329,6 +329,7 @@ class _DashboardViewState extends ConsumerState<DashboardView>
           child: tabs[safeIndex].page,
         ),
         bottomNavigationBar: QBBottomNavigation(
+          activeIconBackground: isVisitor,
           currentIndex: safeIndex,
           onTap: (index) {
             setState(() {

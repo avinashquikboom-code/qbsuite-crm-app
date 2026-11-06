@@ -154,7 +154,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                 bgColor: const Color(0xFFEFF6FF), // Blue 50
                 borderColor: const Color(0xFFDBEAFE),
                 onTap: () {
-                  widget.onNavigateToTab?.call('Visit');
+                  widget.onNavigateToTab?.call('Visits');
                   widget.onNavigateToVisitSubTab?.call(0);
                 },
               ),
@@ -169,7 +169,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
                 bgColor: const Color(0xFFFFFBEB), // Amber 50
                 borderColor: const Color(0xFFFEF3C7),
                 onTap: () {
-                  widget.onNavigateToTab?.call('Visit');
+                  widget.onNavigateToTab?.call('Visits');
                   widget.onNavigateToVisitSubTab?.call(1);
                 },
               ),
@@ -230,7 +230,7 @@ class _VisitorHomeSectionState extends ConsumerState<VisitorHomeSection> {
               ],
             ),
             TextButton.icon(
-              onPressed: () => widget.onNavigateToTab?.call('Visit'),
+              onPressed: () => widget.onNavigateToTab?.call('Visits'),
               icon: const Icon(Remix.arrow_right_s_line, size: 16),
               label: Text(
                 'View All',

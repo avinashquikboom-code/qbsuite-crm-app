@@ -20,6 +20,7 @@ class SecureStorageService {
 
   static const String _employeeIdKey = 'employee_id';
   static const String _employeeCodeKey = 'employee_code';
+  static const String _employeeDesignationKey = 'employee_designation';
   static const String _permissionsKey = 'user_permissions';
 
   static const _storage = FlutterSecureStorage(
@@ -159,6 +160,7 @@ class SecureStorageService {
     String? lastName,
     String? employeeId,
     String? employeeCode,
+    String? designation,
   }) async {
     try {
       await Future.wait([
@@ -194,6 +196,10 @@ class SecureStorageService {
           _safeWrite(_employeeCodeKey, employeeCode)
         else
           _safeDelete(_employeeCodeKey),
+        if (designation != null && designation.trim().isNotEmpty)
+          _safeWrite(_employeeDesignationKey, designation.trim())
+        else
+          _safeDelete(_employeeDesignationKey),
       ]);
     } catch (_) {}
 
@@ -217,6 +223,10 @@ class SecureStorageService {
   // Get employee code
   static Future<String?> getEmployeeCode() async {
     return await _safeRead(_employeeCodeKey);
+  }
+
+  static Future<String?> getEmployeeDesignation() async {
+    return await _safeRead(_employeeDesignationKey);
   }
 
   // Get user name

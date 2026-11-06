@@ -53,6 +53,7 @@ class LoginState {
   final String? userName;
   final String? employeeCode;
   final String? employeeId;
+  final String? designation;
   final String? customerId;
   final String? customerName;
 
@@ -70,6 +71,7 @@ class LoginState {
     this.userName,
     this.employeeCode,
     this.employeeId,
+    this.designation,
     this.customerId,
     this.customerName,
   });
@@ -87,6 +89,7 @@ class LoginState {
     String? userName,
     String? employeeCode,
     String? employeeId,
+    String? designation,
     String? customerId,
     String? customerName,
   }) {
@@ -104,6 +107,7 @@ class LoginState {
       userName: userName ?? this.userName,
       employeeCode: employeeCode ?? this.employeeCode,
       employeeId: employeeId ?? this.employeeId,
+      designation: designation ?? this.designation,
       customerId: customerId ?? this.customerId,
       customerName: customerName ?? this.customerName,
     );
@@ -728,6 +732,7 @@ class LoginStateNotifier extends Notifier<LoginState> {
     final userName = await SecureStorageService.getUserName();
     final employeeCode = await SecureStorageService.getEmployeeCode();
     final employeeId = await SecureStorageService.getEmployeeId();
+    final designation = await SecureStorageService.getEmployeeDesignation();
     final customerId = await SecureStorageService.getCustomerId();
     final customerName = await SecureStorageService.getCustomerName();
     if (!ref.mounted) return;
@@ -777,6 +782,7 @@ class LoginStateNotifier extends Notifier<LoginState> {
       userName: userName,
       employeeCode: employeeCode,
       employeeId: employeeId,
+      designation: designation,
       customerId: customerId,
       customerName: customerName,
       error: null,

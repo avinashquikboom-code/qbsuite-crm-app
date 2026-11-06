@@ -10,6 +10,7 @@ import 'package:quickboom_app/shared/widgets/app_app_bar.dart';
 import 'package:quickboom_app/shared/widgets/status_badge.dart';
 import 'package:quickboom_app/shared/widgets/empty_state_card.dart';
 import 'package:quickboom_app/shared/widgets/skeleton_loader.dart';
+import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_profile_viewmodel.dart';
 
 import 'package:quickboom_app/core/services/permission_manager.dart';
@@ -472,7 +473,10 @@ class _VisitsViewState extends ConsumerState<VisitsView>
     // ── Resolve Visitor identification from existing provider ───────────────
     final profile = ref.watch(employeeProfileProvider).asData?.value;
     final rbacPerms = ref.watch(permissionManagerProvider);
-    final desigName = (profile?.designation ?? '').trim().toUpperCase();
+    final desigName =
+        (profile?.designation ?? ref.watch(loginStateProvider).designation ?? '')
+            .trim()
+            .toUpperCase();
     final roleName = (rbacPerms.role ?? '').trim().toUpperCase();
     final isVisitor =
         desigName.contains('VISITOR') ||
@@ -485,7 +489,7 @@ class _VisitsViewState extends ConsumerState<VisitsView>
       backgroundColor: AppColors.background,
       appBar: AppAppBar(
         title: AppBarTitles.visits,
-        showBackButton: true,
+        showBackButton: !isVisitor,
         actions: [
           IconButton(
             icon: const Icon(Remix.refresh_line),

@@ -115,6 +115,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
         ? MobileUserRole.admin
         : MobileUserRole.employee;
     _isPasswordMode = true;
+    if (AppConfig.uiOnlyMode && _currentRole == MobileUserRole.employee) {
+      _identifierController.text = 'emp-004';
+      _passwordController.text = '123456';
+    }
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!AppConfig.uiOnlyMode) {
         NotificationService.instance.requestAndroidNotificationPermission();
@@ -228,38 +232,55 @@ class _LoginViewState extends ConsumerState<LoginView> {
 
   Future<void> _completeUiOnlyLogin() async {
     final identifier = _identifierController.text.trim();
+    final password = _passwordController.text.trim();
     final role = switch (_currentRole) {
       MobileUserRole.customer => 'CUSTOMER',
       MobileUserRole.admin => 'COMPANY_ADMIN',
       MobileUserRole.employee => 'EMPLOYEE',
     };
+    final compactId = identifier.toLowerCase().replaceAll(
+      RegExp(r'[^a-z0-9]'),
+      '',
+    );
+    final isVisitorLogin = role == 'EMPLOYEE' && compactId == 'emp012';
+    final isBpoLogin = role == 'EMPLOYEE' && compactId == 'emp004';
+    if (role == 'EMPLOYEE' &&
+        ((!isVisitorLogin && !isBpoLogin) || password != '123456')) {
+      if (!mounted) return;
+      setState(() => _isLoading = false);
+      AppToast.error(context, 'Invalid employee ID or password');
+      return;
+    }
+    final employeeCode = isVisitorLogin ? 'EMP-012' : 'EMP-004';
+    final firstName = isVisitorLogin ? 'Visitor' : 'BPO';
+    final lastName = 'Employee';
     await _processAuthSuccess({
       'tokens': const {'accessToken': 'ui-only', 'refreshToken': 'ui-only'},
       'user': {
-        'id': 1,
+        'id': isVisitorLogin ? 12 : 4,
         'role': role,
-        'firstName': 'Priya',
-        'lastName': 'Sharma',
+        'firstName': firstName,
+        'lastName': lastName,
         'email': identifier,
-        'employeeId': '1',
-        'employeeCode': 'QB-1001',
+        'employeeId': isVisitorLogin ? '12' : '4',
+        'employeeCode': employeeCode,
         'customerId': '1',
-        'customerName': 'Priya Sharma',
-        'isCrmEligible': true,
-        'crmMobileAccess': true,
+        'customerName': '$firstName $lastName',
+        'isCrmEligible': !isVisitorLogin,
+        'crmMobileAccess': !isVisitorLogin,
         'effectivePermissions': AuthService.defaultEmployeeCapabilities(
-          isCrm: true,
+          isCrm: !isVisitorLogin,
         ).map((permission) => permission.toJson()).toList(),
         'employee': {
-          'id': 1,
-          'employeeCode': 'QB-1001',
+          'id': isVisitorLogin ? 12 : 4,
+          'employeeCode': employeeCode,
           'customerId': '1',
           'status': 'ACTIVE',
-          'isCrmEligible': true,
-          'crmMobileAccess': true,
+          'isCrmEligible': !isVisitorLogin,
+          'crmMobileAccess': !isVisitorLogin,
           'designation': {
-            'name': 'BPO Executive',
-            'crmMobileAccess': true,
+            'name': isVisitorLogin ? 'Visitor' : 'BPO Executive',
+            'crmMobileAccess': !isVisitorLogin,
           },
         },
       },
@@ -698,6 +719,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
       lastName: uLast,
       employeeId: employeeIdVal,
       employeeCode: employeeCodeVal,
+      designation: designationNameVal,
     );
 
     // Parse and store initial permissions returned directly in login payload

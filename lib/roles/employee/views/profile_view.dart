@@ -482,11 +482,21 @@ class ProfileView extends ConsumerWidget {
 
   Widget _buildMenuSection(BuildContext context, WidgetRef ref) {
     final perms = ref.watch(permissionManagerProvider);
-    final canViewAttendance = perms.canView(AppModule.attendance);
+    final profile = ref.watch(employeeProfileProvider).asData?.value;
+    final designation =
+        (profile?.designation ?? ref.watch(loginStateProvider).designation ?? '')
+            .toUpperCase();
+    final role = (perms.role ?? '').toUpperCase();
+    final isVisitor =
+        designation.contains('VISITOR') ||
+        designation.contains('FIELD VISIT') ||
+        role.contains('VISITOR');
+    final canViewAttendance =
+        isVisitor || perms.canView(AppModule.attendance);
 
-    final canViewLeave = perms.canView(AppModule.leave);
-    final canViewSalary = perms.canView(AppModule.salary);
-    final canViewSettings = perms.canView(AppModule.settings);
+    final canViewLeave = isVisitor || perms.canView(AppModule.leave);
+    final canViewSalary = isVisitor || perms.canView(AppModule.salary);
+    final canViewSettings = isVisitor || perms.canView(AppModule.settings);
 
     // Build only the tiles the user is permitted to see
     final List<Widget> tiles = [];

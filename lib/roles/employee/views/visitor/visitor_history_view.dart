@@ -21,7 +21,7 @@ class _VisitorHistoryViewState extends ConsumerState<VisitorHistoryView> {
   List<Map<String, dynamic>> _completedVisits = [];
   List<Map<String, dynamic>> _scheduledVisits = [];
   List<Map<String, dynamic>> _ongoingVisits = [];
-  String _selectedFilter = 'Completed';
+  String _selectedFilter = 'All';
   String _searchQuery = '';
   final TextEditingController _searchController = TextEditingController();
 

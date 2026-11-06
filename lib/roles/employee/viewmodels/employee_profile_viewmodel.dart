@@ -161,6 +161,8 @@ final employeeProfileProvider = FutureProvider<EmployeeProfileData>((
   if (AppConfig.uiOnlyMode) {
     final name = (authState.userName ?? 'Priya Sharma').trim();
     final parts = name.split(RegExp(r'\s+'));
+    final designation = (authState.designation ?? '').trim();
+    final isVisitor = designation.toUpperCase().contains('VISITOR');
     return EmployeeProfileData(
       id: int.tryParse(authState.employeeId ?? '1') ?? 1,
       name: name.isEmpty ? 'Priya Sharma' : name,
@@ -169,8 +171,10 @@ final employeeProfileProvider = FutureProvider<EmployeeProfileData>((
       employeeCode: authState.employeeCode ?? 'QB-1001',
       email: authState.userEmail ?? 'priya.sharma@qbsuite.com',
       phone: '9876543210',
-      department: 'BPO',
-      designation: 'BPO Executive',
+      department: isVisitor ? 'Field Visits' : 'BPO',
+      designation: designation.isEmpty
+          ? 'BPO Executive'
+          : designation,
       branch: 'Head Office',
       organization: 'QB Suite Enterprise',
     );

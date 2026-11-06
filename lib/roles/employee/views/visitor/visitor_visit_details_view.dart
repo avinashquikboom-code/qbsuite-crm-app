@@ -827,8 +827,8 @@ class _VisitorVisitDetailsViewState
                                     : const Icon(Remix.play_fill, size: 20),
                                 label: Text(
                                   _isActionLoading
-                                      ? 'STARTING...'
-                                      : 'START VISIT',
+                                      ? 'Starting...'
+                                      : 'Start Visit',
                                   style: AppTypography.inter(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
@@ -873,7 +873,7 @@ class _VisitorVisitDetailsViewState
                                   size: 18,
                                 ),
                                 label: Text(
-                                  'REQUIREMENTS',
+                                  'Customer Requirement',
                                   style: AppTypography.inter(
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,

@@ -16,9 +16,7 @@ import '../viewmodels/employee_attendance_viewmodel.dart';
 import '../viewmodels/employee_profile_viewmodel.dart';
 import '../viewmodels/work_permissions_viewmodel.dart';
 import '../viewmodels/employee_calendar_viewmodel.dart';
-import 'package:quickboom_app/roles/employee/views/employee_schedule_view.dart';
 import 'visitor/visitor_home_section.dart';
-import '../widgets/employee_home_calendar_section.dart';
 import 'package:quickboom_app/shared/widgets/skeleton_loader.dart';
 import 'package:quickboom_app/shared/widgets/animated_notification_bell.dart';
 import '../viewmodels/employee_notification_viewmodel.dart';
@@ -213,7 +211,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
     final desigName =
         (profile?.designation ??
                 empInfo?.designation ??
-                authState.userRole ??
+                authState.designation ??
                 '')
             .trim()
             .toUpperCase();
@@ -545,31 +543,19 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               // State 4: Render permitted modules
               else ...[
                 if (isVisitor) ...[
-                  // 1. Shift/Attendance Card for Visitor (if permitted)
-                  if (canViewAttendance) ...[
-                    _buildAttendanceCard(context, attendanceState, dateStr),
-                    const SizedBox(height: 16),
-                  ],
-                  // 2. Visitor Visit Overview (Summary Cards + Today's Visits)
-                  VisitorHomeSection(
-                    onNavigateToTab: (tab) => widget.onNavigateToTab?.call(tab),
+                  _buildAttendanceCard(
+                    context,
+                    attendanceState,
+                    dateStr,
+                    showLocation: true,
+                    showOvertimeRequest: false,
                   ),
                   const SizedBox(height: 16),
-
-                  // 3. Visitor Home Calendar Section (7-Day Strip & Scheduled Visits)
-                  if (rbacPerms.canViewCalendar) ...[
-                    EmployeeHomeCalendarSection(
-                      onViewAll: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const EmployeeScheduleView(),
-                          ),
-                        );
-                      },
-                    ),
-                    const SizedBox(height: 20),
-                  ],
+                  VisitorHomeSection(
+                    onNavigateToTab: (tab) =>
+                        widget.onNavigateToTab?.call('Visits'),
+                  ),
+                  const SizedBox(height: 16),
                 ] else ...[
                   // 1. Attendance Card (Shift Status & Biometric-Gated Punch In/Out)
                   if (canViewAttendance ||
@@ -1262,8 +1248,10 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
   Widget _buildAttendanceCard(
     BuildContext context,
     AttendanceState state,
-    String dateStr,
-  ) {
+    String dateStr, {
+    bool showLocation = false,
+    bool showOvertimeRequest = true,
+  }) {
     final isWorking =
         state.isPunchedIn && !state.isOnBreak && !state.isCompleted;
     final isOnBreak = state.isOnBreak;
@@ -1426,9 +1414,63 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           ),
           const SizedBox(height: 14),
 
+          if (showLocation) ...[
+            Row(
+              children: [
+                const Icon(
+                  Remix.map_pin_2_line,
+                  size: 16,
+                  color: AppColors.textSecondary,
+                ),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    state.status.assignedOffice == null
+                        ? (state.locationError ?? 'Assigned office unavailable')
+                        : [
+                            state.status.assignedOffice!.name,
+                            if (state.status.assignedOffice!.city.isNotEmpty)
+                              state.status.assignedOffice!.city,
+                          ].join(', '),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTypography.inter(
+                      fontSize: 12,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
+                ),
+                TextButton.icon(
+                  onPressed: state.isLocating
+                      ? null
+                      : () => ref
+                            .read(employeeAttendanceProvider.notifier)
+                            .checkLocation(),
+                  icon: state.isLocating
+                      ? const SizedBox(
+                          width: 14,
+                          height: 14,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Icon(Remix.refresh_line, size: 16),
+                  label: Text(
+                    'Refresh GPS',
+                    style: AppTypography.inter(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+          ],
+
           // Dynamic Attendance Action Button (Punch In / Punch Out / Break / Completed)
           _buildAttendanceActionButtons(context, state),
-          if (!state.isLoading && !state.isActionRunning) ...[
+          if (showOvertimeRequest &&
+              !state.isLoading &&
+              !state.isActionRunning) ...[
             const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,

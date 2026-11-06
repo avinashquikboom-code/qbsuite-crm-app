@@ -21,11 +21,13 @@ class QBBottomNavigation extends StatelessWidget {
     required this.currentIndex,
     required this.onTap,
     this.items,
+    this.activeIconBackground = false,
   });
 
   final int currentIndex;
   final ValueChanged<int> onTap;
   final List<QBNavItem>? items;
+  final bool activeIconBackground;
 
   static const List<QBNavItem> employeeCrmItems = [
     QBNavItem(
@@ -81,6 +83,7 @@ class QBBottomNavigation extends StatelessWidget {
                   icon: navItems[i].icon,
                   activeIcon: navItems[i].activeIcon,
                   onTap: onTap,
+                  activeIconBackground: activeIconBackground,
                 ),
             ],
           ),
@@ -98,6 +101,7 @@ class _NavItem extends StatelessWidget {
     required this.icon,
     required this.activeIcon,
     required this.onTap,
+    required this.activeIconBackground,
   });
 
   final int index;
@@ -106,6 +110,7 @@ class _NavItem extends StatelessWidget {
   final IconData icon;
   final IconData activeIcon;
   final ValueChanged<int> onTap;
+  final bool activeIconBackground;
 
   bool get isSelected => index == currentIndex;
 
@@ -117,10 +122,21 @@ class _NavItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              isSelected ? activeIcon : icon,
-              size: 22,
-              color: isSelected ? AppColors.primary : AppColors.textSecondary,
+            Container(
+              width: 36,
+              height: 28,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: isSelected && activeIconBackground
+                    ? AppColors.primaryLight
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(
+                isSelected ? activeIcon : icon,
+                size: 22,
+                color: isSelected ? AppColors.primary : AppColors.textSecondary,
+              ),
             ),
             const SizedBox(height: 2),
             Padding(

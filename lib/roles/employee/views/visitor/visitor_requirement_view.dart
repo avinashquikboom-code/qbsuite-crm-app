@@ -32,7 +32,7 @@ class _VisitorRequirementViewState
   final List<String> _commonServices = [
     'E-commerce Website',
     'Social Media Marketing',
-    'SEO (Optional)',
+    'SEO',
     'Website Development',
     'Mobile Application',
     'Other',
@@ -175,8 +175,14 @@ class _VisitorRequirementViewState
           ),
         ),
       ),
+      resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.fromLTRB(
+          20,
+          20,
+          20,
+          20 + MediaQuery.viewInsetsOf(context).bottom,
+        ),
         physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
