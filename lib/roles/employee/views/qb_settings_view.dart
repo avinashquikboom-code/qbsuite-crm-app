@@ -126,7 +126,7 @@ class QBSettingsView extends StatelessWidget {
                     trailing: Switch(
                       value: false,
                       onChanged: (value) {},
-                      activeColor: AppColors.primary,
+                      activeThumbColor: AppColors.primary,
                     ),
                     showArrow: false,
                   ),

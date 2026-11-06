@@ -18,8 +18,7 @@ class AuthHeader extends StatelessWidget {
       children: [
         // App Logo
         SizedBox(
-          width: 220,
-          height: 126,
+          height: 68,
           child: Image.asset(
             'assets/images/app_logo_brand.png',
             fit: BoxFit.contain,
@@ -41,7 +40,7 @@ class AuthHeader extends StatelessWidget {
             ),
           ),
         ).animate().scale(duration: 350.ms, curve: Curves.easeOutBack),
-        const SizedBox(height: 12),
+        const SizedBox(height: 10),
 
         // Portal Subtitle with Green Lines
         Row(

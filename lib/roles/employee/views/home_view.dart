@@ -392,12 +392,10 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
         title: Row(
           children: [
             Container(
-              width: 32,
-              height: 32,
+              width: 34,
+              height: 34,
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [AppColors.primary, AppColors.primaryDark],
-                ),
+                color: AppColors.primary,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Center(
@@ -485,17 +483,19 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                           Text(
                             _getGreeting(),
                             style: AppTypography.inter(
-                              fontSize: 12.5,
+                              fontSize: 15,
                               fontWeight: FontWeight.w500,
                               color: AppColors.textSecondary,
                             ),
                           ),
+                          const SizedBox(height: 2),
                           Text(
                             empName,
                             style: AppTypography.inter(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
                               color: AppColors.textPrimary,
+                              height: 1.15,
                             ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -506,12 +506,12 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     if (empCode.isNotEmpty)
                       Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 3,
+                          horizontal: 10,
+                          vertical: 6,
                         ),
                         decoration: BoxDecoration(
                           color: AppColors.primaryLight,
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
                           empCode,
@@ -622,8 +622,8 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     const SizedBox(height: 16),
                   ],
 
-                  // 4. Employee Home Calendar Section (7-Day Strip, Category Filters, Activities List)
-                  if (canViewCalendar) ...[
+                  // Calendar and follow-ups stay off the compact CRM home.
+                  if (canViewCalendar && !isBpoTeam) ...[
                     EmployeeHomeCalendarSection(
                       onViewAll: () {
                         Navigator.push(
@@ -637,8 +637,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     const SizedBox(height: 20),
                   ],
 
-                  // 5. Follow-ups Section
-                  if (canViewFollowUp && !isProductionTeam) ...[
+                  if (canViewFollowUp && !isProductionTeam && !isBpoTeam) ...[
                     _buildFollowUpsCard(context),
                     const SizedBox(height: 16),
                   ],
@@ -1241,7 +1240,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Icon(
-                      Remix.user_search_line,
+                      Remix.user_3_line,
                       color: AppColors.primaryDark,
                       size: 22,
                     ),
@@ -1278,12 +1277,13 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               const SizedBox(height: 14),
               SizedBox(
                 width: double.infinity,
+                height: 44,
                 child: OutlinedButton.icon(
                   key: const ValueKey('btn_view_all_leads'),
                   style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: AppColors.primary),
+                    side: const BorderSide(color: AppColors.primary, width: 1.4),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(22),
                     ),
                     padding: const EdgeInsets.symmetric(vertical: 10),
                   ),
@@ -1298,7 +1298,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     }
                   },
                   icon: const Icon(
-                    Remix.user_add_line,
+                    Remix.user_3_line,
                     size: 16,
                     color: AppColors.primary,
                   ),
@@ -1511,10 +1511,6 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
       statusLabel = 'Not Checked In';
     }
 
-    final officeName = state.status.assignedOffice?.name ?? 'Head Office';
-    final distMeters = state.distanceToOfficeMeters;
-    final isInside = state.isInsideOfficeRadius;
-
     return Container(
       decoration: BoxDecoration(
         color: AppColors.surface,
@@ -1598,128 +1594,49 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           const SizedBox(height: 16),
 
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 14),
             decoration: BoxDecoration(
-              color: AppColors.pillBg,
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: AppColors.borderLight),
+              color: const Color(0xFFF8FAFC),
+              borderRadius: BorderRadius.circular(16),
             ),
-            child: Column(
+            child: Row(
               children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: _buildAttendanceMetricItem(
-                        icon: Remix.login_circle_line,
-                        iconColor: AppColors.primary,
-                        label: 'Check In',
-                        value: state.punchInTimeFormatted,
-                      ),
-                    ),
-                    Container(width: 1, height: 40, color: AppColors.border),
-                    Expanded(
-                      child: _buildAttendanceMetricItem(
-                        icon: Remix.logout_circle_r_line,
-                        iconColor: const Color(0xFFEF4444),
-                        label: 'Check Out',
-                        value: state.punchOutTimeFormatted,
-                      ),
-                    ),
-                  ],
+                Expanded(
+                  child: _buildAttendanceMetricItem(
+                    icon: Remix.checkbox_circle_line,
+                    iconColor: AppColors.primary,
+                    label: 'Check In',
+                    value: _homeTimeValue(state.punchInTimeFormatted),
+                  ),
                 ),
-                const SizedBox(height: 10),
-                Container(height: 1, color: AppColors.border),
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Expanded(
-                      child: _buildAttendanceMetricItem(
-                        icon: Remix.time_line,
-                        iconColor: const Color(0xFF3B82F6),
-                        label: 'Working Hours',
-                        value: state.workingHoursFormatted,
-                        isHighlight: isWorking,
-                      ),
-                    ),
-                    Container(width: 1, height: 40, color: AppColors.border),
-                    Expanded(
-                      child: _buildAttendanceMetricItem(
-                        icon: Remix.cup_line,
-                        iconColor: AppColors.warning,
-                        label: 'Break Taken',
-                        value: state.breakDurationFormatted,
-                        isHighlight: isOnBreak,
-                      ),
-                    ),
-                  ],
+                Expanded(
+                  child: _buildAttendanceMetricItem(
+                    icon: Remix.close_circle_line,
+                    iconColor: const Color(0xFFEF4444),
+                    label: 'Check Out',
+                    value: _homeTimeValue(state.punchOutTimeFormatted),
+                  ),
+                ),
+                Expanded(
+                  child: _buildAttendanceMetricItem(
+                    icon: Remix.time_line,
+                    iconColor: const Color(0xFF38BDF8),
+                    label: 'Working Hours',
+                    value: _homeDurationValue(state.workingHoursFormatted),
+                    isHighlight: isWorking,
+                  ),
+                ),
+                Expanded(
+                  child: _buildAttendanceMetricItem(
+                    icon: Remix.cup_line,
+                    iconColor: const Color(0xFFF59E0B),
+                    label: 'Break Taken',
+                    value: _homeDurationValue(state.breakDurationFormatted),
+                    isHighlight: isOnBreak,
+                  ),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 14),
-
-          // Geofence & Location Info Line
-          Row(
-            children: [
-              Icon(
-                Remix.map_pin_2_line,
-                size: 14,
-                color: state.isRemoteWork
-                    ? AppColors.purple
-                    : (isInside ? AppColors.primary : AppColors.textSecondary),
-              ),
-              const SizedBox(width: 5),
-              Expanded(
-                child: Text(
-                  state.isRemoteWork
-                      ? 'Approved Remote Work Mode'
-                      : '$officeName • ${distMeters != null ? (isInside ? "Inside Office (${distMeters.round()}m)" : "Outside Radius (${distMeters.round()}m)") : "GPS Locating..."}',
-                  style: AppTypography.inter(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w500,
-                    color: state.isRemoteWork
-                        ? AppColors.purple
-                        : (isInside
-                              ? AppColors.primaryDark
-                              : AppColors.textSecondary),
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-              InkWell(
-                onTap: () => ref
-                    .read(employeeAttendanceProvider.notifier)
-                    .checkLocation(forceFresh: true),
-                borderRadius: BorderRadius.circular(4),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 4,
-                    vertical: 2,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        state.isLocating
-                            ? Remix.loader_4_line
-                            : Remix.refresh_line,
-                        size: 12,
-                        color: AppColors.textSecondary,
-                      ),
-                      const SizedBox(width: 2),
-                      Text(
-                        'Refresh GPS',
-                        style: AppTypography.inter(
-                          fontSize: 10,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
           ),
           const SizedBox(height: 14),
 
@@ -2068,7 +1985,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
     // 6. Not Checked In -> Show PUNCH IN
     return SizedBox(
       width: double.infinity,
-      height: 48,
+      height: 50,
       child: ElevatedButton.icon(
         onPressed: () => _handlePunchIn(context),
         icon: const Icon(Remix.fingerprint_line, size: 20, color: Colors.white),
@@ -2076,15 +1993,16 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           'PUNCH IN',
           style: AppTypography.inter(
             fontSize: 15,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w800,
             color: Colors.white,
-            letterSpacing: 0.5,
+            letterSpacing: 0.8,
           ),
         ),
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
+          foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(16),
           ),
           elevation: 0,
         ),
@@ -2296,6 +2214,20 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
     }
   }
 
+  String _homeTimeValue(String value) {
+    if (value.trim().isEmpty || value == '--' || value == '—') {
+      return '--:--';
+    }
+    return value;
+  }
+
+  String _homeDurationValue(String value) {
+    if (value.trim().isEmpty || value == '--' || value == '—') {
+      return '0h 0m';
+    }
+    return value;
+  }
+
   Widget _buildAttendanceMetricItem({
     required IconData icon,
     required Color iconColor,
@@ -2303,43 +2235,34 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
     required String value,
     bool isHighlight = false,
   }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon, size: 12, color: iconColor),
-              const SizedBox(width: 3),
-              Flexible(
-                child: Text(
-                  label,
-                  style: AppTypography.inter(
-                    fontSize: 9,
-                    color: AppColors.textSecondary,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-            ],
+    return Column(
+      children: [
+        Icon(icon, size: 20, color: iconColor),
+        const SizedBox(height: 6),
+        Text(
+          label,
+          textAlign: TextAlign.center,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: AppTypography.inter(
+            fontSize: 10,
+            color: AppColors.textSecondary,
+            fontWeight: FontWeight.w500,
           ),
-          const SizedBox(height: 4),
-          Text(
-            value,
-            style: AppTypography.inter(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              color: isHighlight ? AppColors.primary : AppColors.textPrimary,
-            ),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          value,
+          textAlign: TextAlign.center,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: AppTypography.inter(
+            fontSize: 12,
+            fontWeight: FontWeight.w700,
+            color: isHighlight ? AppColors.primary : AppColors.textPrimary,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

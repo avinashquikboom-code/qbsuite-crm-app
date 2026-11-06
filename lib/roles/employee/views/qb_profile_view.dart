@@ -6,7 +6,6 @@ import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/widgets/qb_widgets.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_profile_viewmodel.dart';
-import 'package:quickboom_app/core/utils/app_currency.dart';
 
 class QBProfileView extends ConsumerStatefulWidget {
   final Function(dynamic)? onNavigateToTab;
@@ -30,7 +29,9 @@ class _QBProfileViewState extends ConsumerState<QBProfileView> {
     String empCode = profile?.employeeCode ?? authState.employeeCode ?? 'EMP001';
     String department = profile?.department ?? 'Sales';
     String email = profile?.email ?? authState.userEmail ?? 'employee@qbsuite.com';
-    String branch = profile?.assignedBranch ?? 'Mumbai Branch';
+    String branch = (profile != null && profile.branch.isNotEmpty)
+        ? profile.branch
+        : 'Mumbai Branch';
 
     return Scaffold(
       backgroundColor: AppColors.background,

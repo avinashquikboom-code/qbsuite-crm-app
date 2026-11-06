@@ -8,7 +8,6 @@ import 'package:quickboom_app/core/widgets/qb_widgets.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_attendance_viewmodel.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_profile_viewmodel.dart';
-import 'package:quickboom_app/shared/widgets/skeleton_loader.dart';
 
 class QBHomeView extends ConsumerStatefulWidget {
   final Function(dynamic)? onNavigateToTab;

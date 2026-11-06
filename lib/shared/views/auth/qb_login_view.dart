@@ -6,10 +6,8 @@ import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/widgets/app_widgets.dart';
 import 'package:quickboom_app/core/utils/app_toast.dart';
-import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/shared/views/auth/forgot_password_view.dart';
 import 'package:quickboom_app/shared/views/auth/employee_registration_view.dart';
-import 'package:quickboom_app/shared/views/auth/customer_registration_view.dart';
 import 'package:quickboom_app/roles/employee/views/dashboard_view.dart';
 
 class QBLoginView extends ConsumerStatefulWidget {
@@ -68,7 +66,6 @@ class _QBLoginViewState extends ConsumerState<QBLoginView> {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
     final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
 
     return Scaffold(
@@ -340,43 +337,7 @@ class _QBLoginViewState extends ConsumerState<QBLoginView> {
                         height: 52,
                       ),
                     ),
-                    const SizedBox(height: 24),
-
-                    // OR Separator
-                    Row(
-                      children: [
-                        const Expanded(child: Divider(color: AppColors.border)),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: Text(
-                            'OR',
-                            style: AppTypography.inter(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.textSecondary,
-                            ),
-                          ),
-                        ),
-                        const Expanded(child: Divider(color: AppColors.border)),
-                      ],
-                    ),
                     const SizedBox(height: 20),
-
-                    // Customer Login Button
-                    SizedBox(
-                      width: double.infinity,
-                      height: 48,
-                      child: AppButton(
-                        label: 'Customer Login',
-                        onPressed: () {
-                          // Navigate to customer login
-                        },
-                        primary: false,
-                        fullWidth: true,
-                        height: 48,
-                      ),
-                    ),
-                    const SizedBox(height: 24),
 
                     // Secure Login Section
                     Container(

@@ -3,7 +3,6 @@ import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/widgets/qb_widgets.dart';
-import 'package:quickboom_app/core/widgets/app_widgets.dart';
 
 class QBLeadsView extends StatefulWidget {
   const QBLeadsView({super.key});

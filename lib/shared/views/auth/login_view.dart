@@ -56,7 +56,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
   late MobileUserRole _currentRole;
   LoginMethod _loginMethod = LoginMethod.email;
   LoginStage _stage = LoginStage.input;
-  bool _isPasswordMode = false;
+  bool _isPasswordMode = true;
   bool _isPasswordVisible = false;
   bool _rememberMe = false;
   String? _identifierError;
@@ -113,6 +113,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
     _currentRole = widget.initialRole == MobileUserRole.admin
         ? MobileUserRole.admin
         : MobileUserRole.employee;
+    _isPasswordMode = true;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       NotificationService.instance.requestAndroidNotificationPermission();
     });
@@ -978,7 +979,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               if (_usesPassword) ...[
                 LoginInputField(
                   controller: _passwordController,
-                  hint: 'Enter your password',
+                  hint: '••••••',
                   prefixIcon: Remix.lock_2_line,
                   isPassword: true,
                   isPasswordVisible: _isPasswordVisible,
@@ -1253,106 +1254,12 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   ),
                 ],
               ],
-              const SizedBox(height: 18),
-
-              // OR Divider
-              Row(
-                children: [
-                  const Expanded(
-                    child: Divider(color: Color(0xFFE2E8F0), height: 1),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      'OR',
-                      style: AppTypography.inter(
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF98A2B3),
-                      ),
-                    ),
-                  ),
-                  const Expanded(
-                    child: Divider(color: Color(0xFFE2E8F0), height: 1),
-                  ),
-                ],
-              ),
-              if (!_isPasswordMode &&
-                  (!_isMobileLogin ||
-                      _currentRole == MobileUserRole.customer)) ...[
-                const SizedBox(height: 14),
-                _buildSecondaryAction(
-                  icon: Remix.lock_2_line,
-                  label: 'Login with Password',
-                  onTap: () {
-                    setState(() {
-                      _isPasswordMode = true;
-                      _mobileOtpSent = false;
-                      _enteredOtp = '';
-                    });
-                    _countdownTimer?.cancel();
-                  },
-                ),
-              ],
-              if (_isPasswordMode &&
-                  _isMobileLogin &&
-                  _currentRole == MobileUserRole.customer) ...[
-                const SizedBox(height: 14),
-                _buildSecondaryAction(
-                  icon: Remix.message_2_line,
-                  label: 'Login with OTP',
-                  onTap: () {
-                    setState(() {
-                      _isPasswordMode = false;
-                      _mobileOtpSent = false;
-                      _enteredOtp = '';
-                    });
-                    _countdownTimer?.cancel();
-                  },
-                ),
-              ],
-              if (_currentRole == MobileUserRole.employee) ...[
-                const SizedBox(height: 14),
-                _buildSecondaryAction(
-                  icon: Remix.user_3_line,
-                  label: 'Customer Login',
-                  onTap: () {
-                    setState(() {
-                      _currentRole = MobileUserRole.customer;
-                      _loginMethod = LoginMethod.email;
-                      _isPasswordMode = false;
-                      _mobileOtpSent = false;
-                      _enteredOtp = '';
-                      _identifierError = null;
-                    });
-                    _countdownTimer?.cancel();
-                  },
-                ),
-              ],
-              if (_currentRole == MobileUserRole.customer) ...[
-                const SizedBox(height: 14),
-                _buildSecondaryAction(
-                  icon: Remix.briefcase_line,
-                  label: 'Employee Login',
-                  onTap: () {
-                    setState(() {
-                      _currentRole = MobileUserRole.employee;
-                      _loginMethod = LoginMethod.email;
-                      _isPasswordMode = true;
-                      _mobileOtpSent = false;
-                      _enteredOtp = '';
-                      _identifierError = null;
-                    });
-                    _countdownTimer?.cancel();
-                  },
-                ),
-              ],
               const SizedBox(height: 16),
 
               // Security Card at bottom of login form
               const SecureLoginCard(),
               if (_currentRole != MobileUserRole.admin) ...[
-                const SizedBox(height: 16),
+                const SizedBox(height: 18),
                 Center(
                   child: Wrap(
                     alignment: WrapAlignment.center,
@@ -1372,7 +1279,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                           style: AppTypography.inter(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
-                            color: const Color(0xFF16A34A),
+                            color: const Color(0xFF5EC269),
                           ),
                         ),
                       ),
@@ -1398,50 +1305,14 @@ class _LoginViewState extends ConsumerState<LoginView> {
     );
   }
 
-  Widget _buildSecondaryAction({
-    required IconData icon,
-    required String label,
-    required VoidCallback onTap,
-  }) {
-    return SizedBox(
-      width: double.infinity,
-      height: 48,
-      child: OutlinedButton(
-        onPressed: _isLoading ? null : onTap,
-        style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: Color(0xFFE8EEF4), width: 1.2),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          backgroundColor: const Color(0xFFF8FAFC),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 18, color: const Color(0xFF64748B)),
-            const SizedBox(width: 8),
-            Text(
-              label,
-              style: AppTypography.inter(
-                fontSize: 14.5,
-                fontWeight: FontWeight.w600,
-                color: const Color(0xFF334155),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   // Login Method Selector Pills
   Widget _buildLoginMethodSelector() {
     final isEmployee = _currentRole == MobileUserRole.employee;
-    final stackMethods = MediaQuery.sizeOf(context).width < 360;
+    final stackMethods = MediaQuery.sizeOf(context).width < 340;
     final pills = <Widget>[
       _buildMethodPill(
         method: LoginMethod.email,
-        label: isEmployee ? 'Email / Employee ID' : 'Email',
+        label: isEmployee ? 'Email / EMP-ID' : 'Email',
         icon: Remix.mail_line,
       ),
       _buildMethodPill(
@@ -1490,6 +1361,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     _loginMethod = method;
                     _identifierError = null;
                     _otpError = null;
+                    if (method == LoginMethod.email) {
+                      _isPasswordMode = true;
+                    }
                     if (method == LoginMethod.mobile &&
                         _identifierController.text.contains('@')) {
                       _identifierController.clear();
@@ -1513,9 +1387,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
               Icon(
                 icon,
                 size: 16,
-                color: isSelected ? Colors.white : const Color(0xFF64748B),
+                color: isSelected ? Colors.white : const Color(0xFF334155),
               ),
-              const SizedBox(width: 6),
+              const SizedBox(width: 8),
               Flexible(
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
@@ -1526,7 +1400,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       fontWeight: FontWeight.w600,
                       color: isSelected
                           ? Colors.white
-                          : const Color(0xFF475569),
+                          : const Color(0xFF1E293B),
                     ),
                   ),
                 ),

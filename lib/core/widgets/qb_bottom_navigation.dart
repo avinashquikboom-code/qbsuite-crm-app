@@ -117,18 +117,10 @@ class _NavItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-              decoration: BoxDecoration(
-                color: isSelected ? AppColors.primaryLight : Colors.transparent,
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Icon(
-                isSelected ? activeIcon : icon,
-                size: 20,
-                color: isSelected ? AppColors.primary : AppColors.textSecondary,
-              ),
+            Icon(
+              isSelected ? activeIcon : icon,
+              size: 22,
+              color: isSelected ? AppColors.primary : AppColors.textSecondary,
             ),
             const SizedBox(height: 2),
             Padding(

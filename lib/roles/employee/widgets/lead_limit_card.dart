@@ -52,19 +52,15 @@ class LeadLimitCard extends ConsumerWidget {
     return Container(
       width: double.infinity,
       margin: margin,
-      padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 12.0),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 14),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: (isDailyExhausted || isMonthlyExhausted)
-              ? AppColors.error.withValues(alpha: 0.3)
-              : Theme.of(context).dividerColor.withValues(alpha: 0.1),
-        ),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: AppColors.border),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 10,
+            blurRadius: 14,
             offset: const Offset(0, 4),
           ),
         ],
@@ -79,16 +75,16 @@ class LeadLimitCard extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 32,
-                height: 32,
+                width: 36,
+                height: 36,
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.primaryLight,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Icon(
                   Remix.shield_user_line,
-                  color: AppColors.primary,
-                  size: 17,
+                  color: AppColors.primaryDark,
+                  size: 18,
                 ),
               ),
               const SizedBox(width: 10),
@@ -100,7 +96,7 @@ class LeadLimitCard extends ConsumerWidget {
                     Text(
                       'Lead Generation Quota',
                       style: AppTypography.inter(
-                        fontSize: 13.5,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: AppColors.textPrimary,
                       ),
@@ -122,18 +118,6 @@ class LeadLimitCard extends ConsumerWidget {
                       ),
                     ],
                   ],
-                ),
-              ),
-              SizedBox(
-                width: 28,
-                height: 28,
-                child: IconButton(
-                  padding: EdgeInsets.zero,
-                  icon: const Icon(Remix.refresh_line, size: 16),
-                  color: AppColors.textSecondary,
-                  tooltip: 'Refresh Quota',
-                  onPressed: () =>
-                      ref.read(leadLimitProvider.notifier).fetchLimits(),
                 ),
               ),
             ],
@@ -227,23 +211,15 @@ class LeadLimitCard extends ConsumerWidget {
         : (progress > 0.85 ? AppColors.warning : accentColor);
 
     return Container(
-      // Width is controlled by Expanded in the parent Row — no fixed width.
-      padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
-        borderRadius: BorderRadius.circular(13),
+        color: const Color(0xFFF8FAFC),
+        borderRadius: BorderRadius.circular(14),
         border: Border.all(
           color: isExhausted
               ? AppColors.error.withValues(alpha: 0.25)
-              : statusColor.withValues(alpha: 0.15),
+              : AppColors.border,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 8,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

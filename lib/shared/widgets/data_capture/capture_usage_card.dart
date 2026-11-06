@@ -16,9 +16,10 @@ class CaptureUsageCard extends StatelessWidget {
     final remaining = usage.quotaRemaining;
     final progress = (used / limit).clamp(0.0, 1.0);
     final isExhausted = remaining <= 0;
+    final isCompact = MediaQuery.sizeOf(context).width < 360;
 
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(isCompact ? 16 : 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(22),
@@ -45,10 +46,10 @@ class CaptureUsageCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
+                        shape: BoxShape.circle,
                         color: isExhausted
                             ? AppColors.error.withValues(alpha: 0.1)
                             : AppColors.primaryLight,
-                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Icon(
                         isExhausted
@@ -94,8 +95,8 @@ class CaptureUsageCard extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
+                padding: EdgeInsets.symmetric(
+                  horizontal: isCompact ? 8 : 10,
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
@@ -136,22 +137,31 @@ class CaptureUsageCard extends StatelessWidget {
           const SizedBox(height: 12),
 
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Used: $used / $limit',
-                style: AppTypography.inter(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textSecondary,
+              Expanded(
+                child: Text(
+                  'Used: $used / $limit',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTypography.inter(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ),
-              Text(
-                '${(progress * 100).toInt()}% consumed',
-                style: AppTypography.inter(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+              const SizedBox(width: 8),
+              Flexible(
+                child: Text(
+                  '${(progress * 100).toInt()}% consumed',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.right,
+                  style: AppTypography.inter(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textPrimary,
+                  ),
                 ),
               ),
             ],
