@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
+import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/theme/app_theme.dart';
 
 class SplashView extends ConsumerStatefulWidget {
@@ -55,7 +56,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
         (loginState.hasStartupError ? loginState.startupError : null);
 
     return Scaffold(
-      backgroundColor: AppTheme.mainBg,
+      backgroundColor: AppColors.background,
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),

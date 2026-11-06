@@ -1,4 +1,3 @@
-import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
@@ -26,6 +25,7 @@ import 'notifications_view.dart';
 import '../widgets/lead_limit_card.dart';
 import '../viewmodels/lead_limit_viewmodel.dart';
 import 'package:quickboom_app/shared/views/leads/leads_view.dart';
+import 'sidebar_views/qb_attendance_view.dart';
 
 class EmployeeHomeView extends ConsumerStatefulWidget {
   final Function(dynamic)? onNavigateToTab;
@@ -539,7 +539,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                         ),
                         TextButton.icon(
                           onPressed: _refreshAllData,
-                          icon: const Icon(LegacyRemixIcons.refresh),
+                          icon: const Icon(Remix.refresh_line),
                           label: const Text('Retry dashboard'),
                         ),
                       ],
@@ -1597,7 +1597,6 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
           ),
           const SizedBox(height: 16),
 
-          // 2x2 Key Metrics Grid
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
             decoration: BoxDecoration(
@@ -1605,48 +1604,54 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               borderRadius: BorderRadius.circular(14),
               border: Border.all(color: AppColors.borderLight),
             ),
-            child: Row(
+            child: Column(
               children: [
-                // Metric 1: Check In
-                Expanded(
-                  child: _buildAttendanceMetricItem(
-                    icon: Remix.login_circle_line,
-                    iconColor: AppColors.primary,
-                    label: 'Check In',
-                    value: state.punchInTimeFormatted,
-                  ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: _buildAttendanceMetricItem(
+                        icon: Remix.login_circle_line,
+                        iconColor: AppColors.primary,
+                        label: 'Check In',
+                        value: state.punchInTimeFormatted,
+                      ),
+                    ),
+                    Container(width: 1, height: 40, color: AppColors.border),
+                    Expanded(
+                      child: _buildAttendanceMetricItem(
+                        icon: Remix.logout_circle_r_line,
+                        iconColor: const Color(0xFFEF4444),
+                        label: 'Check Out',
+                        value: state.punchOutTimeFormatted,
+                      ),
+                    ),
+                  ],
                 ),
-                Container(width: 1, height: 36, color: AppColors.border),
-                // Metric 2: Check Out
-                Expanded(
-                  child: _buildAttendanceMetricItem(
-                    icon: Remix.logout_circle_r_line,
-                    iconColor: const Color(0xFFEF4444),
-                    label: 'Check Out',
-                    value: state.punchOutTimeFormatted,
-                  ),
-                ),
-                Container(width: 1, height: 36, color: AppColors.border),
-                // Metric 3: Working Hours
-                Expanded(
-                  child: _buildAttendanceMetricItem(
-                    icon: Remix.time_line,
-                    iconColor: const Color(0xFF3B82F6),
-                    label: 'Working Hours',
-                    value: state.workingHoursFormatted,
-                    isHighlight: isWorking,
-                  ),
-                ),
-                Container(width: 1, height: 36, color: AppColors.border),
-                // Metric 4: Break Taken
-                Expanded(
-                  child: _buildAttendanceMetricItem(
-                    icon: Remix.cup_line,
-                    iconColor: AppColors.warning,
-                    label: 'Break Taken',
-                    value: state.breakDurationFormatted,
-                    isHighlight: isOnBreak,
-                  ),
+                const SizedBox(height: 10),
+                Container(height: 1, color: AppColors.border),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    Expanded(
+                      child: _buildAttendanceMetricItem(
+                        icon: Remix.time_line,
+                        iconColor: const Color(0xFF3B82F6),
+                        label: 'Working Hours',
+                        value: state.workingHoursFormatted,
+                        isHighlight: isWorking,
+                      ),
+                    ),
+                    Container(width: 1, height: 40, color: AppColors.border),
+                    Expanded(
+                      child: _buildAttendanceMetricItem(
+                        icon: Remix.cup_line,
+                        iconColor: AppColors.warning,
+                        label: 'Break Taken',
+                        value: state.breakDurationFormatted,
+                        isHighlight: isOnBreak,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -2095,6 +2100,12 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
     if (!context.mounted) return;
     if (success) {
       AppToast.success(context, 'Punched in successfully! Have a great shift.');
+      if (context.mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const QBAttendanceView()),
+        );
+      }
     } else {
       final err =
           ref.read(employeeAttendanceProvider).actionError ??

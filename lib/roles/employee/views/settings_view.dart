@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
-import 'package:quickboom_app/core/services/permission_manager.dart';
+import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
+import 'package:quickboom_app/core/theme/app_typography.dart';
+import 'package:quickboom_app/core/widgets/qb_widgets.dart';
 import 'package:quickboom_app/shared/widgets/app_app_bar.dart';
 import 'edit_profile_view.dart';
 
@@ -12,215 +13,177 @@ class SettingsView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final perms = ref.watch(permissionManagerProvider);
-    final canViewProfile = perms.canViewSetting('PROFILE');
-    final canViewNotifications = perms.canViewSetting('NOTIFICATIONS');
-
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: const AppAppBar(title: 'Account Settings'),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (canViewProfile) ...[
-              _buildSectionHeader('Profile & Security'),
-              const SizedBox(height: 12),
-              _buildSettingsContainer(
-                children: [
-                  _buildSettingsTile(
+            _sectionTitle('Account'),
+            const SizedBox(height: 12),
+            _card([
+              ProfileMenuItem(
+                icon: Remix.lock_line,
+                label: 'Change Password',
+                onTap: () {
+                  Navigator.push(
                     context,
-                    title: 'Profile Information',
-                    subtitle: 'Edit your name, email and avatar',
-                    icon: Remix.user_3_line,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const EditProfileView(),
-                        ),
-                      );
-                    },
-                  ),
-                  _buildDivider(),
-                  _buildSettingsTile(
-                    context,
-                    title: 'Change Password',
-                    subtitle: 'Update your account password',
-                    icon: Remix.lock_2_line,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const EditProfileView(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
+                    MaterialPageRoute(builder: (_) => const EditProfileView()),
+                  );
+                },
               ),
-              const SizedBox(height: 28),
-            ],
-            _buildSectionHeader('Preferences'),
+              _divider(),
+              ProfileMenuItem(
+                icon: Remix.notification_3_line,
+                label: 'Notification Settings',
+                onTap: () {},
+              ),
+            ]),
+            const SizedBox(height: 24),
+            _sectionTitle('Preferences'),
             const SizedBox(height: 12),
-            _buildSettingsContainer(
-              children: [
-                if (canViewNotifications) ...[
-                  _buildSettingsTile(
-                    context,
-                    title: 'Notifications',
-                    subtitle: 'Manage app and email alerts',
-                    icon: Remix.notification_3_line,
-                    onTap: () {},
-                  ),
-                  _buildDivider(),
-                ],
-                _buildSettingsTile(
-                  context,
-                  title: 'Appearance',
-                  subtitle: 'Themes and layout options',
-                  icon: Remix.palette_line,
-                  onTap: () {},
+            _card([
+              ProfileMenuItem(
+                icon: Remix.global_line,
+                label: 'App Language',
+                onTap: () {},
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'English',
+                      style: AppTypography.inter(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    const Icon(
+                      Remix.arrow_right_s_line,
+                      size: 18,
+                      color: AppColors.textSecondary,
+                    ),
+                  ],
                 ),
-                _buildDivider(),
-                _buildSettingsTile(
-                  context,
-                  title: 'Language',
-                  subtitle: 'English (US)',
-                  icon: Remix.translate_2,
-                  onTap: () {},
-                ),
-              ],
-            ),
-            const SizedBox(height: 28),
-            _buildSectionHeader('About'),
+                showArrow: false,
+              ),
+            ]),
+            const SizedBox(height: 24),
+            _sectionTitle('Support'),
             const SizedBox(height: 12),
-            _buildSettingsContainer(
-              children: [
-                _buildSettingsTile(
-                  context,
-                  title: 'Privacy Policy',
-                  icon: Remix.article_line,
-                  onTap: () {},
+            _card([
+              ProfileMenuItem(
+                icon: Remix.information_line,
+                label: 'About QB Suite',
+                onTap: () {},
+              ),
+              _divider(),
+              ProfileMenuItem(
+                icon: Remix.question_line,
+                label: 'Help & Support',
+                onTap: () {},
+              ),
+            ]),
+            const SizedBox(height: 24),
+            _card([
+              ProfileMenuItem(
+                icon: Remix.logout_box_r_line,
+                label: 'Logout',
+                onTap: () => _showLogoutDialog(context, ref),
+              ),
+            ]),
+            const SizedBox(height: 24),
+            Center(
+              child: Text(
+                'QB Suite v1.0.2',
+                style: AppTypography.inter(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textSecondary,
                 ),
-                _buildDivider(),
-                _buildSettingsTile(
-                  context,
-                  title: 'Terms of Service',
-                  icon: Remix.file_text_line,
-                  onTap: () {},
-                ),
-                _buildDivider(),
-                _buildSettingsTile(
-                  context,
-                  title: 'App Version',
-                  subtitle: 'v1.0.0 (Build 12)',
-                  icon: Remix.information_line,
-                  hideTrailing: true,
-                  onTap: () {},
-                ),
-              ],
+              ),
             ),
-            const SizedBox(height: 32),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildSectionHeader(String title) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 4, bottom: 4),
-      child: Text(
-        title.toUpperCase(),
-        style: AppTypography.inter(
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-          color: AppColors.textSecondary,
-          letterSpacing: 1.2,
-        ),
+  Widget _sectionTitle(String title) {
+    return Text(
+      title,
+      style: AppTypography.inter(
+        fontSize: 13,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textSecondary,
+        letterSpacing: 0.5,
       ),
     );
   }
 
-  Widget _buildSettingsContainer({required List<Widget> children}) {
+  Widget _card(List<Widget> children) {
     return Container(
+      width: double.infinity,
       decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.02),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+        border: Border.all(color: AppColors.border),
+      ),
+      child: Column(children: children),
+    );
+  }
+
+  Widget _divider() {
+    return Container(
+      height: 1,
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      color: AppColors.border,
+    );
+  }
+
+  void _showLogoutDialog(BuildContext context, WidgetRef ref) {
+    showDialog(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(
+          'Logout',
+          style: AppTypography.inter(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: AppColors.textPrimary,
+          ),
+        ),
+        content: Text(
+          'Are you sure you want to logout from your account?',
+          style: AppTypography.inter(
+            fontSize: 14,
+            color: AppColors.textSecondary,
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: Text(
+              'Cancel',
+              style: AppTypography.inter(color: AppColors.textSecondary),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Navigator.pop(dialogContext);
+              await ref.read(loginStateProvider.notifier).logout();
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.error,
+              foregroundColor: Colors.white,
+            ),
+            child: const Text('Logout'),
           ),
         ],
       ),
-      child: Material(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: AppColors.border),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: Column(children: children),
-      ),
-    );
-  }
-
-  Widget _buildDivider() {
-    return const Divider(
-      height: 1,
-      thickness: 1,
-      color: AppColors.border,
-      indent: 52,
-    );
-  }
-
-  Widget _buildSettingsTile(
-    BuildContext context, {
-    required String title,
-    String? subtitle,
-    required IconData icon,
-    required VoidCallback onTap,
-    bool hideTrailing = false,
-  }) {
-    return ListTile(
-      onTap: onTap,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      leading: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: AppColors.primary.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Icon(icon, color: AppColors.primary, size: 20),
-      ),
-      title: Text(
-        title,
-        style: AppTypography.inter(
-          fontWeight: FontWeight.w600,
-          fontSize: 15,
-          color: AppColors.textPrimary,
-        ),
-      ),
-      subtitle: subtitle != null
-          ? Text(
-              subtitle,
-              style: AppTypography.inter(
-                fontSize: 13,
-                color: AppColors.textSecondary,
-              ),
-            )
-          : null,
-      trailing: hideTrailing
-          ? null
-          : const Icon(
-              Remix.arrow_right_s_line,
-              color: AppColors.textPlaceholder,
-              size: 20,
-            ),
     );
   }
 }

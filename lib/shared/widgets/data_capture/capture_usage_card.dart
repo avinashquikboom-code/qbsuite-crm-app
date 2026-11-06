@@ -1,5 +1,5 @@
-import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/shared/models/data_capture_model.dart';
@@ -52,8 +52,8 @@ class CaptureUsageCard extends StatelessWidget {
                       ),
                       child: Icon(
                         isExhausted
-                            ? LegacyRemixIcons.warningAmberRounded
-                            : LegacyRemixIcons.pieChartRounded,
+                            ? Remix.alert_line
+                            : Remix.pie_chart_line,
                         color: isExhausted
                             ? AppColors.error
                             : AppColors.primary,
@@ -168,7 +168,7 @@ class CaptureUsageCard extends StatelessWidget {
               child: Row(
                 children: [
                   const Icon(
-                    LegacyRemixIcons.infoOutlineRounded,
+                    Remix.information_line,
                     color: AppColors.error,
                     size: 16,
                   ),

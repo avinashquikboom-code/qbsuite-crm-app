@@ -16,6 +16,7 @@ import '../viewmodels/employee_claim_viewmodel.dart';
 import '../viewmodels/employee_loan_viewmodel.dart';
 import '../viewmodels/employee_remote_work_viewmodel.dart';
 import 'package:quickboom_app/shared/widgets/skeleton_loader.dart';
+import 'qb_leave_request_view.dart';
 
 class RequestsView extends ConsumerStatefulWidget {
   final int initialTabIndex;
@@ -72,6 +73,7 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
   }
 
   // ── LEAVE MODAL ─────────────────────────────────────────────────────────────
+  // ignore: unused_element
   void _showApplyLeaveModal(List<LeaveBalanceItem> balances) {
     int selectedTypeId = balances.isNotEmpty && balances[0].id != null
         ? balances[0].id!
@@ -1401,7 +1403,17 @@ class _RequestsViewState extends ConsumerState<RequestsView> {
                 ),
                 if (canCreateLeave)
                   ElevatedButton.icon(
-                    onPressed: () => _showApplyLeaveModal(leaveState.balances),
+                    onPressed: () async {
+                      final submitted = await Navigator.push<bool>(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const QBLeaveRequestView(),
+                        ),
+                      );
+                      if (submitted == true && mounted) {
+                        ref.read(employeeLeaveProvider.notifier).loadAll();
+                      }
+                    },
                     icon: const Icon(Remix.add_line, size: 16),
                     label: const Text('Apply'),
                     style: ElevatedButton.styleFrom(

@@ -195,8 +195,19 @@ class _LeadsViewState extends ConsumerState<LeadsView>
     final stageCounts = ref.watch(leadsStageCountsProvider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
-      appBar: AppAppBar(title: 'Leads Pipeline'),
+      backgroundColor: AppColors.background,
+      appBar: AppAppBar(
+        title: 'Leads Pipeline',
+        actions: [
+          IconButton(
+            icon: const Icon(Remix.refresh_line, color: AppColors.textPrimary),
+            onPressed: () {
+              ref.read(leadStagesProvider.notifier).refresh();
+              ref.read(leadsProvider.notifier).refreshLeads();
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           if (stagesAsync.hasError)
@@ -229,7 +240,7 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                   child: TextField(
                     controller: _searchController,
                     decoration: InputDecoration(
-                      hintText: 'Search leads by company, contact, phone...',
+                      hintText: 'Search leads by company, contact or phone',
                       hintStyle: AppTypography.inter(
                         fontSize: 14,
                         color: AppColors.textSecondary,
@@ -673,46 +684,96 @@ class _LeadsViewState extends ConsumerState<LeadsView>
                   ),
                 ],
                 const SizedBox(height: 8),
-                Row(
-                  children: [
-                    if (lead.phone != null && lead.phone!.isNotEmpty) ...[
-                      const Icon(
-                        Remix.phone_line,
-                        size: 14,
-                        color: AppColors.textSecondary,
+                if (lead.phone != null && lead.phone!.isNotEmpty)
+                  _LeadMetaRow(
+                    icon: Remix.phone_line,
+                    value: lead.phone!,
+                  ),
+                if (_leadLocation(lead).isNotEmpty) ...[
+                  const SizedBox(height: 6),
+                  _LeadMetaRow(
+                    icon: Remix.map_pin_line,
+                    value: _leadLocation(lead),
+                  ),
+                ],
+                if (lead.assignedToName != null &&
+                    lead.assignedToName!.trim().isNotEmpty) ...[
+                  const SizedBox(height: 6),
+                  _LeadMetaRow(
+                    icon: Remix.user_3_line,
+                    value: lead.assignedToName!,
+                  ),
+                ],
+                if (lead.visitScheduledAt != null &&
+                    lead.visitScheduledAt!.isNotEmpty) ...[
+                  const SizedBox(height: 6),
+                  _LeadMetaRow(
+                    icon: Remix.calendar_line,
+                    value: lead.visitScheduledAt!,
+                  ),
+                ],
+                if ((lead.visitStatus ?? '').toLowerCase().contains('sched') ||
+                    (lead.status.toUpperCase().contains('VISIT'))) ...[
+                  const SizedBox(height: 10),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryLight,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      'Visit Scheduled',
+                      style: AppTypography.inter(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.primaryDark,
                       ),
-                      const SizedBox(width: 4),
-                      Text(
-                        lead.phone!,
-                        style: AppTypography.inter(
-                          fontSize: 13,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                    ],
-                    if (lead.city != null && lead.city!.isNotEmpty) ...[
-                      const Icon(
-                        Remix.map_pin_2_line,
-                        size: 14,
-                        color: AppColors.textSecondary,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        lead.city!,
-                        style: AppTypography.inter(
-                          fontSize: 13,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  String _leadLocation(LeadModel lead) {
+    return [
+      lead.city,
+      lead.state,
+    ].where((value) => value != null && value.trim().isNotEmpty).join(', ');
+  }
+}
+
+class _LeadMetaRow extends StatelessWidget {
+  const _LeadMetaRow({required this.icon, required this.value});
+
+  final IconData icon;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(icon, size: 14, color: AppColors.textSecondary),
+        const SizedBox(width: 6),
+        Expanded(
+          child: Text(
+            value,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTypography.inter(
+              fontSize: 13,
+              color: AppColors.textSecondary,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

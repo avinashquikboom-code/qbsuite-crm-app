@@ -4,6 +4,7 @@ import 'package:quickboom_app/shared/widgets/permission_guarded_view.dart';
 import 'package:quickboom_app/shared/views/data_capture/data_capture_home_screen.dart';
 import 'package:quickboom_app/shared/views/leads/leads_view.dart';
 import '../views/views.dart';
+import '../views/qb_leave_request_view.dart';
 import 'package:quickboom_app/roles/employee/views/sidebar_views/customers_view.dart';
 
 /// Centralized route definitions for Employee workspace.
@@ -34,6 +35,7 @@ class EmployeeRoutes {
   static const String dataCapture = '/employee/data-capture';
   static const String leads = '/employee/leads';
   static const String customers = '/employee/customers';
+  static const String leaveRequest = '/employee/leave-request';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return {
@@ -46,6 +48,11 @@ class EmployeeRoutes {
         moduleKey: AppModule.leave,
         moduleTitle: 'Requests & Leaves',
         child: RequestsView(),
+      ),
+      leaveRequest: (_) => const PermissionGuardedView(
+        moduleKey: AppModule.leave,
+        moduleTitle: 'Leave Request',
+        child: QBLeaveRequestView(),
       ),
       salarySlip: (_) => const PermissionGuardedView(
         moduleKey: AppModule.salary,

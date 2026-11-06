@@ -1,4 +1,4 @@
-import 'package:quickboom_app/core/icons/remix_icon.dart';
+import 'package:remixicon/remixicon.dart';
 import 'data_capture_history_screen.dart';
 import '../../services/data_capture_records_service.dart';
 import 'data_capture_records_screen.dart';
@@ -66,7 +66,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
         actions: [
           IconButton(
             tooltip: 'Saved records',
-            icon: const Icon(LegacyRemixIcons.listAlt),
+            icon: const Icon(Remix.file_list_3_line),
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
@@ -76,8 +76,8 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
           ),
           IconButton(
             icon: const Icon(
-              LegacyRemixIcons.refreshRounded,
-              color: AppColors.textSecondary,
+              Remix.refresh_line,
+              color: AppColors.textPrimary,
             ),
             onPressed: _loadData,
           ),
@@ -96,21 +96,17 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
             children: [
               // Banner Card
               Container(
-                padding: const EdgeInsets.all(22),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [
-                      Color(0xFF0F3822),
-                      Color(0xFF14532D),
-                      Color(0xFF0F172A),
-                    ],
+                    colors: [AppColors.primaryDark, AppColors.primary],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-                  borderRadius: BorderRadius.circular(24),
+                  borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.primaryDark.withValues(alpha: 0.2),
+                      color: AppColors.primary.withValues(alpha: 0.28),
                       blurRadius: 20,
                       offset: const Offset(0, 8),
                     ),
@@ -119,39 +115,16 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 4,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.primary.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: AppColors.primary.withValues(alpha: 0.4),
-                            ),
-                          ),
-                          child: Text(
-                            'GOOGLE PLACES LEAD CAPTURE',
-                            style: AppTypography.inter(
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.primaryLight,
-                              letterSpacing: 0.8,
-                            ),
-                          ),
-                        ),
-                        const Icon(
-                          LegacyRemixIcons.travelExploreRounded,
-                          color: AppColors.primaryLight,
-                          size: 26,
-                        ),
-                      ],
+                    Text(
+                      'Google Places Lead Capture',
+                      style: AppTypography.inter(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white.withValues(alpha: 0.9),
+                        letterSpacing: 0.2,
+                      ),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 8),
                     Text(
                       'Find Businesses & Prospects',
                       style: AppTypography.inter(
@@ -160,20 +133,20 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 8),
                     Text(
-                      'Find verified businesses and extract prospective leads directly from Google Places into your CRM pipeline.',
+                      'Find verified businesses and extract prospect leads directly into your CRM pipeline.',
                       style: AppTypography.inter(
                         fontSize: 13,
-                        color: Colors.white70,
-                        height: 1.3,
+                        color: Colors.white.withValues(alpha: 0.85),
+                        height: 1.35,
                       ),
                     ),
                     const SizedBox(height: 18),
                     SizedBox(
                       width: double.infinity,
                       height: 48,
-                      child: ElevatedButton.icon(
+                      child: ElevatedButton(
                         onPressed: () async {
                           final result = await Navigator.push(
                             context,
@@ -185,23 +158,19 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                             _loadData();
                           }
                         },
-                        icon: const Icon(
-                          LegacyRemixIcons.searchRounded,
-                          size: 20,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: AppColors.primaryDark,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
-                        label: Text(
+                        child: Text(
                           'Start New Capture',
                           style: AppTypography.inter(
                             fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
-                          foregroundColor: Colors.white,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(14),
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
@@ -209,49 +178,27 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
-
-              // Subscription Usage Card
-              OutlinedButton.icon(
-                onPressed: () => Navigator.push(
+              const SizedBox(height: 16),
+              _DataCaptureOption(
+                icon: Remix.file_list_3_line,
+                title: 'View Saved Data Capture Records',
+                subtitle: 'Access your previously captured leads',
+                onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (_) => const DataCaptureRecordsScreen(),
                   ),
                 ),
-                icon: const Icon(LegacyRemixIcons.listAlt),
-                label: const Text('View saved Data Capture records'),
               ),
               const SizedBox(height: 12),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  leading: const Icon(
-                    LegacyRemixIcons.historyRounded,
-                    color: AppColors.primary,
-                  ),
-                  title: Text(
-                    'Capture History',
-                    style: AppTypography.inter(fontWeight: FontWeight.w600),
-                  ),
-                  subtitle: const Text(
-                    'View your previous business searches and captures',
-                  ),
-                  trailing: const Icon(
-                    LegacyRemixIcons.chevronRight,
-                    color: AppColors.primary,
-                  ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const DataCaptureHistoryScreen(),
-                    ),
+              _DataCaptureOption(
+                icon: Remix.history_line,
+                title: 'Capture History',
+                subtitle: 'View all your capture activities',
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const DataCaptureHistoryScreen(),
                   ),
                 ),
               ),
@@ -320,7 +267,7 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
                 key: const ValueKey('metric_tile_total_captured'),
                 title: 'Total Captured',
                 value: '${_usage.totalLeadsCaptured}',
-                icon: LegacyRemixIcons.groupsRounded,
+                icon: Remix.database_2_line,
                 color: AppColors.primary,
                 horizontalPadding: horizontalPadding,
                 verticalPadding: verticalPadding,
@@ -332,9 +279,9 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
             Expanded(
               child: _buildMetricTile(
                 key: const ValueKey('metric_tile_extractions'),
-                title: 'Extractions',
+                title: 'Successful',
                 value: '${_usage.totalExtractions}',
-                icon: LegacyRemixIcons.historyEduRounded,
+                icon: Remix.check_double_line,
                 color: AppColors.secondary,
                 horizontalPadding: horizontalPadding,
                 verticalPadding: verticalPadding,
@@ -346,9 +293,9 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
             Expanded(
               child: _buildMetricTile(
                 key: const ValueKey('metric_tile_searches'),
-                title: 'Searches',
+                title: 'Total Searches',
                 value: '${_usage.searches}',
-                icon: LegacyRemixIcons.searchRounded,
+                icon: Remix.search_line,
                 color: AppColors.primary,
                 horizontalPadding: horizontalPadding,
                 verticalPadding: verticalPadding,
@@ -475,6 +422,80 @@ class _DataCaptureHomeScreenState extends State<DataCaptureHomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _DataCaptureOption extends StatelessWidget {
+  const _DataCaptureOption({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryLight,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(icon, color: AppColors.primaryDark, size: 22),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: AppTypography.inter(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      subtitle,
+                      style: AppTypography.inter(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(
+                Remix.arrow_right_s_line,
+                color: AppColors.textSecondary,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

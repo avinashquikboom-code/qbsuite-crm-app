@@ -15,6 +15,7 @@ import 'package:quickboom_app/core/utils/app_toast.dart';
 import '../models/employee_payroll_model.dart';
 import '../viewmodels/employee_payroll_viewmodel.dart';
 import '../viewmodels/employee_profile_viewmodel.dart';
+import 'package:quickboom_app/core/widgets/qb_widgets.dart';
 
 class SalarySlipView extends ConsumerStatefulWidget {
   const SalarySlipView({super.key});
@@ -961,11 +962,17 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView>
       separatorBuilder: (_, _) => const SizedBox(height: 10),
       itemBuilder: (context, index) {
         final slip = displaySlips[index];
-        return _buildHistoryCard(slip);
+        return SalaryCard(
+          month: slip.month,
+          amount: formatCurrency(slip.netSalary),
+          status: slip.status ?? 'Paid',
+          onDownload: () => _handleDownloadPdf(context, slip),
+        );
       },
     );
   }
 
+  // ignore: unused_element
   Widget _buildHistoryCard(SalarySlipItem slip) {
     final disbursedDate = formatDisplayDate(slip.date);
 

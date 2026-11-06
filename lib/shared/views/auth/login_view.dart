@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quickboom_app/core/theme/app_colors.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:dio/dio.dart';
@@ -865,7 +866,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
     final maxWidth = _loginCardMaxWidth(width);
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF8FAFC),
+      backgroundColor: AppColors.background,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: LayoutBuilder(
@@ -1134,7 +1135,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [Color(0xFF34D36A), Color(0xFF16A34A)],
+                      colors: [AppColors.primary, AppColors.primaryDark],
                     ),
                     borderRadius: BorderRadius.circular(14),
                   ),
@@ -1310,6 +1311,42 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   },
                 ),
               ],
+              if (_currentRole == MobileUserRole.employee) ...[
+                const SizedBox(height: 14),
+                _buildSecondaryAction(
+                  icon: Remix.user_3_line,
+                  label: 'Customer Login',
+                  onTap: () {
+                    setState(() {
+                      _currentRole = MobileUserRole.customer;
+                      _loginMethod = LoginMethod.email;
+                      _isPasswordMode = false;
+                      _mobileOtpSent = false;
+                      _enteredOtp = '';
+                      _identifierError = null;
+                    });
+                    _countdownTimer?.cancel();
+                  },
+                ),
+              ],
+              if (_currentRole == MobileUserRole.customer) ...[
+                const SizedBox(height: 14),
+                _buildSecondaryAction(
+                  icon: Remix.briefcase_line,
+                  label: 'Employee Login',
+                  onTap: () {
+                    setState(() {
+                      _currentRole = MobileUserRole.employee;
+                      _loginMethod = LoginMethod.email;
+                      _isPasswordMode = true;
+                      _mobileOtpSent = false;
+                      _enteredOtp = '';
+                      _identifierError = null;
+                    });
+                    _countdownTimer?.cancel();
+                  },
+                ),
+              ],
               const SizedBox(height: 16),
 
               // Security Card at bottom of login form
@@ -1404,7 +1441,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
     final pills = <Widget>[
       _buildMethodPill(
         method: LoginMethod.email,
-        label: isEmployee ? 'Email / EMP-ID' : 'Email',
+        label: isEmployee ? 'Email / Employee ID' : 'Email',
         icon: Remix.mail_line,
       ),
       _buildMethodPill(
@@ -1466,7 +1503,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
           decoration: BoxDecoration(
             color: isSelected
-                ? const Color(0xFF22C55E)
+                ? AppColors.primary
                 : const Color(0xFFF1F5F9),
             borderRadius: BorderRadius.circular(12),
           ),

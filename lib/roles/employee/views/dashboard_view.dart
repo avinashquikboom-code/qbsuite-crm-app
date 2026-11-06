@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/services/permission_manager.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
@@ -24,6 +23,7 @@ import 'visitor/visitor_history_view.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_profile_viewmodel.dart';
 import 'package:quickboom_app/roles/employee/viewmodels/employee_attendance_viewmodel.dart';
 import 'package:quickboom_app/core/services/notification_service.dart';
+import 'package:quickboom_app/core/widgets/qb_bottom_navigation.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Data class for a bottom-nav tab item
@@ -473,90 +473,21 @@ class _DashboardViewState extends ConsumerState<DashboardView>
           duration: const Duration(milliseconds: 250),
           child: tabs[safeIndex].page,
         ),
-        bottomNavigationBar: Material(
-          color: Colors.white,
-          elevation: 8,
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              border: Border(
-                top: BorderSide(color: AppColors.border, width: 1),
+        bottomNavigationBar: QBBottomNavigation(
+          currentIndex: safeIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+            _syncSidebarSelection(tabs[index].label);
+          },
+          items: [
+            for (final tab in tabs)
+              QBNavItem(
+                label: tab.label,
+                icon: tab.icon,
+                activeIcon: tab.activeIcon,
               ),
-            ),
-            child: SafeArea(
-              top: false,
-              left: false,
-              right: false,
-              child: SizedBox(
-                height: 62,
-                child: Row(
-                  children: [
-                    for (int i = 0; i < tabs.length; i++)
-                      _buildNavItem(
-                        i,
-                        tabs[i].label,
-                        tabs[i].icon,
-                        tabs[i].activeIcon,
-                      ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildNavItem(
-    int index,
-    String label,
-    IconData icon,
-    IconData activeIcon,
-  ) {
-    final isSelected = _currentIndex == index;
-    return Expanded(
-      child: InkWell(
-        onTap: () {
-          setState(() {
-            _currentIndex = index;
-          });
-          _syncSidebarSelection(label);
-        },
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-              decoration: BoxDecoration(
-                color: isSelected ? AppColors.primaryLight : Colors.transparent,
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Icon(
-                isSelected ? activeIcon : icon,
-                size: 20,
-                color: isSelected ? AppColors.primary : AppColors.textSecondary,
-              ),
-            ),
-            const SizedBox(height: 2),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  label,
-                  style: AppTypography.inter(
-                    fontSize: 10,
-                    fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
-                    color: isSelected
-                        ? AppColors.primary
-                        : AppColors.textSecondary,
-                  ),
-                  maxLines: 1,
-                ),
-              ),
-            ),
           ],
         ),
       ),

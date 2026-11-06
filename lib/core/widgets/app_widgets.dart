@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../icons/remix_icon.dart';
+import '../theme/app_colors.dart';
+import '../theme/app_typography.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
@@ -8,16 +10,64 @@ class AppButton extends StatelessWidget {
     required this.label,
     this.onPressed,
     this.loading = false,
+    this.primary = true,
+    this.fullWidth = false,
+    this.height = 48,
+    this.icon,
   });
   final String label;
   final VoidCallback? onPressed;
   final bool loading;
+  final bool primary;
+  final bool fullWidth;
+  final double height;
+  final IconData? icon;
+
   @override
-  Widget build(BuildContext context) => FilledButton(
-    onPressed: loading ? null : onPressed,
-    child: loading
-        ? const SizedBox.square(dimension: 20, child: AppLoader())
-        : Text(label),
+  Widget build(BuildContext context) => SizedBox(
+    width: fullWidth ? double.infinity : null,
+    height: height,
+    child: ElevatedButton(
+      onPressed: loading ? null : onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primary ? AppColors.primary : Colors.white,
+        foregroundColor: primary ? Colors.white : AppColors.primary,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: BorderSide(
+            color: primary ? Colors.transparent : AppColors.primary,
+            width: 1.5,
+          ),
+        ),
+      ),
+      child: loading
+          ? const SizedBox(
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(
+                strokeWidth: 2,
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
+            )
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (icon != null) ...[
+                  Icon(icon, size: 18),
+                  const SizedBox(width: 8),
+                ],
+                Text(
+                  label,
+                  style: AppTypography.inter(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            ),
+    ),
   );
 }
 
@@ -30,6 +80,11 @@ class AppTextField extends StatelessWidget {
     this.keyboardType,
     this.onChanged,
     this.autofillHints,
+    this.suffixIcon,
+    this.onSuffixIconPressed,
+    this.errorText,
+    this.height = 48,
+    this.hintText,
   });
   final String label;
   final TextEditingController? controller;
@@ -37,16 +92,66 @@ class AppTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged;
   final Iterable<String>? autofillHints;
+  final IconData? suffixIcon;
+  final VoidCallback? onSuffixIconPressed;
+  final String? errorText;
+  final double height;
+  final String? hintText;
+
   @override
-  Widget build(BuildContext context) => TextField(
-    controller: controller,
-    obscureText: obscureText,
-    keyboardType: keyboardType,
-    onChanged: onChanged,
-    autofillHints: autofillHints,
-    autocorrect: !obscureText,
-    enableSuggestions: !obscureText,
-    decoration: InputDecoration(labelText: label),
+  Widget build(BuildContext context) => SizedBox(
+    height: height,
+    child: TextField(
+      controller: controller,
+      obscureText: obscureText,
+      keyboardType: keyboardType,
+      onChanged: onChanged,
+      autofillHints: autofillHints,
+      autocorrect: !obscureText,
+      enableSuggestions: !obscureText,
+      style: AppTypography.inter(
+        fontSize: 14,
+        color: AppColors.textPrimary,
+      ),
+      decoration: InputDecoration(
+        labelText: label,
+        hintText: hintText,
+        errorText: errorText,
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: AppColors.border, width: 1),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: AppColors.border, width: 1),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: AppColors.error, width: 1),
+        ),
+        suffixIcon: suffixIcon != null
+            ? IconButton(
+                icon: Icon(suffixIcon, size: 20, color: AppColors.textSecondary),
+                onPressed: onSuffixIconPressed,
+              )
+            : null,
+        labelStyle: AppTypography.inter(
+          fontSize: 12,
+          color: AppColors.textSecondary,
+        ),
+        hintStyle: AppTypography.inter(
+          fontSize: 14,
+          color: AppColors.textPlaceholder,
+        ),
+      ),
+    ),
   );
 }
 
@@ -74,11 +179,43 @@ class AppDropdown<T> extends StatelessWidget {
 }
 
 class AppCard extends StatelessWidget {
-  const AppCard({super.key, required this.child});
+  const AppCard({
+    super.key,
+    required this.child,
+    this.padding,
+    this.margin,
+    this.borderRadius = 16,
+    this.elevation = 0,
+    this.backgroundColor,
+    this.border,
+  });
   final Widget child;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
+  final double borderRadius;
+  final double elevation;
+  final Color? backgroundColor;
+  final BoxBorder? border;
+
   @override
-  Widget build(BuildContext context) => Card(
-    child: Padding(padding: const EdgeInsets.all(16), child: child),
+  Widget build(BuildContext context) => Container(
+    margin: margin,
+    padding: padding ?? const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: backgroundColor ?? AppColors.surface,
+      borderRadius: BorderRadius.circular(borderRadius),
+      border: border ?? Border.all(color: AppColors.border, width: 1),
+      boxShadow: elevation > 0
+          ? [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.04),
+                blurRadius: 14,
+                offset: const Offset(0, 4),
+              ),
+            ]
+          : null,
+    ),
+    child: child,
   );
 }
 
