@@ -55,10 +55,12 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
       final key = (resolved?.key ?? lead.stage?.key ?? lead.status)
           .toUpperCase();
       counts[key] = (counts[key] ?? 0) + 1;
-      if (key == 'VISIT')
+      if (key == 'VISIT') {
         counts['VISIT_SCHEDULED'] = (counts['VISIT_SCHEDULED'] ?? 0) + 1;
-      if (key == 'VISIT_SCHEDULED')
+      }
+      if (key == 'VISIT_SCHEDULED') {
         counts['VISIT'] = (counts['VISIT'] ?? 0) + 1;
+      }
       if (lead.stageId != null) {
         counts[lead.stageId.toString()] =
             (counts[lead.stageId.toString()] ?? 0) + 1;
@@ -256,10 +258,11 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
     }
     final currentList = state.asData?.value;
     if (!_matchesStage(lead)) {
-      if (currentList != null)
+      if (currentList != null) {
         state = AsyncValue.data(
           currentList.where((item) => item.id != lead.id).toList(),
         );
+      }
       return;
     }
     if (currentList == null) {
@@ -288,10 +291,11 @@ class LeadsViewModel extends Notifier<AsyncValue<List<LeadModel>>> {
     }
     final currentList = state.asData?.value;
     if (!_matchesStage(lead)) {
-      if (currentList != null)
+      if (currentList != null) {
         state = AsyncValue.data(
           currentList.where((item) => item.id != lead.id).toList(),
         );
+      }
       return;
     }
     if (currentList == null) return;

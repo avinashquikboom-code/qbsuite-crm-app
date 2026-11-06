@@ -166,8 +166,9 @@ class _ScheduleVisitBottomSheetState
             : data is Map
             ? (data['items'] ?? data['data'] ?? data['employees'])
             : null;
-        if (items is! List)
+        if (items is! List) {
           throw const FormatException('Invalid visitor employee response');
+        }
         all.addAll(items.map((e) => Map<String, dynamic>.from(e as Map)));
         final pagination = data is Map
             ? data['pagination'] ?? data['meta']
@@ -181,8 +182,9 @@ class _ScheduleVisitBottomSheetState
       setState(() {
         _visitorEmployees = all.where(_isVisitorEmployee).toList();
         _isLoadingEmployees = false;
-        if (!_visitorEmployees.any((e) => e['id'] == _selectedEmployeeId))
+        if (!_visitorEmployees.any((e) => e['id'] == _selectedEmployeeId)) {
           _selectedEmployeeId = null;
+        }
       });
     } catch (error) {
       if (!mounted) return;

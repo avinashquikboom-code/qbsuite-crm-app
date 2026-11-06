@@ -99,8 +99,9 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             if (submitting ||
                                 !ref
                                     .read(permissionManagerProvider)
-                                    .canEdit('DATA_CAPTURE'))
+                                    .canEdit('DATA_CAPTURE')) {
                               return;
+                            }
                             updateDialog(() => submitting = true);
                             setState(() => _importing = true);
                             try {

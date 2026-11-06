@@ -1,7 +1,6 @@
 import 'package:remixicon/remixicon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:remixicon/remixicon.dart';
 import 'package:quickboom_app/core/constants/app_bar_titles.dart';
 import 'package:quickboom_app/core/theme/app_theme.dart';
 import 'package:quickboom_app/shared/widgets/app_app_bar.dart';

@@ -128,11 +128,11 @@ void main() {
         await tester.tap(find.text('Go Subpage'));
         await tester.pumpAndSettle();
 
-        // Subpage has BackButton with iOS back icon
+        // Subpage has BackButton with the shared Remix icon
         expect(find.text('Subpage Screen'), findsOneWidget);
         expect(find.byType(BackButton), findsOneWidget);
         final subpageIcons = tester.widgetList<Icon>(find.byType(Icon));
-        expect(subpageIcons.any((i) => i.icon?.codePoint == 0xf570), isTrue);
+        expect(subpageIcons.any((i) => i.icon == RemixIcons.mapping[AppIcon.back]), isTrue);
 
         // Tap back button pops route
         await tester.tap(find.byType(BackButton));

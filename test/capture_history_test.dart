@@ -98,8 +98,9 @@ void main() {
       ApiClient().dio.httpClientAdapter = fixture.CaptureAdapter((options) {
         expect(options.method, 'GET');
         requests.add(options.path);
-        if (options.path == '/data-capture/history')
+        if (options.path == '/data-capture/history') {
           return fixture.jsonBody(page([session('PARTIALLY_COMPLETED')]));
+        }
         expect(options.path, '/data-capture/history/job-37/records');
         return fixture.jsonBody({
           'data': [],

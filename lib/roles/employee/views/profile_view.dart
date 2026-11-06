@@ -844,8 +844,9 @@ class ProfileView extends ConsumerWidget {
             ],
           ),
           data: (details) {
-            if (details == null)
+            if (details == null) {
               return const Text('No current salary structure available');
+            }
             String money(String key) =>
                 '₹${(num.tryParse('${details[key]}') ?? 0).toStringAsFixed(2)}';
             final rows = <String, String>{
