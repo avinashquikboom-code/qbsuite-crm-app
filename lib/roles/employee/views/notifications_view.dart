@@ -487,7 +487,7 @@ class _NotificationsViewState extends ConsumerState<NotificationsView> {
                           ctaActionValue,
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF1AA14D),
+                          backgroundColor: const Color(0xFF43A854),
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           shape: RoundedRectangleBorder(

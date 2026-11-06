@@ -359,7 +359,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
       case 'VALIDATED':
       case 'LEAD_CREATED':
       case 'LEAD_IMPORTED':
-        bg = const Color(0xFFE8F9EE);
+        bg = const Color(0xFFE8F5E9);
         fg = const Color(0xFF166534);
         border = const Color(0xFFBBF7D0);
         break;
@@ -960,7 +960,7 @@ class _RecordsState extends ConsumerState<DataCaptureRecordsScreen> {
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFE8F9EE),
+                            color: const Color(0xFFE8F5E9),
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(color: const Color(0xFFBBF7D0)),
                           ),
@@ -1502,7 +1502,7 @@ class _RecordState extends ConsumerState<DataCaptureRecordScreen> {
   Widget _badge(String text, {bool green = false}) => Container(
     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
     decoration: BoxDecoration(
-      color: green ? const Color(0xFFE8F9EE) : const Color(0xFFF1F5F9),
+      color: green ? const Color(0xFFE8F5E9) : const Color(0xFFF1F5F9),
       borderRadius: BorderRadius.circular(8),
     ),
     child: Text(

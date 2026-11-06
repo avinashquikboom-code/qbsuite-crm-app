@@ -1010,7 +1010,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                             height: 20,
                             child: Checkbox(
                               value: _rememberMe,
-                              activeColor: const Color(0xFF23C45E),
+                              activeColor: const Color(0xFF5EC269),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4),
                               ),
@@ -1051,7 +1051,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                         style: AppTypography.inter(
                           fontSize: 13,
                           fontWeight: FontWeight.bold,
-                          color: const Color(0xFF23C45E),
+                          color: const Color(0xFF5EC269),
                         ),
                       ),
                     ),
@@ -1232,7 +1232,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                         const Icon(
                           Remix.refresh_line,
                           size: 14,
-                          color: Color(0xFF23C45E),
+                          color: Color(0xFF5EC269),
                         ),
                         const SizedBox(width: 6),
                         Text(
@@ -1240,7 +1240,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                           style: AppTypography.inter(
                             fontSize: 13.5,
                             fontWeight: FontWeight.bold,
-                            color: const Color(0xFF23C45E),
+                            color: const Color(0xFF5EC269),
                           ),
                         ),
                       ],
@@ -1578,7 +1578,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                         const Icon(
                           Remix.smartphone_line,
                           size: 16,
-                          color: Color(0xFF23C45E),
+                          color: Color(0xFF5EC269),
                         ),
                         const SizedBox(width: 6),
                         Text(
@@ -1717,7 +1717,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
             border: Border.all(color: const Color(0xFFDCFCE7), width: 2),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF23C45E).withValues(alpha: 0.12),
+                color: const Color(0xFF5EC269).withValues(alpha: 0.12),
                 blurRadius: 16,
                 offset: const Offset(0, 4),
               ),
@@ -1726,7 +1726,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
           child: const Center(
             child: Icon(
               Remix.shield_check_line,
-              color: Color(0xFF23C45E),
+              color: Color(0xFF5EC269),
               size: 32,
             ),
           ),
@@ -1813,7 +1813,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       ? () => _handleVerifyOtp(_enteredOtp)
                       : null,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF23C45E),
+                    backgroundColor: const Color(0xFF5EC269),
                     disabledBackgroundColor: const Color(0xFFCBD5E1),
                     foregroundColor: Colors.white,
                     elevation: 0,
@@ -1851,7 +1851,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   height: 20,
                   child: CircularProgressIndicator(
                     strokeWidth: 2,
-                    color: Color(0xFF23C45E),
+                    color: Color(0xFF5EC269),
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -1887,7 +1887,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       const Icon(
                         Remix.refresh_line,
                         size: 14,
-                        color: Color(0xFF23C45E),
+                        color: Color(0xFF5EC269),
                       ),
                       const SizedBox(width: 6),
                       Text(
@@ -1895,7 +1895,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                         style: AppTypography.inter(
                           fontSize: 13.5,
                           fontWeight: FontWeight.bold,
-                          color: const Color(0xFF23C45E),
+                          color: const Color(0xFF5EC269),
                         ),
                       ),
                     ],
@@ -1974,7 +1974,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                 height: 52,
                 child: CircularProgressIndicator(
                   strokeWidth: 3.5,
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF23C45E)),
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF5EC269)),
                 ),
               ),
               const SizedBox(height: 20),
@@ -2034,10 +2034,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
     IconData icon;
 
     if (isDone) {
-      iconColor = const Color(0xFF23C45E);
+      iconColor = const Color(0xFF5EC269);
       icon = Remix.checkbox_circle_fill;
     } else if (isCurrent) {
-      iconColor = const Color(0xFF23C45E);
+      iconColor = const Color(0xFF5EC269);
       icon = Remix.loader_4_line;
     } else {
       iconColor = const Color(0xFFCBD5E1);

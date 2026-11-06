@@ -73,8 +73,8 @@ class AiGeneratorMeta {
           defaultSubtitle: 'AI is crafting your content...',
           processingSubtitle: 'Finalizing and verifying results...',
           icon: Remix.sparkling_2_line,
-          gradient: [Color(0xFF4F46E5), Color(0xFF23C45E), Color(0xFF0EA5E9)],
-          glowColor: Color(0xFF23C45E),
+          gradient: [Color(0xFF4F46E5), Color(0xFF5EC269), Color(0xFF0EA5E9)],
+          glowColor: Color(0xFF5EC269),
         );
     }
   }

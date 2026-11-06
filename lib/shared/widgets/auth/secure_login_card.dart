@@ -18,7 +18,7 @@ class SecureLoginCard extends StatelessWidget {
         children: [
           const Icon(
             Remix.shield_check_fill,
-            color: Color(0xFF23C45E),
+            color: Color(0xFF5EC269),
             size: 24,
           ),
           const SizedBox(width: 12),
@@ -46,7 +46,7 @@ class SecureLoginCard extends StatelessWidget {
           ),
           const Icon(
             Remix.shield_check_line,
-            color: Color(0xFF23C45E),
+            color: Color(0xFF5EC269),
             size: 26,
           ),
         ],

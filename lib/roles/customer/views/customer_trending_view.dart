@@ -1315,7 +1315,7 @@ class _CustomerTrendingViewState extends ConsumerState<CustomerTrendingView> {
     return Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [Color(0xFFF0FDF4), Color(0xFFE8F9EE)],
+          colors: [Color(0xFFF0FDF4), Color(0xFFE8F5E9)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

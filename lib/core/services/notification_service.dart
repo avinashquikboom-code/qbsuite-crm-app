@@ -509,7 +509,7 @@ class NotificationService with WidgetsBindingObserver {
       importance: Importance.max,
       priority: Priority.max,
       icon: '@drawable/ic_notification',
-      color: const Color(0xFF23C45E),
+      color: const Color(0xFF5EC269),
       playSound: true,
       enableVibration: true,
       visibility: NotificationVisibility.public,

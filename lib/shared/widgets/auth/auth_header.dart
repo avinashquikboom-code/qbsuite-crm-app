@@ -27,7 +27,7 @@ class AuthHeader extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF23C45E),
+                  color: const Color(0xFF5EC269),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: const Icon(
@@ -48,7 +48,7 @@ class AuthHeader extends StatelessWidget {
             Container(
               width: 32,
               height: 1.5,
-              color: const Color(0xFF23C45E).withValues(alpha: 0.6),
+              color: const Color(0xFF5EC269).withValues(alpha: 0.6),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -65,7 +65,7 @@ class AuthHeader extends StatelessWidget {
             Container(
               width: 32,
               height: 1.5,
-              color: const Color(0xFF23C45E).withValues(alpha: 0.6),
+              color: const Color(0xFF5EC269).withValues(alpha: 0.6),
             ),
           ],
         ),

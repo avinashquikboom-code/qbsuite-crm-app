@@ -469,7 +469,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                               vertical: 4,
                             ),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF23C45E),
+                              color: const Color(0xFF5EC269),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Row(
@@ -616,7 +616,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF23C45E),
+                            backgroundColor: const Color(0xFF5EC269),
                             foregroundColor: Colors.black,
                             elevation: 0,
                             padding: const EdgeInsets.symmetric(
@@ -675,7 +675,7 @@ class _ReelVideoItemPlayerState extends State<_ReelVideoItemPlayer> {
             Image.network(widget.item.effectiveThumbnailUrl, fit: BoxFit.cover),
           const Center(
             child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF23C45E)),
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF5EC269)),
             ),
           ),
         ],
@@ -749,7 +749,7 @@ class _ReelVideoProgressWithTimestamp extends StatelessWidget {
           controller,
           allowScrubbing: true,
           colors: const VideoProgressColors(
-            playedColor: Color(0xFF23C45E),
+            playedColor: Color(0xFF5EC269),
             bufferedColor: Colors.white30,
             backgroundColor: Colors.white12,
           ),
@@ -795,7 +795,7 @@ class _ReelVideoProgressWithTimestamp extends StatelessWidget {
                     child: CircularProgressIndicator(
                       strokeWidth: 1.5,
                       valueColor: AlwaysStoppedAnimation<Color>(
-                        Color(0xFF23C45E),
+                        Color(0xFF5EC269),
                       ),
                     ),
                   ),

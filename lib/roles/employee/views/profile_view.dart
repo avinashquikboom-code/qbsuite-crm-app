@@ -281,7 +281,7 @@ class ProfileView extends ConsumerWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: const LinearGradient(
-                      colors: [AppColors.primary, Color(0xFF1AA14D)],
+                      colors: [AppColors.primary, Color(0xFF43A854)],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),

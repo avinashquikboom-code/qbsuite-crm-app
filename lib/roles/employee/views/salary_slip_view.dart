@@ -1567,7 +1567,7 @@ class _SalarySlipViewState extends ConsumerState<SalarySlipView> with WidgetsBin
                     width: double.infinity,
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFE8F9EE),
+                      color: const Color(0xFFE8F5E9),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: const Color(0xFF86EFAC), width: 1.2),
                     ),

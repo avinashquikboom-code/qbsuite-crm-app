@@ -45,14 +45,14 @@ class LoginInputField extends StatelessWidget {
           fontSize: 14,
           color: const Color(0xFF98A2B3),
         ),
-        prefixIcon: Icon(prefixIcon, color: const Color(0xFF23C45E), size: 20),
+        prefixIcon: Icon(prefixIcon, color: const Color(0xFF5EC269), size: 20),
         suffixIcon: isPassword
             ? IconButton(
                 icon: Icon(
                   isPasswordVisible
                       ? LegacyRemixIcons.visibility_off_outlined
                       : LegacyRemixIcons.visibility_outlined,
-                  color: const Color(0xFF23C45E),
+                  color: const Color(0xFF5EC269),
                   size: 20,
                 ),
                 onPressed: onTogglePassword,
@@ -74,7 +74,7 @@ class LoginInputField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: Color(0xFF23C45E), width: 1.5),
+          borderSide: const BorderSide(color: Color(0xFF5EC269), width: 1.5),
         ),
       ),
     );

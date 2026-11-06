@@ -140,9 +140,7 @@ class AppTheme {
         ),
         actionTextColor: AppColors.primary,
         disabledActionTextColor: Colors.white.withValues(alpha: 0.5),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         elevation: 6,
         insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       ),
@@ -224,9 +222,7 @@ class AppTheme {
         ),
         actionTextColor: AppColors.primary,
         disabledActionTextColor: Colors.white.withValues(alpha: 0.5),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         elevation: 6,
         insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       ),

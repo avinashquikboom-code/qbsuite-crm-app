@@ -2,7 +2,21 @@ import 'package:quickboom_app/core/icons/remix_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
 
-enum AppIcon { home, profile, notifications, search, back, next, down, menu, logout, lock, empty, grid, close }
+enum AppIcon {
+  home,
+  profile,
+  notifications,
+  search,
+  back,
+  next,
+  down,
+  menu,
+  logout,
+  lock,
+  empty,
+  grid,
+  close,
+}
 
 abstract final class RemixIcons {
   static const mapping = <AppIcon, IconData>{
@@ -23,13 +37,24 @@ abstract final class RemixIcons {
 }
 
 class RemixIcon extends StatelessWidget {
-  const RemixIcon(this.icon, {super.key, this.size = 24, this.color, this.semanticLabel});
+  const RemixIcon(
+    this.icon, {
+    super.key,
+    this.size = 24,
+    this.color,
+    this.semanticLabel,
+  });
   final AppIcon icon;
   final double size;
   final Color? color;
   final String? semanticLabel;
   @override
-  Widget build(BuildContext context) => Icon(RemixIcons.mapping[icon], size: size, color: color, semanticLabel: semanticLabel);
+  Widget build(BuildContext context) => Icon(
+    RemixIcons.mapping[icon],
+    size: size,
+    color: color,
+    semanticLabel: semanticLabel,
+  );
 }
 
 /// Compatibility glyphs for legacy views; all resolve to Remix LegacyRemixIcons.

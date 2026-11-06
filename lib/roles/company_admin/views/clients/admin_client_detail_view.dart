@@ -436,7 +436,7 @@ class _AdminClientDetailViewState extends ConsumerState<AdminClientDetailView> {
                 height: 52,
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
-                    colors: [Color(0xFF23C45E), Color(0xFF16A34A)],
+                    colors: [Color(0xFF5EC269), Color(0xFF16A34A)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
