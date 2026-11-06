@@ -12,7 +12,6 @@ import '../shared/services/onboarding_service.dart';
 import '../shared/views/splash_view.dart';
 import '../shared/views/onboarding_view.dart';
 import '../shared/views/auth/login_view.dart';
-import '../shared/views/demo/demo_workspace_views.dart';
 import '../roles/employee/views/dashboard_view.dart';
 import '../roles/company_admin/views/company_admin_main_view.dart';
 import '../roles/customer/views/customer_dashboard_view.dart';
@@ -26,13 +25,31 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     if (AppConfig.uiOnlyMode) {
+      final loginState = ref.watch(loginStateProvider);
+      final Widget targetHome;
+      if (loginState.isInitializing) {
+        targetHome = const SplashView();
+      } else if (loginState.isLoggedIn && loginState.role != null) {
+        switch (loginState.role!) {
+          case UserRole.customer:
+            targetHome = const CustomerDashboardView();
+          case UserRole.employee:
+            targetHome = const DashboardView();
+          case UserRole.companyAdmin:
+            targetHome = const CompanyAdminMainView();
+        }
+      } else {
+        targetHome = const LoginView();
+      }
+
       return MaterialApp(
         title: AppConfig.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         themeMode: ThemeMode.light,
-        home: const DemoHomeView(),
+        home: targetHome,
+        routes: AppRouter.routes,
       );
     }
 

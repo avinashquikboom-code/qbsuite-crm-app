@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quickboom_app/core/constants/app_config.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
 import 'package:quickboom_app/core/network/app_url.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
@@ -153,9 +154,29 @@ final employeeProfileProvider = FutureProvider<EmployeeProfileData>((
   final apiClient = ref.watch(apiClientProvider);
   final authState = ref.watch(loginStateProvider);
 
-  if (apiClient.token == null ||
-      apiClient.token!.isEmpty ||
-      !authState.isLoggedIn) {
+  if (!authState.isLoggedIn) {
+    return EmployeeProfileData.empty();
+  }
+
+  if (AppConfig.uiOnlyMode) {
+    final name = (authState.userName ?? 'Priya Sharma').trim();
+    final parts = name.split(RegExp(r'\s+'));
+    return EmployeeProfileData(
+      id: int.tryParse(authState.employeeId ?? '1') ?? 1,
+      name: name.isEmpty ? 'Priya Sharma' : name,
+      firstName: parts.isNotEmpty ? parts.first : 'Priya',
+      lastName: parts.length > 1 ? parts.sublist(1).join(' ') : 'Sharma',
+      employeeCode: authState.employeeCode ?? 'QB-1001',
+      email: authState.userEmail ?? 'priya.sharma@qbsuite.com',
+      phone: '9876543210',
+      department: 'BPO',
+      designation: 'BPO Executive',
+      branch: 'Head Office',
+      organization: 'QB Suite Enterprise',
+    );
+  }
+
+  if (apiClient.token == null || apiClient.token!.isEmpty) {
     return EmployeeProfileData.empty();
   }
 

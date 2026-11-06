@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quickboom_app/core/constants/app_config.dart';
 import '../services/employee_api_service.dart';
 
 class NotificationState {
@@ -40,6 +41,14 @@ class EmployeeNotificationNotifier extends Notifier<NotificationState> {
   EmployeeApiService get _service => ref.read(employeeApiServiceProvider);
 
   Future<void> loadNotifications() async {
+    if (AppConfig.uiOnlyMode) {
+      state = state.copyWith(
+        isLoading: false,
+        notifications: const [],
+        unreadCount: 0,
+      );
+      return;
+    }
     try {
       state = state.copyWith(isLoading: true);
       final list = await _service.getNotifications();

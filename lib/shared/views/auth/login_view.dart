@@ -11,6 +11,7 @@ import 'package:quickboom_app/core/network/api_client.dart';
 import 'package:quickboom_app/core/network/app_url.dart';
 import 'package:quickboom_app/core/services/secure_storage_service.dart';
 import 'package:quickboom_app/core/services/notification_service.dart';
+import 'package:quickboom_app/core/constants/app_config.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/core/services/auth_service.dart';
 import 'package:quickboom_app/core/models/permission_model.dart';
@@ -115,7 +116,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
         : MobileUserRole.employee;
     _isPasswordMode = true;
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      NotificationService.instance.requestAndroidNotificationPermission();
+      if (!AppConfig.uiOnlyMode) {
+        NotificationService.instance.requestAndroidNotificationPermission();
+      }
     });
   }
 
@@ -223,6 +226,46 @@ class _LoginViewState extends ConsumerState<LoginView> {
     return null;
   }
 
+  Future<void> _completeUiOnlyLogin() async {
+    final identifier = _identifierController.text.trim();
+    final role = switch (_currentRole) {
+      MobileUserRole.customer => 'CUSTOMER',
+      MobileUserRole.admin => 'COMPANY_ADMIN',
+      MobileUserRole.employee => 'EMPLOYEE',
+    };
+    await _processAuthSuccess({
+      'tokens': const {'accessToken': 'ui-only', 'refreshToken': 'ui-only'},
+      'user': {
+        'id': 1,
+        'role': role,
+        'firstName': 'Priya',
+        'lastName': 'Sharma',
+        'email': identifier,
+        'employeeId': '1',
+        'employeeCode': 'QB-1001',
+        'customerId': '1',
+        'customerName': 'Priya Sharma',
+        'isCrmEligible': true,
+        'crmMobileAccess': true,
+        'effectivePermissions': AuthService.defaultEmployeeCapabilities(
+          isCrm: true,
+        ).map((permission) => permission.toJson()).toList(),
+        'employee': {
+          'id': 1,
+          'employeeCode': 'QB-1001',
+          'customerId': '1',
+          'status': 'ACTIVE',
+          'isCrmEligible': true,
+          'crmMobileAccess': true,
+          'designation': {
+            'name': 'BPO Executive',
+            'crmMobileAccess': true,
+          },
+        },
+      },
+    }, identifier: identifier);
+  }
+
   Future<void> _handleSendOtp({bool isResend = false}) async {
     if (_isLoading) return;
     if (isResend && _resendCountdown > 0) return;
@@ -256,6 +299,31 @@ class _LoginViewState extends ConsumerState<LoginView> {
     }
 
     setState(() => _isLoading = true);
+
+    if (AppConfig.uiOnlyMode) {
+      if (!mounted) return;
+      setState(() {
+        _isLoading = false;
+        _maskedDestination = _maskDestinationLocally(rawVal, _loginMethod);
+        _enteredOtp = '';
+        _otpInputVersion++;
+        if (_isMobileLogin) {
+          _mobileOtpSent = true;
+          _requestedMobile = mobile;
+          _mobileOtpNextRequestAt = DateTime.now().add(
+            const Duration(seconds: 60),
+          );
+        } else {
+          _stage = LoginStage.otp;
+        }
+      });
+      _startResendTimer(seconds: 60);
+      AppToast.success(
+        context,
+        isResend ? 'OTP resent successfully' : 'OTP sent successfully',
+      );
+      return;
+    }
 
     try {
       final apiClient = ref.read(apiClientProvider);
@@ -345,6 +413,11 @@ class _LoginViewState extends ConsumerState<LoginView> {
         _verifyingStep = 0; // Validating OTP
       }
     });
+
+    if (AppConfig.uiOnlyMode) {
+      await _completeUiOnlyLogin();
+      return;
+    }
 
     try {
       final apiClient = ref.read(apiClientProvider);
@@ -441,6 +514,11 @@ class _LoginViewState extends ConsumerState<LoginView> {
     }
 
     setState(() => _isLoading = true);
+
+    if (AppConfig.uiOnlyMode) {
+      await _completeUiOnlyLogin();
+      return;
+    }
 
     try {
       final apiClient = ref.read(apiClientProvider);
@@ -673,7 +751,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
     apiClient.setAuth(accessToken, customerIdVal, refreshToken: refreshToken);
 
     // Proactively fetch canonical effective permissions
-    if (isEmp) {
+    if (isEmp && !AppConfig.uiOnlyMode) {
       try {
         final freshPerms = await ref
             .read(authServiceProvider)
@@ -722,7 +800,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
               );
         }
       }
-    } else {
+    } else if (!AppConfig.uiOnlyMode) {
       try {
         await ref
             .read(loginStateProvider.notifier)
@@ -732,9 +810,10 @@ class _LoginViewState extends ConsumerState<LoginView> {
       }
     }
 
-    // Register FCM device token
-    NotificationService.instance.registerTokenForAuthenticatedUser();
-    NotificationService.instance.requestAndroidNotificationPermission();
+    if (!AppConfig.uiOnlyMode) {
+      NotificationService.instance.registerTokenForAuthenticatedUser();
+      NotificationService.instance.requestAndroidNotificationPermission();
+    }
 
     if (!mounted) return;
     setState(() => _isLoading = false);

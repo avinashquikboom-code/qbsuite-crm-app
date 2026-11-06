@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/work_permission_model.dart';
 import '../services/employee_api_service.dart';
+import 'package:quickboom_app/core/constants/app_config.dart';
 import 'package:quickboom_app/core/services/secure_storage_service.dart';
 
 class WorkPermissionsState {
@@ -130,6 +131,29 @@ class WorkPermissionsNotifier extends Notifier<WorkPermissionsState> {
 
   Future<void> loadPermissions() async {
     state = state.copyWith(isLoading: true, errorMessage: null);
+    if (AppConfig.uiOnlyMode) {
+      state = state.copyWith(
+        permissions: const EmployeeWorkPermissions(
+          employeeId: 1,
+          employeeCode: 'QB-1001',
+          firstName: 'Priya',
+          lastName: 'Sharma',
+          role: 'EMPLOYEE',
+          workPermissions: [
+            'leads',
+            'data_capture',
+            'customers',
+            'attendance',
+            'dashboard',
+            'leave',
+            'profile',
+          ],
+          isCrmEligible: true,
+        ),
+        isLoading: false,
+      );
+      return;
+    }
     try {
       final perms = await _apiService.getMyWorkPermissions();
 

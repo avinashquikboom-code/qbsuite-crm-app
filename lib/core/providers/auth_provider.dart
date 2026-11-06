@@ -19,6 +19,7 @@ import '../../roles/employee/viewmodels/team_calendar_viewmodel.dart';
 import '../../roles/employee/viewmodels/employee_calendar_viewmodel.dart';
 import '../../shared/viewmodels/leads_viewmodel.dart';
 import '../../shared/viewmodels/lead_stages_viewmodel.dart';
+import '../constants/app_config.dart';
 import '../models/user_role.dart';
 import '../network/api_client.dart';
 import '../services/auth_service.dart';
@@ -152,6 +153,11 @@ class LoginStateNotifier extends Notifier<LoginState> {
   // Check if user is already logged in
   Future<void> _checkLoginStatus() async {
     try {
+      if (AppConfig.uiOnlyMode) {
+        await _restoreUiOnlySession();
+        return;
+      }
+
       debugPrint('[AUTH] initialization started');
       debugPrint('[STARTUP] Auth restoration started');
       debugPrint('[AUTH_RESTORE]');
@@ -715,8 +721,92 @@ class LoginStateNotifier extends Notifier<LoginState> {
     }
   }
 
+  Future<void> _restoreUiOnlySession() async {
+    debugPrint('[AUTH] UI-only mode: restoring local session without APIs');
+    final roleStr = await SecureStorageService.getUserRole();
+    final email = await SecureStorageService.getUserEmail();
+    final userName = await SecureStorageService.getUserName();
+    final employeeCode = await SecureStorageService.getEmployeeCode();
+    final employeeId = await SecureStorageService.getEmployeeId();
+    final customerId = await SecureStorageService.getCustomerId();
+    final customerName = await SecureStorageService.getCustomerName();
+    if (!ref.mounted) return;
+
+    final parsedRole = UserRole.tryParse(roleStr);
+    if (parsedRole == null) {
+      state = state.copyWith(
+        isInitializing: false,
+        isLoading: false,
+        isLoggedIn: false,
+        error: null,
+      );
+      return;
+    }
+
+    final storedPerms = await SecureStorageService.getPermissions(
+      tenantId: customerId,
+      employeeId: employeeId,
+    );
+    final perms = storedPerms.isNotEmpty
+        ? storedPerms
+        : AuthService.defaultEmployeeCapabilities(isCrm: true);
+    PermissionManager.instance.setPermissions(
+      perms,
+      role: roleStr,
+      employeeId: employeeId,
+      tenantId: customerId,
+      isCrmEligible: true,
+    );
+    ref
+        .read(permissionManagerProvider.notifier)
+        .setPermissions(
+          perms,
+          role: roleStr,
+          employeeId: employeeId,
+          tenantId: customerId,
+          isCrmEligible: true,
+        );
+
+    state = state.copyWith(
+      isInitializing: false,
+      isLoading: false,
+      isLoggedIn: true,
+      role: parsedRole,
+      userRole: roleStr,
+      userEmail: email,
+      userName: userName,
+      employeeCode: employeeCode,
+      employeeId: employeeId,
+      customerId: customerId,
+      customerName: customerName,
+      error: null,
+    );
+  }
+
   // Refresh permissions from backend
   Future<void> refreshPermissions() async {
+    if (AppConfig.uiOnlyMode) {
+      final defaults = AuthService.defaultEmployeeCapabilities(isCrm: true);
+      final roleStr = state.userRole ?? 'EMPLOYEE';
+      PermissionManager.instance.setPermissions(
+        defaults,
+        role: roleStr,
+        employeeId: state.employeeId,
+        tenantId: state.customerId,
+        isCrmEligible: true,
+      );
+      ref
+          .read(permissionManagerProvider.notifier)
+          .setPermissions(
+            defaults,
+            role: roleStr,
+            employeeId: state.employeeId,
+            tenantId: state.customerId,
+            isCrmEligible: true,
+          );
+      return;
+    }
+
     try {
       ref.read(permissionManagerProvider.notifier).setLoading(true);
       final authService = ref.read(authServiceProvider);
@@ -789,6 +879,7 @@ class LoginStateNotifier extends Notifier<LoginState> {
   /// Updates PermissionManager and SecureStorage so CUSTOMER_MARKETING and
   /// other module overrides are immediately reflected in the UI.
   Future<void> refreshCustomerPermissions() async {
+    if (AppConfig.uiOnlyMode) return;
     final permissionNotifier = ref.read(permissionManagerProvider.notifier);
     if (ref.read(permissionManagerProvider).permissions.isEmpty) {
       permissionNotifier.setLoading(true);

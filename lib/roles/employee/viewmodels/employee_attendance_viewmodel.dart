@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quickboom_app/core/constants/app_config.dart';
 import 'package:quickboom_app/core/network/api_client.dart';
 import 'package:quickboom_app/core/services/biometric_auth_service.dart';
 import 'package:quickboom_app/core/services/employee_live_tracking_service.dart';
@@ -276,6 +277,15 @@ class EmployeeAttendanceNotifier extends Notifier<AttendanceState> {
         '[ATTENDANCE_NOTIFIER] Skipping /attendance/me call: ATTENDANCE:VIEW permission not granted',
       );
       state = state.copyWith(isLoading: false, pageError: null);
+      return;
+    }
+
+    if (AppConfig.uiOnlyMode) {
+      state = state.copyWith(
+        isLoading: false,
+        status: MyAttendanceStatus.empty(),
+        pageError: null,
+      );
       return;
     }
 
@@ -708,6 +718,13 @@ allowedRadius: ${office?.radiusMeters}''');
     required String reason,
     required bool employeeConsent,
   }) async {
+    if (AppConfig.uiOnlyMode) {
+      state = state.copyWith(
+        isActionRunning: false,
+        successMessage: 'Overtime request submitted successfully.',
+      );
+      return true;
+    }
     try {
       state = state.copyWith(
         isActionRunning: true,

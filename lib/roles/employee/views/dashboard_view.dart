@@ -14,9 +14,6 @@ import 'package:quickboom_app/shared/views/data_capture/data_capture_home_screen
 import 'package:quickboom_app/shared/views/leads/leads_view.dart';
 import 'package:quickboom_app/roles/employee/views/sidebar_views/customers_view.dart';
 import 'home_view.dart';
-import 'employee_schedule_view.dart';
-import 'sidebar_views/attendance_view.dart';
-import 'ssm/employee_ssm_work_list_view.dart';
 import 'profile_view.dart';
 import 'visits_view.dart';
 import 'visitor/visitor_history_view.dart';
@@ -41,69 +38,6 @@ class _DashboardTabItem {
     required this.page,
   });
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Data class for a primary-module candidate (position 2 of the nav).
-// Each entry carries the AppModule key used for RBAC checking, and the
-// visual/routing details for the nav item.
-//
-// The list _kPrimaryModulePriority below is the ONLY place that encodes
-// which module wins position 2 when multiple permissions are present.
-// No designation/role name strings appear anywhere in this file.
-// ─────────────────────────────────────────────────────────────────────────────
-class _PrimaryNavModule {
-  final String module; // AppModule constant — used for rbacPerms.canView()
-  final String label;
-  final IconData icon;
-  final IconData activeIcon;
-  final Widget page;
-
-  const _PrimaryNavModule({
-    required this.module,
-    required this.label,
-    required this.icon,
-    required this.activeIcon,
-    required this.page,
-  });
-}
-
-/// Priority-ordered list of primary-module candidates for navigation position 2.
-///
-/// Resolution rule: the **first** entry whose module the employee has VIEW
-/// permission for becomes the primary nav tab.  Higher priority = earlier in list.
-///
-/// Priority order rationale:
-///   1. DATA_CAPTURE  — core Telesales / lead-capture workflow
-///   2. ATTENDANCE    — core field-sales / HRM workflow
-///   3. MY_WORK       — SSM / creative-work designation
-///   4. CALENDAR      — calendar-heavy designations (last resort)
-///
-/// Admin control: grant/revoke VIEW on the desired module via the designation
-/// role defaults or per-employee overrides (INHERIT / ALLOW / DENY).
-/// That is the only configuration needed — no Flutter code changes required.
-const List<_PrimaryNavModule> _kPrimaryModulePriority = [
-  _PrimaryNavModule(
-    module: 'ATTENDANCE',
-    label: 'Attendance',
-    icon: Remix.fingerprint_line, // distinct from Calendar icon
-    activeIcon: Remix.fingerprint_fill,
-    page: AttendanceView(showBackButton: false),
-  ),
-  _PrimaryNavModule(
-    module: 'MY_WORK',
-    label: 'My Work',
-    icon: Remix.movie_line,
-    activeIcon: Remix.movie_fill,
-    page: EmployeeSSMWorkListView(),
-  ),
-  _PrimaryNavModule(
-    module: 'CALENDAR',
-    label: 'Calendar',
-    icon: Remix.calendar_check_line,
-    activeIcon: Remix.calendar_check_fill,
-    page: EmployeeScheduleView(),
-  ),
-];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // DashboardView — main employee scaffold with 5-slot bottom navigation
@@ -240,23 +174,6 @@ class _DashboardViewState extends ConsumerState<DashboardView>
     _scaffoldKey.currentState?.openDrawer();
   }
 
-  // ── Primary-module resolution ──────────────────────────────────────────────
-  //
-  // Walk the priority list and return the first candidate whose module the
-  // employee has effective VIEW permission for.  Returns null if none match
-  // (edge case: employee with no recognised primary-module permission).
-  //
-  // This is the ONLY place where the "which module gets position 2?" decision
-  // is made.  The decision is driven entirely by RBAC — not by role strings.
-  _PrimaryNavModule? _resolvePrimaryModule(PermissionState rbacPerms) {
-    for (final candidate in _kPrimaryModulePriority) {
-      if (rbacPerms.canView(candidate.module)) {
-        return candidate;
-      }
-    }
-    return null;
-  }
-
   @override
   Widget build(BuildContext context) {
     final rbacPerms = ref.watch(permissionManagerProvider);
@@ -304,35 +221,6 @@ class _DashboardViewState extends ConsumerState<DashboardView>
         roleName.contains('TELESALES') ||
         roleName.contains('TELECALL') ||
         roleName.contains('CALLER');
-    final isProductionTeam =
-        !isBpoTeam &&
-        !isVisitor &&
-        (permsState.permissions.hasSsmWorkPermission ||
-            rbacPerms.canViewMyWork ||
-            rbacPerms.canViewCreativeWork ||
-            permsState.permissions.isProductionManager ||
-            deptName.contains('PRODUCTION') ||
-            deptName.contains('CREATIVE') ||
-            desigName.contains('PHOTOGRAPHER') ||
-            desigName.contains('VIDEO') ||
-            desigName.contains('EDITOR') ||
-            desigName.contains('DESIGNER') ||
-            desigName.contains('PRODUCTION') ||
-            desigName.contains('CREATIVE') ||
-            desigName.contains('SSM') ||
-            desigName.contains('CONTENT') ||
-            desigName.contains('ANIMAT') ||
-            desigName.contains('TEAM LEADER') ||
-            desigName.contains('TEAM LEAD') ||
-            roleName.contains('PHOTOGRAPHER') ||
-            roleName.contains('VIDEO') ||
-            roleName.contains('EDITOR') ||
-            roleName.contains('DESIGNER') ||
-            roleName.contains('PRODUCTION') ||
-            roleName.contains('CREATIVE') ||
-            roleName.contains('SSM') ||
-            roleName.contains('TEAM LEADER') ||
-            roleName.contains('TEAM LEAD'));
 
     final mediaQuery = MediaQuery.maybeOf(context);
     final devWidth = mediaQuery?.size.width ?? 0;
@@ -340,19 +228,14 @@ class _DashboardViewState extends ConsumerState<DashboardView>
     final devPixelRatio = mediaQuery?.devicePixelRatio ?? 1.0;
     final devTimezone = DateTime.now().timeZoneName;
 
-    // ── Resolve fixed positions ──────────────────────────────────────────────
-    final primaryModule = _resolvePrimaryModule(rbacPerms);
-
     debugPrint(
       '[CALENDAR_VISIBILITY_DEBUG] DashboardView -> '
       'deviceWidth: $devWidth, '
       'deviceHeight: $devHeight, '
       'pixelRatio: $devPixelRatio, '
       'timezone: $devTimezone, '
-      'isProductionTeam: $isProductionTeam, '
+      'isBpoTeam: $isBpoTeam, '
       'isVisitor: $isVisitor, '
-      'primaryModule: ${primaryModule?.label}, '
-      'canViewCalendar: ${rbacPerms.canViewCalendar}, '
       'role: $roleName, '
       'desig: $desigName, '
       'dept: $deptName',
@@ -371,47 +254,8 @@ class _DashboardViewState extends ConsumerState<DashboardView>
         ),
       ),
 
-      // CRM-eligible BPO staff take precedence over generic work/team-lead roles.
-      if (isBpoTeam) ...[
-        if (rbacPerms.canViewDataCapture ||
-            permsState.hasWorkPermission('data_capture') ||
-            permsState.hasWorkPermission('datacapture') ||
-            isBpoTeam)
-          const _DashboardTabItem(
-            label: 'Data Capture',
-            icon: Remix.add_circle_line,
-            activeIcon: Remix.add_circle_fill,
-            page: DataCaptureHomeScreen(),
-          ),
-        const _DashboardTabItem(
-          label: 'Leads',
-          icon: Remix.user_search_line,
-          activeIcon: Remix.user_search_fill,
-          page: LeadsView(),
-        ),
-        const _DashboardTabItem(
-          label: 'Customers',
-          icon: Remix.building_2_line,
-          activeIcon: Remix.building_2_fill,
-          page: CustomersView(),
-        ),
-      ] else if (isProductionTeam) ...[
-        const _DashboardTabItem(
-          label: 'My Work',
-          icon: Remix.movie_line,
-          activeIcon: Remix.movie_fill,
-          page: EmployeeSSMWorkListView(),
-        ),
-        _DashboardTabItem(
-          label: 'Calendar',
-          icon: Remix.calendar_check_line,
-          activeIcon: Remix.calendar_check_fill,
-          page: EmployeeScheduleView(
-            showBackButton: true,
-            onBack: () => _navigateToTab(0),
-          ),
-        ),
-      ] else if (isVisitor) ...[
+      // Production employees use the separate production app.
+      if (isVisitor) ...[
         const _DashboardTabItem(
           label: 'Visits',
           icon: Remix.map_pin_2_line,
@@ -425,13 +269,24 @@ class _DashboardViewState extends ConsumerState<DashboardView>
           page: VisitorHistoryView(),
         ),
       ] else ...[
-        if (primaryModule != null)
-          _DashboardTabItem(
-            label: primaryModule.label,
-            icon: primaryModule.icon,
-            activeIcon: primaryModule.activeIcon,
-            page: primaryModule.page,
-          ),
+        const _DashboardTabItem(
+          label: 'Data Capture',
+          icon: Remix.add_circle_line,
+          activeIcon: Remix.add_circle_fill,
+          page: DataCaptureHomeScreen(),
+        ),
+        const _DashboardTabItem(
+          label: 'Leads',
+          icon: Remix.user_search_line,
+          activeIcon: Remix.user_search_fill,
+          page: LeadsView(),
+        ),
+        const _DashboardTabItem(
+          label: 'Customers',
+          icon: Remix.building_2_line,
+          activeIcon: Remix.building_2_fill,
+          page: CustomersView(),
+        ),
       ],
 
       // Final Position: Profile

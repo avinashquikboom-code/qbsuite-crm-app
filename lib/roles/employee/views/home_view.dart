@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickboom_app/core/theme/app_typography.dart';
 import 'package:remixicon/remixicon.dart';
+import 'package:quickboom_app/core/constants/app_config.dart';
 import 'package:quickboom_app/core/providers/auth_provider.dart';
 import 'package:quickboom_app/core/services/employee_live_tracking_service.dart';
 import 'package:quickboom_app/core/models/user_role.dart';
@@ -23,6 +24,7 @@ import 'package:quickboom_app/shared/widgets/animated_notification_bell.dart';
 import '../viewmodels/employee_notification_viewmodel.dart';
 import 'notifications_view.dart';
 import '../widgets/lead_limit_card.dart';
+import '../widgets/request_overtime_sheet.dart';
 import '../viewmodels/lead_limit_viewmodel.dart';
 import 'package:quickboom_app/shared/views/leads/leads_view.dart';
 import 'sidebar_views/qb_attendance_view.dart';
@@ -71,7 +73,9 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
         '[APP_LIFECYCLE] Resumed: refreshing attendance state, live location, and lead limits',
       );
       _refreshAllData();
-      EmployeeLiveTrackingService().sendImmediateLocationIfActive();
+      if (!AppConfig.uiOnlyMode) {
+        EmployeeLiveTrackingService().sendImmediateLocationIfActive();
+      }
     }
   }
 
@@ -243,44 +247,11 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
         roleName.contains('TELESALES') ||
         roleName.contains('TELECALL') ||
         roleName.contains('CALLER');
-    final isProductionTeam =
-        !isBpoTeam &&
-        !isVisitor &&
-        (permsState.permissions.hasSsmWorkPermission ||
-            rbacPerms.canViewMyWork ||
-            rbacPerms.canViewCreativeWork ||
-            permsState.permissions.isProductionManager ||
-            deptName.contains('PRODUCTION') ||
-            deptName.contains('CREATIVE') ||
-            desigName.contains('PHOTOGRAPHER') ||
-            desigName.contains('VIDEO') ||
-            desigName.contains('EDITOR') ||
-            desigName.contains('DESIGNER') ||
-            desigName.contains('PRODUCTION') ||
-            desigName.contains('CREATIVE') ||
-            desigName.contains('SSM') ||
-            desigName.contains('CONTENT') ||
-            desigName.contains('ANIMAT') ||
-            desigName.contains('TEAM LEADER') ||
-            desigName.contains('TEAM LEAD') ||
-            roleName.contains('PHOTOGRAPHER') ||
-            roleName.contains('VIDEO') ||
-            roleName.contains('EDITOR') ||
-            roleName.contains('DESIGNER') ||
-            roleName.contains('PRODUCTION') ||
-            roleName.contains('CREATIVE') ||
-            roleName.contains('SSM') ||
-            roleName.contains('TEAM LEADER') ||
-            roleName.contains('TEAM LEAD'));
-
-    final canViewCalendar =
-        !isBpoTeam && isProductionTeam && rbacPerms.canViewCalendar;
 
     final hasAnyPermittedWidget =
         isVisitor ||
         canViewDashboard ||
         canViewAttendance ||
-        canViewCalendar ||
         canViewMyWork ||
         canViewFollowUp ||
         canViewVisits ||
@@ -374,7 +345,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
         'role: $roleName, '
         'desig: $desigName, '
         'permissionsCount: ${rbacPerms.permissions.length}, '
-        'canViewCalendar: $canViewCalendar, '
+        'isBpoTeam: $isBpoTeam, '
         'isVisitor: $isVisitor, '
         'deviceWidth: $devWidth, '
         'deviceHeight: $devHeight, '
@@ -557,9 +528,9 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
               else if (showBpoHomeSkeleton) ...[
                 _buildBpoLoadingState(
                   showAttendance: true,
-                  showQuota: !isProductionTeam,
-                  showLeadPipeline: !isProductionTeam,
-                  showFollowUps: !isProductionTeam,
+                  showQuota: true,
+                  showLeadPipeline: true,
+                  showFollowUps: false,
                 ),
               ]
               // State 2: Permissions still initializing / loading
@@ -586,7 +557,7 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                   const SizedBox(height: 16),
 
                   // 3. Visitor Home Calendar Section (7-Day Strip & Scheduled Visits)
-                  if (canViewCalendar) ...[
+                  if (rbacPerms.canViewCalendar) ...[
                     EmployeeHomeCalendarSection(
                       onViewAll: () {
                         Navigator.push(
@@ -609,44 +580,10 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
                     const SizedBox(height: 16),
                   ],
 
-                  // 2. Lead Generation Quota Card
-                  if ((canViewLeads || canViewDataCapture) &&
-                      !isProductionTeam) ...[
-                    const LeadLimitCard(),
-                    const SizedBox(height: 16),
-                  ],
-
-                  // 3. Lead Pipeline Card (Below Lead Quota)
-                  if (canViewLeads && !isProductionTeam) ...[
-                    _buildLeadPipelineCard(context),
-                    const SizedBox(height: 16),
-                  ],
-
-                  // Calendar and follow-ups stay off the compact CRM home.
-                  if (canViewCalendar && !isBpoTeam) ...[
-                    EmployeeHomeCalendarSection(
-                      onViewAll: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const EmployeeScheduleView(),
-                          ),
-                        );
-                      },
-                    ),
-                    const SizedBox(height: 20),
-                  ],
-
-                  if (canViewFollowUp && !isProductionTeam && !isBpoTeam) ...[
-                    _buildFollowUpsCard(context),
-                    const SizedBox(height: 16),
-                  ],
-
-                  // 6. Assigned Tasks Card (Customer-wise production tasks)
-                  if ((canViewTasks || isProductionTeam) && !isBpoTeam) ...[
-                    _buildTasksCard(context),
-                    const SizedBox(height: 16),
-                  ],
+                  const LeadLimitCard(),
+                  const SizedBox(height: 16),
+                  _buildLeadPipelineCard(context),
+                  const SizedBox(height: 16),
                 ],
               ],
             ],
@@ -1320,157 +1257,6 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
   }
 
   // ===========================================================================
-  // FOLLOW-UPS CARD
-  // ===========================================================================
-  Widget _buildFollowUpsCard(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.border),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 14,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(20),
-        child: Padding(
-          padding: const EdgeInsets.all(18),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryLight,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Icon(
-                      Remix.phone_line,
-                      color: AppColors.primaryDark,
-                      size: 22,
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Follow-ups',
-                          style: AppTypography.inter(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.textPrimary,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        Text(
-                          "Manage and track today's follow-ups",
-                          style: AppTypography.inter(
-                            fontSize: 11,
-                            color: AppColors.textSecondary,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 14),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  // ===========================================================================
-  // TASKS CARD
-  // ===========================================================================
-  Widget _buildTasksCard(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.border),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 14,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      padding: const EdgeInsets.all(18),
-      child: Row(
-        children: [
-          Expanded(
-            child: Row(
-              children: [
-                Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryLight,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(
-                    Remix.task_line,
-                    color: AppColors.primaryDark,
-                    size: 22,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Assigned Tasks',
-                        style: AppTypography.inter(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textPrimary,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Text(
-                        'Track daily tasks & milestones',
-                        style: AppTypography.inter(
-                          fontSize: 11,
-                          color: AppColors.textSecondary,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 8),
-        ],
-      ),
-    );
-  }
-
-  // ===========================================================================
   // 2. ATTENDANCE CARD
   // ===========================================================================
   Widget _buildAttendanceCard(
@@ -1642,6 +1428,37 @@ class _EmployeeHomeViewState extends ConsumerState<EmployeeHomeView>
 
           // Dynamic Attendance Action Button (Punch In / Punch Out / Break / Completed)
           _buildAttendanceActionButtons(context, state),
+          if (!state.isLoading && !state.isActionRunning) ...[
+            const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              height: 48,
+              child: OutlinedButton.icon(
+                onPressed: () => showRequestOvertimeSheet(context, ref),
+                icon: const Icon(
+                  Remix.time_line,
+                  size: 18,
+                  color: AppColors.primaryDark,
+                ),
+                label: Text(
+                  state.isOvertimePending
+                      ? 'OT Request Pending'
+                      : 'Request Overtime',
+                  style: AppTypography.inter(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primaryDark,
+                  ),
+                ),
+                style: OutlinedButton.styleFrom(
+                  side: const BorderSide(color: AppColors.primary, width: 1.4),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );

@@ -6,6 +6,7 @@ import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../constants/app_config.dart';
 import '../services/secure_storage_service.dart';
 import '../utils/app_logger.dart';
 import 'app_url.dart';
@@ -200,6 +201,19 @@ class ApiClient {
       InterceptorsWrapper(
         onRequest: (options, handler) async {
           options.path = normalizeEndpoint(options.path);
+
+          if (AppConfig.uiOnlyMode) {
+            debugPrint(
+              '[API] UI-only mode: blocked ${options.method} ${options.path}',
+            );
+            return handler.resolve(
+              Response(
+                requestOptions: options,
+                statusCode: 200,
+                data: {'success': true, 'data': <String, dynamic>{}},
+              ),
+            );
+          }
 
           final isAuthEndpoint = isAuthPath(options.path);
 
